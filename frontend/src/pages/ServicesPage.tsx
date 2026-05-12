@@ -7,7 +7,6 @@ import {
   ArrowRight,
   ChevronRight,
   Users,
-  BookOpen,
   Award,
   Gift,
 } from "lucide-react";
