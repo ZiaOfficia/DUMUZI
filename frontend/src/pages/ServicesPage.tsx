@@ -32,7 +32,7 @@ export const ServicesPage = () => {
     {
       question: "Can I direct my donation to a specific programme?",
       answer:
-        "Absolutely. You can earmark your contribution to Student Aid, the LCGC learning centre, the Rahmani 30 cohort or a memorial scholarship in someone's name — and we will report back specifically on that programme.",
+        "Absolutely. You can earmark your contribution to Student Aid or a memorial scholarship in someone's name — and we will report back specifically on that programme.",
     },
     {
       question: "How do I become a volunteer?",
@@ -57,7 +57,7 @@ export const ServicesPage = () => {
         "School &amp; exam fees",
         "College &amp; university tuition",
         "Books, uniforms &amp; stationery",
-        "Hostel &amp; daily living support",
+        "Hostel & daily living support",
       ],
       image:
         "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=80",
@@ -91,36 +91,6 @@ export const ServicesPage = () => {
       ],
       image:
         "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1600&q=80",
-    },
-    {
-      id: "rahmani-30",
-      icon: <BookOpen className="w-8 h-8 text-primary" />,
-      title: "Rahmani 30 Initiative",
-      description:
-        "Aaghaz has tied up with Rahmani 30 to open and operate learning centres in Uttar Pradesh, where students from underprivileged backgrounds undergo intensive coaching for IIT-JEE, NEET, CA and other competitive examinations.",
-      features: [
-        "Free coaching, no hidden costs",
-        "Boarding &amp; meals on site",
-        "Mock tests &amp; mentorship",
-        "Career placement support",
-      ],
-      image:
-        "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=1600&q=80",
-    },
-    {
-      id: "lcgc",
-      icon: <BookOpen className="w-8 h-8 text-primary" />,
-      title: "LCGC — Lucknow Coaching &amp; Guidance Centre",
-      description:
-        "Since 2011, Aaghaz has been running a facility in Lucknow called the Lucknow Coaching & Guidance Centre (LCGC). It offers structured after-school tuition, a quiet library, computer access and one-on-one career counselling — all free.",
-      features: [
-        "Daily after-school tuition",
-        "Library &amp; computer access",
-        "Career counselling",
-        "Soft skills &amp; spoken English",
-      ],
-      image:
-        "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1600&q=80",
     },
     {
       id: "become-volunteer",
@@ -177,7 +147,7 @@ export const ServicesPage = () => {
     <div className="pt-[60px] md:pt-[50px]">
       <SEO
         title="What We Do — Aaghaz Foundation Programs"
-        description="Explore Aaghaz Foundation's programs — Student Aid, Scholarships, Financial Assistance, the Rahmani 30 Initiative, the LCGC learning centre, and ways for you to donate or volunteer."
+        description="Explore Aaghaz Foundation's programs — Student Aid, Scholarships, Financial Assistance, and ways for you to donate or volunteer."
       />
       {/* Hero Section */}
       <section className="relative h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden">

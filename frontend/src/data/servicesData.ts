@@ -339,87 +339,87 @@ export const servicesData: ServiceData[] = [
   },
 
   {
-    id: "rahmani-30",
-    title: "Rahmani 30 Initiative",
-    heroImage: serviceImages.rahmani30,
-    heroTitle: "RAHMANI 30 — INTENSIVE COACHING FOR EXTRAORDINARY MINDS",
+    id: "computer-center",
+    title: "Computer Center",
+    heroImage: serviceImages.computerCenter,
+    heroTitle: "COMPUTER CENTER — DIGITAL LITERACY IN LUCKNOW",
     intro: {
-      heading: "THE RAHMANI 30 INITIATIVE IN UTTAR PRADESH",
+      heading: "COMPUTER CENTER IN LUCKNOW",
       subheading:
-        "Free, intensive, residential coaching for IIT-JEE, NEET, CA and competitive exams.",
+        "Free computer education and digital skills training for underprivileged children.",
       description: [
-        "Aaghaz Foundation has tied up with Rahmani 30 to open and operate learning centres in Uttar Pradesh, where students from underprivileged backgrounds undergo intensive coaching for IIT-JEE, NEET, CA and other competitive examinations.",
-        "Selected students study, board and live at the centre at no cost to their families. The combination of disciplined academics, expert faculty and a supportive peer group has produced consistent results year on year.",
+        "Located in Lucknow, our Computer Center provides essential digital literacy skills to children from low-income families. In a world increasingly driven by technology, we ensure that no child is left behind due to lack of access to computers or internet.",
+        "The center offers hands-on training in basic computing, internet usage, typing, and introductory programming, preparing students for future opportunities in a digital economy.",
       ],
     },
     whyChooseUs: {
-      title: "Why this programme matters",
+      title: "Why digital literacy matters",
       items: [
         {
-          title: "Talent without a fair shot",
+          title: "Bridging the digital divide",
           description:
-            "Many brilliant students never see a competitive exam syllabus simply because their families cannot afford coaching. Rahmani 30 closes that gap.",
+            "Many children in Lucknow lack access to computers at home. Our center provides free access and training.",
         },
         {
-          title: "Residential model",
+          title: "Future-ready skills",
           description:
-            "Boarding removes the daily distractions and travel time that hold back rural and small-town students.",
+            "Basic computer skills are essential for modern education and employment opportunities.",
         },
         {
-          title: "Proven track record",
+          title: "Community impact",
           description:
-            "The Rahmani 30 programme has produced IIT, AIIMS and CA qualifiers from communities that had never sent a child to those institutions before.",
+            "Empowering the next generation with tools to succeed in a technology-driven world.",
         },
       ],
     },
     signatureServices: {
-      title: "What the programme includes",
+      title: "What we offer at the Computer Center",
       items: [
         {
-          title: "Free coaching",
+          title: "Basic Computer Skills",
           description:
-            "Full-time instruction in physics, chemistry, mathematics, biology and aptitude — no fees, no hidden costs.",
+            "Introduction to operating systems, file management, and software applications.",
         },
         {
-          title: "Boarding & meals",
+          title: "Internet and Online Safety",
           description:
-            "On-site hostel and a balanced diet so students can focus entirely on their studies.",
+            "Safe browsing, email usage, and understanding online resources.",
         },
         {
-          title: "Mock tests & mentorship",
+          title: "Typing and Productivity",
           description:
-            "Regular all-India level mock examinations and one-on-one mentoring with senior faculty and alumni.",
+            "Typing speed improvement and use of productivity tools like word processors.",
         },
         {
-          title: "Career placement support",
+          title: "Introductory Programming",
           description:
-            "Post-result guidance on counselling, college selection, scholarships and student loans.",
+            "Basic coding concepts to spark interest in technology careers.",
         },
       ],
     },
     process: {
-      title: "Selection process",
+      title: "How to join",
       description: "",
       steps: [
         {
-          title: "1. Entrance test",
+          title: "1. Enrollment",
           description:
-            "An aptitude-based admissions test held annually across selected districts of UP.",
+            "Visit the center in Lucknow or contact us for registration details.",
         },
         {
-          title: "2. Family verification",
+          title: "2. Assessment",
           description:
-            "Aaghaz volunteers verify the financial background of shortlisted candidates.",
+            "Initial skill assessment to place students in appropriate classes.",
         },
         {
-          title: "3. Interview & onboarding",
+          title: "3. Training sessions",
           description:
-            "Final selection through a panel interview, followed by orientation at the centre.",
+            "Regular classes with hands-on practice on computers.",
         },
         {
-          title: "4. Two years of intensive coaching",
+          title: "4. Certification",
           description:
-            "Class XI and XII covered alongside the entrance-exam syllabus, with continuous evaluation.",
+            "Completion certificates to recognize digital literacy achievements.",
         },
       ],
     },
@@ -434,92 +434,87 @@ export const servicesData: ServiceData[] = [
   },
 
   {
-    id: "lcgc",
-    title: "LCGC",
-    heroImage: serviceImages.lcgc,
-    heroTitle: "LCGC — LUCKNOW COACHING & GUIDANCE CENTRE",
+    id: "madarsa-initiative",
+    title: "Madarsa Initiative",
+    heroImage: serviceImages.madarsaInitiative,
+    heroTitle: "MADARSA INITIATIVE — EDUCATION FOR ALL COMMUNITIES",
     intro: {
-      heading: "LUCKNOW COACHING & GUIDANCE CENTRE",
+      heading: "MADARSA INITIATIVE",
       subheading:
-        "A safe, structured place to study, dream and prepare — running since 2011.",
+        "Supporting madarsa students with modern education and skill development.",
       description: [
-        "Since 2011, Aaghaz has been successfully running a facility called the Lucknow Coaching & Guidance Centre (LCGC). It is exactly what its name suggests — a place where children from neighbourhoods that cannot afford private tuition can come every day after school for structured coaching, a quiet library, computer access and dedicated mentorship.",
-        "LCGC is built on a simple insight: brilliant children fail not because they lack ability but because they lack a quiet, well-lit, supportive space to study. We provide that space.",
+        "Our Madarsa Initiative bridges traditional Islamic education with modern academic and vocational skills. We work with madarsas across India to provide additional resources, ensuring students receive a well-rounded education.",
+        "The program focuses on language skills, mathematics, science, and vocational training to prepare students for diverse career paths while respecting their cultural and religious backgrounds.",
       ],
     },
     whyChooseUs: {
-      title: "What LCGC offers",
+      title: "Why support madarsa education",
       items: [
         {
-          title: "After-school tuition",
+          title: "Inclusive education",
           description:
-            "Daily classes for school subjects (Maths, Science, English, Hindi) for Class VI to Class XII.",
+            "Ensuring all communities have access to quality education and opportunities.",
         },
         {
-          title: "Library & computer access",
+          title: "Cultural sensitivity",
           description:
-            "A growing library of textbooks and reference material, plus computers with supervised internet access.",
+            "Respecting religious and cultural values while providing modern skills.",
         },
         {
-          title: "Career counselling",
+          title: "Holistic development",
           description:
-            "One-on-one career guidance for older students preparing for entrance exams, college admissions and government jobs.",
-        },
-        {
-          title: "Soft skills & life skills",
-          description:
-            "Spoken English, basic computer literacy, communication and confidence-building workshops.",
+            "Combining religious teachings with academic and vocational training.",
         },
       ],
     },
     signatureServices: {
-      title: "How LCGC runs",
+      title: "Program components",
       items: [
         {
-          title: "Daily classes",
+          title: "Academic Support",
           description:
-            "Regular tuition timetables aligned with the school year and the UP board calendar.",
+            "Additional classes in mathematics, science, and English to complement madarsa curriculum.",
         },
         {
-          title: "Volunteer & paid faculty",
+          title: "Vocational Training",
           description:
-            "A mix of paid teachers and dedicated volunteers — many of them former Aaghaz beneficiaries.",
+            "Skills like computer literacy, tailoring, and basic entrepreneurship.",
         },
         {
-          title: "Free of cost to students",
+          title: "Career Counseling",
           description:
-            "Children who attend LCGC do not pay anything. The centre is funded entirely by donors and grants.",
+            "Guidance on higher education and job opportunities.",
         },
         {
-          title: "Open to all communities",
+          title: "Community Engagement",
           description:
-            "Religion, caste, gender — none of it matters at LCGC. If you want to study, the door is open.",
+            "Involving parents and community leaders in the educational process.",
         },
       ],
     },
     process: {
-      title: "How to enrol",
+      title: "How it works",
       description: "",
       steps: [
         {
-          title: "1. Walk in or write to us",
+          title: "1. Partnership",
           description:
-            "Visit the centre at 57 Ganesh Gunj, Lucknow, or email aaghaz.foundation@gmail.com.",
+            "Collaborate with madarsa administrators to integrate our programs.",
         },
         {
-          title: "2. Quick assessment",
+          title: "2. Student assessment",
           description:
-            "A short conversation with our coordinator to understand the student's class, school and goals.",
+            "Evaluate students' needs and interests for personalized support.",
         },
         {
-          title: "3. Class allocation",
+          title: "3. Program delivery",
           description:
-            "The student is placed into the appropriate batch and timetable.",
+            "Conduct classes and workshops at the madarsa or nearby facilities.",
         },
         {
-          title: "4. Continuous mentorship",
+          title: "4. Monitoring and evaluation",
           description:
-            "Regular reviews and parent meetings ensure the child is making real progress.",
+            "Track progress and adjust programs for better outcomes.",
         },
       ],
     },
@@ -530,6 +525,101 @@ export const servicesData: ServiceData[] = [
       "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=80",
       "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=900&q=80",
       "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=900&q=80",
+    ],
+  },
+
+  {
+    id: "memorial-scholarship",
+    title: "Memorial Scholarship",
+    heroImage: serviceImages.memorialScholarship,
+    heroTitle: "MEMORIAL SCHOLARSHIP — HONORING LEGACIES THROUGH EDUCATION",
+    intro: {
+      heading: "MEMORIAL SCHOLARSHIP PROGRAM",
+      subheading:
+        "Create lasting legacies by funding education in honor of loved ones.",
+      description: [
+        "Our Memorial Scholarship program allows donors to establish scholarships in memory of family members, friends, or mentors. Each scholarship supports meritorious students from economically weak backgrounds, ensuring that the legacy of the honored individual continues through education.",
+        "Donors can customize the scholarship criteria, and we provide annual reports on the students supported, creating a meaningful connection between the donor and the beneficiaries.",
+      ],
+    },
+    whyChooseUs: {
+      title: "Why choose a memorial scholarship",
+      items: [
+        {
+          title: "Personal tribute",
+          description:
+            "Honor the memory of a loved one by enabling education for deserving students.",
+        },
+        {
+          title: "Customizable criteria",
+          description:
+            "Define the scholarship based on region, gender, course, or other preferences.",
+        },
+        {
+          title: "Ongoing impact",
+          description:
+            "Create a lasting legacy that supports education year after year.",
+        },
+      ],
+    },
+    signatureServices: {
+      title: "Scholarship features",
+      items: [
+        {
+          title: "Named Scholarships",
+          description:
+            "Scholarships named after the honored individual for personal recognition.",
+        },
+        {
+          title: "Annual Reports",
+          description:
+            "Detailed updates on student progress, photos, and achievements.",
+        },
+        {
+          title: "Flexible Funding",
+          description:
+            "Options for one-time or recurring donations to sustain the scholarship.",
+        },
+        {
+          title: "Community Recognition",
+          description:
+            "Public acknowledgment of the donor's contribution in our communications.",
+        },
+      ],
+    },
+    process: {
+      title: "How to establish a memorial scholarship",
+      description: "",
+      steps: [
+        {
+          title: "1. Contact us",
+          description:
+            "Reach out with details about the person you wish to honor and your preferences.",
+        },
+        {
+          title: "2. Criteria development",
+          description:
+            "Work with our team to define scholarship eligibility and selection process.",
+        },
+        {
+          title: "3. Funding and launch",
+          description:
+            "Secure funding and officially launch the scholarship.",
+        },
+        {
+          title: "4. Ongoing support",
+          description:
+            "Receive regular updates and reports on the scholarship's impact.",
+        },
+      ],
+    },
+    portfolioImages: [
+      "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=900&q=80",
     ],
   },
 

@@ -14,17 +14,6 @@ const itemVariants: Variants = {
 };
 
 export const ServicesGrid = () => {
-  const SERVICE_IDS = [
-    "student-aid",
-    "scholarships",
-    "financial-assistance",
-    "become-volunteer",
-    "rahmani-30",
-    "lcgc",
-    "join-as-donor",
-    "launch-scholarship",
-  ];
-
   return (
     <motion.section
       id="services"
@@ -66,14 +55,13 @@ export const ServicesGrid = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => {
-            const serviceId = SERVICE_IDS[index] || "";
             return (
               <motion.div
                 key={index}
                 variants={itemVariants}
                 className="group relative h-80 md:h-[26rem] overflow-hidden rounded-tl-3xl rounded-br-3xl shadow-lg hover:shadow-2xl transition-shadow duration-500"
               >
-                <Link to={`/services/${serviceId}`} className="block w-full h-full">
+                <Link to={`/services/${service.id}`} className="block w-full h-full">
                   <img
                     loading="lazy"
                     decoding="async"

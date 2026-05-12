@@ -58,8 +58,9 @@ export const serviceImages = {
   studentAid: u("1503676382389-4809596d5290", 1200),        // boys in school uniform
   scholarships: u("1521295121783-8a321d551ad2", 1200),      // graduation moment
   financialAssistance: u("1531315630201-bb15abeb1653", 1200),// rupee / aid
-  rahmani30: u("1554224155-6726b3ff858f", 1200),            // exam coaching
-  lcgc: u("1610484826917-3c7f3d8e1c8a", 1200),              // tuition centre
+  computerCenter: u("1554224155-6726b3ff858f", 1200),       // computer education
+  madarsaInitiative: u("1610484826917-3c7f3d8e1c8a", 1200),  // community education
+  memorialScholarship: u("1623241899289-e2f04b87e7a3", 1200), // memorial / candle
   becomeVolunteer: u("1469571486292-0ba58a3f068b", 1200),   // volunteers smiling
   joinDonor: u("1559027615-cd4628902d4a", 1200),            // donation hands
   launchScholarship: u("1623241899289-e2f04b87e7a3", 1200), // memorial / candle

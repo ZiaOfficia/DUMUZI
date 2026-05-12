@@ -64,49 +64,55 @@ export const portfolioContent = {
 export const services = [
   {
     ...heroSlides[0],
-    id: 0,
+    id: "student-aid",
     description:
       "Need-based financial assistance for school and college students from underprivileged families. Tuition, books, exam fees, uniforms — whatever stands between a child and the next class.",
   },
   {
     ...heroSlides[1],
-    id: 1,
+    id: "scholarships",
     description:
       "Annual and memorial scholarships funded by donors who want to honour a loved one or simply invest in a child's future. Every rupee is tracked, every report shared.",
   },
   {
     ...heroSlides[2],
-    id: 2,
+    id: "financial-assistance",
     description:
       "Merit-cum-means scholarships of varying amounts awarded after a verified pre-scholarship survey by our volunteer team — never before.",
   },
   {
+    ...heroSlides[4],
+    id: "computer-center",
+    description:
+      "Free computer education and digital skills training for underprivileged children in Lucknow, bridging the digital divide.",
+  },
+  {
+    ...heroSlides[5],
+    id: "madarsa-initiative",
+    description:
+      "Supporting madarsa students with modern education, vocational training, and career counseling to ensure holistic development.",
+  },
+  {
+    ...heroSlides[7],
+    id: "memorial-scholarship",
+    description:
+      "Create lasting legacies by funding education in honor of loved ones, with customizable criteria and annual impact reports.",
+  },
+  {
     ...heroSlides[3],
-    id: 3,
+    id: "become-volunteer",
     description:
       "Aaghaz is a volunteer-driven organisation. Our field volunteers identify, verify and mentor each beneficiary — keeping us honest and our students supported.",
   },
   {
-    ...heroSlides[4],
-    id: 4,
-    description:
-      "In partnership with Rahmani 30, we run free residential and day learning centres in Uttar Pradesh, where students get intensive coaching for IIT-JEE, NEET, CA and competitive exams.",
-  },
-  {
-    ...heroSlides[5],
-    id: 5,
-    description:
-      "Since 2011 the Lucknow Coaching & Guidance Centre (LCGC) has offered structured tuition, library access and career counselling to children who would otherwise have nowhere to study after school.",
-  },
-  {
     ...heroSlides[6],
-    id: 6,
+    id: "join-as-donor",
     description:
       "Your donation directly funds school fees, hostel rent, lab equipment and life-changing mentorship for a verified student. We send you photos, progress reports and the occasional thank-you letter.",
   },
   {
     ...heroSlides[7],
-    id: 7,
+    id: "launch-scholarship",
     description:
       "Launch a scholarship in the name of a parent, teacher or friend. We co-design the criteria with you and send annual reports on the students it supports.",
   },
