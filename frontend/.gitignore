@@ -25,3 +25,8 @@ dist-ssr
 
 public/images/*
 !public/images/assets/
+!public/images/suceessstories/
+public/images/suceessstories/*
+!public/images/suceessstories/*.jpeg
+!public/images/suceessstories/*.jpg
+!public/images/suceessstories/*.png
