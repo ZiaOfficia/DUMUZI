@@ -23,7 +23,7 @@ export const Navbar = () => {
     { name: "About", path: "/about" },
     { name: "What We Do", path: "/services", hasDropdown: true },
     { name: "Gallery", path: "/gallery" },
-    { name: "Stories", path: "/portfolio" },
+    { name: "Success Stories", path: "/success-stories" },
     { name: "News", path: "/blog" },
     { name: "FAQ", path: "/faq" },
   ];

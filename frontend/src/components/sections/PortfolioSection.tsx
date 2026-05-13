@@ -1,7 +1,7 @@
 import { Button } from "../common/Button";
 import { portfolioContent } from "../../data/content";
 import { motion, type Variants } from "framer-motion";
-import { portfolioData } from "../../data/portfolioData";
+import { portfolioData } from "../../data/success-storiesData";
 import { Link } from "react-router-dom";
 
 const containerVariants: Variants = {
@@ -50,7 +50,7 @@ export const PortfolioSection = () => {
           </motion.p>
           <div className="mt-8">
             <motion.div variants={itemVariants}>
-              <Link to="/portfolio">
+              <Link to="/success-stories">
                 <Button className="bg-primary text-white hover:bg-primary-dark border-none px-8 py-3">
                   See All Stories
                 </Button>
@@ -66,7 +66,7 @@ export const PortfolioSection = () => {
               variants={itemVariants}
               className="group cursor-pointer"
             >
-              <Link to={`/portfolio/${item.id}`}>
+              <Link to={`/success-stories/${item.id}`}>
                 <div className="relative overflow-hidden aspect-4/5 mb-6 rounded-tl-3xl rounded-br-3xl">
                   <motion.img
                     src={item.heroImage}
@@ -91,7 +91,7 @@ export const PortfolioSection = () => {
         </div>
 
         <motion.div className="text-center" variants={itemVariants}>
-          <Link to="/portfolio">
+          <Link to="/success-stories">
             <Button variant="primary">View All Stories</Button>
           </Link>
         </motion.div>

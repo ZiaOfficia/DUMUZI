@@ -12,8 +12,7 @@ import { ServiceDetailPage } from "./pages/ServiceDetailPage";
 import { GalleryPage } from "./pages/GalleryPage";
 import { BlogListingPage } from "./pages/BlogListingPage";
 import { BlogPostPage } from "./pages/BlogPostPage";
-import { PortfolioDetailPage } from "./pages/PortfolioDetailPage";
-import { PortfolioListingPage } from "./pages/PortfolioListingPage";
+import { SuccessStoriesPage } from "./pages/SuccessStoriesPage";
 import { PrivacyPolicyPage } from "./pages/PrivacyPolicyPage";
 import { TermsOfServicePage } from "./pages/TermsOfServicePage";
 import AdminLoginPage from "./pages/admin/AdminLoginPage";
@@ -54,8 +53,9 @@ function App() {
           <Route path="/blog" element={<BlogListingPage />} />
           <Route path="/:year/:month/:day/:slug" element={<BlogPostPage />} />
           <Route path="/blog/:slug" element={<BlogPostPage />} />
-          <Route path="/portfolio/:id" element={<PortfolioDetailPage />} />
-          <Route path="/portfolio" element={<PortfolioListingPage />} />
+          <Route path="/success-stories" element={<SuccessStoriesPage />} />
+          <Route path="/portfolio" element={<SuccessStoriesPage />} />
+          <Route path="/portfolio/:id" element={<SuccessStoriesPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
           <Route path="/terms-of-service" element={<TermsOfServicePage />} />
           <Route path="/thank-you" element={<ThankYouPage />} />

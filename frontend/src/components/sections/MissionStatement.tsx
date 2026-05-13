@@ -23,7 +23,7 @@ const pillars = [
     accent: "from-secondary/15 via-secondary/5 to-transparent",
     iconBg: "bg-secondary",
     image: missionImages.empower,
-    link: "/portfolio",
+    link: "/success-stories",
   },
   {
     icon: TrendingUp,
