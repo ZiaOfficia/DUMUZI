@@ -25,6 +25,8 @@ dist-ssr
 
 public/images/*
 !public/images/assets/
+!public/images/computercenter/
+!public/images/computercenter/**
 !public/images/suceessstories/
 public/images/suceessstories/*
 !public/images/suceessstories/*.jpeg
