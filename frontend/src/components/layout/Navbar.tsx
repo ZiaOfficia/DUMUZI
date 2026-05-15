@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X, ChevronDown, Heart, Award, Users, GraduationCap } from "lucide-react";
+import { Menu, X, ChevronDown, Heart } from "lucide-react";
 import clsx from "clsx";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
