@@ -10,6 +10,7 @@ import {
 } from "../components/services";
 import { FAQSection } from "../components/sections/FAQSection";
 import { Button } from "../components/common/Button";
+import { ServiceHighlight } from "../components/services/ServiceHighlight";
 import {
   Check,
   ArrowRight,
@@ -20,6 +21,10 @@ import {
   Wrench,
   Star,
   ChevronDown,
+  Award,
+  Mail,
+  Phone,
+  HelpCircle,
 } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { getOptimizedImage } from "../utils/imageUtils";
@@ -153,6 +158,9 @@ export const ServiceDetailPage = () => {
       </section>
 
 
+
+      {/* Service Highlight */}
+      <ServiceHighlight service={service} />
 
       {/* Accordion Navigation */}
       <ServiceAccordionNav
@@ -423,14 +431,183 @@ export const ServiceDetailPage = () => {
 
 
 
-      {/* FAQ Section - Reused Component */}
-      <div
-        ref={(el) => {
-          sectionRefs.current["faq"] = el;
-        }}
-      >
-        <FAQSection />
-      </div>
+      {/* Some Named Scholarships We Run */}
+      {service.namedScholarships && service.namedScholarships.length > 0 && (
+        <section className="py-16 md:py-20 px-4 md:px-6 bg-mosaic-cream">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-10">
+              <p className="inline-flex items-center gap-3 text-primary text-xs font-bold uppercase tracking-[0.4em] mb-3">
+                <span className="block w-8 h-px bg-primary" />
+                Already Running
+                <span className="block w-8 h-px bg-primary" />
+              </p>
+              <h2 className="text-3xl md:text-5xl font-display font-bold text-accent mb-3">
+                Some memorial scholarships we run
+              </h2>
+              <p className="text-text-muted max-w-xl mx-auto">
+                These are just a few of the named scholarships currently active.
+                Each one is a tribute that quietly funds a child&apos;s academic
+                year.
+              </p>
+            </div>
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {service.namedScholarships.map((name) => (
+                <li
+                  key={name}
+                  className="group flex items-start gap-4 p-5 bg-white border border-primary/10 rounded-tl-2xl rounded-br-2xl shadow-sm hover:shadow-lg hover:border-primary/40 transition-all"
+                >
+                  <span className="shrink-0 w-10 h-10 rounded-full bg-mesh-rose text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+                    <Award size={18} strokeWidth={1.8} />
+                  </span>
+                  <span className="font-display text-lg md:text-xl text-accent leading-tight pt-1.5">
+                    {name}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
+      {/* Service-specific FAQs (e.g. Memorial Scholarship) */}
+      {service.faqs && service.faqs.length > 0 && (
+        <section
+          ref={(el) => {
+            sectionRefs.current["faq"] = el;
+          }}
+          id="faq"
+          className="py-16 md:py-20 px-4 md:px-6 bg-impact-pattern"
+        >
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-10">
+              <p className="inline-flex items-center gap-3 text-primary text-xs font-bold uppercase tracking-[0.4em] mb-3">
+                <span className="block w-8 h-px bg-primary" />
+                Common Questions
+                <span className="block w-8 h-px bg-primary" />
+              </p>
+              <h2 className="text-3xl md:text-5xl font-display font-bold text-accent">
+                Frequently Asked Questions
+              </h2>
+            </div>
+            <div className="space-y-3">
+              {service.faqs.map((faq, i) => (
+                <details
+                  key={i}
+                  className="group bg-white border border-primary/10 rounded-tl-2xl rounded-br-2xl shadow-sm hover:shadow-md transition-shadow"
+                >
+                  <summary className="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none">
+                    <span className="flex items-center gap-3 font-display text-lg md:text-xl text-accent">
+                      <HelpCircle
+                        size={18}
+                        className="text-primary shrink-0"
+                      />
+                      {faq.question}
+                    </span>
+                    <ChevronDown
+                      size={20}
+                      className="text-primary shrink-0 transition-transform group-open:rotate-180"
+                    />
+                  </summary>
+                  <div className="px-6 pb-6 -mt-1 text-text-muted leading-relaxed border-t border-primary/10 pt-4">
+                    {faq.answer}
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Service contact card (e.g. Saima Rehman for Memorial Scholarship) */}
+      {service.contact && (
+        <section className="py-16 md:py-20 px-4 md:px-6 bg-mesh-rose">
+          <div className="max-w-4xl mx-auto">
+            <div className="relative">
+              <div className="absolute -inset-2 border-2 border-primary/40 rounded-tl-[3rem] rounded-br-[3rem]" />
+              <div className="relative bg-white rounded-tl-[3rem] rounded-br-[3rem] shadow-xl p-8 md:p-12">
+                <div className="text-center mb-8">
+                  <p className="inline-flex items-center gap-3 text-primary text-xs font-bold uppercase tracking-[0.4em] mb-3">
+                    <span className="block w-8 h-px bg-primary" />
+                    Start a Memorial Scholarship
+                    <span className="block w-8 h-px bg-primary" />
+                  </p>
+                  <h2 className="text-3xl md:text-5xl font-display font-bold text-accent mb-3">
+                    Honour a loved one today
+                  </h2>
+                  {service.contact.note && (
+                    <p className="text-text-muted max-w-2xl mx-auto">
+                      {service.contact.note}
+                    </p>
+                  )}
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+                  {service.contact.email && (
+                    <a
+                      href={`mailto:${service.contact.email}`}
+                      className="group flex items-center gap-4 p-5 rounded-tl-2xl rounded-br-2xl border-2 border-primary/15 hover:border-primary hover:bg-primary/5 transition-all"
+                    >
+                      <span className="shrink-0 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <Mail size={20} />
+                      </span>
+                      <div className="min-w-0">
+                        <p className="text-[10px] uppercase tracking-[0.3em] text-text-muted font-bold mb-0.5">
+                          Email Us
+                        </p>
+                        <p className="font-display text-accent text-base md:text-lg break-all">
+                          {service.contact.email}
+                        </p>
+                      </div>
+                    </a>
+                  )}
+                  {service.contact.phone && (
+                    <a
+                      href={`tel:${service.contact.phone.replace(/\s|\+/g, "")}`}
+                      className="group flex items-center gap-4 p-5 rounded-tl-2xl rounded-br-2xl border-2 border-primary/15 hover:border-primary hover:bg-primary/5 transition-all"
+                    >
+                      <span className="shrink-0 w-12 h-12 rounded-full bg-secondary text-accent flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <Phone size={20} />
+                      </span>
+                      <div className="min-w-0">
+                        <p className="text-[10px] uppercase tracking-[0.3em] text-text-muted font-bold mb-0.5">
+                          Phone / WhatsApp
+                        </p>
+                        <p className="font-display text-accent text-base md:text-lg">
+                          {service.contact.phone}
+                        </p>
+                      </div>
+                    </a>
+                  )}
+                </div>
+
+                {(service.contact.name || service.contact.role) && (
+                  <div className="mt-8 text-center text-sm">
+                    <p className="font-display text-xl text-accent">
+                      {service.contact.name}
+                    </p>
+                    {service.contact.role && (
+                      <p className="text-text-muted uppercase tracking-widest text-xs mt-1">
+                        {service.contact.role}
+                      </p>
+                    )}
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Global FAQ Section — only render if this service does not have its own FAQs */}
+      {!service.faqs?.length && (
+        <div
+          ref={(el) => {
+            sectionRefs.current["faq"] = el;
+          }}
+        >
+          <FAQSection />
+        </div>
+      )}
 
       {/* You May Also Love */}
       <section className="py-20 px-6 bg-stone-50">

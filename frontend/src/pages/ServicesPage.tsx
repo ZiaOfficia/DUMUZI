@@ -9,6 +9,7 @@ import {
   Users,
   Award,
   Gift,
+  Sparkles,
 } from "lucide-react";
 import { SEO } from "../components/common/SEO";
 import NewsletterSection from "../components/sections/NewsletterSection";
@@ -201,6 +202,230 @@ export const ServicesPage = () => {
             there is a way in. Browse the programs below to find yours.
           </p>
           <div className="w-24 h-px bg-secondary mx-auto" />
+        </div>
+      </section>
+
+      {/* What We Do - Comprehensive Overview */}
+      <section className="py-24 px-6 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5">
+        <div className="max-w-7xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full border border-primary/20 mb-8">
+              <span className="w-3 h-3 bg-secondary rounded-full animate-pulse"></span>
+              <span className="text-primary text-sm font-bold uppercase tracking-widest">What We Do</span>
+              <span className="w-3 h-3 bg-secondary rounded-full animate-pulse"></span>
+            </div>
+            <h2 className="text-3xl md:text-5xl font-display text-accent mb-6 leading-tight">
+              Programs that change a child's trajectory
+            </h2>
+            <p className="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
+              Aaghaz Foundation transforms lives through education. From need-based student aid to memorial scholarships,
+              we ensure no deserving child is left behind.
+            </p>
+          </div>
+
+          {/* Key Statistics */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-white rounded-2xl p-8 text-center shadow-lg border border-primary/10"
+            >
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Award className="w-8 h-8 text-primary" />
+              </div>
+              <div className="text-3xl font-display font-bold text-primary mb-2">80+</div>
+              <div className="text-sm text-gray-600 uppercase tracking-widest font-bold">Memorial Scholarships</div>
+              <div className="text-xs text-gray-500 mt-1">Across India</div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="bg-white rounded-2xl p-8 text-center shadow-lg border border-primary/10"
+            >
+              <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Heart className="w-8 h-8 text-secondary" />
+              </div>
+              <div className="text-3xl font-display font-bold text-secondary mb-2">Rs 1 Crore</div>
+              <div className="text-sm text-gray-600 uppercase tracking-widest font-bold">Annual Disbursement</div>
+              <div className="text-xs text-gray-500 mt-1">For Education</div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="bg-white rounded-2xl p-8 text-center shadow-lg border border-primary/10"
+            >
+              <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Users className="w-8 h-8 text-accent" />
+              </div>
+              <div className="text-3xl font-display font-bold text-accent mb-2">1000+</div>
+              <div className="text-sm text-gray-600 uppercase tracking-widest font-bold">Students Supported</div>
+              <div className="text-xs text-gray-500 mt-1">Annually</div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="bg-white rounded-2xl p-8 text-center shadow-lg border border-primary/10"
+            >
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <GraduationCap className="w-8 h-8 text-primary" />
+              </div>
+              <div className="text-3xl font-display font-bold text-primary mb-2">6</div>
+              <div className="text-sm text-gray-600 uppercase tracking-widest font-bold">Program Categories</div>
+              <div className="text-xs text-gray-500 mt-1">Comprehensive Support</div>
+            </motion.div>
+          </div>
+
+          {/* How We Help */}
+          <div className="mb-20">
+            <h3 className="text-2xl md:text-3xl font-display text-accent text-center mb-12">
+              How We Help
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="bg-white rounded-xl p-6 shadow-md border border-primary/10"
+              >
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <GraduationCap className="w-6 h-6 text-primary" />
+                </div>
+                <h4 className="font-display text-lg text-accent mb-3">Student Aid</h4>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Need-based financial assistance for school and college students from underprivileged families.
+                  Covers tuition, books, uniforms, and hostel fees.
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="bg-white rounded-xl p-6 shadow-md border border-primary/10"
+              >
+                <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
+                  <Award className="w-6 h-6 text-secondary" />
+                </div>
+                <h4 className="font-display text-lg text-accent mb-3">Scholarships</h4>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Annual, merit-cum-means scholarships for students across India. Every scholarship is awarded
+                  after verified pre-scholarship surveys.
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="bg-white rounded-xl p-6 shadow-md border border-primary/10"
+              >
+                <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                  <HandCoins className="w-6 h-6 text-accent" />
+                </div>
+                <h4 className="font-display text-lg text-accent mb-3">Financial Assistance</h4>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Timely financial assistance for families facing unexpected crises. One-time or ongoing support
+                  to prevent educational disruption.
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="bg-white rounded-xl p-6 shadow-md border border-primary/10"
+              >
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <Users className="w-6 h-6 text-primary" />
+                </div>
+                <h4 className="font-display text-lg text-accent mb-3">Volunteer Network</h4>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Volunteer-driven organization with field surveys and mentorship. Join our network of
+                  dedicated volunteers across India.
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="bg-white rounded-xl p-6 shadow-md border border-primary/10"
+              >
+                <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
+                  <Heart className="w-6 h-6 text-secondary" />
+                </div>
+                <h4 className="font-display text-lg text-accent mb-3">Donor Partnerships</h4>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Join our donor community. Support specific programs or sponsor children end-to-end.
+                  100% of donations go to student aid.
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                className="bg-white rounded-xl p-6 shadow-md border border-primary/10"
+              >
+                <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                  <Gift className="w-6 h-6 text-accent" />
+                </div>
+                <h4 className="font-display text-lg text-accent mb-3">Launch Scholarships</h4>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Honor loved ones by launching memorial scholarships. We co-design criteria and provide
+                  annual progress reports.
+                </p>
+              </motion.div>
+            </div>
+          </div>
+
+          {/* Memorial Scholarship Spotlight */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl border border-primary/10 text-center"
+          >
+            <div className="inline-flex items-center gap-3 bg-primary/10 px-4 py-2 rounded-full mb-6">
+              <Sparkles size={14} className="text-secondary" />
+              <span className="text-sm font-bold uppercase tracking-widest text-primary">Featured Program</span>
+              <Sparkles size={14} className="text-secondary" />
+            </div>
+            <h3 className="text-2xl md:text-3xl font-display text-accent mb-4">
+              Memorial Scholarships
+            </h3>
+            <p className="text-gray-700 leading-relaxed mb-6 max-w-3xl mx-auto">
+              Aaghaz Foundation currently runs more than 80 memorial scholarships across India, worth nearly Rs 1 crore annually,
+              supporting hundreds of underprivileged students — many of whom are orphans or come from financially distressed families
+              struggling to continue their education.
+            </p>
+            <Link
+              to="/services/memorial-scholarship"
+              className="inline-flex items-center gap-3 bg-primary hover:bg-primary-dark text-white px-8 py-4 text-sm uppercase tracking-widest font-bold rounded-tl-2xl rounded-br-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-0.5"
+            >
+              Learn More About Memorial Scholarships
+              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </motion.div>
         </div>
       </section>
 

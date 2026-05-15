@@ -30,6 +30,18 @@ export interface ServiceData {
     location: string;
   }[];
   portfolioImages: string[];
+  /** Optional: extra FAQ block rendered after testimonials (used by Memorial Scholarship). */
+  faqs?: { question: string; answer: string }[];
+  /** Optional: list of named scholarships / programmes already running under this service. */
+  namedScholarships?: string[];
+  /** Optional: direct contact card for this service. */
+  contact?: {
+    name?: string;
+    role?: string;
+    email?: string;
+    phone?: string;
+    note?: string;
+  };
 }
 
 import { serviceImages } from "./imageAssets";
@@ -340,96 +352,171 @@ export const servicesData: ServiceData[] = [
 
   {
     id: "computer-center",
-    title: "Computer Center",
-    heroImage: serviceImages.computerCenter,
-    heroTitle: "COMPUTER CENTER — DIGITAL LITERACY IN LUCKNOW",
+    title: "Computer Learning Center",
+    heroImage: "/images/computercenter/Screenshot 2026-05-15 111019.png",
+    heroTitle:
+      "AAGHAZ FOUNDATION COMPUTER LEARNING CENTER (AFCLC) — LUCKNOW",
     intro: {
-      heading: "COMPUTER CENTER IN LUCKNOW",
+      heading: "Unlock Your Future With Aaghaz Foundation's Free Computer Training Program",
       subheading:
-        "Free computer education and digital skills training for underprivileged children.",
+        "Free, certified, job-oriented computer training for women, minorities and economically weaker sections — in the heart of Lucknow.",
       description: [
-        "Located in Lucknow, our Computer Center provides essential digital literacy skills to children from low-income families. In a world increasingly driven by technology, we ensure that no child is left behind due to lack of access to computers or internet.",
-        "The center offers hands-on training in basic computing, internet usage, typing, and introductory programming, preparing students for future opportunities in a digital economy.",
+        "The Aaghaz Foundation Computer Learning Center (AFCLC) was founded as part of Aaghaz Foundation's skill-development programme, in partnership with IICL. Started by Co-Founder Suhel Khaleel and operating under the general secretaryship of Mr Tariq Khan, the centre is housed in our Balda Colony office near the New Hyderabad Post Office in Lucknow — and runs entirely free of cost.",
+        "More than a training facility, AFCLC is a beacon of hope for underprivileged youth bridging the digital divide. Thirteen full batches have already graduated, with the 14th and 15th batches currently in progress and more than 150 alumni who have built confidence, skills and livelihoods through the programme.",
+        "Under the daily supervision of our centre in-charge Mr Mohd Ebad (M.Sc., B.Ed.) — trained under our experienced teacher and founder Mr Waheed Uz Zama — students receive practical, step-by-step training, personal attention and regular practice tests. We do not just teach; we build skills.",
       ],
     },
     whyChooseUs: {
-      title: "Why digital literacy matters",
+      title: "Our Vision",
       items: [
         {
-          title: "Bridging the digital divide",
+          title: "Make digital education accessible to everyone",
           description:
-            "Many children in Lucknow lack access to computers at home. Our center provides free access and training.",
+            "AFCLC is open to all — minorities, women, economically weaker sections, and any young person who has been kept on the wrong side of the digital divide.",
         },
         {
-          title: "Future-ready skills",
+          title: "Create skilled and confident individuals",
           description:
-            "Basic computer skills are essential for modern education and employment opportunities.",
+            "Through practical-based training, easy step-by-step learning and personal attention, every graduate leaves with a real, demonstrable command of computers.",
         },
         {
-          title: "Community impact",
+          title: "Bridge the gap between education and employment",
           description:
-            "Empowering the next generation with tools to succeed in a technology-driven world.",
+            "Our curriculum is paired with the government-recognised NIELIT 'CCC' certificate — a gateway to numerous jobs in government and the private sector.",
         },
       ],
     },
     signatureServices: {
-      title: "What we offer at the Computer Center",
+      title: "Our Comprehensive Curriculum",
       items: [
         {
-          title: "Basic Computer Skills",
+          title: "Fundamentals of Computer",
           description:
-            "Introduction to operating systems, file management, and software applications.",
+            "How a computer works, parts of a system, files and folders, safe handling — the foundations every modern worker is expected to know.",
+          features: [
+            "Hardware basics and components",
+            "Files, folders and storage devices",
+            "Safe shutdown, backup and care",
+          ],
         },
         {
-          title: "Internet and Online Safety",
+          title: "Operating System (DOS &amp; MS-Windows)",
           description:
-            "Safe browsing, email usage, and understanding online resources.",
+            "Hands-on training in both DOS commands and MS-Windows so students can confidently use any PC they sit down at.",
+          features: [
+            "MS-Windows navigation, settings &amp; shortcuts",
+            "DOS commands for file operations",
+            "Installing software and managing the desktop",
+          ],
         },
         {
-          title: "Typing and Productivity",
+          title: "MS-Office Suite",
           description:
-            "Typing speed improvement and use of productivity tools like word processors.",
+            "Practical Word, Excel and PowerPoint with real-world office templates — letters, invoices, reports, presentations and basic spreadsheets.",
+          features: [
+            "MS-Word — formatting, tables, mail-merge",
+            "MS-Excel — formulas, sorting, charts",
+            "PowerPoint — presentations and design",
+          ],
         },
         {
-          title: "Introductory Programming",
+          title: "Hindi / English Typing",
           description:
-            "Basic coding concepts to spark interest in technology careers.",
+            "Structured typing speed and accuracy training in both Hindi and English — a basic requirement for clerical and data-entry roles.",
+          features: [
+            "Touch-typing technique",
+            "Speed and accuracy drills",
+            "Hindi typing on Unicode",
+          ],
+        },
+        {
+          title: "Internet &amp; E-Commerce",
+          description:
+            "Safe browsing, email, online forms, e-governance portals, UPI/online payments and the basics of buying and selling online.",
+          features: [
+            "Search, browsers and email",
+            "Online forms &amp; e-governance",
+            "Digital payments &amp; e-commerce basics",
+          ],
+        },
+        {
+          title: "NIELIT 'CCC' — Course on Computer Concepts",
+          description:
+            "We prepare every student for the government-recognised NIELIT 'CCC' certificate — a mandatory qualification for many government jobs in India.",
+          features: [
+            "Full syllabus coverage",
+            "Mock tests &amp; revision",
+            "Government-recognised certificate on completion",
+          ],
         },
       ],
     },
     process: {
-      title: "How to join",
-      description: "",
+      title: "How AFCLC Works",
+      description:
+        "Practical-based training • Easy step-by-step learning • Personal attention • Regular tests and practice.",
       steps: [
         {
-          title: "1. Enrollment",
+          title: "1. Walk in &amp; enrol",
           description:
-            "Visit the center in Lucknow or contact us for registration details.",
+            "Visit the centre at 406/2A, Balda Colony, near New Hyderabad Post Office, Lucknow. Only nominal form fees apply — the course itself is free. Seats are limited, first-come first-served.",
         },
         {
-          title: "2. Assessment",
+          title: "2. Practical-based classroom training",
           description:
-            "Initial skill assessment to place students in appropriate classes.",
+            "Small batches at our state-of-the-art lab with one machine per student. Daily hands-on practice under the guidance of Mr Mohd Ebad.",
         },
         {
-          title: "3. Training sessions",
+          title: "3. Regular tests &amp; revision",
           description:
-            "Regular classes with hands-on practice on computers.",
+            "Weekly practice tests, mock NIELIT CCC papers and one-on-one revision to make sure every student is exam-ready.",
         },
         {
-          title: "4. Certification",
+          title: "4. Certificate &amp; placement support",
           description:
-            "Completion certificates to recognize digital literacy achievements.",
+            "On graduation, students receive AFCLC's certificate plus the government-recognised NIELIT 'CCC' certificate — and access to our alumni network for jobs.",
         },
       ],
     },
+    testimonials: [
+      {
+        quote:
+          "After AFCLC I learnt MS-Office and typing. I now work as a finance clerk and the certificate from the centre is what got me through the interview.",
+        author: "Bushra Khan",
+        location: "AFCLC alumnus · Finance Clerk",
+      },
+      {
+        quote:
+          "I joined as a school-leaver with no computer experience. Today I am a tele-caller executive and I help my younger sister at home with her laptop.",
+        author: "Noman Azim",
+        location: "AFCLC alumnus · Tele-Caller Executive",
+      },
+      {
+        quote:
+          "AFCLC taught me Excel and data entry. Within three months of finishing, I was placed as a Data Entry Operator at a local firm.",
+        author: "Mohd Nabi",
+        location: "AFCLC alumnus · Data Entry Operator",
+      },
+      {
+        quote:
+          "The teachers gave personal attention — I never felt left behind. I now teach at a primary school and the AFCLC certificate is part of my qualifications.",
+        author: "Mehvish Ansari",
+        location: "AFCLC alumnus · Teacher",
+      },
+    ],
     portfolioImages: [
-      "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=900&q=80",
+      "/images/computercenter/Screenshot 2026-05-15 111019.png",
+      "/images/computercenter/Screenshot 2026-05-15 111030.png",
+      "/images/computercenter/Screenshot 2026-05-15 111042.png",
+      "/images/computercenter/Screenshot 2026-05-15 111053.png",
+      "/images/computercenter/Screenshot 2026-05-15 111110.png",
+      "/images/computercenter/Screenshot 2026-05-15 111130.png",
+      "/images/computercenter/Screenshot 2026-05-15 111152.png",
+      "/images/computercenter/Screenshot 2026-05-15 111202.png",
+      "/images/computercenter/Screenshot 2026-05-15 111210.png",
+      "/images/computercenter/Screenshot 2026-05-15 111220.png",
+      "/images/computercenter/Screenshot 2026-05-15 111230.png",
+      "/images/computercenter/Screenshot 2026-05-15 111243.png",
     ],
   },
 
@@ -532,87 +619,122 @@ export const servicesData: ServiceData[] = [
     id: "memorial-scholarship",
     title: "Memorial Scholarship",
     heroImage: serviceImages.memorialScholarship,
-    heroTitle: "MEMORIAL SCHOLARSHIP — HONORING LEGACIES THROUGH EDUCATION",
+    heroTitle: "MEMORIAL SCHOLARSHIPS — HONOURING LEGACIES THROUGH EDUCATION",
     intro: {
-      heading: "MEMORIAL SCHOLARSHIP PROGRAM",
+      heading: "MEMORIAL SCHOLARSHIPS",
       subheading:
-        "Create lasting legacies by funding education in honor of loved ones.",
+        "A meaningful way to cherish the memory of someone special who is no longer with us.",
       description: [
-        "Our Memorial Scholarship program allows donors to establish scholarships in memory of family members, friends, or mentors. Each scholarship supports meritorious students from economically weak backgrounds, ensuring that the legacy of the honored individual continues through education.",
-        "Donors can customize the scholarship criteria, and we provide annual reports on the students supported, creating a meaningful connection between the donor and the beneficiaries.",
+        "Educational scholarships are a meaningful way to cherish the memory of someone special who is no longer with us. Through our Memorial Scholarship Program, you can establish a scholarship in the name of a departed loved one and help a deserving student who is struggling to continue their education due to financial hardship.",
+        "At present, we run nearly 80 memorial scholarships every year, supporting hundreds of underprivileged students across India.",
       ],
     },
     whyChooseUs: {
-      title: "Why choose a memorial scholarship",
+      title: "Why Start a Memorial Scholarship?",
       items: [
         {
-          title: "Personal tribute",
+          title: "Keep their memory alive",
           description:
-            "Honor the memory of a loved one by enabling education for deserving students.",
+            "A memorial scholarship is a beautiful way to keep the memory of your loved one alive.",
         },
         {
-          title: "Customizable criteria",
+          title: "Inspire hope &amp; opportunity",
           description:
-            "Define the scholarship based on region, gender, course, or other preferences.",
+            "Their name continues to inspire hope and opportunity for students who need support with their education.",
         },
         {
-          title: "Ongoing impact",
+          title: "A lasting tribute",
           description:
-            "Create a lasting legacy that supports education year after year.",
+            "It is a lasting tribute that makes a real difference in someone&apos;s life.",
         },
       ],
     },
     signatureServices: {
-      title: "Scholarship features",
+      title: "Donor Preferences &amp; Recognition",
       items: [
         {
-          title: "Named Scholarships",
+          title: "You decide how it is used",
           description:
-            "Scholarships named after the honored individual for personal recognition.",
+            "You can choose how your contribution is used — support one student or multiple students, sponsor girls only, or give preference to orphans and other specific categories.",
+          features: [
+            "Support one student or multiple students",
+            "Sponsor girls only",
+            "Give preference to orphans or other categories",
+          ],
         },
         {
-          title: "Annual Reports",
+          title: "Personalised artwork",
           description:
-            "Detailed updates on student progress, photos, and achievements.",
+            "Once we receive your details, our team creates a personalised artwork for the scholarship and shares it on our website and social-media platforms — so the tribute reaches a wide audience.",
         },
         {
-          title: "Flexible Funding",
+          title: "Thousands of applications, carefully vetted",
           description:
-            "Options for one-time or recurring donations to sustain the scholarship.",
+            "Each scholarship typically receives between 5,000 and 10,000 applications — sometimes from as far as the Andaman and Nicobar Islands. Every application is reviewed by our selection committee based on financial need, academic merit and personal circumstances. Priority is often given to orphaned students.",
         },
         {
-          title: "Community Recognition",
+          title: "Certificates &amp; progress updates",
           description:
-            "Public acknowledgment of the donor's contribution in our communications.",
+            "Selected students receive certificates bearing the name of the person in whose memory the scholarship has been created. We share student profiles, academic reports and photographs so you can follow their progress and see the impact of your contribution.",
         },
       ],
     },
     process: {
-      title: "How to establish a memorial scholarship",
-      description: "",
+      title: "How to Start a Memorial Scholarship",
+      description:
+        "If you would like to set up a scholarship, please share the following details with us. Minimum annual contribution: Rs 25,000.",
       steps: [
         {
-          title: "1. Contact us",
+          title: "1. Name of the honoree",
           description:
-            "Reach out with details about the person you wish to honor and your preferences.",
+            "The name of the person in whose memory the scholarship is to be established.",
         },
         {
-          title: "2. Criteria development",
+          title: "2. Photograph",
           description:
-            "Work with our team to define scholarship eligibility and selection process.",
+            "A photograph of the person — we use it for the personalised artwork.",
         },
         {
-          title: "3. Funding and launch",
+          title: "3. A few lines about them",
           description:
-            "Secure funding and officially launch the scholarship.",
+            "A short note about who they were, what they cared about, what they would want this scholarship to stand for.",
         },
         {
-          title: "4. Ongoing support",
+          title: "4. Annual contribution",
           description:
-            "Receive regular updates and reports on the scholarship's impact.",
+            "The amount you would like to contribute every year. Minimum annual contribution is Rs 25,000.",
+        },
+        {
+          title: "5. Beneficiary preference",
+          description:
+            "Any preference for the type of beneficiary — for example orphan, girl student, students from a specific region, etc.",
+        },
+        {
+          title: "6. Tentative start date",
+          description:
+            "The date when you would like the scholarship to start being awarded.",
+        },
+        {
+          title: "7. Your contact number",
+          description:
+            "So our team can reach you to confirm the details and get the scholarship live.",
         },
       ],
     },
+    testimonials: [
+      {
+        quote:
+          "Knowing that students are completing their education in our loved one's name has helped our family heal in a way we did not expect. Every annual report feels like a letter from him.",
+        author: "A donor family",
+        location: "Pune, India",
+      },
+      {
+        quote:
+          "I never imagined a scholarship in my late father's name would reach a girl in the Andaman and Nicobar Islands. That single certificate sent home was worth more than anything we could have given ourselves.",
+        author: "Memorial scholarship donor",
+        location: "Delhi, India",
+      },
+    ],
     portfolioImages: [
       "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=900&q=80",
       "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=80",
@@ -621,6 +743,42 @@ export const servicesData: ServiceData[] = [
       "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=80",
       "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=900&q=80",
     ],
+    faqs: [
+      {
+        question: "Is there a minimum contribution?",
+        answer:
+          "Yes — the minimum annual contribution is Rs 25,000. There is no upper limit; many donors choose to fund multiple students or extend the scholarship over several years.",
+      },
+      {
+        question: "How many applications does a scholarship receive?",
+        answer:
+          "A typical memorial scholarship attracts anywhere between 5,000 and 10,000 applications from across India — sometimes from as far as the Andaman and Nicobar Islands.",
+      },
+      {
+        question: "Can I choose who receives the scholarship?",
+        answer:
+          "Yes. You can specify your preferences — for example supporting girls, orphans, students from a particular region, or more than one student. We design the scholarship around the criteria you give us.",
+      },
+      {
+        question: "How are students selected?",
+        answer:
+          "Every application is thoroughly vetted by our team before the final selection is made. Our selection committee weighs financial need, academic merit and personal circumstances. Priority is often given to orphaned students.",
+      },
+    ],
+    namedScholarships: [
+      "Rohith Venumla Memorial Scholarship",
+      "Kalbe Sadiq Memorial Scholarship",
+      "Sir Syed Ahmad Khan Memorial Scholarship",
+      "Danish Siddiqui Memorial Scholarship",
+      "Kamal Khan Memorial Scholarship",
+    ],
+    contact: {
+      name: "Saima Rehman",
+      role: "Memorial Scholarship Coordinator",
+      email: "aaghaz.foundation@gmail.com",
+      phone: "+91 99716 48900",
+      note: "If you would like to honour a loved one by supporting a deserving student, we would be happy to help. Email or WhatsApp us — Saima will personally walk you through the process.",
+    },
   },
 
   {
