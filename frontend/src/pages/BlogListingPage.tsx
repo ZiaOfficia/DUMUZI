@@ -140,7 +140,7 @@ export const BlogListingPage = () => {
   return (
     <div className="pt-24 md:pt-28 pb-24 px-4 md:px-6 bg-gradient-soft bg-impact-pattern min-h-screen">
       <SEO
-        title="Aaghaz Foundation Journal - Stories of Impact"
+        title="Aaghaz Foundation Blog - Stories of Impact"
         description="Explore our latest stories, success narratives, and updates on how Aaghaz Foundation is transforming lives through education."
       />
 
@@ -152,7 +152,7 @@ export const BlogListingPage = () => {
             animate={{ opacity: 1, y: 0 }}
             className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-[10px] font-bold uppercase tracking-[0.2em] mb-4"
           >
-            <Sparkles size={12} /> Our Journal
+            <Sparkles size={12} /> Our Blog
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 15 }}
@@ -168,7 +168,7 @@ export const BlogListingPage = () => {
             transition={{ delay: 0.2 }}
             className="text-stone-600 max-w-xl mx-auto leading-relaxed text-sm md:text-base font-light"
           >
-            Follow the journeys of our scholars, understand our field operations, and read updates on our programs.
+            Read about our students' journeys, how we check student homes, and updates on our work.
           </motion.p>
         </div>
 
@@ -242,13 +242,13 @@ export const BlogListingPage = () => {
           <main className="lg:col-span-2">
             {loading ? (
               <div className="text-center py-24 bg-white/60 rounded-3xl border border-stone-150">
-                <p className="text-stone-500 text-sm font-semibold tracking-wide">Loading articles...</p>
+                <p className="text-stone-500 text-sm font-semibold tracking-wide">Loading stories...</p>
               </div>
             ) : blogPosts.length === 0 ? (
               <div className="text-center py-24 bg-white/60 rounded-3xl border border-stone-150 px-6">
                 <p className="text-stone-550 text-base font-semibold mb-4">No stories found</p>
                 <p className="text-stone-400 text-sm mb-6 max-w-md mx-auto leading-relaxed">
-                  We couldn't find any articles matching your filters. Try clearing your search or filters to see all stories.
+                  We could not find any stories. Try clearing your search or filters to see all stories.
                 </p>
                 <button
                   onClick={clearFilters}
@@ -276,7 +276,7 @@ export const BlogListingPage = () => {
                         className="absolute inset-0 w-full h-full object-contain bg-stone-50 transition-transform duration-700 group-hover:scale-102"
                       />
                       <span className="absolute top-6 left-6 z-10 bg-primary text-white text-[9px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-md">
-                        Spotlight Story
+                        Featured Story
                       </span>
                     </div>
                     <div className="md:col-span-5 p-8 lg:p-10 flex flex-col justify-between">
@@ -302,7 +302,7 @@ export const BlogListingPage = () => {
                           to={getBlogPostUrl(featuredPost.slug, featuredPost.createdAt)}
                           className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary hover:text-stone-900 transition-colors"
                         >
-                          <span>Read Featured Story</span>
+                          <span>Read Full Story</span>
                           <ArrowRight size={14} className="group-hover:translate-x-1.5 transition-transform" />
                         </Link>
                       </div>
@@ -380,7 +380,7 @@ export const BlogListingPage = () => {
                   </button>
                 </div>
                 <p className="text-[10px] uppercase font-bold tracking-widest text-stone-450">
-                  Page {pagination.currentPage} of {pagination.totalPages} — {pagination.totalCount} Articles
+                  Page {pagination.currentPage} of {pagination.totalPages} — {pagination.totalCount} Stories
                 </p>
               </div>
             )}

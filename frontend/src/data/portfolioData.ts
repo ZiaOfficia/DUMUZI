@@ -20,15 +20,15 @@ export interface PortfolioItem {
 export const portfolioData: PortfolioItem[] = [
   {
     id: "graveyard-orphans",
-    title: "Orphans Living In A Graveyard",
-    services: "Emergency Aid, School Enrolment, Mentorship",
+    title: "Orphans in Lucknow Graveyard",
+    services: "Emergency Aid, School Help, Mentorship",
     date: "2018",
     location: "Lucknow, Uttar Pradesh",
     heroImage: portfolioImages.graveyardOrphans,
     description: [
-      "When a journalist friend brought to our notice that a small group of children had been living and studying among graves on the outskirts of Lucknow, our volunteers reached the site within 48 hours.",
-      "What followed was an end-to-end intervention — temporary shelter, school enrolment for every child, monthly ration support for the older sister who had been keeping the family together, and a network of donors who committed to the children's education for the next decade.",
-      "Today, three of those children are in college on Aaghaz scholarships, and one has cleared her Class XII board exams with a first division.",
+      "A journalist told us about a group of children living in a graveyard near Lucknow. Our volunteers reached them in 48 hours.",
+      "We helped them find a safe home, got all of them into a school, and gave monthly food rations to their older sister who looked after them. Our donors promised to support their studies for ten years.",
+      "Today, three of these children are studying in college with Aaghaz scholarships, and one passed her Class 12 exams with very good marks.",
     ],
     galleryImages: [
       "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=900&q=80",
@@ -38,21 +38,21 @@ export const portfolioData: PortfolioItem[] = [
     ],
     testimonial: {
       quote:
-        "We did not know what tomorrow looked like. Aaghaz did not lecture us — they simply showed up and stayed.",
-      author: "The eldest sister, now in college",
+        "We did not know what we would do tomorrow. Aaghaz volunteers simply came and stayed with us to help.",
+      author: "The eldest sister, now studying in college",
     },
   },
   {
     id: "pune-techie-scholarship",
-    title: "A Memorial Scholarship in Pune",
-    services: "Memorial Scholarship, Annual Reporting",
+    title: "Memorial Scholarship in Pune",
+    services: "Memorial Scholarship, Progress Reports",
     date: "2019",
     location: "Pune, Maharashtra",
     heroImage: portfolioImages.puneScholarship,
     description: [
-      "After losing their son — a young software engineer in Pune — to a sudden illness, his family decided his name would not fade. They reached out to Aaghaz Foundation to launch a Rs 2 lakh annual scholarship in his memory.",
-      "Together we designed the criteria: three students, every year, from low-income families in Maharashtra and UP, with a special preference for first-generation engineering aspirants.",
-      "Three years on, nine students have completed cycles of education on this scholarship — and the family has met five of them in person.",
+      "A family in Pune lost their young son, a software developer, to a sudden illness. They wanted to keep his memory alive, so they started a Rs 2 lakh yearly scholarship with Aaghaz.",
+      "We decided to help three poor students every year in Maharashtra and UP, giving preference to students who want to become engineers.",
+      "In three years, nine students have completed their studies using this scholarship, and the family has met five of them in person.",
     ],
     galleryImages: [
       "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=900&q=80",
@@ -62,21 +62,21 @@ export const portfolioData: PortfolioItem[] = [
     ],
     testimonial: {
       quote:
-        "Knowing that nine students have continued their education in our son's name — that has helped us heal in a way we did not expect.",
+        "Knowing that nine students can study because of our son has helped us heal in a way we did not expect.",
       author: "A donor family",
     },
   },
   {
     id: "school-for-poor",
-    title: "A School For The Poor In Lucknow",
-    services: "LCGC Operations, After-school Tuition, Library",
+    title: "Free Study Center in Lucknow",
+    services: "After-school classes, Library, Computers",
     date: "2018 — Present",
     location: "Lucknow, Uttar Pradesh",
     heroImage: portfolioImages.schoolForPoor,
     description: [
-      "What began in 2011 as a small after-school tuition room above a tailoring shop in Ganesh Gunj has grown into a full-fledged learning centre — the Lucknow Coaching & Guidance Centre (LCGC) — that now serves 200+ children a week.",
-      "Children come for tuition, but they stay for the library, the computer lab and the quiet table to do their homework. Many of our most senior volunteers today are former LCGC students who came back to teach.",
-      "This story is, in many ways, the heart of Aaghaz Foundation: not big buildings or noisy campaigns, but a steady, lit-up room that says \"come in, sit down, and study.\"",
+      "We started a small tuition room in Lucknow in 2011. Today, it is a big study center called the Lucknow Guidance Centre (LCGC). We help over 200 children every week.",
+      "Children come for free classes, but they stay to read in our library, use the computers, and do their homework. Many of our senior volunteers today were once LCGC students.",
+      "This is the real heart of Aaghaz: not big banners, but a quiet room that says 'come in and study'.",
     ],
     galleryImages: [
       "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=80",
@@ -87,15 +87,15 @@ export const portfolioData: PortfolioItem[] = [
   },
   {
     id: "rahmani-30-cohort",
-    title: "First Rahmani 30 UP Cohort",
-    services: "Rahmani 30 Initiative, IIT-JEE / NEET Coaching, Boarding",
+    title: "Free Exam Coaching (Rahmani 30)",
+    services: "Free Boarding, IIT-JEE and NEET Coaching",
     date: "2020 — 2022",
     location: "Uttar Pradesh",
     heroImage: portfolioImages.rahmaniCohort,
     description: [
-      "Aaghaz partnered with Rahmani 30 to identify and support a cohort of 30 students from underserved districts of UP for two years of intensive residential coaching.",
-      "From the first written test to final boarding allocation, our volunteers handled the entire on-the-ground operation — verifying family backgrounds, conducting interviews, and helping families understand the residential model.",
-      "By the end of the two years, the cohort produced multiple IIT, NEET and CA qualifiers — many of them the first in their family to ever sit a national-level competitive exam.",
+      "Aaghaz partnered with Rahmani 30 to give two years of free coaching and stay to 30 bright students from poor districts of UP.",
+      "Our volunteers handled the entire setup. They checked family backgrounds, conducted interviews, and helped parents understand the program.",
+      "By the end of two years, many students cleared IIT, NEET, and CA exams. Many were the first in their families to sit for these national exams.",
     ],
     galleryImages: [
       "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=900&q=80",
@@ -105,21 +105,21 @@ export const portfolioData: PortfolioItem[] = [
     ],
     testimonial: {
       quote:
-        "I had never even heard the word IIT before the Rahmani test. Two years later, I was inside one.",
-      author: "An Aaghaz × Rahmani 30 alumnus",
+        "I had never heard of IIT before. Two years later, I got admission into one.",
+      author: "An Aaghaz student",
     },
   },
   {
     id: "girl-students-hardoi",
-    title: "Keeping Hardoi's Girls In School",
-    services: "Student Aid, Uniforms, Bicycles, Mentorship",
+    title: "Helping Girls in Hardoi Stay in School",
+    services: "Fees, Uniforms, Bicycles, Guiding",
     date: "2021 — Present",
     location: "Hardoi, Uttar Pradesh",
     heroImage: portfolioImages.hardoiGirls,
     description: [
-      "After a local teacher reached out to us about a cluster of girls who were being pulled out of school to help at home, our team began a year-long programme: school fees, uniforms, sanitary supplies, and a bicycle each so distance was no longer an excuse.",
-      "Just as importantly, our volunteers spent time with the parents — slowly, respectfully — until they began to see schooling as an investment, not an indulgence.",
-      "Three years on, every single girl from that first batch is still in school. Two have completed Class XII and have applied to nursing colleges with Aaghaz support.",
+      "A teacher told us that many girls in a village in Hardoi were leaving school to work at home. We started a program to give them fees, uniforms, hygiene supplies, and bicycles so they could travel easily.",
+      "Our volunteers also talked to their parents patiently to show them why sending girls to school is important.",
+      "Three years later, all the girls from that batch are still in school. Two have completed school and are studying nursing with our help.",
     ],
     galleryImages: [
       "https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=900&q=80",
@@ -129,21 +129,21 @@ export const portfolioData: PortfolioItem[] = [
     ],
     testimonial: {
       quote:
-        "Now my daughter cycles to school every morning. The neighbours used to talk. Now they ask me how to apply.",
-      author: "Mother of an Aaghaz beneficiary, Hardoi",
+        "Now my daughter cycles to school every morning. The neighbors who used to talk now ask me how to apply.",
+      author: "Mother of a student, Hardoi",
     },
   },
   {
     id: "csr-employee-giving",
-    title: "Corporate Employee Giving Programme",
-    services: "CSR Partnership, Payroll Giving, Employee Volunteering",
+    title: "Corporate Partnerships",
+    services: "CSR Partnership, Employee Volunteering",
     date: "2022 — Present",
-    location: "Bengaluru &amp; Hyderabad",
+    location: "Bengaluru & Hyderabad",
     heroImage: portfolioImages.csrPartnership,
     description: [
-      "When a Bengaluru-based technology company approached us about a meaningful CSR partnership, we co-designed a programme combining payroll-deduction giving, an annual employee volunteering trip to LCGC, and a sponsored cohort of 25 students every year.",
-      "Two years in, the programme has supported 50+ students through full school years and brought 80+ employees out of cubicles and into classrooms.",
-      "We design every corporate partnership the same way: full reporting, audit-ready paperwork, and real students at the other end of every rupee.",
+      "A company in Bengaluru wanted to partner with us. We set up a program where employees donate monthly, visit our study center in Lucknow to teach, and sponsor 25 students every year.",
+      "So far, the program has supported over 50 students and brought 80 employees to help in our classrooms.",
+      "We write clean reports and paperwork for all our company partners.",
     ],
     galleryImages: [
       "https://images.unsplash.com/photo-1488998427799-e3362cec87c3?auto=format&fit=crop&w=900&q=80",

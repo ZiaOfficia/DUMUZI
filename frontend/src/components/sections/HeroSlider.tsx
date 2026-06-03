@@ -152,9 +152,7 @@ export const HeroSlider = () => {
 
             {/* Static descriptive text */}
             <p className="text-sm sm:text-base md:text-xl text-gray-100 max-w-2xl mb-6 sm:mb-10 leading-relaxed drop-shadow-lg">
-              Aaghaz Foundation has been opening classroom doors for India&apos;s
-              most overlooked children since 2004 — verified scholarships,
-              volunteer-led surveys, real reporting back to every donor.
+              Since 2004, Aaghaz Foundation has helped poor children go to school. We check every student's need through our volunteer surveys and send regular updates to our donors.
             </p>
 
             {/* ─── FIXED BUTTONS — only two, never change ─── */}

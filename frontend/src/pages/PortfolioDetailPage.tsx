@@ -79,10 +79,10 @@ export const PortfolioDetailPage = () => {
       <section className="py-24 px-6 bg-white">
         <div className="max-w-4xl mx-auto text-center">
           <span className="text-primary text-xs font-bold uppercase tracking-widest mb-4 inline-block">
-            The Concept
+            Our Story
           </span>
           <h2 className="text-3xl md:text-4xl font-display text-gray-900 mb-8">
-            A Love Story in Design
+            How We Helped
           </h2>
           <div className="space-y-6 text-gray-600 text-lg leading-relaxed font-light">
             {portfolio.description.map((para, i) => (
@@ -103,7 +103,7 @@ export const PortfolioDetailPage = () => {
                   width="100%"
                   height="100%"
                   src={`https://www.youtube.com/embed/${portfolio.videoUrl}`}
-                  title="Wedding Video"
+                  title="Aaghaz Video"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -161,7 +161,7 @@ export const PortfolioDetailPage = () => {
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-between mb-12">
             <h3 className="text-2xl font-display text-gray-900">
-              More Real Weddings
+              Other Impact Stories
             </h3>
             <Link
               to="/gallery"

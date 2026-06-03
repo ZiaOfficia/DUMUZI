@@ -105,7 +105,7 @@ export const GalleryPage = () => {
             Photo Gallery
           </h2>
           <p className="mt-4 text-xl font-light text-stone-200 max-w-2xl mx-auto px-6">
-            Quiet, honest moments from twenty years of work across India.
+            Photos from our work across India over the last 20 years.
           </p>
         </motion.div>
       </section>
@@ -176,8 +176,7 @@ export const GalleryPage = () => {
             Films &amp; Stories
           </h2>
           <p className="mt-4 text-xl font-light text-stone-200 max-w-2xl mx-auto px-6">
-            Short films from the field — students, volunteers, donors, and the
-            quiet engine that keeps Aaghaz running.
+            Short videos about our students, volunteers, donors, and how Aaghaz works.
           </p>
         </motion.div>
       </section>
@@ -236,8 +235,7 @@ export const GalleryPage = () => {
                     {item.title || `Aaghaz Story ${index + 1}`}
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed max-w-2xl">
-                    A short look at the people, the process and the difference
-                    your support makes.
+                    A short video showing the difference your support makes.
                   </p>
                 </div>
               </motion.div>

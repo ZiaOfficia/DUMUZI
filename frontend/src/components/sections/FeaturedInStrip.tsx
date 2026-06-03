@@ -27,7 +27,7 @@ export const FeaturedInStrip = () => {
       <div className="flex justify-center w-full mb-10">
         <p className="inline-flex items-center gap-3 text-sm font-bold uppercase tracking-[0.4em] text-secondary text-center">
           <span className="block w-8 h-px bg-secondary" />
-          As Covered In
+          Aaghaz in the News
           <span className="block w-8 h-px bg-secondary" />
         </p>
       </div>

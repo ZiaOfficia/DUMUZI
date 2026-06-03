@@ -42,29 +42,29 @@ export const AboutPage = () => {
 
   const faqs = [
     {
-      question: "When was Aaghaz Foundation founded?",
+      question: "When was Aaghaz Foundation started?",
       answer:
-        "Aaghaz Foundation was founded in 2004 by journalist Mazhar Farooqui and a small group of friends in Lucknow, with just Rs 2,000 and one needy student. We have been working continuously since.",
+        "Aaghaz Foundation was started in 2004 by journalist Mazhar Farooqui and his friends in Lucknow. They started with just Rs 2,000 to help one poor student. We have been helping kids study ever since.",
     },
     {
-      question: "Where are you based and where do you operate?",
+      question: "Where is Aaghaz based and where do you work?",
       answer:
-        "Our registered office is at 57 Ganesh Gunj, Lucknow, Uttar Pradesh. We run on-the-ground programmes primarily in Uttar Pradesh, with active student aid cases across India and a growing network of volunteers in Maharashtra, Bihar, Delhi NCR and the southern metros.",
+        "Our main office is in Lucknow, Uttar Pradesh. We work mostly in Uttar Pradesh, but we help poor students all over India. We also have volunteers in Delhi NCR, Mumbai, Pune, Bihar, and other big cities.",
     },
     {
-      question: "How does Aaghaz verify a student before approving aid?",
+      question: "How do you check if a student really needs help?",
       answer:
-        "Every applicant goes through a pre-scholarship survey conducted in person by at least two volunteers. They visit the student's home and school to confirm financial need, academic record and the genuine willingness to study. Only verified cases are approved.",
+        "At least two volunteers visit the student's home and school in person. They check the family's income and the child's school marks to make sure they really need help. We only support verified students.",
     },
     {
-      question: "Are donations to Aaghaz Foundation tax-exempt?",
+      question: "Do I get a tax benefit if I donate to Aaghaz?",
       answer:
-        "Yes. Aaghaz Foundation is a registered non-profit and donations made by Indian residents are eligible for tax exemption under Section 80G of the Income Tax Act. Receipts are issued within seven working days of every donation.",
+        "Yes. Aaghaz Foundation is a registered charity. Donors in India get tax deduction benefits under Section 80G of the Income Tax Act. We send donation receipts within 7 days.",
     },
     {
-      question: "How can I get involved beyond donating?",
+      question: "How can I help Aaghaz other than donating money?",
       answer:
-        "We are always looking for volunteers — both for in-person field surveys and for online roles like mentoring, content, communications and fundraising. If you have two hours a week and a willingness to listen, you can help change a life. Use the Become a Volunteer page to register your interest.",
+        "You can join us as a volunteer. You can help by visiting student homes for checking details, or help online with computer work, writing stories, or teaching students. If you have two hours a week, visit our Become a Volunteer page.",
     },
   ];
 
@@ -145,7 +145,7 @@ export const AboutPage = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl md:text-2xl font-light tracking-wide max-w-3xl mx-auto opacity-95"
           >
-            Empowerment through education. Creating a resilient society.
+            Helping children study to build a better future.
           </motion.p>
         </div>
       </section>
@@ -261,12 +261,11 @@ export const AboutPage = () => {
               How we work — and why it works
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed mb-8 font-light">
-              We do not run a generic application form. As soon as someone
-              recommends a student who needs financial support, Aaghaz asks its
-              members to volunteer for a pre-scholarship survey. A minimum of
-              two volunteers visit the family and the school in person. Only
-              after both reports agree do we onboard the student. That is the
-              quiet engine behind every rupee we move.
+              We do not give help just by looking at forms. When someone recommends
+              a student who needs help with fees, at least two volunteers visit
+              their home and school in person. We only help the student when both
+              volunteers confirm they really need it. This personal check is the key
+              to our work.
             </p>
             <a
               href="/contact"
@@ -315,12 +314,10 @@ export const AboutPage = () => {
                 Founder &amp; Trustee
               </p>
               <p className="text-gray-600 font-light leading-relaxed">
-                A senior journalist by profession, Mazhar started Aaghaz in
-                2004 with Rs 2,000 and a single needy student. Two decades
-                later, he still personally reads volunteer survey reports and
-                approves cases — and credits the foundation's longevity to the
-                community of teachers, donors and volunteers who refused to
-                walk away from the work.
+                Mazhar is a senior journalist who started Aaghaz in 2004 with just
+                Rs 2,000 to help one poor student. Even today, he personally reads
+                the home visit reports and approves the help. He believes Aaghaz
+                has run for 20 years because of our kind donors, teachers, and volunteers.
               </p>
             </div>
           </div>
@@ -348,12 +345,10 @@ export const AboutPage = () => {
                 300+ Volunteers across India
               </p>
               <p className="text-gray-600 font-light leading-relaxed">
-                Aaghaz is a volunteer-driven organisation. Field volunteers
-                conduct pre-scholarship surveys, mentor beneficiaries through
-                the academic year, and run the LCGC daily. Many of our most
-                senior volunteers today are former students who came back to
-                teach. If you'd like to join them, our Become a Volunteer page
-                is the doorway in.
+                Aaghaz runs entirely because of volunteers. Our volunteers visit homes,
+                teach students, and manage our study center daily. Many of our old students
+                now work as volunteers to teach others. If you want to help, fill the form
+                on our Become a Volunteer page.
               </p>
             </div>
           </div>
@@ -371,8 +366,7 @@ export const AboutPage = () => {
               Questions?
             </h2>
             <p className="text-gray-600 font-light text-lg">
-              Everything you need to know about Aaghaz Foundation, in plain
-              English.
+              Find answers to common questions about Aaghaz Foundation.
             </p>
           </div>
 

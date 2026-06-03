@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { Button } from "../components/common/Button";
-
 import { SEO } from "../components/common/SEO";
 
 export const PrivacyPolicyPage = () => {
@@ -8,7 +7,7 @@ export const PrivacyPolicyPage = () => {
     <div className="bg-white min-h-screen pt-[60px] md:pt-[50px]">
       <SEO
         title="Privacy Policy — Aaghaz Foundation"
-        description="Privacy Policy for Aaghaz Foundation. How we collect, use and protect donor and applicant information."
+        description="Privacy Policy for Aaghaz Foundation. How we collect, use, and protect donor and applicant information."
       />
       <div className="max-w-4xl mx-auto px-6 py-12 md:py-20 shadow-sm border border-stone-100">
         <h1 className="text-4xl font-serif text-stone-900 mb-8">
@@ -23,17 +22,17 @@ export const PrivacyPolicyPage = () => {
             At Aaghaz Foundation, we value your privacy and are committed to protecting
             your personal information. This Privacy Policy outlines how we
             collect, use, and safeguard your data when you visit our website or
-            use our wedding decoration services. By using our website, you agree
-            to the terms outlined below.
+            apply for our scholarship and student aid programs. By using our website,
+            you agree to these terms.
           </p>
 
           <h2 className="text-2xl font-serif text-stone-900 mt-8 mb-4">
             Who We Are
           </h2>
           <p className="mb-6">
-            Aaghaz Foundation provides wedding decoration services across New York and
-            New Jersey. Our goal is to create a personalized, memorable event
-            experience for your special day. Our website address is:
+            Aaghaz Foundation is a registered education trust based in Lucknow, India.
+            We help clever students from poor families finish their education through
+            scholarships and financial aid. Our website address is:
             [https://aaghazfoundation.com].
           </p>
 
@@ -41,139 +40,101 @@ export const PrivacyPolicyPage = () => {
             How We Collect and Use Your Personal Information
           </h2>
           <p className="mb-4">
-            We collect only the necessary personal information to provide our
-            services. This includes:
+            We collect only the personal information needed to run our programs and
+            verify applicants. This includes:
           </p>
           <ul className="list-disc pl-5 mb-6 space-y-2">
-            <li>Name</li>
-            <li>Phone Number</li>
-            <li>Email Address</li>
+            <li>Student's name, age, gender, and school/college details.</li>
+            <li>Academic marksheets and study reports.</li>
+            <li>Parents' names, occupations, and family income details.</li>
+            <li>Phone number, email address, and home address.</li>
+            <li>Bank account details (only for paying school fees directly).</li>
           </ul>
           <p className="mb-4">
-            You provide this information when you fill out forms on our website,
-            request a consultation, or subscribe to our newsletter. We use your
-            data to:
+            You provide this information when you apply for student aid, register as
+            a volunteer, fill out donor forms, or subscribe to our newsletter. We use
+            your data to:
           </p>
           <ul className="list-disc pl-5 mb-6 space-y-2">
-            <li>Respond to inquiries</li>
-            <li>Communicate regarding our services</li>
-            <li>Personalize your experience with Aaghaz Foundation</li>
+            <li>Verify the financial and academic details of applicants.</li>
+            <li>Contact families for in-person home visits.</li>
+            <li>Process and pay school or college fees.</li>
+            <li>Send updates to donors about the students they support.</li>
+            <li>Share newsletter and program updates.</li>
           </ul>
-          <p className="mb-6">
-            We do not collect payment or sensitive personal data through our
-            website.
-          </p>
 
           <h2 className="text-2xl font-serif text-stone-900 mt-8 mb-4">
             How We Protect Your Personal Data
           </h2>
           <p className="mb-6">
-            The security of your personal information is a top priority. We take
-            appropriate security measures to protect your name, phone number,
-            and email address from unauthorized access or disclosure. However,
-            no method of transmission over the internet is 100% secure, so we
-            cannot guarantee absolute security.
+            We take safety measures to protect your personal details from unauthorized
+            access or disclosure. Your data is kept secure. However, no internet
+            transmission is 100% safe, so we cannot guarantee absolute safety.
           </p>
 
           <h2 className="text-2xl font-serif text-stone-900 mt-8 mb-4">
             Who We Share Your Data With
           </h2>
           <p className="mb-6">
-            We do not sell or rent your personal information. Your data may be
-            shared only in the following situations:
+            We never sell or rent your personal information. We only share details in
+            the following situations:
           </p>
           <ul className="list-disc pl-5 mb-6 space-y-2">
             <li>
-              <strong>Service Providers:</strong> We may share your information
-              with trusted third-party vendors who assist in our service
-              delivery, such as communication platforms.
+              <strong>Donors:</strong> We share student names, stories, and academic
+              progress reports with the donors who fund their education.
             </li>
             <li>
-              <strong>Legal Compliance:</strong> If required by law, we may
-              disclose your information to comply with legal obligations.
+              <strong>Volunteers:</strong> We share contact and address details with
+              our volunteers so they can visit your home for checking details.
+            </li>
+            <li>
+              <strong>Legal Compliance:</strong> If required by law, we may share
+              information with government authorities to comply with legal rules.
             </li>
           </ul>
 
           <h2 className="text-2xl font-serif text-stone-900 mt-8 mb-4">
-            Cookies and Tracking Technologies
+            Cookies and Tracking
           </h2>
           <p className="mb-6">
-            Our website uses cookies to enhance your browsing experience.
-            Cookies help us remember your preferences and optimize our website’s
-            functionality. They assist with:
-          </p>
-          <ul className="list-disc pl-5 mb-6 space-y-2">
-            <li>
-              <strong>Personalization:</strong> Tailoring the website to your
-              preferences.
-            </li>
-            <li>
-              <strong>Analytics:</strong> Understanding how visitors use the
-              website to improve features.
-            </li>
-          </ul>
-          <p className="mb-6">
-            You can manage or disable cookies through your browser settings, but
-            please note this may affect some website functions.
+            Our website uses cookies to improve your browsing experience. Cookies help
+            us see how visitors use our site so we can make it better. You can turn
+            off cookies in your browser settings, but some website features might
+            not work.
           </p>
 
           <h2 className="text-2xl font-serif text-stone-900 mt-8 mb-4">
             How Long We Retain Your Data
           </h2>
           <p className="mb-6">
-            We retain personal information for as long as necessary to provide
-            our services or until you request deletion. If you contact us for
-            inquiries, we will keep your contact details until your request has
-            been fulfilled.
+            We keep your personal information only as long as needed to help you with
+            your studies or as required by law. If you ask us to delete your details,
+            we will do so unless we need to keep them for legal reasons.
           </p>
 
           <h2 className="text-2xl font-serif text-stone-900 mt-8 mb-4">
             What Rights You Have Over Your Data
           </h2>
           <p className="mb-6">
-            You have the following rights regarding your personal data:
+            You have the right to:
           </p>
           <ul className="list-disc pl-5 mb-6 space-y-2">
-            <li>
-              <strong>Access:</strong> Request a copy of the information we
-              hold.
-            </li>
-            <li>
-              <strong>Correction:</strong> Ask us to correct inaccurate
-              information.
-            </li>
-            <li>
-              <strong>Deletion:</strong> Request the deletion of your data
-              (subject to any legal obligations).
-            </li>
-            <li>
-              <strong>Objection:</strong> Opt-out of certain communications,
-              such as marketing.
-            </li>
+            <li>Ask for a copy of the information we have about you.</li>
+            <li>Ask us to correct any wrong details.</li>
+            <li>Ask us to delete your personal data.</li>
           </ul>
           <p className="mb-6">
-            To exercise these rights, please contact us at the email or phone
-            number below.
-          </p>
-
-          <h2 className="text-2xl font-serif text-stone-900 mt-8 mb-4">
-            Where Your Data Is Sent
-          </h2>
-          <p className="mb-6">
-            Your data may be processed by third-party service providers outside
-            of your home country, but we take steps to ensure your privacy is
-            protected in accordance with this Privacy Policy.
+            To do this, contact us using the email or phone number below.
           </p>
 
           <h2 className="text-2xl font-serif text-stone-900 mt-8 mb-4">
             Changes to This Privacy Policy
           </h2>
           <p className="mb-6">
-            We may update this policy from time to time to reflect changes in
-            our practices or legal obligations. Any significant updates will be
-            communicated through a notice on our website, and we will update the
-            effective date at the top. Continued use of our site signifies your
-            acceptance of any changes.
+            We may update this policy from time to time. Any updates will be posted
+            on this page, and the date at the top will be updated. Continuing to use
+            our site means you agree to the updated terms.
           </p>
 
           <h2 className="text-2xl font-serif text-stone-900 mt-8 mb-4">
@@ -188,13 +149,13 @@ export const PrivacyPolicyPage = () => {
               Aaghaz Foundation Support Team
             </h3>
             <p className="mb-1">
-              <strong>Email:</strong> info@aaghazfoundation.com
+              <strong>Email:</strong> aaghaz.foundation@gmail.com
             </p>
             <p className="mb-1">
-              <strong>Phone:</strong> +1 (347) 686-4562
+              <strong>Phone:</strong> +91 99716 48900
             </p>
             <p>
-              <strong>Address:</strong> 8 Di Tomas Ct, Copiague, NY, 11726
+              <strong>Address:</strong> 57 Ganesh Gunj, Lucknow, UP — 226018
             </p>
           </div>
           <p className="mt-6 italic">

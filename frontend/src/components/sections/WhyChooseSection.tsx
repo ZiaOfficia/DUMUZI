@@ -39,7 +39,7 @@ export const WhyChooseSection = () => {
         >
           <p className="inline-flex items-center gap-3 text-secondary text-xs font-bold uppercase tracking-[0.4em] mb-4">
             <span className="block w-8 h-px bg-secondary" />
-            What People Say
+            Why Trust Us?
             <span className="block w-8 h-px bg-secondary" />
           </p>
           <h2 className="text-4xl md:text-6xl font-display leading-tight">
@@ -76,7 +76,7 @@ export const WhyChooseSection = () => {
             className="lg:col-span-7"
           >
             <h3 className="text-xl font-display tracking-wide pb-5 mb-6 text-secondary uppercase border-b border-white/15">
-              Five things that don&apos;t change
+              Our five rules
             </h3>
             <ul className="space-y-5">
               {whyChooseContent.points.map((item, index) => (
@@ -93,7 +93,7 @@ export const WhyChooseSection = () => {
 
             <div className="mt-10 flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-secondary">
               <CheckCircle2 size={16} />
-              Verified · Volunteer-led · Twenty years strong
+              Verified · Run by volunteers · Helping since 2004
             </div>
           </motion.div>
         </div>

@@ -90,7 +90,7 @@ export const BlogPostPage = () => {
     return (
       <div className="min-h-screen pt-40 flex flex-col items-center justify-center bg-gradient-soft">
         <h2 className="text-xl font-display text-gray-500 animate-pulse">
-          Loading Article...
+          Loading...
         </h2>
       </div>
     );
@@ -100,9 +100,9 @@ export const BlogPostPage = () => {
     return (
       <div className="min-h-screen pt-40 flex flex-col items-center justify-center bg-gradient-soft">
         <SEO title="Article Not Found" />
-        <h2 className="text-3xl font-display mb-4 text-stone-850">Article Not Found</h2>
+        <h2 className="text-3xl font-display mb-4 text-stone-850">Story Not Found</h2>
         <Link to="/blog" className="text-primary hover:underline font-bold uppercase tracking-wider text-xs">
-          Return to Journal
+          Back to Blog
         </Link>
       </div>
     );
@@ -135,7 +135,7 @@ export const BlogPostPage = () => {
           </Link>
           <span className="text-stone-300">/</span>
           <Link to="/blog" className="hover:text-primary transition-colors">
-            Journal
+            Blog
           </Link>
           <span className="text-stone-300">/</span>
           <span className="text-stone-900 truncate max-w-[200px]">
@@ -242,7 +242,7 @@ export const BlogPostPage = () => {
 
                 {/* Social Share buttons */}
                 <div className="flex items-center gap-4">
-                  <span className="text-xs font-bold text-stone-900 uppercase tracking-wider">Share Story:</span>
+                  <span className="text-xs font-bold text-stone-900 uppercase tracking-wider">Share this story:</span>
                   <div className="flex gap-2">
                     <button
                       onClick={() =>
@@ -296,7 +296,7 @@ export const BlogPostPage = () => {
                 to="/blog"
                 className="inline-flex items-center text-primary text-xs font-bold uppercase tracking-widest hover:text-stone-900 transition-colors gap-1.5 group"
               >
-                <ArrowLeft size={16} className="group-hover:-translate-x-1.5 transition-transform" /> Back to Journal
+                <ArrowLeft size={16} className="group-hover:-translate-x-1.5 transition-transform" /> Back to Blog
               </Link>
             </div>
           </article>

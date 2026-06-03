@@ -38,7 +38,7 @@ const SECTIONS = [
   { id: "why-us", label: "Why Choose Us" },
   { id: "testimonials", label: "Testimonials" },
   { id: "faq", label: "FAQs" },
-  { id: "enquiry", label: "Inquiry" },
+  { id: "enquiry", label: "Contact Form" },
 ];
 
 // Process step icons
@@ -133,14 +133,14 @@ export const ServiceDetailPage = () => {
                 size="lg"
                 onClick={() => scrollToSection("overview")}
               >
-                Explore Service
+                Find Out More
               </Button>
               <Button
                 variant="outline"
                 size="lg"
                 onClick={() => scrollToSection("enquiry")}
               >
-                Get Quote
+                Send Message
               </Button>
             </div>
           </motion.div>
@@ -438,16 +438,14 @@ export const ServiceDetailPage = () => {
             <div className="text-center mb-10">
               <p className="inline-flex items-center gap-3 text-primary text-xs font-bold uppercase tracking-[0.4em] mb-3">
                 <span className="block w-8 h-px bg-primary" />
-                Already Running
+                Active Scholarships
                 <span className="block w-8 h-px bg-primary" />
               </p>
               <h2 className="text-3xl md:text-5xl font-display font-bold text-accent mb-3">
-                Some memorial scholarships we run
+                Active Scholarships in memory of loved ones
               </h2>
               <p className="text-text-muted max-w-xl mx-auto">
-                These are just a few of the named scholarships currently active.
-                Each one is a tribute that quietly funds a child&apos;s academic
-                year.
+                Here are some of our active scholarships. Each one is a special tribute that pays a child's school fees.
               </p>
             </div>
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -528,11 +526,11 @@ export const ServiceDetailPage = () => {
                 <div className="text-center mb-8">
                   <p className="inline-flex items-center gap-3 text-primary text-xs font-bold uppercase tracking-[0.4em] mb-3">
                     <span className="block w-8 h-px bg-primary" />
-                    Start a Memorial Scholarship
+                    Start a Scholarship
                     <span className="block w-8 h-px bg-primary" />
                   </p>
                   <h2 className="text-3xl md:text-5xl font-display font-bold text-accent mb-3">
-                    Honour a loved one today
+                    Help a child in memory of a loved one
                   </h2>
                   {service.contact.note && (
                     <p className="text-text-muted max-w-2xl mx-auto">
@@ -552,7 +550,7 @@ export const ServiceDetailPage = () => {
                       </span>
                       <div className="min-w-0">
                         <p className="text-[10px] uppercase tracking-[0.3em] text-text-muted font-bold mb-0.5">
-                          Email Us
+                          Send an Email
                         </p>
                         <p className="font-display text-accent text-base md:text-lg break-all">
                           {service.contact.email}
@@ -570,7 +568,7 @@ export const ServiceDetailPage = () => {
                       </span>
                       <div className="min-w-0">
                         <p className="text-[10px] uppercase tracking-[0.3em] text-text-muted font-bold mb-0.5">
-                          Phone / WhatsApp
+                          Call / WhatsApp
                         </p>
                         <p className="font-display text-accent text-base md:text-lg">
                           {service.contact.phone}
@@ -655,10 +653,10 @@ export const ServiceDetailPage = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-5xl font-display mb-4">
-              Your contribution deserves more than gratitude.
+              Your donation can help a child study.
             </h2>
             <p className="text-xl text-primary font-display italic">
-              It deserves impact.
+              Let us make a change.
             </p>
           </motion.div>
         </div>

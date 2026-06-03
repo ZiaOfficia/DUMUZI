@@ -114,9 +114,7 @@ export const SuccessStoriesPage = () => {
             transition={{ delay: 0.2 }}
             className="text-lg font-light text-stone-300 max-w-2xl mx-auto leading-relaxed"
           >
-            These are just a few of the many students supported by Aaghaz. Many are already
-            making a difference in their fields, while others are on their way to becoming
-            future professionals.
+            Here are stories of some of the students Aaghaz has helped. Many have finished their studies and got good jobs, and others are still studying to achieve their dreams.
           </motion.p>
         </div>
       </section>
@@ -134,9 +132,7 @@ export const SuccessStoriesPage = () => {
               <StoryImage name="Dr. Mominul Islam today" ratio="4/3" />
             </div>
             <p className="text-stone-600 text-base leading-loose">
-              This is the house where Dr. Mominul Islam grew up, living with his physically challenged
-              father and nine family members. Today, he serves as a paediatric surgeon at Medical
-              College, Bengal.
+              This is the mud house where Dr. Mominul Islam grew up with his family. Today, he works as a child surgeon at Bengal Medical College.
             </p>
           </motion.div>
 
@@ -145,8 +141,7 @@ export const SuccessStoriesPage = () => {
             <motion.div variants={fadeUp} className="flex flex-col gap-4">
               <StoryImage name="Dr. Arbaaz" ratio="4/3" />
               <p className="text-stone-600 text-base leading-loose">
-                Dr. Arbaaz, from a small town in Karnataka, overcame his father's paralysis and secured
-                AIR 85 in NEET. Today, he proudly serves as a doctor at AIIMS, Delhi.
+                Dr. Arbaaz grew up in Karnataka. His father was paralyzed, but Arbaaz studied hard and got rank 85 in the NEET exam. Today, he works as a doctor at AIIMS, Delhi.
               </p>
             </motion.div>
             <motion.div variants={fadeUp} className="flex flex-col gap-4">
@@ -176,8 +171,7 @@ export const SuccessStoriesPage = () => {
           <motion.div variants={fadeUp} className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-10">
             <StoryImage name="Yasmeen Zahra" ratio="4/3" />
             <p className="text-stone-600 text-base leading-loose">
-              <strong>Yasmeen Zahra</strong> — Nurse, Mayo Hospital, Lucknow. After her husband lost his job
-              in Saudi during COVID, Yasmeen pursued ANM Nursing to support her family.
+              <strong>Yasmeen Zahra</strong> works as a nurse at Mayo Hospital in Lucknow. After her husband lost his job during COVID-19, she studied nursing to support her family.
             </p>
           </motion.div>
 
@@ -201,9 +195,7 @@ export const SuccessStoriesPage = () => {
           <motion.div variants={fadeUp} className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-10">
             <StoryImage name="Anam Mehendi Abidi" ratio="4/3" />
             <p className="text-stone-600 text-base leading-loose">
-              <strong>Anam Mehendi Abidi</strong> — Assistant Professor at University of Calcutta. A local
-              Kolkata newspaper featured Anam's story when she received her master's degree. She also
-              thanked Aaghaz Foundation for their support.
+              <strong>Anam Mehendi Abidi</strong> is an Assistant Professor at Calcutta University. A local newspaper wrote about her when she finished her master's degree, where she thanked Aaghaz for paying her fees.
             </p>
           </motion.div>
 
@@ -234,11 +226,7 @@ export const SuccessStoriesPage = () => {
           </motion.div>
           <motion.div variants={fadeUp} className="mb-10">
             <p className="text-stone-600 text-base leading-loose">
-              <strong>Yasmeen Parveen</strong>, from a Noida slum, is the daughter of a domestic worker and
-              a severely ill father. She's now interning after studying law at Oriental College, Mumbai,
-              and is set to become a lawyer. The photo on the left was taken by our volunteer during a
-              visit to Yasmeen's home for case verification. The one on the right shows Advocate Yasmeen
-              Parveen today.
+              <strong>Yasmeen Parveen</strong> grew up in a slum in Noida. Her mother worked in houses and her father was very sick. She studied law in Mumbai with Aaghaz's help and is now training to become a lawyer. The left photo shows our volunteer visiting her Noida home to check details, and the right photo shows her today.
             </p>
           </motion.div>
 
@@ -246,18 +234,13 @@ export const SuccessStoriesPage = () => {
             <motion.div variants={fadeUp} className="flex flex-col gap-4">
               <StoryImage name="Jahan Ara Shaikh" ratio="4/3" />
               <p className="text-stone-600 text-base leading-loose">
-                <strong>Jahan Ara Shaikh</strong> — After losing her parents and living apart from her four
-                brothers, Jahanara worked as a compounder at a medical clinic. During COVID, she decided to
-                pursue law and turned to Aaghaz for help with college fees. Today, she is an advocate at
-                the Bombay High Court.
+                <strong>Jahan Ara Shaikh</strong> lost both her parents as a child. She worked in a doctor's clinic during the day to survive. During COVID-19, she decided to study law, and Aaghaz paid her college fees. Today, she is a practicing lawyer at the Bombay High Court.
               </p>
             </motion.div>
             <motion.div variants={fadeUp} className="flex flex-col gap-4">
               <StoryImage name="Shumaila" ratio="4/3" />
               <p className="text-stone-600 text-base leading-loose">
-                <strong>Shumaila</strong> — She lost her father as a child. Growing up in a lower-middle-class
-                family in Old Delhi, she did various odd jobs after graduation. She later pursued law and is
-                now practicing at the Delhi High Court.
+                <strong>Shumaila</strong> lost her father early. She grew up in Old Delhi and did small jobs to support her family. Later, she studied law with Aaghaz's support and is now a lawyer at the Delhi High Court.
               </p>
             </motion.div>
           </motion.div>
@@ -278,9 +261,7 @@ export const SuccessStoriesPage = () => {
           <motion.div variants={fadeUp} className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-10">
             <StoryImage name="Afree Javed" ratio="4/3" />
             <p className="text-stone-600 text-base leading-loose">
-              <strong>Afree Javed</strong> — ASE at Lowe's India, Java Developer. Aafree Javed topped all
-              her examinations and became the poster girl of her college. Aaghaz supported her throughout
-              her educational journey. Later, she secured a job package over ₹18 lakhs annually.
+              <strong>Afree Javed</strong> works as a Java Developer at Lowe's India. Aaghaz paid her fees, and she topped her college exams. Today, she earns over Rs 18 lakhs a year.
             </p>
           </motion.div>
 
@@ -343,7 +324,7 @@ export const SuccessStoriesPage = () => {
           />
         </motion.section>
 
-        {/* ── NOIDA CASE ── */}
+        {/* ── Noida Case ── */}
         <motion.section variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }}>
           <SectionHeading title="Noida Case" />
 
@@ -358,9 +339,7 @@ export const SuccessStoriesPage = () => {
 
           <motion.div variants={fadeUp}>
             <p className="text-stone-600 text-base leading-loose">
-              After cab driver Aftab Alam was tragically killed in 2020, Aaghaz Foundation stepped in to
-              support his sons' education — covering college fees, providing tablets, and offering a
-              monthly stipend.
+              After cab driver Aftab Alam passed away in 2020, Aaghaz paid the college fees for his sons, gave them tablets to study, and provided monthly help for home expenses.
             </p>
             <ul className="mt-4 space-y-2">
               <li className="flex items-start gap-2 text-stone-700 text-sm">
@@ -381,16 +360,10 @@ export const SuccessStoriesPage = () => {
 
           <motion.div variants={fadeUp} className="bg-primary/5 border-l-4 border-primary rounded-r-xl p-6 md:p-8">
             <p className="text-stone-600 text-base leading-loose">
-              Recently, Aaghaz launched a programme to offer coaching to 29 students preparing for
-              the Class XI entrance examinations at AMU. We are pleased to announce that{" "}
-              <strong>13 of these students have been selected</strong>, and some are on the waiting list
-              and may get a chance through the Self Finance Scheme.
+              Aaghaz paid for free coaching classes for 29 students preparing for the Class 11 admission exams at AMU. We are happy that <strong>13 of these students got selected</strong>.
             </p>
             <p className="text-stone-600 text-base leading-loose mt-4">
-              The total cost for coaching the 29 students was{" "}
-              <strong>Rs 2.95 lakhs</strong> — approximately <strong>Rs 10,000 per student</strong> for
-              the entire year. For a pilot project, this was a significant effort. The selected students
-              will now be considered for admission to professional courses as internal candidates.
+              The total cost was <strong>Rs 2.95 lakhs</strong>, which is about <strong>Rs 10,000 per student</strong> for the whole year. This was a great success, and these selected students can now apply for higher professional courses more easily.
             </p>
           </motion.div>
         </motion.section>
@@ -405,8 +378,7 @@ export const SuccessStoriesPage = () => {
         >
           <div className="mx-auto mb-5 w-10 h-px bg-primary/40" />
           <p className="text-stone-400 text-base max-w-2xl mx-auto italic leading-relaxed font-light">
-            "These are just a few of the many students supported by Aaghaz. Many are already making a
-            difference in their fields, while others are on their way to becoming future professionals."
+            "These are just a few of the many students Aaghaz has helped. Many have finished their studies and got good jobs, and others are still studying to achieve their dreams."
           </p>
           <p className="mt-4 text-[11px] uppercase tracking-[0.25em] text-stone-400 font-semibold">— Aaghaz Foundation</p>
         </motion.div>

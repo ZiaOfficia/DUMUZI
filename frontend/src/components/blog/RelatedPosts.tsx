@@ -43,7 +43,7 @@ export const RelatedPosts = ({
     <section className="py-16 bg-white border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-6">
         <h3 className="text-2xl font-display text-gray-900 mb-8 border-l-4 border-primary pl-4">
-          You Might Also Like
+          Related Stories
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {posts.map((post) => (

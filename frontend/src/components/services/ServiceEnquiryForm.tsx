@@ -68,10 +68,10 @@ export const ServiceEnquiryForm = ({
       <div className="bg-white shadow-xl p-6 md:p-8 border-t-4 border-primary flex flex-col gap-6">
         <div>
           <h3 className="font-display text-xl text-gray-900 mb-2">
-            Begin your inquiry
+            Get in touch
           </h3>
           <p className="text-sm text-gray-500">
-            Tell us about your event vision.
+            Let us know how you'd like to get involved.
           </p>
         </div>
 
@@ -126,7 +126,7 @@ export const ServiceEnquiryForm = ({
               <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400" />
               <input
                 type="text"
-                placeholder="Event Date *"
+                placeholder="Preferred Date *"
                 onFocus={(e) => (e.target.type = "date")}
                 onBlur={(e) => (e.target.type = "text")}
                 required
@@ -156,7 +156,7 @@ export const ServiceEnquiryForm = ({
               type="submit"
               className="bg-primary hover:bg-primary-dark text-white font-bold uppercase tracking-wider text-xs py-3 px-6 transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-2"
             >
-              <Send className="w-3 h-3" /> Submit Inquiry
+              <Send className="w-3 h-3" /> Send Message
             </button>
           </div>
         </motion.form>
@@ -216,7 +216,7 @@ export const ServiceEnquiryForm = ({
         </div>
         <div>
           <label className="block text-[10px] uppercase tracking-widest font-bold mb-2 text-gray-500">
-            Event Date
+            Preferred Date
           </label>
           <input
             type="date"
@@ -230,7 +230,7 @@ export const ServiceEnquiryForm = ({
 
         <div className="md:col-span-2">
           <label className="block text-[10px] uppercase tracking-widest font-bold mb-2 text-gray-500">
-            Tell us about your vision
+            Write your message
           </label>
           <textarea
             rows={4}
@@ -238,7 +238,7 @@ export const ServiceEnquiryForm = ({
             onChange={(e) =>
               setFormData({ ...formData, message: e.target.value })
             }
-            placeholder={`Share your ideas for ${serviceName}...`}
+            placeholder="Write your message here..."
             className="w-full bg-stone-50 border border-gray-200 focus:outline-none focus:border-primary p-3 text-sm text-gray-900 resize-none"
           />
         </div>
@@ -247,7 +247,7 @@ export const ServiceEnquiryForm = ({
         type="submit"
         className="w-full bg-primary hover:bg-primary-dark text-white font-bold uppercase tracking-[0.2em] text-xs py-4 transition-colors flex items-center justify-center gap-2"
       >
-        Request Consultation
+        Send Message
       </button>
     </motion.form>
   );

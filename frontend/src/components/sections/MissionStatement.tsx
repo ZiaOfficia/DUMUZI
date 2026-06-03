@@ -8,8 +8,8 @@ const pillars = [
   {
     icon: BookOpen,
     word: "Educate",
-    sub: "Open the door",
-    body: "We pay verified school and college fees, supply books, uniforms, and exam fees, and partner with Rahmani 30 for free intensive coaching. No child loses an academic year because their family ran out of money.",
+    sub: "Help them learn",
+    body: "We pay school and college fees, buy books, uniforms, and exam forms. We also partner with Rahmani 30 to offer free coaching. We make sure no child has to stop studying because their family cannot afford it.",
     accent: "from-primary/15 via-primary/5 to-transparent",
     iconBg: "bg-primary",
     image: missionImages.educate,
@@ -18,8 +18,8 @@ const pillars = [
   {
     icon: Sparkles,
     word: "Empower",
-    sub: "Stand beside them",
-    body: "Field volunteers visit every applicant in person. Mentors stay in touch through the academic year. The Lucknow Coaching &amp; Guidance Centre (LCGC) is the daily quiet room many of our students never had at home.",
+    sub: "Support them daily",
+    body: "Our volunteers visit every student at home to verify their need. We also connect students with mentors to help them all year, and run a quiet study center in Lucknow.",
     accent: "from-secondary/15 via-secondary/5 to-transparent",
     iconBg: "bg-secondary",
     image: missionImages.empower,
@@ -28,8 +28,8 @@ const pillars = [
   {
     icon: TrendingUp,
     word: "Elevate",
-    sub: "Watch them rise",
-    body: "First-generation college graduates. IIT and NEET qualifiers from villages. Daughters who stayed in school instead of being married off. The numbers we share aren&apos;t targets — they&apos;re the names we&apos;ve called this morning.",
+    sub: "See them succeed",
+    body: "Many of our students are the first in their families to graduate. They clear exams like IIT and NEET and build great careers. We see them not as numbers, but as real people with bright futures.",
     accent: "from-accent/15 via-accent/5 to-transparent",
     iconBg: "bg-accent",
     image: missionImages.elevate,
@@ -59,8 +59,7 @@ export const MissionStatement = () => {
             <span className="text-gradient-primary"> Elevate.</span>
           </h2>
           <p className="text-text-muted max-w-2xl mx-auto text-lg">
-            Three words on our logo. Three commitments we&apos;ve kept since
-            2004. Here&apos;s what each one really means in practice.
+            These are the three values we have followed since 2004. Here is how we put them into action every day.
           </p>
         </div>
 
@@ -148,7 +147,7 @@ export const MissionStatement = () => {
                     className="relative mt-6 pt-6 border-t border-primary/10 flex items-center gap-2 text-primary text-xs font-bold uppercase tracking-widest hover:text-primary-dark transition-colors"
                   >
                     <span className="block w-6 h-px bg-primary group-hover:w-12 transition-all duration-500" />
-                    What this looks like &rarr;
+                    See how we do this &rarr;
                   </Link>
                   </div>
                 </div>

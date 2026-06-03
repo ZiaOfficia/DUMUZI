@@ -81,7 +81,7 @@ export const MemorialScholarshipHighlight = () => {
                       Rs 1 Crore
                     </p>
                     <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-text-muted font-bold mt-1">
-                      Disbursed annually
+                      Given every year
                     </p>
                   </div>
                 </div>
@@ -106,37 +106,32 @@ export const MemorialScholarshipHighlight = () => {
                 <div className="lg:col-span-7">
                   <p className="inline-flex items-center gap-3 text-primary text-[10px] sm:text-xs font-bold uppercase tracking-[0.4em] mb-4">
                     <span className="block w-8 h-px bg-primary" />
-                    A Lasting Tribute
+                    A Way to Remember
                   </p>
                   <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-accent leading-tight mb-5">
-                    Honour their name.{" "}
+                    Remember a loved one.{" "}
                     <span className="text-gradient-primary">
-                      Fund a child's future.
+                      Help a child learn.
                     </span>
                   </h2>
                   <div className="space-y-4 text-text-muted leading-relaxed text-sm md:text-base">
                     <p>
-                      Aaghaz Foundation currently runs{" "}
+                      Aaghaz Foundation runs{" "}
                       <strong className="text-accent">
                         more than 80 memorial scholarships
                       </strong>{" "}
-                      across India, worth nearly{" "}
+                      in India. We give nearly{" "}
                       <strong className="text-accent">
-                        Rs 1 crore annually
-                      </strong>
-                      , supporting hundreds of underprivileged students — many
-                      of whom are orphans or come from financially distressed
-                      families struggling to continue their education.
+                        Rs 1 crore every year
+                      </strong>{" "}
+                      to help hundreds of poor students. Many of these students are orphans or come from families struggling to pay for school.
                     </p>
                     <p>
-                      A large number of these scholarships are announced every
-                      year during our annual Ramadan campaign,{" "}
+                      We start many of these scholarships during our annual Ramadan campaign,{" "}
                       <strong className="text-primary italic">
                         &ldquo;30 Days | 30 Plus Scholarships&rdquo;
                       </strong>
-                      , through which families and well-wishers honour the
-                      memory of their loved ones by supporting deserving
-                      students.
+                      . Families and donors fund them to remember their loved ones and support good students.
                     </p>
                   </div>
                 </div>
@@ -151,20 +146,10 @@ export const MemorialScholarshipHighlight = () => {
                       Memorial Scholarships
                     </p>
                     <p className="font-display text-base md:text-lg text-accent leading-relaxed italic mb-4">
-                      &ldquo;Educational scholarships are one of the most
-                      meaningful ways to preserve the memory of someone special
-                      who is no longer with us.&rdquo;
+                      &ldquo;Starting a scholarship is a beautiful way to remember someone special who has passed away.&rdquo;
                     </p>
                     <p className="text-text-muted text-sm leading-relaxed">
-                      Through the Aaghaz Foundation Memorial Scholarship
-                      Program, families can establish a scholarship in the name
-                      of a departed loved one and help students facing
-                      financial hardship continue their education. Each
-                      scholarship becomes{" "}
-                      <strong className="text-primary">
-                        a lasting tribute that continues to create opportunities
-                        and hope for years to come.
-                      </strong>
+                      With our Memorial Scholarship Program, you can start a scholarship in the name of a loved one who has passed away. This helps poor students continue their education and keeps your loved one's memory alive through their success.
                     </p>
                   </div>
                 </div>
@@ -187,11 +172,11 @@ export const MemorialScholarshipHighlight = () => {
                   to="/contact"
                   className="inline-flex items-center gap-3 border-2 border-accent text-accent hover:bg-accent hover:text-white px-6 sm:px-8 py-3 sm:py-4 text-[10px] sm:text-xs uppercase tracking-widest font-bold rounded-tl-2xl rounded-br-2xl transition-all duration-300"
                 >
-                  Talk to Saima
+                  Talk to us
                 </Link>
                 <p className="text-xs text-text-muted italic flex items-center gap-2 ml-auto">
                   <span className="block w-6 h-px bg-secondary" />
-                  Minimum annual contribution: Rs 25,000
+                  Minimum amount per year: Rs 25,000
                 </p>
               </div>
             </div>

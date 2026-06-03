@@ -56,8 +56,7 @@ export const ContactPage = () => {
               <span className="text-secondary italic font-serif">Touch</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-200 font-light max-w-2xl mx-auto">
-              Donate, volunteer, partner, or apply for student aid — we read
-              every message.
+              If you want to donate, volunteer, partner, or apply for study help, write to us. We read every message.
             </p>
           </motion.div>
         </div>
@@ -204,7 +203,7 @@ export const ContactPage = () => {
                   type="text"
                   required
                   className="w-full bg-stone-50 border border-gray-200 focus:outline-none focus:border-primary p-4 transition-colors duration-300 hover:bg-stone-100 focus:bg-white"
-                  placeholder="Jane"
+                  placeholder="E.g. Amit"
                 />
               </div>
               <div>
@@ -215,7 +214,7 @@ export const ContactPage = () => {
                   name="lastName"
                   type="text"
                   className="w-full bg-stone-50 border border-gray-200 focus:outline-none focus:border-primary p-4 transition-colors duration-300 hover:bg-stone-100 focus:bg-white"
-                  placeholder="Doe"
+                  placeholder="E.g. Kumar"
                 />
               </div>
             </div>
@@ -228,7 +227,7 @@ export const ContactPage = () => {
                 type="tel"
                 required
                 className="w-full bg-stone-50 border border-gray-200 focus:outline-none focus:border-primary p-4 transition-colors duration-300 hover:bg-stone-100 focus:bg-white"
-                placeholder="+1 (555) 123-4567"
+                placeholder="10-digit mobile number"
               />
             </div>
             <div>
@@ -240,12 +239,12 @@ export const ContactPage = () => {
                 type="email"
                 required
                 className="w-full bg-stone-50 border border-gray-200 focus:outline-none focus:border-primary p-4 transition-colors duration-300 hover:bg-stone-100 focus:bg-white"
-                placeholder="jane@example.com"
+                placeholder="amit@example.com"
               />
             </div>
             <div>
               <label className="block text-[10px] uppercase tracking-widest font-bold mb-3 text-gray-500">
-                Best date to call (optional)
+                Best date to call you (optional)
               </label>
               <input
                 name="weddingDate"
@@ -267,7 +266,7 @@ export const ContactPage = () => {
             </div>
             <div>
               <label className="block text-[10px] uppercase tracking-widest font-bold mb-3 text-gray-500">
-                I am writing about
+                Why are you writing to us?
               </label>
               <select
                 name="budget"
@@ -278,12 +277,12 @@ export const ContactPage = () => {
                 <option value="" disabled>
                   Select an option
                 </option>
-                <option value="donate">Making a donation</option>
-                <option value="scholarship">Launching a scholarship</option>
-                <option value="volunteer">Becoming a volunteer</option>
-                <option value="apply-aid">Applying for student aid</option>
-                <option value="csr">Corporate / CSR partnership</option>
-                <option value="other">Something else</option>
+                <option value="donate">I want to donate</option>
+                <option value="scholarship">I want to start a scholarship</option>
+                <option value="volunteer">I want to join as a volunteer</option>
+                <option value="apply-aid">I want to apply for study help (fees)</option>
+                <option value="csr">My company wants to partner with Aaghaz</option>
+                <option value="other">Other reason</option>
               </select>
             </div>
             <div>
@@ -333,10 +332,10 @@ export const ContactPage = () => {
           className="absolute bottom-8 left-6 md:bottom-12 md:left-12 bg-white/90 backdrop-blur-md p-8 shadow-2xl border-l-4 border-primary max-w-sm"
         >
           <h3 className="text-2xl font-display text-accent mb-2">
-            Visit Our Office
+            Our Office Address
           </h3>
           <p className="text-gray-500 text-sm uppercase tracking-widest mb-6 border-b border-gray-200 pb-4">
-            Mon – Sat · 10am – 6pm IST
+            Monday to Saturday · 10 AM to 6 PM
           </p>
           <div className="space-y-4 mb-6">
             <div className="flex items-start gap-4">

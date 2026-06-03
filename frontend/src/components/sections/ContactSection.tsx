@@ -140,7 +140,7 @@ export const ContactSection = () => {
           </div>
           <div>
             <label className="block text-[10px] uppercase tracking-widest font-bold mb-2 text-gray-500">
-              Contact Number
+              Phone Number
             </label>
             <input
               type="tel"
@@ -150,12 +150,12 @@ export const ContactSection = () => {
                 setFormData({ ...formData, phone: e.target.value })
               }
               className="w-full bg-stone-50 border border-gray-200 focus:outline-none focus:border-primary p-3"
-              placeholder="+1 (555) 123-4567"
+              placeholder="e.g. 9876543210"
             />
           </div>
           <div>
             <label className="block text-[10px] uppercase tracking-widest font-bold mb-2 text-gray-500">
-              I am writing to you about
+              I want to talk about
             </label>
             <select
               value={formData.weddingDate}
@@ -166,7 +166,7 @@ export const ContactSection = () => {
             >
               <option value="">Select an option</option>
               <option value="donate">Making a donation</option>
-              <option value="scholarship">Launching a scholarship</option>
+              <option value="scholarship">Starting a scholarship</option>
               <option value="volunteer">Becoming a volunteer</option>
               <option value="apply-aid">Applying for student aid</option>
               <option value="csr">Corporate / CSR partnership</option>

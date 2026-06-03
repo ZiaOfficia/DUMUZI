@@ -33,20 +33,20 @@ export const blogPosts: BlogPost[] = [
   {
     id: "1",
     slug: "from-noida-slums-to-courtrooms-yasmeen-parveen",
-    title: "From Noida Slums to Courtrooms: The Inspiring Story of Yasmeen Parveen",
-    excerpt: "The daughter of a domestic worker and a severely ill father, Yasmeen overcame extreme financial hardships to study law and is now preparing to practice at the bar.",
+    title: "From Slums to Court: How Yasmeen Parveen Became a Lawyer",
+    excerpt: "Yasmeen's mother worked in houses and her father was very sick. With Aaghaz's help, she finished law school and is now ready to work as a lawyer.",
     content: `
-      <p>Growing up in a Noida slum, Yasmeen Parveen's childhood was defined by severe financial constraints. Her father was chronically ill, and her mother worked tirelessly as a domestic worker to put food on the table. In such an environment, pursuing higher education—let alone a professional degree like law—seemed like an impossible dream.</p>
+      <p>Growing up in Noida, Yasmeen Parveen's family had very little money. Her father was sick, and her mother worked in other people's houses to buy food. In their situation, going to college and studying law seemed impossible.</p>
       
       <h3>The Turning Point</h3>
-      <p>When Yasmeen secured admission to study law at Oriental College, Mumbai, the hurdle of paying college tuition and finding a place to stay seemed insurmountable. It was at this critical moment that Aaghaz Foundation stepped in. A local volunteer visited her Noida home to verify the family's case and assess their genuine need. Recognizing her dedication and brilliant academic promise, Aaghaz approved her scholarship, covering her tuition fees.</p>
+      <p>When Yasmeen got a seat to study law in Mumbai, paying the fees and finding a place to live was very hard. Aaghaz Foundation came forward to help. A volunteer visited her house in Noida to check their situation. Since she was a good student who wanted to study, Aaghaz paid her college fees.</p>
       
       <blockquote>
-        "The support from Aaghaz wasn't just financial. It gave me the validation that my background did not dictate my future, and that there were people who believed in my dreams."
+        "Aaghaz did not just give me money. They made me believe that my background does not stop my dreams, and that there are people who want to help me succeed."
       </blockquote>
       
       <h3>A New Advocate for Justice</h3>
-      <p>Today, Yasmeen has successfully completed her law studies and is interning as she prepares to practice law. She represents a beacon of hope for her family and her community, proving that access to opportunity is the only thing standing between underprivileged students and outstanding success.</p>
+      <p>Today, Yasmeen has finished her law studies and is working as an intern. She has shown that if poor children get the right support, they can achieve big things.</p>
     `,
     image: "/images/suceessstories/AdvocateYasmeenParveenToday.jpeg",
     date: "Feb 10, 2026",
@@ -58,21 +58,21 @@ export const blogPosts: BlogPost[] = [
   {
     id: "2",
     slug: "supporting-sons-of-late-cab-driver-aftab-alam",
-    title: "Rebuilding Lives: Supporting the Sons of Late Cab Driver Aftab Alam",
-    excerpt: "Following the tragic demise of their father in 2020, Aaghaz stepped in to cover the engineering and science education fees for Mohd Shajid and Mohd Shahid.",
+    title: "Supporting the Sons of Late Cab Driver Aftab Alam",
+    excerpt: "After their father passed away, Aaghaz paid the college fees for Mohd Shajid and Mohd Shahid so they could study engineering and science.",
     content: `
-      <p>In 2020, the tragic and sudden demise of cab driver Aftab Alam left his family devastated and facing a highly uncertain future. With the primary breadwinner gone, the education of his two bright sons, Mohd Shajid and Mohd Shahid, was on the verge of being cut short.</p>
+      <p>In 2020, cab driver Aftab Alam passed away suddenly. His family was left with no income. His two clever sons, Mohd Shajid and Mohd Shahid, were about to stop going to college.</p>
       
       <h3>Stepping In for Education</h3>
-      <p>Recognizing the urgency, Aaghaz Foundation made a long-term commitment to ensure both brothers could continue their higher studies without financial stress. Aaghaz covered their college tuition fees, provided tablets for online learning, and offered a monthly stipend to help ease the family's day-to-day expenses.</p>
+      <p>Aaghaz Foundation stepped in to help. We paid their college fees, gave them tablets to study online, and provided monthly help for home expenses.</p>
       
       <h3>Academic Triumphs</h3>
-      <p>Thanks to the collective support of our donors, both brothers have excelled in their respective academic fields:</p>
+      <p>With the help of our donors, both brothers did very well in their studies:</p>
       <ul>
-        <li><strong>Mohd Shajid</strong> is pursuing a B.Tech degree at the prestigious Netaji Subhas University of Technology (NSUT), Delhi.</li>
-        <li><strong>Mohd Shahid</strong> is studying B.Sc (Hons) Botany at Dyal Singh College, Delhi University.</li>
+        <li><strong>Mohd Shajid</strong> is studying engineering (B.Tech) at Netaji Subhas University in Delhi.</li>
+        <li><strong>Mohd Shahid</strong> is studying botany (B.Sc) at Dyal Singh College, Delhi University.</li>
       </ul>
-      <p>This case highlights the core mission of Aaghaz: acting as a safety net that protects vulnerable families from dropping out of the academic stream during life's most challenging crises.</p>
+      <p>This shows how Aaghaz helps poor families keep their children in school and college when they face sudden problems.</p>
     `,
     image: "/images/suceessstories/AftabAlam2.jpeg",
     date: "Jan 28, 2026",
@@ -84,16 +84,16 @@ export const blogPosts: BlogPost[] = [
   {
     id: "3",
     slug: "childhood-mud-hut-to-paediatric-surgeon-dr-mominul-islam",
-    title: "From a Mud Hut to Paediatric Surgery: Dr. Mominul Islam's Journey",
-    excerpt: "Growing up in a tiny room with a physically challenged father and nine family members, Dr. Mominul Islam is now serving as a paediatric surgeon.",
+    title: "From a Mud Hut to a Child Surgeon: Dr. Mominul Islam's Story",
+    excerpt: "Dr. Mominul Islam grew up in a tiny mud house with nine family members. Today, he is working as a surgeon for children.",
     content: `
-      <p>Dr. Mominul Islam's early life was spent in a small, cramped mud house, shared with nine other family members in rural Bengal. His father was physically challenged, making it extremely difficult to generate a stable livelihood. The idea of attending medical school, let alone becoming a specialized surgeon, was beyond what his family could imagine.</p>
+      <p>Dr. Mominul Islam spent his childhood in a small mud room with nine other family members in a Bengal village. His father was physically challenged and could not earn much. Going to a medical college to become a doctor was a dream they could never afford.</p>
       
       <h3>A Journey of Perseverance</h3>
-      <p>Despite his circumstances, Mominul's academic record was stellar. When he secured admission to medical school, Aaghaz Foundation partnered with him, helping cover crucial academic expenses and fees that would have otherwise prevented him from registering. Year after year, Mominul proved that determination, combined with timely support, can break down any barrier.</p>
+      <p>But Mominul got very good marks. When he got a seat in medical college, Aaghaz paid his fees and other expenses. Year after year, Mominul proved that hard work and timely help can solve any problem.</p>
       
       <h3>Serving the Underprivileged</h3>
-      <p>Today, the student who once studied under dim light in a mud house is <strong>Dr. Mominul Islam</strong>, a qualified paediatric surgeon serving at Bengal Medical College. His journey is a powerful testament to the transformative power of education and the profound ripple effect of supporting a single student.</p>
+      <p>Today, he is <strong>Dr. Mominul Islam</strong>, a surgeon for children at Bengal Medical College. His story shows how helping one student can change many lives.</p>
     `,
     image: "/images/suceessstories/Dr.MominulIslamtoday.jpeg",
     date: "Jan 15, 2026",
@@ -105,16 +105,16 @@ export const blogPosts: BlogPost[] = [
   {
     id: "4",
     slug: "afree-javed-topps-college-secures-eighteen-lakhs-package",
-    title: "Topping College & Securing an 18 Lakh Package: Afree Javed's Story",
-    excerpt: "Aafree Javed topped her college examinations and secured a developer job at Lowe's India with an annual package of over ₹18 lakhs, supported by Aaghaz.",
+    title: "Afree Javed Tops Her College and Gets a High-Paying Software Job",
+    excerpt: "Afree Javed topped her college exams and got a job as a developer at Lowe's India, with help from Aaghaz.",
     content: `
-      <p>Aafree Javed has always been a high achiever. Yet, in her household, funding a professional engineering course was a constant source of anxiety. The costs of tuition, books, and lab equipment threatened to derail her dreams of becoming a software developer.</p>
+      <p>Afree Javed was always excellent at studies. But paying for an engineering course was very hard for her family. They did not have enough money for college fees, books, and lab equipment.</p>
       
       <h3>Unlocking Potential</h3>
-      <p>Aaghaz Foundation stepped in to provide financial backing for her engineering fees. With her tuition secured, Aafree focused entirely on her studies. She did not just pass; she topped all her examinations, eventually becoming the poster girl of her college and an inspiration for other young women in her community.</p>
+      <p>Aaghaz Foundation stepped in and paid her engineering fees. With her fees paid, Afree could focus completely on studying. She not only passed but topped her exams, making her family and college proud.</p>
       
       <h3>Securing Her Future</h3>
-      <p>Upon graduation, Aafree secured a position as an Associate Software Engineer (Java Developer) at Lowe's India, with an outstanding starting package exceeding ₹18 lakhs per annum. She has now transitioned from being a beneficiary to a role model, showing how education can uplift an entire family's economic status in a single generation.</p>
+      <p>After finishing college, she got a job as a Java Developer at Lowe's India, earning over Rs 18 lakhs a year. She has now transitioned from being a student who needed help to a role model showing how studies can change a family's life.</p>
     `,
     image: "/images/suceessstories/AfreeJaved.jpeg",
     date: "Dec 30, 2025",
@@ -126,16 +126,16 @@ export const blogPosts: BlogPost[] = [
   {
     id: "5",
     slug: "shumaila-practicing-at-delhi-high-court",
-    title: "Defying Circumstances: Shumaila's Path to the Delhi High Court",
-    excerpt: "Having lost her father early and growing up in a lower-middle-class home in Old Delhi, Shumaila did odd jobs before completing law to practice at the High Court.",
+    title: "Shumaila's Journey to Becoming a Lawyer in Delhi High Court",
+    excerpt: "Shumaila lost her father early and worked odd jobs to support her family. Aaghaz paid her law college fees, and today she practices at the High Court.",
     content: `
-      <p>Losing a parent early in life places an enormous psychological and financial burden on a child. Shumaila, raised in a lower-middle-class household in the narrow lanes of Old Delhi, faced this exact reality. After completing her graduation, she worked in various minor odd jobs to support her family, but her passion lay in the legal profession.</p>
+      <p>Losing a parent is very hard for any child. Shumaila grew up in a poor family in Old Delhi. After finishing school, she did small jobs to help her family, but she always wanted to study law.</p>
       
       <h3>Aaghaz's Legal Aid Scholarship</h3>
-      <p>When Shumaila got the opportunity to study law, the fees were far beyond her savings. Aaghaz Foundation stepped in to cover her college dues, enabling her to focus on her classes and moot court preparations. Her diligence paid off, and she excelled throughout her semesters.</p>
+      <p>When she got a seat to study law, she did not have enough savings to pay the fees. Aaghaz paid her college dues so she could study and participate in court practice sessions. She worked hard and got very good marks.</p>
       
       <h3>Advocating in the Capital</h3>
-      <p>Today, Shumaila is a practicing advocate at the Delhi High Court. Her journey from doing odd jobs to wearing the black robe of an advocate represents the core philosophy of Aaghaz: enabling deserving minds to achieve their highest professional goals, regardless of their family background.</p>
+      <p>Today, Shumaila is a lawyer practicing in the Delhi High Court. Her story shows how Aaghaz helps young people achieve their dreams despite financial problems.</p>
     `,
     image: "/images/suceessstories/Shumaila.jpeg",
     date: "Dec 12, 2025",
@@ -147,16 +147,16 @@ export const blogPosts: BlogPost[] = [
   {
     id: "6",
     slug: "jahan-ara-shaikh-advocate-bombay-high-court",
-    title: "Rising from the Ashes: Jahan Ara Shaikh's Journey to Bombay High Court",
-    excerpt: "After losing both parents, Jahan Ara worked in a clinic while studying. Aaghaz helped pay her college fees, enabling her to practice at the Bombay High Court.",
+    title: "How Jahan Ara Shaikh Became a Lawyer at the Bombay High Court",
+    excerpt: "Jahan Ara lost both parents and worked in a clinic while studying. Aaghaz paid her law fees to help her become a lawyer.",
     content: `
-      <p>Jahan Ara Shaikh's story is one of sheer, unyielding resilience. After tragically losing both of her parents, she lived separately from her four brothers. To survive and pay for her basic needs, she worked as a clinic compounder at a medical center during the day.</p>
+      <p>Jahan Ara Shaikh's story is about not giving up. After she lost both her parents, she had to live alone. To survive, she worked in a doctor's clinic during the day.</p>
       
       <h3>The Pursuit of Law</h3>
-      <p>During the COVID-19 pandemic, Jahan Ara made a bold decision: she decided to study law. With her limited earnings as a compounder, paying college tuition was impossible. She reached out to Aaghaz Foundation. After a detailed verification of her circumstances, Aaghaz sponsored her college fees.</p>
+      <p>During COVID-19, she decided to study law. But her small salary from the clinic was not enough for college fees. She wrote to Aaghaz. Our team checked her case and sponsored her fees.</p>
       
       <h3>From Compounder to Advocate</h3>
-      <p>Today, Jahan Ara Shaikh has transitioned from working in a clinic to arguing cases as an advocate at the Bombay High Court. Her success is a reminder that given a chance, a child who has lost everything can rebuild a life of dignity, impact, and professional excellence.</p>
+      <p>Today, Jahan Ara Shaikh is a lawyer at the Bombay High Court. Her success shows that even if a child loses everything, they can rebuild their life with dignity.</p>
     `,
     image: "/images/suceessstories/JahanAraShaikh.jpeg",
     date: "Nov 25, 2025",
@@ -168,21 +168,21 @@ export const blogPosts: BlogPost[] = [
   {
     id: "7",
     slug: "why-we-do-pre-scholarship-field-surveys",
-    title: "The Core of Our Trust: Why Volunteers Do Pre-Scholarship Field Surveys",
-    excerpt: "Transparency is everything. Aaghaz volunteers personally visit the home and school of every applicant to verify their financial background before giving aid.",
+    title: "Why Our Volunteers Visit Student Homes Before Giving Aid",
+    excerpt: "Aaghaz volunteers personally visit the home and school of every student to check their financial condition and make sure your donations are used honestly.",
     content: `
-      <p>At Aaghaz Foundation, we believe that transparency is the absolute cornerstone of non-profit work. We do not approve scholarships based on online forms or generic certificates. Instead, every single application is followed by a physical visit.</p>
+      <p>At Aaghaz, we believe that honesty is everything. We do not give scholarships just by looking at online forms or certificates. Instead, we check every application in person.</p>
       
       <h3>The Verification Process</h3>
-      <p>Our volunteer network conducts detailed pre-scholarship field surveys. At least two volunteers visit the applicant's home, meet their parents, talk to their neighbors, and visit their school or college. This process helps us understand:</p>
+      <p>Our volunteers visit the student's home. At least two volunteers meet the family, talk to the neighbors, and visit the student's school. This helps us check:</p>
       <ol>
-        <li>The genuine financial condition of the household.</li>
-        <li>The academic dedication and record of the student.</li>
-        <li>Any underlying family crises (like chronic illness or job loss) that require special attention.</li>
+        <li>If the family really cannot pay the fees.</li>
+        <li>If the child really wants to study and gets good marks.</li>
+        <li>If the family has other problems (like sickness or job loss) where we can help.</li>
       </ol>
       
       <h3>Ensuring Direct Impact</h3>
-      <p>By conducting these extensive field surveys, we guarantee our donors that 100% of their contributions reach students who would otherwise be forced to discontinue their education. It prevents leakage and builds a strong, personal bond between Aaghaz volunteers and the families we support.</p>
+      <p>This personal check makes sure that 100% of your donation goes to a child who really needs it. It builds trust with our donors and creates a personal bond between volunteers and students.</p>
     `,
     image: "/images/suceessstories/YasmeensHomeVolunteerVisit.jpeg",
     date: "Nov 10, 2025",
@@ -194,16 +194,16 @@ export const blogPosts: BlogPost[] = [
   {
     id: "8",
     slug: "dr-arbaaz-journey-to-aiims-delhi",
-    title: "Overcoming Adversity: Dr. Arbaaz's Journey to AIIMS Delhi",
-    excerpt: "Overcoming his father's paralysis, Dr. Arbaaz secured AIR 85 in NEET and is now proudly serving as a doctor at India's premier medical institute.",
+    title: "How Arbaaz Beat the Odds to Study at AIIMS Delhi",
+    excerpt: "Despite his father being paralyzed, Arbaaz got Rank 85 in NEET and is now a doctor at AIIMS Delhi.",
     content: `
-      <p>Coming from a small, modest town in Karnataka, Dr. Arbaaz's dreams of entering the medical profession were met with a severe setback when his father suffered a paralyzing stroke. As the family's income collapsed, the cost of medical preparation courses and exam fees seemed out of reach.</p>
+      <p>Arbaaz grew up in a small town in Karnataka. He wanted to be a doctor, but his father suffered a stroke and became paralyzed. The family had no income left. Paying for medical exam preparation and fees became impossible.</p>
       
       <h3>A Bright Mind Supported</h3>
-      <p>Recognizing Arbaaz's exceptional talent, Aaghaz Foundation stepped forward to ensure his preparation and entrance fees were covered. Freed from the anxiety of tuition costs, Arbaaz dedicated himself to his studies, scoring an outstanding All India Rank (AIR) of 85 in the highly competitive NEET examination.</p>
+      <p>Knowing how bright Arbaaz was, Aaghaz paid his exam fees and preparation costs. Free from money worries, Arbaaz studied hard and got All India Rank 85 in the NEET exam.</p>
       
       <h3>AIIMS Delhi and Beyond</h3>
-      <p>Today, Dr. Arbaaz is serving as a resident doctor at AIIMS, Delhi—the country's premier medical institution. His journey from rural Karnataka to AIIMS is a testament to what underprivileged youth can achieve when financial barriers are cleared from their path.</p>
+      <p>Today, Dr. Arbaaz is working at AIIMS Delhi, India's top medical hospital. His journey shows what poor children can do when we help them.</p>
     `,
     image: "/images/suceessstories/Dr.Arbaaz.jpeg",
     date: "Oct 22, 2025",
@@ -215,16 +215,16 @@ export const blogPosts: BlogPost[] = [
   {
     id: "9",
     slug: "anam-mehendi-abidi-university-of-calcutta",
-    title: "From Scholar to Educator: Anam Mehendi Abidi Becomes Assistant Professor",
-    excerpt: "Supported by Aaghaz Foundation, Anam Mehendi Abidi completed her master's and is now an Assistant Professor at the prestigious University of Calcutta.",
+    title: "From Student to Professor: Anam Mehendi Abidi's Story",
+    excerpt: "Aaghaz paid Anam's post-graduate fees, and today she is working as an Assistant Professor at Calcutta University.",
     content: `
-      <p>Higher education in India, especially at the postgraduate level, remains highly out of reach for students from low-income families. Anam Mehendi Abidi faced this exact challenge when pursuing her advanced degrees. Her family struggled to meet the semester fees required for her to continue her academic journey.</p>
+      <p>Higher studies like master's degrees are often too expensive for poor families. Anam faced this problem when she wanted to study further. Her family could not pay the semester fees.</p>
       
       <h3>The Gift of Learning</h3>
-      <p>Aaghaz Foundation provided the necessary scholarship to cover Anam's post-graduate academic fees. Free to immerse herself in her research and studies, Anam excelled, eventually receiving her Master's degree with honors—a milestone that was featured in a local Kolkata newspaper.</p>
+      <p>Aaghaz paid her college fees so she could study and focus on her research. Anam did very well and completed her Master's degree with honors.</p>
       
       <h3>Inspiring the Next Generation</h3>
-      <p>Today, Anam Mehendi Abidi has come full circle, serving as an Assistant Professor at the historic University of Calcutta. She now teaches the next generation of students, demonstrating how supporting one girl's education can have an exponential impact on hundreds of students she teaches.</p>
+      <p>Today, Anam Mehendi Abidi is working as an Assistant Professor at the famous University of Calcutta. She now teaches hundreds of students, showing how helping one girl can help many others.</p>
     `,
     image: "/images/suceessstories/AnamMehendiAbidi.jpeg",
     date: "Oct 05, 2025",
@@ -236,16 +236,16 @@ export const blogPosts: BlogPost[] = [
   {
     id: "10",
     slug: "yusuf-hotelier-itc-hotels",
-    title: "Crafting a Career in Hospitality: Yusuf's Success at ITC Hotels",
-    excerpt: "Aaghaz Foundation's focus is on sustainable career building. Read about Yusuf's journey from a difficult background to becoming a hotelier at ITC.",
+    title: "Making a Career in Hotel Management: Yusuf's Success at ITC Hotels",
+    excerpt: "Aaghaz paid Yusuf's fees for hotel management, and today he works as a professional at ITC Hotels.",
     content: `
-      <p>At Aaghaz Foundation, we believe that education should lead directly to sustainable careers and self-reliance. While we support traditional professional streams like medicine, engineering, and law, we also focus on professional vocational careers like hotel management and hospitality.</p>
+      <p>At Aaghaz, we want students to get jobs and support their families. Along with medicine and law, we also help students study practical courses like hotel management.</p>
       
       <h3>A Hospitality Scholar</h3>
-      <p>Yusuf came to Aaghaz with a dream of entering the hospitality sector. Recognizing the high job-placement rates of hotel management programs, Aaghaz supported his course fees at a reputed academy, helping him acquire the practical skills and training required for luxury hospitality services.</p>
+      <p>Yusuf wanted to work in hotels but could not afford the training. Aaghaz paid his fees at a hotel management school where he learned professional skills.</p>
       
       <h3>Working at ITC Hotels</h3>
-      <p>Following his graduation, Yusuf secured a job at the prestigious ITC Hotels. Today, he is a self-sufficient professional, helping support his family and serving as a model for how diversified vocational training can create rapid, sustainable career paths for underprivileged youth.</p>
+      <p>After finishing his course, Yusuf got a job at ITC Hotels. He is now earning well, supporting his family, and showing how practical courses can help poor youth get jobs quickly.</p>
     `,
     image: "/images/suceessstories/Yusuf.jpeg",
     date: "Sep 18, 2025",

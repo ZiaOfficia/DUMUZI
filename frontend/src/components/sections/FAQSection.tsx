@@ -21,7 +21,7 @@ export const FAQSection = () => {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6 backdrop-blur-sm">
             <Sparkles size={14} className="text-primary" />
             <span className="text-xs uppercase tracking-[0.3em] text-gray-300">
-              Good to Know
+              Got Questions?
             </span>
           </div>
           <h2 className="text-4xl md:text-6xl font-display mb-6">

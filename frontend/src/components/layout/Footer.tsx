@@ -44,17 +44,17 @@ export const Footer = () => {
               className="h-16 w-auto object-contain mb-5"
             />
             <p className="text-xs text-gray-300 leading-relaxed">
-              A non-profit founded in 2004 in Lucknow with just Rs 2,000 and one
-              needy student. Two decades on, we still believe one simple thing:
-              empowerment through education builds a more resilient society —
-              one verified scholarship at a time.
+              We started in 2004 in Lucknow with just Rs 2,000 to help one poor
+              student. Today, we still believe that education is the best way to
+              change lives. We help students pay for school and college through
+              verified scholarships.
             </p>
             <Link
               to="/contact"
               className="inline-flex items-center gap-2 mt-6 bg-primary hover:bg-primary-dark text-white px-5 py-2.5 text-xs uppercase tracking-widest font-bold rounded-tl-2xl rounded-br-2xl transition-colors"
             >
               <Heart size={14} fill="currentColor" />
-              Donate Today
+              Donate Now
             </Link>
           </motion.div>
 

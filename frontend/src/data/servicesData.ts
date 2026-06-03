@@ -51,99 +51,99 @@ export const servicesData: ServiceData[] = [
     id: "student-aid",
     title: "Student Aid",
     heroImage: serviceImages.studentAid,
-    heroTitle: "STUDENT AID — KEEPING DESERVING CHILDREN IN SCHOOL",
+    heroTitle: "STUDENT AID — HELPING DESERVING KIDS STAY IN SCHOOL",
     intro: {
       heading: "STUDENT AID PROGRAM",
       subheading:
-        "Need-based financial assistance for school and college students across India.",
+        "Help with fees for school and college students in India.",
       description: [
-        "Before you continue to apply for financial assistance, please read the eligibility criteria below and agree to our terms and conditions. Aaghaz Foundation supports meritorious students from economically weak backgrounds — we cover school fees, college tuition, exam fees, books, uniforms and hostel rent for those who genuinely cannot afford them.",
-        "Every applicant is reviewed by our volunteer team through an in-person pre-scholarship survey. We do not run a generic application form — every story is verified, and every rupee is tracked.",
+        "Before you apply for financial help, please read the rules below. Aaghaz Foundation helps bright students from poor families. We cover school fees, college fees, exam fees, books, uniforms, and hostel costs.",
+        "Our volunteer team will visit every applicant's home in person. We do not approve applications blindly. We check every detail and track every rupee."
       ],
     },
     whyChooseUs: {
-      title: "Who is eligible",
+      title: "Who Can Get Help",
       items: [
         {
-          title: "Genuine financial need",
+          title: "Real need for money",
           description:
-            "Annual family income should ordinarily fall below the threshold defined by your state for an Economically Weaker Section household.",
+            "Your family's total income must be low, matching your state's limits for poor families.",
         },
         {
-          title: "Consistent academic record",
+          title: "Good marks in school",
           description:
-            "We support meritorious students — typically a minimum of 60% in the most recent qualifying exam, with some flexibility for first-generation learners.",
+            "We support students who study hard. Usually, you need at least 60% marks in your last exams. We are flexible if you are the first in your family to study.",
         },
         {
-          title: "Recommended through a verifiable source",
+          title: "A known reference",
           description:
-            "A teacher, neighbour, journalist, social worker or earlier Aaghaz beneficiary should be able to vouch for the student's circumstances.",
+            "A teacher, neighbor, journalist, or social worker must be able to confirm your family's situation.",
         },
       ],
     },
     signatureServices: {
-      title: "What student aid covers",
+      title: "What Student Aid Covers",
       items: [
         {
-          title: "School Fees & Exam Fees",
+          title: "School & Exam Fees",
           description:
-            "From Class I to Class XII — annual fees, board exam fees, lab fees and re-admission charges for verified students.",
+            "From Class 1 to Class 12 — we cover yearly school fees, board exam fees, and admission charges.",
         },
         {
-          title: "College & University Tuition",
+          title: "College Tuition",
           description:
-            "Graduation, post-graduation and professional course tuition, partially or fully covered depending on family circumstances.",
+            "We cover college fees for degrees and professional courses, depending on how much help your family needs.",
         },
         {
-          title: "Books, Uniforms & Stationery",
+          title: "Books, Uniforms & Bags",
           description:
-            "One-time and annual support for textbooks, school uniforms, school bags and basic stationery.",
+            "We help pay for school uniforms, textbooks, notebooks, and bags.",
         },
         {
-          title: "Hostel & Daily Living",
+          title: "Hostel & Food",
           description:
-            "For students who study away from home, support towards hostel rent, mess fees and travel back to family during holidays.",
+            "If a student has to live away from home, we help pay for their hostel rent and food.",
         },
       ],
     },
     process: {
-      title: "How to apply",
+      title: "How to Apply",
       description:
-        "From recommendation to disbursement, here's exactly what happens:",
+        "Here is what happens when you apply for student aid:",
       steps: [
         {
-          title: "1. Submit the application",
+          title: "1. Fill the form",
           description:
-            "Use the Apply for Student Aid form on our website with basic details and supporting documents.",
+            "Submit the Apply for Student Aid form on our website with your basic details and marksheets.",
         },
         {
-          title: "2. Pre-scholarship survey",
+          title: "2. Volunteer visit",
           description:
-            "A minimum of two volunteers visit the family and the student's school to verify the application in person.",
+            "At least two volunteers will visit your home and school to meet your family.",
         },
         {
-          title: "3. Aaghaz committee review",
+          title: "3. Team review",
           description:
-            "The verified case is presented to our committee, which approves the amount and the duration of support.",
+            "We review the case and decide how much help we can give you.",
         },
         {
-          title: "4. Disbursement & follow-up",
+          title: "4. Fee payment",
           description:
-            "Funds are paid directly to the school or college wherever possible, and our volunteers stay in touch with the student through the year.",
+            "We pay the fees directly to your school or college. Our volunteers keep in touch with you throughout the year.",
         },
       ],
     },
     testimonials: [
       {
         quote:
-          "I was about to drop out after Class X because my father could not pay the board fees. Aaghaz volunteers came home, met my mother, and within a week the fees were paid. Today I am in the second year of my B.Sc.",
+          "I was going to leave school after Class 10 because my father could not pay the board exam fees. Aaghaz volunteers came to our home and paid the fees within a week. Today, I am studying in college.",
         author: "Sumaiya R.",
         location: "Lucknow, UP",
       },
       {
         quote:
-          "We had no idea organisations like this existed. The volunteers were respectful, the process was clear, and we never felt like we were begging.",
-        author: "Mother of an Aaghaz beneficiary",
+          "We did not know there was help like this. The volunteers were very polite and respectful. They made us feel comfortable.",
+        author: "Mother of a student",
         location: "Hardoi, UP",
       },
     ],
@@ -165,87 +165,87 @@ export const servicesData: ServiceData[] = [
     intro: {
       heading: "AAGHAZ SCHOLARSHIPS",
       subheading:
-        "Annual, merit-cum-means and memorial scholarships for students across India.",
+        "Scholarships for school and college students across India.",
       description: [
-        "Many of our donors choose to support Aaghaz by offering scholarships. They can choose to launch a memorial scholarship — in the name of a parent, a sibling, a teacher or a friend — or contribute to our annual general scholarship pool that funds the highest-priority cases.",
-        "Every scholarship is awarded after a verified pre-scholarship survey, and donors receive an annual report on the students their contribution has supported.",
+        "Many donors support Aaghaz by funding scholarships. You can start a scholarship in memory of a parent, child, teacher, or friend. You can also donate to our general scholarship pool to help students who need it most.",
+        "Every scholarship is given after our volunteers visit the student's home. Donors get a yearly report showing how their money helped the student."
       ],
     },
     whyChooseUs: {
-      title: "Why launch a scholarship with Aaghaz",
+      title: "Why Start a Scholarship with Aaghaz",
       items: [
         {
-          title: "Verified, transparent disbursement",
+          title: "Honest and direct help",
           description:
-            "Every recipient is met in person before approval. Funds are paid directly to the institution wherever possible.",
+            "We meet every student in person before paying. We pay fees directly to the school or college.",
         },
         {
-          title: "Co-designed criteria",
+          title: "You choose the rules",
           description:
-            "You decide the broad criteria — region, gender, course of study, academic threshold — and we operate within it.",
+            "You can decide who to help — such as girls only, a specific study course, or students from a particular town.",
         },
         {
-          title: "Annual reports to donors",
+          title: "Yearly progress reports",
           description:
-            "We share photographs, results and short notes from the students every year so you can see the difference your scholarship makes.",
+            "We share photos, marksheets, and small thank-you notes from the students every year so you can see the impact.",
         },
       ],
     },
     signatureServices: {
-      title: "Types of scholarships",
+      title: "Types of Scholarships",
       items: [
         {
           title: "Memorial Scholarship",
           description:
-            "Honour someone you love by funding a child's school or college education in their name. Starts at Rs 50,000 per year per student; we are happy to design something at any budget.",
+            "Honor a loved one by starting a scholarship in their name. It starts at Rs 25,000 per year, and we can design it to fit your budget.",
         },
         {
-          title: "Annual General Scholarship",
+          title: "General Scholarship Pool",
           description:
-            "Contribute any amount to our central scholarship pool. We allocate it across the highest-priority verified cases.",
+            "Donate any amount to our general pool. We use this to help the highest priority cases.",
         },
         {
-          title: "Corporate / CSR Scholarship",
+          title: "Company & CSR Scholarships",
           description:
-            "Companies can launch a CSR-funded scholarship cohort, adopt a class or fund a learning centre — with full reporting suitable for CSR audits.",
+            "Companies can fund a group of students. We provide all the reports needed for CSR audits.",
         },
         {
-          title: "Subject-Specific Awards",
+          title: "Special Scholarships",
           description:
-            "Targeted scholarships for girls in STEM, first-generation college-goers, or students preparing for civil services and competitive exams.",
+            "Scholarships for girls studying science, first-generation college students, or students preparing for competitive exams.",
         },
       ],
     },
     process: {
-      title: "How a scholarship is launched",
+      title: "How to Start a Scholarship",
       description: "",
       steps: [
         {
-          title: "1. Initial conversation",
+          title: "1. Talk to us",
           description:
-            "Tell us about who you'd like to honour, your budget and the kind of student you want to support.",
+            "Tell us who you want to honor, your budget, and what kind of student you want to help.",
         },
         {
-          title: "2. Criteria & MOU",
+          title: "2. Set the rules",
           description:
-            "We co-write the criteria, sign a simple MOU and confirm the disbursement schedule.",
+            "We set the rules together and write down a simple agreement.",
         },
         {
-          title: "3. Selection & disbursement",
+          title: "3. Select students",
           description:
-            "We select students from our verified pipeline and pay the institutions directly.",
+            "We select matching students from our checked list and pay their college or school directly.",
         },
         {
-          title: "4. Annual reporting",
+          title: "4. Get reports",
           description:
-            "Each year you receive a report with the student's progress, photographs and a personal note.",
+            "Every year, you will get a report with the student's marks, photos, and a personal note.",
         },
       ],
     },
     testimonials: [
       {
         quote:
-          "We launched a scholarship in our son's name. Knowing that three students are completing their education because of him every year — that has helped our family heal in a way we did not expect.",
+          "We started a scholarship in our son's name. Knowing that three students are completing their studies because of him every year has helped our family heal in a way we did not expect.",
         author: "A donor family",
         location: "Pune",
       },
@@ -264,79 +264,79 @@ export const servicesData: ServiceData[] = [
     id: "financial-assistance",
     title: "Financial Assistance",
     heroImage: serviceImages.financialAssistance,
-    heroTitle: "FINANCIAL ASSISTANCE — TIMELY HELP WHEN A FAMILY NEEDS IT MOST",
+    heroTitle: "FINANCIAL ASSISTANCE — HELP IN DIFFICULT TIMES",
     intro: {
       heading: "FINANCIAL ASSISTANCE PROGRAM",
       subheading:
-        "Emergency and recurring financial support for educational expenses.",
+        "Emergency and regular help for study expenses.",
       description: [
-        "Sometimes a family is doing everything right and is still one missed fee instalment away from a child dropping out. Aaghaz Foundation provides timely financial assistance — sometimes a one-time intervention, sometimes ongoing year-on-year — so that a temporary crisis does not become a permanent loss of education.",
-        "We work case-by-case. Every appeal is verified by our volunteer team before approval, but we move fast: most genuine emergencies are resolved within seven working days.",
+        "Sometimes, a family is doing their best but faces a sudden problem. A temporary money crisis should not stop a child from studying. Aaghaz provides quick help — sometimes one-time, sometimes every year — to keep children in school.",
+        "Our volunteers check every emergency case. We act fast, and most urgent cases are resolved within a week."
       ],
     },
     whyChooseUs: {
-      title: "What we cover",
+      title: "What We Help With",
       items: [
         {
-          title: "Last-minute fee crises",
+          title: "Sudden fee problems",
           description:
-            "Board exam admit cards being withheld, college fees due, or hostel deposits — we step in where the difference between continuing and dropping out is a single payment.",
+            "If school fees are due, or board admit cards are held back due to unpaid fees, we pay immediately.",
         },
         {
-          title: "Loss of an earning parent",
+          title: "Loss of a parent",
           description:
-            "Where a family has lost the primary earner, we fund the children's continuing education for the rest of the academic year.",
+            "If the earning parent passes away, we pay the children's fees for the rest of the year.",
         },
         {
-          title: "Medical emergencies that derail education",
+          title: "Medical emergencies",
           description:
-            "When a parent's medical emergency wipes out savings meant for school, we help bridge the gap so the children stay enrolled.",
+            "If a parent's medical bills take away the money kept for school, we pay the fees to keep the kids in school.",
         },
       ],
     },
     signatureServices: {
-      title: "Types of assistance",
+      title: "How We Provide Help",
       items: [
         {
-          title: "One-time emergency aid",
+          title: "Emergency fee help",
           description:
-            "Fast-tracked payment of an urgent fee directly to the institution.",
+            "We pay the urgent school or college fees directly to the institution.",
         },
         {
-          title: "Recurring monthly support",
+          title: "Monthly support",
           description:
-            "For long-term cases, regular monthly assistance until the family stabilises or the child finishes the course.",
+            "For difficult cases, we give monthly money help until the family's situation improves.",
         },
         {
-          title: "Coaching & mentorship",
+          title: "Coaching & study help",
           description:
-            "Where the gap is academic rather than financial, free access to LCGC and our partner Rahmani 30 centres.",
+            "We give free access to our study center in Lucknow and coaching centers in UP.",
         },
       ],
     },
     process: {
-      title: "How we move on a case",
+      title: "How We Resolve Cases",
       description: "",
       steps: [
         {
-          title: "1. Recommendation",
+          title: "1. Student is recommended",
           description:
-            "A teacher, neighbour, journalist or volunteer flags the case to us.",
+            "A teacher, neighbor, journalist, or volunteer alerts us about a student in trouble.",
         },
         {
-          title: "2. Same-week verification",
+          title: "2. Quick check",
           description:
-            "Two volunteers visit the family and the institution; reports are submitted within 72 hours.",
+            "Two volunteers visit the family and submit a report within 3 days.",
         },
         {
-          title: "3. Committee approval",
+          title: "3. Approval",
           description:
-            "The Aaghaz committee approves the amount and the disbursement route.",
+            "Our committee reviews the report and approves the money.",
         },
         {
-          title: "4. Direct payment & follow-up",
+          title: "4. Payment",
           description:
-            "Funds are paid to the institution; the volunteer team checks in monthly until the academic year is complete.",
+            "We pay the fees directly to the school or college. Volunteers keep check on the family every month.",
         },
       ],
     },
@@ -355,98 +355,98 @@ export const servicesData: ServiceData[] = [
     title: "Computer Learning Center",
     heroImage: "/images/computercenter/Screenshot 2026-05-15 111019.png",
     heroTitle:
-      "AAGHAZ FOUNDATION COMPUTER LEARNING CENTER (AFCLC) — LUCKNOW",
+      "AAGHAZ FOUNDATION FREE COMPUTER CENTER — LUCKNOW",
     intro: {
-      heading: "Unlock Your Future With Aaghaz Foundation's Free Computer Training Program",
+      heading: "Learn Computers for Free with Aaghaz Foundation",
       subheading:
-        "Free, certified, job-oriented computer training for women, minorities and economically weaker sections — in the heart of Lucknow.",
+        "Free, certified computer training for girls and poor youth in Lucknow.",
       description: [
-        "The Aaghaz Foundation Computer Learning Center (AFCLC) was founded as part of Aaghaz Foundation's skill-development programme, in partnership with IICL. Started by Co-Founder Suhel Khaleel and operating under the general secretaryship of Mr Tariq Khan, the centre is housed in our Balda Colony office near the New Hyderabad Post Office in Lucknow — and runs entirely free of cost.",
-        "More than a training facility, AFCLC is a beacon of hope for underprivileged youth bridging the digital divide. Thirteen full batches have already graduated, with the 14th and 15th batches currently in progress and more than 150 alumni who have built confidence, skills and livelihoods through the programme.",
-        "Under the daily supervision of our centre in-charge Mr Mohd Ebad (M.Sc., B.Ed.) — trained under our experienced teacher and founder Mr Waheed Uz Zama — students receive practical, step-by-step training, personal attention and regular practice tests. We do not just teach; we build skills.",
+        "Our Computer Learning Center (AFCLC) is located in Balda Colony, near the New Hyderabad Post Office in Lucknow. It is run for free by Co-Founder Suhel Khaleel and Tariq Khan.",
+        "We help poor students learn computer skills to find jobs. More than 150 students have completed our courses, built their confidence, and found good jobs.",
+        "Under our center head, Mr. Mohd Ebad, and teacher Waheed Uz Zama, students get hands-on computer practice and mock tests. We make sure every student gets proper attention."
       ],
     },
     whyChooseUs: {
-      title: "Our Vision",
+      title: "Our Goal",
       items: [
         {
-          title: "Make digital education accessible to everyone",
+          title: "Free computer training",
           description:
-            "AFCLC is open to all — minorities, women, economically weaker sections, and any young person who has been kept on the wrong side of the digital divide.",
+            "The center is open to all poor youth, especially girls and minorities who want to learn computers.",
         },
         {
-          title: "Create skilled and confident individuals",
+          title: "Practical training",
           description:
-            "Through practical-based training, easy step-by-step learning and personal attention, every graduate leaves with a real, demonstrable command of computers.",
+            "We focus on real practice. Every student gets a computer to practice on, with easy, step-by-step guidance.",
         },
         {
-          title: "Bridge the gap between education and employment",
+          title: "Government certificates",
           description:
-            "Our curriculum is paired with the government-recognised NIELIT 'CCC' certificate — a gateway to numerous jobs in government and the private sector.",
+            "We prepare students for the government-approved NIELIT 'CCC' exam, which helps them apply for government and private jobs.",
         },
       ],
     },
     signatureServices: {
-      title: "Our Comprehensive Curriculum",
+      title: "What We Teach",
       items: [
         {
-          title: "Fundamentals of Computer",
+          title: "Computer Basics",
           description:
-            "How a computer works, parts of a system, files and folders, safe handling — the foundations every modern worker is expected to know.",
+            "How a computer works, parts of the system, files, folders, and safety rules.",
           features: [
-            "Hardware basics and components",
-            "Files, folders and storage devices",
-            "Safe shutdown, backup and care",
+            "Computer parts and how they work",
+            "Managing files and folders",
+            "Saving files and shut down rules",
           ],
         },
         {
-          title: "Operating System (DOS &amp; MS-Windows)",
+          title: "Windows Operating System",
           description:
-            "Hands-on training in both DOS commands and MS-Windows so students can confidently use any PC they sit down at.",
+            "How to use Windows, files, and computer settings.",
           features: [
-            "MS-Windows navigation, settings &amp; shortcuts",
-            "DOS commands for file operations",
-            "Installing software and managing the desktop",
+            "Windows navigation & shortcuts",
+            "Command line basics",
+            "Installing programs",
           ],
         },
         {
-          title: "MS-Office Suite",
+          title: "MS Office (Word, Excel, PowerPoint)",
           description:
-            "Practical Word, Excel and PowerPoint with real-world office templates — letters, invoices, reports, presentations and basic spreadsheets.",
+            "How to write letters, create sheets with formulas, and make slides.",
           features: [
-            "MS-Word — formatting, tables, mail-merge",
-            "MS-Excel — formulas, sorting, charts",
-            "PowerPoint — presentations and design",
+            "MS Word - writing and tables",
+            "MS Excel - formulas and charts",
+            "PowerPoint - creating slides",
           ],
         },
         {
-          title: "Hindi / English Typing",
+          title: "Hindi and English Typing",
           description:
-            "Structured typing speed and accuracy training in both Hindi and English — a basic requirement for clerical and data-entry roles.",
+            "Learn fast and correct typing, which is needed for data-entry and office jobs.",
           features: [
-            "Touch-typing technique",
-            "Speed and accuracy drills",
-            "Hindi typing on Unicode",
+            "Correct typing posture",
+            "Speed and accuracy tests",
+            "Hindi Unicode typing",
           ],
         },
         {
-          title: "Internet &amp; E-Commerce",
+          title: "Internet & Online Work",
           description:
-            "Safe browsing, email, online forms, e-governance portals, UPI/online payments and the basics of buying and selling online.",
+            "Safe internet search, email, filling forms online, and digital payments.",
           features: [
-            "Search, browsers and email",
-            "Online forms &amp; e-governance",
-            "Digital payments &amp; e-commerce basics",
+            "Email and search basics",
+            "Online forms and government sites",
+            "UPI and digital payments",
           ],
         },
         {
-          title: "NIELIT 'CCC' — Course on Computer Concepts",
+          title: "NIELIT 'CCC' Prep",
           description:
-            "We prepare every student for the government-recognised NIELIT 'CCC' certificate — a mandatory qualification for many government jobs in India.",
+            "Full training and practice tests for the government's Course on Computer Concepts.",
           features: [
-            "Full syllabus coverage",
-            "Mock tests &amp; revision",
-            "Government-recognised certificate on completion",
+            "Complete syllabus coverage",
+            "Mock tests & revision",
+            "Government certificate on passing",
           ],
         },
       ],
@@ -454,52 +454,52 @@ export const servicesData: ServiceData[] = [
     process: {
       title: "How AFCLC Works",
       description:
-        "Practical-based training • Easy step-by-step learning • Personal attention • Regular tests and practice.",
+        "Practical classes • Simple step-by-step lessons • Personal help • Weekly practice tests",
       steps: [
         {
-          title: "1. Walk in &amp; enrol",
+          title: "1. Visit & Enrol",
           description:
-            "Visit the centre at 406/2A, Balda Colony, near New Hyderabad Post Office, Lucknow. Only nominal form fees apply — the course itself is free. Seats are limited, first-come first-served.",
+            "Visit us at 406/2A, Balda Colony, near New Hyderabad Post Office, Lucknow. The course is completely free. Seats are limited, so we take students on first-come, first-served basis.",
         },
         {
-          title: "2. Practical-based classroom training",
+          title: "2. Practice in Lab",
           description:
-            "Small batches at our state-of-the-art lab with one machine per student. Daily hands-on practice under the guidance of Mr Mohd Ebad.",
+            "Every student gets a computer to practice on. Our teacher Mohd Ebad guides you every day.",
         },
         {
-          title: "3. Regular tests &amp; revision",
+          title: "3. Tests & Revision",
           description:
-            "Weekly practice tests, mock NIELIT CCC papers and one-on-one revision to make sure every student is exam-ready.",
+            "We hold weekly tests and mock CCC exams to make sure you are ready.",
         },
         {
-          title: "4. Certificate &amp; placement support",
+          title: "4. Get Certified",
           description:
-            "On graduation, students receive AFCLC's certificate plus the government-recognised NIELIT 'CCC' certificate — and access to our alumni network for jobs.",
+            "After passing, get our center certificate and the government NIELIT CCC certificate to apply for jobs.",
         },
       ],
     },
     testimonials: [
       {
         quote:
-          "After AFCLC I learnt MS-Office and typing. I now work as a finance clerk and the certificate from the centre is what got me through the interview.",
+          "I learned MS-Office and typing here. Today, I work as an office clerk. The certificate from this center helped me pass my interview.",
         author: "Bushra Khan",
         location: "AFCLC alumnus · Finance Clerk",
       },
       {
         quote:
-          "I joined as a school-leaver with no computer experience. Today I am a tele-caller executive and I help my younger sister at home with her laptop.",
+          "I did not know how to use computers. Today, I work as a support executive and help my sister study on her laptop.",
         author: "Noman Azim",
         location: "AFCLC alumnus · Tele-Caller Executive",
       },
       {
         quote:
-          "AFCLC taught me Excel and data entry. Within three months of finishing, I was placed as a Data Entry Operator at a local firm.",
+          "The center taught me Excel and data entry. Within three months of finishing the course, I got a job as a Data Entry Operator.",
         author: "Mohd Nabi",
         location: "AFCLC alumnus · Data Entry Operator",
       },
       {
         quote:
-          "The teachers gave personal attention — I never felt left behind. I now teach at a primary school and the AFCLC certificate is part of my qualifications.",
+          "The teachers gave me personal attention. I now teach at a school and use my computer skills every day.",
         author: "Mehvish Ansari",
         location: "AFCLC alumnus · Teacher",
       },
@@ -524,58 +524,58 @@ export const servicesData: ServiceData[] = [
     id: "madarsa-initiative",
     title: "Madarsa Initiative",
     heroImage: serviceImages.madarsaInitiative,
-    heroTitle: "MADARSA INITIATIVE — EDUCATION FOR ALL COMMUNITIES",
+    heroTitle: "MADARSA INITIATIVE — MODERN EDUCATION FOR ALL",
     intro: {
       heading: "MADARSA INITIATIVE",
       subheading:
-        "Supporting madarsa students with modern education and skill development.",
+        "Helping madarsa students learn modern school subjects and skills.",
       description: [
-        "Our Madarsa Initiative bridges traditional Islamic education with modern academic and vocational skills. We work with madarsas across India to provide additional resources, ensuring students receive a well-rounded education.",
-        "The program focuses on language skills, mathematics, science, and vocational training to prepare students for diverse career paths while respecting their cultural and religious backgrounds.",
+        "Our Madarsa program helps students learn regular school subjects along with their religious studies. We work with madarsas to provide books and teachers for math, science, and computers.",
+        "This program teaches language, math, science, and computer skills to help madarsa students find good jobs and go for higher studies.",
       ],
     },
     whyChooseUs: {
-      title: "Why support madarsa education",
+      title: "Why We Help Madarsa Students",
       items: [
         {
-          title: "Inclusive education",
+          title: "Education for everyone",
           description:
-            "Ensuring all communities have access to quality education and opportunities.",
+            "Making sure all children get a chance to learn modern school subjects.",
         },
         {
-          title: "Cultural sensitivity",
+          title: "Respect for culture",
           description:
-            "Respecting religious and cultural values while providing modern skills.",
+            "We respect religious values while teaching modern science and math.",
         },
         {
-          title: "Holistic development",
+          title: "Useful skills",
           description:
-            "Combining religious teachings with academic and vocational training.",
+            "Teaching computer and job skills along with regular studies.",
         },
       ],
     },
     signatureServices: {
-      title: "Program components",
+      title: "What We Provide",
       items: [
         {
-          title: "Academic Support",
+          title: "School Subject Classes",
           description:
-            "Additional classes in mathematics, science, and English to complement madarsa curriculum.",
+            "Extra classes for math, science, and English inside the madarsa.",
         },
         {
-          title: "Vocational Training",
+          title: "Computer & Job Skills",
           description:
-            "Skills like computer literacy, tailoring, and basic entrepreneurship.",
+            "Classes for basic computer usage, sewing, and small business skills.",
         },
         {
-          title: "Career Counseling",
+          title: "Career Guidance",
           description:
-            "Guidance on higher education and job opportunities.",
+            "Helping students choose the right college and apply for jobs.",
         },
         {
-          title: "Community Engagement",
+          title: "Parent Meetings",
           description:
-            "Involving parents and community leaders in the educational process.",
+            "We talk to parents and local leaders to help them support the children's studies.",
         },
       ],
     },
@@ -584,24 +584,24 @@ export const servicesData: ServiceData[] = [
       description: "",
       steps: [
         {
-          title: "1. Partnership",
+          title: "1. Partner with Madarsas",
           description:
-            "Collaborate with madarsa administrators to integrate our programs.",
+            "We work with madarsa heads to set up classes.",
         },
         {
-          title: "2. Student assessment",
+          title: "2. Check student needs",
           description:
-            "Evaluate students' needs and interests for personalized support.",
+            "We check what subjects and skills the children need to learn.",
         },
         {
-          title: "3. Program delivery",
+          title: "3. Start classes",
           description:
-            "Conduct classes and workshops at the madarsa or nearby facilities.",
+            "Our teachers hold regular classes and workshops inside the madarsa.",
         },
         {
-          title: "4. Monitoring and evaluation",
+          title: "4. Track progress",
           description:
-            "Track progress and adjust programs for better outcomes.",
+            "We take tests to make sure students are learning well.",
         },
       ],
     },
@@ -619,38 +619,38 @@ export const servicesData: ServiceData[] = [
     id: "memorial-scholarship",
     title: "Memorial Scholarship",
     heroImage: serviceImages.memorialScholarship,
-    heroTitle: "MEMORIAL SCHOLARSHIPS — HONOURING LEGACIES THROUGH EDUCATION",
+    heroTitle: "MEMORIAL SCHOLARSHIPS — HONORING LEGACIES THROUGH EDUCATION",
     intro: {
       heading: "MEMORIAL SCHOLARSHIPS",
       subheading:
-        "A meaningful way to cherish the memory of someone special who is no longer with us.",
+        "A meaningful way to remember someone special who is no longer with us.",
       description: [
-        "Educational scholarships are a meaningful way to cherish the memory of someone special who is no longer with us. Through our Memorial Scholarship Program, you can establish a scholarship in the name of a departed loved one and help a deserving student who is struggling to continue their education due to financial hardship.",
-        "At present, we run nearly 80 memorial scholarships every year, supporting hundreds of underprivileged students across India.",
+        "Starting a scholarship in the name of a loved one who has passed away is a beautiful tribute. Your gift will pay for the school or college fees of a poor student who is struggling to study.",
+        "Today, we run around 80 memorial scholarships every year, helping hundreds of poor students across India.",
       ],
     },
     whyChooseUs: {
-      title: "Why Start a Memorial Scholarship?",
+      title: "Why Start a Memorial Scholarship",
       items: [
         {
           title: "Keep their memory alive",
           description:
-            "A memorial scholarship is a beautiful way to keep the memory of your loved one alive.",
+            "Starting a scholarship is a beautiful way to remember your loved one.",
         },
         {
-          title: "Inspire hope &amp; opportunity",
+          title: "Give hope to students",
           description:
-            "Their name continues to inspire hope and opportunity for students who need support with their education.",
+            "Their name will inspire and help a child finish school or college.",
         },
         {
           title: "A lasting tribute",
           description:
-            "It is a lasting tribute that makes a real difference in someone&apos;s life.",
+            "It is a gift that makes a real difference in a student's life.",
         },
       ],
     },
     signatureServices: {
-      title: "Donor Preferences &amp; Recognition",
+      title: "Donor Options & Information",
       items: [
         {
           title: "You decide how it is used",
@@ -663,74 +663,74 @@ export const servicesData: ServiceData[] = [
           ],
         },
         {
-          title: "Personalised artwork",
+          title: "Tribute page & card",
           description:
-            "Once we receive your details, our team creates a personalised artwork for the scholarship and shares it on our website and social-media platforms — so the tribute reaches a wide audience.",
+            "We create a tribute card with your loved one's photo and details, and share it on our website and social media.",
         },
         {
-          title: "Thousands of applications, carefully vetted",
+          title: "Careful student selection",
           description:
-            "Each scholarship typically receives between 5,000 and 10,000 applications — sometimes from as far as the Andaman and Nicobar Islands. Every application is reviewed by our selection committee based on financial need, academic merit and personal circumstances. Priority is often given to orphaned students.",
+            "Each year we get thousands of applications. Our team checks every application to select students who really need help.",
         },
         {
-          title: "Certificates &amp; progress updates",
+          title: "Progress reports",
           description:
-            "Selected students receive certificates bearing the name of the person in whose memory the scholarship has been created. We share student profiles, academic reports and photographs so you can follow their progress and see the impact of your contribution.",
+            "Students receive certificates with your loved one's name on them. We send you their photos and marksheets every year.",
         },
       ],
     },
     process: {
       title: "How to Start a Memorial Scholarship",
       description:
-        "If you would like to set up a scholarship, please share the following details with us. Minimum annual contribution: Rs 25,000.",
+        "To start a scholarship, please share the following details with us. The minimum support is Rs 25,000 per year.",
       steps: [
         {
-          title: "1. Name of the honoree",
+          title: "1. Name of the person",
           description:
-            "The name of the person in whose memory the scholarship is to be established.",
+            "The name of the loved one you want to remember.",
         },
         {
-          title: "2. Photograph",
+          title: "2. Photo",
           description:
-            "A photograph of the person — we use it for the personalised artwork.",
+            "A photograph of the person to put on the tribute card.",
         },
         {
-          title: "3. A few lines about them",
+          title: "3. A short note about them",
           description:
-            "A short note about who they were, what they cared about, what they would want this scholarship to stand for.",
+            "A few lines about who they were and what they cared about.",
         },
         {
-          title: "4. Annual contribution",
+          title: "4. Yearly donation",
           description:
-            "The amount you would like to contribute every year. Minimum annual contribution is Rs 25,000.",
+            "The amount you want to give every year (minimum is Rs 25,000).",
         },
         {
-          title: "5. Beneficiary preference",
+          title: "5. Who to help",
           description:
-            "Any preference for the type of beneficiary — for example orphan, girl student, students from a specific region, etc.",
+            "Any preference you have, like helping girl students or orphans.",
         },
         {
-          title: "6. Tentative start date",
+          title: "6. Start date",
           description:
-            "The date when you would like the scholarship to start being awarded.",
+            "When you want us to start giving the scholarship.",
         },
         {
-          title: "7. Your contact number",
+          title: "7. Your phone number",
           description:
-            "So our team can reach you to confirm the details and get the scholarship live.",
+            "So our team can contact you to set everything up.",
         },
       ],
     },
     testimonials: [
       {
         quote:
-          "Knowing that students are completing their education in our loved one's name has helped our family heal in a way we did not expect. Every annual report feels like a letter from him.",
+          "Knowing that children are studying in our loved one's name has helped us heal. Every report feels like a letter from him.",
         author: "A donor family",
         location: "Pune, India",
       },
       {
         quote:
-          "I never imagined a scholarship in my late father's name would reach a girl in the Andaman and Nicobar Islands. That single certificate sent home was worth more than anything we could have given ourselves.",
+          "I never thought a scholarship in my father's name would reach a girl in a distant island. That certificate was worth everything to us.",
         author: "Memorial scholarship donor",
         location: "Delhi, India",
       },
@@ -745,28 +745,28 @@ export const servicesData: ServiceData[] = [
     ],
     faqs: [
       {
-        question: "Is there a minimum contribution?",
+        question: "What is the minimum donation?",
         answer:
-          "Yes — the minimum annual contribution is Rs 25,000. There is no upper limit; many donors choose to fund multiple students or extend the scholarship over several years.",
+          "The minimum donation is Rs 25,000 per year. You can choose to fund more than one student or run it for multiple years.",
       },
       {
-        question: "How many applications does a scholarship receive?",
+        question: "How many students apply?",
         answer:
-          "A typical memorial scholarship attracts anywhere between 5,000 and 10,000 applications from across India — sometimes from as far as the Andaman and Nicobar Islands.",
+          "Each scholarship gets thousands of applications from all over India. We filter them carefully.",
       },
       {
-        question: "Can I choose who receives the scholarship?",
+        question: "Can I choose who gets the money?",
         answer:
-          "Yes. You can specify your preferences — for example supporting girls, orphans, students from a particular region, or more than one student. We design the scholarship around the criteria you give us.",
+          "Yes. You can choose to help girls, orphans, or students from a specific city. We set up the rules according to your choice.",
       },
       {
         question: "How are students selected?",
         answer:
-          "Every application is thoroughly vetted by our team before the final selection is made. Our selection committee weighs financial need, academic merit and personal circumstances. Priority is often given to orphaned students.",
+          "Our team checks the marks, home, and family income of every applicant. We give preference to students who have lost their parents or are in extreme need.",
       },
     ],
     namedScholarships: [
-      "Rohith Venumla Memorial Scholarship",
+      "Rohith Vemula Memorial Scholarship",
       "Kalbe Sadiq Memorial Scholarship",
       "Sir Syed Ahmad Khan Memorial Scholarship",
       "Danish Siddiqui Memorial Scholarship",
@@ -777,7 +777,7 @@ export const servicesData: ServiceData[] = [
       role: "Memorial Scholarship Coordinator",
       email: "aaghaz.foundation@gmail.com",
       phone: "+91 99716 48900",
-      note: "If you would like to honour a loved one by supporting a deserving student, we would be happy to help. Email or WhatsApp us — Saima will personally walk you through the process.",
+      note: "If you want to start a scholarship in memory of a loved one, we are here to help. Send us an email or WhatsApp message, and Saima will guide you.",
     },
   },
 
@@ -787,82 +787,82 @@ export const servicesData: ServiceData[] = [
     heroImage: serviceImages.becomeVolunteer,
     heroTitle: "BECOME AN AAGHAZ FIELD VOLUNTEER",
     intro: {
-      heading: "AAGHAZ IS A VOLUNTEER-DRIVEN ORGANISATION",
+      heading: "AAGHAZ RUNS BECAUSE OF VOLUNTEERS",
       subheading:
-        "Our volunteers are the reason this works. Join us, and a child somewhere finishes school because of it.",
+        "Our volunteers are the heart of Aaghaz. Join us to help a child finish school.",
       description: [
-        "Aaghaz is a volunteer-driven organisation. Our volunteers identify students in need of financial assistance, conduct pre-scholarship surveys with the core team, and stay in touch with beneficiaries throughout the academic year.",
-        "If you have two free hours a week and a willingness to listen, you can change a life. We need volunteers in cities and small towns across India — especially in Uttar Pradesh, Bihar, Maharashtra and the National Capital Region.",
+        "Aaghaz is a volunteer-run group. Volunteers help us find students who need help, visit their homes to check details, and guide the students through their school year.",
+        "If you have two hours a week and want to help, you can make a big difference. We need volunteers in cities and towns across India, especially in UP, Bihar, Maharashtra, and Delhi NCR.",
       ],
     },
     whyChooseUs: {
-      title: "What volunteers do",
+      title: "What Volunteers Do",
       items: [
         {
-          title: "Pre-scholarship field surveys",
+          title: "Home visits",
           description:
-            "Visit a recommended student's home and school to verify the case before approval.",
+            "Visit a student's home and school to check their details in person before we approve fees.",
         },
         {
-          title: "Mentorship & follow-up",
+          title: "Mentorship",
           description:
-            "Stay in touch with one or two beneficiaries through the academic year — calls, occasional visits, gentle accountability.",
+            "Stay in touch with one or two students, call them, and help them with their studies.",
         },
         {
-          title: "Online support",
+          title: "Online help",
           description:
-            "Documentation, social media, fundraising events, donor communication — work that can be done remotely.",
+            "Help us with typing work, writing stories, managing social media, or talking to donors.",
         },
       ],
     },
     signatureServices: {
-      title: "Volunteer roles",
+      title: "Volunteer Roles",
       items: [
         {
-          title: "Field volunteer",
+          title: "Field Volunteer",
           description:
-            "On-the-ground surveys and mentorship in your own city or district.",
+            "Do home visits and check details in your own town or city.",
         },
         {
-          title: "Online mentor",
+          title: "Online Mentor",
           description:
-            "Weekly video calls with assigned students for academic and career guidance.",
+            "Talk to a student weekly over video calls to guide them in their studies and career.",
         },
         {
-          title: "Communications & content",
+          title: "Story writing & Content",
           description:
-            "Help us tell stories well — writing, photography, video, social media, donor reports.",
+            "Help us write stories, take photos, or manage our social media pages.",
         },
         {
-          title: "Fundraising lead",
+          title: "Fundraising Help",
           description:
-            "Organise small-group fundraisers, runs, college events or workplace giving campaigns.",
+            "Help us organize small events to raise funds for poor students.",
         },
       ],
     },
     process: {
-      title: "How to join",
+      title: "How to Join",
       description: "",
       steps: [
         {
-          title: "1. Register your interest",
+          title: "1. Fill the form",
           description:
-            "Fill the Become a Field Volunteer form on our website with your basic details and city.",
+            "Submit the Become a Field Volunteer form on our website.",
         },
         {
-          title: "2. Quick conversation",
+          title: "2. Simple phone call",
           description:
-            "A team member will get in touch within a few working days for a short call to understand your interests and availability.",
+            "A team member will call you to talk about your interests and free hours.",
         },
         {
           title: "3. Orientation",
           description:
-            "A short induction on Aaghaz's values, processes and the volunteer code of conduct.",
+            "A quick introduction to Aaghaz's rules and how we work.",
         },
         {
           title: "4. Your first case",
           description:
-            "We assign you your first survey or mentee — and pair you with an experienced volunteer for the first few weeks.",
+            "We will assign you your first home visit, pairing you with an experienced volunteer first.",
         },
       ],
     },
@@ -880,89 +880,89 @@ export const servicesData: ServiceData[] = [
     id: "join-as-donor",
     title: "Join us as Donor",
     heroImage: serviceImages.joinDonor,
-    heroTitle: "JOIN US AS A DONOR — FUND A FUTURE",
+    heroTitle: "JOIN US AS A DONOR — FUND A CHILD'S FUTURE",
     intro: {
-      heading: "JOIN THE AAGHAZ DONOR BASE",
+      heading: "BECOME AN AAGHAZ DONOR",
       subheading:
-        "One-time, monthly or memorial — every contribution is tracked and reported.",
+        "One-time, monthly, or memorial donations — we track and report every rupee.",
       description: [
-        "Join the Aaghaz donor base by registering with us. A member of the team will get in touch with you to walk you through the kind of support you'd like to provide and answer any questions you may have.",
-        "Donations to Aaghaz Foundation are eligible for tax exemption under Section 80G in India. We absorb our administrative costs through founder funding and volunteer effort, so 100% of your donation goes towards student aid.",
+        "Register on our website to join our group of donors. A team member will call you to explain how you can help and answer any questions.",
+        "Donations to Aaghaz get tax deduction benefits under Section 80G in India. Our founders pay for all office costs, so 100% of your donation is spent on paying student fees.",
       ],
     },
     whyChooseUs: {
-      title: "Ways to give",
+      title: "Ways to Donate",
       items: [
         {
           title: "One-time donation",
           description:
-            "Give any amount, just once. We will use it for the highest-priority verified case currently in our pipeline.",
+            "Donate any amount once. We will use it for the student who needs it most right now.",
         },
         {
-          title: "Monthly recurring",
+          title: "Monthly donation",
           description:
-            "Set up a small monthly contribution. It is the single most effective way to keep a child in school year-on-year.",
+            "Set up a small monthly donation. This is the best way to help a child finish school year after year.",
         },
         {
           title: "Sponsor a child",
           description:
-            "Cover one specific student's annual expenses end-to-end and receive that student's progress reports.",
+            "Pay the full yearly fees of one specific student and get their progress updates.",
         },
         {
-          title: "Launch a memorial scholarship",
+          title: "Memorial Scholarship",
           description:
-            "Honour a loved one. Co-design the criteria. Receive an annual report.",
+            "Start a scholarship in the name of a loved one and get yearly reports.",
         },
       ],
     },
     signatureServices: {
-      title: "What your donation pays for",
+      title: "What Your Donation Pays For",
       items: [
         {
           title: "Rs 1,000",
           description:
-            "Buys textbooks, uniforms and stationery for one school child for an academic year.",
+            "Pays for books, uniforms, and notebooks for one school child for a year.",
         },
         {
           title: "Rs 5,000",
           description:
-            "Covers an entire year's school fees for a student in a government-aided school.",
+            "Pays the full yearly school fees for a student in a government school.",
         },
         {
           title: "Rs 25,000",
           description:
-            "Covers a year of college tuition or hostel for an undergraduate student.",
+            "Pays a year's college fees or hostel rent for a college student.",
         },
         {
           title: "Rs 50,000+",
           description:
-            "Funds a full memorial scholarship in your loved one's name, with annual reports.",
+            "Funds a full memorial scholarship in your loved one's name with yearly progress reports.",
         },
       ],
     },
     process: {
-      title: "Becoming a donor",
+      title: "How to Become a Donor",
       description: "",
       steps: [
         {
-          title: "1. Register",
+          title: "1. Register online",
           description:
-            "Fill the Join us as Donor form with your contact details and area of interest.",
+            "Fill the Join us as Donor form on our website.",
         },
         {
-          title: "2. We call you back",
+          title: "2. Simple phone call",
           description:
-            "A team member walks you through the giving options that best fit your goals.",
+            "We will call you to discuss how you would like to help.",
         },
         {
-          title: "3. Donate online or by transfer",
+          title: "3. Donate online",
           description:
-            "Standard online payment, NEFT/UPI or international bank transfer for NRIs and foreign donors.",
+            "Donate via online payment, bank transfer (NEFT/UPI), or foreign transfer.",
         },
         {
           title: "4. Receipts & reports",
           description:
-            "Tax-exemption receipt within 7 working days, plus annual reports on the students you've supported.",
+            "Get your 80G tax receipt within 7 days, and yearly progress updates of the kids you helped.",
         },
       ],
     },
@@ -980,89 +980,89 @@ export const servicesData: ServiceData[] = [
     id: "launch-scholarship",
     title: "Launch Scholarship",
     heroImage: serviceImages.launchScholarship,
-    heroTitle: "LAUNCH A SCHOLARSHIP IN A LOVED ONE'S NAME",
+    heroTitle: "Start a Scholarship in a Loved One's Name",
     intro: {
-      heading: "LAUNCH A MEMORIAL OR NAMED SCHOLARSHIP",
+      heading: "Start a Memorial or Named Scholarship",
       subheading:
-        "Many of our donors choose to support Aaghaz by offering scholarships in someone's name.",
+        "Start a scholarship in the name of a parent, teacher, or friend.",
       description: [
-        "A memorial scholarship is one of the most enduring tributes we know. It honours a parent, a sibling, a teacher or a friend by ensuring that, every year, one or more deserving students complete the education they could not otherwise afford.",
-        "We design each scholarship together with you — its name, its criteria, its duration — and we report back every year on the lives it has touched.",
+        "A memorial scholarship is a beautiful way to remember someone special. It pays for the fees of a poor student who would otherwise have to leave school.",
+        "We set up the rules together with you (name, criteria, and budget) and send you a progress report of the student every year.",
       ],
     },
     whyChooseUs: {
-      title: "What we co-design with you",
+      title: "What You Can Decide",
       items: [
         {
-          title: "Name & dedication",
+          title: "Name & Dedication",
           description:
-            "The scholarship is named exactly as you wish — \"The XYZ Memorial Scholarship\" or any other phrasing.",
+            "Choose the name for the scholarship, like 'The XYZ Memorial Scholarship'.",
         },
         {
-          title: "Eligibility criteria",
+          title: "Who is eligible",
           description:
-            "Region, age, gender, course, academic threshold — defined together and documented in a simple MOU.",
+            "Choose the region, age, gender, or study course for the students you want to help.",
         },
         {
-          title: "Duration & cohort size",
+          title: "Duration & number of kids",
           description:
-            "Decide whether the scholarship runs for one year or many, and how many students it covers each year.",
+            "Decide how many years you want to run the scholarship and how many kids it covers.",
         },
         {
-          title: "Reporting cadence",
+          title: "Report updates",
           description:
-            "Annual or semester-wise reports with photographs, results and short notes from the students.",
+            "We send yearly updates with photos and marks of the students you helped.",
         },
       ],
     },
     signatureServices: {
-      title: "Sample scholarship structures",
+      title: "Example Scholarship Plans",
       items: [
         {
-          title: "Single-year, single-student",
+          title: "1 Year, 1 Student",
           description:
-            "Rs 50,000 covers one student's school or college year end-to-end. Ideal for a personal tribute.",
+            "Rs 50,000 pays for one student's school or college fees for one year. Great for a personal tribute.",
         },
         {
-          title: "Three-year cohort",
+          title: "3-Year Scholarship",
           description:
-            "Rs 1.5–3 lakh over three years sponsors a student through their full graduation programme.",
+            "Sponsor a student for their full 3-year college degree.",
         },
         {
-          title: "Annual rolling cohort",
+          title: "Yearly Rolling Scholarship",
           description:
-            "A long-term commitment that funds 1–5 students every year in perpetuity in your loved one's name.",
+            "A long-term promise to sponsor one or more students every year.",
         },
         {
-          title: "Subject or region-specific",
+          title: "Specific Help",
           description:
-            "Scholarships restricted to girls in STEM, students from a specific district, or first-generation learners — your choice.",
+            "Scholarships only for girls studying science, or kids from a particular poor district.",
         },
       ],
     },
     process: {
-      title: "How to launch a scholarship",
+      title: "How to Launch",
       description: "",
       steps: [
         {
-          title: "1. Tell us the story",
+          title: "1. Share the story",
           description:
-            "Share who you'd like to honour and why. We will listen, and we will not rush you.",
+            "Tell us about the person you want to honor and what they cared about.",
         },
         {
-          title: "2. Co-design the scholarship",
+          title: "2. Set up the rules",
           description:
-            "We agree on the name, criteria, duration and budget — and capture everything in a short, plain-English MOU.",
+            "We agree on the name, rules, and budget, and write down a simple agreement.",
         },
         {
-          title: "3. Selection of students",
+          title: "3. Student selection",
           description:
-            "Aaghaz selects students from our verified pipeline who match your criteria.",
+            "Aaghaz finds matching students from our checked list.",
         },
         {
-          title: "4. Disbursement & annual reporting",
+          title: "4. Payments & updates",
           description:
-            "Funds are disbursed directly to the institutions, and you receive a detailed report every year.",
+            "We pay the fees directly to the school, and send you progress reports every year.",
         },
       ],
     },

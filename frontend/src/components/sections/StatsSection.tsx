@@ -21,36 +21,36 @@ const stats: Stat[] = [
   {
     icon: Calendar,
     value: "20+",
-    label: "Years on the ground",
-    caption: "From a single needy student in 2004 to thousands across India.",
+    label: "Years of work",
+    caption: "We started with one student in 2004 and have now helped thousands across India.",
     image: statsImages.teacherWriting,
   },
   {
     icon: GraduationCap,
     value: "5,000+",
-    label: "Students supported",
-    caption: "Verified, in-person, one student at a time — not statistics.",
+    label: "Students helped",
+    caption: "We check the needs of every student in person before helping them.",
     image: statsImages.girlGraduate,
   },
   {
     icon: HandCoins,
     value: "100%",
-    label: "Reaches the child",
-    caption: "Founder funding covers our overheads. Every rupee is the child's.",
+    label: "Goes to the student",
+    caption: "Our founders pay for all office costs. Every rupee you donate goes directly to the student.",
     image: statsImages.studentsWalking,
   },
   {
     icon: Users,
     value: "300+",
     label: "Active volunteers",
-    caption: "Field surveys in 14 states. Two visit every household. No exceptions.",
+    caption: "Our volunteers do field checks in 14 states. At least two volunteers visit every home.",
     image: statsImages.classroomDesk,
   },
   {
     icon: BookOpen,
     value: "2",
-    label: "Learning centres",
-    caption: "LCGC, Lucknow since 2011. Rahmani 30 partnership in UP.",
+    label: "Study centers",
+    caption: "We run a guidance center in Lucknow and partner with Rahmani 30 in Uttar Pradesh.",
     image: statsImages.teacherWriting,
   },
 ];
@@ -76,11 +76,10 @@ export const StatsSection = () => {
             <span className="block w-8 h-px bg-primary" />
           </p>
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold text-accent">
-            Quiet work. Loud results.
+            What We Have Achieved
           </h2>
           <p className="mt-4 text-text-muted max-w-xl mx-auto text-sm md:text-lg">
-            Twenty years of receipts, reports, and follow-up phone calls — boiled
-            down to five honest numbers. Hover any stat to see the story behind it.
+            Over the last 20 years, we have kept clean records of every rupee. Hover or click on any number below to see the details.
           </p>
         </div>
 
@@ -198,7 +197,7 @@ export const StatsSection = () => {
             {/* Bottom note */}
             <p className="mt-8 text-text-muted text-sm italic flex items-center gap-3">
               <span className="block w-6 h-px bg-secondary" />
-              Numbers are reviewed every quarter and shared with our donors.
+              We check our numbers every three months and share reports with our donors.
             </p>
           </div>
         </div>

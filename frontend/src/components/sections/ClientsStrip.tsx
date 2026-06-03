@@ -28,7 +28,7 @@ export const ClientsStrip = () => {
           <span className="block w-8 h-px bg-secondary" />
         </p>
         <h3 className="font-display text-2xl md:text-3xl text-white mb-10">
-          The shoulders we stand on
+          Organizations that support our work
         </h3>
         <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
           {partners.map((p) => (

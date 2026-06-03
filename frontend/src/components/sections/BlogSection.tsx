@@ -43,14 +43,13 @@ export const BlogSection = () => {
               variants={itemVariants}
               className="text-3xl md:text-5xl font-display text-accent"
             >
-              Postcards from the work
+              Latest News &amp; Stories
             </motion.h2>
             <motion.p
               variants={itemVariants}
               className="text-text-muted mt-2 max-w-md"
             >
-              Short despatches from press coverage, field visits, and the people
-              who keep Aaghaz going.
+              Read updates about our work, field visits, and the people who support Aaghaz.
             </motion.p>
           </div>
           <motion.div variants={itemVariants} className="hidden md:block">
@@ -59,7 +58,7 @@ export const BlogSection = () => {
               icon={ArrowRight}
               onClick={() => (window.location.href = "/blog")}
             >
-              View All Articles
+              Read All Stories
             </Button>
           </motion.div>
         </div>
@@ -75,7 +74,7 @@ export const BlogSection = () => {
         <motion.div variants={itemVariants} className="mt-12 text-center">
           <Link to="/blog">
             <Button variant="primary" icon={ArrowRight}>
-              All News &amp; Stories
+              See All Stories
             </Button>
           </Link>
         </motion.div>

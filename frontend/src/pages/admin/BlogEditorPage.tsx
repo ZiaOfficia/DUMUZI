@@ -248,7 +248,7 @@ const BlogEditorPage: React.FC = () => {
             </label>
             <input
               type="text"
-              placeholder="e.g. wedding decor, indian weddings, new york"
+              placeholder="e.g. scholarships, study help, lucknow"
               className="w-full bg-stone-900 border border-stone-700 text-stone-100 rounded px-4 py-2"
               value={formData.tags}
               onChange={(e) =>

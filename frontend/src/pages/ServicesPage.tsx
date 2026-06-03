@@ -22,27 +22,27 @@ export const ServicesPage = () => {
     {
       question: "How does Aaghaz decide who gets help?",
       answer:
-        "Every recommended student is verified through an in-person pre-scholarship survey by at least two volunteers. Only after both reports agree do we onboard the student. We do not run a generic application form — every case is real, met and documented.",
+        "Every student who asks for help is visited by our volunteers at home. We only help students who really need it. We do not approve cases without checking in person.",
     },
     {
       question: "Are donations tax-exempt?",
       answer:
-        "Yes. Aaghaz Foundation is a registered non-profit and donations made by Indian residents are eligible for tax exemption under Section 80G of the Income Tax Act. Receipts are issued within seven working days of every donation.",
+        "Yes. Aaghaz is a registered charity. Donors in India get tax benefits under Section 80G. We send donation receipts within 7 days.",
     },
     {
       question: "Can I direct my donation to a specific programme?",
       answer:
-        "Absolutely. You can earmark your contribution to Student Aid or a memorial scholarship in someone's name — and we will report back specifically on that programme.",
+        "Yes. You can choose to support Student Aid or a memorial scholarship. We will use your donation only for that program and send you updates.",
     },
     {
       question: "How do I become a volunteer?",
       answer:
-        "Use the Become a Volunteer page to register your interest. A team member will reach out within a few working days to understand your availability and city, walk you through orientation, and pair you with an experienced volunteer for your first survey or mentee.",
+        "Go to our Become a Volunteer page and sign up. A team member will call you within a few days to guide you and assign your first home visit with an experienced volunteer.",
     },
     {
       question: "How do I apply for student aid for myself or my child?",
       answer:
-        "Use the Apply for Student Aid form on our website. We cover school fees, college tuition, exam fees, books, uniforms and hostel for verified low-income families. Our volunteer team will reach out to schedule a survey, usually within a week.",
+        "Fill the application form on our website. We help pay fees, books, uniforms, and hostel costs for poor families. Our volunteers will call you to visit your home.",
     },
   ];
 
@@ -52,12 +52,12 @@ export const ServicesPage = () => {
       icon: <GraduationCap className="w-8 h-8 text-primary" />,
       title: "Student Aid",
       description:
-        "Need-based financial assistance for school and college students from underprivileged families across India. Tuition, books, exam fees, uniforms — whatever stands between a child and the next class.",
+        "Help with fees, books, exam fees, and uniforms for school and college students from poor families.",
       features: [
-        "School &amp; exam fees",
-        "College &amp; university tuition",
-        "Books, uniforms &amp; stationery",
-        "Hostel & daily living support",
+        "School and exam fees",
+        "College and university fees",
+        "Textbooks, notebooks, and uniforms",
+        "Hostel rent and food help",
       ],
       image:
         "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=80",
@@ -67,12 +67,12 @@ export const ServicesPage = () => {
       icon: <Award className="w-8 h-8 text-primary" />,
       title: "Scholarships",
       description:
-        "Annual, merit-cum-means and memorial scholarships for students across India. Every scholarship is awarded after a verified pre-scholarship survey, and donors receive an annual report on the students their contribution has supported.",
+        "Scholarships funded by donors to help students finish their studies. Every student is checked in person, and donors get a progress report every year.",
       features: [
-        "Memorial scholarships",
-        "Annual general scholarship pool",
-        "Corporate / CSR-funded cohorts",
-        "Subject-specific awards (girls in STEM, civil services)",
+        "Scholarships in memory of loved ones",
+        "General scholarship pool",
+        "Company sponsored student groups",
+        "Special awards for girl students",
       ],
       image:
         "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=1600&q=80",
@@ -82,12 +82,12 @@ export const ServicesPage = () => {
       icon: <HandCoins className="w-8 h-8 text-primary" />,
       title: "Financial Assistance",
       description:
-        "Sometimes a family is doing everything right and is still one missed fee instalment away from a child dropping out. We provide timely financial assistance — sometimes a one-time intervention, sometimes ongoing year-on-year.",
+        "Quick financial help for families facing sudden problems. We give one-time or monthly fee support to keep kids in school.",
       features: [
-        "Last-minute fee crises",
-        "Loss of an earning parent",
-        "Medical emergencies that derail education",
-        "Recurring monthly support",
+        "Help during sudden fee deadlines",
+        "Support if the earning parent passes away",
+        "Help when family medical bills are high",
+        "Monthly fee support",
       ],
       image:
         "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1600&q=80",
@@ -97,12 +97,12 @@ export const ServicesPage = () => {
       icon: <Users className="w-8 h-8 text-primary" />,
       title: "Become a Volunteer",
       description:
-        "Aaghaz is a volunteer-driven organisation. If you have two free hours a week and a willingness to listen, you can change a life. We need volunteers in cities and small towns across India — especially in UP, Bihar, Maharashtra and the NCR.",
+        "Aaghaz runs because of volunteers. If you have two free hours a week, you can help a child study. We need volunteers in cities and towns across India.",
       features: [
-        "Pre-scholarship field surveys",
-        "Online mentorship",
-        "Communications &amp; content",
-        "Fundraising lead",
+        "In-person student home visits",
+        "Online teaching and guiding",
+        "Help with writing and photos",
+        "Organizing local fundraising",
       ],
       image:
         "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=1600&q=80",
@@ -112,12 +112,12 @@ export const ServicesPage = () => {
       icon: <Heart className="w-8 h-8 text-primary" />,
       title: "Join us as Donor",
       description:
-        "Join the Aaghaz donor base by registering with us. A team member will get in touch with you to walk you through the kind of support you'd like to provide and answer any questions you may have. 100% of your donation goes towards student aid.",
+        "Register to join our donor base. We will call you to discuss how you can help. 100% of your donation is spent on paying student fees.",
       features: [
-        "One-time or monthly giving",
-        "Sponsor a child end-to-end",
-        "80G tax-exemption receipts",
-        "Annual progress reports",
+        "One-time or monthly donations",
+        "Sponsor a child's yearly fees",
+        "80G tax benefit receipts",
+        "Yearly progress reports",
       ],
       image:
         "https://images.unsplash.com/photo-1488998427799-e3362cec87c3?auto=format&fit=crop&w=1600&q=80",
@@ -127,12 +127,12 @@ export const ServicesPage = () => {
       icon: <Gift className="w-8 h-8 text-primary" />,
       title: "Launch Scholarship",
       description:
-        "Honour someone you love. Many of our donors choose to support Aaghaz by launching a scholarship in the name of a parent, sibling, teacher or friend. We co-design the criteria with you and report annually on the students it has supported.",
+        "Start a scholarship in the name of a parent, teacher, or friend to honor their memory. You choose the rules, and we send you yearly reports.",
       features: [
-        "Single-year, single-student tributes",
-        "Three-year cohort scholarships",
-        "Annual rolling cohorts in perpetuity",
-        "Subject or region-specific awards",
+        "Scholarships for a single year",
+        "Three-year college fee support",
+        "Ongoing scholarships every year",
+        "Choose who to help (like girls only)",
       ],
       image:
         "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=1600&q=80",
@@ -155,7 +155,7 @@ export const ServicesPage = () => {
           <img
             loading="lazy"
             decoding="async"
-            src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=1920&q=80"
+            src="https://images.unsplash.com/photo-1497486751825-1233686d5d85?auto=format&fit=crop&w=1920&q=80"
             alt="Children studying — Aaghaz Foundation"
             className="w-full h-full object-cover"
           />
@@ -175,7 +175,7 @@ export const ServicesPage = () => {
             transition={{ delay: 0.2 }}
             className="text-4xl md:text-6xl lg:text-7xl font-display mb-6"
           >
-            Programs that change a child's trajectory
+            Programs that help a child study and succeed
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -183,8 +183,7 @@ export const ServicesPage = () => {
             transition={{ delay: 0.4 }}
             className="text-lg md:text-xl text-white/95 font-light max-w-2xl mx-auto leading-relaxed"
           >
-            Verified scholarships, free coaching centres and the volunteer
-            network that keeps it all honest.
+            Checked scholarships, free coaching centers, and a volunteer network that works honestly.
           </motion.p>
         </div>
       </section>
@@ -193,13 +192,12 @@ export const ServicesPage = () => {
       <section className="py-24 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-display text-accent mb-8">
-            One foundation. Many on-ramps.
+            One foundation. Many ways to help.
           </h2>
           <p className="text-gray-600 leading-relaxed mb-12">
-            Whether you are a student looking for financial help, a donor who
-            wants to invest in a child's future, a volunteer with a few hours
-            each week, or a company looking for a meaningful CSR partnership —
-            there is a way in. Browse the programs below to find yours.
+            Whether you are a student looking for help, a donor wanting to help a child,
+            a volunteer with two hours a week, or a company looking to partner — there
+            is a way to join. Look at our programs below.
           </p>
           <div className="w-24 h-px bg-secondary mx-auto" />
         </div>
@@ -216,11 +214,10 @@ export const ServicesPage = () => {
               <span className="w-3 h-3 bg-secondary rounded-full animate-pulse"></span>
             </div>
             <h2 className="text-3xl md:text-5xl font-display text-accent mb-6 leading-tight">
-              Programs that change a child's trajectory
+              Programs that help a child study and succeed
             </h2>
             <p className="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
-              Aaghaz Foundation transforms lives through education. From need-based student aid to memorial scholarships,
-              we ensure no deserving child is left behind.
+              Aaghaz Foundation helps kids study. From school fee aid to scholarships in memory of loved ones, we make sure no bright child stops studying because of money.
             </p>
           </div>
 
@@ -305,8 +302,7 @@ export const ServicesPage = () => {
                 </div>
                 <h4 className="font-display text-lg text-accent mb-3">Student Aid</h4>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Need-based financial assistance for school and college students from underprivileged families.
-                  Covers tuition, books, uniforms, and hostel fees.
+                  Help with school and college fees for kids from poor families. Covers fees, books, uniforms, and hostel.
                 </p>
               </motion.div>
 
@@ -322,8 +318,7 @@ export const ServicesPage = () => {
                 </div>
                 <h4 className="font-display text-lg text-accent mb-3">Scholarships</h4>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Annual, merit-cum-means scholarships for students across India. Every scholarship is awarded
-                  after verified pre-scholarship surveys.
+                  Yearly scholarships for clever students across India, given after checking their homes in person.
                 </p>
               </motion.div>
 
@@ -339,8 +334,7 @@ export const ServicesPage = () => {
                 </div>
                 <h4 className="font-display text-lg text-accent mb-3">Financial Assistance</h4>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Timely financial assistance for families facing unexpected crises. One-time or ongoing support
-                  to prevent educational disruption.
+                  Quick help for families facing sudden problems, keeping children in school with one-time or ongoing fee support.
                 </p>
               </motion.div>
 
@@ -356,8 +350,7 @@ export const ServicesPage = () => {
                 </div>
                 <h4 className="font-display text-lg text-accent mb-3">Volunteer Network</h4>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Volunteer-driven organization with field surveys and mentorship. Join our network of
-                  dedicated volunteers across India.
+                  A group run by volunteers who check details and guide students. Join our volunteer network in India.
                 </p>
               </motion.div>
 
@@ -373,8 +366,7 @@ export const ServicesPage = () => {
                 </div>
                 <h4 className="font-display text-lg text-accent mb-3">Donor Partnerships</h4>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Join our donor community. Support specific programs or sponsor children end-to-end.
-                  100% of donations go to student aid.
+                  Join our donor community to sponsor a child or help a program. 100% of your donation is used for student fees.
                 </p>
               </motion.div>
 
@@ -390,8 +382,7 @@ export const ServicesPage = () => {
                 </div>
                 <h4 className="font-display text-lg text-accent mb-3">Launch Scholarships</h4>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Honor loved ones by launching memorial scholarships. We co-design criteria and provide
-                  annual progress reports.
+                  Start a scholarship in memory of a loved one. You choose the rules, and we send you yearly updates.
                 </p>
               </motion.div>
             </div>
@@ -414,15 +405,13 @@ export const ServicesPage = () => {
               Memorial Scholarships
             </h3>
             <p className="text-gray-700 leading-relaxed mb-6 max-w-3xl mx-auto">
-              Aaghaz Foundation currently runs more than 80 memorial scholarships across India, worth nearly Rs 1 crore annually,
-              supporting hundreds of underprivileged students — many of whom are orphans or come from financially distressed families
-              struggling to continue their education.
+              Aaghaz Foundation runs more than 80 scholarships in memory of loved ones across India. We give nearly Rs 1 crore every year to help hundreds of poor students and orphans finish their studies.
             </p>
             <Link
               to="/services/memorial-scholarship"
               className="inline-flex items-center gap-3 bg-primary hover:bg-primary-dark text-white px-8 py-4 text-sm uppercase tracking-widest font-bold rounded-tl-2xl rounded-br-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-0.5"
             >
-              Learn More About Memorial Scholarships
+              Find out more about Memorial Scholarships
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>
@@ -472,7 +461,7 @@ export const ServicesPage = () => {
                 </p>
                 <div className="bg-white p-8 border border-primary/10 shadow-sm relative">
                   <h4 className="font-display text-lg mb-4 text-accent">
-                    What's included
+                    What we cover
                   </h4>
                   <ul className="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-6 text-left">
                     {program.features.map((feature, idx) => (
@@ -509,11 +498,10 @@ export const ServicesPage = () => {
               FAQs
             </h2>
             <p className="text-gray-700 text-xl font-bold">
-              Common questions about how we work
+              Common questions about our programs
             </p>
             <p className="text-gray-500 font-light text-sm mt-2 max-w-2xl mx-auto">
-              We've answered the questions donors, volunteers and parents ask
-              us most often. If yours isn't here, write to{" "}
+              Here are answers to the questions donors, volunteers, and parents ask us most often. If you have another question, email us at{" "}
               <a
                 href="mailto:aaghaz.foundation@gmail.com"
                 className="text-primary hover:underline"

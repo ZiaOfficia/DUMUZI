@@ -34,7 +34,7 @@ export const InstagramFeed = () => {
             transition={{ delay: 0.1 }}
             className="text-3xl md:text-5xl font-display text-accent mb-4"
           >
-            Follow our journey on Instagram
+            Follow us on Instagram
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -55,7 +55,7 @@ export const InstagramFeed = () => {
             transition={{ delay: 0.3 }}
             className="inline-block px-8 py-3 bg-primary text-white text-xs font-bold uppercase tracking-widest hover:bg-primary-dark rounded-full transition-colors duration-300"
           >
-            View Profile
+            Visit profile
           </motion.a>
         </div>
 

@@ -41,14 +41,13 @@ export const GallerySection = () => {
           variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
           className="text-3xl md:text-5xl font-display mb-3 mt-2 text-accent"
         >
-          A few honest pictures
+          Pictures from our programs
         </motion.h2>
         <motion.p
           variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
           className="text-text-muted max-w-xl mx-auto mb-10"
         >
-          No staged smiles. Just the daily quiet of a learning centre, a survey
-          visit, a graduation hug.
+          Real photos from our school visits, learning centers, and student meetings.
         </motion.p>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -104,7 +103,7 @@ export const GallerySection = () => {
           className="mt-12"
         >
           <Link to="/gallery">
-            <Button variant="primary">View Full Gallery</Button>
+            <Button variant="primary">See All Photos</Button>
           </Link>
         </motion.div>
       </div>

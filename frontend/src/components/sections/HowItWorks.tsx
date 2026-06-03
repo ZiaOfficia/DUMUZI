@@ -10,30 +10,30 @@ import {
 const steps = [
   {
     icon: ClipboardCheck,
-    title: "A student is recommended",
+    title: "Someone tells us about a student",
     description:
-      "A teacher, neighbour, journalist or earlier beneficiary flags a child to us. We never run open application drives.",
+      "A teacher, neighbor, or news reporter tells us about a student who needs help. We do not take random applications.",
     duration: "Day 1",
   },
   {
     icon: Home,
     title: "Two volunteers visit",
     description:
-      "A minimum of two field volunteers go to the home and the school. They verify financial need, academic record and the genuine willingness to study.",
+      "At least two volunteers visit the student's home and school. They check the family's financial need and the student's marks.",
     duration: "Within 7 days",
   },
   {
     icon: Users,
-    title: "Committee reviews the case",
+    title: "Our committee checks the case",
     description:
-      "Our committee reads both volunteer reports. They approve the support amount, the duration, and the disbursement route.",
+      "Our committee reads the volunteer reports. They decide how much money to give and for how long.",
     duration: "Within 14 days",
   },
   {
     icon: HandCoins,
-    title: "Funds reach the institution",
+    title: "We pay the fees directly",
     description:
-      "Wherever possible, we pay the school or college directly — never the family. The volunteer team checks in every month.",
+      "We pay the school or college directly, not the family. Our volunteers also check on the student every month.",
     duration: "Same academic year",
   },
 ];
@@ -57,9 +57,7 @@ export const HowItWorks = () => {
             Four steps. No shortcuts.
           </h2>
           <p className="text-gray-300 max-w-2xl mx-auto text-lg">
-            We do not run a generic application form. Every rupee follows a
-            real student through a real process — exactly as we&apos;ve done it
-            for two decades.
+            We do not take random online forms. Every single rupee goes through a real process to help a real student, just like we have done for 20 years.
           </p>
         </div>
 
@@ -127,7 +125,7 @@ export const HowItWorks = () => {
         <div className="mt-14 text-center">
           <p className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-secondary/30 bg-secondary/10 text-secondary text-xs font-bold uppercase tracking-[0.3em]">
             <span className="block w-2 h-2 rounded-full bg-secondary animate-pulse" />
-            Same process for every single student — no exceptions
+            We follow this process for every student without exception.
           </p>
         </div>
       </div>

@@ -7,27 +7,27 @@ export const ActionBlocksSection = () => {
   const blocks = [
     {
       icon: Award,
-      title: "Launch a Scholarship",
-      text: "Many of our donors choose to support Aaghaz by offering scholarships — often a memorial scholarship in the name of a loved one. We co-design the criteria with you and report annually.",
+      title: "Start a Scholarship",
+      text: "You can start a scholarship in your name or to remember a loved one. We will help you choose the rules and send you updates every year.",
       image: actionImages.launchScholarship,
       link: "/services/launch-scholarship",
-      cta: "Read More",
+      cta: "Learn More",
     },
     {
       icon: Heart,
-      title: "Join Us as a Donor",
-      text: "Join the Aaghaz donor base by registering with us. A team member will get in touch to walk you through the kind of support you'd like to provide and answer any questions.",
+      title: "Become a Donor",
+      text: "Sign up with us to become a regular donor. Our team will contact you to explain how you can help and answer your questions.",
       image: actionImages.joinDonor,
       link: "/services/join-as-donor",
-      cta: "Read More",
+      cta: "Learn More",
     },
     {
       icon: Users,
       title: "Become a Volunteer",
-      text: "Aaghaz is a volunteer-driven organisation. Our volunteers identify students in need of financial assistance and work alongside the core team — both in the field and online.",
+      text: "We are run by volunteers. You can help us find students who need money for school, or assist our team online and on the ground.",
       image: actionImages.becomeVolunteer,
       link: "/services/become-volunteer",
-      cta: "Read More",
+      cta: "Learn More",
     },
   ];
 
@@ -37,12 +37,12 @@ export const ActionBlocksSection = () => {
         <div className="text-center mb-12">
           <p className="inline-flex items-center gap-3 text-primary text-xs font-bold uppercase tracking-[0.4em] mb-4">
             <span className="block w-8 h-px bg-primary" />
-            Three Ways To Help
+            How You Can Help
             <span className="block w-8 h-px bg-primary" />
           </p>
           <h2 className="text-2xl md:text-3xl lg:text-5xl font-display text-accent">
             <span className="text-gradient-primary">Educate. Empower.</span>{" "}
-            Step in.
+            Get Involved.
           </h2>
         </div>
 

@@ -57,8 +57,7 @@ export const PortfolioListingPage = () => {
             transition={{ delay: 0.2 }}
             className="text-xl font-light text-stone-200"
           >
-            Real students, real volunteers, real change — twenty years and
-            counting.
+            True stories of students, volunteers, and change over the last 20 years.
           </motion.p>
         </div>
       </section>

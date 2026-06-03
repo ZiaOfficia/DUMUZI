@@ -28,7 +28,7 @@ export const HorizontalEnquiryForm = () => {
       !formData.venue ||
       !formData.budget
     ) {
-      alert("Please fill in all fields including the Message.");
+      alert("Please fill in all the details, including your message.");
       return;
     }
 
@@ -80,12 +80,10 @@ export const HorizontalEnquiryForm = () => {
         <div className="bg-white shadow-xl p-6 md:p-8 flex flex-col md:flex-row items-start gap-6 border-t-4 border-primary">
           <div className="w-full md:w-1/4">
             <h3 className="font-display text-xl text-accent">
-              Get in touch with Aaghaz
+              Get in touch with us
             </h3>
             <p className="text-sm text-gray-600 mt-2">
-              Tell us how you'd like to help — donate, volunteer, partner or
-              apply for student aid — and a team member will write back within
-              a few working days.
+              Tell us how you would like to help or if you need aid. We will get back to you in a few days.
             </p>
           </div>
 
@@ -130,10 +128,10 @@ export const HorizontalEnquiryForm = () => {
                 className="w-full bg-stone-50 border-none px-4 py-3 focus:ring-1 focus:ring-primary text-gray-600 appearance-none"
               >
                 <option value="" disabled>
-                  I'd like to...
+                  I want to...
                 </option>
                 <option value="donate">Make a donation</option>
-                <option value="scholarship">Launch a scholarship</option>
+                <option value="scholarship">Start a scholarship</option>
                 <option value="volunteer">Become a volunteer</option>
                 <option value="apply-aid">Apply for student aid</option>
                 <option value="csr">Discuss a CSR partnership</option>
@@ -158,7 +156,7 @@ export const HorizontalEnquiryForm = () => {
                 className="w-full bg-stone-50 border-none px-4 py-3 focus:ring-1 focus:ring-primary text-gray-600 appearance-none"
               >
                 <option value="" disabled>
-                  Indicative amount (optional)
+                  Donation amount (optional)
                 </option>
                 <option value="under-1k">Under Rs 1,000</option>
                 <option value="1k-5k">Rs 1,000 – 5,000</option>
@@ -184,7 +182,7 @@ export const HorizontalEnquiryForm = () => {
                 className="w-full"
                 onClick={handleSubmit}
               >
-                Send Enquiry
+                Send Message
               </Button>
             </div>
           </div>

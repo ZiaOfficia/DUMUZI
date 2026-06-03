@@ -48,11 +48,11 @@ export const BlogSidebar = () => {
     <div className="space-y-8 relative">
       {/* Search Widget */}
       <div className="bg-stone-50/50 backdrop-blur-sm p-6 rounded-2xl border border-stone-100 shadow-sm">
-        <h3 className="font-display text-lg font-semibold mb-4 text-stone-900">Search Articles</h3>
+        <h3 className="font-display text-lg font-semibold mb-4 text-stone-900">Search Stories</h3>
         <form onSubmit={handleSearch} className="relative">
           <input
             type="text"
-            placeholder="Type search terms..."
+            placeholder="Search..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="w-full bg-white border border-stone-200 rounded-xl pl-4 pr-10 py-3 text-sm focus:border-primary focus:outline-none transition-colors"
@@ -125,7 +125,7 @@ export const BlogSidebar = () => {
           </span>
           <h3 className="font-display text-xl mb-2 font-semibold">Sponsor a Student</h3>
           <p className="text-stone-400 text-xs mb-6 leading-relaxed">
-            With just Rs 2,000, you can pay an underprivileged student's school/term fees and protect their future.
+            With just Rs 2,000, you can pay a poor student's school fees and help them study.
           </p>
           <Link to="/contact">
             <Button variant="outline" className="w-full border-primary text-white hover:bg-primary hover:border-primary transition-all duration-300">
@@ -137,7 +137,7 @@ export const BlogSidebar = () => {
 
       {/* Social Follow Widget */}
       <div className="bg-stone-50/50 backdrop-blur-sm p-6 rounded-2xl border border-stone-100 shadow-sm">
-        <h3 className="font-display text-lg font-semibold mb-4 text-stone-900">Follow Our Journey</h3>
+        <h3 className="font-display text-lg font-semibold mb-4 text-stone-900">Follow Us</h3>
         <div className="flex gap-3">
           <a
             href="https://www.facebook.com/aaghazfoundation"

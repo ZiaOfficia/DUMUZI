@@ -15,20 +15,19 @@ const NewsletterSection = () => {
 
         <div className="relative z-10 text-center text-white px-6 max-w-2xl mx-auto">
           <h5 className="text-xs uppercase tracking-[0.3em] text-secondary font-bold mb-6">
-            Stay With Us
+            Stay Updated
           </h5>
           <h2 className="text-4xl md:text-5xl font-display mb-8">
-            Get progress reports from the field
+            Get updates about our work
           </h2>
           <p className="text-lg font-light opacity-95 mb-10">
-            Subscribe and receive a quiet, well-edited update once a quarter —
-            real students, real numbers, no spam.
+            Sign up to receive our news. We send updates four times a year with real stories of how your donations help students. No spam.
           </p>
 
           <form className="flex flex-col md:flex-row gap-4">
             <input
               type="email"
-              placeholder="Your email address"
+              placeholder="Enter your email address"
               className="flex-1 bg-white/10 backdrop-blur-sm border border-white/30 text-white placeholder-white/60 px-6 py-4 rounded-full focus:outline-none focus:bg-white/20 transition-all"
             />
             <button

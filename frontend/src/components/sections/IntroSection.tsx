@@ -46,7 +46,7 @@ export const IntroSection = () => {
       >
         <p className="inline-flex items-center gap-3 text-xs uppercase tracking-[0.4em] text-secondary font-bold mb-6">
           <span className="block w-8 h-px bg-secondary" />
-          Our Promise
+          Who We Are
           <span className="block w-8 h-px bg-secondary" />
         </p>
 
@@ -54,7 +54,7 @@ export const IntroSection = () => {
           <span className="text-gradient-primary">{introContent.heading}</span>
         </h1>
         <p className="italic text-secondary/90 text-sm md:text-base mb-10 tracking-wider">
-          (The first step. Then education. Then transformation.)
+          (First step. Then education. Then change.)
         </p>
 
         {introContent.text.map((paragraph, index) => (
@@ -68,10 +68,10 @@ export const IntroSection = () => {
 
         <div className="mt-10 flex flex-wrap gap-4 justify-center">
           <Button variant="primary" size="lg" onClick={() => navigate("/about")}>
-            Read our story
+            Our Story
           </Button>
           <Button variant="outline" size="lg" onClick={() => navigate("/services")}>
-            See what we do
+            What We Do
           </Button>
         </div>
       </motion.div>

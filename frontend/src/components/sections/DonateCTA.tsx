@@ -4,16 +4,16 @@ import { Link } from "react-router-dom";
 import { donateCtaImage } from "../../data/imageAssets";
 
 const tiers = [
-  { amt: "₹1,000", label: "School supplies for a year" },
-  { amt: "₹5,000", label: "Annual school fees" },
-  { amt: "₹25,000", label: "One college year" },
-  { amt: "₹50,000", label: "Memorial scholarship" },
+  { amt: "₹1,000", label: "School books and bags for a year" },
+  { amt: "₹5,000", label: "School fees for a year" },
+  { amt: "₹25,000", label: "College fees for a year" },
+  { amt: "₹50,000", label: "A scholarship in someone's memory" },
 ];
 
 const trust = [
-  { icon: ShieldCheck, label: "100% reaches the child" },
-  { icon: Receipt, label: "80G tax-exemption" },
-  { icon: Sparkles, label: "Annual progress report" },
+  { icon: ShieldCheck, label: "Your full donation goes to students" },
+  { icon: Receipt, label: "Get 80G tax benefits" },
+  { icon: Sparkles, label: "Get updates on student progress" },
 ];
 
 export const DonateCTA = () => {
@@ -60,17 +60,15 @@ export const DonateCTA = () => {
         >
           <p className="inline-flex items-center gap-3 text-secondary text-xs font-bold uppercase tracking-[0.4em] mb-5">
             <span className="block w-2 h-2 rounded-full bg-secondary animate-pulse" />
-            Be the reason today
+            Help a child learn
           </p>
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-[1.05] mb-6 drop-shadow-2xl">
-            One in three Indians
+            One in three people in India
             <br />
             <span className="text-secondary">cannot read this sentence.</span>
           </h2>
           <p className="text-lg md:text-xl text-gray-100 mb-8 max-w-2xl leading-relaxed">
-            That number is bigger than most countries. It shrinks by exactly
-            one each time you fund one child. Today is a good day to be that
-            one.
+            You can change this. When you support a child, you give them a chance to learn and succeed. Help us change a life today.
           </p>
 
           {/* Trust pills */}
@@ -113,10 +111,10 @@ export const DonateCTA = () => {
             <div className="absolute -inset-2 border-2 border-secondary/50 rounded-tl-[3rem] rounded-br-[3rem]" />
             <div className="relative bg-white rounded-tl-[3rem] rounded-br-[3rem] p-8 md:p-10 shadow-2xl">
               <p className="text-[10px] uppercase tracking-[0.4em] text-primary font-bold mb-2">
-                Choose your impact
+                How you can help
               </p>
               <h3 className="font-display text-2xl md:text-3xl font-bold text-accent mb-6">
-                What your gift covers
+                How we use your donation
               </h3>
 
               <ul className="space-y-3 mb-6">
@@ -151,7 +149,7 @@ export const DonateCTA = () => {
                   to="/contact"
                   className="text-primary font-bold hover:underline"
                 >
-                  enter custom amount
+                  donate what you wish
                 </Link>
               </p>
             </div>

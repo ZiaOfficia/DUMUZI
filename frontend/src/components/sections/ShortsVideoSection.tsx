@@ -148,21 +148,20 @@ export const ShortsVideoSection = () => {
             className="inline-flex items-center gap-3 text-xs uppercase tracking-[0.4em] text-secondary mb-3 font-bold"
           >
             <span className="block w-8 h-px bg-secondary" />
-            Voices &amp; Visits
+            Field Videos
             <span className="block w-8 h-px bg-secondary" />
           </motion.p>
           <motion.h2
             variants={itemVariants}
             className="text-4xl md:text-5xl font-display text-white mb-3"
           >
-            Short films from the field
+            Short videos of our work
           </motion.h2>
           <motion.p
             variants={itemVariants}
             className="text-gray-300 max-w-2xl mx-auto"
           >
-            A donor on her way to LCGC. A volunteer&apos;s first survey. A
-            Class XII result. The kind of moments brochures cannot show.
+            Watch real moments from our visits, student achievements, and volunteer experiences.
           </motion.p>
         </div>
 

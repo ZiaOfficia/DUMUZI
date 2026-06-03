@@ -16,7 +16,7 @@ const stories: Story[] = [
   {
     image: testimonialImages.studentSumaiya,
     quote:
-      "I was about to drop out after Class X because my father could not pay the board fees. Aaghaz volunteers came home, met my mother, and within a week the fees were paid. Today I am in the second year of my B.Sc.",
+      "I was going to leave school after Class 10 because we had no money for board fees. Aaghaz volunteers visited our home, and paid my fees within a week. Now I am studying in my second year of college.",
     author: "Sumaiya R.",
     role: "Aaghaz Scholarship Student",
     location: "Lucknow, UP",
@@ -25,7 +25,7 @@ const stories: Story[] = [
   {
     image: testimonialImages.donorFamily,
     quote:
-      "We launched a scholarship in our son's name. Knowing that students are completing their education in his memory has helped our family heal in a way we did not expect.",
+      "We started a scholarship in our son's name. Knowing that students are finishing their studies in his memory has brought our family peace.",
     author: "The Khan Family",
     role: "Memorial Scholarship Donors",
     location: "Pune, MH",
@@ -34,16 +34,16 @@ const stories: Story[] = [
   {
     image: testimonialImages.parentMother,
     quote:
-      "We had no idea organisations like this existed. The volunteers were respectful, the process was clear, and we never felt like we were begging. They treated my daughter like a person, not a case file.",
+      "We did not know there were organizations like this. The volunteers were very respectful and the process was simple. They treated my daughter with love and respect.",
     author: "Shahnaz Begum",
-    role: "Mother of an Aaghaz beneficiary",
+    role: "Mother of a student",
     location: "Hardoi, UP",
     year: "Family supported since 2022",
   },
   {
     image: testimonialImages.iitAlumnus,
     quote:
-      "I had never even heard the word IIT before the Rahmani test. Two years later, I was inside one. Aaghaz did not just fund me — they believed in me first.",
+      "I had never heard of IIT before. Two years after taking the entrance test, I got admission in IIT Delhi. Aaghaz did not just pay my fees — they believed in me first.",
     author: "Mohammad Ayaan",
     role: "Aaghaz × Rahmani 30 Alumnus",
     location: "Now at IIT Delhi",
@@ -97,11 +97,10 @@ export const TestimonialsSection = () => {
             <span className="block w-8 h-px bg-primary" />
           </p>
           <h2 className="text-3xl md:text-6xl font-display font-bold text-accent mb-4 leading-tight">
-            In their own words.
+            Stories from Our Students and Donors
           </h2>
           <p className="text-text-muted max-w-2xl mx-auto text-base md:text-lg">
-            We don&apos;t hire actors and we don&apos;t edit out the awkward
-            pauses. These are four of the people Aaghaz has walked beside.
+            Read real stories from the students we support and the donors who help us.
           </p>
         </div>
 

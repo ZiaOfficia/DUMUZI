@@ -47,13 +47,13 @@ const ThankYouPage = () => {
         <h1 className="text-4xl font-display text-accent mb-6">Thank you.</h1>
 
         <p className="text-xl text-gray-700 mb-4 font-light">
-          Your message has reached us.
+          We have received your message.
         </p>
 
         <p className="text-gray-600 mb-10 leading-relaxed">
-          A real human at Aaghaz Foundation will read your note and write back
-          within a few working days. If your matter is urgent, you can also
-          reach us at{" "}
+          Our team at Aaghaz Foundation will read your message and write back
+          to you within a few days. If your matter is urgent, you can also
+          email us at{" "}
           <a
             href="mailto:aaghaz.foundation@gmail.com"
             className="text-primary hover:underline"

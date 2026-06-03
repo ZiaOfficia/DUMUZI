@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { Button } from "../components/common/Button";
-
 import { SEO } from "../components/common/SEO";
 
 export const TermsOfServicePage = () => {
@@ -8,7 +7,7 @@ export const TermsOfServicePage = () => {
     <div className="bg-white min-h-screen pt-[60px] md:pt-[50px]">
       <SEO
         title="Terms of Service"
-        description="Terms of Service for Aaghaz Foundation Weddings."
+        description="Terms of Service for Aaghaz Foundation."
       />
       <div className="max-w-4xl mx-auto px-6 py-12 md:py-20 shadow-sm border border-stone-100">
         <h1 className="text-4xl font-serif text-stone-900 mb-8">
@@ -20,241 +19,124 @@ export const TermsOfServicePage = () => {
 
         <div className="prose prose-stone max-w-none text-stone-600">
           <p className="mb-6">
-            Welcome to Aaghaz Foundation! These Terms of Service (“Terms”) govern your
-            access to and use of our wedding decoration services, as well as the
-            website aaghazfoundation.com. By using our services or visiting our
-            website, you agree to these Terms. Please read them carefully. If
-            you do not agree with any part of these Terms, please refrain from
-            using our services or website.
+            Welcome to Aaghaz Foundation! These Terms of Service govern your use of
+            our website (aaghazfoundation.com) and our scholarship programs. By
+            using our website or applying for help, you agree to these terms.
+            Please read them carefully.
           </p>
 
           <h2 className="text-2xl font-serif text-stone-900 mt-8 mb-4">
-            Acceptance of Terms
+            Who We Are & Services
           </h2>
           <p className="mb-6">
-            By accessing or using aaghazfoundation.com or utilizing our wedding
-            decoration services, you agree to these Terms, along with our
-            Privacy Policy and Cookie Policy. These Terms apply to all users,
-            clients, and visitors who access or use our website and services.
+            Aaghaz Foundation is a registered education trust based in Lucknow, India.
+            We help clever students from poor families finish their education through:
           </p>
-
-          <h2 className="text-2xl font-serif text-stone-900 mt-8 mb-4">
-            Services Overview
-          </h2>
-          <p className="mb-6">
-            Aaghaz Foundation specializes in wedding decoration services. Our offerings
-            include, but are not limited to, consultation, event coordination,
-            venue decoration, floral arrangements, lighting, and related
-            services. Specific details of the services provided will be outlined
-            in your contract or agreement with us.
-          </p>
-
-          <h2 className="text-2xl font-serif text-stone-900 mt-8 mb-4">
-            Service Customization
-          </h2>
-          <p className="mb-6">
-            We aim to tailor our services to meet your preferences. However,
-            some service elements may be subject to availability, venue
-            restrictions, or other factors, which will be discussed with you
-            during the planning process.
-          </p>
+          <ul className="list-disc pl-5 mb-6 space-y-2">
+            <li>Need-based financial help and scholarships for school and college fees.</li>
+            <li>Free coaching classes and study centers (like LCGC in Lucknow).</li>
+            <li>Opportunities for people to donate money or join as volunteers.</li>
+          </ul>
 
           <h2 className="text-2xl font-serif text-stone-900 mt-8 mb-4">
             Eligibility
           </h2>
           <p className="mb-6">
-            Our services are available to individuals who are at least 18 years
-            old. By using our services, you confirm that you meet this age
-            requirement and have the legal authority to enter into these Terms
-            and any related agreements.
+            Our fee help and scholarships are for students studying in recognized schools
+            or colleges in India. Students under 18 years of age must apply with the
+            help of their parents or legal guardians.
           </p>
 
           <h2 className="text-2xl font-serif text-stone-900 mt-8 mb-4">
-            Booking and Payment Terms
+            Applications & Verification
           </h2>
-          <p className="mb-4">
-            To secure our wedding decoration services, the following steps are
-            necessary:
-          </p>
-          <ul className="list-disc pl-5 mb-6 space-y-2">
-            <li>
-              <strong>Booking Confirmation:</strong> A signed contract outlining
-              the scope of services.
-            </li>
-            <li>
-              <strong>Deposit:</strong> A non-refundable deposit may be required
-              to confirm your booking. This will be specified in your contract.
-            </li>
-            <li>
-              <strong>Payment Schedule:</strong> Payment terms, including due
-              dates, will be detailed in your contract. Full payment is
-              typically required before the wedding day.
-            </li>
-          </ul>
           <p className="mb-6">
-            Failure to meet payment terms may result in the cancellation of
-            services or additional fees.
+            To apply for fee help or a scholarship:
           </p>
+          <ul className="list-disc pl-5 mb-6 space-y-2">
+            <li>You must fill out the application form with correct details.</li>
+            <li>You agree that our volunteers can visit your home and school in person to verify your details.</li>
+            <li>Giving wrong details will result in your application being rejected or stopped immediately.</li>
+          </ul>
 
           <h2 className="text-2xl font-serif text-stone-900 mt-8 mb-4">
-            Cancellations and Refunds
+            Donations & Refunds
           </h2>
           <ul className="list-disc pl-5 mb-6 space-y-2">
             <li>
-              <strong>Cancellation by the Client:</strong> If you need to cancel
-              your booking, refer to the cancellation terms in your contract.
-              Deposits are typically non-refundable, and refunds for additional
-              payments may be based on a sliding scale, depending on the timing
-              of the cancellation.
+              <strong>100% Direct Help:</strong> 100% of your donation is spent directly on student fees. Our founders pay for all office costs.
             </li>
             <li>
-              <strong>Cancellation by Aaghaz Foundation:</strong> In exceptional
-              circumstances, such as unforeseen events or failure to meet
-              payment terms, we reserve the right to cancel services. In such
-              cases, we will provide a full refund of any payments made,
-              excluding non-refundable deposits.
+              <strong>Tax Exemption:</strong> Donations made by Indian residents get tax deduction benefits under Section 80G of the Income Tax Act.
+            </li>
+            <li>
+              <strong>Refunds:</strong> Once a donation is made, it cannot be refunded except in special cases of system error (please contact us within 7 days of the donation).
             </li>
           </ul>
 
           <h2 className="text-2xl font-serif text-stone-900 mt-8 mb-4">
-            Changes to Services
+            Volunteer Guidelines
           </h2>
           <p className="mb-6">
-            Any changes to the scope of services (e.g., decorations, venues, or
-            timelines) must be requested in writing and agreed upon by both
-            parties. Depending on the nature of the change, additional fees may
-            apply.
+            If you join Aaghaz as a volunteer, you agree to:
           </p>
-
-          <h2 className="text-2xl font-serif text-stone-900 mt-8 mb-4">
-            Client Responsibilities
-          </h2>
-          <p className="mb-4">You agree to:</p>
           <ul className="list-disc pl-5 mb-6 space-y-2">
-            <li>
-              Provide accurate information about your wedding preferences, guest
-              list, venue, and any other relevant details.
-            </li>
-            <li>
-              Ensure that all necessary permits, licenses, and permissions for
-              the event venue are secured.
-            </li>
-            <li>
-              Communicate promptly with Aaghaz Foundation throughout the planning
-              process to avoid delays or misunderstandings.
-            </li>
+            <li>Follow our volunteer guidelines and values.</li>
+            <li>Be polite and respectful to students and families during home visits.</li>
+            <li>Keep all student and family details private and safe.</li>
           </ul>
-          <p className="mb-6">
-            Failure to provide accurate or timely information may impact our
-            ability to deliver the agreed-upon services.
-          </p>
-
-          <h2 className="text-2xl font-serif text-stone-900 mt-8 mb-4">
-            Third-Party Vendors
-          </h2>
-          <p className="mb-6">
-            During the planning and execution of our services, we may
-            collaborate with or recommend third-party vendors (e.g.,
-            photographers, caterers, florists). While we work with trusted
-            partners, Aaghaz Foundation is not responsible for the actions or services
-            of these third-party vendors. Any agreements made with them are
-            separate from your contract with Aaghaz Foundation.
-          </p>
 
           <h2 className="text-2xl font-serif text-stone-900 mt-8 mb-4">
             Intellectual Property
           </h2>
           <p className="mb-6">
-            All content and materials provided by Aaghaz Foundation, including website
-            content, designs, logos, and images, are the intellectual property
-            of Aaghaz Foundation or our licensors. You may not reproduce, distribute,
-            or create derivative works based on our content without our written
-            consent.
+            All content on our website, including text, designs, logos, and photos,
+            belongs to Aaghaz Foundation. You cannot copy or use them without our
+            written permission.
           </p>
 
           <h2 className="text-2xl font-serif text-stone-900 mt-8 mb-4">
             Limitation of Liability
           </h2>
           <p className="mb-6">
-            To the fullest extent permitted by law, Aaghaz Foundation will not be
-            liable for any indirect, incidental, or consequential damages
-            arising from the use of our services or website, including but not
-            limited to delays, cancellations, or events beyond our control.
-          </p>
-          <p className="mb-6">
-            We will make every effort to execute your wedding plan as agreed,
-            but circumstances such as weather, venue conditions, or unforeseen
-            events may affect the final outcome. While we will not be liable for
-            such circumstances, we will work diligently to provide alternative
-            solutions.
-          </p>
-
-          <h2 className="text-2xl font-serif text-stone-900 mt-8 mb-4">
-            Force Majeure
-          </h2>
-          <p className="mb-6">
-            Aaghaz Foundation will not be responsible for delays, cancellations, or
-            failure to perform services due to events beyond our control, such
-            as natural disasters, pandemics, strikes, or other events classified
-            as force majeure. In such cases, we will work with you to reschedule
-            or adjust services as feasible.
-          </p>
-
-          <h2 className="text-2xl font-serif text-stone-900 mt-8 mb-4">
-            Indemnification
-          </h2>
-          <p className="mb-6">
-            You agree to indemnify and hold Aaghaz Foundation, its officers, directors,
-            employees, and agents harmless from any claims, damages,
-            liabilities, or expenses arising from your use of our services,
-            breach of these Terms, or violation of any third-party rights.
-          </p>
-
-          <h2 className="text-2xl font-serif text-stone-900 mt-8 mb-4">
-            Dispute Resolution
-          </h2>
-          <p className="mb-6">
-            In the event of a dispute arising from the use of our services or
-            website, we encourage you to contact us to seek a resolution. If a
-            resolution cannot be reached, the dispute will be governed by the
-            laws of [Insert Jurisdiction], and any legal action will be subject
-            to the courts of [Insert Jurisdiction].
+            We make every effort to help as many students as possible. However, our
+            help depends on the funds we receive from donors. We cannot guarantee that
+            every applicant will get a scholarship. Aaghaz Foundation is not liable
+            for any student being unable to secure admission or continue education.
           </p>
 
           <h2 className="text-2xl font-serif text-stone-900 mt-8 mb-4">
             Changes to Terms
           </h2>
           <p className="mb-6">
-            We reserve the right to update or modify these Terms at any time
-            without prior notice. Any changes will be effective immediately upon
-            posting to our website. Your continued use of our services after any
-            modifications constitutes your acceptance of the updated Terms.
+            We may change these terms from time to time. Any changes will be posted on
+            this page. By continuing to use our website, you agree to the updated terms.
           </p>
 
           <h2 className="text-2xl font-serif text-stone-900 mt-8 mb-4">
             Contact Us
           </h2>
           <p className="mb-4">
-            If you have any questions or concerns about these Terms of Service
-            or our wedding decoration services, please contact us:
+            If you have any questions or concerns about these Terms of Service,
+            please contact us:
           </p>
           <div className="bg-stone-50 p-6 rounded-lg border border-stone-200">
             <h3 className="font-serif text-lg text-stone-900 mb-2">
               Aaghaz Foundation Support Team
             </h3>
             <p className="mb-1">
-              <strong>Email:</strong> info@aaghazfoundation.com
+              <strong>Email:</strong> aaghaz.foundation@gmail.com
             </p>
             <p className="mb-1">
-              <strong>Phone:</strong> +1 (347) 686-4562
+              <strong>Phone:</strong> +91 99716 48900
             </p>
             <p>
-              <strong>Address:</strong> 8 Di Tomas Ct, Copiague, NY, 11726
+              <strong>Address:</strong> 57 Ganesh Gunj, Lucknow, UP — 226018
             </p>
           </div>
           <p className="mt-6 italic">
-            Thank you for choosing Aaghaz Foundation! We look forward to making your
-            wedding day a truly unforgettable experience.
+            Thank you for choosing Aaghaz Foundation! We look forward to working
+            together to help children study and succeed.
           </p>
         </div>
 

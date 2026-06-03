@@ -37,15 +37,13 @@ export const ServicesGrid = () => {
             variants={itemVariants}
             className="text-3xl md:text-4xl lg:text-5xl font-display text-accent mb-3"
           >
-            Eight on-ramps. One foundation.
+            Our Programs
           </motion.h2>
           <motion.p
             variants={itemVariants}
             className="mt-4 text-sm md:text-base text-text-muted max-w-2xl mx-auto"
           >
-            Whether you give a thousand rupees or two hours a week, find the
-            programme that fits you. They all lead to the same place — a child
-            who didn&apos;t drop out.
+            Whether you donate money or give your time, you can help us. All our programs have one goal: to keep poor children in school.
           </motion.p>
           <motion.div
             variants={itemVariants}

@@ -28,7 +28,7 @@ export const LeftFixedEnquiryPanel = () => {
       >
         <div className="h-full flex flex-col p-6 overflow-y-auto">
           <div className="flex justify-between items-center mb-8">
-            <h3 className="font-display text-xl text-accent">Quick Enquiry</h3>
+            <h3 className="font-display text-xl text-accent">Get in Touch</h3>
             <button
               onClick={() => setIsOpen(false)}
               className="text-gray-400 hover:text-gray-800"
@@ -118,7 +118,7 @@ export const LeftFixedEnquiryPanel = () => {
             </div>
             <div>
               <label className="block text-xs uppercase tracking-widest font-bold mb-2 text-gray-500">
-                I'd like to
+                I want to
               </label>
               <select
                 name="budget"
@@ -130,7 +130,7 @@ export const LeftFixedEnquiryPanel = () => {
                   Select an option
                 </option>
                 <option value="donate">Make a donation</option>
-                <option value="scholarship">Launch a scholarship</option>
+                <option value="scholarship">Start a scholarship</option>
                 <option value="volunteer">Become a volunteer</option>
                 <option value="apply-aid">Apply for student aid</option>
                 <option value="csr">Discuss a CSR partnership</option>
@@ -148,7 +148,7 @@ export const LeftFixedEnquiryPanel = () => {
               />
             </div>
             <Button type="submit" className="w-full mt-4">
-              Send Enquiry
+              Send Message
             </Button>
           </form>
 

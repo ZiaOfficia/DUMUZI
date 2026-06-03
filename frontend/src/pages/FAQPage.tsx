@@ -59,8 +59,7 @@ export const FAQPage = () => {
               <span className="text-secondary italic font-serif">Questions</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-200 font-light max-w-2xl mx-auto">
-              Everything you need to know about Aaghaz Foundation — how we
-              verify cases, how donations work, and how you can help.
+              Common questions about Aaghaz Foundation — how we check student cases, how donations work, and how you can help.
             </p>
           </motion.div>
         </div>
@@ -146,14 +145,14 @@ export const FAQPage = () => {
             Still have questions?
           </h2>
           <p className="text-gray-400 mb-10 text-lg font-light">
-            Can't find what you're looking for? Write to{" "}
+            Cannot find what you are looking for? Email us at{" "}
             <a
               href="mailto:aaghaz.foundation@gmail.com"
               className="text-secondary hover:underline"
             >
               aaghaz.foundation@gmail.com
             </a>{" "}
-            — a real human reads every message.
+            — we read and answer every message.
           </p>
           <a href="/contact">
             <Button size="lg" icon={ArrowRight}>
