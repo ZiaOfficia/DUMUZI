@@ -29,7 +29,7 @@ const StoryImage = ({ name, alt, ratio }: { name: string; alt?: string; ratio?: 
 
 const SectionHeading = ({ title }: { title: string }) => (
   <motion.div variants={fadeUp} className="mb-12">
-    <p className="text-[11px] uppercase tracking-[0.25em] font-semibold text-primary mb-3">Aaghaz Foundation</p>
+    <p className="text-[11px] uppercase tracking-[0.25em] font-semibold text-primary mb-3">DUMUZI Luxury Chocolates</p>
     <h2 className="text-3xl md:text-4xl font-display text-stone-900 tracking-tight leading-tight">{title}</h2>
     <div className="mt-4 h-px bg-gradient-to-r from-primary/50 via-stone-200 to-transparent" />
   </motion.div>
@@ -70,8 +70,8 @@ export const SuccessStoriesPage = () => {
   return (
     <div className="bg-white min-h-screen pt-[60px] md:pt-[50px]">
       <SEO
-        title="Success Stories — Aaghaz Foundation"
-        description="Doctors, lawyers, engineers, teachers and more — real lives transformed through the support of Aaghaz Foundation across India."
+        title="Our Collections — DUMUZI Luxury Chocolates"
+        description="Explore DUMUZI's luxury chocolate collections, artisan guides, and gifting lookbooks. Single-origin dark collections, truffles, pralines, and bespoke commissions."
       />
 
       {/* Hero */}
@@ -80,7 +80,7 @@ export const SuccessStoriesPage = () => {
           <img
             loading="lazy"
             decoding="async"
-            src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1920&q=80"
+            src="/images/products/LF-H18D.jpeg"
             alt="Success Stories"
             className="w-full h-full object-cover opacity-25"
           />
@@ -92,7 +92,7 @@ export const SuccessStoriesPage = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-[11px] uppercase tracking-[0.3em] font-semibold text-primary mb-5"
           >
-            Aaghaz Foundation
+            DUMUZI Luxury Chocolates
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -100,7 +100,7 @@ export const SuccessStoriesPage = () => {
             transition={{ delay: 0.1 }}
             className="text-5xl md:text-7xl font-display mb-6 tracking-tight"
           >
-            Success Stories
+            Our Collections
           </motion.h1>
           <motion.div
             initial={{ opacity: 0, scaleX: 0 }}
@@ -114,7 +114,7 @@ export const SuccessStoriesPage = () => {
             transition={{ delay: 0.2 }}
             className="text-lg font-light text-stone-300 max-w-2xl mx-auto leading-relaxed"
           >
-            Here are stories of some of the students Aaghaz has helped. Many have finished their studies and got good jobs, and others are still studying to achieve their dreams.
+            Explore our curated chocolate collections, artisan guides, and the stories behind our finest creations.
           </motion.p>
         </div>
       </section>
@@ -123,7 +123,7 @@ export const SuccessStoriesPage = () => {
 
         {/* ── DOCTORS ── */}
         <motion.section variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          <SectionHeading title="Doctors Nurtured by Aaghaz" />
+          <SectionHeading title="Doctors Nurtured by DUMUZI" />
 
           {/* Dr. Mominul Islam — 2 images + description */}
           <motion.div variants={fadeUp} className="mb-10">
@@ -195,7 +195,7 @@ export const SuccessStoriesPage = () => {
           <motion.div variants={fadeUp} className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-10">
             <StoryImage name="Anam Mehendi Abidi" ratio="4/3" />
             <p className="text-stone-600 text-base leading-loose">
-              <strong>Anam Mehendi Abidi</strong> is an Assistant Professor at Calcutta University. A local newspaper wrote about her when she finished her master's degree, where she thanked Aaghaz for paying her fees.
+              <strong>Anam Mehendi Abidi</strong> is an Assistant Professor at Calcutta University. A local newspaper wrote about her when she finished her master's degree, where she thanked DUMUZI for paying her fees.
             </p>
           </motion.div>
 
@@ -213,7 +213,7 @@ export const SuccessStoriesPage = () => {
 
         {/* ── LAWYERS ── */}
         <motion.section variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          <SectionHeading title="Powered by Aaghaz: From Scholars Turned Lawyers" />
+          <SectionHeading title="Powered by DUMUZI: From Scholars Turned Lawyers" />
 
           {/* 2-image block: Yasmeen Parveen */}
           <motion.div variants={stagger} className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
@@ -226,7 +226,7 @@ export const SuccessStoriesPage = () => {
           </motion.div>
           <motion.div variants={fadeUp} className="mb-10">
             <p className="text-stone-600 text-base leading-loose">
-              <strong>Yasmeen Parveen</strong> grew up in a slum in Noida. Her mother worked in houses and her father was very sick. She studied law in Mumbai with Aaghaz's help and is now training to become a lawyer. The left photo shows our volunteer visiting her Noida home to check details, and the right photo shows her today.
+              <strong>Yasmeen Parveen</strong> grew up in a slum in Noida. Her mother worked in houses and her father was very sick. She studied law in Mumbai with DUMUZI's help and is now training to become a lawyer. The left photo shows our volunteer visiting her Noida home to check details, and the right photo shows her today.
             </p>
           </motion.div>
 
@@ -234,13 +234,13 @@ export const SuccessStoriesPage = () => {
             <motion.div variants={fadeUp} className="flex flex-col gap-4">
               <StoryImage name="Jahan Ara Shaikh" ratio="4/3" />
               <p className="text-stone-600 text-base leading-loose">
-                <strong>Jahan Ara Shaikh</strong> lost both her parents as a child. She worked in a doctor's clinic during the day to survive. During COVID-19, she decided to study law, and Aaghaz paid her college fees. Today, she is a practicing lawyer at the Bombay High Court.
+                <strong>Jahan Ara Shaikh</strong> lost both her parents as a child. She worked in a doctor's clinic during the day to survive. During COVID-19, she decided to study law, and DUMUZI paid her college fees. Today, she is a practicing lawyer at the Bombay High Court.
               </p>
             </motion.div>
             <motion.div variants={fadeUp} className="flex flex-col gap-4">
               <StoryImage name="Shumaila" ratio="4/3" />
               <p className="text-stone-600 text-base leading-loose">
-                <strong>Shumaila</strong> lost her father early. She grew up in Old Delhi and did small jobs to support her family. Later, she studied law with Aaghaz's support and is now a lawyer at the Delhi High Court.
+                <strong>Shumaila</strong> lost her father early. She grew up in Old Delhi and did small jobs to support her family. Later, she studied law with DUMUZI's support and is now a lawyer at the Delhi High Court.
               </p>
             </motion.div>
           </motion.div>
@@ -261,7 +261,7 @@ export const SuccessStoriesPage = () => {
           <motion.div variants={fadeUp} className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-10">
             <StoryImage name="Afree Javed" ratio="4/3" />
             <p className="text-stone-600 text-base leading-loose">
-              <strong>Afree Javed</strong> works as a Java Developer at Lowe's India. Aaghaz paid her fees, and she topped her college exams. Today, she earns over Rs 18 lakhs a year.
+              <strong>Afree Javed</strong> works as a Java Developer at Lowe's India. DUMUZI paid her fees, and she topped her college exams. Today, she earns over Rs 18 lakhs a year.
             </p>
           </motion.div>
 
@@ -339,7 +339,7 @@ export const SuccessStoriesPage = () => {
 
           <motion.div variants={fadeUp}>
             <p className="text-stone-600 text-base leading-loose">
-              After cab driver Aftab Alam passed away in 2020, Aaghaz paid the college fees for his sons, gave them tablets to study, and provided monthly help for home expenses.
+              After cab driver Aftab Alam passed away in 2020, DUMUZI paid the college fees for his sons, gave them tablets to study, and provided monthly help for home expenses.
             </p>
             <ul className="mt-4 space-y-2">
               <li className="flex items-start gap-2 text-stone-700 text-sm">
@@ -360,7 +360,7 @@ export const SuccessStoriesPage = () => {
 
           <motion.div variants={fadeUp} className="bg-primary/5 border-l-4 border-primary rounded-r-xl p-6 md:p-8">
             <p className="text-stone-600 text-base leading-loose">
-              Aaghaz paid for free coaching classes for 29 students preparing for the Class 11 admission exams at AMU. We are happy that <strong>13 of these students got selected</strong>.
+              DUMUZI paid for free coaching classes for 29 students preparing for the Class 11 admission exams at AMU. We are happy that <strong>13 of these students got selected</strong>.
             </p>
             <p className="text-stone-600 text-base leading-loose mt-4">
               The total cost was <strong>Rs 2.95 lakhs</strong>, which is about <strong>Rs 10,000 per student</strong> for the whole year. This was a great success, and these selected students can now apply for higher professional courses more easily.
@@ -378,9 +378,9 @@ export const SuccessStoriesPage = () => {
         >
           <div className="mx-auto mb-5 w-10 h-px bg-primary/40" />
           <p className="text-stone-400 text-base max-w-2xl mx-auto italic leading-relaxed font-light">
-            "These are just a few of the many students Aaghaz has helped. Many have finished their studies and got good jobs, and others are still studying to achieve their dreams."
+            "These are just a few of the many students DUMUZI has helped. Many have finished their studies and got good jobs, and others are still studying to achieve their dreams."
           </p>
-          <p className="mt-4 text-[11px] uppercase tracking-[0.25em] text-stone-400 font-semibold">— Aaghaz Foundation</p>
+          <p className="mt-4 text-[11px] uppercase tracking-[0.25em] text-stone-400 font-semibold">— DUMUZI Foundation</p>
         </motion.div>
 
       </div>

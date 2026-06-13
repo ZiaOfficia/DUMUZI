@@ -6,7 +6,7 @@ async function triggerSitemapUpdate() {
     const token = process.env.GITHUB_PAT;
     if (!token) return;
     const res = await fetch(
-      "https://api.github.com/repos/ZiaOfficia/elegentize2603/actions/workflows/sitemap.yml/dispatches",
+      "https://api.github.com/repos/ZiaOfficia/aaghazzia/actions/workflows/sitemap.yml/dispatches",
       {
         method: "POST",
         headers: {

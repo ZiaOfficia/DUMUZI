@@ -1,73 +1,79 @@
-import { HeroSlider } from "../components/sections/HeroSlider";
-import { MissionStatement } from "../components/sections/MissionStatement";
-import { ActionBlocksSection } from "../components/sections/ActionBlocksSection";
-import { StatsSection } from "../components/sections/StatsSection";
-import { AboutSection } from "../components/sections/AboutSection";
-import { ServicesGrid } from "../components/sections/ServicesGrid";
-import { HowItWorks } from "../components/sections/HowItWorks";
-import { TestimonialsSection } from "../components/sections/TestimonialsSection";
-import { DonateCTA } from "../components/sections/DonateCTA";
-import { GallerySection } from "../components/sections/GallerySection";
-import { BlogSection } from "../components/sections/BlogSection";
-import { FAQSection } from "../components/sections/FAQSection";
-import { ContactSection } from "../components/sections/ContactSection";
-import { ClientsStrip } from "../components/sections/ClientsStrip";
-import { FeaturedInStrip } from "../components/sections/FeaturedInStrip";
-import { InstagramFeed } from "../components/sections/InstagramFeed";
-
-import { SEO } from "../components/common/SEO";
+import { HeroSlider }                from '../components/sections/HeroSlider';
+import { ServicesGrid }             from '../components/sections/ServicesGrid';
+import { AboutSection }             from '../components/sections/AboutSection';
+import { StatsSection }             from '../components/sections/StatsSection';
+import { HowItWorks }               from '../components/sections/HowItWorks';
+import { DonateCTA }                from '../components/sections/DonateCTA';
+import { CollectionsPreviewSection } from '../components/sections/CollectionsPreviewSection';
+import { BestChocolateShowcase }    from '../components/sections/BestChocolateShowcase';
+import { CraftBannerSection }       from '../components/sections/CraftBannerSection';
+import { BlogPreviewSection }       from '../components/sections/BlogPreviewSection';
+import { ContactCTASection }        from '../components/sections/ContactCTASection';
+import { TestimonialsSection }      from '../components/sections/TestimonialsSection';
+import NewsletterSection            from '../components/sections/NewsletterSection';
+import { InstagramFeed }            from '../components/sections/InstagramFeed';
+import { FeaturedInStrip }          from '../components/sections/FeaturedInStrip';
 
 export const HomePage = () => {
   return (
     <>
-      <SEO
-        title="Empowerment Through Education — Donate, Volunteer, Apply"
-        description="Aaghaz Foundation has been empowering meritorious students across India since 2004 through scholarships, student aid, the Rahmani 30 coaching tie-up and the LCGC learning centre in Lucknow. Donate, volunteer or apply for student aid."
-      />
-
-      {/* 1. Hero — interactive sliding image with two fixed CTAs */}
+      {/* 1 — Hero */}
       <HeroSlider />
 
-      {/* 2. Mission — Educate. Empower. Elevate. */}
-      <MissionStatement />
-
-      {/* 3. Three calls to action */}
-      <ActionBlocksSection />
-
-      {/* 4. By the numbers */}
+      {/* 2 — Trust bar: Secure payment / delivery / quality / support */}
       <StatsSection />
 
-      {/* 5. Founder story */}
-      <AboutSection />
-
-      {/* 6. Programmes / What We Do */}
+      {/* 3 — Bestselling Products Grid */}
+      <div className="section-divider" />
       <ServicesGrid />
 
-      {/* 7. The four-step verification process */}
+      {/* 4 — Best Chocolates Showcase (top 3 + CTA to /best-chocolate) */}
+      <div className="section-divider" />
+      <BestChocolateShowcase />
+
+      {/* 5 — Collections Preview (6 collection cards linking to /collections) */}
+      <div className="section-divider" />
+      <CollectionsPreviewSection />
+
+      {/* 6 — About / Brand Story */}
+      <div className="section-divider" />
+      <AboutSection />
+
+      {/* 7 — Craft & Sourcing Banner (linking to /about) */}
+      <div className="section-divider" />
+      <CraftBannerSection />
+
+      {/* 8 — How It Works: Bean to Box */}
+      <div className="section-divider" />
       <HowItWorks />
 
-      {/* 8. Real student stories */}
-      <TestimonialsSection />
-
-      {/* 9. Headline donate banner */}
+      {/* 9 — Gifting CTA (linking to /collections) */}
+      <div className="section-divider" />
       <DonateCTA />
 
-      {/* 10. Press coverage */}
+      {/* 10 — Testimonials */}
+      <div className="section-divider" />
+      <TestimonialsSection />
+
+      {/* 11 — Blog Preview (3 latest articles, linking to /blog) */}
+      <div className="section-divider" />
+      <BlogPreviewSection />
+
+      {/* 12 — Featured In Press Strip */}
+      <div className="section-divider" />
       <FeaturedInStrip />
 
-      {/* 11. Gallery */}
-      <GallerySection />
+      {/* 13 — Contact CTA (links to /contact) */}
+      <div className="section-divider" />
+      <ContactCTASection />
 
-      {/* 12. News + Instagram */}
-      <BlogSection />
+      {/* 14 — Instagram Feed */}
+      <div className="section-divider" />
       <InstagramFeed />
 
-      {/* 13. Partners + FAQ */}
-      <ClientsStrip />
-      <FAQSection />
-
-      {/* 14. Contact */}
-      <ContactSection />
+      {/* 15 — Newsletter */}
+      <div className="section-divider" />
+      <NewsletterSection />
     </>
   );
 };

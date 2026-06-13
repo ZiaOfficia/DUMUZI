@@ -1,7 +1,7 @@
 {
-  "name": "elegantize-master",
+  "name": "dumuzi-master",
   "version": "1.0.0",
-  "description": "Master folder for Elegantize project",
+  "description": "Master folder for DUMUZI Luxury Chocolates project",
   "scripts": {
     "dev:frontend": "cd frontend && npm run dev",
     "dev:backend": "cd backend && npm run dev",

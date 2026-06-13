@@ -155,11 +155,11 @@ export const LeftFixedEnquiryPanel = () => {
           <div className="mt-auto pt-8 border-t border-gray-100">
             <div className="flex items-center space-x-3 mb-4 text-sm text-gray-700">
               <Mail size={16} className="text-primary" />
-              <span className="break-all">aaghaz.foundation@gmail.com</span>
+              <span className="break-all">hello@dumuzi.com</span>
             </div>
             <div className="flex items-center space-x-3 text-sm text-gray-700">
               <Calendar size={16} className="text-primary" />
-              <span>Mon – Sat: 10am – 6pm IST</span>
+              <span>Mon – Fri: 10am – 6pm CET</span>
             </div>
           </div>
         </div>

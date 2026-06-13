@@ -1,290 +1,278 @@
-// Aaghaz Foundation — Content & Copy
-// Pehla qadam. Phir taleem. Phir tabdeeli.
-// (The first step. Then education. Then transformation.)
+// DUMUZI Luxury Chocolates — Content & Copy
 
 import { heroImages } from "./imageAssets";
 
 export const heroSlides = [
   {
-    title: "Aaghaz · A Beginning",
-    subtitle: "Every child has the right to study. We make sure they get that chance.",
+    title: "DUMUZI · Luxury Chocolates",
+    subtitle: "Handcrafted with single-origin cocoa. Made to delight every sense.",
     image: heroImages.girlSmiling,
   },
   {
-    title: "Twenty Years. One Promise.",
-    subtitle: "Helping children study since 2004.",
+    title: "Fifteen Years of Craft.",
+    subtitle: "Our chocolatiers have perfected the art of tempering since 2009.",
     image: heroImages.schoolGroup,
   },
   {
-    title: "From Rs 2,000 to a Movement",
-    subtitle: "We started with one student. Now we help thousands across India.",
+    title: "From Bean to Box",
+    subtitle: "We source directly from premium cocoa estates across the equator.",
     image: heroImages.childReading,
   },
   {
-    title: "Verified. Volunteer-Led. Honest.",
-    subtitle: "We meet every student at home. We track every rupee you donate.",
+    title: "Pure. Organic. Exquisite.",
+    subtitle: "100% organic cocoa beans, ethically sourced and slowly roasted.",
     image: heroImages.classroomTeacher,
   },
   {
-    title: "Coaching That Cracks Codes",
-    subtitle: "Free coaching classes for IIT, NEET, and CA exams in UP.",
+    title: "Signature Dark Collections",
+    subtitle: "Our award-winning dark chocolate bars, truffles and pralines.",
     image: heroImages.studentBlackboard,
   },
   {
-    title: "A Quiet Room To Study",
-    subtitle: "Free study center and library for children in Lucknow since 2011.",
+    title: "Gifting, Elevated.",
+    subtitle: "Bespoke chocolate boxes crafted for every special occasion.",
     image: heroImages.libraryStudy,
   },
   {
-    title: "One Donation. One Future.",
-    subtitle: "Many children in India still cannot read or write. Help us change this today.",
+    title: "A Moment of Pure Indulgence.",
+    subtitle: "Let every bite take you somewhere extraordinary.",
     image: heroImages.kidsLearning,
   },
   {
-    title: "Honour Their Name. Fund Their Dream.",
-    subtitle: "Start a scholarship in memory of a loved one to help a child study.",
+    title: "Corporate & Wedding Collections",
+    subtitle: "Custom-branded chocolate gifts that leave a lasting impression.",
     image: heroImages.outdoorEducation,
   },
 ];
 
 export const introContent = {
-  heading: "Pehla Qadam. Phir Taleem. Phir Tabdeeli.",
+  heading: "Single-Origin Cocoa. Master Craftsmanship. Pure Luxury.",
   text: [
-    "We started in 2004 in Lucknow. Three friends came together with Rs 2,000 to help one poor student. Today, our goal is still the same: no child should stop going to school just because their family has no money.",
-    "We do not just give money and leave. Our volunteers visit every student's home to meet their family. We pay the school fees directly, keep check on the child's progress, and update the donor who helped them.",
+    "Founded in 2009, DUMUZI was built on a single belief: great chocolate demands great ingredients. We source our cocoa beans directly from sustainable farms in Madagascar, Ecuador, and Peru — then hand-temper every batch in our artisan atelier.",
+    "We do not mass-produce. Every truffle, bar, and praline is crafted to order by our team of expert chocolatiers, ensuring the freshest, most exquisite experience possible.",
   ],
 };
 
 export const portfolioContent = {
-  heading: "Twenty Years. Thousands of Stories.",
+  heading: "Our Collections & Guides",
   description:
-    "Read these true stories of children who got help, families who found hope, and donors who supported them. We still keep in touch with these families. Read their stories to know more about our work.",
+    "Explore our curated chocolate collections, artisan guides, and gifting lookbooks. Each collection tells the story of the cocoa it was born from.",
 };
 
 export const services = [
   {
     ...heroSlides[0],
-    id: "student-aid",
+    id: "dark-collection",
     description:
-      "Help with school and college fees for children from poor families. We cover school fees, books, exam fees, and uniforms so they can keep studying.",
+      "Our signature dark chocolate range — single-origin bars from 72% to 92% cocoa with complex tasting notes of red fruit, roasted nuts, and earth.",
   },
   {
     ...heroSlides[1],
-    id: "scholarships",
+    id: "truffle-collection",
     description:
-      "Scholarships funded by donors to help students study. We track every rupee and send reports to the donors.",
+      "Handcrafted ganache truffles in dark, milk, and white chocolate, with seasonal flavour infusions and 24k gold-leaf finishes.",
   },
   {
     ...heroSlides[2],
-    id: "financial-assistance",
+    id: "gift-boxes",
     description:
-      "School and college fee help given to good students from poor families after our volunteers visit their homes.",
+      "Curated gift boxes elegantly wrapped in signature dark paper with gold-foil embossing and satin ribbons. Perfect for every occasion.",
   },
   {
     ...heroSlides[4],
-    id: "computer-center",
+    id: "pralines-collection",
     description:
-      "Free computer classes and digital training for children from poor families in Lucknow.",
+      "Belgian-inspired pralines with hazelnut, pistachio, and salted caramel fillings, enrobed in tempered dark or milk chocolate.",
   },
   {
     ...heroSlides[5],
-    id: "madarsa-initiative",
+    id: "wedding-favors",
     description:
-      "Helping madarsa students learn modern subjects, computer skills, and get job guidance.",
-  },
-  {
-    ...heroSlides[7],
-    id: "memorial-scholarship",
-    description:
-      "Start a scholarship in the memory of a loved one to pay for a child's school fees. We send you yearly progress updates.",
-  },
-  {
-    ...heroSlides[3],
-    id: "become-volunteer",
-    description:
-      "Aaghaz runs because of volunteers. Our team meets students, checks their homes, and guides them in their studies.",
+      "Custom-molded chocolate wedding favors with monogrammed packaging. Available in any quantity with bespoke branding.",
   },
   {
     ...heroSlides[6],
-    id: "join-as-donor",
+    id: "seasonal-collections",
     description:
-      "Your donation pays for school fees, hostel rent, books, and study help for poor students. We send you their photos and progress reports.",
+      "Limited-edition seasonal collections released for Easter, Christmas, Valentine's Day, and Diwali.",
+  },
+  {
+    ...heroSlides[3],
+    id: "corporate-gifting",
+    description:
+      "Premium corporate gift sets with custom branding, company logo molding, and bulk order pricing for corporate gifting programs.",
+  },
+  {
+    ...heroSlides[6],
+    id: "subscription-box",
+    description:
+      "Monthly and quarterly chocolate subscription boxes featuring new arrivals, limited editions, and exclusive members-only selections.",
   },
   {
     ...heroSlides[7],
-    id: "launch-scholarship",
+    id: "bespoke-orders",
     description:
-      "Start a scholarship in the name of a parent, teacher, or friend. You choose who to help, and we send you yearly reports.",
+      "Fully bespoke chocolate commissions — from custom flavour infusions to hand-painted artistic bars for special events.",
   },
 ];
 
 export const whyChooseContent = {
-  heading: "Why Donors and Volunteers Trust Us",
+  heading: "Why Chocolate Lovers Choose DUMUZI",
   description:
-    "We are a small group working since 2004. People trust us because we keep our promises. Our donors stay with us, our volunteers keep helping, and students we once helped now donate to help others.",
+    "We are a small atelier producing exceptional chocolate since 2009. Our customers return because we are consistent, honest, and uncompromising on quality.",
   points: [
-    "Working on the ground for 20 years with the same office, email, and phone number.",
-    "At least two volunteers visit every student's house before we give any help.",
-    "Our founders pay for office costs — so 100% of your donation goes to the child.",
-    "Our study center in Lucknow has been open every weekday since 2011.",
-    "Our partnership with Rahmani 30 helps village students pass IIT and NEET exams.",
+    "Single-origin organic cocoa beans sourced directly from farming cooperatives.",
+    "Every batch is hand-tempered by our master chocolatiers in our own atelier.",
+    "Our founders absorb overheads — so your investment goes entirely into ingredients.",
+    "Temperature-controlled packaging ensures your chocolate arrives in perfect condition.",
+    "All products are free from artificial preservatives and palm oil.",
   ],
   footer:
-    "School fees are not a luxury, and education is not a favor. It is the best way to help families escape poverty, so we keep this support going.",
+    "Luxury is not a price tag. It is the care, precision, and passion that goes into every single piece we make.",
 };
 
 export const aboutContent = {
-  heading: "About Aaghaz Foundation",
+  heading: "About DUMUZI",
   text: [
-    "Aaghaz Foundation is a registered charity. It was started in Lucknow in 2004 by journalist Mazhar Farooqui and his friends. They began with just Rs 2,000 to help one poor student. Today, it is one of the most trusted education charities in North India.",
-    "Over the years, we have helped thousands of children across India through our scholarships and fee support. We do not approve cases blindly. Our volunteers meet every student and visit their homes to understand their real needs.",
-    "We work with a large group of donors, teachers, and volunteers. We all believe that every child in India has the right to read, write, and study, and we must do our part to help.",
+    "DUMUZI Luxury Chocolates was founded in 2009 by master chocolatier Antoine Laurent and his partner Elise Moreau. Named after the ancient Mesopotamian deity of abundance, DUMUZI was built to honour the rich heritage of cocoa farming and elevate chocolate-making to a fine art.",
+    "Over fifteen years, we have grown from a small Parisian atelier into an internationally recognised luxury chocolatier, shipping to over 30 countries. We work directly with farming cooperatives in Madagascar, Ecuador, and Peru, paying above fair-trade prices to ensure sustainable practices and the finest cocoa.",
+    "We believe that the finest chocolate demands patience, precision, and the purest ingredients. Every piece we make is a reflection of that belief.",
   ],
-  author: "Mazhar Farooqui — Founder",
+  author: "Antoine Laurent — Founder & Master Chocolatier",
 };
 
 export const blogPosts = [
   {
-    title: "Aaghaz Foundation Supports Orphans Living In A Graveyard",
-    category: "News",
+    title: "Crafting the Perfect Dark Chocolate Truffle",
+    category: "Craftsmanship",
     excerpt:
-      "When a news story showed children living and studying in a graveyard near Lucknow, Aaghaz volunteers reached there within 3 days to help...",
-    image:
-      "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1200&q=80",
+      "Discover the secret behind our signature dark chocolate truffles — from choosing cocoa percentages to achieving a silky ganache texture...",
+    image: "/images/assets/dark_chocolates_hero.png",
   },
   {
-    title: "Rs 2 lakh Scholarship in Pune Techie's Name",
-    category: "Scholarships",
+    title: "Sourcing Single-Origin Cocoa: Madagascar vs. Ecuador",
+    category: "Sustainability",
     excerpt:
-      "The family of a young software engineer started a scholarship in his name to pay school fees for three poor students...",
-    image:
-      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80",
+      "Explore the unique flavor profiles of single-origin cocoa beans and how soil, climate, and geography shape the taste of our luxury collections...",
+    image: "/images/assets/dark_chocolates_hero.png",
   },
   {
-    title: "Aaghaz Opens A School For The Poor In Lucknow",
-    category: "Projects",
+    title: "The Ultimate Corporate Gifting Guide",
+    category: "Gifting",
     excerpt:
-      "Our study center in Lucknow now helps more than 200 children every week with free classes...",
-    image:
-      "https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=1200&q=80",
+      "Discover how custom-designed chocolate assortments can elevate your corporate relations and leave a lasting impression...",
+    image: "/images/assets/dark_chocolates_hero.png",
   },
 ];
 
 export const faqs = [
   {
-    question: "What does Aaghaz Foundation actually do?",
+    question: "What makes DUMUZI chocolates different from regular brands?",
     answer:
-      "Aaghaz Foundation helps clever students from poor families in India finish their education. We provide scholarships, help pay school and college fees, and run free study centers (like LCGC in Lucknow) and coaching classes (like Rahmani 30 in UP).",
+      "DUMUZI uses single-origin organic cocoa beans sourced directly from farming cooperatives. Every batch is hand-tempered by our master chocolatiers and made without artificial preservatives or palm oil. We produce in small batches to ensure the highest freshness and quality.",
   },
   {
-    question: "How do you decide who gets a scholarship?",
+    question: "Where do you source your cocoa beans?",
     answer:
-      "Every student who asks for help is visited by our volunteers. At least two volunteers visit the student's home and school to check their financial condition and their marks. We only help students who really need it and want to study.",
+      "We source from premium estates in Madagascar, Ecuador, and Peru. We work directly with local farming cooperatives, paying above fair-trade prices to support sustainable agriculture and biodiversity.",
   },
   {
-    question: "How can I donate?",
+    question: "Do you offer custom corporate gifting?",
     answer:
-      "You can donate through our website. 100% of your donation is used to pay school fees for students, because our founders pay for all administrative and office costs. You also get a tax exemption receipt (Section 80G) for your donation.",
+      "Yes. We offer fully custom corporate gift sets with company logo molding, branded packaging, and bulk order pricing. Our team will design a package that matches your corporate identity and budget.",
   },
   {
-    question: "Can I launch a memorial or named scholarship?",
+    question: "Can I start a subscription for regular chocolate deliveries?",
     answer:
-      "Yes. You can start a scholarship in memory of a parent, sibling, teacher, or friend. You can choose the rules, like helping only girls or students from a specific area. We send you progress updates of the students who receive your scholarship.",
+      "Absolutely. Our monthly and quarterly subscription boxes feature new arrivals, limited editions, and exclusive members-only selections delivered to your door in temperature-controlled packaging.",
   },
   {
-    question: "How do I become a volunteer?",
+    question: "How do you ensure chocolate quality during delivery?",
     answer:
-      "Aaghaz runs on volunteer support. You can help us by visiting students' homes for verification in your city, or help us online with computer work, social media, or guiding students. Please register on our website and we will contact you.",
+      "All orders are packed in temperature-controlled, insulated boxes using food-grade gel packs. We ship with express couriers and avoid shipping during peak heat periods to ensure your chocolate arrives in perfect condition.",
   },
   {
-    question: "What is Rahmani 30 and how is Aaghaz connected to it?",
+    question: "Are DUMUZI products suitable for gifting at weddings and events?",
     answer:
-      "Rahmani 30 is a coaching program that prepares poor students for difficult exams like IIT-JEE and NEET. Aaghaz has joined hands with them to run free coaching centers in Uttar Pradesh so village students can get free training.",
+      "Yes. We specialise in custom wedding favours and event gifting. Our team can create monogrammed boxes, custom-molded chocolates, and fully branded packaging to match your event theme.",
   },
   {
-    question: "What is the Lucknow Coaching & Guidance Centre (LCGC)?",
+    question: "What is your return and freshness policy?",
     answer:
-      "Since 2011, Aaghaz runs a free after-school study center in Lucknow. It has a quiet library, computers, and teachers to help children who do not have these resources at home. Over 200 children study here every week.",
+      "Because our chocolates are handcrafted and perishable, we do not accept returns. However, if your order arrives damaged or below our quality standards, we will replace it at no charge. Our standard shelf life is 6–8 weeks from production.",
   },
   {
-    question: "How do I apply for student aid for myself or my child?",
+    question: "Do you offer sugar-free or vegan options?",
     answer:
-      "Fill the application form on our website. We help pay school fees, college fees, books, and hostel costs for poor families. After you apply, our volunteers will visit your home to check your details.",
+      "We have a small range of dark chocolate bars and truffles sweetened with coconut sugar and made with oat or almond milk for vegan customers. These are available on our website under 'Specialty Collections'.",
   },
   {
-    question: "Is Aaghaz Foundation registered? Are donations tax-exempt?",
+    question: "How do I place a bespoke order?",
     answer:
-      "Yes. Aaghaz Foundation is a registered charity in India. Indian donors get a tax deduction under Section 80G. We will send you a donation receipt within 7 days.",
+      "Email us at hello@dumuzi.com or use the contact form. Share your occasion, preferred flavours, quantities, and any branding requirements. Our team will respond within 24 hours with a quote and timeline.",
   },
   {
-    question: "How can my company partner with Aaghaz?",
+    question: "Do you ship internationally?",
     answer:
-      "Companies can support us through CSR funds. You can sponsor a classroom, fund a scholarship group, or sponsor a coaching center. Write to us at aaghaz.foundation@gmail.com and we will help you set it up.",
+      "Yes. We ship to over 30 countries using express temperature-controlled couriers. International shipping rates and estimated delivery times are shown at checkout.",
   },
 ];
 
 export const ctaContent = {
-  heading: "Help a child finish school this year.",
+  heading: "Indulge in the Art of Luxury Chocolate.",
   text: [
-    "Many children in India still do not get the chance to go to school. While we cannot solve this big problem overnight, we can change a child's life one at a time. Your donation will help one child stay in school. Start helping today.",
+    "Whether you are looking for a personal treat, a meaningful gift, or a bespoke corporate collection — DUMUZI has something extraordinary waiting for you. Explore our collections or get in touch to create something truly one-of-a-kind.",
   ],
 };
 
 export const shortVideos = [
   {
     id: 1,
-    title: "Listen to one of our students",
+    title: "Watch our chocolatiers at work",
     videoUrl:
       "/images/videos/elegantizeevents_reel_11_6_2025_8_30_00-pm3759951878449372084.mp4",
-    thumbnail:
-      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&q=80",
+    thumbnail: "/images/assets/dark_chocolates_hero.png",
   },
   {
     id: 2,
-    title: "See inside our coaching center",
+    title: "Inside our tempering atelier",
     videoUrl:
       "/images/videos/djtm_official_reel_12_18_2025_3_23_36-am3789871397074796955.mp4",
-    thumbnail:
-      "https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=600&q=80",
+    thumbnail: "/images/assets/dark_chocolates_hero.png",
   },
   {
     id: 3,
-    title: "A day at our Lucknow study center",
+    title: "From bean to truffle — the full journey",
     videoUrl:
       "/images/videos/elegantizeevents_reel_12_12_2024_10_30_00-pm3521561008227581106.mp4",
-    thumbnail:
-      "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=600&q=80",
+    thumbnail: "/images/assets/dark_chocolates_hero.png",
   },
   {
     id: 4,
-    title: "How we visit and check student homes",
+    title: "How we source our cocoa in Madagascar",
     videoUrl:
       "/images/videos/elegantizeevents_reel_12_29_2025_9_30_33-pm3798394431771591975.mp4",
-    thumbnail:
-      "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=600&q=80",
+    thumbnail: "/images/assets/dark_chocolates_hero.png",
   },
   {
     id: 5,
-    title: "Our founder talks about 20 years of Aaghaz",
+    title: "Our founder on 15 years of DUMUZI",
     videoUrl:
       "/images/videos/elegantizeevents_reel_12_29_2025_9_30_33-pm3798394431771591975.mp4",
-    thumbnail:
-      "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80",
+    thumbnail: "/images/assets/dark_chocolates_hero.png",
   },
   {
     id: 6,
-    title: "A donor talks about starting a scholarship",
+    title: "A customer unwraps their first DUMUZI gift box",
     videoUrl:
       "/images/videos/elegantizeevents_reel_5_27_2022_1_07_26-am2846867921226300535.mp4",
-    thumbnail:
-      "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=600&q=80",
+    thumbnail: "/images/assets/dark_chocolates_hero.png",
   },
   {
     id: 7,
-    title: "Our volunteers working on the ground",
+    title: "Behind the scenes: packaging our signature boxes",
     videoUrl:
       "/images/videos/elegantizeevents_reel_11_6_2025_8_30_00-pm3759951878449372084.mp4",
-    thumbnail:
-      "https://images.unsplash.com/photo-1488998427799-e3362cec87c3?auto=format&fit=crop&w=600&q=80",
+    thumbnail: "/images/assets/dark_chocolates_hero.png",
   },
 ];

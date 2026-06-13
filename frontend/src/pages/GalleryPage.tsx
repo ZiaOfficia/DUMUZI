@@ -4,65 +4,62 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, Play, Image as ImageIcon } from "lucide-react";
 import { ContactSection } from "../components/sections/ContactSection";
 
-// Aaghaz Foundation — featured films
+// DUMUZI Luxury Chocolates — featured product showcase films
 const videoGallery = [
   {
     id: "dQw4w9WgXcQ",
-    title: "20 Years of Aaghaz — A short film",
-    thumbnail:
-      "https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=1200&q=80",
+    title: "DUMUZI Signature Collection — Showcase",
+    thumbnail: "/images/products/DUMUZI.jpeg",
     videoLength: "3:42",
   },
   {
     id: "dQw4w9WgXcQ",
-    title: "Inside the LCGC, Lucknow",
-    thumbnail:
-      "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80",
+    title: "Heart Collection — Crafting the Perfect Gift",
+    thumbnail: "/images/products/LF-H18D.jpeg",
     videoLength: "2:15",
   },
   {
     id: "dQw4w9WgXcQ",
-    title: "How a pre-scholarship survey works",
-    thumbnail:
-      "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=1200&q=80",
+    title: "Bonbon Trios — Gold-Foil Wrapping Process",
+    thumbnail: "/images/products/LF-BN9T.jpeg",
     videoLength: "1:48",
   },
   {
     id: "dQw4w9WgXcQ",
-    title: "Rahmani 30 — Cohort highlights",
-    thumbnail:
-      "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=1200&q=80",
+    title: "Display Trays — Behind the Arrangement",
+    thumbnail: "/images/products/LF-D25T.jpeg",
     videoLength: "2:30",
   },
   {
     id: "dQw4w9WgXcQ",
-    title: "Donor stories — A memorial scholarship",
-    thumbnail:
-      "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=1200&q=80",
+    title: "From Cocoa to Chocolate — The DUMUZI Story",
+    thumbnail: "/images/products/LF-D15T.jpeg",
     videoLength: "1:55",
   },
 ];
 
-// Aaghaz Foundation — gallery images (from the field)
+// DUMUZI Luxury Chocolates — gallery of all products
 const imageGallery = [
-  "https://loremflickr.com/900/600/india,student/all?lock=2001",
-  "https://loremflickr.com/900/600/india,orphan/all?lock=2002",
-  "https://loremflickr.com/900/600/india,school/all?lock=2003",
-  "https://loremflickr.com/900/600/india,children/all?lock=2004",
-  "https://loremflickr.com/900/600/india,education/all?lock=2005",
-  "https://loremflickr.com/900/600/india,classroom/all?lock=2006",
-  "https://loremflickr.com/900/600/india,orphanage/all?lock=2007",
-  "https://loremflickr.com/900/600/india,teacher/all?lock=2008",
-  "https://loremflickr.com/900/600/india,student/all?lock=2009",
-  "https://loremflickr.com/900/600/india,orphan/all?lock=2010",
-  "https://loremflickr.com/900/600/india,school/all?lock=2011",
-  "https://loremflickr.com/900/600/india,children/all?lock=2012",
-  "https://loremflickr.com/900/600/india,education/all?lock=2013",
-  "https://loremflickr.com/900/600/india,classroom/all?lock=2014",
-  "https://loremflickr.com/900/600/india,orphanage/all?lock=2015",
-  "https://loremflickr.com/900/600/india,teacher/all?lock=2016",
-  "https://loremflickr.com/900/600/india,student/all?lock=2017",
-  "https://loremflickr.com/900/600/india,children/all?lock=2018",
+  "/images/products/DUMUZI.jpeg",
+  "/images/products/LF-H3.jpeg",
+  "/images/products/LF - H5.jpeg",
+  "/images/products/LF-H8B.jpeg",
+  "/images/products/LF-H9P .jpeg",
+  "/images/products/LF-H12T.jpeg",
+  "/images/products/LF-H12B.jpeg",
+  "/images/products/LF-H18B.jpeg",
+  "/images/products/LF-H18D.jpeg",
+  "/images/products/LF-D6.jpeg",
+  "/images/products/LF-D9.jpeg",
+  "/images/products/LF-D12.jpeg",
+  "/images/products/LF-D15.jpeg",
+  "/images/products/LF-D15T.jpeg",
+  "/images/products/LF-D18T.jpeg",
+  "/images/products/LF-D25.jpeg",
+  "/images/products/LF-D25T.jpeg",
+  "/images/products/LF- BN9.jpeg",
+  "/images/products/LF-BN9T.jpeg",
+  "/images/products/LF-O9.jpeg",
 ];
 
 export const GalleryPage = () => {
@@ -72,8 +69,8 @@ export const GalleryPage = () => {
   return (
     <div className="pt-[60px] md:pt-[50px] bg-white min-h-screen">
       <SEO
-        title="Photo Gallery — Aaghaz Foundation"
-        description="Photographs from the field — Aaghaz Foundation's scholarship students, the LCGC learning centre in Lucknow, Rahmani 30 cohort and volunteer work across India."
+        title="Photo Gallery — DUMUZI Luxury Chocolates"
+        description="Photographs from the field — DUMUZI Luxury Chocolates's scholarship students, the LCGC learning centre in Lucknow, Rahmani 30 cohort and volunteer work across India."
       />
       {/* Hero Section */}
       {/* ------------------- IMAGE GALLERY SECTION ------------------- */}
@@ -82,8 +79,8 @@ export const GalleryPage = () => {
       <section className="relative h-[90vh] flex items-center justify-center overflow-hidden bg-stone-900 group">
         <div className="absolute inset-0 opacity-60 group-hover:opacity-50 transition-opacity duration-700">
           <img loading="lazy" decoding="async"
-            src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1920&q=80"
-            alt="Image Gallery Header"
+            src="/images/products/LF-D25B.jpeg"
+            alt="DUMUZI Chocolate Gallery"
             className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000"
           />
           <div className="absolute inset-0 bg-linear-to-t from-stone-900 via-stone-900/40 to-transparent" />
@@ -149,7 +146,7 @@ export const GalleryPage = () => {
           <img
             loading="lazy"
             decoding="async"
-            src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1920&q=80"
+            src="/images/products/LF-D25T.jpeg"
             alt="Video gallery header — students at LCGC"
             className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000"
           />
@@ -176,7 +173,7 @@ export const GalleryPage = () => {
             Films &amp; Stories
           </h2>
           <p className="mt-4 text-xl font-light text-stone-200 max-w-2xl mx-auto px-6">
-            Short videos about our students, volunteers, donors, and how Aaghaz works.
+            Short videos about our students, volunteers, donors, and how DUMUZI works.
           </p>
         </motion.div>
       </section>
@@ -224,7 +221,7 @@ export const GalleryPage = () => {
                 <div className="p-8">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-xs font-bold uppercase tracking-widest text-primary">
-                      Aaghaz Stories
+                      DUMUZI Stories
                     </span>
                   </div>
                   <h3
@@ -232,7 +229,7 @@ export const GalleryPage = () => {
                       index === 0 ? "text-3xl" : "text-xl"
                     }`}
                   >
-                    {item.title || `Aaghaz Story ${index + 1}`}
+                    {item.title || `DUMUZI Story ${index + 1}`}
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed max-w-2xl">
                     A short video showing the difference your support makes.

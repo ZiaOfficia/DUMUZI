@@ -13,7 +13,7 @@ cloudinary.config({
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
-    folder: "elegantize-blog",
+    folder: "dumuzi-blog",
     allowed_formats: ["jpg", "jpeg", "png", "webp", "gif"],
     transformation: [{ width: 1200, crop: "limit", quality: "auto" }],
   },

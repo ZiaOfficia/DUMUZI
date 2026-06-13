@@ -1,244 +1,170 @@
-import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, Heart } from "lucide-react";
-import { useNavigate } from "react-router-dom";
-import { heroSlides } from "../../data/content";
+import { motion, type Transition } from 'framer-motion';
+import { Gem, Heart, Award, Star } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { ChocolateDecor } from '../common/ChocolateDecor';
+
+const ease = [0.25, 0.1, 0.25, 1] as const;
+const fadeUp = (delay = 0) => ({
+  initial: { opacity: 0, y: 36 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.85, delay, ease } as Transition,
+});
 
 export const HeroSlider = () => {
-  const [[currentIndex, direction], setCurrent] = useState<[number, number]>([
-    0, 1,
-  ]);
-  const [isPaused, setIsPaused] = useState(false);
   const navigate = useNavigate();
-  const slideTimer = useRef<ReturnType<typeof setInterval> | null>(null);
-
-  const goTo = (newIndex: number, dir: number) => {
-    setCurrent([
-      (newIndex + heroSlides.length) % heroSlides.length,
-      dir,
-    ]);
-  };
-  const nextSlide = () => goTo(currentIndex + 1, 1);
-  const prevSlide = () => goTo(currentIndex - 1, -1);
-
-  // Auto-slide (pauses on hover)
-  useEffect(() => {
-    if (isPaused) return;
-    slideTimer.current = setInterval(() => {
-      setCurrent(([idx]) => [(idx + 1) % heroSlides.length, 1]);
-    }, 6500);
-    return () => {
-      if (slideTimer.current) clearInterval(slideTimer.current);
-    };
-  }, [isPaused]);
-
-  const current = heroSlides[currentIndex];
-
-  // Slide transition (image slides horizontally)
-  const slideVariants = {
-    enter: (dir: number) => ({
-      x: dir > 0 ? "100%" : "-100%",
-      opacity: 0.9,
-    }),
-    center: {
-      x: 0,
-      opacity: 1,
-    },
-    exit: (dir: number) => ({
-      x: dir > 0 ? "-100%" : "100%",
-      opacity: 0.9,
-    }),
-  };
 
   return (
     <section
-      className="relative min-h-[85vh] md:min-h-0 md:h-[75vh] lg:h-[calc(100vh-88px)] w-full overflow-hidden bg-accent select-none"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
+      className="relative min-h-[92vh] flex items-center overflow-hidden"
+      style={{ background: 'radial-gradient(circle at 60% 40%, var(--choc-dark) 0%, var(--choc-deep) 100%)' }}
     >
-      {/* ─── Sliding image carousel ─── */}
-      <div className="absolute inset-0 overflow-hidden">
-        <AnimatePresence custom={direction} initial={false} mode="sync">
-          <motion.div
-            key={currentIndex}
-            custom={direction}
-            variants={slideVariants}
-            initial="enter"
-            animate="center"
-            exit="exit"
-            transition={{
-              x: { duration: 0.9, ease: [0.65, 0, 0.35, 1] },
-              opacity: { duration: 0.6 },
-            }}
-            className="absolute inset-0"
-          >
-            <img
-              src={current.image}
-              alt={current.title}
-              className="w-full h-full object-cover"
-            />
-            {/* Light directional overlay — image stays clearly visible */}
-            <div
-              className="absolute inset-0"
-              style={{
-                background:
-                  "linear-gradient(100deg, rgba(15,15,15,0.78) 0%, rgba(15,15,15,0.50) 35%, rgba(15,15,15,0.15) 65%, rgba(15,15,15,0.55) 100%)",
-              }}
-            />
-          </motion.div>
-        </AnimatePresence>
-      </div>
+      {/* Rich chocolate-gold ambient glows */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full blur-[120px] pointer-events-none opacity-20" style={{ background: 'var(--gold)' }} />
+      <div className="absolute bottom-1/3 right-1/4 w-[450px] h-[450px] rounded-full blur-[140px] pointer-events-none opacity-15" style={{ background: 'var(--choc-warm)' }} />
 
-      {/* ─── Decorative diamond ribbon top ─── */}
-      <div className="absolute top-0 left-0 right-0 z-10 flex justify-center pointer-events-none">
-        <div className="flex gap-2 -translate-y-1/2">
-          {Array.from({ length: 11 }).map((_, i) => (
-            <span
-              key={i}
-              className={`block w-2 h-2 rotate-45 ${i === 5
-                ? "bg-secondary"
-                : i === 4 || i === 6
-                  ? "bg-primary"
-                  : "bg-white/40"
-                }`}
-            />
-          ))}
-        </div>
-      </div>
+      {/* Chocolate ball decorations */}
+      <ChocolateDecor variant="hero" />
 
-      {/* ─── Decorative corner brackets ─── */}
-      <div className="absolute top-12 left-8 w-20 h-20 border-l-2 border-t-2 border-secondary/60 hidden md:block z-10" />
-      <div className="absolute bottom-12 right-8 w-20 h-20 border-r-2 border-b-2 border-secondary/60 hidden md:block z-10" />
+      {/* Floating particles */}
+      {[
+        { top: '15%', left: '8%', size: 6, delay: 0 },
+        { top: '75%', left: '42%', size: 8, delay: 1.5 },
+        { top: '25%', right: '12%', size: 5, delay: 0.7 },
+        { top: '65%', left: '15%', size: 7, delay: 2.2 },
+        { top: '80%', right: '20%', size: 6, delay: 1.1 }
+      ].map((p, i) => (
+        <motion.div
+          key={i}
+          className="absolute rounded-full pointer-events-none opacity-30"
+          style={{ width: p.size, height: p.size, top: p.top, left: (p as any).left, right: (p as any).right, background: 'var(--gold)', boxShadow: '0 0 10px var(--gold)' }}
+          animate={{ y: [0, -15, 0], opacity: [0.2, 0.6, 0.2] }}
+          transition={{ duration: 4 + i, repeat: Infinity, delay: p.delay, ease: 'easeInOut' }}
+        />
+      ))}
 
-      {/* ─── Content overlay ─── */}
-      <div className="absolute inset-0 z-10 flex items-center pb-24 sm:pb-20 md:pb-0">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full">
-          <div className="max-w-3xl text-white">
-            {/* Animated title chip — only THIS changes with slides */}
-            <AnimatePresence mode="wait">
-              <motion.span
-                key={`chip-${currentIndex}`}
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.5 }}
-                className="inline-flex items-center gap-2 text-[10px] sm:text-xs uppercase tracking-[0.4em] mb-6 px-4 py-2 rounded-full border border-secondary/70 bg-secondary/10 backdrop-blur-md text-secondary font-bold"
-              >
-                <span className="block w-2 h-2 rounded-full bg-secondary animate-pulse" />
-                {current.title}
-              </motion.span>
-            </AnimatePresence>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 w-full pt-10 pb-16 sm:pt-16 sm:pb-20 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
 
-            {/* Animated headline — fades + slides up */}
-            <AnimatePresence mode="wait">
-              <motion.h1
-                key={`title-${currentIndex}`}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -30 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-[1.05] mb-4 sm:mb-6 drop-shadow-2xl"
-              >
-                {current.subtitle}
-              </motion.h1>
-            </AnimatePresence>
+          {/* LEFT: Text & Branding */}
+          <div className="lg:col-span-6 flex flex-col justify-center text-left">
+            <motion.div {...fadeUp(0.1)} className="flex items-center gap-3 mb-6">
+              <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: 'var(--gold)' }} />
+              <span className="text-[11px] tracking-[0.3em] uppercase font-bold text-gold-gradient font-sans">
+                Experience Luxury Artisanship
+              </span>
+            </motion.div>
 
-            {/* Decorative double rule */}
-            <div className="flex items-center gap-3 mb-4 sm:mb-6">
-              <span className="h-px w-12 bg-secondary" />
-              <span className="text-secondary text-lg">&#x2726;</span>
-              <span className="h-px w-24 bg-secondary/50" />
-            </div>
+            <motion.h1
+              {...fadeUp(0.2)}
+              className="font-display leading-[1.1] mb-6 font-bold text-cream"
+              style={{ fontSize: 'clamp(2.8rem, 5vw, 4.4rem)' }}
+            >
+              Made with love,<br />
+              <span className="text-gold-gradient font-display italic">crafted</span> for you
+            </motion.h1>
 
-            {/* Static descriptive text */}
-            <p className="text-sm sm:text-base md:text-xl text-gray-100 max-w-2xl mb-6 sm:mb-10 leading-relaxed drop-shadow-lg">
-              Since 2004, Aaghaz Foundation has helped poor children go to school. We check every student's need through our volunteer surveys and send regular updates to our donors.
-            </p>
+            <motion.p 
+              {...fadeUp(0.32)} 
+              className="text-base lg:text-lg leading-relaxed mb-9 max-w-[480px] font-sans text-muted" 
+            >
+              Indulge in the velvety richness of masterfully tempered dark chocolate, sculpted by hand with premium ingredients.
+            </motion.p>
 
-            {/* ─── FIXED BUTTONS — only two, never change ─── */}
-            <div className="flex flex-wrap gap-3 sm:gap-4">
+            <motion.div {...fadeUp(0.44)} className="flex flex-wrap gap-3 mb-10">
               <button
-                onClick={() => navigate("/contact")}
-                className="group inline-flex items-center gap-2 sm:gap-3 bg-primary hover:bg-primary-dark text-white px-6 py-3 sm:px-8 sm:py-4 text-[10px] sm:text-sm uppercase tracking-widest font-bold rounded-tl-2xl rounded-br-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-0.5"
+                onClick={() => navigate("/collections")}
+                className="px-7 sm:px-9 py-3.5 sm:py-4 rounded-full text-[11px] sm:text-xs tracking-[0.15em] uppercase font-bold transition-all duration-300 gold-glow-hover border-none cursor-pointer"
+                style={{ 
+                  background: 'linear-gradient(135deg, var(--gold), var(--gold-light))', 
+                  color: 'var(--choc-deep)', 
+                  boxShadow: '0 10px 30px rgba(212,163,115,0.35)' 
+                }}
               >
-                <Heart size={16} fill="currentColor" />
-                Donate Now
-                <span className="group-hover:translate-x-1 transition-transform">
-                  &rarr;
-                </span>
+                Shop Collection
               </button>
               <button
                 onClick={() => navigate("/about")}
-                className="inline-flex items-center gap-2 sm:gap-3 border-2 border-secondary text-secondary hover:bg-secondary hover:text-accent px-6 py-3 sm:px-8 sm:py-4 text-[10px] sm:text-sm uppercase tracking-widest font-bold rounded-tl-2xl rounded-br-2xl transition-all duration-300"
+                className="px-7 sm:px-9 py-3.5 sm:py-4 rounded-full text-[11px] sm:text-xs tracking-[0.15em] uppercase font-bold transition-all duration-300 bg-transparent cursor-pointer"
+                style={{ 
+                  color: 'var(--cream)', 
+                  border: '1.5px solid rgba(212,163,115,0.4)', 
+                }}
+                onMouseEnter={e => { e.currentTarget.style.background = 'rgba(212,163,115,0.08)'; e.currentTarget.style.borderColor = 'var(--gold)'; }}
+                onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.borderColor = 'rgba(212,163,115,0.4)'; }}
               >
-                Our Story
+                Our Legacy
               </button>
-            </div>
+            </motion.div>
+
+            {/* Micro Badges */}
+            <motion.div {...fadeUp(0.56)} className="grid grid-cols-3 gap-4 pt-6 border-t border-white/5 max-w-[480px]">
+              {[
+                { icon: Gem, label: 'Single-Origin Cocoa' },
+                { icon: Heart, label: 'Artisan Finished' },
+                { icon: Award, label: 'Gourmet Gold' }
+              ].map(({ icon: Icon, label }) => (
+                <div key={label} className="flex flex-col items-start gap-1.5">
+                  <Icon size={16} style={{ color: 'var(--gold)' }} />
+                  <span className="text-[10px] uppercase tracking-wider font-semibold" style={{ color: 'var(--muted)' }}>{label}</span>
+                </div>
+              ))}
+            </motion.div>
           </div>
+
+          {/* RIGHT: Floating Chocolate Showcase */}
+          <div className="lg:col-span-6 flex items-center justify-center relative mt-6 lg:mt-0 pb-8 lg:pb-0">
+            {/* Glowing background behind image */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 rounded-full blur-[100px] pointer-events-none opacity-25" style={{ background: 'var(--gold)' }} />
+
+            {/* Image Container with Floating motion */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, ease: 'easeOut' }}
+              className="relative w-full max-w-[320px] sm:max-w-[380px] lg:max-w-[400px] aspect-[4/5] rounded-[24px] lg:rounded-[32px] overflow-hidden border border-white/10 shadow-2xl glass-card animate-floatR"
+            >
+              <img
+                src="/images/products/DUMUZI.jpeg"
+                alt="DUMUZI Luxury Chocolates"
+                className="w-full h-full object-cover image-zoom-slow"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-choc-dark/70 via-transparent to-transparent pointer-events-none" />
+              <span className="absolute top-4 right-4 sm:top-6 sm:right-6 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full text-[9px] sm:text-[10px] tracking-[0.2em] uppercase font-bold text-cream border border-white/10 backdrop-blur-md"
+                style={{ background: 'rgba(15,10,7,0.6)' }}>
+                Signature Collection
+              </span>
+            </motion.div>
+
+            {/* Floating Product Card — hidden on small phones */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.8, duration: 0.8 }}
+              className="hidden sm:flex absolute -bottom-4 -left-2 md:-bottom-6 md:-left-6 bg-choc-dark/95 backdrop-blur-xl rounded-2xl p-3 sm:p-4 shadow-2xl items-center gap-3 max-w-[240px] sm:max-w-[280px] animate-float"
+              style={{ border: '1px solid rgba(212,163,115,0.25)' }}
+            >
+              <img
+                src="/images/products/LF- BN9.jpeg"
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg object-contain bg-choc-deep/60 border border-white/10 flex-shrink-0 p-0.5"
+                alt="DUMUZI Bonbon 9"
+              />
+              <div>
+                <h4 className="text-[11px] uppercase font-bold text-cream tracking-wider">Bonbon · 9 Pcs</h4>
+                <p className="text-[10px] text-muted mb-1">Gold-foil wrapped truffles</p>
+                <div className="flex items-center gap-1">
+                  <Star size={10} fill="var(--gold)" style={{ color: 'var(--gold)' }} />
+                  <Star size={10} fill="var(--gold)" style={{ color: 'var(--gold)' }} />
+                  <Star size={10} fill="var(--gold)" style={{ color: 'var(--gold)' }} />
+                  <Star size={10} fill="var(--gold)" style={{ color: 'var(--gold)' }} />
+                  <Star size={10} fill="var(--gold)" style={{ color: 'var(--gold)' }} />
+                  <span className="text-[10px] text-muted ml-1">(189)</span>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
         </div>
       </div>
-
-      {/* ─── Side arrows ─── */}
-      <button
-        onClick={prevSlide}
-        className="group absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 hidden sm:flex w-10 h-10 md:w-14 md:h-14 rounded-full bg-white/10 hover:bg-secondary border border-white/20 hover:border-secondary text-white items-center justify-center backdrop-blur-md transition-all hover:scale-110"
-        aria-label="Previous slide"
-      >
-        <ChevronLeft
-          size={24}
-          className="group-hover:-translate-x-0.5 transition-transform"
-        />
-      </button>
-      <button
-        onClick={nextSlide}
-        className="group absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 hidden sm:flex w-10 h-10 md:w-14 md:h-14 rounded-full bg-white/10 hover:bg-secondary border border-white/20 hover:border-secondary text-white items-center justify-center backdrop-blur-md transition-all hover:scale-110"
-        aria-label="Next slide"
-      >
-        <ChevronRight
-          size={24}
-          className="group-hover:translate-x-0.5 transition-transform"
-        />
-      </button>
-
-      {/* ─── Right vertical slide dots ─── */}
-      <div className="absolute right-6 md:right-10 top-1/2 -translate-y-1/2 z-20 hidden lg:flex flex-col items-center gap-3">
-        {heroSlides.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => goTo(i, i > currentIndex ? 1 : -1)}
-            className="group flex items-center gap-2"
-            aria-label={`Go to slide ${i + 1}`}
-          >
-            <span
-              className={`block transition-all duration-500 ${i === currentIndex
-                ? "w-1 h-10 bg-secondary"
-                : "w-1 h-3 bg-white/40 group-hover:bg-white/80 group-hover:h-5"
-                }`}
-            />
-          </button>
-        ))}
-      </div>
-
-      {/* ─── Bottom-left slide counter + progress ─── */}
-      <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-4 md:left-12 z-20 flex items-center gap-2 sm:gap-4 text-white">
-        <span className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-secondary">
-          {String(currentIndex + 1).padStart(2, "0")}
-        </span>
-        <div className="w-16 sm:w-24 md:w-32 h-px bg-white/20 relative overflow-hidden">
-          <motion.span
-            key={`bar-${currentIndex}-${isPaused}`}
-            initial={{ width: "0%" }}
-            animate={{ width: isPaused ? "30%" : "100%" }}
-            transition={{ duration: isPaused ? 0.4 : 6.5, ease: "linear" }}
-            className="absolute left-0 top-0 h-full bg-secondary"
-          />
-        </div>
-        <span className="text-[10px] sm:text-xs tracking-widest text-white/60">
-          / {String(heroSlides.length).padStart(2, "0")}
-        </span>
-      </div>
-
-
     </section>
   );
 };

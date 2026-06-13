@@ -30,15 +30,15 @@ export const PortfolioListingPage = () => {
   return (
     <div className="bg-white min-h-screen pt-[60px] md:pt-[50px]">
       <SEO
-        title="Stories of Impact — Aaghaz Foundation"
-        description="Real-world stories from twenty years of work — students supported, scholarships launched, and communities reached by Aaghaz Foundation across India."
+        title="Stories of Impact — DUMUZI Luxury Chocolates"
+        description="Real-world stories from twenty years of work — students supported, scholarships launched, and communities reached by DUMUZI Luxury Chocolates across India."
       />
       {/* Header */}
       <section className="bg-stone-900 text-white py-60 px-6 text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-30">
           <img loading="lazy" decoding="async"
-            src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1920&q=80"
-            alt="Stories of Impact — Aaghaz Foundation"
+            src="/images/products/LF-H12T.jpeg"
+            alt="Stories of Impact — DUMUZI Luxury Chocolates"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-stone-900/60" />
@@ -49,7 +49,7 @@ export const PortfolioListingPage = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl md:text-7xl font-display mb-6"
           >
-            Stories of Impact
+            Our Collections &amp; Guides
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -57,7 +57,7 @@ export const PortfolioListingPage = () => {
             transition={{ delay: 0.2 }}
             className="text-xl font-light text-stone-200"
           >
-            True stories of students, volunteers, and change over the last 20 years.
+            Explore our curated chocolate collections, artisan guides, and stories from the DUMUZI atelier.
           </motion.p>
         </div>
       </section>

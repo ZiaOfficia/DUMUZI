@@ -68,7 +68,7 @@ export const ContactSection = () => {
                 <Phone size={20} />
               </span>
               <span className="text-sm uppercase tracking-widest text-gray-800">
-                +91 98765 43210
+                +44 20 7123 4567
               </span>
             </div>
             <div className="flex items-center space-x-4">
@@ -76,7 +76,7 @@ export const ContactSection = () => {
                 <MapPin size={20} />
               </span>
               <span className="text-sm uppercase tracking-widest text-gray-800">
-                57 Ganesh Gunj, Lucknow, UP — 226018
+                12 Rue du Chocolat, 75001 Paris, France
               </span>
             </div>
             <div className="flex items-center space-x-4">
@@ -84,7 +84,7 @@ export const ContactSection = () => {
                 <Mail size={20} />
               </span>
               <span className="text-sm uppercase tracking-widest text-gray-800 break-all">
-                aaghaz.foundation@gmail.com
+                hello@dumuzi.com
               </span>
             </div>
           </div>
@@ -165,11 +165,11 @@ export const ContactSection = () => {
               className="w-full bg-stone-50 border border-gray-200 focus:outline-none focus:border-primary p-3 text-gray-700"
             >
               <option value="">Select an option</option>
-              <option value="donate">Making a donation</option>
-              <option value="scholarship">Starting a scholarship</option>
-              <option value="volunteer">Becoming a volunteer</option>
-              <option value="apply-aid">Applying for student aid</option>
-              <option value="csr">Corporate / CSR partnership</option>
+              <option value="order">Placing an order</option>
+              <option value="corporate">Corporate gifting enquiry</option>
+              <option value="bespoke">Bespoke commission or wedding favours</option>
+              <option value="masterclass">Masterclass booking</option>
+              <option value="wholesale">Wholesale / trade enquiry</option>
               <option value="other">Something else</option>
             </select>
           </div>
@@ -184,7 +184,7 @@ export const ContactSection = () => {
                 setFormData({ ...formData, message: e.target.value })
               }
               className="w-full bg-stone-50 border border-gray-200 focus:outline-none focus:border-primary p-3 resize-none"
-              placeholder="Tell us how you'd like to get involved..."
+              placeholder="Tell us about your enquiry…"
             ></textarea>
           </div>
           <Button

@@ -1,161 +1,146 @@
-import { motion } from "framer-motion";
-import { Heart, ShieldCheck, Receipt, Sparkles } from "lucide-react";
-import { Link } from "react-router-dom";
-import { donateCtaImage } from "../../data/imageAssets";
+import { motion, type Transition } from 'framer-motion';
+import { Gift } from 'lucide-react';
+import { ChocolateDecor } from '../common/ChocolateDecor';
 
-const tiers = [
-  { amt: "₹1,000", label: "School books and bags for a year" },
-  { amt: "₹5,000", label: "School fees for a year" },
-  { amt: "₹25,000", label: "College fees for a year" },
-  { amt: "₹50,000", label: "A scholarship in someone's memory" },
-];
+const ease = [0.25, 0.1, 0.25, 1] as const;
+const occasions = ['Birthday', 'Anniversary', 'Corporate Gift', 'Holiday Season', 'Wedding favors'];
 
-const trust = [
-  { icon: ShieldCheck, label: "Your full donation goes to students" },
-  { icon: Receipt, label: "Get 80G tax benefits" },
-  { icon: Sparkles, label: "Get updates on student progress" },
-];
+export const DonateCTA = () => (
+  <section className="py-16 lg:py-24" style={{ background: 'linear-gradient(145deg, var(--choc-dark) 0%, var(--choc-deep) 100%)', position: 'relative', overflow: 'hidden' }}>
+    <ChocolateDecor variant="section" />
+    {/* Soft backdrop radial light */}
+    <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 60% 70% at 75% 50%, rgba(212,163,115,0.08) 0%, transparent 70%)' }} />
+    
+    <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
 
-export const DonateCTA = () => {
-  return (
-    <section className="relative py-12 md:py-28 px-4 md:px-6 overflow-hidden">
-      {/* Layered background image + gradient */}
-      <div className="absolute inset-0">
-        <img
-          src={donateCtaImage}
-          alt="Students at Aaghaz Foundation"
-          className="w-full h-full object-cover"
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(110deg, rgba(15,15,15,0.95) 0%, rgba(189,42,72,0.85) 60%, rgba(245,129,28,0.75) 100%)",
-          }}
-        />
-      </div>
-
-      {/* Decorative diamond row */}
-      <div className="absolute top-0 left-0 right-0 z-10 flex justify-center pointer-events-none">
-        <div className="flex gap-2 -translate-y-1/2">
-          {Array.from({ length: 9 }).map((_, i) => (
-            <span
-              key={i}
-              className={`block w-2 h-2 rotate-45 ${
-                i === 4 ? "bg-secondary" : "bg-white/50"
-              }`}
-            />
-          ))}
-        </div>
-      </div>
-
-      <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        {/* LEFT — message */}
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="lg:col-span-7 text-white"
+        {/* LEFT: Text & Occasions */}
+        <motion.div 
+          initial={{ opacity: 0, x: -50 }} 
+          whileInView={{ opacity: 1, x: 0 }} 
+          viewport={{ once: true }} 
+          transition={{ duration: 0.9, ease } as Transition} 
+          className="lg:col-span-6 flex flex-col justify-center text-left"
         >
-          <p className="inline-flex items-center gap-3 text-secondary text-xs font-bold uppercase tracking-[0.4em] mb-5">
-            <span className="block w-2 h-2 rounded-full bg-secondary animate-pulse" />
-            Help a child learn
-          </p>
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-[1.05] mb-6 drop-shadow-2xl">
-            One in three people in India
-            <br />
-            <span className="text-secondary">cannot read this sentence.</span>
+          <div className="flex items-center gap-3 mb-5">
+            <div className="h-px w-10" style={{ background: 'var(--gold)' }} />
+            <span className="text-[10px] tracking-[0.32em] uppercase font-bold text-gold-gradient font-sans">Artisanal Gifting</span>
+          </div>
+          
+          <h2 className="font-display leading-[1.1] mb-7 font-bold" style={{ fontSize: 'clamp(2.2rem, 4vw, 3.4rem)', color: 'var(--cream)' }}>
+            Gift Luxury<br />
+            <span className="text-gold-gradient font-display italic">Share Delight</span>
           </h2>
-          <p className="text-lg md:text-xl text-gray-100 mb-8 max-w-2xl leading-relaxed">
-            You can change this. When you support a child, you give them a chance to learn and succeed. Help us change a life today.
+          
+          <p className="text-base leading-relaxed mb-9 max-w-[480px] font-sans" style={{ color: 'var(--muted)' }}>
+            Every celebration deserves an exquisite touch. Choose from our hand-selected assortment of premium truffles, packaged in handcrafted boxes and finished with silk ribbons. Make their special day unforgettable.
           </p>
-
-          {/* Trust pills */}
-          <div className="flex flex-wrap gap-3 mb-8">
-            {trust.map((t) => {
-              const Icon = t.icon;
-              return (
-                <span
-                  key={t.label}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/30 bg-white/10 backdrop-blur-sm text-xs font-bold uppercase tracking-widest text-white"
-                >
-                  <Icon size={14} className="text-secondary" />
-                  {t.label}
-                </span>
-              );
-            })}
+          
+          {/* Occasion tag pills */}
+          <div className="flex flex-wrap gap-2.5 mb-10">
+            {occasions.map((tag) => (
+              <span 
+                key={tag} 
+                className="text-[10px] uppercase tracking-wider px-4 py-2 rounded-full font-bold transition-all duration-300 cursor-default border"
+                style={{ 
+                  background: 'rgba(212, 163, 115, 0.06)', 
+                  borderColor: 'rgba(212, 163, 115, 0.2)', 
+                  color: 'var(--gold-light)' 
+                }}
+                onMouseEnter={(e) => { 
+                  e.currentTarget.style.background = 'rgba(212, 163, 115, 0.16)'; 
+                  e.currentTarget.style.borderColor = 'var(--gold)'; 
+                  e.currentTarget.style.boxShadow = '0 0 15px rgba(212, 163, 115, 0.2)';
+                }}
+                onMouseLeave={(e) => { 
+                  e.currentTarget.style.background = 'rgba(212, 163, 115, 0.06)'; 
+                  e.currentTarget.style.borderColor = 'rgba(212, 163, 115, 0.2)'; 
+                  e.currentTarget.style.boxShadow = 'none';
+                }}
+              >
+                {tag}
+              </span>
+            ))}
           </div>
 
-          <Link
-            to="/contact"
-            className="group inline-flex items-center gap-3 bg-white hover:bg-secondary text-accent hover:text-white px-10 py-5 text-sm uppercase tracking-widest font-bold rounded-tl-2xl rounded-br-2xl shadow-2xl transition-all duration-300 hover:-translate-y-1"
+          <button 
+            className="self-start px-9 py-4 rounded-full text-xs tracking-[0.15em] uppercase font-bold transition-all duration-300 gold-glow-hover border-none cursor-pointer"
+            style={{ 
+              background: 'linear-gradient(135deg, var(--gold), var(--gold-light))', 
+              color: 'var(--choc-deep)', 
+              boxShadow: '0 10px 30px rgba(212,163,115,0.35)' 
+            }}
           >
-            <Heart size={18} fill="currentColor" />
-            Donate Now
-            <span className="group-hover:translate-x-1 transition-transform">
-              &rarr;
-            </span>
-          </Link>
+            Explore Gifting Collections
+          </button>
         </motion.div>
 
-        {/* RIGHT — donation tiers card */}
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="lg:col-span-5"
+        {/* RIGHT: Emotional Visual Card & Price Badge */}
+        <motion.div 
+          initial={{ opacity: 0, x: 50 }} 
+          whileInView={{ opacity: 1, x: 0 }} 
+          viewport={{ once: true }} 
+          transition={{ duration: 0.9, ease, delay: 0.15 } as Transition} 
+          className="lg:col-span-6 relative flex items-center justify-center"
         >
-          <div className="relative">
-            <div className="absolute -inset-2 border-2 border-secondary/50 rounded-tl-[3rem] rounded-br-[3rem]" />
-            <div className="relative bg-white rounded-tl-[3rem] rounded-br-[3rem] p-8 md:p-10 shadow-2xl">
-              <p className="text-[10px] uppercase tracking-[0.4em] text-primary font-bold mb-2">
-                How you can help
-              </p>
-              <h3 className="font-display text-2xl md:text-3xl font-bold text-accent mb-6">
-                How we use your donation
-              </h3>
+          <div className="relative w-full max-w-[480px] mx-auto">
+            <div className="absolute -inset-8 rounded-[60px] pointer-events-none opacity-30 blur-2xl" style={{ background: 'radial-gradient(circle at center, var(--gold) 0%, transparent 70%)' }} />
+            
+            <div 
+              className="relative rounded-[28px] overflow-hidden group"
+              style={{ 
+                aspectRatio: '4/3.2', 
+                background: 'var(--choc-deep)', 
+                border: '1.5px solid rgba(212, 163, 115, 0.28)', 
+                boxShadow: '0 45px 120px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.05)' 
+              }}
+            >
+              <div className="w-full h-full overflow-hidden relative">
+                <img
+                  src="/images/products/LF-H18D.jpeg"
+                  alt="DUMUZI Heart 18 Duo Gift Box"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  style={{ objectPosition: 'center' }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent pointer-events-none" />
+              </div>
 
-              <ul className="space-y-3 mb-6">
-                {tiers.map((t, i) => (
-                  <li key={t.amt}>
-                    <Link
-                      to="/contact"
-                      className="group flex items-center justify-between p-4 rounded-tl-xl rounded-br-xl border-2 border-primary/10 hover:border-primary hover:bg-mesh-rose transition-all duration-300"
-                    >
-                      <div>
-                        <p className="font-display text-2xl font-bold text-primary group-hover:text-primary-dark">
-                          {t.amt}
-                        </p>
-                        <p className="text-xs text-text-muted uppercase tracking-widest mt-0.5">
-                          {t.label}
-                        </p>
-                      </div>
-                      <span className="w-10 h-10 rounded-full bg-primary/10 group-hover:bg-primary text-primary group-hover:text-white flex items-center justify-center transition-colors">
-                        <Heart
-                          size={16}
-                          fill={i === 1 ? "currentColor" : "none"}
-                        />
-                      </span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+              {/* Complimentary Ribbon Tag */}
+              <div className="absolute bottom-6 left-6 right-6 px-5 py-4 rounded-2xl flex items-center justify-between" style={{ background: 'rgba(15, 10, 7, 0.85)', backdropFilter: 'blur(16px)', border: '1px solid rgba(212, 163, 115, 0.22)' }}>
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-white/5 border border-white/10 text-gold-gradient">
+                    <Gift size={16} />
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-white" style={{ color: 'var(--cream)' }}>Complimentary Gift Wrap</p>
+                    <p className="text-[9px] tracking-wide" style={{ color: 'var(--muted)' }}>Wrapped in satin ribbon with custom cards</p>
+                  </div>
+                </div>
+              </div>
 
-              <p className="text-[11px] text-center text-text-muted">
-                Or choose your own amount &mdash;{" "}
-                <Link
-                  to="/contact"
-                  className="text-primary font-bold hover:underline"
-                >
-                  donate what you wish
-                </Link>
-              </p>
+              {/* Corner borders */}
+              {['top-4 left-4 border-t border-l','top-4 right-4 border-t border-r','bottom-4 left-4 border-b border-l','bottom-4 right-4 border-b border-r'].map((cls,i)=>(
+                <div key={i} className={`absolute ${cls} w-8 h-8`} style={{ borderColor: 'rgba(212, 163, 115, 0.28)' }} />
+              ))}
             </div>
+
+            {/* Glowing Price Badge */}
+            <motion.div
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
+              className="hidden sm:block absolute -top-5 -right-4 px-5 py-3 rounded-2xl text-center"
+              style={{ 
+                background: 'linear-gradient(135deg, var(--gold), var(--gold-light))', 
+                boxShadow: '0 8px 32px rgba(212, 163, 115, 0.45)' 
+              }}
+            >
+              <p className="text-[9px] tracking-[0.2em] uppercase font-bold" style={{ color: 'var(--choc-deep)' }}>Boxes From</p>
+              <p className="font-display text-xl font-bold" style={{ color: 'var(--choc-deep)' }}>₹45</p>
+            </motion.div>
           </div>
         </motion.div>
+
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);

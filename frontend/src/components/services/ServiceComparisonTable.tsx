@@ -3,7 +3,7 @@ import { Check, X } from "lucide-react";
 
 interface ComparisonItem {
   feature: string;
-  aaghaz: string;
+  dumuzi: string;
   others: string;
 }
 
@@ -28,10 +28,10 @@ export const ServiceComparisonTable = ({
           Feature
         </div>
         <div className="p-4 md:p-6 font-display text-sm md:text-lg text-center border-r border-stone-700 bg-primary/20">
-          <span className="text-secondary">Aaghaz</span> Foundation
+          <span className="text-secondary">DUMUZI</span> Chocolates
         </div>
         <div className="p-4 md:p-6 font-medium text-sm md:text-base text-center text-stone-400">
-          Typical NGOs
+          Typical Brands
         </div>
       </div>
 
@@ -48,7 +48,7 @@ export const ServiceComparisonTable = ({
           </div>
           <div className="p-4 md:p-5 text-sm md:text-base text-center border-r border-stone-100 flex items-center justify-center gap-2">
             <Check className="w-4 h-4 text-green-600 shrink-0" />
-            <span className="text-gray-700">{item.aaghaz}</span>
+            <span className="text-gray-700">{item.dumuzi}</span>
           </div>
           <div className="p-4 md:p-5 text-sm md:text-base text-center flex items-center justify-center gap-2 text-gray-500">
             <X className="w-4 h-4 text-red-400 shrink-0" />

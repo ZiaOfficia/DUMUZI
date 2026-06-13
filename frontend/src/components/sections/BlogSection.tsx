@@ -49,7 +49,7 @@ export const BlogSection = () => {
               variants={itemVariants}
               className="text-text-muted mt-2 max-w-md"
             >
-              Read updates about our work, field visits, and the people who support Aaghaz.
+              Artisan guides, sourcing stories, and insights from the DUMUZI atelier.
             </motion.p>
           </div>
           <motion.div variants={itemVariants} className="hidden md:block">

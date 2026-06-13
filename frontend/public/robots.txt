@@ -50,4 +50,4 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://elegantize.com/sitemap.xml
+Sitemap: https://dumuzi.com/sitemap.xml

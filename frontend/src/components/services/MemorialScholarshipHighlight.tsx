@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 /**
  * Highlighted Memorial Scholarship banner — appears on the main "What We Do"
  * page (ServicesPage) and on EVERY service detail page so visitors always see
- * Aaghaz Foundation's flagship Memorial Scholarship Program.
+ * DUMUZI Luxury Chocolates' flagship Bespoke Commission Program.
  */
 export const MemorialScholarshipHighlight = () => {
   return (
@@ -50,7 +50,7 @@ export const MemorialScholarshipHighlight = () => {
             <div className="flex items-center justify-center gap-3 py-3 px-4 bg-gradient-to-r from-primary via-primary-dark to-primary text-white">
               <Sparkles size={14} className="text-secondary" />
               <span className="text-[10px] sm:text-xs uppercase tracking-[0.4em] font-bold">
-                Aaghaz Foundation Memorial Scholarship Program
+                DUMUZI Luxury Chocolates — Bespoke Commission Program
               </span>
               <Sparkles size={14} className="text-secondary" />
             </div>
@@ -116,7 +116,7 @@ export const MemorialScholarshipHighlight = () => {
                   </h2>
                   <div className="space-y-4 text-text-muted leading-relaxed text-sm md:text-base">
                     <p>
-                      Aaghaz Foundation runs{" "}
+                      DUMUZI runs{" "}
                       <strong className="text-accent">
                         more than 80 memorial scholarships
                       </strong>{" "}

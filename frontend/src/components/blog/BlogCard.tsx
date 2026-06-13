@@ -9,13 +9,13 @@ interface BlogCardProps {
 
 export const BlogCard = ({ post }: BlogCardProps) => {
   return (
-    <article className="group bg-white rounded-2xl border border-stone-100 hover:border-primary/20 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col overflow-hidden">
+    <article className="glass-card glass-card-hover group rounded-2xl h-full flex flex-col overflow-hidden hover:-translate-y-1 transition-transform duration-300">
       {/* Image Container */}
       <Link
         to={getBlogPostUrl(post.slug, post.createdAt)}
         className="block overflow-hidden aspect-[16/10] relative"
       >
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-end p-4">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-end p-4">
           <span className="text-white text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5">
             Read Story <ArrowRight size={14} />
           </span>
@@ -25,10 +25,14 @@ export const BlogCard = ({ post }: BlogCardProps) => {
           decoding="async"
           src={post.image}
           alt={post.title}
-          className="w-full h-full object-contain bg-stone-50 transition-transform duration-700 group-hover:scale-102"
+          className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
+          style={{ background: 'var(--choc-mid)' }}
         />
         {/* Category Pill Overlaid */}
-        <span className="absolute top-4 left-4 z-10 bg-white/95 backdrop-blur-sm text-primary text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-sm">
+        <span
+          className="absolute top-4 left-4 z-10 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-sm backdrop-blur-sm"
+          style={{ background: 'rgba(15,10,7,0.85)', color: 'var(--gold)', border: '1px solid rgba(212,163,115,0.25)' }}
+        >
           {post.category}
         </span>
       </Link>
@@ -36,14 +40,14 @@ export const BlogCard = ({ post }: BlogCardProps) => {
       {/* Content Container */}
       <div className="p-6 flex flex-col flex-grow">
         {/* Meta information */}
-        <div className="flex items-center gap-4 text-xs text-stone-400 mb-3">
+        <div className="flex items-center gap-4 text-xs text-muted mb-3" style={{ opacity: 0.75 }}>
           <span className="flex items-center gap-1">
-            <Calendar size={12} className="text-stone-300" />
+            <Calendar size={12} style={{ color: 'rgba(212,163,115,0.5)' }} />
             {post.date}
           </span>
-          <span className="w-1.5 h-1.5 rounded-full bg-stone-200"></span>
+          <span className="w-1.5 h-1.5 rounded-full" style={{ background: 'rgba(212,163,115,0.3)' }}></span>
           <span className="flex items-center gap-1">
-            <User size={12} className="text-stone-300" />
+            <User size={12} style={{ color: 'rgba(212,163,115,0.5)' }} />
             {post.author}
           </span>
         </div>
@@ -53,23 +57,24 @@ export const BlogCard = ({ post }: BlogCardProps) => {
           to={getBlogPostUrl(post.slug, post.createdAt)}
           className="block mb-3"
         >
-          <h3 className="text-xl font-display font-semibold text-stone-900 group-hover:text-primary transition-colors leading-tight line-clamp-2">
+          <h3 className="text-xl font-display font-semibold text-cream group-hover:text-[#d4a373] transition-colors leading-tight line-clamp-2">
             {post.title}
           </h3>
         </Link>
 
         {/* Excerpt */}
-        <p className="text-stone-600 text-sm leading-relaxed mb-4 line-clamp-3 flex-grow">
+        <p className="text-muted text-sm leading-relaxed mb-4 line-clamp-3 flex-grow">
           {post.excerpt}
         </p>
 
         {/* Tags */}
         {post.tags && (
-          <div className="flex flex-wrap gap-1.5 mb-5 pt-3 border-t border-stone-50">
+          <div className="flex flex-wrap gap-1.5 mb-5 pt-3 border-t" style={{ borderTopColor: 'rgba(212,163,115,0.12)' }}>
             {post.tags.split(",").map((tag) => (
               <span
                 key={tag.trim()}
-                className="text-[10px] text-stone-500 bg-stone-50 hover:bg-stone-100 px-2 py-0.5 rounded transition-colors"
+                className="text-[10px] px-2 py-0.5 rounded transition-colors"
+                style={{ color: 'rgba(220,214,205,0.6)', background: 'rgba(212,163,115,0.08)', border: '1px solid rgba(212,163,115,0.1)' }}
               >
                 #{tag.trim()}
               </span>
@@ -81,7 +86,7 @@ export const BlogCard = ({ post }: BlogCardProps) => {
         <div className="mt-auto pt-2">
           <Link
             to={getBlogPostUrl(post.slug, post.createdAt)}
-            className="inline-flex items-center text-xs font-bold uppercase tracking-widest text-primary hover:text-stone-900 transition-colors gap-1"
+            className="inline-flex items-center text-xs font-bold uppercase tracking-widest text-gold hover:text-cream transition-colors gap-1"
           >
             <span>Read Full Story</span>
             <ArrowRight

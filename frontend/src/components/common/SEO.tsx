@@ -12,20 +12,20 @@ interface SEOProps {
 
 export const SEO = ({
   title,
-  description = "Aaghaz Foundation is a non-profit founded in 2004 in Lucknow. We support meritorious students from economically weak backgrounds across India through scholarships, financial assistance, mentorship and learning centres.",
+  description = "DUMUZI Luxury Chocolates crafts single-origin handmade chocolates in our Paris atelier. Discover our dark collections, truffles, pralines, gift boxes, and bespoke commissions.",
   keywords,
-  name = "Aaghaz Foundation",
+  name = "DUMUZI Luxury Chocolates",
   type = "website",
   image = "/og-image.jpg",
   url,
 }: SEOProps) => {
-  const siteUrl = "https://aaghazfoundation.com";
+  const siteUrl = "https://dumuzi.com";
   const fullUrl = url ? `${siteUrl}${url}` : siteUrl;
 
   return (
     <Helmet>
       {/* Standard metadata tags */}
-      <title>{title} | Aaghaz Foundation</title>
+      <title>{title} | DUMUZI Luxury Chocolates</title>
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
 

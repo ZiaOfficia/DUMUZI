@@ -1,7 +1,7 @@
 <?php
 // Transparent sitemap proxy — fetches live data from backend (Render)
-// Served at elegantize.com/sitemap.xml via .htaccess rewrite (no redirect)
-$backendUrl = 'https://elegantize-zl57.onrender.com/sitemap.xml';
+// Served at dumuzi.com/sitemap.xml via .htaccess rewrite (no redirect)
+$backendUrl = 'https://dumuzi-backend.onrender.com/sitemap.xml';
 
 // Render free tier can cold-start in ~30 s; allow up to 3 attempts so
 // Googlebot and other crawlers always get a valid sitemap.
@@ -12,7 +12,7 @@ for ($attempt = 1; $attempt <= $maxAttempts; $attempt++) {
     $context = stream_context_create([
         'http' => [
             'timeout' => 30,
-            'header'  => 'User-Agent: ElegantizeSitemapProxy/1.0',
+            'header'  => 'User-Agent: DumuziSitemapProxy/1.0',
         ],
     ]);
 

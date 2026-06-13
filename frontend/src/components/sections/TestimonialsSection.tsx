@@ -3,6 +3,9 @@ import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { useState, useEffect } from "react";
 import { testimonialImages } from "../../data/imageAssets";
 
+const GOLD = '#d4a373';
+const GOLDL = '#e5c199';
+
 interface Story {
   image: string;
   quote: string;
@@ -16,38 +19,38 @@ const stories: Story[] = [
   {
     image: testimonialImages.studentSumaiya,
     quote:
-      "I was going to leave school after Class 10 because we had no money for board fees. Aaghaz volunteers visited our home, and paid my fees within a week. Now I am studying in my second year of college.",
-    author: "Sumaiya R.",
-    role: "Aaghaz Scholarship Student",
-    location: "Lucknow, UP",
-    year: "Class of 2026",
+      "The Noir Intense 85% is the finest dark chocolate I have ever tasted. It completely redefined what I thought chocolate could be. I now order a box every month.",
+    author: "Isabella R.",
+    role: "DUMUZI Connoisseur Subscriber",
+    location: "London, UK",
+    year: "Customer since 2022",
   },
   {
     image: testimonialImages.donorFamily,
     quote:
-      "We started a scholarship in our son's name. Knowing that students are finishing their studies in his memory has brought our family peace.",
-    author: "The Khan Family",
-    role: "Memorial Scholarship Donors",
-    location: "Pune, MH",
-    year: "Donor since 2019",
+      "We commissioned a bespoke chocolate collection for our wedding favours. Every guest commented on them. DUMUZI exceeded every expectation we had.",
+    author: "James & Sophie T.",
+    role: "Bespoke Wedding Commission",
+    location: "Paris, France",
+    year: "2024",
   },
   {
     image: testimonialImages.parentMother,
     quote:
-      "We did not know there were organizations like this. The volunteers were very respectful and the process was simple. They treated my daughter with love and respect.",
-    author: "Shahnaz Begum",
-    role: "Mother of a student",
-    location: "Hardoi, UP",
-    year: "Family supported since 2022",
+      "The Rose & Cardamom truffle box was the most thoughtful gift I have ever received. The flavours were extraordinary — like nothing I had ever tasted before.",
+    author: "Sophia M.",
+    role: "Gift Box Customer",
+    location: "New York, USA",
+    year: "Customer since 2023",
   },
   {
     image: testimonialImages.iitAlumnus,
     quote:
-      "I had never heard of IIT before. Two years after taking the entrance test, I got admission in IIT Delhi. Aaghaz did not just pay my fees — they believed in me first.",
-    author: "Mohammad Ayaan",
-    role: "Aaghaz × Rahmani 30 Alumnus",
-    location: "Now at IIT Delhi",
-    year: "Class of 2024",
+      "Antoine's Tempering Masterclass was an incredible experience. I walked in as an enthusiastic amateur and left with the skills to produce professional-quality chocolate.",
+    author: "Marcus W.",
+    role: "Advanced Masterclass Participant",
+    location: "Amsterdam, Netherlands",
+    year: "Masterclass 2024",
   },
 ];
 
@@ -69,7 +72,6 @@ export const TestimonialsSection = () => {
     if (isPaused) return;
     const t = setInterval(next, 7000);
     return () => clearInterval(t);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isPaused]);
 
   const story = stories[index];
@@ -82,33 +84,47 @@ export const TestimonialsSection = () => {
 
   return (
     <section
-      className="relative py-12 md:py-28 px-4 md:px-6 bg-mesh-rose overflow-hidden"
+      className="relative py-12 md:py-28 px-4 md:px-6 overflow-hidden"
+      style={{ background: 'linear-gradient(180deg, var(--choc-dark) 0%, var(--choc-deep) 100%)' }}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      <span className="absolute -top-40 -left-20 w-96 h-96 rounded-full bg-primary/15 blur-3xl pointer-events-none" />
-      <span className="absolute -bottom-40 -right-20 w-96 h-96 rounded-full bg-secondary/15 blur-3xl pointer-events-none" />
+      {/* Ambient glows */}
+      <span className="absolute -top-40 -left-20 w-96 h-96 rounded-full blur-3xl pointer-events-none opacity-10" style={{ background: GOLD }} />
+      <span className="absolute -bottom-40 -right-20 w-96 h-96 rounded-full blur-3xl pointer-events-none opacity-8" style={{ background: GOLDL }} />
+
+      {/* Top accent */}
+      <div className="absolute top-0 inset-x-0 h-px pointer-events-none"
+        style={{ background: 'linear-gradient(90deg,transparent,rgba(212,163,115,0.25),transparent)' }} />
 
       <div className="max-w-7xl mx-auto relative">
+        {/* Header */}
         <div className="text-center mb-16">
-          <p className="inline-flex items-center gap-3 text-primary text-xs font-bold uppercase tracking-[0.4em] mb-4">
-            <span className="block w-8 h-px bg-primary" />
+          <p className="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.4em] mb-4"
+            style={{ color: GOLD }}>
+            <span className="block w-8 h-px" style={{ background: GOLD }} />
             Real Voices
-            <span className="block w-8 h-px bg-primary" />
+            <span className="block w-8 h-px" style={{ background: GOLD }} />
           </p>
-          <h2 className="text-3xl md:text-6xl font-display font-bold text-accent mb-4 leading-tight">
-            Stories from Our Students and Donors
+          <h2 className="font-display font-bold mb-4 leading-tight"
+            style={{ fontSize: 'clamp(2rem,4.5vw,3.5rem)', color: 'var(--cream)' }}>
+            What Our Customers Say
           </h2>
-          <p className="text-text-muted max-w-2xl mx-auto text-base md:text-lg">
-            Read real stories from the students we support and the donors who help us.
+          <p className="max-w-2xl mx-auto text-base md:text-lg font-sans"
+            style={{ color: 'var(--muted)' }}>
+            From connoisseurs and gift-givers to corporate clients and masterclass alumni — hear from the DUMUZI community.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           {/* Image side */}
           <div className="lg:col-span-5 relative">
-            <div className="absolute -top-4 -left-4 w-full h-full border-2 border-primary/40 rounded-tl-[3rem] rounded-br-[3rem]" />
-            <div className="relative aspect-[4/5] overflow-hidden rounded-tl-[3rem] rounded-br-[3rem] shadow-2xl">
+            {/* Frame */}
+            <div className="absolute -top-4 -left-4 w-full h-full rounded-tl-[3rem] rounded-br-[3rem] pointer-events-none"
+              style={{ border: `2px solid rgba(212,163,115,0.3)` }} />
+
+            <div className="relative aspect-[4/5] overflow-hidden rounded-tl-[3rem] rounded-br-[3rem] shadow-2xl"
+              style={{ border: '1px solid rgba(212,163,115,0.15)' }}>
               <AnimatePresence custom={direction} mode="wait">
                 <motion.img
                   key={index}
@@ -124,13 +140,10 @@ export const TestimonialsSection = () => {
                 />
               </AnimatePresence>
 
-              {/* Author label overlay */}
+              {/* Author overlay */}
               <div
                 className="absolute bottom-0 left-0 right-0 p-6 text-white"
-                style={{
-                  background:
-                    "linear-gradient(to top, rgba(15,15,15,0.92) 0%, transparent 100%)",
-                }}
+                style={{ background: 'linear-gradient(to top, rgba(10,6,4,0.92) 0%, transparent 100%)' }}
               >
                 <AnimatePresence mode="wait">
                   <motion.div
@@ -140,13 +153,14 @@ export const TestimonialsSection = () => {
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.4 }}
                   >
-                    <p className="text-secondary text-[10px] uppercase tracking-[0.3em] font-bold mb-1">
+                    <p className="text-[10px] uppercase tracking-[0.3em] font-bold mb-1"
+                      style={{ color: GOLDL }}>
                       {story.role}
                     </p>
-                    <p className="font-display text-2xl font-bold">
+                    <p className="font-display text-2xl font-bold" style={{ color: 'var(--cream)' }}>
                       {story.author}
                     </p>
-                    <p className="text-xs text-gray-300 mt-1">
+                    <p className="text-xs mt-1" style={{ color: 'rgba(220,214,205,0.6)' }}>
                       {story.location} · {story.year}
                     </p>
                   </motion.div>
@@ -159,8 +173,9 @@ export const TestimonialsSection = () => {
           <div className="lg:col-span-7 relative">
             <Quote
               size={64}
-              className="absolute -top-8 -left-2 text-primary/15"
-              fill="currentColor"
+              className="absolute -top-8 -left-2 pointer-events-none"
+              fill={`rgba(212,163,115,0.1)`}
+              style={{ color: 'rgba(212,163,115,0.1)' }}
             />
 
             <AnimatePresence custom={direction} mode="wait">
@@ -174,52 +189,61 @@ export const TestimonialsSection = () => {
                 transition={{ duration: 0.6 }}
                 className="relative"
               >
-                <p className="font-display text-xl md:text-3xl lg:text-4xl text-accent leading-relaxed italic mb-6 md:mb-8">
+                <p className="font-display text-xl md:text-3xl lg:text-4xl leading-relaxed italic mb-6 md:mb-8"
+                  style={{ color: 'var(--cream)' }}>
                   &ldquo;{story.quote}&rdquo;
                 </p>
               </motion.div>
             </AnimatePresence>
 
-            {/* Controls and progress */}
-            <div className="flex items-center justify-between gap-6 pt-6 border-t border-primary/15">
+            {/* Controls */}
+            <div className="flex items-center justify-between gap-6 pt-6"
+              style={{ borderTop: '1px solid rgba(212,163,115,0.15)' }}>
               <div className="flex items-center gap-3">
                 <button
                   onClick={prev}
-                  className="w-12 h-12 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white transition-colors flex items-center justify-center"
-                  aria-label="Previous story"
+                  className="w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer"
+                  style={{ border: `2px solid rgba(212,163,115,0.4)`, color: GOLD, background: 'transparent' }}
+                  onMouseEnter={e => { const el = e.currentTarget; el.style.background = GOLD; el.style.color = 'var(--choc-deep)'; el.style.borderColor = GOLD; }}
+                  onMouseLeave={e => { const el = e.currentTarget; el.style.background = 'transparent'; el.style.color = GOLD; el.style.borderColor = 'rgba(212,163,115,0.4)'; }}
+                  aria-label="Previous"
                 >
                   <ChevronLeft size={20} />
                 </button>
                 <button
                   onClick={next}
-                  className="w-12 h-12 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white transition-colors flex items-center justify-center"
-                  aria-label="Next story"
+                  className="w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer"
+                  style={{ border: `2px solid rgba(212,163,115,0.4)`, color: GOLD, background: 'transparent' }}
+                  onMouseEnter={e => { const el = e.currentTarget; el.style.background = GOLD; el.style.color = 'var(--choc-deep)'; el.style.borderColor = GOLD; }}
+                  onMouseLeave={e => { const el = e.currentTarget; el.style.background = 'transparent'; el.style.color = GOLD; el.style.borderColor = 'rgba(212,163,115,0.4)'; }}
+                  aria-label="Next"
                 >
                   <ChevronRight size={20} />
                 </button>
               </div>
 
-              {/* Slim progress + counter */}
+              {/* Progress */}
               <div className="flex-1 flex items-center gap-4 max-w-xs">
-                <span className="font-display text-2xl font-bold text-primary">
+                <span className="font-display text-2xl font-bold" style={{ color: GOLD }}>
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <div className="flex-1 h-px bg-primary/20 relative overflow-hidden">
+                <div className="flex-1 h-px relative overflow-hidden" style={{ background: 'rgba(212,163,115,0.15)' }}>
                   <motion.span
                     key={`bar-${index}-${isPaused}`}
                     initial={{ width: "0%" }}
                     animate={{ width: isPaused ? "30%" : "100%" }}
                     transition={{ duration: isPaused ? 0.3 : 7, ease: "linear" }}
-                    className="absolute left-0 top-0 h-full bg-primary"
+                    className="absolute left-0 top-0 h-full"
+                    style={{ background: GOLD }}
                   />
                 </div>
-                <span className="text-xs text-text-muted">
+                <span className="text-xs font-sans" style={{ color: 'rgba(212,163,115,0.45)' }}>
                   / {String(stories.length).padStart(2, "0")}
                 </span>
               </div>
             </div>
 
-            {/* Quick-jump dots */}
+            {/* Dots */}
             <div className="mt-5 flex gap-2">
               {stories.map((_, i) => (
                 <button
@@ -228,9 +252,11 @@ export const TestimonialsSection = () => {
                     setDirection(i > index ? 1 : -1);
                     setIndex(i);
                   }}
-                  className={`h-1 rounded-full transition-all duration-500 ${
-                    i === index ? "bg-primary w-12" : "bg-primary/30 w-4 hover:bg-primary/60"
-                  }`}
+                  className="h-1 rounded-full transition-all duration-500 cursor-pointer border-none"
+                  style={{
+                    background: i === index ? GOLD : 'rgba(212,163,115,0.25)',
+                    width: i === index ? '3rem' : '1rem',
+                  }}
                   aria-label={`Story ${i + 1}`}
                 />
               ))}

@@ -6,92 +6,91 @@ export const TermsOfServicePage = () => {
   return (
     <div className="bg-white min-h-screen pt-[60px] md:pt-[50px]">
       <SEO
-        title="Terms of Service"
-        description="Terms of Service for Aaghaz Foundation."
+        title="Terms of Service — DUMUZI Luxury Chocolates"
+        description="Terms of Service for DUMUZI Luxury Chocolates. Terms governing purchases, orders, returns, and use of our website."
       />
       <div className="max-w-4xl mx-auto px-6 py-12 md:py-20 shadow-sm border border-stone-100">
         <h1 className="text-4xl font-serif text-stone-900 mb-8">
           Terms of Service
         </h1>
         <p className="text-stone-500 mb-8 text-sm uppercase tracking-widest">
-          Effective Date: October 2024
+          Effective Date: January 2025
         </p>
 
         <div className="prose prose-stone max-w-none text-stone-600">
           <p className="mb-6">
-            Welcome to Aaghaz Foundation! These Terms of Service govern your use of
-            our website (aaghazfoundation.com) and our scholarship programs. By
-            using our website or applying for help, you agree to these terms.
-            Please read them carefully.
+            Welcome to DUMUZI Luxury Chocolates. These Terms of Service govern your use of
+            our website (dumuzi.com) and your purchases from us. By using our website or
+            placing an order, you agree to these terms. Please read them carefully.
           </p>
 
           <h2 className="text-2xl font-serif text-stone-900 mt-8 mb-4">
-            Who We Are & Services
+            Who We Are
           </h2>
           <p className="mb-6">
-            Aaghaz Foundation is a registered education trust based in Lucknow, India.
-            We help clever students from poor families finish their education through:
+            DUMUZI Luxury Chocolates is an artisan chocolate brand founded in 2009 and based in
+            Paris, France. We craft handmade single-origin chocolates and deliver them to customers
+            worldwide. Our website address is: https://dumuzi.com.
+          </p>
+
+          <h2 className="text-2xl font-serif text-stone-900 mt-8 mb-4">
+            Placing an Order
+          </h2>
+          <p className="mb-6">
+            When you place an order on our website, you are making an offer to purchase our products.
+            We reserve the right to accept or decline any order. An order confirmation email constitutes
+            our acceptance of your order.
           </p>
           <ul className="list-disc pl-5 mb-6 space-y-2">
-            <li>Need-based financial help and scholarships for school and college fees.</li>
-            <li>Free coaching classes and study centers (like LCGC in Lucknow).</li>
-            <li>Opportunities for people to donate money or join as volunteers.</li>
+            <li>All prices are listed inclusive of applicable taxes unless stated otherwise.</li>
+            <li>We reserve the right to adjust prices without prior notice.</li>
+            <li>Payment is required in full at the time of ordering.</li>
           </ul>
 
           <h2 className="text-2xl font-serif text-stone-900 mt-8 mb-4">
-            Eligibility
+            Delivery
           </h2>
           <p className="mb-6">
-            Our fee help and scholarships are for students studying in recognized schools
-            or colleges in India. Students under 18 years of age must apply with the
-            help of their parents or legal guardians.
+            We aim to dispatch all orders within 2–3 business days. Estimated delivery times vary by
+            destination. We use temperature-controlled packaging and express couriers to ensure your
+            chocolate arrives in perfect condition. DUMUZI is not responsible for delays caused by
+            courier services or customs clearance.
           </p>
 
           <h2 className="text-2xl font-serif text-stone-900 mt-8 mb-4">
-            Applications & Verification
-          </h2>
-          <p className="mb-6">
-            To apply for fee help or a scholarship:
-          </p>
-          <ul className="list-disc pl-5 mb-6 space-y-2">
-            <li>You must fill out the application form with correct details.</li>
-            <li>You agree that our volunteers can visit your home and school in person to verify your details.</li>
-            <li>Giving wrong details will result in your application being rejected or stopped immediately.</li>
-          </ul>
-
-          <h2 className="text-2xl font-serif text-stone-900 mt-8 mb-4">
-            Donations & Refunds
+            Returns & Refunds
           </h2>
           <ul className="list-disc pl-5 mb-6 space-y-2">
             <li>
-              <strong>100% Direct Help:</strong> 100% of your donation is spent directly on student fees. Our founders pay for all office costs.
+              <strong>Perishable products:</strong> Because our chocolates are handcrafted perishable
+              items, we do not accept returns or exchanges.
             </li>
             <li>
-              <strong>Tax Exemption:</strong> Donations made by Indian residents get tax deduction benefits under Section 80G of the Income Tax Act.
+              <strong>Damaged or faulty orders:</strong> If your order arrives damaged or below our
+              quality standards, please contact us within 48 hours of delivery with photos. We will
+              arrange a replacement at no charge.
             </li>
             <li>
-              <strong>Refunds:</strong> Once a donation is made, it cannot be refunded except in special cases of system error (please contact us within 7 days of the donation).
+              <strong>Refunds:</strong> Refunds are issued only in cases of damaged goods or order
+              errors on our part. Refunds are processed within 5–10 business days.
             </li>
           </ul>
 
           <h2 className="text-2xl font-serif text-stone-900 mt-8 mb-4">
-            Volunteer Guidelines
+            Bespoke & Corporate Orders
           </h2>
           <p className="mb-6">
-            If you join Aaghaz as a volunteer, you agree to:
+            Bespoke and corporate orders are subject to a separate agreement confirmed in writing before
+            production begins. A 50% deposit is required to start production on bespoke orders. Deposits
+            are non-refundable once production has commenced.
           </p>
-          <ul className="list-disc pl-5 mb-6 space-y-2">
-            <li>Follow our volunteer guidelines and values.</li>
-            <li>Be polite and respectful to students and families during home visits.</li>
-            <li>Keep all student and family details private and safe.</li>
-          </ul>
 
           <h2 className="text-2xl font-serif text-stone-900 mt-8 mb-4">
             Intellectual Property
           </h2>
           <p className="mb-6">
-            All content on our website, including text, designs, logos, and photos,
-            belongs to Aaghaz Foundation. You cannot copy or use them without our
+            All content on our website, including text, images, logos, and designs, belongs to
+            DUMUZI Luxury Chocolates. You may not reproduce or use our content without our express
             written permission.
           </p>
 
@@ -99,44 +98,42 @@ export const TermsOfServicePage = () => {
             Limitation of Liability
           </h2>
           <p className="mb-6">
-            We make every effort to help as many students as possible. However, our
-            help depends on the funds we receive from donors. We cannot guarantee that
-            every applicant will get a scholarship. Aaghaz Foundation is not liable
-            for any student being unable to secure admission or continue education.
+            DUMUZI Luxury Chocolates is not liable for any indirect, incidental, or consequential
+            damages arising from the use of our website or products. Our liability is limited to the
+            value of the order in question.
           </p>
 
           <h2 className="text-2xl font-serif text-stone-900 mt-8 mb-4">
             Changes to Terms
           </h2>
           <p className="mb-6">
-            We may change these terms from time to time. Any changes will be posted on
-            this page. By continuing to use our website, you agree to the updated terms.
+            We may update these terms from time to time. Changes will be posted on this page with
+            an updated effective date. Continued use of our website constitutes acceptance of any updates.
           </p>
 
           <h2 className="text-2xl font-serif text-stone-900 mt-8 mb-4">
             Contact Us
           </h2>
           <p className="mb-4">
-            If you have any questions or concerns about these Terms of Service,
-            please contact us:
+            For any questions about these terms, please contact us:
           </p>
           <div className="bg-stone-50 p-6 rounded-lg border border-stone-200">
             <h3 className="font-serif text-lg text-stone-900 mb-2">
-              Aaghaz Foundation Support Team
+              DUMUZI Luxury Chocolates
             </h3>
             <p className="mb-1">
-              <strong>Email:</strong> aaghaz.foundation@gmail.com
+              <strong>Email:</strong> hello@dumuzi.com
             </p>
             <p className="mb-1">
-              <strong>Phone:</strong> +91 99716 48900
+              <strong>Phone:</strong> +44 20 7123 4567
             </p>
             <p>
-              <strong>Address:</strong> 57 Ganesh Gunj, Lucknow, UP — 226018
+              <strong>Address:</strong> 12 Rue du Chocolat, 75001 Paris, France
             </p>
           </div>
           <p className="mt-6 italic">
-            Thank you for choosing Aaghaz Foundation! We look forward to working
-            together to help children study and succeed.
+            Thank you for choosing DUMUZI Luxury Chocolates. We look forward to crafting something
+            extraordinary for you.
           </p>
         </div>
 

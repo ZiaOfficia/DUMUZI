@@ -1,15 +1,15 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
-  GraduationCap,
-  HandCoins,
+  Gem,
+  Gift,
   Heart,
   ArrowRight,
   ChevronRight,
-  Users,
+  Star,
   Award,
-  Gift,
   Sparkles,
+  Package,
 } from "lucide-react";
 import { SEO } from "../components/common/SEO";
 import NewsletterSection from "../components/sections/NewsletterSection";
@@ -20,122 +20,116 @@ export const ServicesPage = () => {
 
   const faqs = [
     {
-      question: "How does Aaghaz decide who gets help?",
+      question: "What is the minimum order for corporate gifting?",
       answer:
-        "Every student who asks for help is visited by our volunteers at home. We only help students who really need it. We do not approve cases without checking in person.",
+        "Our corporate gifting program starts from 50 units. We offer competitive bulk pricing and dedicated account management for regular orders. Contact our corporate team for a personalised quote.",
     },
     {
-      question: "Are donations tax-exempt?",
+      question: "How long does delivery take?",
       answer:
-        "Yes. Aaghaz is a registered charity. Donors in India get tax benefits under Section 80G. We send donation receipts within 7 days.",
+        "Standard UK delivery is 2–4 business days. International express delivery is 3–6 business days. All orders are shipped in temperature-controlled packaging to protect your chocolate.",
     },
     {
-      question: "Can I direct my donation to a specific programme?",
+      question: "Can I customise the flavours in a gift box?",
       answer:
-        "Yes. You can choose to support Student Aid or a memorial scholarship. We will use your donation only for that program and send you updates.",
+        "Yes. Our bespoke gift box service lets you hand-pick your preferred selection from our full collection. Simply contact us or use the 'Build Your Box' option at checkout.",
     },
     {
-      question: "How do I become a volunteer?",
+      question: "Do you offer masterclasses for corporate teams?",
       answer:
-        "Go to our Become a Volunteer page and sign up. A team member will call you within a few days to guide you and assign your first home visit with an experienced volunteer.",
+        "Absolutely. Our corporate masterclass is a popular team-building experience. Sessions are held in our atelier for groups of 8–20 people and can be fully customised. Contact us to discuss a bespoke brief.",
     },
     {
-      question: "How do I apply for student aid for myself or my child?",
+      question: "Are DUMUZI products suitable for gifting at weddings?",
       answer:
-        "Fill the application form on our website. We help pay fees, books, uniforms, and hostel costs for poor families. Our volunteers will call you to visit your home.",
+        "We specialise in bespoke wedding favours. From custom-molded chocolates with your initials to monogrammed packaging in your wedding colours, we create favours that double as beautiful table décor.",
     },
   ];
 
-  const programs = [
+  const collections = [
     {
-      id: "student-aid",
-      icon: <GraduationCap className="w-8 h-8 text-primary" />,
-      title: "Student Aid",
+      id: "dark-collection",
+      icon: <Gem className="w-8 h-8 text-primary" />,
+      title: "Dark Chocolate Collection",
       description:
-        "Help with fees, books, exam fees, and uniforms for school and college students from poor families.",
+        "Single-origin dark chocolate bars and truffles from Madagascar, Ecuador, and Peru. From 72% to 92% cocoa — bold, complex, and uncompromising.",
       features: [
-        "School and exam fees",
-        "College and university fees",
-        "Textbooks, notebooks, and uniforms",
-        "Hostel rent and food help",
+        "Single-origin organic cocoa",
+        "72% to 92% cocoa percentages",
+        "Hand-tempered in our atelier",
+        "No artificial additives",
       ],
-      image:
-        "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=80",
+      image: "/images/products/LF-D25B.jpeg",
     },
     {
-      id: "scholarships",
-      icon: <Award className="w-8 h-8 text-primary" />,
-      title: "Scholarships",
+      id: "truffle-collection",
+      icon: <Star className="w-8 h-8 text-primary" />,
+      title: "Truffle Collection",
       description:
-        "Scholarships funded by donors to help students finish their studies. Every student is checked in person, and donors get a progress report every year.",
+        "Velvety ganache truffles handcrafted with organic cream and single-origin chocolate. Seasonal flavour infusions finished with 24k gold leaf, Dutch cocoa, or crushed nuts.",
       features: [
-        "Scholarships in memory of loved ones",
-        "General scholarship pool",
-        "Company sponsored student groups",
-        "Special awards for girl students",
+        "Hand-rolled — never moulded",
+        "Seasonal botanical infusions",
+        "24k edible gold leaf finish",
+        "Fresh small-batch production",
       ],
-      image:
-        "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=1600&q=80",
+      image: "/images/products/LF-BN9T.jpeg",
     },
     {
-      id: "financial-assistance",
-      icon: <HandCoins className="w-8 h-8 text-primary" />,
-      title: "Financial Assistance",
-      description:
-        "Quick financial help for families facing sudden problems. We give one-time or monthly fee support to keep kids in school.",
-      features: [
-        "Help during sudden fee deadlines",
-        "Support if the earning parent passes away",
-        "Help when family medical bills are high",
-        "Monthly fee support",
-      ],
-      image:
-        "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1600&q=80",
-    },
-    {
-      id: "become-volunteer",
-      icon: <Users className="w-8 h-8 text-primary" />,
-      title: "Become a Volunteer",
-      description:
-        "Aaghaz runs because of volunteers. If you have two free hours a week, you can help a child study. We need volunteers in cities and towns across India.",
-      features: [
-        "In-person student home visits",
-        "Online teaching and guiding",
-        "Help with writing and photos",
-        "Organizing local fundraising",
-      ],
-      image:
-        "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=1600&q=80",
-    },
-    {
-      id: "join-as-donor",
-      icon: <Heart className="w-8 h-8 text-primary" />,
-      title: "Join us as Donor",
-      description:
-        "Register to join our donor base. We will call you to discuss how you can help. 100% of your donation is spent on paying student fees.",
-      features: [
-        "One-time or monthly donations",
-        "Sponsor a child's yearly fees",
-        "80G tax benefit receipts",
-        "Yearly progress reports",
-      ],
-      image:
-        "https://images.unsplash.com/photo-1488998427799-e3362cec87c3?auto=format&fit=crop&w=1600&q=80",
-    },
-    {
-      id: "launch-scholarship",
+      id: "gift-boxes",
       icon: <Gift className="w-8 h-8 text-primary" />,
-      title: "Launch Scholarship",
+      title: "Gift Boxes",
       description:
-        "Start a scholarship in the name of a parent, teacher, or friend to honor their memory. You choose the rules, and we send you yearly reports.",
+        "Elegantly curated assortments in our signature dark paper with gold-foil embossing and satin ribbon. Curated or fully bespoke — delivered in temperature-controlled packaging.",
       features: [
-        "Scholarships for a single year",
-        "Three-year college fee support",
-        "Ongoing scholarships every year",
-        "Choose who to help (like girls only)",
+        "Gold-foil embossed signature box",
+        "Curated or bespoke assortments",
+        "Personalised handwritten card",
+        "Temperature-controlled delivery",
       ],
-      image:
-        "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=1600&q=80",
+      image: "/images/products/LF-H18D.jpeg",
+    },
+    {
+      id: "pralines-collection",
+      icon: <Award className="w-8 h-8 text-primary" />,
+      title: "Pralines Collection",
+      description:
+        "Belgian-inspired pralines crafted in hand-polished copper moulds with the finest Piedmont hazelnut and Sicilian pistachio pastes.",
+      features: [
+        "Hand-polished copper molds",
+        "Piedmont hazelnuts & Sicilian pistachios",
+        "Mirror-gloss chocolate shells",
+        "Rotating seasonal flavours",
+      ],
+      image: "/images/products/LF-D12.jpeg",
+    },
+    {
+      id: "corporate-gifting",
+      icon: <Package className="w-8 h-8 text-primary" />,
+      title: "Corporate Gifting",
+      description:
+        "Premium corporate gift sets with custom branding, logo molding, and bulk order pricing. Trusted by leading luxury brands, hotels, and financial institutions.",
+      features: [
+        "Custom logo embossing & molding",
+        "Dedicated account management",
+        "From 50 units upward",
+        "Seasonal corporate collections",
+      ],
+      image: "/images/products/LF-D25T.jpeg",
+    },
+    {
+      id: "bespoke-orders",
+      icon: <Heart className="w-8 h-8 text-primary" />,
+      title: "Bespoke Commissions",
+      description:
+        "Fully custom chocolate creations — from original flavour commissions to hand-painted bars and sculpted centrepieces for luxury events and venues.",
+      features: [
+        "Original flavour development",
+        "Hand-painted artistic bars",
+        "Sculpted chocolate centrepieces",
+        "Venue & restaurant programmes",
+      ],
+      image: "/images/products/DUMUZI.jpeg",
     },
   ];
 
@@ -146,28 +140,29 @@ export const ServicesPage = () => {
   return (
     <div className="pt-[60px] md:pt-[50px]">
       <SEO
-        title="What We Do — Aaghaz Foundation Programs"
-        description="Explore Aaghaz Foundation's programs — Student Aid, Scholarships, Financial Assistance, and ways for you to donate or volunteer."
+        title="Our Collections — DUMUZI Luxury Chocolates"
+        description="Explore DUMUZI's chocolate collections — single-origin dark bars, handcrafted truffles, pralines, gift boxes, corporate gifting, and bespoke commissions."
       />
+
       {/* Hero Section */}
       <section className="relative h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
             loading="lazy"
             decoding="async"
-            src="https://images.unsplash.com/photo-1497486751825-1233686d5d85?auto=format&fit=crop&w=1920&q=80"
-            alt="Children studying — Aaghaz Foundation"
+            src="/images/products/LF-D25T.jpeg"
+            alt="DUMUZI chocolate collections"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-accent/60" />
+          <div className="absolute inset-0 bg-black/55" />
         </div>
         <div className="relative z-10 text-center text-white px-6 max-w-4xl mx-auto">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-block text-secondary text-xs md:text-sm font-bold uppercase tracking-[0.3em] mb-4"
+            className="inline-block text-[#d4a373] text-xs md:text-sm font-bold uppercase tracking-[0.3em] mb-4"
           >
-            What We Do
+            Our Collections
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -175,15 +170,15 @@ export const ServicesPage = () => {
             transition={{ delay: 0.2 }}
             className="text-4xl md:text-6xl lg:text-7xl font-display mb-6"
           >
-            Programs that help a child study and succeed
+            Handcrafted chocolate for every occasion
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="text-lg md:text-xl text-white/95 font-light max-w-2xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl text-white/90 font-light max-w-2xl mx-auto leading-relaxed"
           >
-            Checked scholarships, free coaching centers, and a volunteer network that works honestly.
+            From single-origin dark bars to bespoke wedding favours — every piece made by hand in our Paris atelier.
           </motion.p>
         </div>
       </section>
@@ -192,238 +187,62 @@ export const ServicesPage = () => {
       <section className="py-24 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-display text-accent mb-8">
-            One foundation. Many ways to help.
+            One atelier. Many ways to indulge.
           </h2>
           <p className="text-gray-600 leading-relaxed mb-12">
-            Whether you are a student looking for help, a donor wanting to help a child,
-            a volunteer with two hours a week, or a company looking to partner — there
-            is a way to join. Look at our programs below.
+            Whether you are discovering single-origin chocolate for the first time, searching for the perfect luxury gift, or commissioning a bespoke chocolate experience for an event — DUMUZI has something extraordinary waiting for you.
           </p>
           <div className="w-24 h-px bg-secondary mx-auto" />
         </div>
       </section>
 
-      {/* What We Do - Comprehensive Overview */}
-      <section className="py-24 px-6 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5">
+      {/* Overview Stats */}
+      <section className="py-24 px-6 bg-gradient-to-br from-stone-900 via-stone-800 to-stone-900">
         <div className="max-w-7xl mx-auto">
-          {/* Section Header */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full border border-primary/20 mb-8">
-              <span className="w-3 h-3 bg-secondary rounded-full animate-pulse"></span>
-              <span className="text-primary text-sm font-bold uppercase tracking-widest">What We Do</span>
-              <span className="w-3 h-3 bg-secondary rounded-full animate-pulse"></span>
+            <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20 mb-8">
+              <span className="w-3 h-3 bg-[#d4a373] rounded-full animate-pulse"></span>
+              <span className="text-[#d4a373] text-sm font-bold uppercase tracking-widest">DUMUZI by the Numbers</span>
+              <span className="w-3 h-3 bg-[#d4a373] rounded-full animate-pulse"></span>
             </div>
-            <h2 className="text-3xl md:text-5xl font-display text-accent mb-6 leading-tight">
-              Programs that help a child study and succeed
+            <h2 className="text-3xl md:text-5xl font-display text-white mb-6 leading-tight">
+              Fifteen years of craft excellence
             </h2>
-            <p className="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
-              Aaghaz Foundation helps kids study. From school fee aid to scholarships in memory of loved ones, we make sure no bright child stops studying because of money.
-            </p>
           </div>
 
-          {/* Key Statistics */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="bg-white rounded-2xl p-8 text-center shadow-lg border border-primary/10"
-            >
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Award className="w-8 h-8 text-primary" />
-              </div>
-              <div className="text-3xl font-display font-bold text-primary mb-2">80+</div>
-              <div className="text-sm text-gray-600 uppercase tracking-widest font-bold">Memorial Scholarships</div>
-              <div className="text-xs text-gray-500 mt-1">Across India</div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="bg-white rounded-2xl p-8 text-center shadow-lg border border-primary/10"
-            >
-              <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Heart className="w-8 h-8 text-secondary" />
-              </div>
-              <div className="text-3xl font-display font-bold text-secondary mb-2">Rs 1 Crore</div>
-              <div className="text-sm text-gray-600 uppercase tracking-widest font-bold">Annual Disbursement</div>
-              <div className="text-xs text-gray-500 mt-1">For Education</div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-white rounded-2xl p-8 text-center shadow-lg border border-primary/10"
-            >
-              <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="w-8 h-8 text-accent" />
-              </div>
-              <div className="text-3xl font-display font-bold text-accent mb-2">1000+</div>
-              <div className="text-sm text-gray-600 uppercase tracking-widest font-bold">Students Supported</div>
-              <div className="text-xs text-gray-500 mt-1">Annually</div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="bg-white rounded-2xl p-8 text-center shadow-lg border border-primary/10"
-            >
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <GraduationCap className="w-8 h-8 text-primary" />
-              </div>
-              <div className="text-3xl font-display font-bold text-primary mb-2">6</div>
-              <div className="text-sm text-gray-600 uppercase tracking-widest font-bold">Program Categories</div>
-              <div className="text-xs text-gray-500 mt-1">Comprehensive Support</div>
-            </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            {[
+              { icon: Award, value: "15+", label: "Years of Craft", sub: "Since 2009" },
+              { icon: Gem, value: "3", label: "Cocoa Origins", sub: "Madagascar · Ecuador · Peru" },
+              { icon: Gift, value: "30+", label: "Countries Shipping", sub: "Worldwide delivery" },
+              { icon: Star, value: "100%", label: "Organic Cocoa", sub: "No artificial additives" },
+            ].map(({ icon: Icon, value, label, sub }, i) => (
+              <motion.div
+                key={label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
+                className="bg-white/5 rounded-2xl p-8 text-center border border-white/10"
+              >
+                <div className="w-16 h-16 bg-[#d4a373]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Icon className="w-8 h-8 text-[#d4a373]" />
+                </div>
+                <div className="text-3xl font-display font-bold text-[#d4a373] mb-2">{value}</div>
+                <div className="text-sm text-white uppercase tracking-widest font-bold mb-1">{label}</div>
+                <div className="text-xs text-white/50">{sub}</div>
+              </motion.div>
+            ))}
           </div>
-
-          {/* How We Help */}
-          <div className="mb-20">
-            <h3 className="text-2xl md:text-3xl font-display text-accent text-center mb-12">
-              How We Help
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="bg-white rounded-xl p-6 shadow-md border border-primary/10"
-              >
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <GraduationCap className="w-6 h-6 text-primary" />
-                </div>
-                <h4 className="font-display text-lg text-accent mb-3">Student Aid</h4>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Help with school and college fees for kids from poor families. Covers fees, books, uniforms, and hostel.
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="bg-white rounded-xl p-6 shadow-md border border-primary/10"
-              >
-                <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
-                  <Award className="w-6 h-6 text-secondary" />
-                </div>
-                <h4 className="font-display text-lg text-accent mb-3">Scholarships</h4>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Yearly scholarships for clever students across India, given after checking their homes in person.
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="bg-white rounded-xl p-6 shadow-md border border-primary/10"
-              >
-                <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
-                  <HandCoins className="w-6 h-6 text-accent" />
-                </div>
-                <h4 className="font-display text-lg text-accent mb-3">Financial Assistance</h4>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Quick help for families facing sudden problems, keeping children in school with one-time or ongoing fee support.
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="bg-white rounded-xl p-6 shadow-md border border-primary/10"
-              >
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <Users className="w-6 h-6 text-primary" />
-                </div>
-                <h4 className="font-display text-lg text-accent mb-3">Volunteer Network</h4>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  A group run by volunteers who check details and guide students. Join our volunteer network in India.
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="bg-white rounded-xl p-6 shadow-md border border-primary/10"
-              >
-                <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
-                  <Heart className="w-6 h-6 text-secondary" />
-                </div>
-                <h4 className="font-display text-lg text-accent mb-3">Donor Partnerships</h4>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Join our donor community to sponsor a child or help a program. 100% of your donation is used for student fees.
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-                className="bg-white rounded-xl p-6 shadow-md border border-primary/10"
-              >
-                <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
-                  <Gift className="w-6 h-6 text-accent" />
-                </div>
-                <h4 className="font-display text-lg text-accent mb-3">Launch Scholarships</h4>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Start a scholarship in memory of a loved one. You choose the rules, and we send you yearly updates.
-                </p>
-              </motion.div>
-            </div>
-          </div>
-
-          {/* Memorial Scholarship Spotlight */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl border border-primary/10 text-center"
-          >
-            <div className="inline-flex items-center gap-3 bg-primary/10 px-4 py-2 rounded-full mb-6">
-              <Sparkles size={14} className="text-secondary" />
-              <span className="text-sm font-bold uppercase tracking-widest text-primary">Featured Program</span>
-              <Sparkles size={14} className="text-secondary" />
-            </div>
-            <h3 className="text-2xl md:text-3xl font-display text-accent mb-4">
-              Memorial Scholarships
-            </h3>
-            <p className="text-gray-700 leading-relaxed mb-6 max-w-3xl mx-auto">
-              Aaghaz Foundation runs more than 80 scholarships in memory of loved ones across India. We give nearly Rs 1 crore every year to help hundreds of poor students and orphans finish their studies.
-            </p>
-            <Link
-              to="/services/memorial-scholarship"
-              className="inline-flex items-center gap-3 bg-primary hover:bg-primary-dark text-white px-8 py-4 text-sm uppercase tracking-widest font-bold rounded-tl-2xl rounded-br-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-0.5"
-            >
-              Find out more about Memorial Scholarships
-              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </motion.div>
         </div>
       </section>
 
-      {/* Programs Grid */}
+      {/* Collections Grid */}
       <section className="py-12 px-6 bg-stone-50">
         <div className="max-w-7xl mx-auto space-y-32">
-          {programs.map((program, index) => (
+          {collections.map((collection, index) => (
             <motion.div
-              key={program.id}
+              key={collection.id}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
@@ -439,8 +258,8 @@ export const ServicesPage = () => {
                   <img
                     loading="lazy"
                     decoding="async"
-                    src={program.image}
-                    alt={program.title}
+                    src={collection.image}
+                    alt={collection.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                 </div>
@@ -450,43 +269,75 @@ export const ServicesPage = () => {
               <div className="w-full lg:w-1/2 text-center lg:text-left">
                 <div className="flex justify-center lg:justify-start mb-6">
                   <div className="p-4 bg-white border border-primary/20 rounded-full shadow-sm">
-                    {program.icon}
+                    {collection.icon}
                   </div>
                 </div>
                 <h3 className="text-3xl md:text-4xl font-display text-accent mb-6">
-                  {program.title}
+                  {collection.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed mb-8">
-                  {program.description}
+                  {collection.description}
                 </p>
                 <div className="bg-white p-8 border border-primary/10 shadow-sm relative">
                   <h4 className="font-display text-lg mb-4 text-accent">
-                    What we cover
+                    What's included
                   </h4>
                   <ul className="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-6 text-left">
-                    {program.features.map((feature, idx) => (
+                    {collection.features.map((feature, idx) => (
                       <li
                         key={idx}
                         className="flex items-start text-sm text-gray-600"
                       >
                         <span className="w-1.5 h-1.5 bg-secondary rounded-full mt-2 mr-3 flex-shrink-0" />
-                        <span dangerouslySetInnerHTML={{ __html: feature }} />
+                        <span>{feature}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div className="mt-8">
                   <Link
-                    to={`/services/${program.id}`}
+                    to={`/services/${collection.id}`}
                     className="inline-flex items-center text-primary uppercase text-xs font-bold tracking-widest hover:text-accent transition-colors"
                   >
-                    Learn more about {program.title}{" "}
+                    Explore {collection.title}{" "}
                     <ArrowRight className="ml-2 w-4 h-4" />
                   </Link>
                 </div>
               </div>
             </motion.div>
           ))}
+        </div>
+      </section>
+
+      {/* Bespoke Spotlight */}
+      <section className="py-24 px-6 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl border border-primary/10 text-center"
+          >
+            <div className="inline-flex items-center gap-3 bg-primary/10 px-4 py-2 rounded-full mb-6">
+              <Sparkles size={14} className="text-secondary" />
+              <span className="text-sm font-bold uppercase tracking-widest text-primary">Featured Service</span>
+              <Sparkles size={14} className="text-secondary" />
+            </div>
+            <h3 className="text-2xl md:text-3xl font-display text-accent mb-4">
+              Bespoke Corporate Gifting
+            </h3>
+            <p className="text-gray-700 leading-relaxed mb-6 max-w-3xl mx-auto">
+              DUMUZI's corporate gifting program has been trusted by luxury hotels, financial institutions, and global brands across 30+ countries. From custom logo-embossed packaging to fully branded seasonal collections, we create chocolate gifts that make an unforgettable impression.
+            </p>
+            <Link
+              to="/services/corporate-gifting"
+              className="inline-flex items-center gap-3 bg-primary hover:bg-primary-dark text-white px-8 py-4 text-sm uppercase tracking-widest font-bold rounded-tl-2xl rounded-br-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-0.5"
+            >
+              Explore Corporate Gifting
+              <ArrowRight size={16} />
+            </Link>
+          </motion.div>
         </div>
       </section>
 
@@ -498,15 +349,15 @@ export const ServicesPage = () => {
               FAQs
             </h2>
             <p className="text-gray-700 text-xl font-bold">
-              Common questions about our programs
+              Common questions about our collections
             </p>
             <p className="text-gray-500 font-light text-sm mt-2 max-w-2xl mx-auto">
-              Here are answers to the questions donors, volunteers, and parents ask us most often. If you have another question, email us at{" "}
+              If you have a question not answered here, email us at{" "}
               <a
-                href="mailto:aaghaz.foundation@gmail.com"
+                href="mailto:hello@dumuzi.com"
                 className="text-primary hover:underline"
               >
-                aaghaz.foundation@gmail.com
+                hello@dumuzi.com
               </a>
               .
             </p>

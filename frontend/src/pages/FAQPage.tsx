@@ -27,16 +27,16 @@ export const FAQPage = () => {
   return (
     <div className="bg-stone-950 min-h-screen text-stone-200">
       <SEO
-        title="FAQs — Aaghaz Foundation"
-        description="Frequently asked questions about Aaghaz Foundation — donations, scholarships, the verification process, volunteering, tax exemption, and how to apply for student aid."
+        title="FAQs — DUMUZI Luxury Chocolates"
+        description="Frequently asked questions about DUMUZI Luxury Chocolates — sourcing, delivery, corporate gifting, masterclasses, bespoke orders, and our subscription boxes."
       />
       {/* Hero Section */}
       <section className="relative h-[90vh] flex items-center justify-center overflow-hidden bg-stone-900 text-white">
         <div className="absolute inset-0 opacity-40">
           {/* Using a high-quality abstract or relevant background image */}
           <img loading="lazy" decoding="async"
-            src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=1920&q=80"
-            alt="Children studying — Aaghaz Foundation"
+            src="/images/products/LF-D25B.jpeg"
+            alt="DUMUZI chocolate atelier"
             className="w-full h-full object-cover border-b-6 border-primary"
           />
           <div className="absolute inset-0 bg-black/40" />
@@ -59,7 +59,7 @@ export const FAQPage = () => {
               <span className="text-secondary italic font-serif">Questions</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-200 font-light max-w-2xl mx-auto">
-              Common questions about Aaghaz Foundation — how we check student cases, how donations work, and how you can help.
+              Common questions about DUMUZI Luxury Chocolates — our sourcing, delivery, gifting, and masterclass programmes.
             </p>
           </motion.div>
         </div>
@@ -147,10 +147,10 @@ export const FAQPage = () => {
           <p className="text-gray-400 mb-10 text-lg font-light">
             Cannot find what you are looking for? Email us at{" "}
             <a
-              href="mailto:aaghaz.foundation@gmail.com"
+              href="mailto:hello@dumuzi.com"
               className="text-secondary hover:underline"
             >
-              aaghaz.foundation@gmail.com
+              hello@dumuzi.com
             </a>{" "}
             — we read and answer every message.
           </p>

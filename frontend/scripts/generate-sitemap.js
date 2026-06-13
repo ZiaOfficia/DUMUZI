@@ -4,8 +4,8 @@ import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const API_URL = "https://elegantize-zl57.onrender.com";
-const BASE_URL = "https://elegantize.com";
+const API_URL = "https://dumuzi-backend.onrender.com";
+const BASE_URL = "https://dumuzi.com";
 const OUTPUT = path.join(__dirname, "../public/sitemap.xml");
 
 const staticPages = [

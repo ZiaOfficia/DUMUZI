@@ -15,10 +15,10 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 const allowedOrigins = [
-  "https://elegantize.com",
-  "https://elegantize.com/",
-  "https://www.elegantize.com",
-  "https://www.elegantize.com/",
+  "https://dumuzi.com",
+  "https://dumuzi.com/",
+  "https://www.dumuzi.com",
+  "https://www.dumuzi.com/",
   "http://localhost:5173",
   "http://localhost:3000",
 ];
@@ -66,7 +66,7 @@ app.get("/sitemap.xml", async (req, res) => {
       { loc: "/faq", priority: "0.6", changefreq: "monthly" },
     ];
 
-    const BASE = "https://elegantize.com";
+    const BASE = "https://dumuzi.com";
 
     // XML-encode a string so special characters don't break the sitemap.
     const xmlEncode = (str) =>
@@ -217,12 +217,12 @@ if (process.env.NODE_ENV === "production" || process.env.NODE_ENV === "staging")
   } else {
     // API-Only Mode (e.g. Render Backend)
     app.get("/", (req, res) => {
-      res.send("Elegantize Backend API Running (No Frontend Build Found)");
+      res.send("DUMUZI Backend API Running (No Frontend Build Found)");
     });
   }
 } else {
   app.get("/", (req, res) => {
-    res.send("Elegantize Backend Running (Dev Mode)");
+    res.send("DUMUZI Backend Running (Dev Mode)");
   });
 }
 

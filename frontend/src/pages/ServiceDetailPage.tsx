@@ -95,7 +95,7 @@ export const ServiceDetailPage = () => {
   return (
     <div className="bg-white">
       <SEO
-        title={`${service.title} - Aaghaz Foundation`}
+        title={`${service.title} - DUMUZI Luxury Chocolates`}
         description={service.intro.description[0]}
         image={service.heroImage}
       />
@@ -358,7 +358,7 @@ export const ServiceDetailPage = () => {
 
 
 
-      {/* Stories / Why Aaghaz / Testimonials */}
+      {/* Why DUMUZI / Testimonials */}
       <section
         id="why-us"
         ref={(el) => {

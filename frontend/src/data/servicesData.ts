@@ -1,5 +1,5 @@
-// Aaghaz Foundation — Programs / "What We Do"
-// The shape mirrors the original ServiceData interface so existing components keep working.
+// DUMUZI Luxury Chocolates — Collections & Product Categories
+// Same ServiceData interface shape so existing components keep working.
 
 export interface ServiceData {
   id: string;
@@ -30,11 +30,8 @@ export interface ServiceData {
     location: string;
   }[];
   portfolioImages: string[];
-  /** Optional: extra FAQ block rendered after testimonials (used by Memorial Scholarship). */
   faqs?: { question: string; answer: string }[];
-  /** Optional: list of named scholarships / programmes already running under this service. */
   namedScholarships?: string[];
-  /** Optional: direct contact card for this service. */
   contact?: {
     name?: string;
     role?: string;
@@ -48,1031 +45,882 @@ import { serviceImages } from "./imageAssets";
 
 export const servicesData: ServiceData[] = [
   {
-    id: "student-aid",
-    title: "Student Aid",
+    id: "dark-collection",
+    title: "Dark Chocolate Collection",
     heroImage: serviceImages.studentAid,
-    heroTitle: "STUDENT AID — HELPING DESERVING KIDS STAY IN SCHOOL",
+    heroTitle: "THE DARK COLLECTION — SINGLE-ORIGIN INTENSITY",
     intro: {
-      heading: "STUDENT AID PROGRAM",
-      subheading:
-        "Help with fees for school and college students in India.",
+      heading: "DARK CHOCOLATE COLLECTION",
+      subheading: "Complex, bold, and deeply satisfying single-origin dark chocolates.",
       description: [
-        "Before you apply for financial help, please read the rules below. Aaghaz Foundation helps bright students from poor families. We cover school fees, college fees, exam fees, books, uniforms, and hostel costs.",
-        "Our volunteer team will visit every applicant's home in person. We do not approve applications blindly. We check every detail and track every rupee."
+        "Our Dark Collection is the heart of DUMUZI. Each bar is made from a single origin of organic cocoa — Madagascar, Ecuador, or Peru — so you can taste the distinct character of each region's terroir.",
+        "With cocoa percentages ranging from 72% to 92%, our dark range offers everything from approachable richness to intensely complex bitterness, all hand-tempered in our atelier for a glossy finish and clean snap.",
       ],
     },
     whyChooseUs: {
-      title: "Who Can Get Help",
+      title: "What Sets Our Dark Chocolate Apart",
       items: [
         {
-          title: "Real need for money",
+          title: "Single-Origin Cocoa",
           description:
-            "Your family's total income must be low, matching your state's limits for poor families.",
+            "Each bar is made from one estate's harvest, preserving unique tasting notes of red fruit, earth, and roasted nuts.",
         },
         {
-          title: "Good marks in school",
+          title: "Hand-Tempered by Masters",
           description:
-            "We support students who study hard. Usually, you need at least 60% marks in your last exams. We are flexible if you are the first in your family to study.",
+            "Our chocolatiers hand-temper every batch to achieve Form V cocoa butter crystals — the secret behind a perfect snap and glossy sheen.",
         },
         {
-          title: "A known reference",
+          title: "No Artificial Additives",
           description:
-            "A teacher, neighbor, journalist, or social worker must be able to confirm your family's situation.",
+            "No palm oil, no artificial flavours, no preservatives. Just pure cocoa, organic cocoa butter, and a touch of unrefined cane sugar.",
         },
       ],
     },
     signatureServices: {
-      title: "What Student Aid Covers",
+      title: "Dark Collection Highlights",
       items: [
         {
-          title: "School & Exam Fees",
+          title: "Noir Intense 85%",
           description:
-            "From Class 1 to Class 12 — we cover yearly school fees, board exam fees, and admission charges.",
+            "Our bestselling Madagascar single-origin bar. Deep, complex, with notes of red berry and a dry, clean finish.",
         },
         {
-          title: "College Tuition",
+          title: "Grand Cru Ecuador 72%",
           description:
-            "We cover college fees for degrees and professional courses, depending on how much help your family needs.",
+            "A gentler entry into dark chocolate. Earthy and floral, with hints of jasmine and orange blossom.",
         },
         {
-          title: "Books, Uniforms & Bags",
+          title: "Pure Origin Peru 92%",
           description:
-            "We help pay for school uniforms, textbooks, notebooks, and bags.",
+            "For the true connoisseur. Intensely dark with an earthy, smoky depth and a long, lingering finish.",
         },
         {
-          title: "Hostel & Food",
+          title: "Dark Truffle Selection",
           description:
-            "If a student has to live away from home, we help pay for their hostel rent and food.",
+            "Ganache truffles made from our 85% Madagascar blend, finished with Dutch cocoa powder or 24k gold leaf.",
         },
       ],
     },
     process: {
-      title: "How to Apply",
-      description:
-        "Here is what happens when you apply for student aid:",
+      title: "How We Make Our Dark Chocolate",
+      description: "Every batch follows our slow, carefully monitored four-stage process:",
       steps: [
         {
-          title: "1. Fill the form",
+          title: "1. Source",
           description:
-            "Submit the Apply for Student Aid form on our website with your basic details and marksheets.",
+            "We hand-select cocoa beans from farming cooperatives in Madagascar, Ecuador, and Peru — paying above fair-trade prices.",
         },
         {
-          title: "2. Volunteer visit",
+          title: "2. Roast",
           description:
-            "At least two volunteers will visit your home and school to meet your family.",
+            "Beans are slowly roasted at low temperatures to develop deep, complex flavour profiles without burning delicate aromatic compounds.",
         },
         {
-          title: "3. Team review",
+          title: "3. Temper",
           description:
-            "We review the case and decide how much help we can give you.",
+            "Our master chocolatiers hand-temper each batch, cycling through precise temperature stages to align cocoa butter crystals.",
         },
         {
-          title: "4. Fee payment",
+          title: "4. Finish",
           description:
-            "We pay the fees directly to your school or college. Our volunteers keep in touch with you throughout the year.",
+            "Each bar or truffle is hand-finished, inspected for quality, and packed in temperature-controlled packaging.",
         },
       ],
     },
     testimonials: [
       {
         quote:
-          "I was going to leave school after Class 10 because my father could not pay the board exam fees. Aaghaz volunteers came to our home and paid the fees within a week. Today, I am studying in college.",
-        author: "Sumaiya R.",
-        location: "Lucknow, UP",
+          "The Noir Intense 85% is the finest dark chocolate I have ever tasted. It completely changed how I think about single-origin cocoa.",
+        author: "Isabella R.",
+        location: "London, UK",
       },
       {
         quote:
-          "We did not know there was help like this. The volunteers were very polite and respectful. They made us feel comfortable.",
-        author: "Mother of a student",
-        location: "Hardoi, UP",
+          "I ordered the Dark Truffle Selection as a gift and the recipient called me immediately to say they had never tasted anything like it.",
+        author: "James T.",
+        location: "New York, USA",
       },
     ],
     portfolioImages: [
-      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=900&q=80",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
     ],
   },
 
   {
-    id: "scholarships",
-    title: "Scholarships",
+    id: "truffle-collection",
+    title: "Truffle Collection",
     heroImage: serviceImages.scholarships,
-    heroTitle: "SCHOLARSHIPS — INVESTING IN A STUDENT'S FUTURE",
+    heroTitle: "TRUFFLE COLLECTION — HANDCRAFTED GANACHE MASTERPIECES",
     intro: {
-      heading: "AAGHAZ SCHOLARSHIPS",
-      subheading:
-        "Scholarships for school and college students across India.",
+      heading: "THE TRUFFLE COLLECTION",
+      subheading: "Velvety ganache truffles crafted by hand in our artisan atelier.",
       description: [
-        "Many donors support Aaghaz by funding scholarships. You can start a scholarship in memory of a parent, child, teacher, or friend. You can also donate to our general scholarship pool to help students who need it most.",
-        "Every scholarship is given after our volunteers visit the student's home. Donors get a yearly report showing how their money helped the student."
+        "Our truffles begin with the finest single-origin chocolate and organic cream. Each ganache is slowly emulsified by hand to achieve a perfectly smooth, melting texture. Seasonal flavour infusions — from rose and cardamom to yuzu and black pepper — are added in small batches.",
+        "Every truffle is hand-rolled, enrobed in tempered chocolate, and finished with cocoa powder, crushed nuts, or edible 24k gold leaf.",
       ],
     },
     whyChooseUs: {
-      title: "Why Start a Scholarship with Aaghaz",
+      title: "Why Our Truffles Are Exceptional",
       items: [
         {
-          title: "Honest and direct help",
+          title: "Hand-rolled, never moulded",
           description:
-            "We meet every student in person before paying. We pay fees directly to the school or college.",
+            "Our truffles are shaped by hand, giving each one a natural, artisan appearance.",
         },
         {
-          title: "You choose the rules",
+          title: "Seasonal infusions",
           description:
-            "You can decide who to help — such as girls only, a specific study course, or students from a particular town.",
+            "Each season brings new flavour infusions using fresh botanicals, spices, and citrus zests.",
         },
         {
-          title: "Yearly progress reports",
+          title: "Premium finishes",
           description:
-            "We share photos, marksheets, and small thank-you notes from the students every year so you can see the impact.",
+            "Choose from Dutch cocoa dusting, crushed pistachios, freeze-dried berry, or 24k edible gold leaf.",
         },
       ],
     },
     signatureServices: {
-      title: "Types of Scholarships",
+      title: "Signature Truffle Flavours",
       items: [
         {
-          title: "Memorial Scholarship",
+          title: "Classic Dark Ganache",
           description:
-            "Honor a loved one by starting a scholarship in their name. It starts at Rs 25,000 per year, and we can design it to fit your budget.",
+            "85% Madagascar ganache, hand-rolled in Dutch cocoa powder. Our most iconic truffle.",
         },
         {
-          title: "General Scholarship Pool",
+          title: "Rose & Cardamom",
           description:
-            "Donate any amount to our general pool. We use this to help the highest priority cases.",
+            "Milk chocolate ganache infused with Damask rose water and green cardamom. Finished with dried rose petals.",
         },
         {
-          title: "Company & CSR Scholarships",
+          title: "Yuzu & Dark Chocolate",
           description:
-            "Companies can fund a group of students. We provide all the reports needed for CSR audits.",
+            "A Japanese-inspired truffle — tart yuzu citrus in a velvety 72% Ecuador ganache.",
         },
         {
-          title: "Special Scholarships",
+          title: "Salted Caramel & Hazelnut",
           description:
-            "Scholarships for girls studying science, first-generation college students, or students preparing for competitive exams.",
+            "Buttery salted caramel ganache with toasted Piedmont hazelnuts in a milk chocolate shell.",
         },
       ],
     },
     process: {
-      title: "How to Start a Scholarship",
+      title: "From Ganache to Gift Box",
       description: "",
       steps: [
         {
-          title: "1. Talk to us",
+          title: "1. Make the ganache",
           description:
-            "Tell us who you want to honor, your budget, and what kind of student you want to help.",
+            "We heat organic cream and pour it over finely chopped chocolate, slowly emulsifying by hand.",
         },
         {
-          title: "2. Set the rules",
+          title: "2. Infuse & set",
           description:
-            "We set the rules together and write down a simple agreement.",
+            "Seasonal flavour extracts are folded in. The ganache rests for 24 hours at precise temperatures.",
         },
         {
-          title: "3. Select students",
+          title: "3. Roll & enrobe",
           description:
-            "We select matching students from our checked list and pay their college or school directly.",
+            "Each truffle is hand-rolled and dipped in tempered chocolate, then finished with its signature coating.",
         },
         {
-          title: "4. Get reports",
+          title: "4. Inspect & pack",
           description:
-            "Every year, you will get a report with the student's marks, photos, and a personal note.",
+            "Each piece is quality-checked, placed in a paper cup, and nestled into its gift box.",
         },
       ],
     },
     testimonials: [
       {
         quote:
-          "We started a scholarship in our son's name. Knowing that three students are completing their studies because of him every year has helped our family heal in a way we did not expect.",
-        author: "A donor family",
-        location: "Pune",
+          "The Rose & Cardamom truffle is unlike anything I have ever had. It tastes like a luxury perfume smells. Extraordinary.",
+        author: "Sophia M.",
+        location: "Paris, France",
       },
     ],
     portfolioImages: [
-      "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=900&q=80",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
     ],
   },
 
   {
-    id: "financial-assistance",
-    title: "Financial Assistance",
+    id: "gift-boxes",
+    title: "Gift Boxes",
     heroImage: serviceImages.financialAssistance,
-    heroTitle: "FINANCIAL ASSISTANCE — HELP IN DIFFICULT TIMES",
+    heroTitle: "GIFT BOXES — LUXURY GIFTING REIMAGINED",
     intro: {
-      heading: "FINANCIAL ASSISTANCE PROGRAM",
-      subheading:
-        "Emergency and regular help for study expenses.",
+      heading: "DUMUZI GIFT BOXES",
+      subheading: "Elegantly curated gift boxes for every occasion.",
       description: [
-        "Sometimes, a family is doing their best but faces a sudden problem. A temporary money crisis should not stop a child from studying. Aaghaz provides quick help — sometimes one-time, sometimes every year — to keep children in school.",
-        "Our volunteers check every emergency case. We act fast, and most urgent cases are resolved within a week."
+        "A DUMUZI gift box is an experience before the first piece is even tasted. Our boxes are wrapped in dark textured paper with gold-foil embossing, tied with a satin ribbon, and lined with a handwritten card.",
+        "Choose from our curated assortments or build a bespoke box with your preferred selections. All boxes come in a signature temperature-controlled outer box for safe delivery.",
       ],
     },
     whyChooseUs: {
-      title: "What We Help With",
+      title: "What Makes Our Gifting Special",
       items: [
         {
-          title: "Sudden fee problems",
+          title: "Premium presentation",
           description:
-            "If school fees are due, or board admit cards are held back due to unpaid fees, we pay immediately.",
+            "Gold-foil embossed dark paper, satin ribbons, and a handwritten personalised card in every box.",
         },
         {
-          title: "Loss of a parent",
+          title: "Curated or bespoke",
           description:
-            "If the earning parent passes away, we pay the children's fees for the rest of the year.",
+            "Choose from our seasonal curated assortments, or build your own box from our full collection.",
         },
         {
-          title: "Medical emergencies",
+          title: "Temperature-controlled delivery",
           description:
-            "If a parent's medical bills take away the money kept for school, we pay the fees to keep the kids in school.",
+            "Every gift box is shipped in an insulated outer carton with food-grade gel packs to preserve quality.",
         },
       ],
     },
     signatureServices: {
-      title: "How We Provide Help",
+      title: "Gift Box Collections",
       items: [
         {
-          title: "Emergency fee help",
+          title: "The Classic Assortment (12 pcs)",
           description:
-            "We pay the urgent school or college fees directly to the institution.",
+            "A curated selection of our bestselling dark and milk chocolate truffles. Our most popular gift.",
         },
         {
-          title: "Monthly support",
+          title: "The Signature Collection (24 pcs)",
           description:
-            "For difficult cases, we give monthly money help until the family's situation improves.",
+            "Our full range of signature truffles, pralines, and dark chocolate bars in a single, impressive box.",
         },
         {
-          title: "Coaching & study help",
+          title: "The Single-Origin Discovery Box",
           description:
-            "We give free access to our study center in Lucknow and coaching centers in UP.",
+            "Three dark chocolate bars — one each from Madagascar, Ecuador, and Peru — for the true connoisseur.",
+        },
+        {
+          title: "Bespoke Corporate Gift Set",
+          description:
+            "Fully custom boxes with company logo embossing, branded ribbon, and a personalised corporate card.",
         },
       ],
     },
     process: {
-      title: "How We Resolve Cases",
+      title: "How to Order a Gift Box",
       description: "",
       steps: [
         {
-          title: "1. Student is recommended",
+          title: "1. Choose your collection",
           description:
-            "A teacher, neighbor, journalist, or volunteer alerts us about a student in trouble.",
+            "Browse our curated assortments online, or contact us to build a bespoke selection.",
         },
         {
-          title: "2. Quick check",
+          title: "2. Personalise",
           description:
-            "Two volunteers visit the family and submit a report within 3 days.",
+            "Add a handwritten message, custom ribbon colour, or logo embossing for corporate orders.",
         },
         {
-          title: "3. Approval",
+          title: "3. We craft & pack",
           description:
-            "Our committee reviews the report and approves the money.",
+            "Your chocolates are freshly made, quality-checked, and beautifully arranged in the gift box.",
         },
         {
-          title: "4. Payment",
+          title: "4. Delivered to your door",
           description:
-            "We pay the fees directly to the school or college. Volunteers keep check on the family every month.",
+            "Shipped in temperature-controlled packaging by express courier, with tracking provided.",
         },
       ],
     },
     portfolioImages: [
-      "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=900&q=80",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
     ],
   },
 
   {
-    id: "computer-center",
-    title: "Computer Learning Center",
-    heroImage: "/images/computercenter/Screenshot 2026-05-15 111019.png",
-    heroTitle:
-      "AAGHAZ FOUNDATION FREE COMPUTER CENTER — LUCKNOW",
+    id: "pralines-collection",
+    title: "Pralines Collection",
+    heroImage: "/images/assets/dark_chocolates_hero.png",
+    heroTitle: "PRALINES COLLECTION — BELGIAN CRAFT, DUMUZI SOUL",
     intro: {
-      heading: "Learn Computers for Free with Aaghaz Foundation",
-      subheading:
-        "Free, certified computer training for girls and poor youth in Lucknow.",
+      heading: "HANDCRAFTED PRALINES",
+      subheading: "Belgian-inspired pralines with the finest nut pastes and flavour fillings.",
       description: [
-        "Our Computer Learning Center (AFCLC) is located in Balda Colony, near the New Hyderabad Post Office in Lucknow. It is run for free by Co-Founder Suhel Khaleel and Tariq Khan.",
-        "We help poor students learn computer skills to find jobs. More than 150 students have completed our courses, built their confidence, and found good jobs.",
-        "Under our center head, Mr. Mohd Ebad, and teacher Waheed Uz Zama, students get hands-on computer practice and mock tests. We make sure every student gets proper attention."
+        "Inspired by the great Belgian praline tradition, our DUMUZI pralines combine classic craftsmanship with our own single-origin dark chocolate shells. Each piece is individually cast in hand-polished moulds.",
+        "From classic hazelnut praline paste to contemporary salted miso caramel, our praline range pushes the boundaries of fine confectionery.",
       ],
     },
     whyChooseUs: {
-      title: "Our Goal",
+      title: "Why Our Pralines Stand Out",
       items: [
         {
-          title: "Free computer training",
+          title: "Hand-polished molds",
           description:
-            "The center is open to all poor youth, especially girls and minorities who want to learn computers.",
+            "Our custom copper molds are hand-polished to ensure a mirror-gloss chocolate shell on every piece.",
         },
         {
-          title: "Practical training",
+          title: "Finest nut pastes",
           description:
-            "We focus on real practice. Every student gets a computer to practice on, with easy, step-by-step guidance.",
+            "We use only Piedmont hazelnuts and Sicilian pistachios, freshly ground in our atelier.",
         },
         {
-          title: "Government certificates",
+          title: "Bold flavour combinations",
           description:
-            "We prepare students for the government-approved NIELIT 'CCC' exam, which helps them apply for government and private jobs.",
+            "Our chocolatiers experiment seasonally — expect anything from smoked sea salt caramel to matcha and white chocolate.",
         },
       ],
     },
     signatureServices: {
-      title: "What We Teach",
+      title: "Praline Highlights",
       items: [
         {
-          title: "Computer Basics",
+          title: "Hazelnut Praline Classic",
           description:
-            "How a computer works, parts of the system, files, folders, and safety rules.",
-          features: [
-            "Computer parts and how they work",
-            "Managing files and folders",
-            "Saving files and shut down rules",
-          ],
+            "Roasted Piedmont hazelnut paste in a 72% Ecuador dark chocolate shell. A timeless classic.",
         },
         {
-          title: "Windows Operating System",
+          title: "Pistachio & Rose",
           description:
-            "How to use Windows, files, and computer settings.",
-          features: [
-            "Windows navigation & shortcuts",
-            "Command line basics",
-            "Installing programs",
-          ],
+            "Sicilian pistachio paste with a hint of rose water, enrobed in white chocolate.",
         },
         {
-          title: "MS Office (Word, Excel, PowerPoint)",
+          title: "Salted Miso Caramel",
           description:
-            "How to write letters, create sheets with formulas, and make slides.",
-          features: [
-            "MS Word - writing and tables",
-            "MS Excel - formulas and charts",
-            "PowerPoint - creating slides",
-          ],
+            "A daring pairing — sweet caramel with umami white miso in a milk chocolate shell.",
         },
         {
-          title: "Hindi and English Typing",
+          title: "Seasonal Special",
           description:
-            "Learn fast and correct typing, which is needed for data-entry and office jobs.",
-          features: [
-            "Correct typing posture",
-            "Speed and accuracy tests",
-            "Hindi Unicode typing",
-          ],
-        },
-        {
-          title: "Internet & Online Work",
-          description:
-            "Safe internet search, email, filling forms online, and digital payments.",
-          features: [
-            "Email and search basics",
-            "Online forms and government sites",
-            "UPI and digital payments",
-          ],
-        },
-        {
-          title: "NIELIT 'CCC' Prep",
-          description:
-            "Full training and practice tests for the government's Course on Computer Concepts.",
-          features: [
-            "Complete syllabus coverage",
-            "Mock tests & revision",
-            "Government certificate on passing",
-          ],
+            "A rotating praline inspired by the season's finest botanicals, fruits, and spices.",
         },
       ],
     },
     process: {
-      title: "How AFCLC Works",
-      description:
-        "Practical classes • Simple step-by-step lessons • Personal help • Weekly practice tests",
+      title: "The Praline Making Process",
+      description: "",
       steps: [
         {
-          title: "1. Visit & Enrol",
+          title: "1. Cast the shells",
           description:
-            "Visit us at 406/2A, Balda Colony, near New Hyderabad Post Office, Lucknow. The course is completely free. Seats are limited, so we take students on first-come, first-served basis.",
+            "Tempered chocolate is poured into hand-polished molds, spun to coat evenly, then inverted to remove the excess.",
         },
         {
-          title: "2. Practice in Lab",
+          title: "2. Fill",
           description:
-            "Every student gets a computer to practice on. Our teacher Mohd Ebad guides you every day.",
+            "Each shell is piped with its ganache or nut paste filling, then left to crystallise at a controlled temperature.",
         },
         {
-          title: "3. Tests & Revision",
+          title: "3. Cap",
           description:
-            "We hold weekly tests and mock CCC exams to make sure you are ready.",
+            "A final layer of tempered chocolate seals the base of each praline to create a perfectly closed piece.",
         },
         {
-          title: "4. Get Certified",
+          title: "4. Unmould & finish",
           description:
-            "After passing, get our center certificate and the government NIELIT CCC certificate to apply for jobs.",
+            "Pralines are gently unmoulded, inspected for gloss, and decorated with their signature finishing element.",
         },
       ],
     },
-    testimonials: [
-      {
-        quote:
-          "I learned MS-Office and typing here. Today, I work as an office clerk. The certificate from this center helped me pass my interview.",
-        author: "Bushra Khan",
-        location: "AFCLC alumnus · Finance Clerk",
-      },
-      {
-        quote:
-          "I did not know how to use computers. Today, I work as a support executive and help my sister study on her laptop.",
-        author: "Noman Azim",
-        location: "AFCLC alumnus · Tele-Caller Executive",
-      },
-      {
-        quote:
-          "The center taught me Excel and data entry. Within three months of finishing the course, I got a job as a Data Entry Operator.",
-        author: "Mohd Nabi",
-        location: "AFCLC alumnus · Data Entry Operator",
-      },
-      {
-        quote:
-          "The teachers gave me personal attention. I now teach at a school and use my computer skills every day.",
-        author: "Mehvish Ansari",
-        location: "AFCLC alumnus · Teacher",
-      },
-    ],
     portfolioImages: [
-      "/images/computercenter/Screenshot 2026-05-15 111019.png",
-      "/images/computercenter/Screenshot 2026-05-15 111030.png",
-      "/images/computercenter/Screenshot 2026-05-15 111042.png",
-      "/images/computercenter/Screenshot 2026-05-15 111053.png",
-      "/images/computercenter/Screenshot 2026-05-15 111110.png",
-      "/images/computercenter/Screenshot 2026-05-15 111130.png",
-      "/images/computercenter/Screenshot 2026-05-15 111152.png",
-      "/images/computercenter/Screenshot 2026-05-15 111202.png",
-      "/images/computercenter/Screenshot 2026-05-15 111210.png",
-      "/images/computercenter/Screenshot 2026-05-15 111220.png",
-      "/images/computercenter/Screenshot 2026-05-15 111230.png",
-      "/images/computercenter/Screenshot 2026-05-15 111243.png",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
     ],
   },
 
   {
-    id: "madarsa-initiative",
-    title: "Madarsa Initiative",
+    id: "wedding-favors",
+    title: "Wedding Favours",
     heroImage: serviceImages.madarsaInitiative,
-    heroTitle: "MADARSA INITIATIVE — MODERN EDUCATION FOR ALL",
+    heroTitle: "WEDDING FAVOURS — SWEET MEMORIES FOR EVERY GUEST",
     intro: {
-      heading: "MADARSA INITIATIVE",
-      subheading:
-        "Helping madarsa students learn modern school subjects and skills.",
+      heading: "BESPOKE WEDDING FAVOURS",
+      subheading: "Custom chocolate wedding favours that your guests will cherish.",
       description: [
-        "Our Madarsa program helps students learn regular school subjects along with their religious studies. We work with madarsas to provide books and teachers for math, science, and computers.",
-        "This program teaches language, math, science, and computer skills to help madarsa students find good jobs and go for higher studies.",
+        "Your wedding day deserves a parting gift as special as the occasion. DUMUZI wedding favours are fully bespoke — from custom-molded chocolates bearing your initials to miniature truffle boxes wrapped in your wedding colour palette.",
+        "We work closely with couples and wedding planners to design favours that double as table décor and deliver a moment of pure indulgence to every guest.",
       ],
     },
     whyChooseUs: {
-      title: "Why We Help Madarsa Students",
+      title: "What We Offer",
       items: [
         {
-          title: "Education for everyone",
+          title: "Monogrammed packaging",
           description:
-            "Making sure all children get a chance to learn modern school subjects.",
+            "Gold-foil embossed boxes in any colour with your initials or a custom design.",
         },
         {
-          title: "Respect for culture",
+          title: "Custom chocolate molds",
           description:
-            "We respect religious values while teaching modern science and math.",
+            "Your initials, a motif, or even the date cast into the chocolate itself.",
         },
         {
-          title: "Useful skills",
+          title: "No minimum too large",
           description:
-            "Teaching computer and job skills along with regular studies.",
+            "We produce from 50 to 5,000 wedding favours, with consistent quality across every order.",
         },
       ],
     },
     signatureServices: {
-      title: "What We Provide",
+      title: "Wedding Favour Options",
       items: [
         {
-          title: "School Subject Classes",
+          title: "Mini Truffle Box (3 pcs)",
           description:
-            "Extra classes for math, science, and English inside the madarsa.",
+            "Three signature truffles in a miniature gift box — elegant, compact, and delicious.",
         },
         {
-          title: "Computer & Job Skills",
+          title: "Monogrammed Chocolate Bar",
           description:
-            "Classes for basic computer usage, sewing, and small business skills.",
+            "A personalised single-origin dark or milk chocolate bar with your initials or wedding date.",
         },
         {
-          title: "Career Guidance",
+          title: "Mixed Praline Box (6 pcs)",
           description:
-            "Helping students choose the right college and apply for jobs.",
+            "Six assorted pralines in a bespoke box with custom ribbon and personalised tag.",
         },
         {
-          title: "Parent Meetings",
+          title: "Fully Custom Favour",
           description:
-            "We talk to parents and local leaders to help them support the children's studies.",
+            "Design your own shape, flavour, packaging, and finish. Contact us to discuss your vision.",
         },
       ],
     },
     process: {
-      title: "How it works",
+      title: "How to Order Wedding Favours",
       description: "",
       steps: [
         {
-          title: "1. Partner with Madarsas",
+          title: "1. Share your vision",
           description:
-            "We work with madarsa heads to set up classes.",
+            "Tell us about your wedding theme, colour palette, guest count, and preferred chocolates.",
         },
         {
-          title: "2. Check student needs",
+          title: "2. Receive a design proposal",
           description:
-            "We check what subjects and skills the children need to learn.",
+            "Our team will send you packaging mockups and flavour suggestions within 48 hours.",
         },
         {
-          title: "3. Start classes",
+          title: "3. Approve & deposit",
           description:
-            "Our teachers hold regular classes and workshops inside the madarsa.",
+            "Confirm the design, place a 50% deposit, and we begin production 4 weeks before your event.",
         },
         {
-          title: "4. Track progress",
+          title: "4. Delivery or collection",
           description:
-            "We take tests to make sure students are learning well.",
+            "We deliver your favours in a single temperature-controlled shipment, or you can collect from our atelier.",
         },
       ],
     },
     portfolioImages: [
-      "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=900&q=80",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
     ],
   },
 
   {
-    id: "memorial-scholarship",
-    title: "Memorial Scholarship",
+    id: "corporate-gifting",
+    title: "Corporate Gifting",
     heroImage: serviceImages.memorialScholarship,
-    heroTitle: "MEMORIAL SCHOLARSHIPS — HONORING LEGACIES THROUGH EDUCATION",
+    heroTitle: "CORPORATE GIFTING — ELEVATE YOUR BRAND WITH LUXURY CHOCOLATE",
     intro: {
-      heading: "MEMORIAL SCHOLARSHIPS",
-      subheading:
-        "A meaningful way to remember someone special who is no longer with us.",
+      heading: "CORPORATE GIFTING PROGRAM",
+      subheading: "Bespoke luxury chocolate gifts that represent your brand at its finest.",
       description: [
-        "Starting a scholarship in the name of a loved one who has passed away is a beautiful tribute. Your gift will pay for the school or college fees of a poor student who is struggling to study.",
-        "Today, we run around 80 memorial scholarships every year, helping hundreds of poor students across India.",
+        "A DUMUZI corporate gift is more than a token — it is a statement about your brand's standards. Our corporate gifting program offers fully branded chocolate sets, custom-molded bars, and seasonal assortments that leave a lasting impression.",
+        "We work with marketing teams, EA offices, and gifting managers to create collections that align with your brand identity, budget, and timeline.",
       ],
     },
     whyChooseUs: {
-      title: "Why Start a Memorial Scholarship",
+      title: "Why Companies Choose DUMUZI",
       items: [
         {
-          title: "Keep their memory alive",
+          title: "Logo & brand integration",
           description:
-            "Starting a scholarship is a beautiful way to remember your loved one.",
+            "Your company logo can be embossed on packaging, printed on ribbons, or molded directly into the chocolate.",
         },
         {
-          title: "Give hope to students",
+          title: "Bulk pricing available",
           description:
-            "Their name will inspire and help a child finish school or college.",
+            "We offer competitive pricing for orders of 50+ units, with dedicated account management for regular orders.",
         },
         {
-          title: "A lasting tribute",
+          title: "Consistent quality at scale",
           description:
-            "It is a gift that makes a real difference in a student's life.",
+            "Our production team maintains the same artisan quality standards whether you order 50 or 2,000 units.",
         },
       ],
     },
     signatureServices: {
-      title: "Donor Options & Information",
+      title: "Corporate Collection Options",
       items: [
         {
-          title: "You decide how it is used",
+          title: "Branded Truffle Box",
           description:
-            "You can choose how your contribution is used — support one student or multiple students, sponsor girls only, or give preference to orphans and other specific categories.",
-          features: [
-            "Support one student or multiple students",
-            "Sponsor girls only",
-            "Give preference to orphans or other categories",
-          ],
+            "Our 12-piece Classic Assortment in a custom box with your logo and a branded message card.",
         },
         {
-          title: "Tribute page & card",
+          title: "Single-Origin Bar Set",
           description:
-            "We create a tribute card with your loved one's photo and details, and share it on our website and social media.",
+            "Three single-origin dark chocolate bars in a branded sleeve. A sophisticated and educational gift.",
         },
         {
-          title: "Careful student selection",
+          title: "Premium Executive Box",
           description:
-            "Each year we get thousands of applications. Our team checks every application to select students who really need help.",
+            "Our 24-piece Signature Collection in a premium rigid gift box with magnetic closure and full brand wrap.",
         },
         {
-          title: "Progress reports",
+          title: "Seasonal Corporate Collection",
           description:
-            "Students receive certificates with your loved one's name on them. We send you their photos and marksheets every year.",
+            "Limited-edition seasonal assortments available for Christmas, Diwali, and Chinese New Year.",
         },
       ],
     },
     process: {
-      title: "How to Start a Memorial Scholarship",
-      description:
-        "To start a scholarship, please share the following details with us. The minimum support is Rs 25,000 per year.",
+      title: "How to Set Up a Corporate Account",
+      description: "",
       steps: [
         {
-          title: "1. Name of the person",
+          title: "1. Enquire",
           description:
-            "The name of the loved one you want to remember.",
+            "Email our corporate team at corporate@dumuzi.com or fill out the corporate enquiry form.",
         },
         {
-          title: "2. Photo",
+          title: "2. Proposal & samples",
           description:
-            "A photograph of the person to put on the tribute card.",
+            "We send you a personalised proposal and a complimentary sample box within 5 business days.",
         },
         {
-          title: "3. A short note about them",
+          title: "3. Approve design",
           description:
-            "A few lines about who they were and what they cared about.",
+            "We produce packaging mockups for your approval before any production begins.",
         },
         {
-          title: "4. Yearly donation",
+          title: "4. Production & delivery",
           description:
-            "The amount you want to give every year (minimum is Rs 25,000).",
-        },
-        {
-          title: "5. Who to help",
-          description:
-            "Any preference you have, like helping girl students or orphans.",
-        },
-        {
-          title: "6. Start date",
-          description:
-            "When you want us to start giving the scholarship.",
-        },
-        {
-          title: "7. Your phone number",
-          description:
-            "So our team can contact you to set everything up.",
+            "Once approved, your order is produced in 10–15 business days and delivered with full tracking.",
         },
       ],
     },
-    testimonials: [
-      {
-        quote:
-          "Knowing that children are studying in our loved one's name has helped us heal. Every report feels like a letter from him.",
-        author: "A donor family",
-        location: "Pune, India",
-      },
-      {
-        quote:
-          "I never thought a scholarship in my father's name would reach a girl in a distant island. That certificate was worth everything to us.",
-        author: "Memorial scholarship donor",
-        location: "Delhi, India",
-      },
-    ],
     portfolioImages: [
-      "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=900&q=80",
-    ],
-    faqs: [
-      {
-        question: "What is the minimum donation?",
-        answer:
-          "The minimum donation is Rs 25,000 per year. You can choose to fund more than one student or run it for multiple years.",
-      },
-      {
-        question: "How many students apply?",
-        answer:
-          "Each scholarship gets thousands of applications from all over India. We filter them carefully.",
-      },
-      {
-        question: "Can I choose who gets the money?",
-        answer:
-          "Yes. You can choose to help girls, orphans, or students from a specific city. We set up the rules according to your choice.",
-      },
-      {
-        question: "How are students selected?",
-        answer:
-          "Our team checks the marks, home, and family income of every applicant. We give preference to students who have lost their parents or are in extreme need.",
-      },
-    ],
-    namedScholarships: [
-      "Rohith Vemula Memorial Scholarship",
-      "Kalbe Sadiq Memorial Scholarship",
-      "Sir Syed Ahmad Khan Memorial Scholarship",
-      "Danish Siddiqui Memorial Scholarship",
-      "Kamal Khan Memorial Scholarship",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
     ],
     contact: {
-      name: "Saima Rehman",
-      role: "Memorial Scholarship Coordinator",
-      email: "aaghaz.foundation@gmail.com",
-      phone: "+91 99716 48900",
-      note: "If you want to start a scholarship in memory of a loved one, we are here to help. Send us an email or WhatsApp message, and Saima will guide you.",
+      name: "Elise Moreau",
+      role: "Corporate Gifting Director",
+      email: "corporate@dumuzi.com",
+      phone: "+44 20 7123 4567",
+      note: "For bulk orders or bespoke corporate gifting enquiries, contact Elise directly. She will design a proposal tailored to your brand and budget.",
     },
   },
 
   {
-    id: "become-volunteer",
-    title: "Become a Volunteer",
+    id: "subscription-box",
+    title: "Subscription Box",
     heroImage: serviceImages.becomeVolunteer,
-    heroTitle: "BECOME AN AAGHAZ FIELD VOLUNTEER",
+    heroTitle: "THE DUMUZI SUBSCRIPTION — LUXURY DELIVERED MONTHLY",
     intro: {
-      heading: "AAGHAZ RUNS BECAUSE OF VOLUNTEERS",
-      subheading:
-        "Our volunteers are the heart of Aaghaz. Join us to help a child finish school.",
+      heading: "DUMUZI SUBSCRIPTION BOX",
+      subheading: "A curated selection of new and exclusive chocolates delivered to your door.",
       description: [
-        "Aaghaz is a volunteer-run group. Volunteers help us find students who need help, visit their homes to check details, and guide the students through their school year.",
-        "If you have two hours a week and want to help, you can make a big difference. We need volunteers in cities and towns across India, especially in UP, Bihar, Maharashtra, and Delhi NCR.",
+        "Our subscription boxes are designed for true chocolate lovers who want to explore the full breadth of DUMUZI's craft. Each box features a curated mix of new releases, seasonal specials, and exclusive members-only creations.",
+        "Subscribers receive first access to new collections, invitations to online tasting events, and a personal tasting notes card with each delivery.",
       ],
     },
     whyChooseUs: {
-      title: "What Volunteers Do",
+      title: "Subscription Benefits",
       items: [
         {
-          title: "Home visits",
+          title: "Exclusive member access",
           description:
-            "Visit a student's home and school to check their details in person before we approve fees.",
+            "Subscribers receive new collections before they go on sale to the public.",
         },
         {
-          title: "Mentorship",
+          title: "Tasting notes included",
           description:
-            "Stay in touch with one or two students, call them, and help them with their studies.",
+            "Every box comes with a printed card explaining the origin, flavour profile, and pairing suggestions for each piece.",
         },
         {
-          title: "Online help",
+          title: "Flexible plans",
           description:
-            "Help us with typing work, writing stories, managing social media, or talking to donors.",
+            "Choose monthly or quarterly delivery. Pause or cancel any time with no penalties.",
         },
       ],
     },
     signatureServices: {
-      title: "Volunteer Roles",
+      title: "Subscription Plans",
       items: [
         {
-          title: "Field Volunteer",
+          title: "The Connoisseur (Monthly)",
           description:
-            "Do home visits and check details in your own town or city.",
+            "12 pieces per month — a rotating mix of truffles, pralines, and a mini single-origin bar.",
         },
         {
-          title: "Online Mentor",
+          title: "The Explorer (Quarterly)",
           description:
-            "Talk to a student weekly over video calls to guide them in their studies and career.",
+            "24 pieces per quarter — our widest assortment including seasonal specials and one exclusive.",
         },
         {
-          title: "Story writing & Content",
+          title: "The Dark Devotee",
           description:
-            "Help us write stories, take photos, or manage our social media pages.",
+            "A dark-chocolate-only monthly box featuring three single-origin bars and 6 dark truffles.",
         },
         {
-          title: "Fundraising Help",
+          title: "The Gift Subscription",
           description:
-            "Help us organize small events to raise funds for poor students.",
+            "Purchase a 3, 6, or 12-month subscription as a gift. A beautiful gift card is emailed on your chosen date.",
         },
       ],
     },
     process: {
-      title: "How to Join",
+      title: "How the Subscription Works",
       description: "",
       steps: [
         {
-          title: "1. Fill the form",
+          title: "1. Choose your plan",
           description:
-            "Submit the Become a Field Volunteer form on our website.",
+            "Select your preferred subscription type and delivery frequency on our website.",
         },
         {
-          title: "2. Simple phone call",
+          title: "2. We curate your box",
           description:
-            "A team member will call you to talk about your interests and free hours.",
+            "Each month, our head chocolatier selects a unique assortment tailored to your plan.",
         },
         {
-          title: "3. Orientation",
+          title: "3. Fresh production",
           description:
-            "A quick introduction to Aaghaz's rules and how we work.",
+            "Your chocolates are produced fresh the week before your delivery date.",
         },
         {
-          title: "4. Your first case",
+          title: "4. Delivered & enjoyed",
           description:
-            "We will assign you your first home visit, pairing you with an experienced volunteer first.",
+            "Your box arrives in temperature-controlled packaging with a tasting notes card inside.",
         },
       ],
     },
     portfolioImages: [
-      "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=900&q=80",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
     ],
   },
 
   {
-    id: "join-as-donor",
-    title: "Join us as Donor",
+    id: "bespoke-orders",
+    title: "Bespoke Orders",
     heroImage: serviceImages.joinDonor,
-    heroTitle: "JOIN US AS A DONOR — FUND A CHILD'S FUTURE",
+    heroTitle: "BESPOKE CHOCOLATE COMMISSIONS — YOUR VISION, OUR CRAFT",
     intro: {
-      heading: "BECOME AN AAGHAZ DONOR",
-      subheading:
-        "One-time, monthly, or memorial donations — we track and report every rupee.",
+      heading: "BESPOKE CHOCOLATE ORDERS",
+      subheading: "Fully custom chocolate creations for extraordinary occasions.",
       description: [
-        "Register on our website to join our group of donors. A team member will call you to explain how you can help and answer any questions.",
-        "Donations to Aaghaz get tax deduction benefits under Section 80G in India. Our founders pay for all office costs, so 100% of your donation is spent on paying student fees.",
+        "Some moments call for something truly one-of-a-kind. Our bespoke order service allows you to commission completely custom chocolates — from unique flavour infusions to hand-painted artistic bars and sculpted chocolate centrepieces.",
+        "We have crafted bespoke collections for luxury hotels, Michelin-starred restaurants, fashion houses, and private celebrations. Tell us your vision and we will bring it to life.",
       ],
     },
     whyChooseUs: {
-      title: "Ways to Donate",
+      title: "What Bespoke Can Mean",
       items: [
         {
-          title: "One-time donation",
+          title: "Custom flavour creation",
           description:
-            "Donate any amount once. We will use it for the student who needs it most right now.",
+            "Our chocolatiers will develop a completely original ganache or praline flavour based on your brief.",
         },
         {
-          title: "Monthly donation",
+          title: "Hand-painted bars",
           description:
-            "Set up a small monthly donation. This is the best way to help a child finish school year after year.",
+            "Artistic chocolate bars painted by hand with edible cocoa butter colours — each one unique.",
         },
         {
-          title: "Sponsor a child",
+          title: "Sculpted centrepieces",
           description:
-            "Pay the full yearly fees of one specific student and get their progress updates.",
-        },
-        {
-          title: "Memorial Scholarship",
-          description:
-            "Start a scholarship in the name of a loved one and get yearly reports.",
+            "Large-format chocolate sculptures for event centrepieces, made to order and shipped in bespoke crating.",
         },
       ],
     },
     signatureServices: {
-      title: "What Your Donation Pays For",
+      title: "Bespoke Services",
       items: [
         {
-          title: "Rs 1,000",
+          title: "Flavour Commission",
           description:
-            "Pays for books, uniforms, and notebooks for one school child for a year.",
+            "Brief us on a taste, a memory, or an ingredient, and our head chocolatier will create an original ganache for you.",
         },
         {
-          title: "Rs 5,000",
+          title: "Hand-Painted Bar Collection",
           description:
-            "Pays the full yearly school fees for a student in a government school.",
+            "A set of 6 or 12 single-origin dark chocolate bars individually painted with edible cocoa butter artwork.",
         },
         {
-          title: "Rs 25,000",
+          title: "Chocolate Sculpture",
           description:
-            "Pays a year's college fees or hostel rent for a college student.",
+            "A bespoke sculpted chocolate centrepiece — animals, logos, letters, or abstract forms.",
         },
         {
-          title: "Rs 50,000+",
+          title: "Venue & Restaurant Programmes",
           description:
-            "Funds a full memorial scholarship in your loved one's name with yearly progress reports.",
+            "Regular bespoke supply for hotels, restaurants, and luxury venues with their own branded chocolate selection.",
         },
       ],
     },
     process: {
-      title: "How to Become a Donor",
+      title: "The Bespoke Journey",
       description: "",
       steps: [
         {
-          title: "1. Register online",
+          title: "1. Share your brief",
           description:
-            "Fill the Join us as Donor form on our website.",
+            "Email us with your vision, occasion, quantity, timeline, and any inspiration images.",
         },
         {
-          title: "2. Simple phone call",
+          title: "2. Consultation call",
           description:
-            "We will call you to discuss how you would like to help.",
+            "Our head chocolatier will speak with you directly to explore the brief and suggest options.",
         },
         {
-          title: "3. Donate online",
+          title: "3. Sample production",
           description:
-            "Donate via online payment, bank transfer (NEFT/UPI), or foreign transfer.",
+            "We produce a small sample batch for your approval before the full order begins.",
         },
         {
-          title: "4. Receipts & reports",
+          title: "4. Full production & delivery",
           description:
-            "Get your 80G tax receipt within 7 days, and yearly progress updates of the kids you helped.",
+            "Once approved, your bespoke order is produced and delivered with white-glove packaging.",
         },
       ],
     },
     portfolioImages: [
-      "https://images.unsplash.com/photo-1488998427799-e3362cec87c3?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=80",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
     ],
   },
 
   {
     id: "launch-scholarship",
-    title: "Launch Scholarship",
+    title: "Chocolate Masterclass",
     heroImage: serviceImages.launchScholarship,
-    heroTitle: "Start a Scholarship in a Loved One's Name",
+    heroTitle: "DUMUZI MASTERCLASSES — LEARN THE ART OF FINE CHOCOLATE",
     intro: {
-      heading: "Start a Memorial or Named Scholarship",
-      subheading:
-        "Start a scholarship in the name of a parent, teacher, or friend.",
+      heading: "Chocolate Masterclasses",
+      subheading: "Hands-on sessions with our master chocolatiers.",
       description: [
-        "A memorial scholarship is a beautiful way to remember someone special. It pays for the fees of a poor student who would otherwise have to leave school.",
-        "We set up the rules together with you (name, criteria, and budget) and send you a progress report of the student every year.",
+        "Our chocolate masterclasses are intimate, hands-on sessions in our artisan atelier. You will learn the science of tempering, the art of truffle-making, and the subtleties of single-origin tasting — guided by our experienced chocolatiers.",
+        "Classes are available for individuals, couples, corporate team-building, and private groups. Gift vouchers are available year-round.",
       ],
     },
     whyChooseUs: {
-      title: "What You Can Decide",
+      title: "What You Will Learn",
       items: [
         {
-          title: "Name & Dedication",
+          title: "Tempering from scratch",
           description:
-            "Choose the name for the scholarship, like 'The XYZ Memorial Scholarship'.",
+            "The science and technique of tempering chocolate to a perfect Form V crystal structure.",
         },
         {
-          title: "Who is eligible",
+          title: "Truffle making",
           description:
-            "Choose the region, age, gender, or study course for the students you want to help.",
+            "How to make a ganache, hand-roll truffles, and finish them like a professional chocolatier.",
         },
         {
-          title: "Duration & number of kids",
+          title: "Single-origin tasting",
           description:
-            "Decide how many years you want to run the scholarship and how many kids it covers.",
+            "A guided tasting of three single-origin dark chocolates — learning to identify terroir, processing, and roasting notes.",
         },
         {
-          title: "Report updates",
+          title: "Take-home box",
           description:
-            "We send yearly updates with photos and marks of the students you helped.",
+            "Every participant takes home a box of the chocolates they made during the session.",
         },
       ],
     },
     signatureServices: {
-      title: "Example Scholarship Plans",
+      title: "Masterclass Formats",
       items: [
         {
-          title: "1 Year, 1 Student",
+          title: "Introduction to Chocolate (2 hrs)",
           description:
-            "Rs 50,000 pays for one student's school or college fees for one year. Great for a personal tribute.",
+            "Perfect for beginners. Covers single-origin tasting, basic tempering, and truffle rolling.",
         },
         {
-          title: "3-Year Scholarship",
+          title: "Advanced Praline Class (4 hrs)",
           description:
-            "Sponsor a student for their full 3-year college degree.",
+            "For those with some experience. Learn shell moulding, ganache infusions, and praline production.",
         },
         {
-          title: "Yearly Rolling Scholarship",
+          title: "Corporate Team Event",
           description:
-            "A long-term promise to sponsor one or more students every year.",
+            "A private masterclass for teams of 8–20 people. Custom content available.",
         },
         {
-          title: "Specific Help",
+          title: "Private Couple's Session",
           description:
-            "Scholarships only for girls studying science, or kids from a particular poor district.",
+            "An intimate two-hour session for couples — a unique date night in our atelier.",
         },
       ],
     },
     process: {
-      title: "How to Launch",
+      title: "How to Book",
       description: "",
       steps: [
         {
-          title: "1. Share the story",
+          title: "1. Choose your session",
           description:
-            "Tell us about the person you want to honor and what they cared about.",
+            "Select a masterclass format and check availability on our website.",
         },
         {
-          title: "2. Set up the rules",
+          title: "2. Book & pay",
           description:
-            "We agree on the name, rules, and budget, and write down a simple agreement.",
+            "Secure your place with full payment. Gift vouchers can be emailed immediately.",
         },
         {
-          title: "3. Student selection",
+          title: "3. Attend",
           description:
-            "Aaghaz finds matching students from our checked list.",
+            "Arrive at our atelier. All equipment and ingredients are provided.",
         },
         {
-          title: "4. Payments & updates",
+          title: "4. Take your creations home",
           description:
-            "We pay the fees directly to the school, and send you progress reports every year.",
+            "Leave with a box of your handmade chocolates and a DUMUZI recipe booklet.",
         },
       ],
     },
     portfolioImages: [
-      "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1488998427799-e3362cec87c3?auto=format&fit=crop&w=900&q=80",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/dark_chocolates_hero.png",
     ],
   },
 ];

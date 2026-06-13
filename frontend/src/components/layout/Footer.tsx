@@ -1,183 +1,110 @@
-import {
-  Instagram,
-  Facebook,
-  Youtube,
-  Twitter,
-  Phone,
-  MapPin,
-  Mail,
-  Heart,
-} from "lucide-react";
-import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { motion } from 'framer-motion';
+import { Instagram, Facebook, Youtube, Twitter, Send } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-export const Footer = () => {
-  const containerVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, staggerChildren: 0.1 },
-    },
-  };
+const GOLD='#d4a373'; const GOLDL='#e5c199';
+const quickLinks   = ['Shop All','Collections','Best Sellers','About Us','Contact Us','Track Order'];
+const serviceLinks = ['FAQ','Shipping & Delivery','Returns & Refunds','Terms & Conditions','Privacy Policy'];
+const paymentIcons = ['VISA','MC','PayPal','Apple Pay','G Pay'];
+const socials      = [{ Icon:Facebook },{ Icon:Instagram },{ Icon:Youtube },{ Icon:Twitter }];
+const item = { hidden:{ opacity:0, y:20 }, visible:{ opacity:1, y:0, transition:{ duration:0.5 } } };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-  };
+export const Footer = () => (
+  <motion.footer
+    initial="hidden" whileInView="visible" viewport={{ once:true }}
+    variants={{ hidden:{ opacity:0 }, visible:{ opacity:1, transition:{ staggerChildren:0.1 } } }}
+    style={{ background:'linear-gradient(180deg,#0f0a07 0%,#0c0805 100%)', borderTop:`1px solid rgba(212,163,115,0.15)`, position:'relative' }}
+  >
+    {/* Top glow */}
+    <div className="absolute top-0 inset-x-0 h-px pointer-events-none"
+      style={{ background:`linear-gradient(90deg,transparent,rgba(212,163,115,0.35),transparent)` }} />
 
-  return (
-    <motion.footer
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      variants={containerVariants}
-      className="bg-wedding-slate border-t border-primary/30 py-12 md:py-16 px-4 md:px-6 text-white"
-    >
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-12 md:mb-16">
-          {/* Brand */}
-          <motion.div variants={itemVariants} className="col-span-1">
-            <img
-              src="/images/assets/aaghaz-logo.png"
-              alt="Aaghaz Foundation — Educate, Empower"
-              className="h-16 w-auto object-contain mb-5"
-            />
-            <p className="text-xs text-gray-300 leading-relaxed">
-              We started in 2004 in Lucknow with just Rs 2,000 to help one poor
-              student. Today, we still believe that education is the best way to
-              change lives. We help students pay for school and college through
-              verified scholarships.
-            </p>
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 mt-6 bg-primary hover:bg-primary-dark text-white px-5 py-2.5 text-xs uppercase tracking-widest font-bold rounded-tl-2xl rounded-br-2xl transition-colors"
-            >
-              <Heart size={14} fill="currentColor" />
-              Donate Now
-            </Link>
-          </motion.div>
+    <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-16 pb-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-14">
 
-          {/* Navigation */}
-          <motion.div variants={itemVariants} className="lg:ml-8">
-            <h5 className="text-[14px] uppercase tracking-widest font-bold mb-6 text-secondary">
-              Quick Links
-            </h5>
-            <ul className="text-xs space-y-3 uppercase tracking-widest text-gray-300">
-              <li><Link to="/" className="hover:text-secondary transition-colors">Home</Link></li>
-              <li><Link to="/about" className="hover:text-secondary transition-colors">About Us</Link></li>
-              <li><Link to="/services" className="hover:text-secondary transition-colors">What We Do</Link></li>
-              <li><Link to="/services/student-aid" className="hover:text-secondary transition-colors">Apply for Student Aid</Link></li>
-              <li><Link to="/services/become-volunteer" className="hover:text-secondary transition-colors">Become a Volunteer</Link></li>
-              <li><Link to="/services/launch-scholarship" className="hover:text-secondary transition-colors">Launch a Scholarship</Link></li>
-              <li><Link to="/blog" className="hover:text-secondary transition-colors">News &amp; Events</Link></li>
-              <li><Link to="/faq" className="hover:text-secondary transition-colors">FAQ</Link></li>
-            </ul>
-          </motion.div>
-
-          {/* Contact */}
-          <motion.div variants={itemVariants}>
-            <h5 className="text-[14px] uppercase tracking-widest font-bold mb-6 text-secondary">
-              Reach Us
-            </h5>
-            <ul className="text-xs space-y-3 text-gray-300">
-              <li className="flex items-start gap-3">
-                <MapPin size={16} className="shrink-0 mt-0.5 text-primary" />
-                <span className="leading-relaxed">
-                  <strong className="text-white">Registered Office</strong>
-                  <br />
-                  57 Ganesh Gunj, Lucknow,
-                  <br />
-                  Uttar Pradesh — 226018, India
-                </span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Phone size={14} className="text-primary" />
-                <a href="tel:+919876543210" className="hover:text-secondary transition-colors">
-                  +91 98765 43210
-                </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail size={14} className="text-primary" />
-                <a
-                  href="mailto:aaghaz.foundation@gmail.com"
-                  className="hover:text-secondary transition-colors break-all"
-                >
-                  aaghaz.foundation@gmail.com
-                </a>
-              </li>
-            </ul>
-
-            <h6 className="text-[12px] uppercase tracking-widest font-bold mt-8 mb-4 text-secondary">
-              Follow Us
-            </h6>
-            <div className="flex items-center gap-3">
-              <a href="https://www.facebook.com/aaghazfoundation" aria-label="Facebook"
-                className="w-9 h-9 inline-flex items-center justify-center rounded-full bg-white/5 border border-white/10 hover:bg-primary hover:border-primary transition-colors">
-                <Facebook size={15} />
+        {/* Brand */}
+        <motion.div variants={item}>
+          <Link to="/" className="flex flex-col mb-5">
+            <span className="font-display text-2xl tracking-wider" style={{ fontWeight:800, background:`linear-gradient(135deg,${GOLD},${GOLDL})`, WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>DUMUZI</span>
+            <span className="text-[9px] tracking-[0.35em] uppercase mt-0.5" style={{ color:'rgba(212,163,115,0.38)' }}>Luxury Chocolates</span>
+          </Link>
+          <p className="text-sm leading-relaxed mb-6" style={{ color:'rgba(200,191,179,0.7)', lineHeight:'1.75' }}>
+            Crafting moments of joy with our luxurious chocolates. Made with love, passion and the finest ingredients.
+          </p>
+          <div className="flex gap-3">
+            {socials.map(({ Icon }, i) => (
+              <a key={i} href="#" className="w-9 h-9 rounded-xl flex items-center justify-center transition-all duration-300"
+                style={{ background:'rgba(212,163,115,0.07)', border:`1px solid rgba(212,163,115,0.16)`, color:'rgba(212,163,115,0.55)' }}
+                onMouseEnter={e=>{ const el=e.currentTarget; el.style.background='rgba(212,163,115,0.16)'; el.style.borderColor='rgba(212,163,115,0.45)'; el.style.color=GOLDL; el.style.transform='translateY(-3px)'; el.style.boxShadow=`0 6px 20px rgba(212,163,115,0.2)`; }}
+                onMouseLeave={e=>{ const el=e.currentTarget; el.style.background='rgba(212,163,115,0.07)'; el.style.borderColor='rgba(212,163,115,0.16)'; el.style.color='rgba(212,163,115,0.55)'; el.style.transform='translateY(0)'; el.style.boxShadow='none'; }}>
+                <Icon size={15} />
               </a>
-              <a href="https://www.instagram.com/aaghazfoundation" aria-label="Instagram"
-                className="w-9 h-9 inline-flex items-center justify-center rounded-full bg-white/5 border border-white/10 hover:bg-primary hover:border-primary transition-colors">
-                <Instagram size={15} />
-              </a>
-              <a href="https://twitter.com/aaghazfoundation" aria-label="Twitter"
-                className="w-9 h-9 inline-flex items-center justify-center rounded-full bg-white/5 border border-white/10 hover:bg-primary hover:border-primary transition-colors">
-                <Twitter size={15} />
-              </a>
-              <a href="https://www.youtube.com/@aaghazfoundation" aria-label="YouTube"
-                className="w-9 h-9 inline-flex items-center justify-center rounded-full bg-white/5 border border-white/10 hover:bg-primary hover:border-primary transition-colors">
-                <Youtube size={15} />
-              </a>
-            </div>
-          </motion.div>
-
-          {/* Latest News */}
-          <motion.div variants={itemVariants}>
-            <h5 className="text-[14px] uppercase tracking-widest font-bold mb-6 text-secondary">
-              Latest News
-            </h5>
-            <ul className="space-y-4 text-xs text-gray-300">
-              <li className="border-b border-white/10 pb-3">
-                <Link to="/blog" className="hover:text-secondary transition-colors block leading-snug">
-                  Aaghaz Foundation Supports Orphans Living In A Graveyard
-                </Link>
-                <span className="text-[10px] tracking-widest uppercase text-gray-500 mt-1 block">
-                  February 15, 2018
-                </span>
-              </li>
-              <li className="border-b border-white/10 pb-3">
-                <Link to="/blog" className="hover:text-secondary transition-colors block leading-snug">
-                  Rs 2 Lakh Scholarship in Pune Techie&apos;s Name
-                </Link>
-                <span className="text-[10px] tracking-widest uppercase text-gray-500 mt-1 block">
-                  February 15, 2018
-                </span>
-              </li>
-              <li>
-                <Link to="/blog" className="hover:text-secondary transition-colors block leading-snug">
-                  Aaghaz Opens A School For The Poor
-                </Link>
-                <span className="text-[10px] tracking-widest uppercase text-gray-500 mt-1 block">
-                  February 20, 2018
-                </span>
-              </li>
-            </ul>
-          </motion.div>
-        </div>
-
-        {/* Bottom Bar */}
-        <motion.div
-          variants={itemVariants}
-          className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-widest text-gray-400"
-        >
-          <p>© {new Date().getFullYear()} Aaghaz Foundation. All Rights Reserved.</p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link to="/privacy-policy" className="hover:text-secondary transition-colors">Privacy Policy</Link>
-            <Link to="/terms-of-service" className="hover:text-secondary transition-colors">Terms of Service</Link>
-            <Link to="/contact" className="hover:text-secondary transition-colors">Contact Us</Link>
+            ))}
           </div>
         </motion.div>
+
+        {/* Quick Links */}
+        <motion.div variants={item}>
+          <h4 className="text-[10px] tracking-[0.28em] uppercase mb-5 font-bold" style={{ color:GOLD }}>Quick Links</h4>
+          <ul className="flex flex-col gap-3">
+            {quickLinks.map(link => (
+              <li key={link}>
+                <Link to="/" className="text-sm transition-all duration-200 inline-block" style={{ color:'rgba(200,191,179,0.6)' }}
+                  onMouseEnter={e=>{ e.currentTarget.style.color=GOLDL; e.currentTarget.style.paddingLeft='6px'; }}
+                  onMouseLeave={e=>{ e.currentTarget.style.color='rgba(200,191,179,0.6)'; e.currentTarget.style.paddingLeft='0'; }}>{link}</Link>
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+
+        {/* Customer Service */}
+        <motion.div variants={item}>
+          <h4 className="text-[10px] tracking-[0.28em] uppercase mb-5 font-bold" style={{ color:GOLD }}>Customer Service</h4>
+          <ul className="flex flex-col gap-3">
+            {serviceLinks.map(link => (
+              <li key={link}>
+                <Link to="/" className="text-sm transition-all duration-200 inline-block" style={{ color:'rgba(200,191,179,0.6)' }}
+                  onMouseEnter={e=>{ e.currentTarget.style.color=GOLDL; e.currentTarget.style.paddingLeft='6px'; }}
+                  onMouseLeave={e=>{ e.currentTarget.style.color='rgba(200,191,179,0.6)'; e.currentTarget.style.paddingLeft='0'; }}>{link}</Link>
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+
+        {/* Newsletter */}
+        <motion.div variants={item}>
+          <h4 className="text-[10px] tracking-[0.28em] uppercase mb-5 font-bold" style={{ color:GOLD }}>Newsletter</h4>
+          <p className="text-sm mb-5 leading-relaxed" style={{ color:'rgba(200,191,179,0.65)' }}>
+            Subscribe for exclusive offers and early access to new collections.
+          </p>
+          <div className="flex rounded-xl overflow-hidden" style={{ border:`1px solid rgba(212,163,115,0.25)` }}>
+            <input type="email" placeholder="Your email address"
+              className="flex-1 bg-transparent px-4 py-3 text-xs outline-none"
+              style={{ color:'#f9f6f0', background:'rgba(212,163,115,0.04)' }} />
+            <button className="px-4 flex items-center justify-center transition-all duration-300 flex-shrink-0"
+              style={{ background:`linear-gradient(135deg,${GOLD},${GOLDL})`, border:'none', cursor:'pointer' }}
+              onMouseEnter={e=>{ e.currentTarget.style.boxShadow=`0 0 24px rgba(212,163,115,0.55)`; }}
+              onMouseLeave={e=>{ e.currentTarget.style.boxShadow='none'; }}>
+              <Send size={14} style={{ color:'#0f0a07' }} />
+            </button>
+          </div>
+          <p className="text-[10px] mt-3" style={{ color:'rgba(200,191,179,0.35)' }}>No spam. Unsubscribe at any time.</p>
+        </motion.div>
       </div>
-    </motion.footer>
-  );
-};
+
+      {/* Divider */}
+      <div style={{ height:'1px', background:`linear-gradient(90deg,transparent,rgba(212,163,115,0.3),transparent)`, marginBottom:'1.75rem' }} />
+
+      {/* Bottom */}
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-5">
+        <p className="text-xs" style={{ color:'rgba(200,191,179,0.35)' }}>© 2024 DUMUZI Luxury Chocolates. All Rights Reserved.</p>
+        <div className="flex items-center gap-2 flex-wrap justify-center">
+          {paymentIcons.map(icon => (
+            <span key={icon} className="text-[9px] tracking-widest px-2.5 py-1 rounded-md font-bold"
+              style={{ background:'rgba(212,163,115,0.05)', border:`1px solid rgba(212,163,115,0.14)`, color:'rgba(200,191,179,0.45)' }}>{icon}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </motion.footer>
+);

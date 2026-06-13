@@ -61,7 +61,7 @@ const MemorialScholarshipHighlight = () => {
             <div className="flex items-center justify-center gap-3 py-3 px-4 bg-gradient-to-r from-primary via-primary-dark to-primary text-white">
               <Sparkles size={14} className="text-secondary" />
               <span className="text-[10px] sm:text-xs uppercase tracking-[0.4em] font-bold">
-                Aaghaz Foundation Memorial Scholarship Program
+                DUMUZI Luxury Chocolates — Bespoke Commission Program
               </span>
               <Sparkles size={14} className="text-secondary" />
             </div>
@@ -127,7 +127,7 @@ const MemorialScholarshipHighlight = () => {
                   </h2>
                   <div className="space-y-4 text-text-muted leading-relaxed text-sm md:text-base">
                     <p>
-                      Aaghaz Foundation runs{" "}
+                      DUMUZI runs{" "}
                       <strong className="text-accent">
                         more than 80 memorial scholarships
                       </strong>{" "}
@@ -235,7 +235,7 @@ const ServiceSpecificHighlight = ({ service }: { service: ServiceData }) => {
       case "launch-scholarship":
         return "Honor loved ones by launching memorial scholarships. We co-design criteria and provide annual progress reports.";
       default:
-        return service.intro.description[0] || "Learn more about this Aaghaz Foundation program.";
+        return service.intro.description[0] || "Learn more about this DUMUZI program.";
     }
   };
 

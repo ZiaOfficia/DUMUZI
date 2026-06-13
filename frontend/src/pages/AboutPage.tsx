@@ -2,10 +2,8 @@ import { useState, useEffect } from "react";
 import { SEO } from "../components/common/SEO";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { ChevronRight } from "lucide-react";
-// import { FeaturedInStrip } from "../components/sections/FeaturedInStrip";
 import { ClientsStrip } from "../components/sections/ClientsStrip";
 import { ContactSection } from "../components/sections/ContactSection";
-// import { AboutSection } from "../components/sections/AboutSection";
 import { aboutContent } from "../data/content";
 import NewsletterSection from "../components/sections/NewsletterSection";
 import { TestimonialsSection } from "../components/sections/TestimonialsSection";
@@ -31,10 +29,10 @@ const containerVariants: Variants = {
 };
 
 const heroImages = [
-  "https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=1920&q=80",
-  "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1920&q=80",
-  "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1920&q=80",
-  "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1920&q=80",
+  "/images/products/DUMUZI.jpeg",
+  "/images/products/LF-D25T.jpeg",
+  "/images/products/LF-H18D.jpeg",
+  "/images/products/LF-BN9T.jpeg",
 ];
 
 export const AboutPage = () => {
@@ -42,29 +40,29 @@ export const AboutPage = () => {
 
   const faqs = [
     {
-      question: "When was Aaghaz Foundation started?",
+      question: "When was DUMUZI founded?",
       answer:
-        "Aaghaz Foundation was started in 2004 by journalist Mazhar Farooqui and his friends in Lucknow. They started with just Rs 2,000 to help one poor student. We have been helping kids study ever since.",
+        "DUMUZI Luxury Chocolates was founded in 2009 by master chocolatier Antoine Laurent and his partner Elise Moreau in Paris. What began as a small atelier producing handcrafted truffles has grown into an internationally recognised luxury chocolate brand shipping to over 30 countries.",
     },
     {
-      question: "Where is Aaghaz based and where do you work?",
+      question: "Where do you source your cocoa beans?",
       answer:
-        "Our main office is in Lucknow, Uttar Pradesh. We work mostly in Uttar Pradesh, but we help poor students all over India. We also have volunteers in Delhi NCR, Mumbai, Pune, Bihar, and other big cities.",
+        "We source single-origin organic cocoa beans directly from farming cooperatives in Madagascar, Ecuador, and Peru. We pay above fair-trade prices to ensure sustainable farming practices and to build long-term relationships with the communities we work with.",
     },
     {
-      question: "How do you check if a student really needs help?",
+      question: "What makes DUMUZI different from other luxury chocolate brands?",
       answer:
-        "At least two volunteers visit the student's home and school in person. They check the family's income and the child's school marks to make sure they really need help. We only support verified students.",
+        "We never mass-produce. Every truffle, bar, and praline is crafted to order by our team of master chocolatiers in our Paris atelier. We use only organic, single-origin cocoa and never add artificial preservatives, palm oil, or artificial flavourings.",
     },
     {
-      question: "Do I get a tax benefit if I donate to Aaghaz?",
+      question: "Do you offer international shipping?",
       answer:
-        "Yes. Aaghaz Foundation is a registered charity. Donors in India get tax deduction benefits under Section 80G of the Income Tax Act. We send donation receipts within 7 days.",
+        "Yes. We ship to over 30 countries using express temperature-controlled couriers. All orders are packed in insulated boxes with food-grade gel packs to ensure your chocolate arrives in perfect condition.",
     },
     {
-      question: "How can I help Aaghaz other than donating money?",
+      question: "Can I book a masterclass at your atelier?",
       answer:
-        "You can join us as a volunteer. You can help by visiting student homes for checking details, or help online with computer work, writing stories, or teaching students. If you have two hours a week, visit our Become a Volunteer page.",
+        "Absolutely. We offer hands-on masterclasses for individuals, couples, corporate team-building groups, and private events. Sessions are led by Antoine Laurent or one of our senior chocolatiers. Booking is available on our website, and gift vouchers are available year-round.",
     },
   ];
 
@@ -100,10 +98,10 @@ export const AboutPage = () => {
   };
 
   return (
-    <div className="bg-stone-50 min-h-screen">
+    <div style={{ background: 'var(--choc-deep)' }} className="min-h-screen">
       <SEO
-        title="About Us — Aaghaz Foundation"
-        description="Aaghaz Foundation is a non-profit founded in 2004 in Lucknow. We support meritorious students from economically weak backgrounds across India through scholarships, financial aid, mentorship and learning centres."
+        title="About Us — DUMUZI Luxury Chocolates"
+        description="DUMUZI Luxury Chocolates was founded in 2009 by master chocolatier Antoine Laurent. We craft single-origin handmade chocolates using organic cocoa from Madagascar, Ecuador, and Peru."
       />
       {/* Hero Section */}
       <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
@@ -112,7 +110,7 @@ export const AboutPage = () => {
             <motion.img
               key={currentHeroSlide}
               src={heroImages[currentHeroSlide]}
-              alt="About Hero"
+              alt="DUMUZI Atelier"
               initial={{ opacity: 0, scale: 1.1 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0 }}
@@ -120,7 +118,7 @@ export const AboutPage = () => {
               className="w-full h-full object-cover"
             />
           </AnimatePresence>
-          <div className="absolute inset-0 bg-black/30" />
+          <div className="absolute inset-0 bg-black/55" />
         </div>
         <div className="relative z-10 text-center text-white px-6">
           <motion.div
@@ -129,7 +127,7 @@ export const AboutPage = () => {
             transition={{ duration: 1 }}
             className="inline-block border border-white/40 text-xs tracking-[0.3em] uppercase px-4 py-2 mb-6 backdrop-blur-md bg-white/10"
           >
-            Since 2004 · Lucknow
+            Founded 2009 · Paris
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 50 }}
@@ -145,20 +143,20 @@ export const AboutPage = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl md:text-2xl font-light tracking-wide max-w-3xl mx-auto opacity-95"
           >
-            Helping children study to build a better future.
+            Crafting moments of pure luxury since 2009.
           </motion.p>
         </div>
       </section>
 
-      {/* Section 1: About Aaghaz Foundation */}
+      {/* Section 1: About DUMUZI */}
       <section id="about" className="py-32 px-6 max-w-7xl mx-auto relative">
         <div className="flex flex-col md:flex-row items-center relative min-h-150">
-          {/* Mobile Image Fallback - Shown First on Mobile */}
+          {/* Mobile Image */}
           <div className="w-full md:hidden mb-8">
             <img loading="lazy" decoding="async"
-              alt="Children studying — Aaghaz Foundation"
+              alt="DUMUZI chocolatiers at work"
               className="w-full h-100 object-cover"
-              src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1200&q=80"
+              src="/images/products/LF-D25B.jpeg"
             />
           </div>
 
@@ -170,21 +168,24 @@ export const AboutPage = () => {
             viewport={{ once: true }}
             variants={containerVariants}
           >
-            <div className="bg-white p-8 md:p-16 shadow-xl border-l-4 border-primary">
+            <div
+              className="glass-card p-8 md:p-16"
+              style={{ borderLeft: '4px solid var(--gold)' }}
+            >
               <motion.span
                 variants={itemVariants}
-                className="text-primary text-xs font-bold uppercase tracking-[0.3em] mb-4 block"
+                className="text-gold text-xs font-bold uppercase tracking-[0.3em] mb-4 block"
               >
-                Founded 2004 · Lucknow
+                Founded 2009 · Paris
               </motion.span>
               <motion.h2
                 variants={itemVariants}
-                className="text-4xl md:text-6xl font-display text-accent mb-8 leading-tight"
+                className="text-4xl md:text-6xl font-display text-cream mb-8 leading-tight"
               >
                 {aboutContent.heading}
               </motion.h2>
 
-              <div className="space-y-6 text-gray-600 font-light text-lg leading-relaxed">
+              <div className="space-y-6 text-muted font-light text-lg leading-relaxed">
                 {aboutContent.text.map((paragraph, index) => (
                   <motion.p key={index} variants={itemVariants}>
                     {paragraph}
@@ -196,12 +197,12 @@ export const AboutPage = () => {
                 variants={itemVariants}
                 className="mt-12 flex items-center gap-4"
               >
-                <div className="h-px w-12 bg-secondary" />
+                <div className="h-px w-12" style={{ background: 'var(--gold)' }} />
                 <div>
-                  <p className="font-display text-2xl text-accent">
+                  <p className="font-display text-2xl text-cream">
                     {aboutContent.author.split("—")[0].trim()}
                   </p>
-                  <p className="text-xs uppercase tracking-widest text-gray-500">
+                  <p className="text-xs uppercase tracking-widest text-muted">
                     {aboutContent.author.split("—")[1]?.trim() || "Founder"}
                   </p>
                 </div>
@@ -209,7 +210,7 @@ export const AboutPage = () => {
             </div>
           </motion.div>
 
-          {/* Abstract Image Composition - Desktop Only */}
+          {/* Desktop Image */}
           <motion.div
             className="w-full md:w-1/2 absolute top-0 right-0 h-full hidden md:block z-0"
             initial={{ opacity: 0, x: 50 }}
@@ -217,21 +218,19 @@ export const AboutPage = () => {
             viewport={{ once: true }}
             transition={{ duration: 1 }}
           >
-            {/* Removed the offset background box to prevent overflow */}
-            <div className="w-full h-full bg-primary/10 absolute inset-0 -z-10" />
+            <div className="w-full h-full absolute inset-0 -z-10" style={{ background: 'rgba(212,163,115,0.08)' }} />
             <img loading="lazy" decoding="async"
-              alt="Children studying — Aaghaz Foundation"
+              alt="DUMUZI chocolatiers at work"
               className="w-full h-full object-cover opacity-95"
-              src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1200&q=80"
+              src="/images/products/LF-D25B.jpeg"
             />
           </motion.div>
         </div>
       </section>
 
-      {/* Section 2: Consultation - Overlapping Layout */}
-      <section className="py-32 px-6 bg-stone-100 text-stone-900 overflow-visible">
+      {/* Section 2: Our Craft */}
+      <section className="py-32 px-6 overflow-visible" style={{ background: 'var(--choc-dark)' }}>
         <div className="max-w-7xl mx-auto relative lg:h-[800px] flex flex-col lg:flex-row items-center">
-          {/* Image Container - takes up 60% approx */}
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -240,36 +239,34 @@ export const AboutPage = () => {
             className="w-full lg:w-2/3 h-[500px] lg:h-full relative z-0"
           >
             <img loading="lazy" decoding="async"
-              src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=1600&q=80"
-              alt="Volunteers in conversation — Aaghaz Foundation"
+              src="/images/products/LF-D15T.jpeg"
+              alt="Master chocolatier at work — DUMUZI"
               className="w-full h-full object-cover shadow-2xl"
             />
           </motion.div>
 
-          {/* Text Container - Overlapping */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeInLeft}
-            className="relative lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 bg-white p-12 lg:p-20 max-w-2xl shadow-2xl z-10 lg:-ml-24 mt-[-80px] lg:mt-0"
+            className="glass-card relative lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 p-12 lg:p-20 max-w-2xl z-10 lg:-ml-24 mt-[-80px] lg:mt-0"
           >
-            <h4 className="text-xs uppercase tracking-[0.3em] text-primary mb-4 font-bold">
-              Volunteer-Driven · Verified
+            <h4 className="text-xs uppercase tracking-[0.3em] text-gold mb-4 font-bold">
+              Hand-Tempered · Single-Origin
             </h4>
-            <h2 className="text-4xl md:text-5xl font-display text-accent mb-8">
-              How we work — and why it works
+            <h2 className="text-4xl md:text-5xl font-display text-cream mb-8">
+              The DUMUZI standard of craft
             </h2>
-            <p className="text-gray-600 text-lg leading-relaxed mb-8 font-light">
-              We do not give help just by looking at forms. When someone recommends
-              a student who needs help with fees, at least two volunteers visit
-              their home and school in person. We only help the student when both
-              volunteers confirm they really need it. This personal check is the key
-              to our work.
+            <p className="text-muted text-lg leading-relaxed mb-8 font-light">
+              Every piece we make passes through the same four-step process: direct sourcing,
+              slow roasting, hand tempering, and meticulous finishing. We never rush any stage,
+              because great chocolate cannot be hurried.
             </p>
             <a
               href="/contact"
-              className="group inline-flex items-center gap-2 text-accent border-b border-accent pb-1 text-xs font-bold uppercase tracking-widest hover:text-primary hover:border-primary transition-colors"
+              className="group inline-flex items-center gap-2 border-b pb-1 text-xs font-bold uppercase tracking-widest transition-colors"
+              style={{ color: 'var(--gold)', borderBottomColor: 'var(--gold)' }}
             >
               Talk to our team{" "}
               <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -278,20 +275,20 @@ export const AboutPage = () => {
         </div>
       </section>
 
-      {/* Section 3: People behind Aaghaz */}
+      {/* Section 3: Our Chocolatiers */}
       <section className="py-32 px-6 max-w-7xl mx-auto">
         <div className="text-center mb-24">
-          <span className="text-primary text-xs font-bold uppercase tracking-[0.3em] mb-3 block">
+          <span className="text-gold text-xs font-bold uppercase tracking-[0.3em] mb-3 block">
             The People
           </span>
-          <h2 className="text-5xl md:text-7xl font-display text-accent mb-6">
-            Behind every story, a team
+          <h2 className="text-5xl md:text-7xl font-display text-cream mb-6">
+            Behind every chocolate, a craftsperson
           </h2>
-          <div className="h-1 w-24 bg-secondary mx-auto"></div>
+          <div className="h-1 w-24 mx-auto" style={{ background: 'linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold))' }} />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
-          {/* Founder */}
+          {/* Head Chocolatier */}
           <div className="flex flex-col">
             <motion.div
               initial="hidden"
@@ -301,28 +298,25 @@ export const AboutPage = () => {
               className="mb-8 relative"
             >
               <img loading="lazy" decoding="async"
-                src="https://images.unsplash.com/photo-1559548331-f9cb98280344?auto=format&fit=crop&w=900&q=80"
-                alt="Mazhar Farooqui — Founder"
+                src="/images/products/LF-H12T.jpeg"
+                alt="Antoine Laurent — Founder & Master Chocolatier"
                 className="w-full h-[480px] object-cover transition-all duration-1000 ease-out"
               />
             </motion.div>
             <div className="text-left px-4">
-              <h3 className="text-4xl font-display text-accent mb-2">
-                Mazhar Farooqui
+              <h3 className="text-4xl font-display text-cream mb-2">
+                Antoine Laurent
               </h3>
-              <p className="text-primary font-serif italic text-lg mb-6">
-                Founder &amp; Trustee
+              <p className="text-gold font-serif italic text-lg mb-6">
+                Founder &amp; Master Chocolatier
               </p>
-              <p className="text-gray-600 font-light leading-relaxed">
-                Mazhar is a senior journalist who started Aaghaz in 2004 with just
-                Rs 2,000 to help one poor student. Even today, he personally reads
-                the home visit reports and approves the help. He believes Aaghaz
-                has run for 20 years because of our kind donors, teachers, and volunteers.
+              <p className="text-muted font-light leading-relaxed">
+                Antoine trained at the École Nationale Supérieure de la Pâtisserie before spending a decade refining his craft in luxury hotels across Europe. He founded DUMUZI in 2009 with the conviction that single-origin chocolate deserved the same reverence as fine wine. He still personally approves every new recipe and oversees the tempering process.
               </p>
             </div>
           </div>
 
-          {/* Volunteer Lead */}
+          {/* Creative Director */}
           <div className="flex flex-col md:mt-32">
             <motion.div
               initial="hidden"
@@ -332,50 +326,47 @@ export const AboutPage = () => {
               className="mb-8 relative"
             >
               <img loading="lazy" decoding="async"
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=900&q=80"
-                alt="Volunteer Coordinator — Aaghaz Foundation"
+                src="/images/products/LF-H18B.jpeg"
+                alt="Elise Moreau — Creative Director"
                 className="w-full h-[480px] object-cover transition-all duration-1000 ease-out"
               />
             </motion.div>
             <div className="text-left px-4">
-              <h3 className="text-4xl font-display text-accent mb-2">
-                Our Volunteer Network
+              <h3 className="text-4xl font-display text-cream mb-2">
+                Elise Moreau
               </h3>
-              <p className="text-primary font-serif italic text-lg mb-6">
-                300+ Volunteers across India
+              <p className="text-gold font-serif italic text-lg mb-6">
+                Co-Founder &amp; Creative Director
               </p>
-              <p className="text-gray-600 font-light leading-relaxed">
-                Aaghaz runs entirely because of volunteers. Our volunteers visit homes,
-                teach students, and manage our study center daily. Many of our old students
-                now work as volunteers to teach others. If you want to help, fill the form
-                on our Become a Volunteer page.
+              <p className="text-muted font-light leading-relaxed">
+                Elise is responsible for the DUMUZI aesthetic — from the signature dark packaging and gold-foil embossing to the seasonal collection themes that have become the brand's visual identity. She leads all bespoke and corporate gifting design projects, and works directly with clients on wedding favour and event chocolate commissions.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Testimonial Slider */}
+      {/* Testimonials */}
       <TestimonialsSection />
 
-      {/* FAQ Section - Clean Minimal */}
-      <section className="py-32 px-6 bg-white text-stone-800">
+      {/* FAQ Section */}
+      <section className="py-32 px-6" style={{ background: 'var(--choc-dark)' }}>
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-6xl font-display mb-6 text-accent">
+            <h2 className="text-4xl md:text-6xl font-display mb-6 text-cream">
               Questions?
             </h2>
-            <p className="text-gray-600 font-light text-lg">
-              Find answers to common questions about Aaghaz Foundation.
+            <p className="text-muted font-light text-lg">
+              Common questions about DUMUZI Luxury Chocolates.
             </p>
           </div>
 
-          <div className="divide-y divide-stone-200">
+          <div className="divide-y divide-[rgba(212,163,115,0.2)]">
             {faqs.map((faq, index) => (
               <div key={index} className="py-8">
                 <button
                   onClick={() => toggleAccordion(index)}
-                  className="w-full flex justify-between items-center text-left font-display text-xl md:text-2xl hover:text-[#8ca18e] transition-colors"
+                  className="w-full flex justify-between items-center text-left font-display text-xl md:text-2xl text-cream hover:text-[#d4a373] transition-colors"
                 >
                   <span className="pr-8">{faq.question}</span>
                   <span
@@ -398,7 +389,7 @@ export const AboutPage = () => {
                       exit={{ height: 0, opacity: 0 }}
                       className="overflow-hidden"
                     >
-                      <p className="pt-6 font-light text-gray-600 text-lg leading-relaxed max-w-2xl">
+                      <p className="pt-6 font-light text-muted text-lg leading-relaxed max-w-2xl">
                         {faq.answer}
                       </p>
                     </motion.div>

@@ -1,81 +1,36 @@
-import {
-  Facebook,
-  Instagram,
-  MapPin,
-  Phone,
-  Twitter,
-  Youtube,
-  Mail,
-  Heart,
-} from "lucide-react";
-import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+
+const messages = [
+  'FREE DELIVERY on orders above ₹500',
+  'Handcrafted with the Finest Premium Cocoa',
+  'New Collection — DUMUZI Gold Series Now Available',
+];
 
 export const TopBar = () => {
+  const [idx, setIdx] = useState(0);
+  const prev = () => setIdx(i => (i - 1 + messages.length) % messages.length);
+  const next = () => setIdx(i => (i + 1) % messages.length);
   return (
-    <motion.div
-      initial={{ opacity: 0, y: -10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.2 }}
-      className="bg-accent text-white py-2 px-6"
-    >
-      <div className="max-w-7xl mx-auto flex justify-between items-center text-[11px] tracking-widest uppercase">
-        <div className="flex items-center space-x-5 text-gray-200">
-          <a
-            href="tel:+919876543210"
-            className="flex items-center gap-1.5 hover:text-secondary transition-colors"
-          >
-            <Phone size={14} /> +91 98765 43210
-          </a>
-          <a
-            href="mailto:aaghaz.foundation@gmail.com"
-            className="hidden md:flex items-center gap-1.5 hover:text-secondary transition-colors"
-          >
-            <Mail size={14} /> aaghaz.foundation@gmail.com
-          </a>
-          <div className="hidden lg:flex items-center gap-1.5 text-gray-300">
-            <MapPin size={14} />
-            <span>57 Ganesh Gunj, Lucknow</span>
-          </div>
-        </div>
-        <div className="flex items-center space-x-4 text-gray-200">
-          <Link
-            to="/contact"
-            className="hidden md:inline-flex items-center gap-1 text-secondary hover:text-white transition-colors font-bold"
-          >
-            <Heart size={12} fill="currentColor" />
-            Donate Now
-          </Link>
-          <a
-            href="https://www.instagram.com/aaghazfoundation"
-            aria-label="Instagram"
-            className="hover:text-secondary transition-colors"
-          >
-            <Instagram size={15} />
-          </a>
-          <a
-            href="https://www.facebook.com/aaghazfoundation"
-            aria-label="Facebook"
-            className="hover:text-secondary transition-colors"
-          >
-            <Facebook size={15} />
-          </a>
-          <a
-            href="https://twitter.com/aaghazfoundation"
-            aria-label="Twitter"
-            className="hover:text-secondary transition-colors"
-          >
-            <Twitter size={15} />
-          </a>
-          <a
-            href="https://www.youtube.com/@aaghazfoundation"
-            aria-label="YouTube"
-            className="hover:text-secondary transition-colors"
-          >
-            <Youtube size={15} />
-          </a>
-        </div>
-      </div>
+    <motion.div initial={{ opacity:0, y:-10 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.5 }}
+      className="w-full flex items-center justify-between px-4"
+      style={{ background:'linear-gradient(90deg,#1a120d 0%,#251208 50%,#1a120d 100%)', borderBottom:'1px solid rgba(212,163,115,0.18)', minHeight:36 }}>
+      <button onClick={prev} style={{ color:'rgba(212,163,115,0.5)', background:'none', border:'none', cursor:'pointer', padding:'0 4px', transition:'color 0.2s' }}
+        onMouseEnter={e=>{ e.currentTarget.style.color='#d4a373'; }} onMouseLeave={e=>{ e.currentTarget.style.color='rgba(212,163,115,0.5)'; }}>
+        <ChevronLeft size={14} />
+      </button>
+      <motion.p key={idx} initial={{ opacity:0, y:4 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.3 }}
+        className="text-[10px] sm:text-[11px] tracking-[0.12em] sm:tracking-[0.24em] uppercase font-semibold text-center flex-1"
+        style={{ color:'#e5c199' }}>
+        <span style={{ color:'#d4a373', marginRight:8 }}>✦</span>
+        {messages[idx]}
+        <span style={{ color:'#d4a373', marginLeft:8 }}>✦</span>
+      </motion.p>
+      <button onClick={next} style={{ color:'rgba(212,163,115,0.5)', background:'none', border:'none', cursor:'pointer', padding:'0 4px', transition:'color 0.2s' }}
+        onMouseEnter={e=>{ e.currentTarget.style.color='#d4a373'; }} onMouseLeave={e=>{ e.currentTarget.style.color='rgba(212,163,115,0.5)'; }}>
+        <ChevronRight size={14} />
+      </button>
     </motion.div>
   );
 };

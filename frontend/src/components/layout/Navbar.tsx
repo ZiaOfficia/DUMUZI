@@ -1,232 +1,135 @@
-import { useState } from "react";
-import { Menu, X, ChevronDown, Heart } from "lucide-react";
-import clsx from "clsx";
-import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
-import { Link, useLocation } from "react-router-dom";
-import { servicesData } from "../../data/servicesData";
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Search, User, ShoppingBag, Menu, X } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
+import { useCart } from '../../context/CartContext';
+
+const GOLD='#d4a373'; const GOLDL='#e5c199';
+
+const navLinks = [
+  { name:'Home',             path:'/' },
+  { name:'Collections',      path:'/collections' },
+  { name:'Best Chocolate',   path:'/best-chocolate' },
+  { name:'About Us',         path:'/about' },
+  { name:'Blog',             path:'/blog' },
+  { name:'Contact',          path:'/contact' },
+];
 
 export const Navbar = () => {
-  const { scrollY } = useScroll();
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isProgramsOpen, setIsProgramsOpen] = useState(false);
-  const location = useLocation();
+  const { totalItems } = useCart();
+  const { pathname }   = useLocation();
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  // Smooth scroll interpolation
-  const backgroundColor = useTransform(scrollY, [0, 100], ["rgba(15, 15, 15, 1)", "rgba(15, 15, 15, 0.8)"]);
-  const backdropFilter = useTransform(scrollY, [0, 100], ["blur(0px)", "blur(16px)"]);
-  const paddingTop = useTransform(scrollY, [0, 100], ["1rem", "0.75rem"]);
-  const paddingBottom = useTransform(scrollY, [0, 100], ["1rem", "0.75rem"]);
-  const borderBottomColor = useTransform(scrollY, [0, 100], ["rgba(255, 255, 255, 0)", "rgba(255, 255, 255, 0.1)"]);
-
-  const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "What We Do", path: "/services", hasDropdown: true },
-    { name: "Gallery", path: "/gallery" },
-    { name: "Success Stories", path: "/success-stories" },
-    { name: "News", path: "/blog" },
-    { name: "FAQ", path: "/faq" },
-  ];
+  useEffect(() => {
+    const fn = () => setScrolled(window.scrollY > 40);
+    window.addEventListener('scroll', fn);
+    return () => window.removeEventListener('scroll', fn);
+  }, []);
 
   return (
     <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
+      initial={{ y:-80, opacity:0 }} animate={{ y:0, opacity:1 }}
+      transition={{ duration:0.7, ease:[0.25,0.1,0.25,1] }}
       style={{
-        backgroundColor,
-        backdropFilter,
-        WebkitBackdropFilter: backdropFilter, // For Safari support
-        paddingTop,
-        paddingBottom,
-        borderBottomColor,
-        borderBottomWidth: "1px",
+        background: scrolled ? 'rgba(15,10,7,0.97)' : 'rgba(15,10,7,0.78)',
+        backdropFilter:'blur(20px)', WebkitBackdropFilter:'blur(20px)',
+        borderBottom: scrolled ? `1px solid rgba(212,163,115,0.25)` : `1px solid rgba(212,163,115,0.1)`,
+        boxShadow: scrolled ? '0 4px 32px rgba(0,0,0,0.5)' : 'none',
+        transition:'background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease',
       }}
-      className="sticky top-0 z-50 shadow-lg"
+      className="sticky top-0 z-50 w-full"
     >
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-16 lg:h-[68px]">
+
         {/* Logo */}
-        <motion.div
-          className="flex items-center"
-          whileHover={{ scale: 1.03 }}
-          transition={{ duration: 0.2 }}
-        >
-          <Link to="/" className="flex items-center">
-            <img
-              src="/images/assets/aaghaz-logo.png"
-              alt="Aaghaz Foundation — Educate, Empower"
-              className="h-12 md:h-14 w-auto object-contain"
-            />
-          </Link>
-        </motion.div>
+        <Link to="/" className="flex flex-col leading-none flex-shrink-0">
+          <span className="font-display text-xl lg:text-[22px] tracking-wider"
+            style={{ fontWeight:800, background:`linear-gradient(135deg,${GOLD},${GOLDL})`, WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>
+            DUMUZI
+          </span>
+          <span className="text-[8px] tracking-[0.4em] uppercase" style={{ color:'rgba(212,163,115,0.45)' }}>Luxury Chocolates</span>
+        </Link>
 
-        {/* Desktop Menu */}
-        <div className="hidden lg:flex items-center space-x-8 text-xs font-bold uppercase tracking-widest text-white/85">
-          {navLinks.map((link) => (
-            <div
-              key={link.name}
-              className="relative group"
-              onMouseEnter={() => link.hasDropdown && setIsProgramsOpen(true)}
-              onMouseLeave={() => link.hasDropdown && setIsProgramsOpen(false)}
-            >
-              <Link
-                to={link.path}
-                className={clsx(
-                  "hover:text-secondary transition-colors duration-300 relative group flex items-center gap-1",
-                  location.pathname === link.path && "text-secondary",
+        {/* Desktop Nav */}
+        <ul className="hidden lg:flex items-center gap-7">
+          {navLinks.map(({ name, path }) => {
+            const active = pathname === path;
+            return (
+              <li key={name} className="relative">
+                <Link to={path} className="text-[13px] tracking-wide transition-colors duration-200"
+                  style={{ color:active ? GOLD : 'rgba(212,163,115,0.6)', fontWeight:active ? 600 : 400 }}
+                  onMouseEnter={e=>{ if(!active) e.currentTarget.style.color='#f9f6f0'; }}
+                  onMouseLeave={e=>{ if(!active) e.currentTarget.style.color='rgba(212,163,115,0.6)'; }}>
+                  {name}
+                </Link>
+                {active && (
+                  <motion.div layoutId="activeNav"
+                    className="absolute -bottom-[22px] left-0 right-0 h-[2px] rounded-full"
+                    style={{ background:`linear-gradient(90deg,transparent,${GOLD},transparent)` }}
+                    transition={{ type:'spring', stiffness:380, damping:30 }}
+                  />
                 )}
-              >
-                {link.name}
-                {link.hasDropdown && <ChevronDown size={14} />}
-                <motion.span
-                  className="absolute -bottom-1 left-0 h-0.5 bg-secondary"
-                  initial={{ width: "0%" }}
-                  whileHover={{ width: "100%" }}
-                  transition={{ duration: 0.3 }}
-                />
-              </Link>
+              </li>
+            );
+          })}
+        </ul>
 
-              {link.hasDropdown && (
-                <AnimatePresence>
-                  {isProgramsOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      transition={{ duration: 0.2 }}
-                      className="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-72"
-                    >
-                      <div className="bg-accent border border-secondary/30 rounded-xl shadow-2xl overflow-hidden py-2">
-                        {servicesData.map((service) => (
-                          <Link
-                            key={service.id}
-                            to={`/services/${service.id}`}
-                            className="block px-6 py-3 text-[10px] text-white/80 hover:text-secondary hover:bg-primary/15 transition-colors font-bold uppercase tracking-widest"
-                          >
-                            {service.title}
-                          </Link>
-                        ))}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              )}
-            </div>
+        {/* Icons */}
+        <div className="flex items-center gap-4 lg:gap-5">
+          {[Search, User].map((Icon, i) => (
+            <button key={i} style={{ color:'rgba(212,163,115,0.6)', background:'none', border:'none', cursor:'pointer', padding:0, transition:'color 0.2s' }}
+              onMouseEnter={e=>{ e.currentTarget.style.color=GOLD; }}
+              onMouseLeave={e=>{ e.currentTarget.style.color='rgba(212,163,115,0.6)'; }}>
+              <Icon size={18} />
+            </button>
           ))}
+          <button className="relative" style={{ color:'rgba(212,163,115,0.6)', background:'none', border:'none', cursor:'pointer', padding:0, transition:'color 0.2s' }}
+            onMouseEnter={e=>{ e.currentTarget.style.color=GOLD; }}
+            onMouseLeave={e=>{ e.currentTarget.style.color='rgba(212,163,115,0.6)'; }}>
+            <ShoppingBag size={18} />
+            {totalItems > 0 && (
+              <motion.span initial={{ scale:0 }} animate={{ scale:1 }}
+                className="absolute -top-2 -right-2 text-[10px] rounded-full w-4 h-4 flex items-center justify-center font-bold"
+                style={{ background:GOLD, color:'#0f0a07' }}>
+                {totalItems}
+              </motion.span>
+            )}
+          </button>
+          <button className="lg:hidden" style={{ color:'rgba(212,163,115,0.6)', background:'none', border:'none', cursor:'pointer', padding:0 }}
+            onClick={() => setMenuOpen(v => !v)}>
+            <AnimatePresence mode="wait">
+              {menuOpen
+                ? <motion.span key="x"   initial={{ rotate:-90,opacity:0 }} animate={{ rotate:0,opacity:1 }} exit={{ rotate:90,opacity:0 }}  transition={{ duration:0.2 }}><X    size={20}/></motion.span>
+                : <motion.span key="men" initial={{ rotate:90,opacity:0 }}  animate={{ rotate:0,opacity:1 }} exit={{ rotate:-90,opacity:0 }} transition={{ duration:0.2 }}><Menu size={20}/></motion.span>
+              }
+            </AnimatePresence>
+          </button>
         </div>
-
-        {/* CTA */}
-        <div className="hidden lg:flex items-center gap-3">
-          <Link
-            to="/contact"
-            className="text-xs uppercase tracking-widest font-bold text-white/85 hover:text-secondary transition-colors"
-          >
-            Volunteer
-          </Link>
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-6 py-3 text-xs uppercase tracking-widest font-bold transition-all duration-300 transform hover:scale-105 active:scale-95 rounded-tl-2xl rounded-br-2xl shadow-md hover:shadow-lg"
-          >
-            <Heart size={14} fill="currentColor" />
-            Donate
-          </Link>
-        </div>
-
-        {/* Mobile Menu Button */}
-        <button
-          className="lg:hidden text-white"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          {isMobileMenuOpen ? <X /> : <Menu />}
-        </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile menu */}
       <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "100vh" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="lg:hidden absolute top-full left-0 w-full bg-accent border-t border-primary/30 overflow-y-auto shadow-lg"
-            style={{ maxHeight: "calc(100vh - 80px)" }}
-          >
-            <div className="flex flex-col space-y-4 p-6 text-sm font-medium uppercase tracking-widest text-white/90 pb-20">
-              {navLinks.map((link, i) => (
-                <div key={link.name}>
-                  <Link
-                    to={link.path}
-                    className="hover:text-secondary transition-colors flex justify-between items-center py-2"
-                    onClick={(e) => {
-                      if (link.hasDropdown) {
-                        e.preventDefault();
-                        setIsProgramsOpen(!isProgramsOpen);
-                      } else {
-                        setIsMobileMenuOpen(false);
-                      }
-                    }}
-                  >
-                    <motion.span
-                      initial={{ x: -20, opacity: 0 }}
-                      animate={{ x: 0, opacity: 1 }}
-                      transition={{ delay: i * 0.05 }}
-                    >
-                      {link.name}
-                    </motion.span>
-                    {link.hasDropdown && (
-                      <ChevronDown
-                        size={14}
-                        className={clsx(
-                          "transition-transform",
-                          isProgramsOpen && "rotate-180",
-                        )}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          e.stopPropagation();
-                          setIsProgramsOpen(!isProgramsOpen);
-                        }}
-                      />
-                    )}
-                  </Link>
-
-                  {link.hasDropdown && isProgramsOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                      className="bg-primary/10 rounded-lg overflow-hidden ml-4 mt-2"
-                    >
-                      {servicesData.map((service) => (
-                        <Link
-                          key={service.id}
-                          to={`/services/${service.id}`}
-                          className="block px-4 py-3 text-xs text-white/80 border-b border-white/10 last:border-none"
-                          onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                          {service.title}
-                        </Link>
-                      ))}
-                    </motion.div>
-                  )}
-                </div>
-              ))}
-              <Link
-                to="/contact"
-                className="bg-primary text-white px-6 py-3 text-center text-xs font-bold uppercase tracking-widest mt-4 block rounded-tl-2xl rounded-br-2xl"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Donate Now
-              </Link>
-              <Link
-                to="/contact"
-                className="border-2 border-secondary text-secondary px-6 py-3 text-center text-xs font-bold uppercase tracking-widest block rounded-tl-2xl rounded-br-2xl"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Volunteer With Us
-              </Link>
-            </div>
+        {menuOpen && (
+          <motion.div initial={{ height:0,opacity:0 }} animate={{ height:'auto',opacity:1 }} exit={{ height:0,opacity:0 }}
+            transition={{ duration:0.32, ease:[0.25,0.1,0.25,1] }}
+            className="overflow-hidden lg:hidden"
+            style={{ background:'rgba(15,10,7,0.98)', borderTop:`1px solid rgba(212,163,115,0.15)` }}>
+            <ul className="flex flex-col px-6 py-5 gap-4">
+              {navLinks.map(({ name, path }) => {
+                const active = pathname === path;
+                return (
+                  <li key={name}>
+                    <Link to={path} className="flex items-center gap-3 text-sm tracking-wide transition-colors duration-200"
+                      style={{ color:active ? GOLD : 'rgba(212,163,115,0.6)', fontWeight:active ? 600 : 400 }}
+                      onClick={() => setMenuOpen(false)}>
+                      {active && <div className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background:GOLD }} />}
+                      {name}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
           </motion.div>
         )}
       </AnimatePresence>

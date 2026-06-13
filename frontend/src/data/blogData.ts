@@ -13,7 +13,7 @@ export interface BlogPost {
 }
 
 /**
- * Generate a WordPress-style date-based URL for a blog post.
+ * Generate a date-based URL for a blog post.
  * e.g., /2026/01/21/post-slug
  */
 export const getBlogPostUrl = (slug: string, createdAt?: string): string => {
@@ -32,226 +32,218 @@ export const getBlogPostUrl = (slug: string, createdAt?: string): string => {
 export const blogPosts: BlogPost[] = [
   {
     id: "1",
-    slug: "from-noida-slums-to-courtrooms-yasmeen-parveen",
-    title: "From Slums to Court: How Yasmeen Parveen Became a Lawyer",
-    excerpt: "Yasmeen's mother worked in houses and her father was very sick. With Aaghaz's help, she finished law school and is now ready to work as a lawyer.",
+    slug: "crafting-the-perfect-dark-chocolate-truffles",
+    title: "Crafting the Perfect Dark Chocolate Truffle: An Artisan's Guide",
+    excerpt: "Discover the secret behind our signature dark chocolate truffles, from choosing the perfect cocoa percentages to achieving a silky ganache texture.",
     content: `
-      <p>Growing up in Noida, Yasmeen Parveen's family had very little money. Her father was sick, and her mother worked in other people's houses to buy food. In their situation, going to college and studying law seemed impossible.</p>
+      <p>Creating a truly luxurious dark chocolate truffle is a delicate balancing act of temperature, timing, and ingredient quality. At DUMUZI, we spent years refining our signature recipe to ensure that every single bite delivers a moment of pure bliss.</p>
       
-      <h3>The Turning Point</h3>
-      <p>When Yasmeen got a seat to study law in Mumbai, paying the fees and finding a place to live was very hard. Aaghaz Foundation came forward to help. A volunteer visited her house in Noida to check their situation. Since she was a good student who wanted to study, Aaghaz paid her college fees.</p>
+      <h3>The Importance of Quality Cocoa</h3>
+      <p>A great truffle starts at the source. We select single-origin organic cocoa beans with a minimum of 72% cocoa content. This guarantees a deep, complex flavor profile that isn't masked by excess sugar. The beans are roasted slowly to draw out notes of red fruit and roasted nuts.</p>
+      
+      <h3>Achieving the Silky Ganache</h3>
+      <p>The heart of a truffle is its ganache. To achieve the signature DUMUZI texture, we heat organic double cream just to the boiling point, then pour it over finely chopped chocolate. The key is slow emulsification—stirring outward from the center to create a glossy, stable emulsion without introducing air bubbles.</p>
       
       <blockquote>
-        "Aaghaz did not just give me money. They made me believe that my background does not stop my dreams, and that there are people who want to help me succeed."
+        "Luxury is in the details. A perfect truffle must have a thin, crisp chocolate shell that snaps cleanly, yielding immediately to a velvety, melting interior."
       </blockquote>
       
-      <h3>A New Advocate for Justice</h3>
-      <p>Today, Yasmeen has finished her law studies and is working as an intern. She has shown that if poor children get the right support, they can achieve big things.</p>
+      <h3>The Final Enrobing</h3>
+      <p>Once the ganache has set, each truffle is hand-rolled and dipped in tempered dark chocolate. Some are finished with a dusting of premium Dutch cocoa powder, while others are decorated with delicate flakes of 24k gold leaf. The result is a masterpiece of confectionary art.</p>
     `,
-    image: "/images/suceessstories/AdvocateYasmeenParveenToday.jpeg",
+    image: "/images/products/LF-BN9T.jpeg",
     date: "Feb 10, 2026",
-    author: "Saima Khan",
-    category: "Success Stories",
-    tags: "Law, Noida Slums, Women Empowerment",
+    author: "Chef Antoine Laurent",
+    category: "Craftsmanship",
+    tags: "Truffles, Dark Chocolate, Handcrafted, Ganache",
     createdAt: "2026-02-10T12:00:00.000Z",
   },
   {
     id: "2",
-    slug: "supporting-sons-of-late-cab-driver-aftab-alam",
-    title: "Supporting the Sons of Late Cab Driver Aftab Alam",
-    excerpt: "After their father passed away, Aaghaz paid the college fees for Mohd Shajid and Mohd Shahid so they could study engineering and science.",
+    slug: "sourcing-single-origin-cocoa-beans-madagascar-ecuador",
+    title: "Sourcing Single-Origin Cocoa: Madagascar vs. Ecuador",
+    excerpt: "Explore the unique flavor profiles of single-origin cocoa beans and how soil, climate, and geography shape the taste of our luxury collections.",
     content: `
-      <p>In 2020, cab driver Aftab Alam passed away suddenly. His family was left with no income. His two clever sons, Mohd Shajid and Mohd Shahid, were about to stop going to college.</p>
+      <p>Just like fine wine, the taste of chocolate is deeply influenced by its 'terroir'—the environment where the cocoa beans are grown. Today, we contrast two of our favorite single-origin chocolates: Madagascar and Ecuador.</p>
       
-      <h3>Stepping In for Education</h3>
-      <p>Aaghaz Foundation stepped in to help. We paid their college fees, gave them tablets to study online, and provided monthly help for home expenses.</p>
+      <h3>Madagascar: Vibrant and Fruity</h3>
+      <p>Cocoa beans from the Sambirano Valley in Madagascar are famous for their bright, citrusy acidity. When you taste a DUMUZI Madagascar bar, you will instantly notice notes of raspberry, cranberry, and even citrus. It is a lively, refreshing flavor that surprises many who are used to standard chocolate.</p>
       
-      <h3>Academic Triumphs</h3>
-      <p>With the help of our donors, both brothers did very well in their studies:</p>
-      <ul>
-        <li><strong>Mohd Shajid</strong> is studying engineering (B.Tech) at Netaji Subhas University in Delhi.</li>
-        <li><strong>Mohd Shahid</strong> is studying botany (B.Sc) at Dyal Singh College, Delhi University.</li>
-      </ul>
-      <p>This shows how Aaghaz helps poor families keep their children in school and college when they face sudden problems.</p>
+      <h3>Ecuador: Earthy and Floral</h3>
+      <p>In contrast, Ecuadorian Arriba Nacional cocoa offers a completely different sensory experience. It is deep, robust, and heavily aromatic, with floral hints of jasmine and orange blossom, paired with an earthy, nutty finish. We use this cocoa to create our signature velvet dark blends.</p>
+      
+      <h3>Our Commitment to Fair Sourcing</h3>
+      <p>We work directly with local farming cooperatives in both regions. By bypassing middle-men, we ensure that farmers are paid above fair-trade prices, supporting sustainable agriculture and protecting biodiversity in these unique ecosystems.</p>
     `,
-    image: "/images/suceessstories/AftabAlam2.jpeg",
+    image: "/images/products/LF-D25T.jpeg",
     date: "Jan 28, 2026",
-    author: "Mazhar Farooqui",
-    category: "Impact Stories",
-    tags: "Noida Case, Engineering, Higher Education",
+    author: "Sourcing Team",
+    category: "Sustainability",
+    tags: "Cocoa Sourcing, Madagascar, Ecuador, Single-Origin",
     createdAt: "2026-01-28T12:00:00.000Z",
   },
   {
     id: "3",
-    slug: "childhood-mud-hut-to-paediatric-surgeon-dr-mominul-islam",
-    title: "From a Mud Hut to a Child Surgeon: Dr. Mominul Islam's Story",
-    excerpt: "Dr. Mominul Islam grew up in a tiny mud house with nine family members. Today, he is working as a surgeon for children.",
+    slug: "corporate-gifting-guide-luxury-chocolate-boxes",
+    title: "The Ultimate Corporate Gifting Guide: Why Luxury Chocolates Stand Out",
+    excerpt: "Discover how custom-designed chocolate assortments can elevate your corporate relations and leave a lasting impression on clients and partners.",
     content: `
-      <p>Dr. Mominul Islam spent his childhood in a small mud room with nine other family members in a Bengal village. His father was physically challenged and could not earn much. Going to a medical college to become a doctor was a dream they could never afford.</p>
+      <p>In the business world, a thoughtful gift is a powerful tool to build relationships and show appreciation. Standard corporate gifts like notebooks and pens are often forgotten. A box of DUMUZI luxury chocolates, however, is an experience that is shared and remembered.</p>
       
-      <h3>A Journey of Perseverance</h3>
-      <p>But Mominul got very good marks. When he got a seat in medical college, Aaghaz paid his fees and other expenses. Year after year, Mominul proved that hard work and timely help can solve any problem.</p>
+      <h3>First Impressions Matter</h3>
+      <p>Our corporate boxes are wrapped in elegant dark textured paper with gold-foil embossing and silk ribbons. Opening a DUMUZI box is a multi-sensory experience that reflects the high standards of your own brand.</p>
       
-      <h3>Serving the Underprivileged</h3>
-      <p>Today, he is <strong>Dr. Mominul Islam</strong>, a surgeon for children at Bengal Medical College. His story shows how helping one student can change many lives.</p>
+      <h3>Custom Branding Options</h3>
+      <p>We offer fully customizable corporate gift boxes. From custom-molded chocolate bars featuring your company logo to personalized ribbon colors and branded greeting cards, we help you align our chocolates with your corporate identity.</p>
     `,
-    image: "/images/suceessstories/Dr.MominulIslamtoday.jpeg",
+    image: "/images/products/LF-H18D.jpeg",
     date: "Jan 15, 2026",
-    author: "Aaghaz Team",
-    category: "Success Stories",
-    tags: "Medical, Bengal, Rural Education",
+    author: "Gifting Expert",
+    category: "Gifting",
+    tags: "Corporate Gifts, Luxury Packing, Customs",
     createdAt: "2026-01-15T12:00:00.000Z",
   },
   {
     id: "4",
-    slug: "afree-javed-topps-college-secures-eighteen-lakhs-package",
-    title: "Afree Javed Tops Her College and Gets a High-Paying Software Job",
-    excerpt: "Afree Javed topped her college exams and got a job as a developer at Lowe's India, with help from Aaghaz.",
+    slug: "health-benefits-organic-dark-chocolate",
+    title: "Dark Chocolate & Wellness: The Scientific Benefits of Cocoa",
+    excerpt: "Learn how the rich antioxidants, flavonoids, and minerals in organic dark chocolate support cardiovascular health and boost mood.",
     content: `
-      <p>Afree Javed was always excellent at studies. But paying for an engineering course was very hard for her family. They did not have enough money for college fees, books, and lab equipment.</p>
+      <p>Indulgence doesn't have to come with guilt. High-quality organic dark chocolate is packed with bioactive compounds that contribute positively to your health and mental well-being.</p>
       
-      <h3>Unlocking Potential</h3>
-      <p>Aaghaz Foundation stepped in and paid her engineering fees. With her fees paid, Afree could focus completely on studying. She not only passed but topped her exams, making her family and college proud.</p>
+      <h3>Antioxidants and Heart Health</h3>
+      <p>Dark chocolate is one of the richest dietary sources of polyphenols and flavonoids, powerful antioxidants that help lower blood pressure and improve blood flow. Studies show that consuming moderate amounts of dark chocolate weekly supports long-term cardiovascular health.</p>
       
-      <h3>Securing Her Future</h3>
-      <p>After finishing college, she got a job as a Java Developer at Lowe's India, earning over Rs 18 lakhs a year. She has now transitioned from being a student who needed help to a role model showing how studies can change a family's life.</p>
+      <h3>The Natural Mood Elevator</h3>
+      <p>Have you ever wondered why chocolate makes you feel happy? It triggers the release of endorphins and contains serotonin and phenylethylamine (the 'love chemical'), which promote feelings of relaxation and joy. A piece of DUMUZI dark chocolate is the perfect natural stress reliever.</p>
     `,
-    image: "/images/suceessstories/AfreeJaved.jpeg",
+    image: "/images/products/LF-D15T.jpeg",
     date: "Dec 30, 2025",
-    author: "Education Desk",
-    category: "Success Stories",
-    tags: "Engineering, Women in STEM, Tech Career",
+    author: "Wellness Desk",
+    category: "Science",
+    tags: "Health Benefits, Antioxidants, Organic Cocoa, Mood Booster",
     createdAt: "2025-12-30T12:00:00.000Z",
   },
   {
     id: "5",
-    slug: "shumaila-practicing-at-delhi-high-court",
-    title: "Shumaila's Journey to Becoming a Lawyer in Delhi High Court",
-    excerpt: "Shumaila lost her father early and worked odd jobs to support her family. Aaghaz paid her law college fees, and today she practices at the High Court.",
+    slug: "art-of-tempering-chocolate-at-home",
+    title: "Mastering the Temper: How to Work with Chocolate Like a Pro",
+    excerpt: "A step-by-step tutorial on the science of chocolate tempering, explaining how to achieve a glossy finish and crisp snap at home.",
     content: `
-      <p>Losing a parent is very hard for any child. Shumaila grew up in a poor family in Old Delhi. After finishing school, she did small jobs to help her family, but she always wanted to study law.</p>
+      <p>Tempering is the process of heating and cooling chocolate to stable temperatures, aligning the cocoa butter crystals. Without tempering, chocolate sets soft, dull, and melts instantly on your fingers. Here is how to achieve the perfect professional temper at home.</p>
       
-      <h3>Aaghaz's Legal Aid Scholarship</h3>
-      <p>When she got a seat to study law, she did not have enough savings to pay the fees. Aaghaz paid her college dues so she could study and participate in court practice sessions. She worked hard and got very good marks.</p>
+      <h3>The Three Stages of Tempering</h3>
+      <p>To temper dark chocolate, you must follow these temperature thresholds carefully:</p>
+      <ol>
+        <li><strong>Melting:</strong> Heat the chocolate to 45°C - 50°C to break all existing crystal structures.</li>
+        <li><strong>Cooling:</strong> Cool the chocolate to 27°C while stirring continuously to allow stable crystals to seed.</li>
+        <li><strong>Reheating:</strong> Gently warm the chocolate back to 31°C - 32°C. This melts away any unstable crystal structures, leaving a perfect glossy temper.</li>
+      </ol>
       
-      <h3>Advocating in the Capital</h3>
-      <p>Today, Shumaila is a lawyer practicing in the Delhi High Court. Her story shows how Aaghaz helps young people achieve their dreams despite financial problems.</p>
+      <h3>The Snap Test</h3>
+      <p>Dip a clean spoon into the tempered chocolate. If it is correctly tempered, it will set at room temperature within 3 to 5 minutes with a shiny surface and a crisp snap when bent.</p>
     `,
-    image: "/images/suceessstories/Shumaila.jpeg",
+    image: "/images/products/LF-H12T.jpeg",
     date: "Dec 12, 2025",
-    author: "Legal Aid Desk",
-    category: "Success Stories",
-    tags: "Law, Delhi High Court, Women in Law",
+    author: "Chocolatier Antoine",
+    category: "Craftsmanship",
+    tags: "Tempering, Baking, Chocolate DIY, Science",
     createdAt: "2025-12-12T12:00:00.000Z",
   },
   {
     id: "6",
-    slug: "jahan-ara-shaikh-advocate-bombay-high-court",
-    title: "How Jahan Ara Shaikh Became a Lawyer at the Bombay High Court",
-    excerpt: "Jahan Ara lost both parents and worked in a clinic while studying. Aaghaz paid her law fees to help her become a lawyer.",
+    slug: "history-of-cocoa-from-sacred-bean-to-luxury-sweet",
+    title: "The History of Cocoa: From Sacred Mayan Drink to Modern Luxury",
+    excerpt: "Travel back in time to discover how the ancient Mesoamericans consumed cocoa and how it evolved into the world's most desired luxury sweet.",
     content: `
-      <p>Jahan Ara Shaikh's story is about not giving up. After she lost both her parents, she had to live alone. To survive, she worked in a doctor's clinic during the day.</p>
+      <p>Long before it was molded into sweet bars, cocoa was consumed as a bitter, spicy beverage by the ancient Mayans and Aztecs, who believed the bean was a gift from the gods.</p>
       
-      <h3>The Pursuit of Law</h3>
-      <p>During COVID-19, she decided to study law. But her small salary from the clinic was not enough for college fees. She wrote to Aaghaz. Our team checked her case and sponsored her fees.</p>
+      <h3>The Food of the Gods</h3>
+      <p>The scientific name for the cocoa tree, <em>Theobroma cacao</em>, translates literally to 'Food of the Gods'. In Mesoamerica, cocoa beans were so valuable they were used as currency. The elite drank it frothed with water, chili peppers, and cornmeal.</p>
       
-      <h3>From Compounder to Advocate</h3>
-      <p>Today, Jahan Ara Shaikh is a lawyer at the Bombay High Court. Her success shows that even if a child loses everything, they can rebuild their life with dignity.</p>
+      <h3>The European Evolution</h3>
+      <p>When cocoa arrived in Europe in the 16th century, Spanish royalty added sugar and cinnamon. Over the centuries, inventions like the cocoa press and conching machine transformed chocolate from a gritty beverage into the smooth, solid confections we cherish today.</p>
     `,
-    image: "/images/suceessstories/JahanAraShaikh.jpeg",
+    image: "/images/products/DUMUZI.jpeg",
     date: "Nov 25, 2025",
-    author: "Saima Khan",
-    category: "Success Stories",
-    tags: "Law, Mumbai, Orphan Support",
+    author: "Heritage Team",
+    category: "History",
+    tags: "Cocoa History, Mayans, Confectionery Evolution",
     createdAt: "2025-11-25T12:00:00.000Z",
   },
   {
     id: "7",
-    slug: "why-we-do-pre-scholarship-field-surveys",
-    title: "Why Our Volunteers Visit Student Homes Before Giving Aid",
-    excerpt: "Aaghaz volunteers personally visit the home and school of every student to check their financial condition and make sure your donations are used honestly.",
+    slug: "pairing-wine-and-luxury-chocolates",
+    title: "Wine & Chocolate Pairing: The Connoisseur’s Guide",
+    excerpt: "Learn the rules of pairing fine wines with premium dark and milk chocolates to elevate your next tasting party.",
     content: `
-      <p>At Aaghaz, we believe that honesty is everything. We do not give scholarships just by looking at online forms or certificates. Instead, we check every application in person.</p>
+      <p>Pairing wine and chocolate can be incredibly rewarding if done correctly. However, because both contain strong tannins, matching them requires balance. Here are our top rules for a perfect pairing.</p>
       
-      <h3>The Verification Process</h3>
-      <p>Our volunteers visit the student's home. At least two volunteers meet the family, talk to the neighbors, and visit the student's school. This helps us check:</p>
-      <ol>
-        <li>If the family really cannot pay the fees.</li>
-        <li>If the child really wants to study and gets good marks.</li>
-        <li>If the family has other problems (like sickness or job loss) where we can help.</li>
-      </ol>
+      <h3>Rule 1: The Wine Should Be Sweet or Equal</h3>
+      <p>A dry red wine paired with sweet milk chocolate can taste sour. Ensure the wine has a hint of sweetness to complement the cocoa richness. Port, Banyuls, and late-harvest Zinfandels are classic choices.</p>
       
-      <h3>Ensuring Direct Impact</h3>
-      <p>This personal check makes sure that 100% of your donation goes to a child who really needs it. It builds trust with our donors and creates a personal bond between volunteers and students.</p>
+      <h3>Rule 2: Match Intensities</h3>
+      <p>Match delicate milk chocolates with lighter wines (like a Pinot Noir), and save robust 80% dark chocolates for full-bodied Cabernet Sauvignon or Syrah.</p>
     `,
-    image: "/images/suceessstories/YasmeensHomeVolunteerVisit.jpeg",
+    image: "/images/products/LF-D18T.jpeg",
     date: "Nov 10, 2025",
-    author: "Field Operations",
-    category: "Behind the Scenes",
-    tags: "Field Surveys, Transparency, Volunteers",
+    author: "Sommelier Desk",
+    category: "Tasting Guide",
+    tags: "Wine Pairing, Chocolate Tasting, Fine Dining",
     createdAt: "2025-11-10T12:00:00.000Z",
   },
   {
     id: "8",
-    slug: "dr-arbaaz-journey-to-aiims-delhi",
-    title: "How Arbaaz Beat the Odds to Study at AIIMS Delhi",
-    excerpt: "Despite his father being paralyzed, Arbaaz got Rank 85 in NEET and is now a doctor at AIIMS Delhi.",
+    slug: "custom-chocolate-favors-for-weddings-and-events",
+    title: "Elegant Wedding Favors: Custom Chocolate Collections",
+    excerpt: "Explore our range of personalized chocolate wedding favors, designed to add an indulgent touch to your big day.",
     content: `
-      <p>Arbaaz grew up in a small town in Karnataka. He wanted to be a doctor, but his father suffered a stroke and became paralyzed. The family had no income left. Paying for medical exam preparation and fees became impossible.</p>
+      <p>Your wedding day is a reflection of your unique love story, and the parting gifts for your guests should be just as special. Custom DUMUZI chocolate favors add a memorable, sweet touch of sophistication to your wedding reception.</p>
       
-      <h3>A Bright Mind Supported</h3>
-      <p>Knowing how bright Arbaaz was, Aaghaz paid his exam fees and preparation costs. Free from money worries, Arbaaz studied hard and got All India Rank 85 in the NEET exam.</p>
-      
-      <h3>AIIMS Delhi and Beyond</h3>
-      <p>Today, Dr. Arbaaz is working at AIIMS Delhi, India's top medical hospital. His journey shows what poor children can do when we help them.</p>
+      <h3>Personalized Packaging</h3>
+      <p>We design custom-molded chocolate favors and miniature truffle boxes that match your wedding theme, colors, and monogram. Each piece is beautifully presented in delicate packaging that serves as both table decor and a delicious treat.</p>
     `,
-    image: "/images/suceessstories/Dr.Arbaaz.jpeg",
+    image: "/images/products/LF-H18B.jpeg",
     date: "Oct 22, 2025",
-    author: "Aaghaz Foundation",
-    category: "Success Stories",
-    tags: "NEET, AIIMS, Karnataka",
+    author: "Event Team",
+    category: "Gifting",
+    tags: "Wedding Favors, Custom Boxes, Luxury Weddings",
     createdAt: "2025-10-22T12:00:00.000Z",
   },
   {
     id: "9",
-    slug: "anam-mehendi-abidi-university-of-calcutta",
-    title: "From Student to Professor: Anam Mehendi Abidi's Story",
-    excerpt: "Aaghaz paid Anam's post-graduate fees, and today she is working as an Assistant Professor at Calcutta University.",
+    slug: "tempering-temperatures-and-chocolate-science",
+    title: "The Physics of Cocoa Butter: Why Good Chocolate Snaps",
+    excerpt: "An in-depth look at the polymorphs of cocoa butter crystals and how chocolate makers manipulate science for the perfect texture.",
     content: `
-      <p>Higher studies like master's degrees are often too expensive for poor families. Anam faced this problem when she wanted to study further. Her family could not pay the semester fees.</p>
+      <p>Cocoa butter can crystallize into six different polymorphs (Form I to Form VI). Only Form V yields the glossy appearance, clean release from molds, and crisp snap that defines luxury chocolate.</p>
       
-      <h3>The Gift of Learning</h3>
-      <p>Aaghaz paid her college fees so she could study and focus on her research. Anam did very well and completed her Master's degree with honors.</p>
-      
-      <h3>Inspiring the Next Generation</h3>
-      <p>Today, Anam Mehendi Abidi is working as an Assistant Professor at the famous University of Calcutta. She now teaches hundreds of students, showing how helping one girl can help many others.</p>
+      <h3>Controlling the Crystals</h3>
+      <p>By controlling heating and cooling rates, our chocolatiers ensure that only Form V crystals dominate the mixture. This scientific precision is what gives DUMUZI chocolates their premium feel and long shelf stability.</p>
     `,
-    image: "/images/suceessstories/AnamMehendiAbidi.jpeg",
+    image: "/images/products/LF-D25B.jpeg",
     date: "Oct 05, 2025",
-    author: "Academic Relations",
-    category: "Success Stories",
-    tags: "Academics, Higher Education, Kolkata",
+    author: "Science Team",
+    category: "Science",
+    tags: "Cocoa Physics, Crystal Polymorphs, Tempering Science",
     createdAt: "2025-10-05T12:00:00.000Z",
   },
   {
     id: "10",
-    slug: "yusuf-hotelier-itc-hotels",
-    title: "Making a Career in Hotel Management: Yusuf's Success at ITC Hotels",
-    excerpt: "Aaghaz paid Yusuf's fees for hotel management, and today he works as a professional at ITC Hotels.",
+    slug: "the-story-behind-dumuzi-chocolate-brand",
+    title: "The Dumuzi Legend: Handcrafted Cocoa with a Heritage",
+    excerpt: "Discover the inspiration behind the DUMUZI brand name and our vision to redefine luxury chocolate craftsmanship.",
     content: `
-      <p>At Aaghaz, we want students to get jobs and support their families. Along with medicine and law, we also help students study practical courses like hotel management.</p>
+      <p>Named after the ancient deity of abundance and fertility, DUMUZI was founded to honor the rich agricultural heritage of cocoa farming and elevate chocolate-making to a fine art.</p>
       
-      <h3>A Hospitality Scholar</h3>
-      <p>Yusuf wanted to work in hotels but could not afford the training. Aaghaz paid his fees at a hotel management school where he learned professional skills.</p>
-      
-      <h3>Working at ITC Hotels</h3>
-      <p>After finishing his course, Yusuf got a job at ITC Hotels. He is now earning well, supporting his family, and showing how practical courses can help poor youth get jobs quickly.</p>
+      <h3>Redefining Confectionery Luxury</h3>
+      <p>We combine centuries-old European conching techniques with modern ethical sourcing to produce dark chocolate bars and truffles that are rich, pure, and sustainably crafted.</p>
     `,
-    image: "/images/suceessstories/Yusuf.jpeg",
+    image: "/images/products/LF- BN9.jpeg",
     date: "Sep 18, 2025",
-    author: "Placement Cell",
-    category: "Success Stories",
-    tags: "Hospitality, Vocational Training, Career Growth",
+    author: "Founders",
+    category: "Heritage",
+    tags: "Dumuzi Origin, Brand Story, Artisanal Vision",
     createdAt: "2025-09-18T12:00:00.000Z",
   },
 ];

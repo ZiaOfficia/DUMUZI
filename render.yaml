@@ -1,7 +1,7 @@
 services:
   # Backend Web Service
   - type: web
-    name: elegantize-backend
+    name: dumuzi-backend
     env: node
     rootDir: backend
     buildCommand: npm install

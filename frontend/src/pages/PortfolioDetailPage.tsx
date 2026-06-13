@@ -23,8 +23,8 @@ export const PortfolioDetailPage = () => {
   return (
     <div className="bg-stone-50 min-h-screen">
       <SEO
-        title={`${portfolio.title} — Aaghaz Story`}
-        description={`${portfolio.title} — an Aaghaz Foundation story from ${portfolio.location}.`}
+        title={`${portfolio.title} — DUMUZI Luxury Chocolates`}
+        description={`${portfolio.title} — a DUMUZI collection from ${portfolio.location}.`}
         image={portfolio.heroImage}
       />
       {/* 1. Hero Section */}
@@ -103,7 +103,7 @@ export const PortfolioDetailPage = () => {
                   width="100%"
                   height="100%"
                   src={`https://www.youtube.com/embed/${portfolio.videoUrl}`}
-                  title="Aaghaz Video"
+                  title="DUMUZI Video"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen

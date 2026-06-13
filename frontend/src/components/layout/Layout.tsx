@@ -9,7 +9,7 @@ interface LayoutProps {
 
 export const Layout = ({ children }: LayoutProps) => {
   return (
-    <div className="min-h-screen bg-texture-floral font-sans text-gray-800 selection:bg-primary selection:text-white">
+    <div className="min-h-screen" style={{ background: '#040405', color: '#F4F0EA' }}>
       <TopBar />
       <Navbar />
       <main>{children}</main>

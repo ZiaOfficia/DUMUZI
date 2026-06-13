@@ -51,14 +51,14 @@ const ThankYouPage = () => {
         </p>
 
         <p className="text-gray-600 mb-10 leading-relaxed">
-          Our team at Aaghaz Foundation will read your message and write back
-          to you within a few days. If your matter is urgent, you can also
+          Our team at DUMUZI Luxury Chocolates will read your message and reply
+          within 1–2 business days. For urgent matters, you can also
           email us at{" "}
           <a
-            href="mailto:aaghaz.foundation@gmail.com"
+            href="mailto:hello@dumuzi.com"
             className="text-primary hover:underline"
           >
-            aaghaz.foundation@gmail.com
+            hello@dumuzi.com
           </a>
           .
         </p>

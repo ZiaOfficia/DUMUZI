@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { MapPin, Mail, Phone, Sparkles, ArrowRight } from "lucide-react";
+import type { CSSProperties } from "react";
 import { Button } from "../components/common/Button";
 import { ctaContent } from "../data/content";
 
@@ -7,6 +8,16 @@ import { SEO } from "../components/common/SEO";
 import { useNavigate } from "react-router-dom";
 import { submitToGoogleSheets } from "../utils/googleSheets";
 import { sendEmailNotification } from "../utils/emailNotification";
+
+const inputStyle: CSSProperties = {
+  background: 'rgba(26,18,13,0.7)',
+  border: '1px solid rgba(212,163,115,0.2)',
+  color: 'var(--cream)',
+  width: '100%',
+  padding: '16px',
+  outline: 'none',
+  transition: 'border-color 0.3s',
+};
 
 export const ContactPage = () => {
   const navigate = useNavigate();
@@ -21,22 +32,22 @@ export const ContactPage = () => {
   };
 
   return (
-    <div className="min-h-screen pt-24 pb-12 bg-stone-50">
+    <div className="min-h-screen pt-24 pb-12" style={{ background: 'var(--choc-deep)' }}>
       <SEO
-        title="Contact Us — Aaghaz Foundation"
-        description="Reach out to Aaghaz Foundation to donate, launch a scholarship, become a volunteer, apply for student aid or partner with us on CSR. Based in Lucknow, working across India."
+        title="Contact Us — DUMUZI Luxury Chocolates"
+        description="Get in touch with DUMUZI Luxury Chocolates for orders, corporate gifting, bespoke commissions, masterclass bookings, or general enquiries."
       />
       {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden bg-accent text-white">
-        <div className="absolute inset-0 opacity-50">
+      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden" style={{ background: 'var(--choc-dark)' }}>
+        <div className="absolute inset-0 opacity-40">
           <img
             loading="lazy"
             decoding="async"
-            src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=1920&q=80"
-            alt="Children studying — Aaghaz Foundation"
+            src="/images/products/LF-D25T.jpeg"
+            alt="DUMUZI Luxury Chocolates atelier"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-accent/70" />
+          <div className="absolute inset-0" style={{ background: 'rgba(15,10,7,0.65)' }} />
         </div>
 
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
@@ -45,18 +56,18 @@ export const ContactPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/20 border border-secondary/40 mb-8 backdrop-blur-md">
-              <Sparkles size={14} className="text-secondary" />
-              <span className="text-xs uppercase tracking-[0.3em] font-semibold text-secondary">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 backdrop-blur-md" style={{ background: 'rgba(212,163,115,0.15)', border: '1px solid rgba(212,163,115,0.35)' }}>
+              <Sparkles size={14} style={{ color: 'var(--gold)' }} />
+              <span className="text-xs uppercase tracking-[0.3em] font-semibold text-gold">
                 Let's talk
               </span>
             </div>
-            <h1 className="text-5xl md:text-7xl font-display mb-6 leading-tight">
+            <h1 className="text-5xl md:text-7xl font-display mb-6 leading-tight text-cream">
               Get In{" "}
-              <span className="text-secondary italic font-serif">Touch</span>
+              <span className="text-gold italic font-serif">Touch</span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-200 font-light max-w-2xl mx-auto">
-              If you want to donate, volunteer, partner, or apply for study help, write to us. We read every message.
+            <p className="text-lg md:text-xl text-muted font-light max-w-2xl mx-auto">
+              For orders, bespoke commissions, corporate gifting, or masterclass bookings — we'd love to hear from you.
             </p>
           </motion.div>
         </div>
@@ -73,10 +84,10 @@ export const ContactPage = () => {
         >
           {/* Contact Info */}
           <div>
-            <h2 className="text-5xl font-display mb-8 text-accent">
+            <h2 className="text-5xl font-display mb-8 text-cream">
               {ctaContent.heading}
             </h2>
-            <div className="text-lg text-gray-600 mb-12 leading-relaxed">
+            <div className="text-lg text-muted mb-12 leading-relaxed">
               {ctaContent.text.map((p, i) => (
                 <p key={i} className="mb-4">
                   {p}
@@ -89,15 +100,18 @@ export const ContactPage = () => {
                 whileHover={{ x: 10 }}
                 transition={{ duration: 0.2 }}
               >
-                <span className="p-4 bg-white border border-stone-100 rounded-full text-primary shadow-sm group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                <span
+                  className="p-4 rounded-full transition-colors duration-300 flex items-center justify-center"
+                  style={{ background: 'rgba(212,163,115,0.1)', border: '1px solid rgba(212,163,115,0.25)', color: 'var(--gold)' }}
+                >
                   <Phone size={24} />
                 </span>
                 <div>
-                  <p className="text-xs uppercase tracking-widest text-gray-500 mb-1">
+                  <p className="text-xs uppercase tracking-widest text-muted mb-1">
                     Phone
                   </p>
-                  <span className="text-lg font-display text-gray-800">
-                    +91 98765 43210
+                  <span className="text-lg font-display text-cream">
+                    +44 20 7123 4567
                   </span>
                 </div>
               </motion.div>
@@ -107,15 +121,18 @@ export const ContactPage = () => {
                 whileHover={{ x: 10 }}
                 transition={{ duration: 0.2 }}
               >
-                <span className="p-4 bg-white border border-stone-100 rounded-full text-primary shadow-sm group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                <span
+                  className="p-4 rounded-full transition-colors duration-300 flex items-center justify-center"
+                  style={{ background: 'rgba(212,163,115,0.1)', border: '1px solid rgba(212,163,115,0.25)', color: 'var(--gold)' }}
+                >
                   <MapPin size={24} />
                 </span>
                 <div>
-                  <p className="text-xs uppercase tracking-widest text-gray-500 mb-1">
+                  <p className="text-xs uppercase tracking-widest text-muted mb-1">
                     Registered Office
                   </p>
-                  <span className="text-lg font-display text-gray-800">
-                    57 Ganesh Gunj, Lucknow, UP — 226018
+                  <span className="text-lg font-display text-cream">
+                    12 Rue du Chocolat, 75001 Paris, France
                   </span>
                 </div>
               </motion.div>
@@ -125,15 +142,18 @@ export const ContactPage = () => {
                 whileHover={{ x: 10 }}
                 transition={{ duration: 0.2 }}
               >
-                <span className="p-4 bg-white border border-stone-100 rounded-full text-primary shadow-sm group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                <span
+                  className="p-4 rounded-full transition-colors duration-300 flex items-center justify-center"
+                  style={{ background: 'rgba(212,163,115,0.1)', border: '1px solid rgba(212,163,115,0.25)', color: 'var(--gold)' }}
+                >
                   <Mail size={24} />
                 </span>
                 <div>
-                  <p className="text-xs uppercase tracking-widest text-gray-500 mb-1">
+                  <p className="text-xs uppercase tracking-widest text-muted mb-1">
                     Email
                   </p>
-                  <span className="text-lg font-display text-gray-800 break-all">
-                    aaghaz.foundation@gmail.com
+                  <span className="text-lg font-display text-cream break-all">
+                    hello@dumuzi.com
                   </span>
                 </div>
               </motion.div>
@@ -141,12 +161,9 @@ export const ContactPage = () => {
           </div>
 
           {/* Contact Form */}
-          {/* Contact Form */}
           <form
             onSubmit={async (e) => {
               e.preventDefault();
-              // Rudimentary state handling for this page since it was static before
-              // ideally this should be a shared component, but respecting the file structure:
               const form = e.currentTarget;
               const formData = new FormData(form);
               const data = {
@@ -161,7 +178,6 @@ export const ContactPage = () => {
               };
 
               try {
-                // Trigger background submissions (non-blocking)
                 submitToGoogleSheets({
                   name: `${data.firstName} ${data.lastName}`,
                   email: data.email,
@@ -182,118 +198,124 @@ export const ContactPage = () => {
                   source: "Contact Page Form",
                 });
 
-                // Redirect instantly
                 navigate("/thank-you");
               } catch (err) {
                 console.error("Submission trigger error", err);
-                // Even on trigger error, we've likely tried to send. 
-                // In a production app choice, we often navigate anyway to avoid blocking.
                 navigate("/thank-you");
               }
             }}
-            className="bg-white p-10 md:p-12 border border-t-4 border-stone-100 border-t-primary shadow-2xl rounded-sm space-y-8"
+            className="glass-card p-10 md:p-12 space-y-8"
+            style={{ borderTop: '4px solid var(--gold)', borderRadius: '4px' }}
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
-                <label className="block text-[10px] uppercase tracking-widest font-bold mb-3 text-gray-500">
+                <label className="block text-[10px] uppercase tracking-widest font-bold mb-3 text-gold">
                   First Name
                 </label>
                 <input
                   name="firstName"
                   type="text"
                   required
-                  className="w-full bg-stone-50 border border-gray-200 focus:outline-none focus:border-primary p-4 transition-colors duration-300 hover:bg-stone-100 focus:bg-white"
-                  placeholder="E.g. Amit"
+                  style={inputStyle}
+                  placeholder="E.g. James"
+                  className="focus:border-[#d4a373] hover:border-[rgba(212,163,115,0.4)] placeholder:text-[rgba(220,214,205,0.35)]"
                 />
               </div>
               <div>
-                <label className="block text-[10px] uppercase tracking-widest font-bold mb-3 text-gray-500">
+                <label className="block text-[10px] uppercase tracking-widest font-bold mb-3 text-gold">
                   Last Name
                 </label>
                 <input
                   name="lastName"
                   type="text"
-                  className="w-full bg-stone-50 border border-gray-200 focus:outline-none focus:border-primary p-4 transition-colors duration-300 hover:bg-stone-100 focus:bg-white"
-                  placeholder="E.g. Kumar"
+                  style={inputStyle}
+                  placeholder="E.g. Laurent"
+                  className="focus:border-[#d4a373] hover:border-[rgba(212,163,115,0.4)] placeholder:text-[rgba(220,214,205,0.35)]"
                 />
               </div>
             </div>
             <div>
-              <label className="block text-[10px] uppercase tracking-widest font-bold mb-3 text-gray-500">
+              <label className="block text-[10px] uppercase tracking-widest font-bold mb-3 text-gold">
                 Contact Number
               </label>
               <input
                 name="phone"
                 type="tel"
                 required
-                className="w-full bg-stone-50 border border-gray-200 focus:outline-none focus:border-primary p-4 transition-colors duration-300 hover:bg-stone-100 focus:bg-white"
+                style={inputStyle}
                 placeholder="10-digit mobile number"
+                className="focus:border-[#d4a373] hover:border-[rgba(212,163,115,0.4)] placeholder:text-[rgba(220,214,205,0.35)]"
               />
             </div>
             <div>
-              <label className="block text-[10px] uppercase tracking-widest font-bold mb-3 text-gray-500">
+              <label className="block text-[10px] uppercase tracking-widest font-bold mb-3 text-gold">
                 Email Address
               </label>
               <input
                 name="email"
                 type="email"
                 required
-                className="w-full bg-stone-50 border border-gray-200 focus:outline-none focus:border-primary p-4 transition-colors duration-300 hover:bg-stone-100 focus:bg-white"
+                style={inputStyle}
                 placeholder="amit@example.com"
+                className="focus:border-[#d4a373] hover:border-[rgba(212,163,115,0.4)] placeholder:text-[rgba(220,214,205,0.35)]"
               />
             </div>
             <div>
-              <label className="block text-[10px] uppercase tracking-widest font-bold mb-3 text-gray-500">
+              <label className="block text-[10px] uppercase tracking-widest font-bold mb-3 text-gold">
                 Best date to call you (optional)
               </label>
               <input
                 name="weddingDate"
                 type="date"
-                className="w-full bg-stone-50 border border-gray-200 focus:outline-none focus:border-primary p-4 text-gray-500 transition-colors duration-300 hover:bg-stone-100 focus:bg-white"
+                style={{ ...inputStyle, colorScheme: 'dark' }}
+                className="focus:border-[#d4a373] hover:border-[rgba(212,163,115,0.4)]"
               />
             </div>
             <div>
-              <label className="block text-[10px] uppercase tracking-widest font-bold mb-3 text-gray-500">
+              <label className="block text-[10px] uppercase tracking-widest font-bold mb-3 text-gold">
                 City / Location
               </label>
               <input
                 name="venue"
                 type="text"
                 required
-                className="w-full bg-stone-50 border border-gray-200 focus:outline-none focus:border-primary p-4 transition-colors duration-300 hover:bg-stone-100 focus:bg-white"
-                placeholder="Lucknow, Mumbai, Delhi…"
+                style={inputStyle}
+                placeholder="London, New York, Dubai…"
+                className="focus:border-[#d4a373] hover:border-[rgba(212,163,115,0.4)] placeholder:text-[rgba(220,214,205,0.35)]"
               />
             </div>
             <div>
-              <label className="block text-[10px] uppercase tracking-widest font-bold mb-3 text-gray-500">
-                Why are you writing to us?
+              <label className="block text-[10px] uppercase tracking-widest font-bold mb-3 text-gold">
+                How can we help you?
               </label>
               <select
                 name="budget"
                 required
                 defaultValue=""
-                className="w-full bg-stone-50 border border-gray-200 focus:outline-none focus:border-primary p-4 text-gray-700 transition-colors duration-300 hover:bg-stone-100 focus:bg-white appearance-none"
+                style={{ ...inputStyle, colorScheme: 'dark' }}
+                className="focus:border-[#d4a373] hover:border-[rgba(212,163,115,0.4)] appearance-none"
               >
-                <option value="" disabled>
+                <option value="" disabled style={{ background: '#1a120d', color: '#dcd6cd' }}>
                   Select an option
                 </option>
-                <option value="donate">I want to donate</option>
-                <option value="scholarship">I want to start a scholarship</option>
-                <option value="volunteer">I want to join as a volunteer</option>
-                <option value="apply-aid">I want to apply for study help (fees)</option>
-                <option value="csr">My company wants to partner with Aaghaz</option>
-                <option value="other">Other reason</option>
+                <option value="order" style={{ background: '#1a120d', color: '#f9f6f0' }}>I want to place an order</option>
+                <option value="corporate" style={{ background: '#1a120d', color: '#f9f6f0' }}>Corporate gifting enquiry</option>
+                <option value="bespoke" style={{ background: '#1a120d', color: '#f9f6f0' }}>Bespoke commission or wedding favours</option>
+                <option value="masterclass" style={{ background: '#1a120d', color: '#f9f6f0' }}>Masterclass booking</option>
+                <option value="wholesale" style={{ background: '#1a120d', color: '#f9f6f0' }}>Wholesale / trade enquiry</option>
+                <option value="other" style={{ background: '#1a120d', color: '#f9f6f0' }}>Other</option>
               </select>
             </div>
             <div>
-              <label className="block text-[10px] uppercase tracking-widest font-bold mb-3 text-gray-500">
+              <label className="block text-[10px] uppercase tracking-widest font-bold mb-3 text-gold">
                 Your message
               </label>
               <textarea
                 name="message"
                 rows={5}
-                className="w-full bg-stone-50 border border-gray-200 focus:outline-none focus:border-primary p-4 transition-colors duration-300 hover:bg-stone-100 focus:bg-white"
-                placeholder="Tell us how you would like to be involved..."
+                style={inputStyle}
+                placeholder="Tell us about your enquiry…"
+                className="focus:border-[#d4a373] hover:border-[rgba(212,163,115,0.4)] placeholder:text-[rgba(220,214,205,0.35)]"
               ></textarea>
             </div>
             <Button
@@ -307,8 +329,7 @@ export const ContactPage = () => {
       </section>
 
       {/* Map Section */}
-      <section className="h-[65vh] max-w-7xl mx-auto mb-12 rounded-2xl bg-stone-100 relative group overflow-hidden shadow-xl">
-        {/* Map Iframe */}
+      <section className="h-[65vh] max-w-7xl mx-auto mb-12 rounded-2xl relative group overflow-hidden shadow-xl" style={{ background: 'var(--choc-dark)' }}>
         <iframe
           width="100%"
           height="100%"
@@ -316,12 +337,15 @@ export const ContactPage = () => {
           loading="lazy"
           allowFullScreen
           className="transition-all duration-1000 ease-in-out scale-100 group-hover:scale-105"
-          src="https://maps.google.com/maps?q=Ganesh%20Gunj%2C%20Lucknow&t=&z=15&ie=UTF8&iwloc=&output=embed"
-          title="Aaghaz Foundation Office Location"
+          src="https://maps.google.com/maps?q=Rue+du+Faubourg+Saint-Honore+Paris&t=&z=14&ie=UTF8&iwloc=&output=embed"
+          title="DUMUZI Luxury Chocolates Atelier"
         ></iframe>
 
         {/* Gradient Overlay */}
-        <div className="absolute top-0 left-0 w-full h-32 bg-linear-to-b from-stone-50 to-transparent pointer-events-none" />
+        <div
+          className="absolute top-0 left-0 w-full h-32 pointer-events-none"
+          style={{ background: 'linear-gradient(to bottom, var(--choc-deep), transparent)' }}
+        />
 
         {/* Floating Location Card */}
         <motion.div
@@ -329,33 +353,34 @@ export const ContactPage = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5, duration: 0.8 }}
-          className="absolute bottom-8 left-6 md:bottom-12 md:left-12 bg-white/90 backdrop-blur-md p-8 shadow-2xl border-l-4 border-primary max-w-sm"
+          className="glass-card absolute bottom-8 left-6 md:bottom-12 md:left-12 p-8 shadow-2xl max-w-sm"
+          style={{ borderLeft: '4px solid var(--gold)' }}
         >
-          <h3 className="text-2xl font-display text-accent mb-2">
-            Our Office Address
+          <h3 className="text-2xl font-display text-cream mb-2">
+            Our Atelier
           </h3>
-          <p className="text-gray-500 text-sm uppercase tracking-widest mb-6 border-b border-gray-200 pb-4">
-            Monday to Saturday · 10 AM to 6 PM
+          <p className="text-muted text-sm uppercase tracking-widest mb-6 border-b pb-4" style={{ borderBottomColor: 'rgba(212,163,115,0.2)' }}>
+            Monday to Friday · 10 AM to 6 PM
           </p>
           <div className="space-y-4 mb-6">
             <div className="flex items-start gap-4">
-              <MapPin className="text-primary mt-1" size={20} />
-              <p className="text-gray-700 leading-relaxed">
-                57 Ganesh Gunj
+              <MapPin style={{ color: 'var(--gold)' }} className="mt-1 shrink-0" size={20} />
+              <p className="text-muted leading-relaxed">
+                12 Rue du Chocolat
                 <br />
-                Lucknow, UP — 226018
+                75001 Paris, France
               </p>
             </div>
             <div className="flex items-center gap-4">
-              <Phone className="text-primary" size={20} />
-              <p className="text-gray-700">+91 98765 43210</p>
+              <Phone style={{ color: 'var(--gold)' }} size={20} />
+              <p className="text-muted">+44 20 7123 4567</p>
             </div>
           </div>
           <a
-            href="https://www.google.com/maps/search/?api=1&query=Ganesh+Gunj,+Lucknow,+UP"
+            href="https://www.google.com/maps/search/?api=1&query=Rue+du+Faubourg+Saint-Honore+Paris"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary hover:text-accent transition-colors group/link"
+            className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest transition-colors group/link text-gold hover:text-cream"
           >
             Get Directions{" "}
             <ArrowRight

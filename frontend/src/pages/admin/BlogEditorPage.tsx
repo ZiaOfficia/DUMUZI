@@ -20,7 +20,7 @@ const BlogEditorPage: React.FC = () => {
     excerpt: "",
     content: "",
     category: "Technology", // Default
-    author: "Aaghaz Foundation", // Default
+    author: "DUMUZI Luxury Chocolates", // Default
     tags: "", // Comma-separated tags
     image_url: "",
     image_alt_text: "",
@@ -42,7 +42,7 @@ const BlogEditorPage: React.FC = () => {
             excerpt: data.excerpt || "",
             content: data.content || "",
             category: data.category || "Technology",
-            author: data.author || "Aaghaz Foundation",
+            author: data.author || "DUMUZI Luxury Chocolates",
             tags: data.tags || "",
             image_url: data.image_url || "",
             image_alt_text: data.image_alt_text || "",

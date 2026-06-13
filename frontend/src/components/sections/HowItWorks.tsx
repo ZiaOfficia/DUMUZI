@@ -1,134 +1,84 @@
-import { motion } from "framer-motion";
-import {
-  HandCoins,
-  ClipboardCheck,
-  Home,
-  Users,
-  ArrowRight,
-} from "lucide-react";
+import { motion, type Transition } from 'framer-motion';
+import { Search, Sparkles, Award, Gift } from 'lucide-react';
+import { ChocolateDecor } from '../common/ChocolateDecor';
 
 const steps = [
-  {
-    icon: ClipboardCheck,
-    title: "Someone tells us about a student",
-    description:
-      "A teacher, neighbor, or news reporter tells us about a student who needs help. We do not take random applications.",
-    duration: "Day 1",
-  },
-  {
-    icon: Home,
-    title: "Two volunteers visit",
-    description:
-      "At least two volunteers visit the student's home and school. They check the family's financial need and the student's marks.",
-    duration: "Within 7 days",
-  },
-  {
-    icon: Users,
-    title: "Our committee checks the case",
-    description:
-      "Our committee reads the volunteer reports. They decide how much money to give and for how long.",
-    duration: "Within 14 days",
-  },
-  {
-    icon: HandCoins,
-    title: "We pay the fees directly",
-    description:
-      "We pay the school or college directly, not the family. Our volunteers also check on the student every month.",
-    duration: "Same academic year",
-  },
+  { icon: Search,   step:'01', title:'Source',  desc:'We hand-select the finest single-origin cocoa beans from premium estates around the equator.', img: '/images/products/LF-D6.jpeg' },
+  { icon: Sparkles, step:'02', title:'Craft',   desc:'Our master chocolatiers slowly roast, hand-temper, and sculpt each piece with precision.',      img: '/images/products/LF- BN9.jpeg' },
+  { icon: Award,    step:'03', title:'Taste',   desc:'Each chocolate goes through sensory trials and quality checks to guarantee perfection.',          img: '/images/products/LF-BN9T.jpeg' },
+  { icon: Gift,     step:'04', title:'Delight', desc:'Elegantly custom wrapped in our signature boxes and delivered in temperature-controlled care.',    img: '/images/products/LF-H18D.jpeg' },
 ];
 
-export const HowItWorks = () => {
-  return (
-    <section className="relative py-12 md:py-28 px-4 md:px-6 bg-wedding-slate text-white overflow-hidden">
-      {/* Background ornament */}
-      <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-secondary/5 font-display text-[20rem] font-black select-none pointer-events-none leading-none hidden md:block">
-        04
-      </span>
+const ease = [0.25, 0.1, 0.25, 1] as const;
+const GOLD = '#d4a373';
 
-      <div className="max-w-7xl mx-auto relative">
-        <div className="text-center mb-16">
-          <p className="inline-flex items-center gap-3 text-secondary text-xs font-bold uppercase tracking-[0.4em] mb-4">
-            <span className="block w-8 h-px bg-secondary" />
-            How We Work
-            <span className="block w-8 h-px bg-secondary" />
-          </p>
-          <h2 className="text-4xl md:text-6xl font-display font-bold leading-tight mb-4">
-            Four steps. No shortcuts.
-          </h2>
-          <p className="text-gray-300 max-w-2xl mx-auto text-lg">
-            We do not take random online forms. Every single rupee goes through a real process to help a real student, just like we have done for 20 years.
-          </p>
+export const HowItWorks = () => (
+  <section className="py-16 lg:py-24 relative" style={{ background: 'linear-gradient(180deg, var(--choc-deep) 0%, var(--choc-dark) 100%)' }}>
+    <ChocolateDecor variant="section" />
+
+    <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+
+      {/* Header */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.65 }}
+        className="text-center mb-16"
+      >
+        <div className="flex items-center justify-center gap-3 mb-4">
+          <div className="h-px w-12" style={{ background: 'linear-gradient(90deg, transparent, var(--gold))' }} />
+          <span className="text-[10px] tracking-[0.32em] uppercase font-bold text-gold-gradient font-sans">Our Process</span>
+          <div className="h-px w-12" style={{ background: 'linear-gradient(90deg, var(--gold), transparent)' }} />
         </div>
+        <h2 className="font-display mb-4 font-bold" style={{ fontSize: 'clamp(2rem, 3.8vw, 3rem)', color: 'var(--cream)' }}>From Bean to Box</h2>
+        <p className="text-sm max-w-md mx-auto font-sans" style={{ color: 'var(--muted)' }}>Every DUMUZI chocolate is born through a slow, carefully tempered culinary journey.</p>
+      </motion.div>
 
-        {/* Connector line behind cards (desktop) */}
-        <div className="relative">
-          <div className="hidden lg:block absolute top-12 left-12 right-12 h-px">
-            <div className="h-full bg-gradient-to-r from-transparent via-secondary/40 to-transparent" />
-          </div>
+      {/* Step Cards */}
+      <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-5">
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
-            {steps.map((step, i) => {
-              const Icon = step.icon;
-              return (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.15 }}
-                  className="group relative"
-                >
-                  {/* Step number connector dot */}
-                  <div className="hidden lg:flex absolute -top-1 left-12 w-3 h-3 rounded-full bg-secondary border-2 border-accent z-10" />
+        {/* Desktop timeline line */}
+        <div className="hidden lg:block absolute top-[52px] left-[12.5%] right-[12.5%] h-0.5 pointer-events-none"
+          style={{ background: 'linear-gradient(90deg, transparent, rgba(212,163,115,0.3) 20%, rgba(212,163,115,0.3) 80%, transparent)' }} />
 
-                  <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-tl-3xl rounded-br-3xl p-8 h-full transition-all duration-300 hover:bg-white/10 hover:border-secondary/40 hover:-translate-y-1">
-                    {/* Step badge */}
-                    <div className="flex items-center gap-3 mb-5">
-                      <span className="w-12 h-12 rounded-full bg-primary text-white font-display text-lg font-bold flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                      <span className="text-[10px] uppercase tracking-[0.3em] text-secondary font-bold">
-                        {step.duration}
-                      </span>
-                    </div>
+        {steps.map(({ icon: Icon, step, title, desc, img }, i) => (
+          <motion.div
+            key={title}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.65, delay: i * 0.12, ease } as Transition}
+            className="group flex flex-col rounded-3xl overflow-hidden glass-card glass-card-hover cursor-default"
+          >
+            {/* Product image at top */}
+            <div className="relative overflow-hidden" style={{ aspectRatio: '4/3', background: 'rgba(255,255,255,0.02)' }}>
+              <img
+                src={img}
+                alt={title}
+                className="w-full h-full object-contain p-4 transition-transform duration-600 group-hover:scale-108"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+              {/* Step badge */}
+              <div className="absolute top-3 right-3 w-8 h-8 rounded-full flex items-center justify-center text-[10px] font-bold"
+                style={{ background: `linear-gradient(135deg,${GOLD},#e5c199)`, color: 'var(--choc-deep)', boxShadow: '0 4px 12px rgba(212,163,115,0.4)' }}>
+                {step}
+              </div>
+            </div>
 
-                    {/* Icon */}
-                    <Icon
-                      size={26}
-                      strokeWidth={1.6}
-                      className="text-secondary mb-4"
-                    />
+            {/* Text content */}
+            <div className="flex flex-col items-center text-center p-5 gap-3">
+              <div className="w-12 h-12 rounded-full flex items-center justify-center transition-all duration-500 group-hover:scale-110"
+                style={{ background: 'rgba(212,163,115,0.08)', border: '1.5px solid rgba(212,163,115,0.22)', boxShadow: '0 0 20px rgba(212,163,115,0.1)' }}>
+                <Icon size={20} style={{ color: 'var(--gold)' }} />
+              </div>
+              <h3 className="font-display text-base font-semibold" style={{ color: 'var(--cream)' }}>{title}</h3>
+              <p className="text-xs leading-relaxed font-sans" style={{ color: 'var(--muted)' }}>{desc}</p>
+            </div>
+          </motion.div>
+        ))}
 
-                    <h3 className="font-display text-xl md:text-2xl font-bold mb-3 text-white leading-tight">
-                      {step.title}
-                    </h3>
-                    <p className="text-sm text-gray-300 leading-relaxed">
-                      {step.description}
-                    </p>
-
-                    {/* Arrow to next step */}
-                    {i < steps.length - 1 && (
-                      <ArrowRight
-                        size={20}
-                        className="hidden lg:block absolute top-1/2 -right-6 -translate-y-1/2 text-secondary/40 group-hover:text-secondary transition-colors"
-                      />
-                    )}
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Bottom note */}
-        <div className="mt-14 text-center">
-          <p className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-secondary/30 bg-secondary/10 text-secondary text-xs font-bold uppercase tracking-[0.3em]">
-            <span className="block w-2 h-2 rounded-full bg-secondary animate-pulse" />
-            We follow this process for every student without exception.
-          </p>
-        </div>
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
