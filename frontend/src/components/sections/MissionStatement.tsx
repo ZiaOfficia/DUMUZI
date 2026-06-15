@@ -12,7 +12,7 @@ const pillars = [
     body: "We pay school and college fees, buy books, uniforms, and exam forms. We also partner with Rahmani 30 to offer free coaching. We make sure no child has to stop studying because their family cannot afford it.",
     accent: "from-primary/15 via-primary/5 to-transparent",
     iconBg: "bg-primary",
-    image: missionImages.educate,
+    image: missionImages.craft,
     link: "/services",
   },
   {
@@ -22,7 +22,7 @@ const pillars = [
     body: "Our volunteers visit every student at home to verify their need. We also connect students with mentors to help them all year, and run a quiet study center in Lucknow.",
     accent: "from-secondary/15 via-secondary/5 to-transparent",
     iconBg: "bg-secondary",
-    image: missionImages.empower,
+    image: missionImages.source,
     link: "/success-stories",
   },
   {
@@ -32,7 +32,7 @@ const pillars = [
     body: "Many of our students are the first in their families to graduate. They clear exams like IIT and NEET and build great careers. We see them not as numbers, but as real people with bright futures.",
     accent: "from-accent/15 via-accent/5 to-transparent",
     iconBg: "bg-accent",
-    image: missionImages.elevate,
+    image: missionImages.signature,
     link: "/about",
   },
 ];

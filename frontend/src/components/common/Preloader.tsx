@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { heroImages, missionImages, actionImages, statsImages } from "../../data/imageAssets";
+import { heroImages } from "../../data/imageAssets";
 
 interface PreloaderProps {
   onComplete: () => void;
@@ -16,9 +16,6 @@ export const Preloader = ({ onComplete }: PreloaderProps) => {
     // Collect all critical image URLs to preload
     const imagesToPreload = [
       ...Object.values(heroImages),
-      ...Object.values(missionImages),
-      ...Object.values(actionImages),
-      ...Object.values(statsImages)
     ];
     
     let loadedImages = 0;

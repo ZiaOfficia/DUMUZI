@@ -29,7 +29,15 @@ export const productImages = {
 };
 
 export const heroImages = {
-  main: '/images/products/DUMUZI.jpeg',
+  main:               '/images/products/DUMUZI.jpeg',
+  girlSmiling:        '/images/products/LF-H3.jpeg',
+  schoolGroup:        '/images/products/LF-D25T.jpeg',
+  childReading:       '/images/products/LF-H12T.jpeg',
+  classroomTeacher:   '/images/products/LF-D18T.jpeg',
+  studentBlackboard:  '/images/products/LF-H18D.jpeg',
+  libraryStudy:       '/images/products/LF-D15T.jpeg',
+  kidsLearning:       '/images/products/LF-BN9T.jpeg',
+  outdoorEducation:   '/images/products/LF-O9.jpeg',
 };
 
 export const testimonialImages = {
@@ -67,6 +75,18 @@ export const galleryImages = [
 export const instagramImages = blogPool.slice(0, 6);
 
 export const getBlogImage = (index: number) => blogPool[index % blogPool.length];
+
+export const missionImages = {
+  craft:     '/images/products/LF-H12T.jpeg',
+  source:    '/images/products/LF-D25T.jpeg',
+  signature: '/images/products/DUMUZI.jpeg',
+};
+
+export const actionImages = {
+  bespoke:  '/images/products/DUMUZI.jpeg',
+  giftBox:  '/images/products/LF-H18B.jpeg',
+  explore:  '/images/products/LF-D18T.jpeg',
+};
 
 export const serviceImages = {
   studentAid:          '/images/products/LF-H18D.jpeg',

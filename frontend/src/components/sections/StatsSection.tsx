@@ -1,8 +1,6 @@
 import { motion } from 'framer-motion';
 import { ShieldCheck, Truck, Gem, Headphones } from 'lucide-react';
 
-const GOLD='#d4a373';
-
 const features = [
   { icon:ShieldCheck, title:'Secure Payment',   desc:'100% encrypted transactions' },
   { icon:Truck,       title:'Fast Delivery',     desc:'Delivered within 2–4 days' },

@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 
 const GOLD = '#d4a373';
-const GOLDL = '#e5c199';
 
 const partners = [
   { name: "Forbes", initials: "FBS" },

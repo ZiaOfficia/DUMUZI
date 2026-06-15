@@ -1,5 +1,3 @@
-import { portfolioImages } from "./imageAssets";
-
 export interface PortfolioItem {
   id: string;
   title: string;
