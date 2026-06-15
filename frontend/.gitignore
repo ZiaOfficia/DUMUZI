@@ -1,4 +1,4 @@
-git add frontend/public/images/computercenter# Logs
+# Logs
 logs
 *.log
 npm-debug.log*
@@ -25,10 +25,6 @@ dist-ssr
 
 public/images/*
 !public/images/assets/
-!public/images/computercenter/
-!public/images/computercenter/**
-!public/images/suceessstories/
-public/images/suceessstories/*
-!public/images/suceessstories/*.jpeg
-!public/images/suceessstories/*.jpg
-!public/images/suceessstories/*.png
+!public/images/assets/**
+!public/images/products/
+!public/images/products/**
