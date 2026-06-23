@@ -22,14 +22,11 @@ export const DonateCTA = () => (
           transition={{ duration: 0.9, ease } as Transition} 
           className="lg:col-span-6 flex flex-col justify-center text-left"
         >
-          <div className="flex items-center gap-3 mb-5">
-            <div className="h-px w-10" style={{ background: 'var(--gold)' }} />
-            <span className="text-[10px] tracking-[0.32em] uppercase font-bold text-gold-gradient font-sans">Artisanal Gifting</span>
-          </div>
-          
-          <h2 className="font-display leading-[1.1] mb-7 font-bold" style={{ fontSize: 'clamp(2.2rem, 4vw, 3.4rem)', color: 'var(--cream)' }}>
-            Gift Luxury<br />
-            <span className="text-gold-gradient font-display italic">Share Delight</span>
+          <div className="section-label mb-5">Artisanal Gifting</div>
+
+          <h2 className="font-luxury font-semibold leading-[1.08] mb-7" style={{ fontSize: 'clamp(2.2rem, 4vw, 3.6rem)', color: 'var(--cream)', letterSpacing: '-0.01em' }}>
+            Gift Luxury,<br />
+            <em className="text-luxury-gradient" style={{ fontStyle: 'italic', fontWeight: 400 }}>Share Delight</em>
           </h2>
           
           <p className="text-base leading-relaxed mb-9 max-w-[480px] font-sans" style={{ color: 'var(--muted)' }}>

@@ -26,13 +26,13 @@ export const HowItWorks = () => (
         transition={{ duration: 0.65 }}
         className="text-center mb-16"
       >
-        <div className="flex items-center justify-center gap-3 mb-4">
-          <div className="h-px w-12" style={{ background: 'linear-gradient(90deg, transparent, var(--gold))' }} />
-          <span className="text-[10px] tracking-[0.32em] uppercase font-bold text-gold-gradient font-sans">Our Process</span>
-          <div className="h-px w-12" style={{ background: 'linear-gradient(90deg, var(--gold), transparent)' }} />
-        </div>
-        <h2 className="font-display mb-4 font-bold" style={{ fontSize: 'clamp(2rem, 3.8vw, 3rem)', color: 'var(--cream)' }}>From Bean to Box</h2>
-        <p className="text-sm max-w-md mx-auto font-sans" style={{ color: 'var(--muted)' }}>Every DUMUZI chocolate is born through a slow, carefully tempered culinary journey.</p>
+        <div className="section-label justify-center mb-4">Our Process</div>
+        <h2 className="font-luxury font-semibold mb-4" style={{ fontSize: 'clamp(2.2rem, 3.8vw, 3.4rem)', color: 'var(--cream)', letterSpacing: '-0.01em' }}>
+          From Bean to Box
+        </h2>
+        <p className="text-[13px] max-w-md mx-auto font-sans" style={{ color: 'rgba(220,214,205,0.65)' }}>
+          Every DUMUZI chocolate is born through a slow, carefully tempered culinary journey.
+        </p>
       </motion.div>
 
       {/* Step Cards */}
@@ -72,8 +72,8 @@ export const HowItWorks = () => (
                 style={{ background: 'rgba(212,163,115,0.08)', border: '1.5px solid rgba(212,163,115,0.22)', boxShadow: '0 0 20px rgba(212,163,115,0.1)' }}>
                 <Icon size={20} style={{ color: 'var(--gold)' }} />
               </div>
-              <h3 className="font-display text-base font-semibold" style={{ color: 'var(--cream)' }}>{title}</h3>
-              <p className="text-xs leading-relaxed font-sans" style={{ color: 'var(--muted)' }}>{desc}</p>
+              <h3 className="font-luxury text-[17px] font-semibold" style={{ color: 'var(--cream)', letterSpacing: '0.02em' }}>{title}</h3>
+              <p className="text-[12px] leading-relaxed font-sans" style={{ color: 'rgba(220,214,205,0.62)' }}>{desc}</p>
             </div>
           </motion.div>
         ))}

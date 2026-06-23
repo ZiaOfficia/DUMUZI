@@ -98,14 +98,11 @@ export const AboutSection = () => {
               viewport={{ once: true }} 
               transition={{ duration: 0.8, ease } as Transition}
             >
-              <div className="flex items-center gap-3 mb-5">
-                <div className="h-px w-10" style={{ background: 'var(--gold)' }} />
-                <span className="text-[10px] tracking-[0.32em] uppercase font-bold text-gold-gradient font-sans">Our Story</span>
-              </div>
+              <div className="section-label mb-5">Our Story</div>
               
-              <h2 className="font-display leading-tight mb-6 font-bold" style={{ fontSize: 'clamp(2rem, 3.8vw, 2.8rem)', color: 'var(--cream)' }}>
+              <h2 className="font-luxury font-semibold leading-tight mb-6" style={{ fontSize: 'clamp(2.2rem, 3.8vw, 3.2rem)', color: 'var(--cream)', letterSpacing: '-0.01em' }}>
                 A Passion for<br />
-                <span className="text-gold-gradient font-display italic">Perfection</span>
+                <em className="text-luxury-gradient" style={{ fontStyle: 'italic', fontWeight: 400 }}>Perfection</em>
               </h2>
               
               <p className="text-base leading-relaxed mb-6 font-sans" style={{ color: 'var(--muted)' }}>

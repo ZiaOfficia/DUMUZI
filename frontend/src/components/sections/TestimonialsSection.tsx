@@ -100,19 +100,14 @@ export const TestimonialsSection = () => {
       <div className="max-w-7xl mx-auto relative">
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.4em] mb-4"
-            style={{ color: GOLD }}>
-            <span className="block w-8 h-px" style={{ background: GOLD }} />
-            Real Voices
-            <span className="block w-8 h-px" style={{ background: GOLD }} />
-          </p>
-          <h2 className="font-display font-bold mb-4 leading-tight"
-            style={{ fontSize: 'clamp(2rem,4.5vw,3.5rem)', color: 'var(--cream)' }}>
+          <div className="section-label justify-center mb-4">Real Voices</div>
+          <h2 className="font-luxury font-semibold mb-4 leading-tight"
+            style={{ fontSize: 'clamp(2.2rem,4.5vw,3.8rem)', color: 'var(--cream)', letterSpacing: '-0.01em' }}>
             What Our Customers Say
           </h2>
-          <p className="max-w-2xl mx-auto text-base md:text-lg font-sans"
-            style={{ color: 'var(--muted)' }}>
-            From connoisseurs and gift-givers to corporate clients and masterclass alumni — hear from the DUMUZI community.
+          <p className="max-w-xl mx-auto text-base font-sans"
+            style={{ color: 'rgba(220,214,205,0.65)' }}>
+            From connoisseurs and gift-givers to corporate clients — hear from the DUMUZI community.
           </p>
         </div>
 
@@ -189,8 +184,8 @@ export const TestimonialsSection = () => {
                 transition={{ duration: 0.6 }}
                 className="relative"
               >
-                <p className="font-display text-xl md:text-3xl lg:text-4xl leading-relaxed italic mb-6 md:mb-8"
-                  style={{ color: 'var(--cream)' }}>
+                <p className="font-luxury text-xl md:text-3xl lg:text-[2.4rem] leading-relaxed italic mb-6 md:mb-8"
+                  style={{ color: 'var(--cream)', fontWeight: 400, letterSpacing: '-0.005em', lineHeight: 1.5 }}>
                   &ldquo;{story.quote}&rdquo;
                 </p>
               </motion.div>

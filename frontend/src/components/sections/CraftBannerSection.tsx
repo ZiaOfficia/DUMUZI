@@ -38,17 +38,12 @@ export const CraftBannerSection = () => {
             viewport={{ once: true }} transition={{ duration: 0.9, ease } as Transition}
             className="lg:col-span-6"
           >
-            <div className="flex items-center gap-3 mb-5">
-              <div className="h-px w-10" style={{ background: GOLD }} />
-              <span className="text-[10px] tracking-[0.32em] uppercase font-bold text-gold-gradient font-sans">
-                Ethical Sourcing
-              </span>
-            </div>
+            <div className="section-label mb-5">Ethical Sourcing</div>
 
-            <h2 className="font-display font-bold leading-[1.1] mb-6"
-              style={{ fontSize: 'clamp(2.2rem,4.2vw,3.4rem)', color: 'var(--cream)' }}>
+            <h2 className="font-luxury font-semibold leading-[1.08] mb-6"
+              style={{ fontSize: 'clamp(2.2rem,4.2vw,3.6rem)', color: 'var(--cream)', letterSpacing: '-0.01em' }}>
               From the World's<br />
-              <span className="text-gold-gradient italic font-display">Best Cocoa Estates</span>
+              <em className="text-luxury-gradient" style={{ fontStyle: 'italic', fontWeight: 400 }}>Best Cocoa Estates</em>
             </h2>
 
             <p className="text-base leading-relaxed mb-8 max-w-[480px] font-sans" style={{ color: 'var(--muted)' }}>

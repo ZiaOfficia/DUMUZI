@@ -59,11 +59,11 @@ const NewsletterSection = () => {
         <motion.h2
           initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.08 }}
-          className="font-display font-bold mb-5"
-          style={{ fontSize: 'clamp(2rem,5vw,3.2rem)', color: 'var(--cream)', lineHeight: 1.15 }}
+          className="font-luxury font-semibold mb-5"
+          style={{ fontSize: 'clamp(2.2rem,5vw,3.6rem)', color: 'var(--cream)', lineHeight: 1.12, letterSpacing: '-0.01em' }}
         >
           First Access to<br />
-          <span className="text-gold-gradient italic font-display">New Collections</span>
+          <em className="text-luxury-gradient" style={{ fontStyle: 'italic', fontWeight: 400 }}>New Collections</em>
         </motion.h2>
 
         {/* Subtext */}

@@ -1,0 +1,115 @@
+[33mfbcc9d5[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m image puhsed
+[33ma9adc7b[m Add product images and fix frontend .gitignore
+[33mc21d276[m Fix vercel build command for frontend root directory
+[33m61310e1[m Move vercel.json into frontend for Vercel root directory setting
+[33m5d60ff1[m Add vercel.json to deploy frontend only
+[33m7cf6e30[m 1stpush
+[33m98f801e[m 1st push
+[33m68bf9e8[m 1st push
+[33m867508d[m 1st push
+[33m446c67e[m Auto-update sitemap [skip ci]
+[33m6599d81[m Allow frontend public/computercenter images and update .gitignore
+[33m2ba683e[m 2nd push
+[33me3f4216[m 1st push
+[33m9f19f1b[m pushing
+[33mfc6be9f[m feat: add success stories images and unblock them from .gitignore
+[33m4b9416c[m fix: correct portfolioData import path and explicit PortfolioItem type
+[33md4ee549[m feat: add Success Stories page with real images and polished design
+[33mb854a23[m fix: remove unused BookOpen import to fix TS6133 build error
+[33m2384242[m Merge branch 'main' of https://github.com/ZiaOfficia/aaghazzia
+[33m5406873[m add
+[33mde6937c[m Auto-update sitemap [skip ci]
+[33m754e646[m Auto-update sitemap [skip ci]
+[33mb560461[m Mobile responsiveness: hero overlap fix + standardize padding
+[33m4f03041[m Update hero and testimonial images to local assets, fix mobile navbar
+[33m5fc7f6f[m Trigger Vercel deployment with valid email
+[33ma2b0282[m new images added
+[33mb8b1fa6[m build fixed and ready for deployment
+[33mf0e2b47[m Remove unused imports in BlogSection (fix Vercel TS6133/TS6192)
+[33m3e62db4[m Auto-update sitemap [skip ci]
+[33m24f3311[m committing1
+[33m3a64719[m today 1st push
+[33m47a2202[m fix: prioritize index.html over index.php for React SPA
+[33m3de8f7c[m test: verify auto-deploy trigger
+[33m54d877a[m ci: switch to FTPS for Hostinger compatibility
+[33m69e8c63[m ci: auto-deploy frontend to Hostinger via FTP on push to main
+[33m34b6726[m Auto-update sitemap [skip ci]
+[33mb42755a[m fix: add 410 rules, duplicate slug redirects, and 404 route for SEO cleanup
+[33ma29cae7[m fix(seo): block garbage URLs, fix YouTube links, clean duplicate redirects
+[33m34e08a8[m Auto-update sitemap [skip ci]
+[33maa77c31[m Auto-update sitemap [skip ci]
+[33md6f7c18[m Auto-update sitemap [skip ci]
+[33m2630b38[m Auto-update sitemap [skip ci]
+[33m4cc2a7a[m Auto-update sitemap [skip ci]
+[33m5960f66[m Auto-update sitemap [skip ci]
+[33m83ce348[m Auto-update sitemap [skip ci]
+[33mea0b21a[m Auto-update sitemap [skip ci]
+[33m0c336c2[m Auto-update sitemap [skip ci]
+[33m5c5026a[m Auto-update sitemap [skip ci]
+[33m1f59b72[m Auto-update sitemap [skip ci]
+[33m7616f20[m Auto-update sitemap [skip ci]
+[33m491a45b[m Auto-update sitemap [skip ci]
+[33m1a0f0e1[m Auto-update sitemap [skip ci]
+[33m886cef7[m Auto-update sitemap [skip ci]
+[33m08bb7c9[m Auto-update sitemap [skip ci]
+[33m0290d87[m Auto-update sitemap [skip ci]
+[33m9bec487[m Auto-update sitemap [skip ci]
+[33m09aad6a[m Auto-update sitemap [skip ci]
+[33m7d957db[m Auto-update sitemap [skip ci]
+[33maa766e5[m Auto-update sitemap [skip ci]
+[33m7d38512[m Auto-update sitemap [skip ci]
+[33mcb7ddb7[m Auto-update sitemap [skip ci]
+[33m67a1af1[m Auto-update sitemap [skip ci]
+[33mc836b85[m Auto-update sitemap [skip ci]
+[33m4647e9d[m Auto-update sitemap [skip ci]
+[33macfce60[m Auto-update sitemap [skip ci]
+[33m0661688[m Auto-update sitemap [skip ci]
+[33m9aa4699[m Auto-update sitemap [skip ci]
+[33m1ad6627[m Auto-update sitemap [skip ci]
+[33m694ad9f[m Auto-update sitemap [skip ci]
+[33m96d3ad6[m Auto-update sitemap [skip ci]
+[33mda530dd[m Auto-update sitemap [skip ci]
+[33mfa5a1d9[m Auto-update sitemap [skip ci]
+[33me3e8d63[m Auto-update sitemap [skip ci]
+[33m1a95ca2[m Auto-update sitemap [skip ci]
+[33mce26735[m Auto-update sitemap [skip ci]
+[33mddec961[m Auto-update sitemap [skip ci]
+[33m7b8016b[m Auto-update sitemap [skip ci]
+[33m91e8ac2[m Auto-update sitemap [skip ci]
+[33mfbc83a8[m Auto-update sitemap [skip ci]
+[33m2b54e77[m Auto-update sitemap [skip ci]
+[33m2a46cfb[m Auto-update sitemap [skip ci]
+[33m69be5e7[m fix: remove quill-blot-formatter incompatible with Quill v2
+[33mc1add9a[m Add overrides for quill package in package.json
+[33m0de55cd[m Force install dependencies in sitemap workflow
+[33m14802be[m Implement sitemap update trigger on blog changes
+[33m5bfa8b6[m Add workflow_dispatch trigger to sitemap workflow
+[33mebcc088[m Auto-update sitemap [skip ci]
+[33ma2bfc90[m Add write permissions for sitemap update job
+[33mff0d1ec[m Add GitHub Actions workflow to update sitemap
+[33m1cf48c3[m Add .npmrc with legacy-peer-deps to fix quill-blot-formatter peer conflict
+[33m87695dc[m Fix SEO: clean malformed DB slugs, harden sitemap generator, retry PHP proxy
+[33ma52197d[m remove sitemap GitHub Action — sitemap now served via PHP proxy on Hostinger
+[33mcb25790[m remove sitemap.xml — proxied via sitemap.php on Hostinger
+[33m65d8108[m Fix sitemap: serve directly at elegantize.com/sitemap.xml via PHP proxy
+[33m846c1ea[m Prepare project for new GitHub repo ownership
+[33m319eec2[m Add auto-sitemap GitHub Action, remove Render redirect
+[33me6b2187[m Fix sitemap URLs: trim spaces and lowercase slugs for valid crawler URLs
+[33m33c7b62[m Add .htaccess: redirect sitemap.xml to dynamic Render endpoint
+[33m6405d7e[m Add sitemap generator script and update sitemap with 116 blog posts
+[33m06bae00[m Add dynamic sitemap.xml endpoint with all blog posts auto-included
+[33mb945295[m Fix: upgrade id to BIGINT and reset AUTO_INCREMENT counter
+[33m0a23ece[m Remove explicit id from model (let Sequelize use default), log AUTO_INCREMENT counter
+[33m506bcf3[m Add deeper diagnostics: errno, sqlState, index count, REPAIR TABLE
+[33m552929e[m Fix: clean up 64 duplicate slug indexes and stop alter:true from adding more
+[33m7a60dc8[m Add id column diagnostics to pinpoint sync alter issue
+[33mcfa305e[m Force ALTER TABLE to fix id column to INT AUTO_INCREMENT on startup
+[33m98e8e3d[m Fix id column type: use INTEGER autoIncrement to match actual DB schema
+[33m815d47c[m Fix double-slash URLs and 404 on slug lookup
+[33m91ed1c0[m Fix blog slug: strip leading slashes on save and lookup
+[33mb66f7db[m Fix 400 error on blog save: expand meta fields to TEXT and improve error messages
+[33m8ab55f5[m Increase request body limit to 50mb to fix 413 on blog post upload
+[33m3dc09de[m Opimized backend memory and cors issue Faaaaaaaa
+[33m8c259c6[m Simplify CORS configuration for better reliability
+[33m2e64e01[m Fix CORS issues for blog fetching
+[33m5206615[m Implement global instant redirection and fix budget email field

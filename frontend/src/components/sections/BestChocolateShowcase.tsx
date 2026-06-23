@@ -46,16 +46,11 @@ export const BestChocolateShowcase = () => {
           className="flex flex-col sm:flex-row sm:items-end justify-between gap-5 mb-14"
         >
           <div>
-            <div className="flex items-center gap-3 mb-3">
-              <div className="h-px w-10" style={{ background: 'linear-gradient(90deg,transparent,var(--gold))' }} />
-              <span className="text-[10px] tracking-[0.32em] uppercase font-bold text-gold-gradient font-sans">
-                Customer Favourites
-              </span>
-            </div>
-            <h2 className="font-display font-bold leading-[1.1]"
-              style={{ fontSize: 'clamp(2rem,3.8vw,3rem)', color: 'var(--cream)' }}>
-              The Best of<br />
-              <span className="text-gold-gradient italic font-display">DUMUZI</span>
+            <div className="section-label mb-4">Customer Favourites</div>
+            <h2 className="font-luxury font-semibold leading-[1.08]"
+              style={{ fontSize: 'clamp(2.2rem,3.8vw,3.4rem)', color: 'var(--cream)', letterSpacing: '-0.01em' }}>
+              The Best of{' '}
+              <em className="text-luxury-gradient" style={{ fontStyle: 'italic', fontWeight: 400 }}>DUMUZI</em>
             </h2>
           </div>
           <button
