@@ -1,5 +1,5 @@
 /**
- * DUMUZI Luxury Chocolates — image catalog.
+ * DUMUZI — image catalog.
  * All images use local product photos from /images/products/.
  */
 

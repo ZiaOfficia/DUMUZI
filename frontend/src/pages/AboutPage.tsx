@@ -304,7 +304,7 @@ export const AboutPage = () => {
               Questions?
             </h2>
             <p className="text-muted font-light text-lg">
-              Common questions about DUMUZI Luxury Chocolates.
+              Common questions about DUMUZI.
             </p>
           </div>
 

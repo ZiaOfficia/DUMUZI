@@ -6,8 +6,8 @@ export const TermsOfServicePage = () => {
   return (
     <div className="bg-white min-h-screen pt-[60px] md:pt-[50px]">
       <SEO
-        title="Terms of Service — DUMUZI Luxury Chocolates"
-        description="Terms of Service for DUMUZI Luxury Chocolates. Terms governing purchases, orders, returns, and use of our website."
+        title="Terms of Service — DUMUZI"
+        description="Terms of Service for DUMUZI. Terms governing purchases, orders, returns, and use of our website."
       />
       <div className="max-w-4xl mx-auto px-6 py-12 md:py-20 shadow-sm border border-stone-100">
         <h1 className="text-4xl font-serif text-stone-900 mb-8">
@@ -19,7 +19,7 @@ export const TermsOfServicePage = () => {
 
         <div className="prose prose-stone max-w-none text-stone-600">
           <p className="mb-6">
-            Welcome to DUMUZI Luxury Chocolates. These Terms of Service govern your use of
+            Welcome to DUMUZI. These Terms of Service govern your use of
             our website (dumuzi.com) and your purchases from us. By using our website or
             placing an order, you agree to these terms. Please read them carefully.
           </p>
@@ -28,7 +28,7 @@ export const TermsOfServicePage = () => {
             Who We Are
           </h2>
           <p className="mb-6">
-            DUMUZI Luxury Chocolates is an artisan chocolate brand founded in 2009 and based in
+            DUMUZI is an artisan confectionery brand founded in 2013 and based in
             Paris, France. We craft handmade single-origin chocolates and deliver them to customers
             worldwide. Our website address is: https://dumuzi.com.
           </p>
@@ -90,7 +90,7 @@ export const TermsOfServicePage = () => {
           </h2>
           <p className="mb-6">
             All content on our website, including text, images, logos, and designs, belongs to
-            DUMUZI Luxury Chocolates. You may not reproduce or use our content without our express
+            DUMUZI. You may not reproduce or use our content without our express
             written permission.
           </p>
 
@@ -98,7 +98,7 @@ export const TermsOfServicePage = () => {
             Limitation of Liability
           </h2>
           <p className="mb-6">
-            DUMUZI Luxury Chocolates is not liable for any indirect, incidental, or consequential
+            DUMUZI is not liable for any indirect, incidental, or consequential
             damages arising from the use of our website or products. Our liability is limited to the
             value of the order in question.
           </p>
@@ -119,7 +119,7 @@ export const TermsOfServicePage = () => {
           </p>
           <div className="bg-stone-50 p-6 rounded-lg border border-stone-200">
             <h3 className="font-serif text-lg text-stone-900 mb-2">
-              DUMUZI Luxury Chocolates
+              DUMUZI
             </h3>
             <p className="mb-1">
               <strong>Email:</strong> hello@dumuzi.com
@@ -132,7 +132,7 @@ export const TermsOfServicePage = () => {
             </p>
           </div>
           <p className="mt-6 italic">
-            Thank you for choosing DUMUZI Luxury Chocolates. We look forward to crafting something
+            Thank you for choosing DUMUZI. We look forward to crafting something
             extraordinary for you.
           </p>
         </div>

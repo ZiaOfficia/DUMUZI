@@ -1,4 +1,4 @@
-// DUMUZI Luxury Chocolates — Collections & Product Categories
+// DUMUZI — Collections & Product Categories
 // Same ServiceData interface shape so existing components keep working.
 
 export interface ServiceData {

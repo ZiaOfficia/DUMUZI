@@ -184,7 +184,7 @@ export const HeroSlider = () => {
             >
               <img
                 src="/images/products/DUMUZI.jpeg"
-                alt="DUMUZI Luxury Chocolates"
+                alt="DUMUZI"
                 className="w-full h-full object-cover image-zoom-slow"
               />
               {/* Overlay gradient */}

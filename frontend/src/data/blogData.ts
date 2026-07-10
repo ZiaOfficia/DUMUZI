@@ -85,16 +85,16 @@ export const blogPosts: BlogPost[] = [
   {
     id: "3",
     slug: "corporate-gifting-guide-luxury-chocolate-boxes",
-    title: "The Ultimate Corporate Gifting Guide: Why Luxury Chocolates Stand Out",
-    excerpt: "Discover how custom-designed chocolate assortments can elevate your corporate relations and leave a lasting impression on clients and partners.",
+    title: "The Ultimate Corporate Gifting Guide: Why Premium Gift Packs Stand Out",
+    excerpt: "Discover how custom-designed confectionery assortments can elevate your corporate relations and leave a lasting impression on clients and partners.",
     content: `
-      <p>In the business world, a thoughtful gift is a powerful tool to build relationships and show appreciation. Standard corporate gifts like notebooks and pens are often forgotten. A box of DUMUZI luxury chocolates, however, is an experience that is shared and remembered.</p>
+      <p>In the business world, a thoughtful gift is a powerful tool to build relationships and show appreciation. Standard corporate gifts like notebooks and pens are often forgotten. A box of DUMUZI premium gift packs, however, is an experience that is shared and remembered.</p>
       
       <h3>First Impressions Matter</h3>
       <p>Our corporate boxes are wrapped in elegant dark textured paper with gold-foil embossing and silk ribbons. Opening a DUMUZI box is a multi-sensory experience that reflects the high standards of your own brand.</p>
       
       <h3>Custom Branding Options</h3>
-      <p>We offer fully customizable corporate gift boxes. From custom-molded chocolate bars featuring your company logo to personalized ribbon colors and branded greeting cards, we help you align our chocolates with your corporate identity.</p>
+      <p>We offer fully customizable corporate gift boxes. From custom-molded confectionery bars featuring your company logo to personalized ribbon colors and branded greeting cards, we help you align our confectionery with your corporate identity.</p>
     `,
     image: "/images/products/LF-H18D.jpeg",
     date: "Jan 15, 2026",

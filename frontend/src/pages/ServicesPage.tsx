@@ -140,8 +140,8 @@ export const ServicesPage = () => {
   return (
     <div className="pt-[60px] md:pt-[50px]">
       <SEO
-        title="Our Collections — DUMUZI Luxury Chocolates"
-        description="Explore DUMUZI's chocolate collections — single-origin dark bars, handcrafted truffles, pralines, gift boxes, corporate gifting, and bespoke commissions."
+        title="Our Collections — DUMUZI"
+        description="Explore DUMUZI's collections — single-origin dark bars, handcrafted truffles, pralines, gift boxes, corporate gifting, and bespoke commissions."
       />
 
       {/* Hero Section */}

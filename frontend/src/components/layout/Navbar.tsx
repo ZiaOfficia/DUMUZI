@@ -120,12 +120,7 @@ export const Navbar = () => {
           >
             DUMUZI
           </span>
-          <span
-            className="text-[7.5px] tracking-[0.45em] uppercase mt-0.5 transition-opacity duration-300"
-            style={{ color: 'rgba(212,165,90,0.42)', fontFamily: 'Inter, sans-serif', fontWeight: 500 }}
-          >
-            Luxury Chocolates
-          </span>
+
         </Link>
 
         {/* Desktop Nav */}

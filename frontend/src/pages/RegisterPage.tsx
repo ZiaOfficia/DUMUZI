@@ -107,7 +107,7 @@ export const RegisterPage = () => {
       className="min-h-screen flex items-center justify-center px-4 py-16"
       style={{ background: 'var(--choc-deep)' }}
     >
-      <SEO title="Create Account — DUMUZI" description="Join DUMUZI Luxury Chocolates" />
+      <SEO title="Create Account — DUMUZI" description="Join DUMUZI" />
 
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -134,7 +134,7 @@ export const RegisterPage = () => {
             Create your account
           </h1>
           <p className="text-sm font-sans" style={{ color: 'var(--muted)' }}>
-            Join DUMUZI and start shopping luxury chocolates
+            Join DUMUZI and start shopping luxury confectionery
           </p>
         </div>
 

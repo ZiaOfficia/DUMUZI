@@ -8,7 +8,7 @@ export const sendEmailNotification = async (data: Record<string, any>) => {
       },
       body: JSON.stringify({
         ...data,
-        _subject: "New Enquiry from DUMUZI Luxury Chocolates Website", // Email Subject
+        _subject: "New Enquiry from DUMUZI Website", // Email Subject
         _template: "table", // Clean table format
       }),
     });

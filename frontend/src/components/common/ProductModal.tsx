@@ -137,7 +137,7 @@ export const ProductModal = ({ product, onClose }: ProductModalProps) => {
                   <div className="flex items-center gap-3">
                     <Package size={14} style={{ color: GOLD }} />
                     <span className="text-xs font-sans" style={{ color: 'var(--muted)' }}>
-                      Handcrafted chocolate gift box · DUMUZI Luxury Chocolates
+                      Handcrafted gift box · DUMUZI
                     </span>
                   </div>
                   <div className="flex items-center gap-3">

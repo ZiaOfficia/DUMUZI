@@ -64,7 +64,7 @@ Follow every step in order. Takes about 20–30 minutes total.
 
 1. Go to → **https://razorpay.com** → Sign Up
 2. Use your **new Gmail** from Step 1
-3. Business Name: `DUMUZI Luxury Chocolates`
+3. Business Name: `DUMUZI`
 4. Business Type: `Individual`
 5. After login → **Settings** (left sidebar) → **API Keys**
 6. Click **"Generate Test Key"**

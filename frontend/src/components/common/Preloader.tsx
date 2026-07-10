@@ -88,7 +88,7 @@ export const Preloader = ({ onComplete }: PreloaderProps) => {
           >
             <motion.img
               src="/images/products/DUMUZI.jpeg"
-              alt="DUMUZI Luxury Chocolates"
+              alt="DUMUZI"
               className="h-24 md:h-32 w-32 md:w-40 object-contain rounded-2xl drop-shadow-xl"
               animate={{ 
                 scale: [1, 1.05, 1],

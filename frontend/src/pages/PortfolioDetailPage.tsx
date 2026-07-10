@@ -23,7 +23,7 @@ export const PortfolioDetailPage = () => {
   return (
     <div className="bg-stone-50 min-h-screen">
       <SEO
-        title={`${portfolio.title} — DUMUZI Luxury Chocolates`}
+        title={`${portfolio.title} — DUMUZI`}
         description={`${portfolio.title} — a DUMUZI collection from ${portfolio.location}.`}
         image={portfolio.heroImage}
       />

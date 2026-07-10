@@ -6,8 +6,8 @@ export const PrivacyPolicyPage = () => {
   return (
     <div className="bg-white min-h-screen pt-[60px] md:pt-[50px]">
       <SEO
-        title="Privacy Policy — DUMUZI Luxury Chocolates"
-        description="Privacy Policy for DUMUZI Luxury Chocolates. How we collect, use, and protect your personal information."
+        title="Privacy Policy — DUMUZI"
+        description="Privacy Policy for DUMUZI. How we collect, use, and protect your personal information."
       />
       <div className="max-w-4xl mx-auto px-6 py-12 md:py-20 shadow-sm border border-stone-100">
         <h1 className="text-4xl font-serif text-stone-900 mb-8">
@@ -19,7 +19,7 @@ export const PrivacyPolicyPage = () => {
 
         <div className="prose prose-stone max-w-none text-stone-600">
           <p className="mb-6">
-            At DUMUZI Luxury Chocolates, we are committed to protecting your privacy and handling your personal
+            At DUMUZI, we are committed to protecting your privacy and handling your personal
             information with care. This Privacy Policy explains how we collect, use, and safeguard your data
             when you visit our website or place an order with us. By using our website, you agree to these terms.
           </p>
@@ -28,7 +28,7 @@ export const PrivacyPolicyPage = () => {
             Who We Are
           </h2>
           <p className="mb-6">
-            DUMUZI Luxury Chocolates is an artisan chocolate brand founded in 2009, based in Paris, France.
+            DUMUZI is an artisan confectionery brand founded in 2013, based in India.
             We craft single-origin handmade chocolates and deliver them worldwide. Our website address is:
             https://dumuzi.com.
           </p>
@@ -138,7 +138,7 @@ export const PrivacyPolicyPage = () => {
           </p>
           <div className="bg-stone-50 p-6 rounded-lg border border-stone-200">
             <h3 className="font-serif text-lg text-stone-900 mb-2">
-              DUMUZI Luxury Chocolates
+              DUMUZI
             </h3>
             <p className="mb-1">
               <strong>Email:</strong> hello@dumuzi.com

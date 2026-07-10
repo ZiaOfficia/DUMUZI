@@ -1,10 +1,10 @@
-// DUMUZI Luxury Chocolates — Content & Copy
+// DUMUZI — Content & Copy
 
 import { heroImages } from "./imageAssets";
 
 export const heroSlides = [
   {
-    title: "DUMUZI · Luxury Chocolates",
+    title: "DUMUZI",
     subtitle: "Handcrafted with single-origin cocoa. Made to delight every sense.",
     image: heroImages.girlSmiling,
   },

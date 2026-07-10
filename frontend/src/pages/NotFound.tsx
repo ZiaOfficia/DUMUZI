@@ -5,7 +5,7 @@ const NotFound = () => {
   return (
     <>
       <Helmet>
-        <title>404 — Page Not Found | DUMUZI Luxury Chocolates</title>
+        <title>404 — Page Not Found | DUMUZI</title>
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
       <div className="min-h-screen bg-stone-950 flex items-center justify-center text-white px-6">
