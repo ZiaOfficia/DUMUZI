@@ -75,7 +75,7 @@ export const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
         amount:      orderData.amount,
         currency:    orderData.currency,
         order_id:    orderData.orderId,
-        name:        'DUMUZI Luxury Chocolates',
+        name:        'DUMUZI',
         description: `Order of ${totalItems} item${totalItems > 1 ? 's' : ''}`,
         image:       '/images/logo.png',
         prefill: {

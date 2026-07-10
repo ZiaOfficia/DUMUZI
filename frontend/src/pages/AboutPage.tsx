@@ -42,7 +42,7 @@ export const AboutPage = () => {
     {
       question: "When was DUMUZI founded?",
       answer:
-        "DUMUZI Luxury Chocolates was founded in 2009 by master chocolatier Antoine Laurent and his partner Elise Moreau in Paris. What began as a small atelier producing handcrafted truffles has grown into an internationally recognised luxury chocolate brand shipping to over 30 countries.",
+        "DUMUZI Legacy Since 2013 was founded in 2013. It was merged with Little Fun Foods & Beverages Private Limited in 2026, growing from a small Indian brand into an online confectionery brand.",
     },
     {
       question: "Where do you source your cocoa beans?",
@@ -50,14 +50,14 @@ export const AboutPage = () => {
         "We source single-origin organic cocoa beans directly from farming cooperatives in Madagascar, Ecuador, and Peru. We pay above fair-trade prices to ensure sustainable farming practices and to build long-term relationships with the communities we work with.",
     },
     {
-      question: "What makes DUMUZI different from other luxury chocolate brands?",
+      question: "What makes DUMUZI different from other luxury confectionery brands?",
       answer:
-        "We never mass-produce. Every truffle, bar, and praline is crafted to order by our team of master chocolatiers in our Paris atelier. We use only organic, single-origin cocoa and never add artificial preservatives, palm oil, or artificial flavourings.",
+        "We never mass-produce. Every truffle, bar, and praline is crafted to order by our team of artisans. We use carefully selected ingredients and never add artificial preservatives, palm oil, or artificial flavourings.",
     },
     {
       question: "Do you offer international shipping?",
       answer:
-        "Yes. We ship to over 30 countries using express temperature-controlled couriers. All orders are packed in insulated boxes with food-grade gel packs to ensure your chocolate arrives in perfect condition.",
+        "Yes. We ship to over 30 countries using express temperature-controlled couriers. All orders are packed in insulated boxes with food-grade gel packs to ensure your confectionery arrives in perfect condition.",
     },
     {
       question: "Can I book a masterclass at your atelier?",
@@ -100,8 +100,8 @@ export const AboutPage = () => {
   return (
     <div style={{ background: 'var(--choc-deep)' }} className="min-h-screen">
       <SEO
-        title="About Us — DUMUZI Luxury Chocolates"
-        description="DUMUZI Luxury Chocolates was founded in 2009 by master chocolatier Antoine Laurent. We craft single-origin handmade chocolates using organic cocoa from Madagascar, Ecuador, and Peru."
+        title="About DUMUZI"
+        description="DUMUZI Legacy Since 2013 was founded in 2013. It was merged with Little Fun Foods & Beverages Private Limited in 2026."
       />
       {/* Hero Section */}
       <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
@@ -127,7 +127,7 @@ export const AboutPage = () => {
             transition={{ duration: 1 }}
             className="inline-block border border-white/40 text-xs tracking-[0.3em] uppercase px-4 py-2 mb-6 backdrop-blur-md bg-white/10"
           >
-            Founded 2009 · Paris
+            Legacy Since 2013
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 50 }}
@@ -143,7 +143,7 @@ export const AboutPage = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl md:text-2xl font-light tracking-wide max-w-3xl mx-auto opacity-95"
           >
-            Crafting moments of pure luxury since 2009.
+            Crafting premium confectionery experiences since 2013.
           </motion.p>
         </div>
       </section>
@@ -176,7 +176,7 @@ export const AboutPage = () => {
                 variants={itemVariants}
                 className="text-gold text-xs font-bold uppercase tracking-[0.3em] mb-4 block"
               >
-                Founded 2009 · Paris
+                Legacy Since 2013
               </motion.span>
               <motion.h2
                 variants={itemVariants}
@@ -261,7 +261,7 @@ export const AboutPage = () => {
             <p className="text-muted text-lg leading-relaxed mb-8 font-light">
               Every piece we make passes through the same four-step process: direct sourcing,
               slow roasting, hand tempering, and meticulous finishing. We never rush any stage,
-              because great chocolate cannot be hurried.
+              because great confectionery cannot be hurried.
             </p>
             <a
               href="/contact"
@@ -282,67 +282,14 @@ export const AboutPage = () => {
             The People
           </span>
           <h2 className="text-5xl md:text-7xl font-display text-cream mb-6">
-            Behind every chocolate, a craftsperson
+            Behind every confectionery creation, expert craftsmanship
           </h2>
           <div className="h-1 w-24 mx-auto" style={{ background: 'linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold))' }} />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
-          {/* Head Chocolatier */}
-          <div className="flex flex-col">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInRight}
-              className="mb-8 relative"
-            >
-              <img loading="lazy" decoding="async"
-                src="/images/products/LF-H12T.jpeg"
-                alt="Antoine Laurent — Founder & Master Chocolatier"
-                className="w-full h-[480px] object-cover transition-all duration-1000 ease-out"
-              />
-            </motion.div>
-            <div className="text-left px-4">
-              <h3 className="text-4xl font-display text-cream mb-2">
-                Antoine Laurent
-              </h3>
-              <p className="text-gold font-serif italic text-lg mb-6">
-                Founder &amp; Master Chocolatier
-              </p>
-              <p className="text-muted font-light leading-relaxed">
-                Antoine trained at the École Nationale Supérieure de la Pâtisserie before spending a decade refining his craft in luxury hotels across Europe. He founded DUMUZI in 2009 with the conviction that single-origin chocolate deserved the same reverence as fine wine. He still personally approves every new recipe and oversees the tempering process.
-              </p>
-            </div>
-          </div>
-
-          {/* Creative Director */}
-          <div className="flex flex-col md:mt-32">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInLeft}
-              className="mb-8 relative"
-            >
-              <img loading="lazy" decoding="async"
-                src="/images/products/LF-H18B.jpeg"
-                alt="Elise Moreau — Creative Director"
-                className="w-full h-[480px] object-cover transition-all duration-1000 ease-out"
-              />
-            </motion.div>
-            <div className="text-left px-4">
-              <h3 className="text-4xl font-display text-cream mb-2">
-                Elise Moreau
-              </h3>
-              <p className="text-gold font-serif italic text-lg mb-6">
-                Co-Founder &amp; Creative Director
-              </p>
-              <p className="text-muted font-light leading-relaxed">
-                Elise is responsible for the DUMUZI aesthetic — from the signature dark packaging and gold-foil embossing to the seasonal collection themes that have become the brand's visual identity. She leads all bespoke and corporate gifting design projects, and works directly with clients on wedding favour and event chocolate commissions.
-              </p>
-            </div>
-          </div>
+          <div className="flex flex-col" />
+          <div className="flex flex-col md:mt-32" />
         </div>
       </section>
 

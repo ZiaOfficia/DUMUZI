@@ -373,7 +373,7 @@ export const Navbar = () => {
             {/* Mobile footer divider */}
             <div className="mx-6 mb-5 pt-4" style={{ borderTop: '1px solid rgba(212,165,90,0.1)' }}>
               <p className="text-[9px] tracking-[0.3em] uppercase text-center" style={{ color: 'rgba(212,165,90,0.3)' }}>
-                ✦ DUMUZI Luxury Chocolates ✦
+                ✦ DUMUZI ✦
               </p>
             </div>
           </motion.div>
