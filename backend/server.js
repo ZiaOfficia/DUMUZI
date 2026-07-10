@@ -1,12 +1,17 @@
-const express = require("express");
-const cors = require("cors");
-const path = require("path");
-const fs = require("fs");
-const dotenv = require("dotenv");
-const sequelize = require("./config/db");
-// Import routes (to be created)
-const authRoutes = require("./routes/authRoutes");
-const blogRoutes = require("./routes/blogRoutes");
+const express    = require("express");
+const cors       = require("cors");
+const cookieParser = require("cookie-parser");
+const path       = require("path");
+const fs         = require("fs");
+const dotenv     = require("dotenv");
+const sequelize  = require("./config/db");
+// Import routes
+const authRoutes     = require("./routes/authRoutes");
+const blogRoutes     = require("./routes/blogRoutes");
+const paymentRoutes  = require("./routes/paymentRoutes");
+const userRoutes     = require("./routes/userRoutes");
+const productRoutes  = require("./routes/productRoutes");
+const cartRoutes     = require("./routes/cartRoutes");
 
 dotenv.config();
 
@@ -33,10 +38,17 @@ app.use(
 
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ extended: true, limit: "50mb" }));
+app.use(cookieParser()); // required for HttpOnly cookie auth
 
-// Routes
-app.use("/api/auth", authRoutes);
-app.use("/api/blogs", blogRoutes);
+// Routes — Admin / Blog (unchanged)
+app.use("/api/auth",     authRoutes);
+app.use("/api/blogs",    blogRoutes);
+app.use("/api/payments", paymentRoutes);
+
+// Routes — Customer e-commerce
+app.use("/api/users",    userRoutes);
+app.use("/api/products", productRoutes);
+app.use("/api/cart",     cartRoutes);
 
 // Dynamic Sitemap
 app.get("/sitemap.xml", async (req, res) => {
@@ -149,40 +161,67 @@ ${blogUrlEntries.join("\n")}
 sequelize
   .authenticate()
   .then(async () => {
-    console.log("MySQL Database Connected...");
+    const dialect = sequelize.getDialect();
+    console.log(`Database Connected (${dialect})...`);
 
-    // Fix id column: upgrade to BIGINT (INT counter was overflowed by failed UUID inserts)
-    await sequelize.query(
-      "ALTER TABLE BlogPosts MODIFY COLUMN id BIGINT NOT NULL AUTO_INCREMENT"
-    ).catch((err) => console.log("ALTER id warning:", err.message));
-    // Reset auto_increment to max(id)+1 in case counter is corrupted
-    await sequelize.query(
-      "SET @max_id = (SELECT COALESCE(MAX(id), 0) + 1 FROM BlogPosts); ALTER TABLE BlogPosts AUTO_INCREMENT = @max_id;"
-    ).catch(() => sequelize.query(
-      "ALTER TABLE BlogPosts AUTO_INCREMENT = 1"
-    ).catch((err) => console.log("AUTO_INCREMENT reset warning:", err.message)));
-    console.log("id column upgraded to BIGINT, AUTO_INCREMENT reset");
-
-    // Drop ALL duplicate slug unique indexes (sync alter adds a new one every restart)
-    const [indexes] = await sequelize.query(
-      "SELECT DISTINCT INDEX_NAME FROM INFORMATION_SCHEMA.STATISTICS WHERE TABLE_NAME='BlogPosts' AND TABLE_SCHEMA=DATABASE() AND COLUMN_NAME='slug' AND INDEX_NAME != 'PRIMARY'"
-    ).catch(() => [[]]);
-    const indexNames = indexes.map((r) => r.INDEX_NAME);
-    console.log(`Found ${indexNames.length} slug indexes:`, indexNames);
-    // Keep one, drop the rest
-    for (let i = 1; i < indexNames.length; i++) {
+    // ── MySQL-only maintenance (skip for PostgreSQL on Render) ───────────────
+    if (dialect === "mysql") {
+      // Fix id column: upgrade to BIGINT
       await sequelize.query(
-        `ALTER TABLE \`BlogPosts\` DROP INDEX \`${indexNames[i]}\``
-      ).catch((err) => console.log(`DROP INDEX warning: ${err.message}`));
-    }
-    if (indexNames.length > 1) {
-      console.log(`Cleaned up ${indexNames.length - 1} duplicate slug indexes`);
+        "ALTER TABLE BlogPosts MODIFY COLUMN id BIGINT NOT NULL AUTO_INCREMENT"
+      ).catch((err) => console.log("ALTER id warning:", err.message));
+
+      // Reset auto_increment
+      await sequelize.query(
+        "SET @max_id = (SELECT COALESCE(MAX(id), 0) + 1 FROM BlogPosts); ALTER TABLE BlogPosts AUTO_INCREMENT = @max_id;"
+      ).catch(() => sequelize.query(
+        "ALTER TABLE BlogPosts AUTO_INCREMENT = 1"
+      ).catch((err) => console.log("AUTO_INCREMENT reset warning:", err.message)));
+      console.log("id column upgraded to BIGINT, AUTO_INCREMENT reset");
+
+      // Drop duplicate slug unique indexes
+      const [indexes] = await sequelize.query(
+        "SELECT DISTINCT INDEX_NAME FROM INFORMATION_SCHEMA.STATISTICS WHERE TABLE_NAME='BlogPosts' AND TABLE_SCHEMA=DATABASE() AND COLUMN_NAME='slug' AND INDEX_NAME != 'PRIMARY'"
+      ).catch(() => [[]]);
+      const indexNames = indexes.map((r) => r.INDEX_NAME);
+      for (let i = 1; i < indexNames.length; i++) {
+        await sequelize.query(
+          `ALTER TABLE \`BlogPosts\` DROP INDEX \`${indexNames[i]}\``
+        ).catch((err) => console.log(`DROP INDEX warning: ${err.message}`));
+      }
+      if (indexNames.length > 1) {
+        console.log(`Cleaned up ${indexNames.length - 1} duplicate slug indexes`);
+      }
+
+      // Repair table
+      await sequelize.query("REPAIR TABLE `BlogPosts`")
+        .then(([r]) => console.log("REPAIR TABLE:", r[0]?.Msg_text))
+        .catch((err) => console.log("REPAIR warning:", err.message));
     }
 
-    // Repair table to fix any metadata corruption from too-many-keys errors
-    await sequelize.query("REPAIR TABLE `BlogPosts`")
-      .then(([r]) => console.log("REPAIR TABLE:", r[0]?.Msg_text))
-      .catch((err) => console.log("REPAIR warning:", err.message));
+    // ── Sync all models (works on both MySQL and PostgreSQL) ─────────────────
+    // Ensure Orders table exists
+    const Order = require("./models/Order");
+    await Order.sync({ alter: false });
+
+    // One-time migration: add user_id to Orders (sync uses alter:false, so do it manually)
+    const addUserIdSql =
+      dialect === "mysql"
+        ? "ALTER TABLE Orders ADD COLUMN user_id BIGINT NULL"
+        : 'ALTER TABLE "Orders" ADD COLUMN IF NOT EXISTS user_id BIGINT NULL';
+    await sequelize
+      .query(addUserIdSql)
+      .then(() => console.log("Orders.user_id column added"))
+      .catch(() => {}); // ignore "duplicate column" on subsequent boots
+
+    // Sync new customer e-commerce tables
+    const User     = require("./models/User");
+    const Product  = require("./models/Product");
+    const CartItem = require("./models/CartItem");
+    await User.sync({ alter: false });
+    await Product.sync({ alter: false });
+    await CartItem.sync({ alter: false });
+    console.log("Customer tables synced (Users, Products, CartItems)");
 
     // Use sync without alter to prevent duplicate index buildup
     await sequelize.sync();

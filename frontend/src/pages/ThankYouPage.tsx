@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { CheckCircle, Home, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "../components/common/Button";
@@ -13,6 +13,9 @@ declare global {
 }
 
 const ThankYouPage = () => {
+  const [searchParams] = useSearchParams();
+  const isOrder = searchParams.get('type') === 'order';
+
   // Fire conversion event when Thank You page loads
   useEffect(() => {
     // Google Analytics 4 conversion event
@@ -44,16 +47,20 @@ const ThankYouPage = () => {
           <CheckCircle className="w-12 h-12 text-green-600" />
         </div>
 
-        <h1 className="text-4xl font-display text-accent mb-6">Thank you.</h1>
+        <h1 className="text-4xl font-display text-accent mb-6">
+          {isOrder ? 'Order Confirmed!' : 'Thank you.'}
+        </h1>
 
         <p className="text-xl text-gray-700 mb-4 font-light">
-          We have received your message.
+          {isOrder
+            ? 'Your payment was successful.'
+            : 'We have received your message.'}
         </p>
 
         <p className="text-gray-600 mb-10 leading-relaxed">
-          Our team at DUMUZI Luxury Chocolates will read your message and reply
-          within 1–2 business days. For urgent matters, you can also
-          email us at{" "}
+          {isOrder
+            ? 'Your DUMUZI order has been placed. We will prepare your chocolates with care and reach out within 1–2 business days with dispatch details. For any queries, email us at '
+            : 'Our team at DUMUZI Luxury Chocolates will read your message and reply within 1–2 business days. For urgent matters, you can also email us at '}
           <a
             href="mailto:hello@dumuzi.com"
             className="text-primary hover:underline"

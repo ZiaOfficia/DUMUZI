@@ -1,10 +1,26 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ShoppingCart, Tag, Package } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
+import { useAuth } from '../../context/AuthContext';
+import { useToast } from './Toast';
 import type { Product } from '../../data/productsData';
 
 const GOLD = '#d4a373';
 const GOLDL = '#e5c199';
+const BROWN = '#9B6747';
+
+const renderDesc = (desc: string) => {
+  const idx = desc.indexOf('SIGNATURE');
+  if (idx === -1) return desc;
+  return (
+    <>
+      {desc.slice(0, idx)}
+      <span style={{ color: BROWN }}>SIGNATURE</span>
+      {desc.slice(idx + 9)}
+    </>
+  );
+};
 
 interface ProductModalProps {
   product: Product | null;
@@ -12,7 +28,22 @@ interface ProductModalProps {
 }
 
 export const ProductModal = ({ product, onClose }: ProductModalProps) => {
-  const { addItem } = useCart();
+  const { addItem }         = useCart();
+  const { isAuthenticated } = useAuth();
+  const { info }            = useToast();
+  const navigate            = useNavigate();
+
+  const handleAddToCart = () => {
+    if (!product) return;
+    if (!isAuthenticated) {
+      info('Please log in to add items to your cart');
+      onClose();
+      navigate('/login', { state: { from: '/collections' } });
+      return;
+    }
+    addItem({ id: product.id, name: product.description, price: product.mrp, image: product.image });
+    onClose();
+  };
 
   return (
     <AnimatePresence>
@@ -96,7 +127,7 @@ export const ProductModal = ({ product, onClose }: ProductModalProps) => {
                     className="font-display font-bold leading-tight mb-2"
                     style={{ fontSize: 'clamp(1.35rem, 3vw, 1.85rem)', color: 'var(--cream)' }}
                   >
-                    {product.description}
+                    {renderDesc(product.description)}
                   </h2>
                   <div className="h-px w-12 mt-3" style={{ background: `linear-gradient(90deg, ${GOLD}, transparent)` }} />
                 </div>
@@ -132,10 +163,7 @@ export const ProductModal = ({ product, onClose }: ProductModalProps) => {
                   </div>
 
                   <button
-                    onClick={() => {
-                      addItem({ id: product.id, name: product.description, price: product.mrp });
-                      onClose();
-                    }}
+                    onClick={handleAddToCart}
                     className="flex items-center gap-2.5 px-7 py-3.5 rounded-full text-[12px] font-bold uppercase tracking-wider border-none cursor-pointer transition-all duration-300"
                     style={{
                       background: `linear-gradient(135deg, ${GOLD}, ${GOLDL})`,

@@ -111,7 +111,7 @@ export const ServicesGrid = () => {
                 <div className="absolute inset-0 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10"
                   style={{ background: 'rgba(15,10,7,0.45)', backdropFilter: 'blur(4px)' }}>
                   <button 
-                    onClick={(e) => { e.stopPropagation(); addItem({ id: p.id, name: p.name, price: p.price }); }}
+                    onClick={(e) => { e.stopPropagation(); addItem({ id: p.id, name: p.name, price: p.price, image: p.image }); }}
                     className="w-11 h-11 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 border-none cursor-pointer"
                     style={{ background: 'linear-gradient(135deg, var(--gold), var(--gold-light))', color: 'var(--choc-deep)' }}
                   >
@@ -142,7 +142,7 @@ export const ServicesGrid = () => {
                     {p.oldPrice && <span className="text-[11px] line-through opacity-40" style={{ color: 'var(--cream)' }}>₹{p.oldPrice}</span>}
                   </div>
                   <button 
-                    onClick={(e) => { e.stopPropagation(); addItem({ id: p.id, name: p.name, price: p.price }); }}
+                    onClick={(e) => { e.stopPropagation(); addItem({ id: p.id, name: p.name, price: p.price, image: p.image }); }}
                     className="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 bg-[#c59b6c]/10 hover:bg-gradient-to-r hover:from-[#c59b6c] hover:to-[#e5c199] border border-[#c59b6c]/30 hover:border-transparent text-[#c59b6c] hover:text-[#040405] hover:shadow-[0_0_18px_rgba(197,155,108,0.45)] cursor-pointer"
                   >
                     <ShoppingCart size={13} />

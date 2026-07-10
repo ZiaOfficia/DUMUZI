@@ -138,7 +138,7 @@ export const BestChocolateShowcase = () => {
                     style={{ borderTop: '1px solid rgba(212,163,115,0.1)' }}>
                     <span className="text-lg font-bold text-gold-gradient">₹{choc.price}</span>
                     <button
-                      onClick={() => addItem({ id: choc.id, name: choc.description, price: choc.price })}
+                      onClick={() => addItem({ id: choc.id, name: choc.description, price: choc.price, image: choc.image })}
                       className="px-5 py-2 rounded-full text-[11px] font-bold uppercase tracking-wider border-none cursor-pointer transition-all duration-300"
                       style={{
                         background: choc.featured ? `linear-gradient(135deg,${GOLD},${GOLDL})` : 'rgba(212,163,115,0.1)',

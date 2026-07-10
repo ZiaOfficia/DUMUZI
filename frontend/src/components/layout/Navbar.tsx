@@ -1,8 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, User, ShoppingBag, Menu, X } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import { Search, User, ShoppingBag, Menu, X, LogOut, Settings, ChevronDown, Package } from 'lucide-react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
+import { useAuth } from '../../context/AuthContext';
+import { useToast } from '../common/Toast';
+import { CartPanel } from '../common/CartPanel';
 
 const GOLD  = '#d4a55a';
 const GOLDL = '#e8c07a';
@@ -42,10 +45,16 @@ const IconBtn = ({ children, label }: { children: React.ReactNode; label?: strin
 );
 
 export const Navbar = () => {
-  const { totalItems } = useCart();
-  const { pathname }   = useLocation();
-  const [scrolled, setScrolled]   = useState(false);
-  const [menuOpen, setMenuOpen]   = useState(false);
+  const { totalItems }               = useCart();
+  const { user, isAuthenticated, logout } = useAuth();
+  const { success }                  = useToast();
+  const { pathname }                 = useLocation();
+  const navigate                     = useNavigate();
+  const [scrolled, setScrolled]      = useState(false);
+  const [menuOpen, setMenuOpen]      = useState(false);
+  const [cartOpen, setCartOpen]      = useState(false);
+  const [userDropOpen, setUserDropOpen] = useState(false);
+  const dropRef                      = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 40);
@@ -53,7 +62,26 @@ export const Navbar = () => {
     return () => window.removeEventListener('scroll', fn);
   }, []);
 
+  // Close dropdown on outside click
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (dropRef.current && !dropRef.current.contains(e.target as Node)) {
+        setUserDropOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handler);
+    return () => document.removeEventListener('mousedown', handler);
+  }, []);
+
+  const handleLogout = async () => {
+    await logout();
+    setUserDropOpen(false);
+    success('Logged out successfully');
+    navigate('/');
+  };
+
   return (
+    <>
     <motion.nav
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
@@ -152,10 +180,99 @@ export const Navbar = () => {
         {/* Right Icons */}
         <div className="flex items-center gap-1 lg:gap-1.5">
           <IconBtn label="Search"><Search size={16} /></IconBtn>
-          <IconBtn label="Account"><User size={16} /></IconBtn>
+
+          {/* User: dropdown if logged in, link if guest */}
+          {isAuthenticated && user ? (
+            <div className="relative" ref={dropRef}>
+              <button
+                onClick={() => setUserDropOpen(v => !v)}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl transition-all duration-200 text-xs font-semibold"
+                style={{
+                  background: userDropOpen ? 'rgba(212,165,90,0.1)' : 'rgba(212,165,90,0)',
+                  border: `1px solid ${userDropOpen ? 'rgba(212,165,90,0.3)' : 'rgba(212,165,90,0)'}`,
+                  color: GOLDL,
+                  cursor: 'pointer',
+                }}
+                onMouseEnter={e => { if (!userDropOpen) { e.currentTarget.style.background = 'rgba(212,165,90,0.07)'; e.currentTarget.style.borderColor = 'rgba(212,165,90,0.2)'; }}}
+                onMouseLeave={e => { if (!userDropOpen) { e.currentTarget.style.background = 'rgba(212,165,90,0)'; e.currentTarget.style.borderColor = 'rgba(212,165,90,0)'; }}}
+              >
+                <div
+                  className="w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold flex-shrink-0"
+                  style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLDL})`, color: '#0d0805' }}
+                >
+                  {user.name.charAt(0).toUpperCase()}
+                </div>
+                <span className="hidden sm:block max-w-[80px] truncate">{user.name.split(' ')[0]}</span>
+                <ChevronDown size={11} style={{ opacity: 0.6, flexShrink: 0, transform: userDropOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }} />
+              </button>
+
+              <AnimatePresence>
+                {userDropOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 8, scale: 0.95 }}
+                    transition={{ duration: 0.18 }}
+                    className="absolute right-0 mt-2 w-44 rounded-xl overflow-hidden z-50"
+                    style={{
+                      background: 'rgba(18,12,8,0.98)',
+                      border: '1px solid rgba(212,165,90,0.2)',
+                      boxShadow: '0 16px 40px rgba(0,0,0,0.6)',
+                      backdropFilter: 'blur(24px)',
+                    }}
+                  >
+                    <Link
+                      to="/profile"
+                      onClick={() => setUserDropOpen(false)}
+                      className="flex items-center gap-2.5 px-4 py-3 text-xs font-semibold transition-colors"
+                      style={{ color: 'rgba(212,165,90,0.7)' }}
+                      onMouseEnter={e => { e.currentTarget.style.background = 'rgba(212,165,90,0.07)'; e.currentTarget.style.color = GOLDL; }}
+                      onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'rgba(212,165,90,0.7)'; }}
+                    >
+                      <Settings size={13} /> My Profile
+                    </Link>
+                    <Link
+                      to="/cart"
+                      onClick={() => setUserDropOpen(false)}
+                      className="flex items-center gap-2.5 px-4 py-3 text-xs font-semibold transition-colors"
+                      style={{ color: 'rgba(212,165,90,0.7)', borderTop: '1px solid rgba(212,165,90,0.08)' }}
+                      onMouseEnter={e => { e.currentTarget.style.background = 'rgba(212,165,90,0.07)'; e.currentTarget.style.color = GOLDL; }}
+                      onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'rgba(212,165,90,0.7)'; }}
+                    >
+                      <ShoppingBag size={13} /> My Cart {totalItems > 0 && `(${totalItems})`}
+                    </Link>
+                    <Link
+                      to="/my-orders"
+                      onClick={() => setUserDropOpen(false)}
+                      className="flex items-center gap-2.5 px-4 py-3 text-xs font-semibold transition-colors"
+                      style={{ color: 'rgba(212,165,90,0.7)' }}
+                      onMouseEnter={e => { e.currentTarget.style.background = 'rgba(212,165,90,0.07)'; e.currentTarget.style.color = GOLDL; }}
+                      onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'rgba(212,165,90,0.7)'; }}
+                    >
+                      <Package size={13} /> My Orders
+                    </Link>
+                    <button
+                      onClick={handleLogout}
+                      className="w-full flex items-center gap-2.5 px-4 py-3 text-xs font-semibold transition-colors"
+                      style={{ color: 'rgba(239,68,68,0.7)', background: 'none', border: 'none', borderTop: '1px solid rgba(212,165,90,0.08)', cursor: 'pointer' }}
+                      onMouseEnter={e => { e.currentTarget.style.background = 'rgba(239,68,68,0.08)'; e.currentTarget.style.color = '#ef4444'; }}
+                      onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'rgba(239,68,68,0.7)'; }}
+                    >
+                      <LogOut size={13} /> Logout
+                    </button>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          ) : (
+            <Link to="/login">
+              <IconBtn label="Account"><User size={16} /></IconBtn>
+            </Link>
+          )}
 
           {/* Cart */}
           <button
+            onClick={() => setCartOpen(true)}
             className="relative flex items-center justify-center w-9 h-9 rounded-xl transition-all duration-300"
             style={{
               background: 'rgba(212,165,90,0)',
@@ -263,5 +380,8 @@ export const Navbar = () => {
         )}
       </AnimatePresence>
     </motion.nav>
+
+    <CartPanel isOpen={cartOpen} onClose={() => setCartOpen(false)} />
+    </>
   );
 };

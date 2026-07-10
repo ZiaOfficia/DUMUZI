@@ -1,34 +1,9 @@
-DirectoryIndex index.html index.php
+DirectoryIndex index.html
 
 RewriteEngine On
 RewriteBase /
 
-# Return 410 Gone for broken YouTube-appended URLs
-RewriteRule ^.*www\.youtube\.com/@elegantize.*$ - [G,NC,L]
-
-# Return 410 for malformed https:/ paths
-RewriteRule ^.*https:/elegantize\.com.*$ - [G,NC,L]
-
-# Return 410 for WordPress junk parameters
-RewriteCond %{QUERY_STRING} (^|&)et_blog(=|&|$) [NC,OR]
-RewriteCond %{QUERY_STRING} (^|&)amp=1(&|$) [NC,OR]
-RewriteCond %{QUERY_STRING} (^|&)noamp=mobile(&|$) [NC]
-RewriteRule ^ - [G,L]
-
-RewriteRule ^.*\/feed\/?$ - [G,L]
-
-# 301 redirects for duplicate slug pages
-RewriteRule ^home-4/?$ / [R=301,L]
-RewriteRule ^home/?$ / [R=301,L]
-RewriteRule ^about-us/?$ /about [R=301,L]
-RewriteRule ^blog-2/?$ /blog [R=301,L]
-RewriteRule ^floral-design-3/?$ /floral-design [R=301,L]
-RewriteRule ^ceiling-design-2/?$ /ceiling-design [R=301,L]
-RewriteRule ^centerpiece-design-3/?$ /centerpiece-design [R=301,L]
-RewriteRule ^vinyl-floor-wraps-3/?$ /vinyl-floor-wraps [R=301,L]
-RewriteRule ^draping-services-2/?$ /draping-services [R=301,L]
-
-# React SPA fallback — MUST be last
+# React SPA fallback
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.html [L]

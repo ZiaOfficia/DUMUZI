@@ -1,0 +1,71 @@
+/**
+ * Seed Products table from the 27 DUMUZI products.
+ * Run once: node scripts/seedProducts.js
+ */
+const path = require("path");
+require("dotenv").config({ path: path.join(__dirname, "../.env") });
+
+const sequelize = require("../config/db");
+const Product   = require("../models/Product");
+
+const products = [
+  // ── HEART SERIES ──────────────────────────────────────────────────────────
+  { id: 1,  brandName:"DUMUZI", productName:"LF-H9",   image:"/images/products/DUMUZI.jpeg",      description:"HEART 9 CAVITY SIGNATURE",        mrp:260,  category:"HEART"   },
+  { id: 2,  brandName:"DUMUZI", productName:"LF-H3",   image:"/images/products/LF-H3.jpeg",       description:"HEART 3 CAVITY BROWN",            mrp:99,   category:"HEART"   },
+  { id: 3,  brandName:"DUMUZI", productName:"LF-H3T",  image:"/images/products/LF - H3T.jpeg",    description:"HEART 3 CAVITY TRIOS",            mrp:110,  category:"HEART"   },
+  { id: 4,  brandName:"DUMUZI", productName:"LF-H4P",  image:"/images/products/LF-H4P.jpeg",      description:"HEART 4 CAVITY",                  mrp:140,  category:"HEART"   },
+  { id: 5,  brandName:"DUMUZI", productName:"LF-H5",   image:"/images/products/LF - H5.jpeg",     description:"HEART 5 CAVITY",                  mrp:160,  category:"HEART"   },
+  { id: 6,  brandName:"DUMUZI", productName:"LF-H5P",  image:"/images/products/LF-H5P.jpeg",      description:"HEART 5 CAVITY POLYCARBONATE",    mrp:180,  category:"HEART"   },
+  { id: 7,  brandName:"DUMUZI", productName:"LF-H7P",  image:"/images/products/LF-H7P.jpeg",      description:"HEART 7 CAVITY POLYCARBONATE",    mrp:220,  category:"HEART"   },
+  { id: 8,  brandName:"DUMUZI", productName:"LF-H8B",  image:"/images/products/LF-H8B.jpeg",      description:"HEART 8 CAVITY BROWN",            mrp:240,  category:"HEART"   },
+  { id: 9,  brandName:"DUMUZI", productName:"LF-H9P",  image:"/images/products/LF-H9P .jpeg",     description:"HEART 9 CAVITY POLYCARBONATE",    mrp:270,  category:"HEART"   },
+  { id: 10, brandName:"DUMUZI", productName:"LF-H12B", image:"/images/products/LF-H12B.jpeg",     description:"HEART 12 CAVITY BROWN",           mrp:350,  category:"HEART"   },
+  { id: 11, brandName:"DUMUZI", productName:"LF-H12P", image:"/images/products/LF-H12P.jpeg",     description:"HEART 12 CAVITY POLYCARBONATE",   mrp:380,  category:"HEART"   },
+  { id: 12, brandName:"DUMUZI", productName:"LF-H12T", image:"/images/products/LF-H12T.jpeg",     description:"HEART 12 CAVITY TRIOS",           mrp:399,  category:"HEART"   },
+  { id: 13, brandName:"DUMUZI", productName:"LF-H18B", image:"/images/products/LF-H18B.jpeg",     description:"HEART 18 CAVITY BROWN",           mrp:499,  category:"HEART"   },
+  { id: 14, brandName:"DUMUZI", productName:"LF-H18D", image:"/images/products/LF-H18D.jpeg",     description:"HEART 18 CAVITY DUO",             mrp:549,  category:"HEART"   },
+  // ── DISPLAY SERIES ────────────────────────────────────────────────────────
+  { id: 15, brandName:"DUMUZI", productName:"LF-D6",   image:"/images/products/LF-D6.jpeg",       description:"DISPLAY 6 CAVITY",                mrp:190,  category:"DISPLAY" },
+  { id: 16, brandName:"DUMUZI", productName:"LF-D9",   image:"/images/products/LF-D9.jpeg",       description:"DISPLAY 9 CAVITY",                mrp:270,  category:"DISPLAY" },
+  { id: 17, brandName:"DUMUZI", productName:"LF-D12B", image:"/images/products/LF-D12B.jpeg",     description:"DISPLAY 12 CAVITY BROWN",         mrp:340,  category:"DISPLAY" },
+  { id: 18, brandName:"DUMUZI", productName:"LF-D12",  image:"/images/products/LF-D12.jpeg",      description:"DISPLAY 12 CAVITY",               mrp:360,  category:"DISPLAY" },
+  { id: 19, brandName:"DUMUZI", productName:"LF-D15",  image:"/images/products/LF-D15.jpeg",      description:"DISPLAY 15 CAVITY",               mrp:430,  category:"DISPLAY" },
+  { id: 20, brandName:"DUMUZI", productName:"LF-D15T", image:"/images/products/LF-D15T.jpeg",     description:"DISPLAY 15 CAVITY TRIOS",         mrp:460,  category:"DISPLAY" },
+  { id: 21, brandName:"DUMUZI", productName:"LF-D18T", image:"/images/products/LF-D18T.jpeg",     description:"DISPLAY 18 CAVITY TRIOS",         mrp:549,  category:"DISPLAY" },
+  { id: 22, brandName:"DUMUZI", productName:"LF-D25B", image:"/images/products/LF-D25B.jpeg",     description:"DISPLAY 25 CAVITY BROWN",         mrp:650,  category:"DISPLAY" },
+  { id: 23, brandName:"DUMUZI", productName:"LF-D25",  image:"/images/products/LF-D25.jpeg",      description:"DISPLAY 25 CAVITY",               mrp:699,  category:"DISPLAY" },
+  { id: 24, brandName:"DUMUZI", productName:"LF-D25T", image:"/images/products/LF-D25T.jpeg",     description:"DISPLAY 25 CAVITY TRIOS",         mrp:749,  category:"DISPLAY" },
+  // ── BONBON SERIES ─────────────────────────────────────────────────────────
+  { id: 25, brandName:"DUMUZI", productName:"LF-BN9",  image:"/images/products/LF- BN9.jpeg",     description:"BONBON 9 CAVITY",                 mrp:270,  category:"BONBON"  },
+  { id: 26, brandName:"DUMUZI", productName:"LF-BN9T", image:"/images/products/LF-BN9T.jpeg",     description:"BONBON 9 CAVITY TRIOS",           mrp:299,  category:"BONBON"  },
+  // ── OVAL SERIES ───────────────────────────────────────────────────────────
+  { id: 27, brandName:"DUMUZI", productName:"LF-O9",   image:"/images/products/LF-O9.jpeg",       description:"OVAL 9 CAVITY",                   mrp:260,  category:"OVAL"    },
+];
+
+async function seed() {
+  try {
+    await sequelize.authenticate();
+    console.log("✓ DB connected");
+
+    // Sync only Products table (no alter on others)
+    await Product.sync({ force: false });
+    console.log("✓ Products table synced");
+
+    let inserted = 0;
+    for (const p of products) {
+      const [, created] = await Product.findOrCreate({
+        where: { productName: p.productName },
+        defaults: p,
+      });
+      if (created) inserted++;
+    }
+
+    console.log(`✅ Seed complete — ${inserted} new products inserted (${products.length - inserted} already existed)`);
+  } catch (err) {
+    console.error("Seed error:", err.message);
+  } finally {
+    await sequelize.close();
+  }
+}
+
+seed();

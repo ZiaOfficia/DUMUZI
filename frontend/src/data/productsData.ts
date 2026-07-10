@@ -12,7 +12,7 @@ export const products: Product[] = [
   {
     id: 1,
     brandName: "DUMUZI",
-    productName: "DUMUZI",
+    productName: "LF-H9",
     image: "/images/products/DUMUZI.jpeg",
     description: "HEART 9 CAVITY SIGNATURE",
     mrp: 260,

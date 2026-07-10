@@ -1,7 +1,10 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { motion, type Transition } from 'framer-motion';
 import { ShoppingCart, Eye, Search } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import { useAuth } from '../context/AuthContext';
+import { useToast } from '../components/common/Toast';
 import { products, type Product } from '../data/productsData';
 import { ProductModal } from '../components/common/ProductModal';
 import { SEO } from '../components/common/SEO';
@@ -9,7 +12,20 @@ import NewsletterSection from '../components/sections/NewsletterSection';
 
 const GOLD = '#d4a373';
 const GOLDL = '#e5c199';
+const BROWN = '#9B6747';
 const ease = [0.25, 0.1, 0.25, 1] as const;
+
+const renderDesc = (desc: string) => {
+  const idx = desc.indexOf('SIGNATURE');
+  if (idx === -1) return desc;
+  return (
+    <>
+      {desc.slice(0, idx)}
+      <span style={{ color: BROWN }}>SIGNATURE</span>
+      {desc.slice(idx + 9)}
+    </>
+  );
+};
 
 const FILTERS = [
   { label: 'All',     value: 'ALL'     },
@@ -20,11 +36,25 @@ const FILTERS = [
 ];
 
 const CollectionsPage = () => {
-  const { addItem } = useCart();
-  const [filter, setFilter]   = useState('ALL');
-  const [query,  setQuery]    = useState('');
-  const [viewed, setViewed]   = useState<Product | null>(null);
-  const [hovered, setHovered] = useState<number | null>(null);
+  const { addItem }            = useCart();
+  const { isAuthenticated }    = useAuth();
+  const { info }               = useToast();
+  const navigate               = useNavigate();
+  const [filter, setFilter]    = useState('ALL');
+  const [query,  setQuery]     = useState('');
+  const [viewed, setViewed]    = useState<Product | null>(null);
+  const [hovered, setHovered]  = useState<number | null>(null);
+
+  // Auth-guarded addToCart
+  const handleAddToCart = useCallback((p: Product, e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    if (!isAuthenticated) {
+      info('Please log in to add items to your cart');
+      navigate('/login', { state: { from: '/collections' } });
+      return;
+    }
+    addItem({ id: p.id, name: p.description, price: p.mrp, image: p.image });
+  }, [isAuthenticated, addItem, navigate, info]);
 
   const visible = products.filter(p => {
     const matchCat   = filter === 'ALL' || p.description.startsWith(filter);
@@ -169,7 +199,7 @@ const CollectionsPage = () => {
                       style={{ background: 'rgba(10,6,3,0.5)', backdropFilter: 'blur(4px)' }}
                     >
                       <button
-                        onClick={e => { e.stopPropagation(); addItem({ id: p.id, name: p.description, price: p.mrp }); }}
+                        onClick={e => handleAddToCart(p, e)}
                         className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 border-none cursor-pointer"
                         style={{ background: `linear-gradient(135deg,${GOLD},${GOLDL})`, color: 'var(--choc-deep)' }}
                         title="Add to Cart"
@@ -196,7 +226,7 @@ const CollectionsPage = () => {
                       className="font-display text-[13px] leading-snug font-semibold line-clamp-2"
                       style={{ color: 'var(--cream)' }}
                     >
-                      {p.description}
+                      {renderDesc(p.description)}
                     </h3>
 
                     <div
@@ -205,7 +235,7 @@ const CollectionsPage = () => {
                     >
                       <span className="text-sm font-bold" style={{ color: GOLD }}>₹{p.mrp}</span>
                       <button
-                        onClick={() => addItem({ id: p.id, name: p.description, price: p.mrp })}
+                        onClick={() => handleAddToCart(p)}
                         className="w-7 h-7 rounded-full flex items-center justify-center border-none cursor-pointer transition-all duration-250 hover:scale-110"
                         style={{ background: 'rgba(212,163,115,0.1)', color: GOLDL, border: '1px solid rgba(212,163,115,0.25)' }}
                         onMouseEnter={e => { e.currentTarget.style.background = `linear-gradient(135deg,${GOLD},${GOLDL})`; e.currentTarget.style.color = 'var(--choc-deep)'; }}

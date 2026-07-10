@@ -233,7 +233,7 @@ const BestChocolatePage = () => {
                     <div className="absolute inset-0 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-all duration-300"
                       style={{ background: 'rgba(15,10,7,0.45)', backdropFilter: 'blur(4px)' }}>
                       <button
-                        onClick={() => addItem({ id: choc.id, name: choc.description, price: choc.price })}
+                        onClick={() => addItem({ id: choc.id, name: choc.description, price: choc.price, image: choc.image })}
                         className="w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 border-none cursor-pointer"
                         style={{ background: `linear-gradient(135deg,${GOLD},${GOLDL})`, color: 'var(--choc-deep)' }}>
                         <ShoppingCart size={17} />
@@ -282,7 +282,7 @@ const BestChocolatePage = () => {
                         {choc.oldPrice && <span className="text-[11px] line-through opacity-35" style={{ color: 'var(--cream)' }}>₹{choc.oldPrice}</span>}
                       </div>
                       <button
-                        onClick={() => addItem({ id: choc.id, name: choc.description, price: choc.price })}
+                        onClick={() => addItem({ id: choc.id, name: choc.description, price: choc.price, image: choc.image })}
                         className="flex items-center gap-2 px-5 py-2.5 rounded-full text-[11px] font-bold uppercase tracking-wider transition-all duration-300 border-none cursor-pointer"
                         style={{
                           background: `linear-gradient(135deg,${GOLD},${GOLDL})`,

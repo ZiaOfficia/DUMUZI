@@ -23,7 +23,7 @@ const BlogPost = sequelize.define(
       allowNull: true,
     },
     content: {
-      type: DataTypes.TEXT("long"), // For HTML content
+      type: DataTypes.TEXT, // TEXT is unlimited in PostgreSQL; "long" alias only works in MySQL
       allowNull: false,
     },
     image_url: {
