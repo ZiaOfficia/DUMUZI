@@ -2,10 +2,16 @@ const Razorpay = require('razorpay');
 const crypto  = require('crypto');
 const Order   = require('../models/Order');
 
-const razorpay = new Razorpay({
-  key_id:     process.env.RAZORPAY_KEY_ID,
-  key_secret: process.env.RAZORPAY_KEY_SECRET,
-});
+let razorpay;
+function getRazorpay() {
+  if (!razorpay) {
+    razorpay = new Razorpay({
+      key_id:     process.env.RAZORPAY_KEY_ID,
+      key_secret: process.env.RAZORPAY_KEY_SECRET,
+    });
+  }
+  return razorpay;
+}
 
 exports.createOrder = async (req, res) => {
   try {
@@ -27,7 +33,7 @@ exports.createOrder = async (req, res) => {
     const totalRupees = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
     const amountPaise = Math.round(totalRupees * 100);
 
-    const rzpOrder = await razorpay.orders.create({
+    const rzpOrder = await getRazorpay().orders.create({
       amount:   amountPaise,
       currency: 'INR',
       receipt:  `rcpt_${Date.now()}`,
