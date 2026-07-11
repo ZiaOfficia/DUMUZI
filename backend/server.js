@@ -200,7 +200,13 @@ sequelize
     }
 
     // ── Sync all models (works on both MySQL and PostgreSQL) ─────────────────
-    // Ensure Orders table exists
+    // Users must exist first: Order.user_id has a foreign key referencing it.
+    const User     = require("./models/User");
+    const Product  = require("./models/Product");
+    const CartItem = require("./models/CartItem");
+    await User.sync({ alter: false });
+
+    // Ensure Orders table exists (references Users, so must come after)
     const Order = require("./models/Order");
     await Order.sync({ alter: false });
 
@@ -214,11 +220,6 @@ sequelize
       .then(() => console.log("Orders.user_id column added"))
       .catch(() => {}); // ignore "duplicate column" on subsequent boots
 
-    // Sync new customer e-commerce tables
-    const User     = require("./models/User");
-    const Product  = require("./models/Product");
-    const CartItem = require("./models/CartItem");
-    await User.sync({ alter: false });
     await Product.sync({ alter: false });
     await CartItem.sync({ alter: false });
     console.log("Customer tables synced (Users, Products, CartItems)");
