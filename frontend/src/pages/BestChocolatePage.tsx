@@ -76,7 +76,7 @@ const BestChocolatePage = () => {
     <div style={{ background: 'var(--choc-deep)', minHeight: '100vh' }}>
       <ProductModal product={viewed} onClose={() => setViewed(null)} />
       <SEO
-        title="Best Chocolates — DUMUZI Luxury Chocolates"
+        title="Best Chocolates — DUMUZI"
         description="Our most celebrated, highest-rated chocolates — from our signature Noir Intense 85% to hand-rolled truffles and award-winning pralines."
       />
 

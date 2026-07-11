@@ -27,8 +27,8 @@ export const FAQPage = () => {
   return (
     <div className="bg-stone-950 min-h-screen text-stone-200">
       <SEO
-        title="FAQs — DUMUZI Luxury Chocolates"
-        description="Frequently asked questions about DUMUZI Luxury Chocolates — sourcing, delivery, corporate gifting, masterclasses, bespoke orders, and our subscription boxes."
+        title="FAQs — DUMUZI"
+        description="Frequently asked questions about DUMUZI — sourcing, delivery, corporate gifting, masterclasses, bespoke orders, and our subscription boxes."
       />
       {/* Hero Section */}
       <section className="relative h-[90vh] flex items-center justify-center overflow-hidden bg-stone-900 text-white">
@@ -59,7 +59,7 @@ export const FAQPage = () => {
               <span className="text-secondary italic font-serif">Questions</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-200 font-light max-w-2xl mx-auto">
-              Common questions about DUMUZI Luxury Chocolates — our sourcing, delivery, gifting, and masterclass programmes.
+              Common questions about DUMUZI — our sourcing, delivery, gifting, and masterclass programmes.
             </p>
           </motion.div>
         </div>

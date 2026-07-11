@@ -14,7 +14,7 @@ export interface PortfolioItem {
   };
 }
 
-// DUMUZI Luxury Chocolates — Collections & Artisan Guides
+// DUMUZI — Collections & Artisan Guides
 export const portfolioData: PortfolioItem[] = [
   {
     id: "noir-intense-collection",

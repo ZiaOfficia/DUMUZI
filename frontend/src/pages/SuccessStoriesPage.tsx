@@ -29,7 +29,7 @@ const StoryImage = ({ name, alt, ratio }: { name: string; alt?: string; ratio?: 
 
 const SectionHeading = ({ title }: { title: string }) => (
   <motion.div variants={fadeUp} className="mb-12">
-    <p className="text-[11px] uppercase tracking-[0.25em] font-semibold text-primary mb-3">DUMUZI Luxury Chocolates</p>
+    <p className="text-[11px] uppercase tracking-[0.25em] font-semibold text-primary mb-3">DUMUZI</p>
     <h2 className="text-3xl md:text-4xl font-display text-stone-900 tracking-tight leading-tight">{title}</h2>
     <div className="mt-4 h-px bg-gradient-to-r from-primary/50 via-stone-200 to-transparent" />
   </motion.div>
@@ -70,8 +70,8 @@ export const SuccessStoriesPage = () => {
   return (
     <div className="bg-white min-h-screen pt-[60px] md:pt-[50px]">
       <SEO
-        title="Our Collections — DUMUZI Luxury Chocolates"
-        description="Explore DUMUZI's luxury chocolate collections, artisan guides, and gifting lookbooks. Single-origin dark collections, truffles, pralines, and bespoke commissions."
+        title="Our Collections — DUMUZI"
+        description="Explore DUMUZI's collections, artisan guides, and gifting lookbooks. Single-origin dark collections, truffles, pralines, and bespoke commissions."
       />
 
       {/* Hero */}
@@ -92,7 +92,7 @@ export const SuccessStoriesPage = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-[11px] uppercase tracking-[0.3em] font-semibold text-primary mb-5"
           >
-            DUMUZI Luxury Chocolates
+            DUMUZI
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}

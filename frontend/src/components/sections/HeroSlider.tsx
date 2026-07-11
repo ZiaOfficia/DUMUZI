@@ -79,7 +79,7 @@ export const HeroSlider = () => {
               >
                 <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: GOLD, boxShadow: `0 0 6px ${GOLD}` }} />
                 <span className="font-sans text-[10px] tracking-[0.28em] uppercase font-semibold text-gold-gradient">
-                  Experience Luxury Artisanship
+                  Legacy Since 2013
                 </span>
               </div>
             </motion.div>
@@ -106,8 +106,7 @@ export const HeroSlider = () => {
               className="text-base lg:text-lg leading-relaxed mb-9 max-w-[480px] font-sans"
               style={{ color: 'rgba(220,214,205,0.72)' }}
             >
-              Indulge in the velvety richness of masterfully tempered dark chocolate,
-              sculpted by hand with premium single-origin ingredients.
+              Indulge in the velvety richness of premium gift packs, handcrafted with carefully selected ingredients.
             </motion.p>
 
             {/* CTAs */}
@@ -185,7 +184,7 @@ export const HeroSlider = () => {
             >
               <img
                 src="/images/products/DUMUZI.jpeg"
-                alt="DUMUZI Luxury Chocolates"
+                alt="DUMUZI"
                 className="w-full h-full object-cover image-zoom-slow"
               />
               {/* Overlay gradient */}

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 /**
  * Highlighted Memorial Scholarship banner — appears on the main "What We Do"
  * page (ServicesPage) and on EVERY service detail page so visitors always see
- * DUMUZI Luxury Chocolates' flagship Bespoke Commission Program.
+ * DUMUZI's flagship Bespoke Commission Program.
  */
 export const MemorialScholarshipHighlight = () => {
   return (
@@ -50,7 +50,7 @@ export const MemorialScholarshipHighlight = () => {
             <div className="flex items-center justify-center gap-3 py-3 px-4 bg-gradient-to-r from-primary via-primary-dark to-primary text-white">
               <Sparkles size={14} className="text-secondary" />
               <span className="text-[10px] sm:text-xs uppercase tracking-[0.4em] font-bold">
-                DUMUZI Luxury Chocolates — Bespoke Commission Program
+                DUMUZI — Bespoke Commission Program
               </span>
               <Sparkles size={14} className="text-secondary" />
             </div>

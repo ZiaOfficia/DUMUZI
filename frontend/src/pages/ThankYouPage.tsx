@@ -60,7 +60,7 @@ const ThankYouPage = () => {
         <p className="text-gray-600 mb-10 leading-relaxed">
           {isOrder
             ? 'Your DUMUZI order has been placed. We will prepare your chocolates with care and reach out within 1–2 business days with dispatch details. For any queries, email us at '
-            : 'Our team at DUMUZI Luxury Chocolates will read your message and reply within 1–2 business days. For urgent matters, you can also email us at '}
+            : 'Our team at DUMUZI will read your message and reply within 1–2 business days. For urgent matters, you can also email us at '}
           <a
             href="mailto:hello@dumuzi.com"
             className="text-primary hover:underline"

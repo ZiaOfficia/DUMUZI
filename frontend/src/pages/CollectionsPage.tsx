@@ -67,8 +67,8 @@ const CollectionsPage = () => {
       <ProductModal product={viewed} onClose={() => setViewed(null)} />
 
       <SEO
-        title="Collections — DUMUZI Luxury Chocolates"
-        description="Browse all 27 DUMUZI handcrafted chocolate gift boxes. Heart, Display, Bonbon and Oval collections — for every occasion."
+        title="Collections — DUMUZI"
+        description="Browse all 27 DUMUZI handcrafted gift boxes. Heart, Display, Bonbon and Oval collections — for every occasion."
       />
 
       {/* ── HERO ── */}
@@ -88,7 +88,7 @@ const CollectionsPage = () => {
           >
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: GOLD }} />
             <span className="text-[11px] tracking-[0.3em] uppercase font-bold text-gold-gradient font-sans">
-              DUMUZI Luxury Chocolates
+              DUMUZI
             </span>
           </motion.div>
           <motion.h1

@@ -12,9 +12,9 @@ interface SEOProps {
 
 export const SEO = ({
   title,
-  description = "DUMUZI Luxury Chocolates crafts single-origin handmade chocolates in our Paris atelier. Discover our dark collections, truffles, pralines, gift boxes, and bespoke commissions.",
+  description = "DUMUZI crafts premium confectionery gift packs and handcrafted creations with carefully selected ingredients.",
   keywords,
-  name = "DUMUZI Luxury Chocolates",
+  name = "DUMUZI",
   type = "website",
   image = "/og-image.jpg",
   url,
@@ -25,7 +25,7 @@ export const SEO = ({
   return (
     <Helmet>
       {/* Standard metadata tags */}
-      <title>{title} | DUMUZI Luxury Chocolates</title>
+      <title>{title} | DUMUZI</title>
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
 

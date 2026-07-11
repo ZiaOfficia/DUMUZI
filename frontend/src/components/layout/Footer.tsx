@@ -62,13 +62,13 @@ export const Footer = () => (
               DUMUZI
             </span>
             <span className="text-[8px] tracking-[0.4em] uppercase" style={{ color: 'rgba(212,165,90,0.35)', fontFamily: 'Inter, sans-serif' }}>
-              Luxury Chocolates
+              Luxury Confectionery
             </span>
           </Link>
 
           <p className="text-[13px] leading-[1.75] mb-6 font-sans"
             style={{ color: 'rgba(200,191,179,0.65)', lineHeight: '1.8' }}>
-            Crafting moments of pure indulgence with masterfully tempered chocolate, made with the world's finest cocoa.
+            Crafting moments of pure indulgence with masterfully crafted confectionery, made with the world's finest cocoa.
           </p>
 
           {/* Contact info */}
@@ -214,7 +214,7 @@ export const Footer = () => (
       {/* Bottom bar */}
       <div className="flex flex-col sm:flex-row items-center justify-between gap-5">
         <p className="text-[11px] font-sans" style={{ color: 'rgba(200,191,179,0.32)' }}>
-          © 2024 DUMUZI Luxury Chocolates. All Rights Reserved.
+          © 2024 DUMUZI. All Rights Reserved.
         </p>
         <div className="flex items-center gap-2 flex-wrap justify-center">
           {paymentIcons.map(icon => (

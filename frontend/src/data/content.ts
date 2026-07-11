@@ -1,10 +1,10 @@
-// DUMUZI Luxury Chocolates — Content & Copy
+// DUMUZI — Content & Copy
 
 import { heroImages } from "./imageAssets";
 
 export const heroSlides = [
   {
-    title: "DUMUZI · Luxury Chocolates",
+    title: "DUMUZI",
     subtitle: "Handcrafted with single-origin cocoa. Made to delight every sense.",
     image: heroImages.girlSmiling,
   },
@@ -48,7 +48,7 @@ export const heroSlides = [
 export const introContent = {
   heading: "Single-Origin Cocoa. Master Craftsmanship. Pure Luxury.",
   text: [
-    "Founded in 2009, DUMUZI was built on a single belief: great chocolate demands great ingredients. We source our cocoa beans directly from sustainable farms in Madagascar, Ecuador, and Peru — then hand-temper every batch in our artisan atelier.",
+    "Founded in 2013, DUMUZI was built on a single belief: great confectionery demands great ingredients. We source our cocoa beans directly from sustainable farms in Madagascar, Ecuador, and Peru — then hand-temper every batch in our artisan atelier.",
     "We do not mass-produce. Every truffle, bar, and praline is crafted to order by our team of expert chocolatiers, ensuring the freshest, most exquisite experience possible.",
   ],
 };
@@ -56,7 +56,7 @@ export const introContent = {
 export const portfolioContent = {
   heading: "Our Collections & Guides",
   description:
-    "Explore our curated chocolate collections, artisan guides, and gifting lookbooks. Each collection tells the story of the cocoa it was born from.",
+    "Explore our curated confectionery collections, artisan guides, and gifting lookbooks. Each collection tells the story of the cocoa it was born from.",
 };
 
 export const services = [
@@ -64,13 +64,13 @@ export const services = [
     ...heroSlides[0],
     id: "dark-collection",
     description:
-      "Our signature dark chocolate range — single-origin bars from 72% to 92% cocoa with complex tasting notes of red fruit, roasted nuts, and earth.",
+      "Our signature dark confectionery range — single-origin bars from 72% to 92% cocoa with complex tasting notes of red fruit, roasted nuts, and earth.",
   },
   {
     ...heroSlides[1],
     id: "truffle-collection",
     description:
-      "Handcrafted ganache truffles in dark, milk, and white chocolate, with seasonal flavour infusions and 24k gold-leaf finishes.",
+      "Handcrafted ganache truffles in dark, milk, and white confectionery, with seasonal flavour infusions and 24k gold-leaf finishes.",
   },
   {
     ...heroSlides[2],
@@ -88,7 +88,7 @@ export const services = [
     ...heroSlides[5],
     id: "wedding-favors",
     description:
-      "Custom-molded chocolate wedding favors with monogrammed packaging. Available in any quantity with bespoke branding.",
+      "Custom-molded confectionery wedding favors with monogrammed packaging. Available in any quantity with bespoke branding.",
   },
   {
     ...heroSlides[6],
@@ -117,9 +117,9 @@ export const services = [
 ];
 
 export const whyChooseContent = {
-  heading: "Why Chocolate Lovers Choose DUMUZI",
+  heading: "Why Confectionery Lovers Choose DUMUZI",
   description:
-    "We are a small atelier producing exceptional chocolate since 2009. Our customers return because we are consistent, honest, and uncompromising on quality.",
+    "We are a small atelier producing exceptional confectionery since 2013. Our customers return because we are consistent, honest, and uncompromising on quality.",
   points: [
     "Single-origin organic cocoa beans sourced directly from farming cooperatives.",
     "Every batch is hand-tempered by our master chocolatiers in our own atelier.",
@@ -134,11 +134,15 @@ export const whyChooseContent = {
 export const aboutContent = {
   heading: "About DUMUZI",
   text: [
-    "DUMUZI Luxury Chocolates was founded in 2009 by master chocolatier Antoine Laurent and his partner Elise Moreau. Named after the ancient Mesopotamian deity of abundance, DUMUZI was built to honour the rich heritage of cocoa farming and elevate chocolate-making to a fine art.",
-    "Over fifteen years, we have grown from a small Parisian atelier into an internationally recognised luxury chocolatier, shipping to over 30 countries. We work directly with farming cooperatives in Madagascar, Ecuador, and Peru, paying above fair-trade prices to ensure sustainable practices and the finest cocoa.",
-    "We believe that the finest chocolate demands patience, precision, and the purest ingredients. Every piece we make is a reflection of that belief.",
+    "DUMUZI Legacy Since 2013 was founded in 2013. It was merged with Little Fun Foods & Beverages Private Limited in 2026.",
+    "DUMUZI was built to honour the rich heritage of the gifting segment.",
+    "Since 2013, we have grown from a small Indian brand from offline to an online brand. Our products are available on Amazon, Flipkart, Meesho, and through our official website.",
+    "We work directly with farming cooperatives and carefully source our ingredients to deliver premium confectionery products.",
+    "Website: www.dumuzi.in",
+    "We believe in creating the finest confectionery experiences.",
+    "Regards, DUMUZI Family",
   ],
-  author: "Antoine Laurent — Founder & Master Chocolatier",
+  author: "DUMUZI Family — Brand",
 };
 
 export const blogPosts = [
@@ -167,7 +171,7 @@ export const blogPosts = [
 
 export const faqs = [
   {
-    question: "What makes DUMUZI chocolates different from regular brands?",
+    question: "What makes DUMUZI confectionery different from regular brands?",
     answer:
       "DUMUZI uses single-origin organic cocoa beans sourced directly from farming cooperatives. Every batch is hand-tempered by our master chocolatiers and made without artificial preservatives or palm oil. We produce in small batches to ensure the highest freshness and quality.",
   },
@@ -182,7 +186,7 @@ export const faqs = [
       "Yes. We offer fully custom corporate gift sets with company logo molding, branded packaging, and bulk order pricing. Our team will design a package that matches your corporate identity and budget.",
   },
   {
-    question: "Can I start a subscription for regular chocolate deliveries?",
+    question: "Can I start a subscription for regular confectionery deliveries?",
     answer:
       "Absolutely. Our monthly and quarterly subscription boxes feature new arrivals, limited editions, and exclusive members-only selections delivered to your door in temperature-controlled packaging.",
   },
@@ -194,7 +198,7 @@ export const faqs = [
   {
     question: "Are DUMUZI products suitable for gifting at weddings and events?",
     answer:
-      "Yes. We specialise in custom wedding favours and event gifting. Our team can create monogrammed boxes, custom-molded chocolates, and fully branded packaging to match your event theme.",
+      "Yes. We specialise in custom wedding favours and event gifting. Our team can create monogrammed boxes, custom-molded confectionery, and fully branded packaging to match your event theme.",
   },
   {
     question: "What is your return and freshness policy?",

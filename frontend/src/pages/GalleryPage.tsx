@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, Play, Image as ImageIcon } from "lucide-react";
 import { ContactSection } from "../components/sections/ContactSection";
 
-// DUMUZI Luxury Chocolates — featured product showcase films
+// DUMUZI — featured product showcase films
 const videoGallery = [
   {
     id: "dQw4w9WgXcQ",
@@ -38,7 +38,7 @@ const videoGallery = [
   },
 ];
 
-// DUMUZI Luxury Chocolates — gallery of all products
+// DUMUZI — gallery of all products
 const imageGallery = [
   "/images/products/DUMUZI.jpeg",
   "/images/products/LF-H3.jpeg",
@@ -69,8 +69,8 @@ export const GalleryPage = () => {
   return (
     <div className="pt-[60px] md:pt-[50px] bg-white min-h-screen">
       <SEO
-        title="Photo Gallery — DUMUZI Luxury Chocolates"
-        description="Photographs from the field — DUMUZI Luxury Chocolates's scholarship students, the LCGC learning centre in Lucknow, Rahmani 30 cohort and volunteer work across India."
+        title="Photo Gallery — DUMUZI"
+        description="Photographs from the field — DUMUZI's scholarship students, the LCGC learning centre in Lucknow, Rahmani 30 cohort and volunteer work across India."
       />
       {/* Hero Section */}
       {/* ------------------- IMAGE GALLERY SECTION ------------------- */}

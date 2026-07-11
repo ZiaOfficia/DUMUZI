@@ -106,11 +106,11 @@ export const AboutSection = () => {
               </h2>
               
               <p className="text-base leading-relaxed mb-6 font-sans" style={{ color: 'var(--muted)' }}>
-                At DUMUZI, we believe that true luxury lies in the details. Each chocolate is handcrafted by our expert chocolatiers using the finest single-origin organic cocoa beans sourced sustainably from around the globe.
+                At DUMUZI, we believe that true luxury lies in the details. Each confectionery creation is handcrafted by our expert artisans using carefully selected ingredients sourced with care.
               </p>
               
               <p className="text-sm leading-relaxed mb-10 font-sans" style={{ color: 'rgba(249, 246, 240, 0.75)' }}>
-                From our velvety dark truffles to our signature gold collections, every piece is a masterwork of passion and precision — crafted to delight all the senses.
+                From our premium gift packs to our signature collections, every piece is a masterwork of passion and precision — crafted to delight all the senses.
               </p>
               
               <button 

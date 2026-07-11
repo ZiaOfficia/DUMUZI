@@ -95,7 +95,7 @@ export const ServiceDetailPage = () => {
   return (
     <div className="bg-white">
       <SEO
-        title={`${service.title} - DUMUZI Luxury Chocolates`}
+        title={`${service.title} - DUMUZI`}
         description={service.intro.description[0]}
         image={service.heroImage}
       />

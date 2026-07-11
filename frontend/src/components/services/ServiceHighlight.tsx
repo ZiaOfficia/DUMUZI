@@ -61,7 +61,7 @@ const MemorialScholarshipHighlight = () => {
             <div className="flex items-center justify-center gap-3 py-3 px-4 bg-gradient-to-r from-primary via-primary-dark to-primary text-white">
               <Sparkles size={14} className="text-secondary" />
               <span className="text-[10px] sm:text-xs uppercase tracking-[0.4em] font-bold">
-                DUMUZI Luxury Chocolates — Bespoke Commission Program
+                DUMUZI — Bespoke Commission Program
               </span>
               <Sparkles size={14} className="text-secondary" />
             </div>

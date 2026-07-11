@@ -30,15 +30,15 @@ export const PortfolioListingPage = () => {
   return (
     <div className="bg-white min-h-screen pt-[60px] md:pt-[50px]">
       <SEO
-        title="Stories of Impact — DUMUZI Luxury Chocolates"
-        description="Real-world stories from twenty years of work — students supported, scholarships launched, and communities reached by DUMUZI Luxury Chocolates across India."
+        title="Stories of Impact — DUMUZI"
+        description="Real-world stories from twenty years of work — students supported, scholarships launched, and communities reached by DUMUZI across India."
       />
       {/* Header */}
       <section className="bg-stone-900 text-white py-60 px-6 text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-30">
           <img loading="lazy" decoding="async"
             src="/images/products/LF-H12T.jpeg"
-            alt="Stories of Impact — DUMUZI Luxury Chocolates"
+            alt="Stories of Impact — DUMUZI"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-stone-900/60" />

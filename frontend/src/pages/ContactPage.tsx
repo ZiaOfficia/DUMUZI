@@ -34,8 +34,8 @@ export const ContactPage = () => {
   return (
     <div className="min-h-screen pt-24 pb-12" style={{ background: 'var(--choc-deep)' }}>
       <SEO
-        title="Contact Us — DUMUZI Luxury Chocolates"
-        description="Get in touch with DUMUZI Luxury Chocolates for orders, corporate gifting, bespoke commissions, masterclass bookings, or general enquiries."
+        title="Contact Us — DUMUZI"
+        description="Get in touch with DUMUZI for orders, corporate gifting, bespoke commissions, masterclass bookings, or general enquiries."
       />
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden" style={{ background: 'var(--choc-dark)' }}>
@@ -44,7 +44,7 @@ export const ContactPage = () => {
             loading="lazy"
             decoding="async"
             src="/images/products/LF-D25T.jpeg"
-            alt="DUMUZI Luxury Chocolates atelier"
+            alt="DUMUZI atelier"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0" style={{ background: 'rgba(15,10,7,0.65)' }} />
@@ -338,7 +338,7 @@ export const ContactPage = () => {
           allowFullScreen
           className="transition-all duration-1000 ease-in-out scale-100 group-hover:scale-105"
           src="https://maps.google.com/maps?q=Rue+du+Faubourg+Saint-Honore+Paris&t=&z=14&ie=UTF8&iwloc=&output=embed"
-          title="DUMUZI Luxury Chocolates Atelier"
+          title="DUMUZI Atelier"
         ></iframe>
 
         {/* Gradient Overlay */}
