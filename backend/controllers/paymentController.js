@@ -106,6 +106,121 @@ exports.verifyPayment = async (req, res) => {
   }
 };
 
+// ═══════════════════════════════════════════════════════════════════
+//  ADMIN — order management (routes protected by admin `protect`)
+// ═══════════════════════════════════════════════════════════════════
+
+const ORDER_STATUSES = ['pending', 'paid', 'failed', 'shipped', 'delivered', 'cancelled'];
+
+const serializeOrder = (o) => {
+  let items = [];
+  try { items = JSON.parse(o.items); } catch (_) {}
+  return {
+    id:        o.id,
+    orderId:   o.razorpay_order_id,
+    paymentId: o.razorpay_payment_id,
+    amount:    o.amount, // paise
+    currency:  o.currency,
+    status:    o.status,
+    customer: {
+      name:  o.customer_name,
+      email: o.customer_email,
+      phone: o.customer_phone,
+    },
+    items,
+    createdAt: o.createdAt,
+    updatedAt: o.updatedAt,
+  };
+};
+
+// GET /api/payments/admin/orders?status=paid&page=1&limit=20
+exports.adminGetOrders = async (req, res) => {
+  try {
+    const page  = Math.max(1, parseInt(req.query.page, 10) || 1);
+    const limit = Math.min(100, Math.max(1, parseInt(req.query.limit, 10) || 20));
+    const where = {};
+
+    if (req.query.status && ORDER_STATUSES.includes(req.query.status)) {
+      where.status = req.query.status;
+    }
+
+    const { rows, count } = await Order.findAndCountAll({
+      where,
+      order: [['createdAt', 'DESC']],
+      limit,
+      offset: (page - 1) * limit,
+    });
+
+    res.json({
+      orders: rows.map(serializeOrder),
+      pagination: {
+        page,
+        limit,
+        total: count,
+        totalPages: Math.ceil(count / limit) || 1,
+      },
+    });
+  } catch (err) {
+    console.error('[payment] adminGetOrders error:', err);
+    res.status(500).json({ message: 'Failed to fetch orders' });
+  }
+};
+
+// GET /api/payments/admin/orders/stats — counts per status + paid revenue
+exports.adminGetOrderStats = async (req, res) => {
+  try {
+    const rows = await Order.findAll({
+      attributes: [
+        'status',
+        [Order.sequelize.fn('COUNT', Order.sequelize.col('id')), 'count'],
+        [Order.sequelize.fn('SUM', Order.sequelize.col('amount')), 'amountPaise'],
+      ],
+      group: ['status'],
+      raw: true,
+    });
+
+    const byStatus = {};
+    let total = 0;
+    let revenuePaise = 0; // paid + shipped + delivered = collected money
+    for (const r of rows) {
+      const count = Number(r.count);
+      byStatus[r.status] = count;
+      total += count;
+      if (['paid', 'shipped', 'delivered'].includes(r.status)) {
+        revenuePaise += Number(r.amountPaise) || 0;
+      }
+    }
+
+    res.json({ total, byStatus, revenuePaise });
+  } catch (err) {
+    console.error('[payment] adminGetOrderStats error:', err);
+    res.status(500).json({ message: 'Failed to fetch order stats' });
+  }
+};
+
+// PUT /api/payments/admin/orders/:id/status  { status }
+exports.adminUpdateOrderStatus = async (req, res) => {
+  try {
+    const { status } = req.body;
+    if (!ORDER_STATUSES.includes(status)) {
+      return res.status(400).json({ message: `Invalid status. Allowed: ${ORDER_STATUSES.join(', ')}` });
+    }
+
+    const order = await Order.findByPk(req.params.id);
+    if (!order) {
+      return res.status(404).json({ message: 'Order not found' });
+    }
+
+    order.status = status;
+    await order.save();
+
+    res.json({ message: 'Order status updated', order: serializeOrder(order) });
+  } catch (err) {
+    console.error('[payment] adminUpdateOrderStatus error:', err);
+    res.status(500).json({ message: 'Failed to update order status' });
+  }
+};
+
 // GET /api/payments/my-orders — order history for the logged-in customer
 exports.getMyOrders = async (req, res) => {
   try {

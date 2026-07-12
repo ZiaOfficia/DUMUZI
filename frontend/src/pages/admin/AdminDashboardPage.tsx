@@ -81,6 +81,11 @@ const AdminDashboardPage: React.FC = () => {
             Admin Dashboard
           </h1>
           <div className="flex gap-4 w-full md:w-auto">
+            <Link to="/admin/orders" className="flex-1 md:flex-none">
+              <Button variant="outline" className="w-full md:w-auto text-stone-300 border-stone-600 hover:bg-stone-800 justify-center">
+                Manage Orders
+              </Button>
+            </Link>
             <Link to="/admin/create" className="flex-1 md:flex-none">
               <Button variant="primary" className="w-full md:w-auto">
                 Create New Post

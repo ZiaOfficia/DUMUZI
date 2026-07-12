@@ -212,6 +212,20 @@ sequelize
     const Order = require("./models/Order");
     await Order.sync({ alter: false });
 
+    // One-time migration: add fulfillment statuses to the existing enum
+    // (sync uses alter:false, so enum changes must be applied manually)
+    if (dialect === "postgres") {
+      for (const value of ["shipped", "delivered", "cancelled"]) {
+        await sequelize
+          .query(`ALTER TYPE "enum_Orders_status" ADD VALUE IF NOT EXISTS '${value}'`)
+          .catch((err) => console.error(`Orders.status enum migration failed (${value}):`, err.message));
+      }
+    } else if (dialect === "mysql") {
+      await sequelize
+        .query("ALTER TABLE Orders MODIFY COLUMN status ENUM('pending','paid','failed','shipped','delivered','cancelled') DEFAULT 'pending'")
+        .catch((err) => console.error("Orders.status enum migration failed:", err.message));
+    }
+
     // One-time migration: add user_id to Orders (sync uses alter:false, so do it manually)
     const addUserIdSql =
       dialect === "mysql"

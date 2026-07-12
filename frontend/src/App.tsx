@@ -38,6 +38,7 @@ import MyOrdersPage               from './pages/MyOrdersPage';
 // Admin pages (unchanged)
 import AdminLoginPage             from './pages/admin/AdminLoginPage';
 import AdminDashboardPage         from './pages/admin/AdminDashboardPage';
+import AdminOrdersPage            from './pages/admin/AdminOrdersPage';
 import BlogEditorPage             from './pages/admin/BlogEditorPage';
 import ProtectedRoute             from './components/admin/ProtectedRoute';
 import ScrollToTop                from './components/common/ScrollToTop';
@@ -87,6 +88,7 @@ function App() {
               {/* ── Admin routes (unchanged) ───────────────────────────────── */}
               <Route path="/admin/login"     element={<AdminLoginPage />} />
               <Route path="/admin/dashboard" element={<ProtectedRoute><AdminDashboardPage /></ProtectedRoute>} />
+              <Route path="/admin/orders"   element={<ProtectedRoute><AdminOrdersPage /></ProtectedRoute>} />
               <Route path="/admin/create"    element={<ProtectedRoute><BlogEditorPage /></ProtectedRoute>} />
               <Route path="/admin/edit/:id"  element={<ProtectedRoute><BlogEditorPage /></ProtectedRoute>} />
 

@@ -34,7 +34,9 @@ const Order = sequelize.define('Order', {
     defaultValue: 'INR',
   },
   status: {
-    type: DataTypes.ENUM('pending', 'paid', 'failed'),
+    // pending/paid/failed come from the payment flow;
+    // shipped/delivered/cancelled are set by the admin orders panel
+    type: DataTypes.ENUM('pending', 'paid', 'failed', 'shipped', 'delivered', 'cancelled'),
     defaultValue: 'pending',
   },
   customer_name: {
