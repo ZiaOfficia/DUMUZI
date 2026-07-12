@@ -3,4 +3,3 @@ export { ServiceComparisonTable } from "./ServiceComparisonTable";
 export { ServiceTestimonialCard } from "./ServiceTestimonialCard";
 export { ServiceGalleryGrid } from "./ServiceGalleryGrid";
 export { ServiceEnquiryForm } from "./ServiceEnquiryForm";
-export { MemorialScholarshipHighlight } from "./MemorialScholarshipHighlight";

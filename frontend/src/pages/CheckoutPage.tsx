@@ -6,7 +6,7 @@ import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
 import { useToast } from '../components/common/Toast';
 import { SEO } from '../components/common/SEO';
-import { checkoutApi } from '../services/api';
+import { checkoutApi, ApiError } from '../services/api';
 
 const GOLD  = '#d4a373';
 const GOLDL = '#e5c199';
@@ -110,6 +110,12 @@ export const CheckoutPage = () => {
       success('Order placed successfully! We will contact you shortly for payment.');
       navigate('/thank-you');
     } catch (err) {
+      // Session expired mid-checkout — payment requires a logged-in customer
+      if (err instanceof ApiError && err.status === 401) {
+        error('Your session has expired. Please log in to complete your order.');
+        navigate('/login', { state: { from: '/checkout' } });
+        return;
+      }
       error(err instanceof Error ? err.message : 'Failed to place order. Please try again.');
     } finally {
       setBusy(false);

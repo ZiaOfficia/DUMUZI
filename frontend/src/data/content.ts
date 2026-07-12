@@ -6,42 +6,42 @@ export const heroSlides = [
   {
     title: "DUMUZI",
     subtitle: "Handcrafted with single-origin cocoa. Made to delight every sense.",
-    image: heroImages.girlSmiling,
+    image: heroImages.heartBox,
   },
   {
     title: "Fifteen Years of Craft.",
     subtitle: "Our chocolatiers have perfected the art of tempering since 2009.",
-    image: heroImages.schoolGroup,
+    image: heroImages.grandDisplay,
   },
   {
     title: "From Bean to Box",
     subtitle: "We source directly from premium cocoa estates across the equator.",
-    image: heroImages.childReading,
+    image: heroImages.heartTruffles,
   },
   {
     title: "Pure. Organic. Exquisite.",
     subtitle: "100% organic cocoa beans, ethically sourced and slowly roasted.",
-    image: heroImages.classroomTeacher,
+    image: heroImages.classicDisplay,
   },
   {
     title: "Signature Dark Collections",
     subtitle: "Our award-winning dark chocolate bars, truffles and pralines.",
-    image: heroImages.studentBlackboard,
+    image: heroImages.heartDuo,
   },
   {
     title: "Gifting, Elevated.",
     subtitle: "Bespoke chocolate boxes crafted for every special occasion.",
-    image: heroImages.libraryStudy,
+    image: heroImages.selectionBox,
   },
   {
     title: "A Moment of Pure Indulgence.",
     subtitle: "Let every bite take you somewhere extraordinary.",
-    image: heroImages.kidsLearning,
+    image: heroImages.bonbons,
   },
   {
     title: "Corporate & Wedding Collections",
     subtitle: "Custom-branded chocolate gifts that leave a lasting impression.",
-    image: heroImages.outdoorEducation,
+    image: heroImages.ovalBox,
   },
 ];
 
@@ -228,55 +228,3 @@ export const ctaContent = {
     "Whether you are looking for a personal treat, a meaningful gift, or a bespoke corporate collection — DUMUZI has something extraordinary waiting for you. Explore our collections or get in touch to create something truly one-of-a-kind.",
   ],
 };
-
-export const shortVideos = [
-  {
-    id: 1,
-    title: "Watch our chocolatiers at work",
-    videoUrl:
-      "/images/videos/elegantizeevents_reel_11_6_2025_8_30_00-pm3759951878449372084.mp4",
-    thumbnail: "/images/assets/dark_chocolates_hero.png",
-  },
-  {
-    id: 2,
-    title: "Inside our tempering atelier",
-    videoUrl:
-      "/images/videos/djtm_official_reel_12_18_2025_3_23_36-am3789871397074796955.mp4",
-    thumbnail: "/images/assets/dark_chocolates_hero.png",
-  },
-  {
-    id: 3,
-    title: "From bean to truffle — the full journey",
-    videoUrl:
-      "/images/videos/elegantizeevents_reel_12_12_2024_10_30_00-pm3521561008227581106.mp4",
-    thumbnail: "/images/assets/dark_chocolates_hero.png",
-  },
-  {
-    id: 4,
-    title: "How we source our cocoa in Madagascar",
-    videoUrl:
-      "/images/videos/elegantizeevents_reel_12_29_2025_9_30_33-pm3798394431771591975.mp4",
-    thumbnail: "/images/assets/dark_chocolates_hero.png",
-  },
-  {
-    id: 5,
-    title: "Our founder on 15 years of DUMUZI",
-    videoUrl:
-      "/images/videos/elegantizeevents_reel_12_29_2025_9_30_33-pm3798394431771591975.mp4",
-    thumbnail: "/images/assets/dark_chocolates_hero.png",
-  },
-  {
-    id: 6,
-    title: "A customer unwraps their first DUMUZI gift box",
-    videoUrl:
-      "/images/videos/elegantizeevents_reel_5_27_2022_1_07_26-am2846867921226300535.mp4",
-    thumbnail: "/images/assets/dark_chocolates_hero.png",
-  },
-  {
-    id: 7,
-    title: "Behind the scenes: packaging our signature boxes",
-    videoUrl:
-      "/images/videos/elegantizeevents_reel_11_6_2025_8_30_00-pm3759951878449372084.mp4",
-    thumbnail: "/images/assets/dark_chocolates_hero.png",
-  },
-];

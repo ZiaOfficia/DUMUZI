@@ -5,7 +5,7 @@ import { ChocolateDecor } from '../common/ChocolateDecor';
 const ease = [0.25, 0.1, 0.25, 1] as const;
 const occasions = ['Birthday', 'Anniversary', 'Corporate Gift', 'Holiday Season', 'Wedding favors'];
 
-export const DonateCTA = () => (
+export const GiftingCTA = () => (
   <section className="py-16 lg:py-24" style={{ background: 'linear-gradient(145deg, var(--choc-dark) 0%, var(--choc-deep) 100%)', position: 'relative', overflow: 'hidden' }}>
     <ChocolateDecor variant="section" />
     {/* Soft backdrop radial light */}

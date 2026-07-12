@@ -3,7 +3,7 @@ import { ServicesGrid }             from '../components/sections/ServicesGrid';
 import { AboutSection }             from '../components/sections/AboutSection';
 import { StatsSection }             from '../components/sections/StatsSection';
 import { HowItWorks }               from '../components/sections/HowItWorks';
-import { DonateCTA }                from '../components/sections/DonateCTA';
+import { GiftingCTA }               from '../components/sections/GiftingCTA';
 import { CollectionsPreviewSection } from '../components/sections/CollectionsPreviewSection';
 import { BestChocolateShowcase }    from '../components/sections/BestChocolateShowcase';
 import { CraftBannerSection }       from '../components/sections/CraftBannerSection';
@@ -49,7 +49,7 @@ export const HomePage = () => {
 
       {/* 9 — Gifting CTA (linking to /collections) */}
       <div className="section-divider" />
-      <DonateCTA />
+      <GiftingCTA />
 
       {/* 10 — Testimonials */}
       <div className="section-divider" />

@@ -2,7 +2,7 @@ import { motion, type Transition } from 'framer-motion';
 import { ShoppingCart, Star, ArrowRight, Eye } from 'lucide-react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useCart } from '../../context/CartContext';
+import { useAddToCart } from '../../hooks/useAddToCart';
 import { products as allProducts, type Product } from '../../data/productsData';
 import { ProductModal } from '../common/ProductModal';
 
@@ -32,7 +32,7 @@ function Stars({ rating }: { rating: number }) {
 }
 
 export const ServicesGrid = () => {
-  const { addItem } = useCart();
+  const addItem = useAddToCart();
   const navigate = useNavigate();
   const [viewed, setViewed] = useState<Product | null>(null);
 

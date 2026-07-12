@@ -1,10 +1,7 @@
 import { useState, useCallback } from 'react';
 import { motion, type Transition } from 'framer-motion';
 import { ShoppingCart, Eye, Search } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
-import { useCart } from '../context/CartContext';
-import { useAuth } from '../context/AuthContext';
-import { useToast } from '../components/common/Toast';
+import { useAddToCart } from '../hooks/useAddToCart';
 import { products, type Product } from '../data/productsData';
 import { ProductModal } from '../components/common/ProductModal';
 import { SEO } from '../components/common/SEO';
@@ -36,25 +33,17 @@ const FILTERS = [
 ];
 
 const CollectionsPage = () => {
-  const { addItem }            = useCart();
-  const { isAuthenticated }    = useAuth();
-  const { info }               = useToast();
-  const navigate               = useNavigate();
+  const addItem                = useAddToCart();
   const [filter, setFilter]    = useState('ALL');
   const [query,  setQuery]     = useState('');
   const [viewed, setViewed]    = useState<Product | null>(null);
   const [hovered, setHovered]  = useState<number | null>(null);
 
-  // Auth-guarded addToCart
+  // Auth-guarded addToCart (guard lives in useAddToCart)
   const handleAddToCart = useCallback((p: Product, e?: React.MouseEvent) => {
     e?.stopPropagation();
-    if (!isAuthenticated) {
-      info('Please log in to add items to your cart');
-      navigate('/login', { state: { from: '/collections' } });
-      return;
-    }
     addItem({ id: p.id, name: p.description, price: p.mrp, image: p.image });
-  }, [isAuthenticated, addItem, navigate, info]);
+  }, [addItem]);
 
   const visible = products.filter(p => {
     const matchCat   = filter === 'ALL' || p.description.startsWith(filter);

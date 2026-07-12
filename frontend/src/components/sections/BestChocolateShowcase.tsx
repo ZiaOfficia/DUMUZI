@@ -1,7 +1,7 @@
 import { motion, type Transition } from 'framer-motion';
 import { Star, ArrowRight, Flame, Heart, Award } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { useCart } from '../../context/CartContext';
+import { useAddToCart } from '../../hooks/useAddToCart';
 import { products as allProducts } from '../../data/productsData';
 
 const ease = [0.25, 0.1, 0.25, 1] as const;
@@ -30,7 +30,7 @@ function Stars({ rating }: { rating: number }) {
 
 export const BestChocolateShowcase = () => {
   const navigate = useNavigate();
-  const { addItem } = useCart();
+  const addItem = useAddToCart();
 
   return (
     <section className="py-16 lg:py-24" style={{ background: 'linear-gradient(180deg, var(--choc-dark) 0%, var(--choc-deep) 100%)', position: 'relative' }}>

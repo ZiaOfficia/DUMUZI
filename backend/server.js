@@ -21,9 +21,7 @@ const PORT = process.env.PORT || 5000;
 // Middleware
 const allowedOrigins = [
   "https://dumuzi.com",
-  "https://dumuzi.com/",
   "https://www.dumuzi.com",
-  "https://www.dumuzi.com/",
   "http://localhost:5173",
   "http://localhost:3000",
 ];
@@ -36,8 +34,10 @@ app.use(
   }),
 );
 
-app.use(express.json({ limit: "50mb" }));
-app.use(express.urlencoded({ extended: true, limit: "50mb" }));
+// 5mb is enough for blog posts with embedded content; images go through
+// Cloudinary via multipart uploads, not JSON bodies.
+app.use(express.json({ limit: "5mb" }));
+app.use(express.urlencoded({ extended: true, limit: "5mb" }));
 app.use(cookieParser()); // required for HttpOnly cookie auth
 
 // Routes — Admin / Blog (unchanged)
@@ -63,14 +63,16 @@ app.get("/sitemap.xml", async (req, res) => {
       { loc: "/", priority: "1.0", changefreq: "weekly" },
       { loc: "/about", priority: "0.8", changefreq: "monthly" },
       { loc: "/services", priority: "0.9", changefreq: "monthly" },
-      { loc: "/services/floral-design", priority: "0.8", changefreq: "monthly" },
-      { loc: "/services/ceiling-design", priority: "0.8", changefreq: "monthly" },
-      { loc: "/services/centerpiece-design", priority: "0.8", changefreq: "monthly" },
-      { loc: "/services/vinyl-floor-wrap", priority: "0.8", changefreq: "monthly" },
-      { loc: "/services/ceremony-decor", priority: "0.8", changefreq: "monthly" },
-      { loc: "/services/draping-services", priority: "0.8", changefreq: "monthly" },
-      { loc: "/services/mandap-design", priority: "0.8", changefreq: "monthly" },
-      { loc: "/services/stage-design", priority: "0.8", changefreq: "monthly" },
+      { loc: "/services/dark-collection", priority: "0.8", changefreq: "monthly" },
+      { loc: "/services/truffle-collection", priority: "0.8", changefreq: "monthly" },
+      { loc: "/services/gift-boxes", priority: "0.8", changefreq: "monthly" },
+      { loc: "/services/pralines-collection", priority: "0.8", changefreq: "monthly" },
+      { loc: "/services/wedding-favors", priority: "0.8", changefreq: "monthly" },
+      { loc: "/services/corporate-gifting", priority: "0.8", changefreq: "monthly" },
+      { loc: "/services/subscription-box", priority: "0.8", changefreq: "monthly" },
+      { loc: "/services/bespoke-orders", priority: "0.8", changefreq: "monthly" },
+      { loc: "/services/masterclasses", priority: "0.8", changefreq: "monthly" },
+      { loc: "/collections", priority: "0.9", changefreq: "weekly" },
       { loc: "/gallery", priority: "0.8", changefreq: "weekly" },
       { loc: "/portfolio", priority: "0.8", changefreq: "monthly" },
       { loc: "/blog", priority: "0.7", changefreq: "weekly" },
@@ -217,8 +219,13 @@ sequelize
         : 'ALTER TABLE "Orders" ADD COLUMN IF NOT EXISTS user_id BIGINT NULL';
     await sequelize
       .query(addUserIdSql)
-      .then(() => console.log("Orders.user_id column added"))
-      .catch(() => {}); // ignore "duplicate column" on subsequent boots
+      .then(() => console.log("Orders.user_id column ensured"))
+      .catch((err) => {
+        // MySQL has no IF NOT EXISTS — duplicate column on reboot is expected there
+        if (!/duplicate column/i.test(err.message)) {
+          console.error("Orders.user_id migration failed:", err.message);
+        }
+      });
 
     await Product.sync({ alter: false });
     await CartItem.sync({ alter: false });
@@ -228,7 +235,9 @@ sequelize
     await sequelize.sync();
     console.log("Database Synced");
   })
-  .catch((err) => console.log("Error: " + err));
+  .catch((err) =>
+    console.error("FATAL: database connection/sync failed — API routes will error:", err)
+  );
 
 // Serve static assets in production
 if (process.env.NODE_ENV === "production" || process.env.NODE_ENV === "staging") {

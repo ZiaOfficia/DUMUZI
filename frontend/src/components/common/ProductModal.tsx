@@ -1,9 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ShoppingCart, Tag, Package } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
-import { useCart } from '../../context/CartContext';
-import { useAuth } from '../../context/AuthContext';
-import { useToast } from './Toast';
+import { useAddToCart } from '../../hooks/useAddToCart';
 import type { Product } from '../../data/productsData';
 
 const GOLD = '#d4a373';
@@ -28,21 +25,12 @@ interface ProductModalProps {
 }
 
 export const ProductModal = ({ product, onClose }: ProductModalProps) => {
-  const { addItem }         = useCart();
-  const { isAuthenticated } = useAuth();
-  const { info }            = useToast();
-  const navigate            = useNavigate();
+  const addItem = useAddToCart();
 
   const handleAddToCart = () => {
     if (!product) return;
-    if (!isAuthenticated) {
-      info('Please log in to add items to your cart');
-      onClose();
-      navigate('/login', { state: { from: '/collections' } });
-      return;
-    }
     addItem({ id: product.id, name: product.description, price: product.mrp, image: product.image });
-    onClose();
+    onClose(); // close whether added or redirected to login
   };
 
   return (

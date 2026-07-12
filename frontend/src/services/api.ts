@@ -4,6 +4,15 @@ import type {
 } from '../types';
 
 // ── Base fetch wrapper ────────────────────────────────────────────────────────
+export class ApiError extends Error {
+  status: number;
+  constructor(message: string, status: number) {
+    super(message);
+    this.name = 'ApiError';
+    this.status = status;
+  }
+}
+
 async function apiFetch<T>(
   endpoint: string,
   options: RequestInit = {}
@@ -20,7 +29,7 @@ async function apiFetch<T>(
   const data = await res.json().catch(() => ({ message: 'Invalid server response' }));
 
   if (!res.ok) {
-    throw new Error(data.message || `Request failed (${res.status})`);
+    throw new ApiError(data.message || `Request failed (${res.status})`, res.status);
   }
   return data as T;
 }

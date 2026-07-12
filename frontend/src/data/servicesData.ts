@@ -31,7 +31,6 @@ export interface ServiceData {
   }[];
   portfolioImages: string[];
   faqs?: { question: string; answer: string }[];
-  namedScholarships?: string[];
   contact?: {
     name?: string;
     role?: string;
@@ -47,7 +46,7 @@ export const servicesData: ServiceData[] = [
   {
     id: "dark-collection",
     title: "Dark Chocolate Collection",
-    heroImage: serviceImages.studentAid,
+    heroImage: serviceImages.darkCollection,
     heroTitle: "THE DARK COLLECTION — SINGLE-ORIGIN INTENSITY",
     intro: {
       heading: "DARK CHOCOLATE COLLECTION",
@@ -155,7 +154,7 @@ export const servicesData: ServiceData[] = [
   {
     id: "truffle-collection",
     title: "Truffle Collection",
-    heroImage: serviceImages.scholarships,
+    heroImage: serviceImages.truffleCollection,
     heroTitle: "TRUFFLE COLLECTION — HANDCRAFTED GANACHE MASTERPIECES",
     intro: {
       heading: "THE TRUFFLE COLLECTION",
@@ -257,7 +256,7 @@ export const servicesData: ServiceData[] = [
   {
     id: "gift-boxes",
     title: "Gift Boxes",
-    heroImage: serviceImages.financialAssistance,
+    heroImage: serviceImages.giftBoxes,
     heroTitle: "GIFT BOXES — LUXURY GIFTING REIMAGINED",
     intro: {
       heading: "DUMUZI GIFT BOXES",
@@ -445,7 +444,7 @@ export const servicesData: ServiceData[] = [
   {
     id: "wedding-favors",
     title: "Wedding Favours",
-    heroImage: serviceImages.madarsaInitiative,
+    heroImage: serviceImages.weddingFavors,
     heroTitle: "WEDDING FAVOURS — SWEET MEMORIES FOR EVERY GUEST",
     intro: {
       heading: "BESPOKE WEDDING FAVOURS",
@@ -539,7 +538,7 @@ export const servicesData: ServiceData[] = [
   {
     id: "corporate-gifting",
     title: "Corporate Gifting",
-    heroImage: serviceImages.memorialScholarship,
+    heroImage: serviceImages.corporateGifting,
     heroTitle: "CORPORATE GIFTING — ELEVATE YOUR BRAND WITH LUXURY CHOCOLATE",
     intro: {
       heading: "CORPORATE GIFTING PROGRAM",
@@ -640,7 +639,7 @@ export const servicesData: ServiceData[] = [
   {
     id: "subscription-box",
     title: "Subscription Box",
-    heroImage: serviceImages.becomeVolunteer,
+    heroImage: serviceImages.subscriptionBox,
     heroTitle: "THE DUMUZI SUBSCRIPTION — LUXURY DELIVERED MONTHLY",
     intro: {
       heading: "DUMUZI SUBSCRIPTION BOX",
@@ -734,7 +733,7 @@ export const servicesData: ServiceData[] = [
   {
     id: "bespoke-orders",
     title: "Bespoke Orders",
-    heroImage: serviceImages.joinDonor,
+    heroImage: serviceImages.bespokeOrders,
     heroTitle: "BESPOKE CHOCOLATE COMMISSIONS — YOUR VISION, OUR CRAFT",
     intro: {
       heading: "BESPOKE CHOCOLATE ORDERS",
@@ -826,9 +825,9 @@ export const servicesData: ServiceData[] = [
   },
 
   {
-    id: "launch-scholarship",
+    id: "masterclasses",
     title: "Chocolate Masterclass",
-    heroImage: serviceImages.launchScholarship,
+    heroImage: serviceImages.masterclasses,
     heroTitle: "DUMUZI MASTERCLASSES — LEARN THE ART OF FINE CHOCOLATE",
     intro: {
       heading: "Chocolate Masterclasses",

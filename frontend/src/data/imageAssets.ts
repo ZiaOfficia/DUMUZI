@@ -29,22 +29,22 @@ export const productImages = {
 };
 
 export const heroImages = {
-  main:               '/images/products/DUMUZI.jpeg',
-  girlSmiling:        '/images/products/LF-H3.jpeg',
-  schoolGroup:        '/images/products/LF-D25T.jpeg',
-  childReading:       '/images/products/LF-H12T.jpeg',
-  classroomTeacher:   '/images/products/LF-D18T.jpeg',
-  studentBlackboard:  '/images/products/LF-H18D.jpeg',
-  libraryStudy:       '/images/products/LF-D15T.jpeg',
-  kidsLearning:       '/images/products/LF-BN9T.jpeg',
-  outdoorEducation:   '/images/products/LF-O9.jpeg',
+  main:            '/images/products/DUMUZI.jpeg',
+  heartBox:        '/images/products/LF-H3.jpeg',
+  grandDisplay:    '/images/products/LF-D25T.jpeg',
+  heartTruffles:   '/images/products/LF-H12T.jpeg',
+  classicDisplay:  '/images/products/LF-D18T.jpeg',
+  heartDuo:        '/images/products/LF-H18D.jpeg',
+  selectionBox:    '/images/products/LF-D15T.jpeg',
+  bonbons:         '/images/products/LF-BN9T.jpeg',
+  ovalBox:         '/images/products/LF-O9.jpeg',
 };
 
 export const testimonialImages = {
-  studentSumaiya: '/images/products/LF-H3.jpeg',
-  donorFamily:    '/images/products/LF-H18D.jpeg',
-  parentMother:   '/images/products/LF-D25T.jpeg',
-  iitAlumnus:     '/images/products/LF- BN9.jpeg',
+  connoisseur:      '/images/products/LF-H3.jpeg',
+  weddingCouple:    '/images/products/LF-H18D.jpeg',
+  giftRecipient:    '/images/products/LF-D25T.jpeg',
+  masterclassGuest: '/images/products/LF- BN9.jpeg',
 };
 
 // Blog & gallery use a rotating set of product images
@@ -89,12 +89,12 @@ export const actionImages = {
 };
 
 export const serviceImages = {
-  studentAid:          '/images/products/LF-H18D.jpeg',
-  scholarships:        '/images/products/LF-D25T.jpeg',
-  financialAssistance: '/images/products/LF-D15T.jpeg',
-  madarsaInitiative:   '/images/products/LF-BN9T.jpeg',
-  memorialScholarship: '/images/products/LF-H12T.jpeg',
-  becomeVolunteer:     '/images/products/LF-D18T.jpeg',
-  joinDonor:           '/images/products/LF-H18B.jpeg',
-  launchScholarship:   '/images/products/DUMUZI.jpeg',
+  darkCollection:    '/images/products/LF-H18D.jpeg',
+  truffleCollection: '/images/products/LF-D25T.jpeg',
+  giftBoxes:         '/images/products/LF-D15T.jpeg',
+  weddingFavors:     '/images/products/LF-BN9T.jpeg',
+  corporateGifting:  '/images/products/LF-H12T.jpeg',
+  subscriptionBox:   '/images/products/LF-D18T.jpeg',
+  bespokeOrders:     '/images/products/LF-H18B.jpeg',
+  masterclasses:     '/images/products/DUMUZI.jpeg',
 };

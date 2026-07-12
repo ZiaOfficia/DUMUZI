@@ -17,7 +17,7 @@ interface Story {
 
 const stories: Story[] = [
   {
-    image: testimonialImages.studentSumaiya,
+    image: testimonialImages.connoisseur,
     quote:
       "The Noir Intense 85% is the finest dark chocolate I have ever tasted. It completely redefined what I thought chocolate could be. I now order a box every month.",
     author: "Isabella R.",
@@ -26,7 +26,7 @@ const stories: Story[] = [
     year: "Customer since 2022",
   },
   {
-    image: testimonialImages.donorFamily,
+    image: testimonialImages.weddingCouple,
     quote:
       "We commissioned a bespoke chocolate collection for our wedding favours. Every guest commented on them. DUMUZI exceeded every expectation we had.",
     author: "James & Sophie T.",
@@ -35,7 +35,7 @@ const stories: Story[] = [
     year: "2024",
   },
   {
-    image: testimonialImages.parentMother,
+    image: testimonialImages.giftRecipient,
     quote:
       "The Rose & Cardamom truffle box was the most thoughtful gift I have ever received. The flavours were extraordinary — like nothing I had ever tasted before.",
     author: "Sophia M.",
@@ -44,7 +44,7 @@ const stories: Story[] = [
     year: "Customer since 2023",
   },
   {
-    image: testimonialImages.iitAlumnus,
+    image: testimonialImages.masterclassGuest,
     quote:
       "Antoine's Tempering Masterclass was an incredible experience. I walked in as an enthusiastic amateur and left with the skills to produce professional-quality chocolate.",
     author: "Marcus W.",

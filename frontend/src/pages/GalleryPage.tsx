@@ -70,7 +70,7 @@ export const GalleryPage = () => {
     <div className="pt-[60px] md:pt-[50px] bg-white min-h-screen">
       <SEO
         title="Photo Gallery — DUMUZI"
-        description="Photographs from the field — DUMUZI's scholarship students, the LCGC learning centre in Lucknow, Rahmani 30 cohort and volunteer work across India."
+        description="A visual journey through DUMUZI's atelier — handcrafted chocolate collections, truffles, pralines, and behind-the-scenes moments from bean to box."
       />
       {/* Hero Section */}
       {/* ------------------- IMAGE GALLERY SECTION ------------------- */}
@@ -102,7 +102,7 @@ export const GalleryPage = () => {
             Photo Gallery
           </h2>
           <p className="mt-4 text-xl font-light text-stone-200 max-w-2xl mx-auto px-6">
-            Photos from our work across India over the last 20 years.
+            A look at our handcrafted chocolates and the moments they create.
           </p>
         </motion.div>
       </section>
@@ -147,7 +147,7 @@ export const GalleryPage = () => {
             loading="lazy"
             decoding="async"
             src="/images/products/LF-D25T.jpeg"
-            alt="Video gallery header — students at LCGC"
+            alt="Video gallery header — inside the DUMUZI atelier"
             className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000"
           />
           <div className="absolute inset-0 bg-linear-to-t from-stone-900 via-stone-900/40 to-transparent" />
@@ -173,7 +173,7 @@ export const GalleryPage = () => {
             Films &amp; Stories
           </h2>
           <p className="mt-4 text-xl font-light text-stone-200 max-w-2xl mx-auto px-6">
-            Short videos about our students, volunteers, donors, and how DUMUZI works.
+            Short films from our atelier — tempering, truffle-making, and the journey from bean to box.
           </p>
         </motion.div>
       </section>

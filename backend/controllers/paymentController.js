@@ -1,6 +1,8 @@
 const Razorpay = require('razorpay');
 const crypto  = require('crypto');
 const Order   = require('../models/Order');
+const Product = require('../models/Product');
+const { priceOrderItems } = require('../utils/orderPricing');
 
 let razorpay;
 function getRazorpay() {
@@ -15,9 +17,9 @@ function getRazorpay() {
 
 exports.createOrder = async (req, res) => {
   try {
-    const { items, customer } = req.body;
+    const { items: rawItems, customer } = req.body;
 
-    if (!items || !items.length) {
+    if (!rawItems || !rawItems.length) {
       return res.status(400).json({ message: 'Cart is empty' });
     }
 
@@ -29,8 +31,12 @@ exports.createOrder = async (req, res) => {
       return res.status(400).json({ message: 'Customer name, email and phone are required' });
     }
 
+    // Price the cart from the Products table — client-sent prices are ignored
+    const productIds = [...new Set(rawItems.map((i) => Number(i?.productId)))];
+    const products = await Product.findAll({ where: { id: productIds } });
+    const { items, totalRupees } = priceOrderItems(rawItems, products);
+
     // Compute total in paise (Razorpay requires smallest currency unit)
-    const totalRupees = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
     const amountPaise = Math.round(totalRupees * 100);
 
     const rzpOrder = await getRazorpay().orders.create({
@@ -58,6 +64,9 @@ exports.createOrder = async (req, res) => {
       key:      process.env.RAZORPAY_KEY_ID,
     });
   } catch (err) {
+    if (err.status === 400) {
+      return res.status(400).json({ message: err.message });
+    }
     console.error('[payment] createOrder error:', err);
     res.status(500).json({ message: 'Failed to create order. Please try again.' });
   }

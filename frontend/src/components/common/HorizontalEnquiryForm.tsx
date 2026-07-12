@@ -83,7 +83,7 @@ export const HorizontalEnquiryForm = () => {
               Get in touch with us
             </h3>
             <p className="text-sm text-gray-600 mt-2">
-              Tell us how you would like to help or if you need aid. We will get back to you in a few days.
+              Tell us about your order or occasion and we will get back to you within 24 hours.
             </p>
           </div>
 
@@ -130,11 +130,11 @@ export const HorizontalEnquiryForm = () => {
                 <option value="" disabled>
                   I want to...
                 </option>
-                <option value="donate">Make a donation</option>
-                <option value="scholarship">Start a scholarship</option>
-                <option value="volunteer">Become a volunteer</option>
-                <option value="apply-aid">Apply for student aid</option>
-                <option value="csr">Discuss a CSR partnership</option>
+                <option value="gift-box">Order a gift box</option>
+                <option value="wedding-favors">Wedding favours enquiry</option>
+                <option value="corporate">Corporate gifting</option>
+                <option value="bespoke">Bespoke commission</option>
+                <option value="masterclass">Book a masterclass</option>
                 <option value="other">Something else</option>
               </select>
               <input
@@ -156,7 +156,7 @@ export const HorizontalEnquiryForm = () => {
                 className="w-full bg-stone-50 border-none px-4 py-3 focus:ring-1 focus:ring-primary text-gray-600 appearance-none"
               >
                 <option value="" disabled>
-                  Donation amount (optional)
+                  Approximate budget (optional)
                 </option>
                 <option value="under-1k">Under Rs 1,000</option>
                 <option value="1k-5k">Rs 1,000 – 5,000</option>

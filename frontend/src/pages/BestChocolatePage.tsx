@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { Star, ShoppingCart, Eye, Award, Leaf, Flame, Heart, ArrowRight, Gem, Sparkles } from 'lucide-react';
 import { SEO } from '../components/common/SEO';
-import { useCart } from '../context/CartContext';
+import { useAddToCart } from '../hooks/useAddToCart';
 import { useNavigate } from 'react-router-dom';
 import NewsletterSection from '../components/sections/NewsletterSection';
 import { TestimonialsSection } from '../components/sections/TestimonialsSection';
@@ -62,7 +62,7 @@ function Stars({ rating }: { rating: number }) {
 }
 
 const BestChocolatePage = () => {
-  const { addItem } = useCart();
+  const addItem = useAddToCart();
   const navigate = useNavigate();
   const [filter, setFilter] = useState('all');
   const [hovered, setHovered] = useState<number | null>(null);

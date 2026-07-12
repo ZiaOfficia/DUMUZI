@@ -21,7 +21,6 @@ import {
   Wrench,
   Star,
   ChevronDown,
-  Award,
   Mail,
   Phone,
   HelpCircle,
@@ -244,10 +243,10 @@ export const ServiceDetailPage = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-display text-gray-900 mb-3">
-              Impact Gallery
+              Gallery
             </h2>
             <p className="text-gray-500 font-light">
-              Moments of change and impact.
+              A glimpse of our handcrafted creations.
             </p>
           </div>
           <ServiceGalleryGrid images={service.portfolioImages} />
@@ -431,43 +430,7 @@ export const ServiceDetailPage = () => {
 
 
 
-      {/* Some Named Scholarships We Run */}
-      {service.namedScholarships && service.namedScholarships.length > 0 && (
-        <section className="py-16 md:py-20 px-4 md:px-6 bg-mosaic-cream">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-10">
-              <p className="inline-flex items-center gap-3 text-primary text-xs font-bold uppercase tracking-[0.4em] mb-3">
-                <span className="block w-8 h-px bg-primary" />
-                Active Scholarships
-                <span className="block w-8 h-px bg-primary" />
-              </p>
-              <h2 className="text-3xl md:text-5xl font-display font-bold text-accent mb-3">
-                Active Scholarships in memory of loved ones
-              </h2>
-              <p className="text-text-muted max-w-xl mx-auto">
-                Here are some of our active scholarships. Each one is a special tribute that pays a child's school fees.
-              </p>
-            </div>
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {service.namedScholarships.map((name) => (
-                <li
-                  key={name}
-                  className="group flex items-start gap-4 p-5 bg-white border border-primary/10 rounded-tl-2xl rounded-br-2xl shadow-sm hover:shadow-lg hover:border-primary/40 transition-all"
-                >
-                  <span className="shrink-0 w-10 h-10 rounded-full bg-mesh-rose text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
-                    <Award size={18} strokeWidth={1.8} />
-                  </span>
-                  <span className="font-display text-lg md:text-xl text-accent leading-tight pt-1.5">
-                    {name}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-      )}
-
-      {/* Service-specific FAQs (e.g. Memorial Scholarship) */}
+      {/* Service-specific FAQs */}
       {service.faqs && service.faqs.length > 0 && (
         <section
           ref={(el) => {
@@ -516,7 +479,7 @@ export const ServiceDetailPage = () => {
         </section>
       )}
 
-      {/* Service contact card (e.g. Saima Rehman for Memorial Scholarship) */}
+      {/* Service contact card (e.g. corporate gifting enquiries) */}
       {service.contact && (
         <section className="py-16 md:py-20 px-4 md:px-6 bg-mesh-rose">
           <div className="max-w-4xl mx-auto">
@@ -526,11 +489,11 @@ export const ServiceDetailPage = () => {
                 <div className="text-center mb-8">
                   <p className="inline-flex items-center gap-3 text-primary text-xs font-bold uppercase tracking-[0.4em] mb-3">
                     <span className="block w-8 h-px bg-primary" />
-                    Start a Scholarship
+                    Direct Contact
                     <span className="block w-8 h-px bg-primary" />
                   </p>
                   <h2 className="text-3xl md:text-5xl font-display font-bold text-accent mb-3">
-                    Help a child in memory of a loved one
+                    Speak directly with our team
                   </h2>
                   {service.contact.note && (
                     <p className="text-text-muted max-w-2xl mx-auto">
@@ -611,7 +574,7 @@ export const ServiceDetailPage = () => {
       <section className="py-20 px-6 bg-stone-50">
         <div className="max-w-7xl mx-auto">
           <h3 className="text-2xl md:text-3xl font-display text-gray-900 mb-8 text-center">
-            Explore More Programs
+            Explore More Collections
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {relatedServices.map((s) => (
@@ -653,10 +616,10 @@ export const ServiceDetailPage = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-5xl font-display mb-4">
-              Your donation can help a child study.
+              Chocolate made for your moments that matter.
             </h2>
             <p className="text-xl text-primary font-display italic">
-              Let us make a change.
+              Tell us what you have in mind.
             </p>
           </motion.div>
         </div>
