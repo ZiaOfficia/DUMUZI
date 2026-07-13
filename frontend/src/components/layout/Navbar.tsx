@@ -20,14 +20,17 @@ const navLinks = [
   { name: 'Contact',        path: '/contact' },
 ];
 
-const IconBtn = ({ children, label }: { children: React.ReactNode; label?: string }) => (
+const IconBtn = ({
+  children, label, onClick, active = false,
+}: { children: React.ReactNode; label?: string; onClick?: () => void; active?: boolean }) => (
   <button
     aria-label={label}
-    className="relative flex items-center justify-center w-9 h-9 rounded-xl transition-all duration-300 group/icon"
+    onClick={onClick}
+    className="relative flex items-center justify-center w-9 h-9 rounded-xl transition-all duration-300 group/icon cursor-pointer"
     style={{
-      background: 'rgba(212,165,90,0)',
-      border: '1px solid rgba(212,165,90,0)',
-      color: GOLDF,
+      background: active ? 'rgba(212,165,90,0.12)' : 'rgba(212,165,90,0)',
+      border: active ? '1px solid rgba(212,165,90,0.3)' : '1px solid rgba(212,165,90,0)',
+      color: active ? GOLDL : GOLDF,
     }}
     onMouseEnter={e => {
       e.currentTarget.style.color = GOLDL;
@@ -35,9 +38,9 @@ const IconBtn = ({ children, label }: { children: React.ReactNode; label?: strin
       e.currentTarget.style.borderColor = 'rgba(212,165,90,0.22)';
     }}
     onMouseLeave={e => {
-      e.currentTarget.style.color = GOLDF;
-      e.currentTarget.style.background = 'rgba(212,165,90,0)';
-      e.currentTarget.style.borderColor = 'rgba(212,165,90,0)';
+      e.currentTarget.style.color = active ? GOLDL : GOLDF;
+      e.currentTarget.style.background = active ? 'rgba(212,165,90,0.12)' : 'rgba(212,165,90,0)';
+      e.currentTarget.style.borderColor = active ? 'rgba(212,165,90,0.3)' : 'rgba(212,165,90,0)';
     }}
   >
     {children}
@@ -54,7 +57,11 @@ export const Navbar = () => {
   const [menuOpen, setMenuOpen]      = useState(false);
   const [cartOpen, setCartOpen]      = useState(false);
   const [userDropOpen, setUserDropOpen] = useState(false);
+  const [searchOpen, setSearchOpen]  = useState(false);
+  const [searchTerm, setSearchTerm]  = useState('');
   const dropRef                      = useRef<HTMLDivElement>(null);
+  const searchRef                    = useRef<HTMLDivElement>(null);
+  const searchInputRef               = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 40);
@@ -68,10 +75,26 @@ export const Navbar = () => {
       if (dropRef.current && !dropRef.current.contains(e.target as Node)) {
         setUserDropOpen(false);
       }
+      if (searchRef.current && !searchRef.current.contains(e.target as Node)) {
+        setSearchOpen(false);
+      }
     };
     document.addEventListener('mousedown', handler);
     return () => document.removeEventListener('mousedown', handler);
   }, []);
+
+  useEffect(() => {
+    if (searchOpen) searchInputRef.current?.focus();
+  }, [searchOpen]);
+
+  const handleSearchSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const term = searchTerm.trim();
+    if (!term) return;
+    navigate(`/collections?search=${encodeURIComponent(term)}`);
+    setSearchOpen(false);
+    setSearchTerm('');
+  };
 
   const handleLogout = async () => {
     await logout();
@@ -174,7 +197,48 @@ export const Navbar = () => {
 
         {/* Right Icons */}
         <div className="flex items-center gap-1 lg:gap-1.5">
-          <IconBtn label="Search"><Search size={16} /></IconBtn>
+          <div className="relative" ref={searchRef}>
+            <IconBtn label="Search" active={searchOpen} onClick={() => setSearchOpen(v => !v)}>
+              <Search size={16} />
+            </IconBtn>
+            <AnimatePresence>
+              {searchOpen && (
+                <motion.form
+                  onSubmit={handleSearchSubmit}
+                  initial={{ opacity: 0, y: -8, scale: 0.97 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -8, scale: 0.97 }}
+                  transition={{ duration: 0.18 }}
+                  className="absolute right-0 top-[calc(100%+10px)] w-64 sm:w-72"
+                  style={{
+                    background: 'rgba(13,8,5,0.98)',
+                    border: '1px solid rgba(212,165,90,0.22)',
+                    borderRadius: 14,
+                    padding: 8,
+                    boxShadow: '0 20px 50px rgba(0,0,0,0.6)',
+                  }}
+                >
+                  <div className="relative">
+                    <Search size={13} className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: 'rgba(212,165,90,0.5)' }} />
+                    <input
+                      ref={searchInputRef}
+                      type="text"
+                      value={searchTerm}
+                      onChange={e => setSearchTerm(e.target.value)}
+                      onKeyDown={e => { if (e.key === 'Escape') setSearchOpen(false); }}
+                      placeholder="Search chocolates…"
+                      className="w-full pl-8 pr-3 py-2.5 rounded-lg text-[13px] font-sans outline-none"
+                      style={{
+                        background: 'rgba(212,165,90,0.07)',
+                        border: '1px solid rgba(212,165,90,0.2)',
+                        color: 'var(--cream)',
+                      }}
+                    />
+                  </div>
+                </motion.form>
+              )}
+            </AnimatePresence>
+          </div>
 
           {/* User: dropdown if logged in, link if guest */}
           {isAuthenticated && user ? (

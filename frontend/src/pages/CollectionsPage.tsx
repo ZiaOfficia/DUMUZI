@@ -1,4 +1,5 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { motion, type Transition } from 'framer-motion';
 import { ShoppingCart, Eye, Search } from 'lucide-react';
 import { useAddToCart } from '../hooks/useAddToCart';
@@ -34,10 +35,18 @@ const FILTERS = [
 
 const CollectionsPage = () => {
   const addItem                = useAddToCart();
+  const [searchParams]         = useSearchParams();
   const [filter, setFilter]    = useState('ALL');
-  const [query,  setQuery]     = useState('');
+  const [query,  setQuery]     = useState(searchParams.get('search') ?? '');
   const [viewed, setViewed]    = useState<Product | null>(null);
   const [hovered, setHovered]  = useState<number | null>(null);
+
+  // Keep the search box in sync when the navbar search sends a new ?search= term
+  // (e.g. searching again while already on this page)
+  useEffect(() => {
+    const term = searchParams.get('search');
+    if (term !== null) setQuery(term);
+  }, [searchParams]);
 
   // Auth-guarded addToCart (guard lives in useAddToCart)
   const handleAddToCart = useCallback((p: Product, e?: React.MouseEvent) => {
