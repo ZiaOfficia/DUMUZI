@@ -22,6 +22,7 @@ const PORT = process.env.PORT || 5000;
 const allowedOrigins = [
   "https://dumuzi.com",
   "https://www.dumuzi.com",
+  "https://dumuzi-vczt.vercel.app", // Vercel's default domain, used until dumuzi.com is fully live
 ];
 const isLocalhostOrigin = (origin) => /^http:\/\/localhost:\d+$/.test(origin);
 
