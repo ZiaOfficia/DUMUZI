@@ -18,7 +18,10 @@ interface AdminOrder {
   amount: number; // paise
   currency: string;
   status: string;
+  paymentMethod: "razorpay" | "cod";
   customer: { name: string; email: string; phone: string };
+  shippingAddress: { address: string | null; city: string | null; state: string | null; pincode: string | null };
+  notes: string | null;
   items: AdminOrderItem[];
   createdAt: string;
   updatedAt: string;
@@ -263,6 +266,11 @@ const AdminOrdersPage: React.FC = () => {
                     className="md:col-span-3 flex md:justify-end items-center gap-2 w-full md:w-auto"
                     onClick={(e) => e.stopPropagation()}
                   >
+                    {order.paymentMethod === "cod" && (
+                      <span className="px-2.5 py-1 rounded-full text-xs border bg-amber-500/15 text-amber-400 border-amber-500/30">
+                        COD
+                      </span>
+                    )}
                     <span
                       className={`px-2.5 py-1 rounded-full text-xs capitalize border ${
                         STATUS_STYLES[order.status] ?? STATUS_STYLES.pending
@@ -289,10 +297,31 @@ const AdminOrdersPage: React.FC = () => {
                     <div className="bg-stone-900/60 rounded-lg p-4 text-sm">
                       <p className="text-xs text-stone-500 mb-2">
                         Order ref: <span className="text-stone-400">{order.orderId}</span>
+                        {" · "}
+                        <span className="text-stone-400">
+                          {order.paymentMethod === "cod" ? "Cash on Delivery" : "Razorpay"}
+                        </span>
                         {order.paymentId && (
                           <> · Payment: <span className="text-stone-400">{order.paymentId}</span></>
                         )}
                       </p>
+                      {(order.shippingAddress?.address || order.notes) && (
+                        <div className="mb-3 p-3 rounded-lg bg-stone-800/60 border border-stone-700/50 text-xs text-stone-400">
+                          {order.shippingAddress?.address && (
+                            <p>
+                              <span className="text-stone-500">Deliver to: </span>
+                              {order.shippingAddress.address}, {order.shippingAddress.city},{" "}
+                              {order.shippingAddress.state} – {order.shippingAddress.pincode}
+                            </p>
+                          )}
+                          {order.notes && (
+                            <p className="mt-1">
+                              <span className="text-stone-500">Notes: </span>
+                              {order.notes}
+                            </p>
+                          )}
+                        </div>
+                      )}
                       <table className="w-full text-left">
                         <thead>
                           <tr className="text-stone-500 text-xs uppercase">

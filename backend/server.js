@@ -22,13 +22,17 @@ const PORT = process.env.PORT || 5000;
 const allowedOrigins = [
   "https://dumuzi.com",
   "https://www.dumuzi.com",
-  "http://localhost:5173",
-  "http://localhost:3000",
 ];
+const isLocalhostOrigin = (origin) => /^http:\/\/localhost:\d+$/.test(origin);
 
 app.use(
   cors({
-    origin: allowedOrigins,
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin) || isLocalhostOrigin(origin)) {
+        return callback(null, true);
+      }
+      callback(new Error("Not allowed by CORS"));
+    },
     credentials: true,
     optionsSuccessStatus: 200,
   }),
@@ -238,6 +242,44 @@ sequelize
         // MySQL has no IF NOT EXISTS — duplicate column on reboot is expected there
         if (!/duplicate column/i.test(err.message)) {
           console.error("Orders.user_id migration failed:", err.message);
+        }
+      });
+
+    // One-time migration: add payment_method to Orders (for Cash on Delivery support)
+    const addPaymentMethodSql =
+      dialect === "mysql"
+        ? "ALTER TABLE Orders ADD COLUMN payment_method VARCHAR(20) DEFAULT 'razorpay'"
+        : 'ALTER TABLE "Orders" ADD COLUMN IF NOT EXISTS payment_method VARCHAR(20) DEFAULT \'razorpay\'';
+    await sequelize
+      .query(addPaymentMethodSql)
+      .then(() => console.log("Orders.payment_method column ensured"))
+      .catch((err) => {
+        if (!/duplicate column/i.test(err.message)) {
+          console.error("Orders.payment_method migration failed:", err.message);
+        }
+      });
+
+    // One-time migration: add shipping address + notes to Orders
+    const addShippingSql =
+      dialect === "mysql"
+        ? `ALTER TABLE Orders
+             ADD COLUMN shipping_address VARCHAR(255) NULL,
+             ADD COLUMN shipping_city VARCHAR(255) NULL,
+             ADD COLUMN shipping_state VARCHAR(255) NULL,
+             ADD COLUMN shipping_pincode VARCHAR(10) NULL,
+             ADD COLUMN notes TEXT NULL`
+        : `ALTER TABLE "Orders"
+             ADD COLUMN IF NOT EXISTS shipping_address VARCHAR(255),
+             ADD COLUMN IF NOT EXISTS shipping_city VARCHAR(255),
+             ADD COLUMN IF NOT EXISTS shipping_state VARCHAR(255),
+             ADD COLUMN IF NOT EXISTS shipping_pincode VARCHAR(10),
+             ADD COLUMN IF NOT EXISTS notes TEXT`;
+    await sequelize
+      .query(addShippingSql)
+      .then(() => console.log("Orders shipping/notes columns ensured"))
+      .catch((err) => {
+        if (!/duplicate column/i.test(err.message)) {
+          console.error("Orders shipping/notes migration failed:", err.message);
         }
       });
 

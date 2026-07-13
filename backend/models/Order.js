@@ -39,6 +39,10 @@ const Order = sequelize.define('Order', {
     type: DataTypes.ENUM('pending', 'paid', 'failed', 'shipped', 'delivered', 'cancelled'),
     defaultValue: 'pending',
   },
+  payment_method: {
+    type: DataTypes.STRING(20), // 'razorpay' | 'cod'
+    defaultValue: 'razorpay',
+  },
   customer_name: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -50,6 +54,26 @@ const Order = sequelize.define('Order', {
   customer_phone: {
     type: DataTypes.STRING,
     allowNull: false,
+  },
+  shipping_address: {
+    type: DataTypes.STRING,
+    allowNull: true, // not every checkout flow (e.g. cart-drawer quick checkout) collects an address
+  },
+  shipping_city: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+  shipping_state: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+  shipping_pincode: {
+    type: DataTypes.STRING(10),
+    allowNull: true,
+  },
+  notes: {
+    type: DataTypes.TEXT,
+    allowNull: true,
   },
   items: {
     type: DataTypes.TEXT, // JSON stringified cart items

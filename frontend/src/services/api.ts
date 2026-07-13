@@ -117,8 +117,16 @@ export const checkoutApi = {
   createOrder: (payload: {
     items: OrderItem[];
     customer: { name: string; email: string; phone: string };
+    paymentMethod?: 'razorpay' | 'cod';
+    address?: { address: string; city: string; state: string; pincode: string; notes?: string };
   }) =>
-    apiFetch<{ orderId: string; amount: number; currency: string; key: string }>('/api/payments/create-order', {
+    apiFetch<{ orderId: string; amount: number; currency: string; key?: string; paymentMethod: 'razorpay' | 'cod' }>('/api/payments/create-order', {
+      method: 'POST',
+      body: JSON.stringify(payload),
+    }),
+
+  verifyPayment: (payload: { razorpay_order_id: string; razorpay_payment_id: string; razorpay_signature: string }) =>
+    apiFetch<{ success: boolean }>('/api/payments/verify', {
       method: 'POST',
       body: JSON.stringify(payload),
     }),

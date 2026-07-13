@@ -93,6 +93,7 @@ export const MyOrdersPage = () => {
                     <p className="text-xs font-sans" style={{ color: 'var(--muted)' }}>
                       Order <span style={{ color: GOLDL }}>#{order.id}</span> ·{' '}
                       {new Date(order.createdAt).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}
+                      {' · '}{order.paymentMethod === 'cod' ? 'Cash on Delivery' : 'Paid Online'}
                     </p>
                   </div>
                   <span

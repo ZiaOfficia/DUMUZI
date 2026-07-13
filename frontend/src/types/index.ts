@@ -77,12 +77,22 @@ export interface CheckoutPayload {
   notes?: string;
 }
 
+export interface ShippingAddress {
+  address: string | null;
+  city: string | null;
+  state: string | null;
+  pincode: string | null;
+}
+
 export interface MyOrder {
   id: number;
   orderId: string;      // razorpay_order_id
   amount: number;       // in paise
   currency: string;
   status: 'pending' | 'paid' | 'failed';
+  paymentMethod: 'razorpay' | 'cod';
+  shippingAddress: ShippingAddress;
+  notes: string | null;
   items: OrderItem[];
   createdAt: string;
 }

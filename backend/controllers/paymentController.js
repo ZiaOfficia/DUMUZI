@@ -15,9 +15,21 @@ function getRazorpay() {
   return razorpay;
 }
 
+const PAYMENT_METHODS = ['razorpay', 'cod'];
+
 exports.createOrder = async (req, res) => {
   try {
-    const { items: rawItems, customer } = req.body;
+    const { items: rawItems, customer, address } = req.body;
+    const paymentMethod = PAYMENT_METHODS.includes(req.body.paymentMethod)
+      ? req.body.paymentMethod
+      : 'razorpay';
+    const shipping = {
+      shipping_address: address?.address || null,
+      shipping_city:    address?.city || null,
+      shipping_state:   address?.state || null,
+      shipping_pincode: address?.pincode || null,
+      notes:            address?.notes || null,
+    };
 
     if (!rawItems || !rawItems.length) {
       return res.status(400).json({ message: 'Cart is empty' });
@@ -39,6 +51,33 @@ exports.createOrder = async (req, res) => {
     // Compute total in paise (Razorpay requires smallest currency unit)
     const amountPaise = Math.round(totalRupees * 100);
 
+    if (paymentMethod === 'cod') {
+      // No payment gateway involved — generate a synthetic order id so the
+      // (required, unique) razorpay_order_id column still has something to key on.
+      const codOrderId = `cod_${Date.now()}_${crypto.randomBytes(4).toString('hex')}`;
+
+      await Order.create({
+        user_id:           req.customer.id,
+        razorpay_order_id: codOrderId,
+        amount:            amountPaise,
+        currency:          'INR',
+        status:            'pending',
+        payment_method:    'cod',
+        customer_name:     name,
+        customer_email:    email,
+        customer_phone:    phone,
+        items:             JSON.stringify(items),
+        ...shipping,
+      });
+
+      return res.json({
+        orderId:       codOrderId,
+        amount:        amountPaise,
+        currency:      'INR',
+        paymentMethod: 'cod',
+      });
+    }
+
     const rzpOrder = await getRazorpay().orders.create({
       amount:   amountPaise,
       currency: 'INR',
@@ -51,17 +90,20 @@ exports.createOrder = async (req, res) => {
       amount:            amountPaise,
       currency:          'INR',
       status:            'pending',
+      payment_method:    'razorpay',
       customer_name:     name,
       customer_email:    email,
       customer_phone:    phone,
       items:             JSON.stringify(items),
+      ...shipping,
     });
 
     res.json({
-      orderId:  rzpOrder.id,
-      amount:   amountPaise,
-      currency: 'INR',
-      key:      process.env.RAZORPAY_KEY_ID,
+      orderId:       rzpOrder.id,
+      amount:        amountPaise,
+      currency:      'INR',
+      key:           process.env.RAZORPAY_KEY_ID,
+      paymentMethod: 'razorpay',
     });
   } catch (err) {
     if (err.status === 400) {
@@ -116,17 +158,25 @@ const serializeOrder = (o) => {
   let items = [];
   try { items = JSON.parse(o.items); } catch (_) {}
   return {
-    id:        o.id,
-    orderId:   o.razorpay_order_id,
-    paymentId: o.razorpay_payment_id,
-    amount:    o.amount, // paise
-    currency:  o.currency,
-    status:    o.status,
+    id:            o.id,
+    orderId:       o.razorpay_order_id,
+    paymentId:     o.razorpay_payment_id,
+    amount:        o.amount, // paise
+    currency:      o.currency,
+    status:        o.status,
+    paymentMethod: o.payment_method,
     customer: {
       name:  o.customer_name,
       email: o.customer_email,
       phone: o.customer_phone,
     },
+    shippingAddress: {
+      address: o.shipping_address,
+      city:    o.shipping_city,
+      state:   o.shipping_state,
+      pincode: o.shipping_pincode,
+    },
+    notes: o.notes,
     items,
     createdAt: o.createdAt,
     updatedAt: o.updatedAt,
@@ -227,7 +277,11 @@ exports.getMyOrders = async (req, res) => {
     const orders = await Order.findAll({
       where: { user_id: req.customer.id },
       order: [['createdAt', 'DESC']],
-      attributes: ['id', 'razorpay_order_id', 'amount', 'currency', 'status', 'items', 'createdAt'],
+      attributes: [
+        'id', 'razorpay_order_id', 'amount', 'currency', 'status', 'payment_method',
+        'shipping_address', 'shipping_city', 'shipping_state', 'shipping_pincode', 'notes',
+        'items', 'createdAt',
+      ],
     });
 
     res.json(
@@ -235,11 +289,19 @@ exports.getMyOrders = async (req, res) => {
         let items = [];
         try { items = JSON.parse(o.items); } catch (_) {}
         return {
-          id:        o.id,
-          orderId:   o.razorpay_order_id,
-          amount:    o.amount, // paise
-          currency:  o.currency,
-          status:    o.status,
+          id:            o.id,
+          orderId:       o.razorpay_order_id,
+          amount:        o.amount, // paise
+          currency:      o.currency,
+          status:        o.status,
+          paymentMethod: o.payment_method,
+          shippingAddress: {
+            address: o.shipping_address,
+            city:    o.shipping_city,
+            state:   o.shipping_state,
+            pincode: o.shipping_pincode,
+          },
+          notes: o.notes,
           items,
           createdAt: o.createdAt,
         };
