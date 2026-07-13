@@ -123,7 +123,7 @@ export const CheckoutPage = () => {
       if (paymentMethod === 'cod') {
         await clearCart();
         success('Order placed successfully! Pay in cash when it arrives.');
-        navigate('/thank-you');
+        navigate('/thank-you?type=order');
         setBusy(false);
         return;
       }
@@ -148,7 +148,7 @@ export const CheckoutPage = () => {
             if (!verified.success) throw new Error('Payment verification failed. Contact support.');
             await clearCart();
             success('Payment successful! Your order has been placed.');
-            navigate('/thank-you');
+            navigate('/thank-you?type=order');
           } catch (err) {
             error(err instanceof Error ? err.message : 'Payment verification failed.');
           } finally {

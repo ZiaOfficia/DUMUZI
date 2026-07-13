@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Package, ChevronRight, ShoppingBag, Clock, CheckCircle, XCircle } from 'lucide-react';
+import { Package, ChevronRight, ShoppingBag, Clock, CheckCircle, XCircle, Truck, PackageCheck } from 'lucide-react';
 import { checkoutApi } from '../services/api';
 import type { MyOrder } from '../types';
 import { SEO } from '../components/common/SEO';
@@ -10,9 +10,12 @@ const GOLD  = '#d4a373';
 const GOLDL = '#e5c199';
 
 const STATUS_META: Record<MyOrder['status'], { label: string; color: string; icon: React.ReactNode }> = {
-  pending: { label: 'Pending',  color: '#f59e0b', icon: <Clock size={13} /> },
-  paid:    { label: 'Paid',     color: '#10b981', icon: <CheckCircle size={13} /> },
-  failed:  { label: 'Failed',   color: '#ef4444', icon: <XCircle size={13} /> },
+  pending:   { label: 'Pending',   color: '#f59e0b', icon: <Clock size={13} /> },
+  paid:      { label: 'Paid',      color: '#10b981', icon: <CheckCircle size={13} /> },
+  shipped:   { label: 'Shipped',   color: '#3b82f6', icon: <Truck size={13} /> },
+  delivered: { label: 'Delivered', color: '#10b981', icon: <PackageCheck size={13} /> },
+  cancelled: { label: 'Cancelled', color: '#78716c', icon: <XCircle size={13} /> },
+  failed:    { label: 'Failed',    color: '#ef4444', icon: <XCircle size={13} /> },
 };
 
 export const MyOrdersPage = () => {

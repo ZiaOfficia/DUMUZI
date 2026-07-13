@@ -89,7 +89,7 @@ export interface MyOrder {
   orderId: string;      // razorpay_order_id
   amount: number;       // in paise
   currency: string;
-  status: 'pending' | 'paid' | 'failed';
+  status: 'pending' | 'paid' | 'failed' | 'shipped' | 'delivered' | 'cancelled';
   paymentMethod: 'razorpay' | 'cod';
   shippingAddress: ShippingAddress;
   notes: string | null;
