@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Trash2, ShoppingBag, Plus, Minus, Package, ArrowLeft, Loader2 } from 'lucide-react';
+import { X, Trash2, ShoppingBag, Plus, Minus, Package, ArrowLeft, Loader2, Banknote, CreditCard } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
-import { loadRazorpayScript } from '../../utils/razorpay';
-import { API_BASE_URL } from '../../config';
+import { loadRazorpayScript, type RazorpayResponse } from '../../utils/razorpay';
+import { checkoutApi, ApiError } from '../../services/api';
 
 const GOLD  = '#d4a55a';
 const GOLDL = '#e8c07a';
@@ -18,6 +18,10 @@ interface CustomerForm {
   name: string;
   email: string;
   phone: string;
+  address: string;
+  city: string;
+  state: string;
+  pincode: string;
 }
 
 export const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
@@ -27,7 +31,8 @@ export const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
   const [step, setStep]       = useState<'cart' | 'checkout'>('cart');
   const [loading, setLoading] = useState(false);
   const [error, setError]     = useState('');
-  const [form, setForm]       = useState<CustomerForm>({ name: '', email: '', phone: '' });
+  const [form, setForm]       = useState<CustomerForm>({ name: '', email: '', phone: '', address: '', city: '', state: '', pincode: '' });
+  const [paymentMethod, setPaymentMethod] = useState<'cod' | 'razorpay'>('cod');
 
   const handleClose = () => {
     onClose();
@@ -50,31 +55,37 @@ export const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
     if (!form.phone.trim() || !/^[6-9]\d{9}$/.test(form.phone.replace(/\s/g, ''))) {
       return setError('Please enter a valid 10-digit Indian mobile number.');
     }
+    if (!form.address.trim()) return setError('Please enter your delivery address.');
+    if (!form.city.trim())    return setError('Please enter your city.');
+    if (!form.state.trim())   return setError('Please enter your state.');
+    if (!/^\d{6}$/.test(form.pincode)) return setError('Please enter a valid 6-digit pincode.');
 
     setLoading(true);
     try {
-      // Step 1 — create Razorpay order on backend
-      const orderRes = await fetch(`${API_BASE_URL}/api/payments/create-order`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          items: items.map(({ id, name, price, quantity }) => ({ id, name, price, quantity })),
-          customer: { name: form.name, email: form.email, phone: form.phone },
-        }),
+      const order = await checkoutApi.createOrder({
+        items: items.map(({ id, name, price, quantity }) => ({ productId: id, name, price, quantity })),
+        customer: { name: form.name, email: form.email, phone: form.phone },
+        paymentMethod,
+        address: { address: form.address, city: form.city, state: form.state, pincode: form.pincode },
       });
-      const orderData = await orderRes.json();
-      if (!orderRes.ok) throw new Error(orderData.message || 'Failed to create order');
 
-      // Step 2 — load Razorpay checkout.js
+      if (paymentMethod === 'cod') {
+        await clearCart();
+        handleClose();
+        navigate('/thank-you?type=order');
+        setLoading(false);
+        return;
+      }
+
+      // Online payment — hand off to Razorpay's checkout modal
       const loaded = await loadRazorpayScript();
       if (!loaded) throw new Error('Failed to load payment gateway. Please check your connection.');
 
-      // Step 3 — open Razorpay modal
       const rzp = new window.Razorpay({
-        key:         orderData.key,
-        amount:      orderData.amount,
-        currency:    orderData.currency,
-        order_id:    orderData.orderId,
+        key:         order.key as string,
+        amount:      order.amount,
+        currency:    order.currency,
+        order_id:    order.orderId,
         name:        'DUMUZI',
         description: `Order of ${totalItems} item${totalItems > 1 ? 's' : ''}`,
         image:       '/images/logo.png',
@@ -84,19 +95,12 @@ export const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
           contact: form.phone,
         },
         theme: { color: GOLD },
-        handler: async (response) => {
+        handler: async (response: RazorpayResponse) => {
           // Step 4 — verify payment signature
           try {
-            const verifyRes = await fetch(`${API_BASE_URL}/api/payments/verify`, {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify(response),
-            });
-            const verifyData = await verifyRes.json();
-            if (!verifyRes.ok || !verifyData.success) {
-              throw new Error('Payment verification failed. Contact support.');
-            }
-            clearCart();
+            const verified = await checkoutApi.verifyPayment(response);
+            if (!verified.success) throw new Error('Payment verification failed. Contact support.');
+            await clearCart();
             handleClose();
             navigate('/thank-you?type=order');
           } catch (err: unknown) {
@@ -111,6 +115,11 @@ export const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
 
       rzp.open();
     } catch (err: unknown) {
+      if (err instanceof ApiError && err.status === 401) {
+        setError('Your session has expired. Please log in to complete your order.');
+        setLoading(false);
+        return;
+      }
       setError(err instanceof Error ? err.message : 'Something went wrong.');
       setLoading(false);
     }
@@ -407,6 +416,90 @@ export const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
                       />
                     </div>
 
+                    <div className="flex flex-col gap-1">
+                      <label className="text-[10px] uppercase tracking-wider" style={{ color: 'rgba(220,214,205,0.4)' }}>Delivery Address</label>
+                      <input
+                        type="text"
+                        placeholder="House no, street, area"
+                        value={form.address}
+                        onChange={handleFieldChange('address')}
+                        style={inputStyle}
+                        onFocus={e => { e.currentTarget.style.borderColor = 'rgba(212,165,90,0.5)'; }}
+                        onBlur={e => { e.currentTarget.style.borderColor = 'rgba(212,165,90,0.2)'; }}
+                      />
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-3">
+                      <div className="flex flex-col gap-1">
+                        <label className="text-[10px] uppercase tracking-wider" style={{ color: 'rgba(220,214,205,0.4)' }}>City</label>
+                        <input
+                          type="text"
+                          placeholder="Mumbai"
+                          value={form.city}
+                          onChange={handleFieldChange('city')}
+                          style={inputStyle}
+                          onFocus={e => { e.currentTarget.style.borderColor = 'rgba(212,165,90,0.5)'; }}
+                          onBlur={e => { e.currentTarget.style.borderColor = 'rgba(212,165,90,0.2)'; }}
+                        />
+                      </div>
+                      <div className="flex flex-col gap-1">
+                        <label className="text-[10px] uppercase tracking-wider" style={{ color: 'rgba(220,214,205,0.4)' }}>State</label>
+                        <input
+                          type="text"
+                          placeholder="Maharashtra"
+                          value={form.state}
+                          onChange={handleFieldChange('state')}
+                          style={inputStyle}
+                          onFocus={e => { e.currentTarget.style.borderColor = 'rgba(212,165,90,0.5)'; }}
+                          onBlur={e => { e.currentTarget.style.borderColor = 'rgba(212,165,90,0.2)'; }}
+                        />
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col gap-1">
+                      <label className="text-[10px] uppercase tracking-wider" style={{ color: 'rgba(220,214,205,0.4)' }}>Pincode</label>
+                      <input
+                        type="text"
+                        placeholder="400001"
+                        value={form.pincode}
+                        onChange={handleFieldChange('pincode')}
+                        maxLength={6}
+                        style={inputStyle}
+                        onFocus={e => { e.currentTarget.style.borderColor = 'rgba(212,165,90,0.5)'; }}
+                        onBlur={e => { e.currentTarget.style.borderColor = 'rgba(212,165,90,0.2)'; }}
+                      />
+                    </div>
+
+                    <div className="flex flex-col gap-2 mt-1">
+                      <label className="text-[10px] uppercase tracking-wider" style={{ color: 'rgba(220,214,205,0.4)' }}>Payment Method</label>
+                      <div className="grid grid-cols-2 gap-2">
+                        <button
+                          type="button"
+                          onClick={() => setPaymentMethod('cod')}
+                          className="flex flex-col items-center gap-1.5 py-3 rounded-xl cursor-pointer transition-all duration-200"
+                          style={{
+                            background: paymentMethod === 'cod' ? 'rgba(212,165,90,0.14)' : 'rgba(255,255,255,0.03)',
+                            border: `1px solid ${paymentMethod === 'cod' ? GOLD : 'rgba(212,165,90,0.15)'}`,
+                          }}
+                        >
+                          <Banknote size={16} style={{ color: GOLD }} />
+                          <span className="text-[11px] font-bold" style={{ color: 'var(--cream)' }}>Cash on Delivery</span>
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => setPaymentMethod('razorpay')}
+                          className="flex flex-col items-center gap-1.5 py-3 rounded-xl cursor-pointer transition-all duration-200"
+                          style={{
+                            background: paymentMethod === 'razorpay' ? 'rgba(212,165,90,0.14)' : 'rgba(255,255,255,0.03)',
+                            border: `1px solid ${paymentMethod === 'razorpay' ? GOLD : 'rgba(212,165,90,0.15)'}`,
+                          }}
+                        >
+                          <CreditCard size={16} style={{ color: GOLD }} />
+                          <span className="text-[11px] font-bold" style={{ color: 'var(--cream)' }}>Pay Online</span>
+                        </button>
+                      </div>
+                    </div>
+
                     {error && (
                       <motion.p
                         initial={{ opacity: 0, y: -4 }}
@@ -438,11 +531,13 @@ export const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
                   >
                     {loading
                       ? <><Loader2 size={14} className="animate-spin" /> Processing…</>
-                      : `Pay ₹${totalPrice.toLocaleString('en-IN')}`
+                      : paymentMethod === 'cod'
+                        ? <><Banknote size={14} /> Place Order — ₹{totalPrice.toLocaleString('en-IN')}</>
+                        : <><CreditCard size={14} /> Pay ₹{totalPrice.toLocaleString('en-IN')} Online</>
                     }
                   </button>
                   <p className="text-[10px] text-center font-sans" style={{ color: 'rgba(220,214,205,0.28)' }}>
-                    Secured by Razorpay · UPI, Cards, NetBanking &amp; more
+                    {paymentMethod === 'cod' ? 'Pay in cash when your order arrives' : 'Secured by Razorpay · UPI, Cards, NetBanking & more'}
                   </p>
                 </div>
               </>
