@@ -12,6 +12,10 @@ import { loadRazorpayScript, type RazorpayResponse } from '../utils/razorpay';
 const GOLD  = '#d4a373';
 const GOLDL = '#e5c199';
 
+// Razorpay isn't configured on the backend yet — keep online payment hidden
+// until that's set up, so customers don't hit a dead-end payment option.
+const RAZORPAY_ENABLED = false;
+
 interface FormData {
   name: string;
   email: string;
@@ -256,43 +260,55 @@ export const CheckoutPage = () => {
                 </div>
 
                 {/* Payment method */}
-                <div className="flex flex-col gap-2 mt-2">
-                  <label className="text-xs font-semibold uppercase tracking-wider" style={{ color: 'rgba(212,163,115,0.55)' }}>
-                    Payment Method
-                  </label>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <button
-                      type="button"
-                      onClick={() => setPaymentMethod('cod')}
-                      className="flex items-center gap-3 p-4 rounded-xl text-left transition-all duration-200 cursor-pointer"
-                      style={{
-                        background: paymentMethod === 'cod' ? 'rgba(212,163,115,0.12)' : 'rgba(255,255,255,0.04)',
-                        border: `1px solid ${paymentMethod === 'cod' ? GOLD : 'rgba(212,163,115,0.15)'}`,
-                      }}
-                    >
-                      <Banknote size={18} style={{ color: GOLD, flexShrink: 0 }} />
-                      <div>
-                        <p className="text-sm font-semibold" style={{ color: 'var(--cream)' }}>Cash on Delivery</p>
-                        <p className="text-xs" style={{ color: 'var(--muted)' }}>Pay when your order arrives</p>
-                      </div>
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setPaymentMethod('razorpay')}
-                      className="flex items-center gap-3 p-4 rounded-xl text-left transition-all duration-200 cursor-pointer"
-                      style={{
-                        background: paymentMethod === 'razorpay' ? 'rgba(212,163,115,0.12)' : 'rgba(255,255,255,0.04)',
-                        border: `1px solid ${paymentMethod === 'razorpay' ? GOLD : 'rgba(212,163,115,0.15)'}`,
-                      }}
-                    >
-                      <CreditCard size={18} style={{ color: GOLD, flexShrink: 0 }} />
-                      <div>
-                        <p className="text-sm font-semibold" style={{ color: 'var(--cream)' }}>Pay Online</p>
-                        <p className="text-xs" style={{ color: 'var(--muted)' }}>UPI, Cards &amp; NetBanking via Razorpay</p>
-                      </div>
-                    </button>
+                {RAZORPAY_ENABLED ? (
+                  <div className="flex flex-col gap-2 mt-2">
+                    <label className="text-xs font-semibold uppercase tracking-wider" style={{ color: 'rgba(212,163,115,0.55)' }}>
+                      Payment Method
+                    </label>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      <button
+                        type="button"
+                        onClick={() => setPaymentMethod('cod')}
+                        className="flex items-center gap-3 p-4 rounded-xl text-left transition-all duration-200 cursor-pointer"
+                        style={{
+                          background: paymentMethod === 'cod' ? 'rgba(212,163,115,0.12)' : 'rgba(255,255,255,0.04)',
+                          border: `1px solid ${paymentMethod === 'cod' ? GOLD : 'rgba(212,163,115,0.15)'}`,
+                        }}
+                      >
+                        <Banknote size={18} style={{ color: GOLD, flexShrink: 0 }} />
+                        <div>
+                          <p className="text-sm font-semibold" style={{ color: 'var(--cream)' }}>Cash on Delivery</p>
+                          <p className="text-xs" style={{ color: 'var(--muted)' }}>Pay when your order arrives</p>
+                        </div>
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setPaymentMethod('razorpay')}
+                        className="flex items-center gap-3 p-4 rounded-xl text-left transition-all duration-200 cursor-pointer"
+                        style={{
+                          background: paymentMethod === 'razorpay' ? 'rgba(212,163,115,0.12)' : 'rgba(255,255,255,0.04)',
+                          border: `1px solid ${paymentMethod === 'razorpay' ? GOLD : 'rgba(212,163,115,0.15)'}`,
+                        }}
+                      >
+                        <CreditCard size={18} style={{ color: GOLD, flexShrink: 0 }} />
+                        <div>
+                          <p className="text-sm font-semibold" style={{ color: 'var(--cream)' }}>Pay Online</p>
+                          <p className="text-xs" style={{ color: 'var(--muted)' }}>UPI, Cards &amp; NetBanking via Razorpay</p>
+                        </div>
+                      </button>
+                    </div>
                   </div>
-                </div>
+                ) : (
+                  <div
+                    className="flex items-center gap-3 p-4 rounded-xl mt-2"
+                    style={{ background: 'rgba(212,163,115,0.06)', border: '1px solid rgba(212,163,115,0.15)' }}
+                  >
+                    <Banknote size={16} style={{ color: GOLD, flexShrink: 0 }} />
+                    <p className="text-xs font-sans leading-relaxed" style={{ color: 'var(--muted)' }}>
+                      <span style={{ color: GOLDL }}>Cash on Delivery</span> — pay when your order arrives. Online payment is coming soon.
+                    </p>
+                  </div>
+                )}
 
                 <button
                   type="submit"
