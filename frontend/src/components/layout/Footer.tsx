@@ -5,8 +5,19 @@ import { Link } from 'react-router-dom';
 const GOLD  = '#d4a55a';
 const GOLDL = '#e8c07a';
 
-const quickLinks   = ['Shop All', 'Collections', 'Best Sellers', 'About Us', 'Contact Us', 'Track Order'];
-const serviceLinks = ['FAQ', 'Shipping & Delivery', 'Returns & Refunds', 'Terms & Conditions', 'Privacy Policy'];
+const quickLinks = [
+  { label: 'Collections', to: '/collections' },
+  { label: 'Best Sellers', to: '/best-sellers' },
+  { label: 'About Us', to: '/about' },
+  { label: 'Contact Us', to: '/contact' },
+];
+const serviceLinks = [
+  { label: 'FAQ', to: '/faq' },
+  { label: 'Shipping & Delivery', to: '/shipping-delivery' },
+  { label: 'Returns & Refunds', to: '/returns-refunds' },
+  { label: 'Terms & Conditions', to: '/terms-and-conditions' },
+  { label: 'Privacy Policy', to: '/privacy-policy' },
+];
 const paymentIcons = ['VISA', 'MC', 'PayPal', 'Apple Pay', 'G Pay'];
 
 const socials = [
@@ -128,15 +139,15 @@ export const Footer = () => (
           </h4>
           <ul className="flex flex-col gap-3">
             {quickLinks.map(link => (
-              <li key={link}>
+              <li key={link.label}>
                 <Link
-                  to="/"
+                  to={link.to}
                   className="text-[13px] transition-all duration-200 inline-flex items-center gap-1.5 group/link"
                   style={{ color: 'rgba(200,191,179,0.55)', fontFamily: 'Inter, sans-serif' }}
                   onMouseEnter={e => { e.currentTarget.style.color = GOLDL; e.currentTarget.style.paddingLeft = '6px'; }}
                   onMouseLeave={e => { e.currentTarget.style.color = 'rgba(200,191,179,0.55)'; e.currentTarget.style.paddingLeft = '0'; }}
                 >
-                  {link}
+                  {link.label}
                 </Link>
               </li>
             ))}
@@ -150,15 +161,15 @@ export const Footer = () => (
           </h4>
           <ul className="flex flex-col gap-3">
             {serviceLinks.map(link => (
-              <li key={link}>
+              <li key={link.label}>
                 <Link
-                  to="/"
+                  to={link.to}
                   className="text-[13px] transition-all duration-200 inline-block"
                   style={{ color: 'rgba(200,191,179,0.55)', fontFamily: 'Inter, sans-serif' }}
                   onMouseEnter={e => { e.currentTarget.style.color = GOLDL; e.currentTarget.style.paddingLeft = '6px'; }}
                   onMouseLeave={e => { e.currentTarget.style.color = 'rgba(200,191,179,0.55)'; e.currentTarget.style.paddingLeft = '0'; }}
                 >
-                  {link}
+                  {link.label}
                 </Link>
               </li>
             ))}

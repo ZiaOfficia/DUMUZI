@@ -6,7 +6,7 @@ import { useAddToCart } from '../../hooks/useAddToCart';
 import { products as allProducts, type Product } from '../../data/productsData';
 import { ProductModal } from '../common/ProductModal';
 
-const products = [
+export const homeBestSellerProducts = [
   { ...allProducts[0],  name: allProducts[0].description,  price: allProducts[0].mrp,  tag: 'BEST SELLER', tagSolid: true  },
   { ...allProducts[1],  name: allProducts[1].description,  price: allProducts[1].mrp,  tag: null,          tagSolid: false },
   { ...allProducts[11], name: allProducts[11].description, price: allProducts[11].mrp, tag: 'TRENDING',    tagSolid: false },
@@ -70,7 +70,7 @@ export const ServicesGrid = () => {
 
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
-          {products.map((p, i) => (
+          {homeBestSellerProducts.map((p, i) => (
             <motion.div 
               key={p.id}
               initial={{ opacity: 0, y: 44 }} 

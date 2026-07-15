@@ -23,7 +23,11 @@ import { PortfolioDetailPage }    from './pages/PortfolioDetailPage';
 import { PrivacyPolicyPage }      from './pages/PrivacyPolicyPage';
 import { TermsOfServicePage }     from './pages/TermsOfServicePage';
 import ThankYouPage               from './pages/ThankYouPage';
-import NotFound                   from './pages/NotFound';
+import ShopPage                   from './pages/ShopPage';
+import BestSellersPage            from './pages/BestSellersPage';
+import TrackOrderPage             from './pages/TrackOrderPage';import ShippingDeliveryPage       from './pages/ShippingDeliveryPage';
+import ReturnsRefundsPage         from './pages/ReturnsRefundsPage';
+import TermsAndConditionsPage     from './pages/TermsAndConditionsPage';import NotFound                   from './pages/NotFound';
 
 // Customer auth pages
 import LoginPage                  from './pages/LoginPage';
@@ -60,6 +64,12 @@ function App() {
                 <Route path="/contact"                 element={<ContactPage />} />
                 <Route path="/services"                element={<ServicesPage />} />
                 <Route path="/collections"             element={<CollectionsPage />} />
+                <Route path="/shop"                    element={<ShopPage />} />
+                <Route path="/best-sellers"           element={<BestSellersPage />} />
+                <Route path="/track-order"            element={<TrackOrderPage />} />
+                <Route path="/shipping-delivery"     element={<ShippingDeliveryPage />} />
+                <Route path="/returns-refunds"       element={<ReturnsRefundsPage />} />
+                <Route path="/terms-and-conditions"  element={<TermsAndConditionsPage />} />
                 <Route path="/services/:id"            element={<ServiceDetailPage />} />
                 <Route path="/best-chocolate"          element={<BestChocolatePage />} />
                 <Route path="/gallery"                 element={<GalleryPage />} />
