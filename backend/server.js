@@ -22,6 +22,8 @@ const PORT = process.env.PORT || 5000;
 const allowedOrigins = [
   "https://dumuzi.com",
   "https://www.dumuzi.com",
+  "https://dumuzi.in",
+  "https://www.dumuzi.in",
   "https://dumuzi-vczt.vercel.app", // Vercel's default domain, used until dumuzi.com is fully live
   "https://dumuzi-z7l3.vercel.app", // Vercel's other auto-assigned domain for this project
 ];
