@@ -304,10 +304,26 @@ export const BlogListingPage = () => {
                       <div>
                         <Link
                           to={getBlogPostUrl(featuredPost.slug, featuredPost.createdAt)}
-                          className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gold hover:text-cream transition-colors"
+                          className="group inline-flex items-center gap-2 rounded-full border px-3.5 py-2 text-[11px] font-bold uppercase tracking-[0.22em] transition-all duration-300 hover:-translate-y-0.5"
+                          style={{
+                            color: 'var(--choc-deep)',
+                            borderColor: 'rgba(212,163,115,0.32)',
+                            background: 'linear-gradient(135deg, var(--gold), var(--gold-light))',
+                            boxShadow: '0 8px 24px rgba(212,163,115,0.18)',
+                          }}
+                          onMouseEnter={(e) => {
+                            const el = e.currentTarget as HTMLAnchorElement;
+                            el.style.boxShadow = '0 14px 32px rgba(212,163,115,0.3)';
+                            el.style.transform = 'translateY(-2px)';
+                          }}
+                          onMouseLeave={(e) => {
+                            const el = e.currentTarget as HTMLAnchorElement;
+                            el.style.boxShadow = '0 8px 24px rgba(212,163,115,0.18)';
+                            el.style.transform = 'translateY(0)';
+                          }}
                         >
                           <span>Read Full Story</span>
-                          <ArrowRight size={14} className="group-hover:translate-x-1.5 transition-transform" />
+                          <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1.5" />
                         </Link>
                       </div>
                     </div>
