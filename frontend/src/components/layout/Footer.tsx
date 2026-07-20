@@ -53,8 +53,8 @@ export const Footer = () => (
     <div className="absolute top-0 inset-x-0 h-px pointer-events-none"
       style={{ background: 'linear-gradient(90deg,transparent,rgba(212,165,90,0.4),transparent)' }} />
 
-    <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-16 pb-8 relative">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-14">
+    <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-14 pb-10 relative">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10 mb-12">
 
         {/* Brand Column */}
         <motion.div variants={item} className="lg:col-span-1">
@@ -85,9 +85,9 @@ export const Footer = () => (
           {/* Contact info */}
           <div className="flex flex-col gap-2 mb-6">
             {[
-              { Icon: MapPin, text: 'Mumbai, India' },
-              { Icon: Phone,  text: '+91 98765 43210' },
-              { Icon: Mail,   text: 'hello@dumuzi.com' },
+              { Icon: MapPin, text: 'Lucknow, India' },
+              { Icon: Phone,  text: '+91-9161-115-116' },
+              { Icon: Mail,   text: 'info@dumuzi.com' },
             ].map(({ Icon, text }) => (
               <div key={text} className="flex items-center gap-2.5">
                 <Icon size={12} style={{ color: 'rgba(212,165,90,0.5)', flexShrink: 0 }} />
@@ -183,7 +183,7 @@ export const Footer = () => (
       <div style={{
         height: '1px',
         background: 'linear-gradient(90deg,transparent,rgba(212,165,90,0.28),transparent)',
-        marginBottom: '1.75rem',
+        marginBottom: '2rem',
       }} />
 
       {/* Bottom bar */}
