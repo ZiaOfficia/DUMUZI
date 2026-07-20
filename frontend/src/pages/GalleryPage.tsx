@@ -32,7 +32,7 @@ const videoGallery = [
   },
   {
     id: "dQw4w9WgXcQ",
-    title: "From Cocoa to Chocolate — The DUMUZI Story",
+    title: "From Ingredients to Confection — The DUMUZI Story",
     thumbnail: "/images/products/LF-D15T.jpeg",
     videoLength: "1:55",
   },
@@ -70,7 +70,7 @@ export const GalleryPage = () => {
     <div className="pt-[60px] md:pt-[50px] bg-white min-h-screen">
       <SEO
         title="Photo Gallery — DUMUZI"
-        description="A visual journey through DUMUZI's atelier — handcrafted chocolate collections, truffles, pralines, and behind-the-scenes moments from bean to box."
+        description="A visual journey through DUMUZI's atelier — handcrafted confectionery collections, truffles, pralines, and behind-the-scenes moments from ingredient to box."
       />
       {/* Hero Section */}
       {/* ------------------- IMAGE GALLERY SECTION ------------------- */}
@@ -80,7 +80,7 @@ export const GalleryPage = () => {
         <div className="absolute inset-0 opacity-60 group-hover:opacity-50 transition-opacity duration-700">
           <img loading="lazy" decoding="async"
             src="/images/products/LF-D25B.jpeg"
-            alt="DUMUZI Chocolate Gallery"
+            alt="DUMUZI Confectionery Gallery"
             className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000"
           />
           <div className="absolute inset-0 bg-linear-to-t from-stone-900 via-stone-900/40 to-transparent" />
@@ -102,7 +102,7 @@ export const GalleryPage = () => {
             Photo Gallery
           </h2>
           <p className="mt-4 text-xl font-light text-stone-200 max-w-2xl mx-auto px-6">
-            A look at our handcrafted chocolates and the moments they create.
+            A look at our handcrafted confections and the moments they create.
           </p>
         </motion.div>
       </section>

@@ -9,7 +9,7 @@ const contactCards = [
   {
     icon: MessageCircle,
     title: 'Bespoke Orders',
-    desc: 'Design a custom chocolate for any occasion — wedding, corporate, or personal commission.',
+    desc: 'Design a custom confection for any occasion — wedding, corporate, or personal commission.',
     cta: 'Start a Commission',
     path: '/contact',
   },
@@ -35,7 +35,7 @@ export const ContactCTASection = () => {
   return (
     <section
       style={{
-        background: 'linear-gradient(145deg, var(--choc-dark) 0%, var(--choc-deep) 100%)',
+        background: 'linear-gradient(145deg, var(--bg-dark) 0%, var(--bg-deep) 100%)',
         padding: '96px 0',
         position: 'relative',
         overflow: 'hidden',
@@ -103,7 +103,7 @@ export const ContactCTASection = () => {
           <button
             onClick={() => navigate('/contact')}
             className="inline-flex items-center gap-3 px-12 py-5 rounded-full text-xs tracking-[0.2em] uppercase font-bold border-none cursor-pointer transition-all duration-300"
-            style={{ background: `linear-gradient(135deg,${GOLD},${GOLDL})`, color: 'var(--choc-deep)', boxShadow: '0 12px 35px rgba(212,163,115,0.4)' }}
+            style={{ background: `linear-gradient(135deg,${GOLD},${GOLDL})`, color: 'var(--bg-deep)', boxShadow: '0 12px 35px rgba(212,163,115,0.4)' }}
             onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 20px 55px rgba(212,163,115,0.6)'; e.currentTarget.style.transform = 'translateY(-3px)'; }}
             onMouseLeave={e => { e.currentTarget.style.boxShadow = '0 12px 35px rgba(212,163,115,0.4)'; e.currentTarget.style.transform = 'translateY(0)'; }}
           >

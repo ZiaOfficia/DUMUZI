@@ -5,7 +5,7 @@ import { StatsSection }             from '../components/sections/StatsSection';
 import { HowItWorks }               from '../components/sections/HowItWorks';
 import { GiftingCTA }               from '../components/sections/GiftingCTA';
 import { CollectionsPreviewSection } from '../components/sections/CollectionsPreviewSection';
-import { BestChocolateShowcase }    from '../components/sections/BestChocolateShowcase';
+import { BestConfectionsShowcase }  from '../components/sections/BestConfectionsShowcase';
 import { CraftBannerSection }       from '../components/sections/CraftBannerSection';
 import { BlogPreviewSection }       from '../components/sections/BlogPreviewSection';
 import { ContactCTASection }        from '../components/sections/ContactCTASection';
@@ -27,9 +27,9 @@ export const HomePage = () => {
       <div className="section-divider" />
       <ServicesGrid />
 
-      {/* 4 — Best Chocolates Showcase (top 3 + CTA to /best-chocolate) */}
+      {/* 4 — Best Confections Showcase (top 3 + CTA to /best-confections) */}
       <div className="section-divider" />
-      <BestChocolateShowcase />
+      <BestConfectionsShowcase />
 
       {/* 5 — Collections Preview (6 collection cards linking to /collections) */}
       <div className="section-divider" />

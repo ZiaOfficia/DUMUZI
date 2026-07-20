@@ -40,7 +40,7 @@ const ThankYouPage = () => {
   return (
     <div
       className="min-h-screen flex items-center justify-center px-6 py-24 relative overflow-hidden"
-      style={{ background: "linear-gradient(160deg, #1a120d 0%, #100a07 60%, var(--choc-deep) 100%)" }}
+      style={{ background: "linear-gradient(160deg, #1a120d 0%, #100a07 60%, var(--bg-deep) 100%)" }}
     >
       <SEO title={isOrder ? "Order Confirmed" : "Thank You"} description="Thank you from DUMUZI" />
 
@@ -74,7 +74,7 @@ const ThankYouPage = () => {
             className="w-24 h-24 rounded-full flex items-center justify-center"
             style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLDL})`, boxShadow: "var(--shadow-gold)" }}
           >
-            <CheckCircle size={44} style={{ color: "var(--choc-deep)" }} strokeWidth={2.5} />
+            <CheckCircle size={44} style={{ color: "var(--bg-deep)" }} strokeWidth={2.5} />
           </motion.div>
           <motion.div
             initial={{ opacity: 0, scale: 0 }}
@@ -110,7 +110,7 @@ const ThankYouPage = () => {
 
         <p className="text-sm mb-10 leading-relaxed font-sans" style={{ color: "var(--muted)" }}>
           {isOrder
-            ? "Our artisans will prepare your chocolates with care, and we'll reach out within 1–2 business days with dispatch details. For any queries, email us at "
+            ? "Our artisans will prepare your confections with care, and we'll reach out within 1–2 business days with dispatch details. For any queries, email us at "
             : "Our team at DUMUZI will read your message and reply within 1–2 business days. For urgent matters, you can also email us at "}
           <a href="mailto:hello@dumuzi.com" style={{ color: GOLDL }} className="hover:underline">
             hello@dumuzi.com
@@ -124,7 +124,7 @@ const ThankYouPage = () => {
               <Link
                 to="/collections"
                 className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300"
-                style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLDL})`, color: "var(--choc-deep)", boxShadow: "0 8px 24px rgba(212,165,90,0.3)" }}
+                style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLDL})`, color: "var(--bg-deep)", boxShadow: "0 8px 24px rgba(212,165,90,0.3)" }}
               >
                 <ShoppingBag size={15} /> Continue Shopping
               </Link>
@@ -141,7 +141,7 @@ const ThankYouPage = () => {
               <Link
                 to="/"
                 className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300"
-                style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLDL})`, color: "var(--choc-deep)", boxShadow: "0 8px 24px rgba(212,165,90,0.3)" }}
+                style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLDL})`, color: "var(--bg-deep)", boxShadow: "0 8px 24px rgba(212,165,90,0.3)" }}
               >
                 <Home size={15} /> Return Home
               </Link>

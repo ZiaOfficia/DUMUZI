@@ -5,32 +5,32 @@ import { heroImages } from "./imageAssets";
 export const heroSlides = [
   {
     title: "DUMUZI",
-    subtitle: "Handcrafted with single-origin cocoa. Made to delight every sense.",
+    subtitle: "Handcrafted with single-origin ingredients. Made to delight every sense.",
     image: heroImages.heartBox,
   },
   {
     title: "Fifteen Years of Craft.",
-    subtitle: "Our chocolatiers have perfected the art of tempering since 2009.",
+    subtitle: "Our confectioners have perfected the art of confectionery since 2009.",
     image: heroImages.grandDisplay,
   },
   {
-    title: "From Bean to Box",
-    subtitle: "We source directly from premium cocoa estates across the equator.",
+    title: "From Origin to Box",
+    subtitle: "We source directly from premium estates across the equator.",
     image: heroImages.heartTruffles,
   },
   {
     title: "Pure. Organic. Exquisite.",
-    subtitle: "100% organic cocoa beans, ethically sourced and slowly roasted.",
+    subtitle: "100% organic ingredients, ethically sourced and slowly prepared.",
     image: heroImages.classicDisplay,
   },
   {
-    title: "Signature Dark Collections",
-    subtitle: "Our award-winning dark chocolate bars, truffles and pralines.",
+    title: "Signature Collections",
+    subtitle: "Our award-winning dark confections, gourmet bites and filled sweets.",
     image: heroImages.heartDuo,
   },
   {
     title: "Gifting, Elevated.",
-    subtitle: "Bespoke chocolate boxes crafted for every special occasion.",
+    subtitle: "Bespoke gift boxes crafted for every special occasion.",
     image: heroImages.selectionBox,
   },
   {
@@ -40,23 +40,23 @@ export const heroSlides = [
   },
   {
     title: "Corporate & Wedding Collections",
-    subtitle: "Custom-branded chocolate gifts that leave a lasting impression.",
+    subtitle: "Custom-branded confectionery gifts that leave a lasting impression.",
     image: heroImages.ovalBox,
   },
 ];
 
 export const introContent = {
-  heading: "Single-Origin Cocoa. Master Craftsmanship. Pure Luxury.",
+  heading: "Single-Origin Ingredients. Master Craftsmanship. Pure Luxury.",
   text: [
-    "Founded in 2013, DUMUZI was built on a single belief: great confectionery demands great ingredients. We source our cocoa beans directly from sustainable farms in Madagascar, Ecuador, and Peru — then hand-temper every batch in our artisan atelier.",
-    "We do not mass-produce. Every truffle, bar, and praline is crafted to order by our team of expert chocolatiers, ensuring the freshest, most exquisite experience possible.",
+    "Founded in 2013, DUMUZI was built on a single belief: great confectionery demands great ingredients. We source our ingredients directly from sustainable farms in Madagascar, Ecuador, and Peru — then hand-craft every batch in our artisan atelier.",
+    "We do not mass-produce. Every sweet, box, and confection is crafted to order by our team of expert artisans, ensuring the freshest, most exquisite experience possible.",
   ],
 };
 
 export const portfolioContent = {
   heading: "Our Collections & Guides",
   description:
-    "Explore our curated confectionery collections, artisan guides, and gifting lookbooks. Each collection tells the story of the cocoa it was born from.",
+    "Explore our curated confectionery collections, artisan guides, and gifting lookbooks. Each collection tells the story of the ingredients it was born from.",
 };
 
 export const services = [
@@ -64,13 +64,13 @@ export const services = [
     ...heroSlides[0],
     id: "dark-collection",
     description:
-      "Our signature dark confectionery range — single-origin bars from 72% to 92% cocoa with complex tasting notes of red fruit, roasted nuts, and earth.",
+      "Our signature dark confectionery range — single-origin selections with complex tasting notes of red fruit, roasted nuts, and earth.",
   },
   {
     ...heroSlides[1],
     id: "truffle-collection",
     description:
-      "Handcrafted ganache truffles in dark, milk, and white confectionery, with seasonal flavour infusions and 24k gold-leaf finishes.",
+      "Handcrafted gourmet bites in dark and milk confectionery, with seasonal flavour infusions and 24k gold-leaf finishes.",
   },
   {
     ...heroSlides[2],
@@ -82,7 +82,7 @@ export const services = [
     ...heroSlides[4],
     id: "pralines-collection",
     description:
-      "Belgian-inspired pralines with hazelnut, pistachio, and salted caramel fillings, enrobed in tempered dark or milk chocolate.",
+      "Belgian-inspired filled delicacies with hazelnut, pistachio, and salted caramel fillings, enrobed in tempered dark or milk confectionery.",
   },
   {
     ...heroSlides[5],
@@ -106,13 +106,13 @@ export const services = [
     ...heroSlides[6],
     id: "subscription-box",
     description:
-      "Monthly and quarterly chocolate subscription boxes featuring new arrivals, limited editions, and exclusive members-only selections.",
+      "Monthly and quarterly confectionery subscription boxes featuring new arrivals, limited editions, and exclusive members-only selections.",
   },
   {
     ...heroSlides[7],
     id: "bespoke-orders",
     description:
-      "Fully bespoke chocolate commissions — from custom flavour infusions to hand-painted artistic bars for special events.",
+      "Fully bespoke commissions — from custom flavour infusions to hand-painted artistic treats for special events.",
   },
 ];
 
@@ -121,10 +121,10 @@ export const whyChooseContent = {
   description:
     "We are a small atelier producing exceptional confectionery since 2013. Our customers return because we are consistent, honest, and uncompromising on quality.",
   points: [
-    "Single-origin organic cocoa beans sourced directly from farming cooperatives.",
-    "Every batch is hand-tempered by our master chocolatiers in our own atelier.",
+    "Single-origin organic ingredients sourced directly from farming cooperatives.",
+    "Every batch is hand-crafted by our master confectioners in our own atelier.",
     "Our founders absorb overheads — so your investment goes entirely into ingredients.",
-    "Temperature-controlled packaging ensures your chocolate arrives in perfect condition.",
+    "Special packaging ensures your confectionery arrives in perfect condition.",
     "All products are free from artificial preservatives and palm oil.",
   ],
   footer:
@@ -147,25 +147,25 @@ export const aboutContent = {
 
 export const blogPosts = [
   {
-    title: "Crafting the Perfect Dark Chocolate Truffle",
+    title: "Crafting the Perfect Dark Confection",
     category: "Craftsmanship",
     excerpt:
-      "Discover the secret behind our signature dark chocolate truffles — from choosing cocoa percentages to achieving a silky ganache texture...",
-    image: "/images/assets/dark_chocolates_hero.png",
+      "Discover the secret behind our signature dark confections — from choosing ingredients to achieving a silky, smooth texture...",
+    image: "/images/assets/atelier_hero.png",
   },
   {
-    title: "Sourcing Single-Origin Cocoa: Madagascar vs. Ecuador",
+    title: "Sourcing Single-Origin Ingredients: Madagascar vs. Ecuador",
     category: "Sustainability",
     excerpt:
-      "Explore the unique flavor profiles of single-origin cocoa beans and how soil, climate, and geography shape the taste of our luxury collections...",
-    image: "/images/assets/dark_chocolates_hero.png",
+      "Explore the unique flavor profiles of single-origin ingredients and how soil, climate, and geography shape the taste of our luxury collections...",
+    image: "/images/assets/atelier_hero.png",
   },
   {
     title: "The Ultimate Corporate Gifting Guide",
     category: "Gifting",
     excerpt:
-      "Discover how custom-designed chocolate assortments can elevate your corporate relations and leave a lasting impression...",
-    image: "/images/assets/dark_chocolates_hero.png",
+      "Discover how custom-designed confectionery assortments can elevate your corporate relations and leave a lasting impression...",
+    image: "/images/assets/atelier_hero.png",
   },
 ];
 
@@ -173,10 +173,10 @@ export const faqs = [
   {
     question: "What makes DUMUZI confectionery different from regular brands?",
     answer:
-      "DUMUZI uses single-origin organic cocoa beans sourced directly from farming cooperatives. Every batch is hand-tempered by our master chocolatiers and made without artificial preservatives or palm oil. We produce in small batches to ensure the highest freshness and quality.",
+      "DUMUZI uses single-origin organic ingredients sourced directly from farming cooperatives. Every batch is hand-crafted by our master confectioners and made without artificial preservatives or palm oil. We produce in small batches to ensure the highest freshness and quality.",
   },
   {
-    question: "Where do you source your cocoa beans?",
+    question: "Where do you source your ingredients?",
     answer:
       "We source from premium estates in Madagascar, Ecuador, and Peru. We work directly with local farming cooperatives, paying above fair-trade prices to support sustainable agriculture and biodiversity.",
   },
@@ -191,9 +191,9 @@ export const faqs = [
       "Absolutely. Our monthly and quarterly subscription boxes feature new arrivals, limited editions, and exclusive members-only selections delivered to your door in temperature-controlled packaging.",
   },
   {
-    question: "How do you ensure chocolate quality during delivery?",
+    question: "How do you ensure product quality during delivery?",
     answer:
-      "All orders are packed in temperature-controlled, insulated boxes using food-grade gel packs. We ship with express couriers and avoid shipping during peak heat periods to ensure your chocolate arrives in perfect condition.",
+      "All orders are packed in temperature-controlled, insulated boxes using food-grade gel packs. We ship with express couriers and avoid shipping during peak heat periods to ensure your order arrives in perfect condition.",
   },
   {
     question: "Are DUMUZI products suitable for gifting at weddings and events?",
@@ -203,12 +203,12 @@ export const faqs = [
   {
     question: "What is your return and freshness policy?",
     answer:
-      "Because our chocolates are handcrafted and perishable, we do not accept returns. However, if your order arrives damaged or below our quality standards, we will replace it at no charge. Our standard shelf life is 6–8 weeks from production.",
+      "Because our confections are handcrafted and perishable, we do not accept returns. However, if your order arrives damaged or below our quality standards, we will replace it at no charge. Our standard shelf life is 6–8 weeks from production.",
   },
   {
     question: "Do you offer sugar-free or vegan options?",
     answer:
-      "We have a small range of dark chocolate bars and truffles sweetened with coconut sugar and made with oat or almond milk for vegan customers. These are available on our website under 'Specialty Collections'.",
+      "We have a small range of dark confections sweetened with coconut sugar and made with oat or almond milk for vegan customers. These are available on our website under 'Specialty Collections'.",
   },
   {
     question: "How do I place a bespoke order?",
@@ -223,7 +223,7 @@ export const faqs = [
 ];
 
 export const ctaContent = {
-  heading: "Indulge in the Art of Luxury Chocolate.",
+  heading: "Indulge in the Art of Luxury Confectionery.",
   text: [
     "Whether you are looking for a personal treat, a meaningful gift, or a bespoke corporate collection — DUMUZI has something extraordinary waiting for you. Explore our collections or get in touch to create something truly one-of-a-kind.",
   ],

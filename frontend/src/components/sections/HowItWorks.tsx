@@ -1,11 +1,11 @@
 import { motion, type Transition } from 'framer-motion';
 import { Search, Sparkles, Award, Gift } from 'lucide-react';
-import { ChocolateDecor } from '../common/ChocolateDecor';
+import { LuxuryDecor } from '../common/LuxuryDecor';
 
 const steps = [
-  { icon: Search,   step:'01', title:'Source',  desc:'We hand-select the finest single-origin cocoa beans from premium estates around the equator.', img: '/images/products/LF-D6.jpeg' },
-  { icon: Sparkles, step:'02', title:'Craft',   desc:'Our master chocolatiers slowly roast, hand-temper, and sculpt each piece with precision.',      img: '/images/products/LF- BN9.jpeg' },
-  { icon: Award,    step:'03', title:'Taste',   desc:'Each chocolate goes through sensory trials and quality checks to guarantee perfection.',          img: '/images/products/LF-BN9T.jpeg' },
+  { icon: Search,   step:'01', title:'Source',  desc:'We hand-select the finest single-origin ingredients from premium estates around the equator.', img: '/images/products/LF-D6.jpeg' },
+  { icon: Sparkles, step:'02', title:'Craft',   desc:'Our master confectioners slowly prepare, hand-finish, and sculpt each piece with precision.',      img: '/images/products/LF- BN9.jpeg' },
+  { icon: Award,    step:'03', title:'Taste',   desc:'Each confection goes through sensory trials and quality checks to guarantee perfection.',          img: '/images/products/LF-BN9T.jpeg' },
   { icon: Gift,     step:'04', title:'Delight', desc:'Elegantly custom wrapped in our signature boxes and delivered in temperature-controlled care.',    img: '/images/products/LF-H18D.jpeg' },
 ];
 
@@ -13,8 +13,8 @@ const ease = [0.25, 0.1, 0.25, 1] as const;
 const GOLD = '#d4a373';
 
 export const HowItWorks = () => (
-  <section className="py-16 lg:py-24 relative" style={{ background: 'linear-gradient(180deg, var(--choc-deep) 0%, var(--choc-dark) 100%)' }}>
-    <ChocolateDecor variant="section" />
+  <section className="py-16 lg:py-24 relative" style={{ background: 'linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-dark) 100%)' }}>
+    <LuxuryDecor variant="section" />
 
     <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
 
@@ -31,7 +31,7 @@ export const HowItWorks = () => (
           From Bean to Box
         </h2>
         <p className="text-[13px] max-w-md mx-auto font-sans" style={{ color: 'rgba(220,214,205,0.65)' }}>
-          Every DUMUZI chocolate is born through a slow, carefully tempered culinary journey.
+          Every DUMUZI confection is born through a slow, carefully crafted culinary journey.
         </p>
       </motion.div>
 
@@ -61,7 +61,7 @@ export const HowItWorks = () => (
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
               {/* Step badge */}
               <div className="absolute top-3 right-3 w-8 h-8 rounded-full flex items-center justify-center text-[10px] font-bold"
-                style={{ background: `linear-gradient(135deg,${GOLD},#e5c199)`, color: 'var(--choc-deep)', boxShadow: '0 4px 12px rgba(212,163,115,0.4)' }}>
+                style={{ background: `linear-gradient(135deg,${GOLD},#e5c199)`, color: 'var(--bg-deep)', boxShadow: '0 4px 12px rgba(212,163,115,0.4)' }}>
                 {step}
               </div>
             </div>

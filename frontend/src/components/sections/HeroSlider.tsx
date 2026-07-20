@@ -1,7 +1,7 @@
 import { motion, type Transition } from 'framer-motion';
 import { Gem, Leaf, Award, Star, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { ChocolateDecor } from '../common/ChocolateDecor';
+import { LuxuryDecor } from '../common/LuxuryDecor';
 
 const ease = [0.25, 0.1, 0.25, 1] as const;
 const fadeUp = (delay = 0) => ({
@@ -30,12 +30,12 @@ export const HeroSlider = () => {
       <div className="absolute top-1/3 left-1/4 w-[420px] h-[420px] rounded-full blur-[130px] pointer-events-none"
         style={{ background: GOLD, opacity: 0.14, animation: 'ambientPulse 8s ease-in-out infinite' }} />
       <div className="absolute bottom-1/4 right-1/5 w-[500px] h-[500px] rounded-full blur-[150px] pointer-events-none"
-        style={{ background: 'var(--choc-warm)', opacity: 0.22 }} />
+        style={{ background: 'var(--bg-warm)', opacity: 0.22 }} />
       <div className="absolute top-0 right-0 w-[300px] h-[300px] rounded-full blur-[100px] pointer-events-none"
         style={{ background: GOLDL, opacity: 0.06 }} />
 
-      {/* Chocolate ball decorations */}
-      <ChocolateDecor variant="hero" />
+      {/* Ambient decorations */}
+      <LuxuryDecor variant="hero" />
 
       {/* Floating gold particles */}
       {[
@@ -132,7 +132,7 @@ export const HeroSlider = () => {
               style={{ borderTop: '1px solid rgba(212,165,90,0.12)' }}
             >
               {[
-                { icon: Gem,   label: 'Single-Origin Cocoa' },
+                { icon: Gem,   label: 'Single-Origin Ingredients' },
                 { icon: Leaf,  label: 'Artisan Finished' },
                 { icon: Award, label: 'Gourmet Gold' },
               ].map(({ icon: Icon, label }) => (
@@ -179,7 +179,7 @@ export const HeroSlider = () => {
                 aspectRatio: '4/5',
                 border: '1px solid rgba(212,165,90,0.2)',
                 boxShadow: '0 50px 130px rgba(0,0,0,0.85), 0 20px 50px rgba(212,165,90,0.1)',
-                background: 'var(--choc-mid)',
+                background: 'var(--bg-mid)',
               }}
             >
               <img
@@ -282,7 +282,7 @@ export const HeroSlider = () => {
               <Award size={14} style={{ color: '#0d0805' }} />
               <div>
                 <p className="text-[9px] font-bold uppercase tracking-wider" style={{ color: '#0d0805' }}>Award Winning</p>
-                <p className="text-[8px]" style={{ color: 'rgba(13,8,5,0.7)' }}>Chocolatier 2024</p>
+                <p className="text-[8px]" style={{ color: 'rgba(13,8,5,0.7)' }}>Confectioner 2024</p>
               </div>
             </motion.div>
           </div>
@@ -292,7 +292,7 @@ export const HeroSlider = () => {
 
       {/* Bottom fade */}
       <div className="absolute bottom-0 inset-x-0 h-20 pointer-events-none"
-        style={{ background: 'linear-gradient(to top, var(--choc-deep), transparent)' }} />
+        style={{ background: 'linear-gradient(to top, var(--bg-deep), transparent)' }} />
     </section>
   );
 };

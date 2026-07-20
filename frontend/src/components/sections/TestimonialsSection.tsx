@@ -19,7 +19,7 @@ const stories: Story[] = [
   {
     image: testimonialImages.connoisseur,
     quote:
-      "The Noir Intense 85% is the finest dark chocolate I have ever tasted. It completely redefined what I thought chocolate could be. I now order a box every month.",
+      "The Noir Intense 85% is the finest confection I have ever tasted. It completely redefined what I thought confectionery could be. I now order a box every month.",
     author: "Isabella R.",
     role: "DUMUZI Connoisseur Subscriber",
     location: "London, UK",
@@ -28,7 +28,7 @@ const stories: Story[] = [
   {
     image: testimonialImages.weddingCouple,
     quote:
-      "We commissioned a bespoke chocolate collection for our wedding favours. Every guest commented on them. DUMUZI exceeded every expectation we had.",
+      "We commissioned a bespoke confectionery collection for our wedding favours. Every guest commented on them. DUMUZI exceeded every expectation we had.",
     author: "James & Sophie T.",
     role: "Bespoke Wedding Commission",
     location: "Paris, France",
@@ -46,7 +46,7 @@ const stories: Story[] = [
   {
     image: testimonialImages.masterclassGuest,
     quote:
-      "Antoine's Tempering Masterclass was an incredible experience. I walked in as an enthusiastic amateur and left with the skills to produce professional-quality chocolate.",
+      "Antoine's Confectionery Masterclass was an incredible experience. I walked in as an enthusiastic amateur and left with the skills to produce professional-quality confections.",
     author: "Marcus W.",
     role: "Advanced Masterclass Participant",
     location: "Amsterdam, Netherlands",
@@ -85,7 +85,7 @@ export const TestimonialsSection = () => {
   return (
     <section
       className="relative py-12 md:py-28 px-4 md:px-6 overflow-hidden"
-      style={{ background: 'linear-gradient(180deg, var(--choc-dark) 0%, var(--choc-deep) 100%)' }}
+      style={{ background: 'linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-deep) 100%)' }}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -199,7 +199,7 @@ export const TestimonialsSection = () => {
                   onClick={prev}
                   className="w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer"
                   style={{ border: `2px solid rgba(212,163,115,0.4)`, color: GOLD, background: 'transparent' }}
-                  onMouseEnter={e => { const el = e.currentTarget; el.style.background = GOLD; el.style.color = 'var(--choc-deep)'; el.style.borderColor = GOLD; }}
+                  onMouseEnter={e => { const el = e.currentTarget; el.style.background = GOLD; el.style.color = 'var(--bg-deep)'; el.style.borderColor = GOLD; }}
                   onMouseLeave={e => { const el = e.currentTarget; el.style.background = 'transparent'; el.style.color = GOLD; el.style.borderColor = 'rgba(212,163,115,0.4)'; }}
                   aria-label="Previous"
                 >
@@ -209,7 +209,7 @@ export const TestimonialsSection = () => {
                   onClick={next}
                   className="w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer"
                   style={{ border: `2px solid rgba(212,163,115,0.4)`, color: GOLD, background: 'transparent' }}
-                  onMouseEnter={e => { const el = e.currentTarget; el.style.background = GOLD; el.style.color = 'var(--choc-deep)'; el.style.borderColor = GOLD; }}
+                  onMouseEnter={e => { const el = e.currentTarget; el.style.background = GOLD; el.style.color = 'var(--bg-deep)'; el.style.borderColor = GOLD; }}
                   onMouseLeave={e => { const el = e.currentTarget; el.style.background = 'transparent'; el.style.color = GOLD; el.style.borderColor = 'rgba(212,163,115,0.4)'; }}
                   aria-label="Next"
                 >

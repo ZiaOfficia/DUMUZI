@@ -1,13 +1,13 @@
 import { motion, type Transition } from 'framer-motion';
 import { Award, Leaf, Users } from 'lucide-react';
-import { ChocolateDecor } from '../common/ChocolateDecor';
+import { LuxuryDecor } from '../common/LuxuryDecor';
 
 const ease = [0.25, 0.1, 0.25, 1] as const;
 
 export const AboutSection = () => {
   return (
-    <section className="py-16 lg:py-24 relative" style={{ background: 'linear-gradient(180deg, var(--choc-dark) 0%, var(--choc-deep) 100%)', overflow: 'hidden' }}>
-      <ChocolateDecor variant="section" />
+    <section className="py-16 lg:py-24 relative" style={{ background: 'linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-deep) 100%)', overflow: 'hidden' }}>
+      <LuxuryDecor variant="section" />
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
@@ -24,14 +24,14 @@ export const AboutSection = () => {
               className="relative w-full rounded-[32px] overflow-hidden group"
               style={{ 
                 aspectRatio: '4/4.5', 
-                background: 'var(--choc-deep)', 
+                background: 'var(--bg-deep)', 
                 border: '1.5px solid rgba(212, 163, 115, 0.22)', 
                 boxShadow: '0 40px 90px rgba(0, 0, 0, 0.8)' 
               }}
             >
               <img
                 src="/images/products/LF-D25T.jpeg"
-                alt="DUMUZI Display Tray — 25 Handcrafted Chocolates"
+                alt="DUMUZI Display Tray — 25 Handcrafted Confections"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 style={{ objectPosition: 'center' }}
               />
@@ -39,7 +39,7 @@ export const AboutSection = () => {
 
               <div className="absolute inset-0 flex flex-col justify-end p-8 z-10">
                 <span className="font-display text-4xl mb-3 text-gold-gradient">✦</span>
-                <p className="font-display text-xl italic mb-1" style={{ color: 'var(--cream)', fontWeight: 500, lineHeight: 1.4 }}>"Pure Cocoa. Pure Passion."</p>
+                <p className="font-display text-xl italic mb-1" style={{ color: 'var(--cream)', fontWeight: 500, lineHeight: 1.4 }}>"Pure Craft. Pure Passion."</p>
                 <p className="text-[10px] uppercase tracking-widest font-semibold mt-1" style={{ color: 'var(--gold-light)' }}>Handcrafted Heritage</p>
               </div>
 
@@ -74,7 +74,7 @@ export const AboutSection = () => {
                 </div>
                 <div>
                   <p className="font-display text-lg font-bold" style={{ color: 'var(--cream)' }}>100%</p>
-                  <p className="text-[9px] uppercase tracking-wider" style={{ color: 'var(--muted)' }}>Organic Cocoa</p>
+                  <p className="text-[9px] uppercase tracking-wider" style={{ color: 'var(--muted)' }}>Organic Ingredients</p>
                 </div>
               </div>
               

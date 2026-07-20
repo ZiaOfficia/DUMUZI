@@ -142,10 +142,10 @@ export const BlogListingPage = () => {
   return (
     <div
       className="pt-24 md:pt-28 pb-24 px-4 md:px-6 min-h-screen"
-      style={{ background: 'var(--choc-deep)' }}
+      style={{ background: 'var(--bg-deep)' }}
     >
       <SEO
-        title="DUMUZI Blog — Artisan Guides & Chocolate Stories"
+        title="DUMUZI Blog — Artisan Guides & Confectionery Stories"
         description="Explore artisan guides, sourcing stories, craftsmanship insights, and the latest news from the DUMUZI atelier."
       />
 
@@ -175,7 +175,7 @@ export const BlogListingPage = () => {
             transition={{ delay: 0.2 }}
             className="text-muted max-w-xl mx-auto leading-relaxed text-sm md:text-base font-light"
           >
-            Explore our chocolatiers' guides, sourcing stories, and insights from the DUMUZI atelier.
+            Explore our confectioners' guides, sourcing stories, and insights from the DUMUZI atelier.
           </motion.p>
         </div>
 
@@ -274,7 +274,7 @@ export const BlogListingPage = () => {
                         src={featuredPost.image}
                         alt={featuredPost.title}
                         className="absolute inset-0 w-full h-full object-contain transition-transform duration-700 group-hover:scale-102"
-                        style={{ background: 'var(--choc-mid)' }}
+                        style={{ background: 'var(--bg-mid)' }}
                       />
                       <span
                         className="absolute top-6 left-6 z-10 text-[#1a120d] text-[9px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-md"
@@ -306,7 +306,7 @@ export const BlogListingPage = () => {
                           to={getBlogPostUrl(featuredPost.slug, featuredPost.createdAt)}
                           className="group inline-flex items-center gap-2 rounded-full border px-3.5 py-2 text-[11px] font-bold uppercase tracking-[0.22em] transition-all duration-300 hover:-translate-y-0.5"
                           style={{
-                            color: 'var(--choc-deep)',
+                            color: 'var(--bg-deep)',
                             borderColor: 'rgba(212,163,115,0.32)',
                             background: 'linear-gradient(135deg, var(--gold), var(--gold-light))',
                             boxShadow: '0 8px 24px rgba(212,163,115,0.18)',

@@ -13,7 +13,7 @@ import { FAQPage }                from './pages/FAQPage';
 import { ContactPage }            from './pages/ContactPage';
 import { ServicesPage }           from './pages/ServicesPage';
 import { ServiceDetailPage }      from './pages/ServiceDetailPage';
-import BestChocolatePage          from './pages/BestChocolatePage';
+import BestConfectionsPage        from './pages/BestConfectionsPage';
 import CollectionsPage            from './pages/CollectionsPage';
 import { GalleryPage }            from './pages/GalleryPage';
 import { BlogListingPage }        from './pages/BlogListingPage';
@@ -71,7 +71,7 @@ function App() {
                 <Route path="/returns-refunds"       element={<ReturnsRefundsPage />} />
                 <Route path="/terms-and-conditions"  element={<TermsAndConditionsPage />} />
                 <Route path="/services/:id"            element={<ServiceDetailPage />} />
-                <Route path="/best-chocolate"          element={<BestChocolatePage />} />
+                <Route path="/best-confections"        element={<BestConfectionsPage />} />
                 <Route path="/gallery"                 element={<GalleryPage />} />
                 <Route path="/blog"                    element={<BlogListingPage />} />
                 <Route path="/:year/:month/:day/:slug" element={<BlogPostPage />} />

@@ -1,4 +1,4 @@
-# 🍫 DUMUZI — Complete Fresh Setup Guide (Render + PostgreSQL)
+# DUMUZI — Complete Fresh Setup Guide (Render + PostgreSQL)
 
 Follow every step in order. Takes about 20–30 minutes total.
 
@@ -7,7 +7,7 @@ Follow every step in order. Takes about 20–30 minutes total.
 ## STEP 1 — Create a New Gmail Account
 
 1. Open → **https://accounts.google.com/signup**
-2. Fill in name, username (e.g. `dumuzi.chocolates@gmail.com`), password
+2. Fill in name, username (e.g. `dumuzi.confections@gmail.com`), password
 3. Complete phone verification
 4. ✅ **Save this Gmail** — you'll use it for Cloudinary, Razorpay, and Render
 

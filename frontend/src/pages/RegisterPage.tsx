@@ -105,7 +105,7 @@ export const RegisterPage = () => {
   return (
     <div
       className="min-h-screen flex items-center justify-center px-4 py-16"
-      style={{ background: 'var(--choc-deep)' }}
+      style={{ background: 'var(--bg-deep)' }}
     >
       <SEO title="Create Account — DUMUZI" description="Join DUMUZI" />
 
@@ -166,14 +166,14 @@ export const RegisterPage = () => {
               className="flex items-center justify-center gap-2.5 w-full py-3.5 rounded-xl font-bold text-sm uppercase tracking-wider transition-all duration-300 mt-2"
               style={{
                 background: busy ? 'rgba(212,163,115,0.4)' : `linear-gradient(135deg, ${GOLD}, ${GOLDL})`,
-                color: 'var(--choc-deep)',
+                color: 'var(--bg-deep)',
                 boxShadow: busy ? 'none' : '0 8px 24px rgba(212,163,115,0.3)',
                 cursor: busy ? 'not-allowed' : 'pointer',
                 border: 'none',
               }}
             >
               {busy ? (
-                <div className="w-4 h-4 rounded-full border-2 animate-spin" style={{ borderColor: 'rgba(0,0,0,0.3)', borderTopColor: 'var(--choc-deep)' }} />
+                <div className="w-4 h-4 rounded-full border-2 animate-spin" style={{ borderColor: 'rgba(0,0,0,0.3)', borderTopColor: 'var(--bg-deep)' }} />
               ) : (
                 <><UserPlus size={15} /> Create Account</>
               )}

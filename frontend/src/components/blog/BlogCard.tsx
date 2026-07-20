@@ -26,7 +26,7 @@ export const BlogCard = ({ post }: BlogCardProps) => {
           src={post.image}
           alt={post.title}
           className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
-          style={{ background: 'var(--choc-mid)' }}
+          style={{ background: 'var(--bg-mid)' }}
         />
         {/* Category Pill Overlaid */}
         <span
@@ -88,7 +88,7 @@ export const BlogCard = ({ post }: BlogCardProps) => {
             to={getBlogPostUrl(post.slug, post.createdAt)}
             className="group inline-flex items-center gap-2 rounded-full border px-3.5 py-2 text-[11px] font-bold uppercase tracking-[0.22em] transition-all duration-300 hover:-translate-y-0.5"
             style={{
-              color: 'var(--choc-deep)',
+              color: 'var(--bg-deep)',
               borderColor: 'rgba(212,163,115,0.32)',
               background: 'linear-gradient(135deg, var(--gold), var(--gold-light))',
               boxShadow: '0 8px 24px rgba(212,163,115,0.18)',

@@ -4,13 +4,13 @@ import { SEO } from '../components/common/SEO';
 const points = [
   'We inspect every return request case-by-case to ensure quality, freshness, and customer satisfaction remain our top priorities.',
   'If the item arrives damaged, incorrect, or compromised, please notify us within 48 hours of delivery so we can assist promptly.',
-  'Because our chocolates are perishable and handcrafted, refunds or exchanges are only available when a product arrives in unacceptable condition.',
+  'Because our confections are perishable and handcrafted, refunds or exchanges are only available when a product arrives in unacceptable condition.',
   'For a successful claim, we may request photos of the item and packaging so we can resolve the issue quickly.',
 ];
 
 const ReturnsRefundsPage = () => {
   return (
-    <div className="min-h-screen pt-24 pb-16" style={{ background: 'var(--choc-deep)' }}>
+    <div className="min-h-screen pt-24 pb-16" style={{ background: 'var(--bg-deep)' }}>
       <SEO
         title="Returns & Refunds — DUMUZI"
         description="Return and refund policy for DUMUZI orders."

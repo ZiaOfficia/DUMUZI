@@ -76,7 +76,7 @@ export const ContactSection = () => {
                 <MapPin size={20} />
               </span>
               <span className="text-sm uppercase tracking-widest text-gray-800">
-                12 Rue du Chocolat, 75001 Paris, France
+                12 Rue des Artisans, 75001 Paris, France
               </span>
             </div>
             <div className="flex items-center space-x-4">

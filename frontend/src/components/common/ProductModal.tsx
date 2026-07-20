@@ -155,7 +155,7 @@ export const ProductModal = ({ product, onClose }: ProductModalProps) => {
                     className="flex items-center gap-2.5 px-7 py-3.5 rounded-full text-[12px] font-bold uppercase tracking-wider border-none cursor-pointer transition-all duration-300"
                     style={{
                       background: `linear-gradient(135deg, ${GOLD}, ${GOLDL})`,
-                      color: 'var(--choc-deep)',
+                      color: 'var(--bg-deep)',
                       boxShadow: `0 8px 24px rgba(212,163,115,0.35)`,
                     }}
                     onMouseEnter={e => {

@@ -138,7 +138,7 @@ export const BlogSidebar = () => {
       {/* CTA Callout */}
       <div
         className="p-8 text-center rounded-2xl relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, var(--choc-warm) 0%, var(--choc-dark) 100%)', border: '1px solid rgba(212,163,115,0.2)' }}
+        style={{ background: 'linear-gradient(135deg, var(--bg-warm) 0%, var(--bg-dark) 100%)', border: '1px solid rgba(212,163,115,0.2)' }}
       >
         <div className="relative z-10">
           <span
@@ -149,7 +149,7 @@ export const BlogSidebar = () => {
           </span>
           <h3 className="font-display text-xl mb-2 font-semibold text-cream">Order DUMUZI</h3>
           <p className="text-muted text-xs mb-6 leading-relaxed">
-            Gift someone a moment of pure luxury with our handcrafted chocolate collections.
+            Gift someone a moment of pure luxury with our handcrafted confectionery collections.
           </p>
           <Link to="/contact">
             <Button variant="outline" className="w-full border-[#d4a373] text-cream hover:bg-[#d4a373] hover:text-[#1a120d] hover:border-[#d4a373] transition-all duration-300">
@@ -164,7 +164,7 @@ export const BlogSidebar = () => {
         <h3 className="font-display text-lg font-semibold mb-4 text-cream">Follow Us</h3>
         <div className="flex gap-3">
           <a
-            href="https://www.facebook.com/dumuzi_chocolates"
+            href="https://www.facebook.com/dumuzi_confections"
             target="_blank"
             rel="noopener noreferrer"
             className="w-9 h-9 flex items-center justify-center transition-all duration-300 rounded-full text-muted hover:text-[#1a120d]"
@@ -176,7 +176,7 @@ export const BlogSidebar = () => {
             <Facebook size={16} />
           </a>
           <a
-            href="https://www.instagram.com/dumuzi_chocolates"
+            href="https://www.instagram.com/dumuzi_confections"
             target="_blank"
             rel="noopener noreferrer"
             className="w-9 h-9 flex items-center justify-center transition-all duration-300 rounded-full text-muted hover:text-[#1a120d]"
@@ -188,7 +188,7 @@ export const BlogSidebar = () => {
             <Instagram size={16} />
           </a>
           <a
-            href="https://twitter.com/dumuzi_chocolates"
+            href="https://twitter.com/dumuzi_confections"
             target="_blank"
             rel="noopener noreferrer"
             className="w-9 h-9 flex items-center justify-center transition-all duration-300 rounded-full text-muted hover:text-[#1a120d]"
@@ -200,7 +200,7 @@ export const BlogSidebar = () => {
             <Twitter size={16} />
           </a>
           <a
-            href="https://www.youtube.com/@dumuzi_chocolates"
+            href="https://www.youtube.com/@dumuzi_confections"
             target="_blank"
             rel="noopener noreferrer"
             className="w-9 h-9 flex items-center justify-center transition-all duration-300 rounded-full text-muted hover:text-[#1a120d]"

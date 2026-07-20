@@ -28,7 +28,7 @@ export const ServiceComparisonTable = ({
           Feature
         </div>
         <div className="p-4 md:p-6 font-display text-sm md:text-lg text-center border-r border-stone-700 bg-primary/20">
-          <span className="text-secondary">DUMUZI</span> Chocolates
+          <span className="text-secondary">DUMUZI</span> Confections
         </div>
         <div className="p-4 md:p-6 font-medium text-sm md:text-base text-center text-stone-400">
           Typical Brands

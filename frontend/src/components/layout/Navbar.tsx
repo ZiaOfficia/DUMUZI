@@ -14,7 +14,7 @@ const GOLDF = 'rgba(212,165,90,0.55)';
 const navLinks = [
   { name: 'Home',           path: '/' },
   { name: 'Collections',    path: '/collections' },
-  { name: 'Best Chocolate', path: '/best-chocolate' },
+  { name: 'Best Confections', path: '/best-confections' },
   { name: 'About Us',       path: '/about' },
   { name: 'Blog',           path: '/blog' },
   { name: 'Contact',        path: '/contact' },
@@ -226,7 +226,7 @@ export const Navbar = () => {
                       value={searchTerm}
                       onChange={e => setSearchTerm(e.target.value)}
                       onKeyDown={e => { if (e.key === 'Escape') setSearchOpen(false); }}
-                      placeholder="Search chocolates…"
+                      placeholder="Search confections…"
                       className="w-full pl-8 pr-3 py-2.5 rounded-lg text-[13px] font-sans outline-none"
                       style={{
                         background: 'rgba(212,165,90,0.07)',

@@ -17,7 +17,7 @@ const features = [
   {
     icon: Gem,
     title: 'Premium Quality',
-    desc: 'Finest single-origin cocoa',
+    desc: 'Finest single-origin ingredients',
     accent: '#d4a55a',
   },
   {
@@ -32,7 +32,7 @@ export const StatsSection = () => (
   <section
     className="relative"
     style={{
-      background: 'linear-gradient(90deg, var(--choc-bark) 0%, var(--choc-dark) 50%, var(--choc-bark) 100%)',
+      background: 'linear-gradient(90deg, var(--bg-bark) 0%, var(--bg-dark) 50%, var(--bg-bark) 100%)',
       borderTop:    '1px solid rgba(212,165,90,0.14)',
       borderBottom: '1px solid rgba(212,165,90,0.14)',
       padding: '40px 0',

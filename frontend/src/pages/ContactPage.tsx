@@ -32,13 +32,13 @@ export const ContactPage = () => {
   };
 
   return (
-    <div className="min-h-screen pt-24 pb-12" style={{ background: 'var(--choc-deep)' }}>
+    <div className="min-h-screen pt-24 pb-12" style={{ background: 'var(--bg-deep)' }}>
       <SEO
         title="Contact Us — DUMUZI"
         description="Get in touch with DUMUZI for orders, corporate gifting, bespoke commissions, masterclass bookings, or general enquiries."
       />
       {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden" style={{ background: 'var(--choc-dark)' }}>
+      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden" style={{ background: 'var(--bg-dark)' }}>
         <div className="absolute inset-0 opacity-40">
           <img
             loading="lazy"
@@ -132,7 +132,7 @@ export const ContactPage = () => {
                     Registered Office
                   </p>
                   <span className="text-lg font-display text-cream">
-                    12 Rue du Chocolat, 75001 Paris, France
+                    12 Rue des Artisans, 75001 Paris, France
                   </span>
                 </div>
               </motion.div>
@@ -329,7 +329,7 @@ export const ContactPage = () => {
       </section>
 
       {/* Map Section */}
-      <section className="h-[65vh] max-w-7xl mx-auto mb-12 rounded-2xl relative group overflow-hidden shadow-xl" style={{ background: 'var(--choc-dark)' }}>
+      <section className="h-[65vh] max-w-7xl mx-auto mb-12 rounded-2xl relative group overflow-hidden shadow-xl" style={{ background: 'var(--bg-dark)' }}>
         <iframe
           width="100%"
           height="100%"
@@ -344,7 +344,7 @@ export const ContactPage = () => {
         {/* Gradient Overlay */}
         <div
           className="absolute top-0 left-0 w-full h-32 pointer-events-none"
-          style={{ background: 'linear-gradient(to bottom, var(--choc-deep), transparent)' }}
+          style={{ background: 'linear-gradient(to bottom, var(--bg-deep), transparent)' }}
         />
 
         {/* Floating Location Card */}
@@ -366,7 +366,7 @@ export const ContactPage = () => {
             <div className="flex items-start gap-4">
               <MapPin style={{ color: 'var(--gold)' }} className="mt-1 shrink-0" size={20} />
               <p className="text-muted leading-relaxed">
-                12 Rue du Chocolat
+                12 Rue des Artisans
                 <br />
                 75001 Paris, France
               </p>

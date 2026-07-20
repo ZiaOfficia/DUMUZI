@@ -69,18 +69,18 @@ const BestSellersPage = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen pt-24 pb-12 flex items-center justify-center" style={{ background: 'var(--choc-deep)' }}>
+      <div className="min-h-screen pt-24 pb-12 flex items-center justify-center" style={{ background: 'var(--bg-deep)' }}>
         <p className="text-sm uppercase tracking-[0.3em]" style={{ color: 'var(--gold)' }}>Loading best sellers…</p>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen pt-24 pb-12" style={{ background: 'var(--choc-deep)' }}>
+    <div className="min-h-screen pt-24 pb-12" style={{ background: 'var(--bg-deep)' }}>
       <ProductModal product={viewed} onClose={() => setViewed(null)} />
       <SEO
         title="Best Sellers — DUMUZI"
-        description="Discover our most loved chocolates and best-selling confections."
+        description="Discover our most loved and best-selling confections."
       />
 
       <section className="max-w-7xl mx-auto px-6 lg:px-10 pt-8 pb-10">
@@ -98,7 +98,7 @@ const BestSellersPage = () => {
           </div>
           <h1 className="text-4xl md:text-5xl font-display text-cream">Best Sellers</h1>
           <p className="mt-3 text-base leading-relaxed max-w-2xl font-sans" style={{ color: 'var(--muted)' }}>
-            Our most-loved chocolate gifts and signature confections, curated from the pieces our customers reach for first.
+            Our most-loved gifts and signature confections, curated from the pieces our customers reach for first.
           </p>
         </motion.div>
 
@@ -138,7 +138,7 @@ const BestSellersPage = () => {
                     <button
                       onClick={(e) => { e.stopPropagation(); addItem({ id: product.id, name: product.description, price: product.mrp, image: product.image }); }}
                       className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 border-none cursor-pointer"
-                      style={{ background: `linear-gradient(135deg,${GOLD},${GOLDL})`, color: 'var(--choc-deep)' }}
+                      style={{ background: `linear-gradient(135deg,${GOLD},${GOLDL})`, color: 'var(--bg-deep)' }}
                       title="Add to Cart"
                     >
                       <ShoppingCart size={15} />
@@ -168,7 +168,7 @@ const BestSellersPage = () => {
                       onClick={() => addItem({ id: product.id, name: product.description, price: product.mrp, image: product.image })}
                       className="w-7 h-7 rounded-full flex items-center justify-center border-none cursor-pointer transition-all duration-250 hover:scale-110"
                       style={{ background: 'rgba(212,163,115,0.1)', color: GOLDL, border: '1px solid rgba(212,163,115,0.25)' }}
-                      onMouseEnter={e => { e.currentTarget.style.background = `linear-gradient(135deg,${GOLD},${GOLDL})`; e.currentTarget.style.color = 'var(--choc-deep)'; }}
+                      onMouseEnter={e => { e.currentTarget.style.background = `linear-gradient(135deg,${GOLD},${GOLDL})`; e.currentTarget.style.color = 'var(--bg-deep)'; }}
                       onMouseLeave={e => { e.currentTarget.style.background = 'rgba(212,163,115,0.1)'; e.currentTarget.style.color = GOLDL; }}
                     >
                       <ShoppingCart size={11} />

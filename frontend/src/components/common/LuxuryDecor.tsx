@@ -10,33 +10,33 @@ interface Ball {
   dur: number;
   delay: number;
   fill: string;
-  variant?: 'round' | 'truffle' | 'shard';
+  variant?: 'round' | 'gem' | 'shard';
 }
 
 const PRESETS: Record<string, Ball[]> = {
   hero: [
-    { top: '8%',  left:  '3%',   size: 30, opacity: 0.20, float: 14, dur: 5.5, delay: 0,   fill: '#6b3f1f', variant: 'round'   },
-    { top: '22%', right: '5%',   size: 18, opacity: 0.16, float: 8,  dur: 4.8, delay: 1.2, fill: '#8b5a2b', variant: 'truffle' },
-    { top: '68%', left:  '6%',   size: 24, opacity: 0.18, float: 10, dur: 6,   delay: 0.5, fill: '#5c3317', variant: 'round'   },
-    { top: '75%', right: '8%',   size: 34, opacity: 0.14, float: 16, dur: 7,   delay: 2,   fill: '#7a4928', variant: 'truffle' },
-    { top: '42%', left:  '1%',   size: 14, opacity: 0.22, float: 6,  dur: 4.2, delay: 0.8, fill: '#9c6b3a', variant: 'round'   },
-    { top: '55%', right: '3%',   size: 20, opacity: 0.16, float: 9,  dur: 5.2, delay: 1.6, fill: '#6b3f1f', variant: 'shard'   },
-    { top: '88%', left: '18%',   size: 16, opacity: 0.14, float: 7,  dur: 5,   delay: 2.4, fill: '#8b5a2b', variant: 'round'   },
-    { top: '12%', right:'22%',   size: 12, opacity: 0.20, float: 5,  dur: 4,   delay: 0.3, fill: '#5c3317', variant: 'truffle' },
-    { top: '35%', right:'1%',    size: 10, opacity: 0.15, float: 4,  dur: 3.8, delay: 1.8, fill: '#a07040', variant: 'shard'   },
-    { top: '50%', left: '10%',   size: 8,  opacity: 0.18, float: 5,  dur: 4.5, delay: 2.8, fill: '#c08050', variant: 'round'   },
+    { top: '8%',  left:  '3%',   size: 30, opacity: 0.20, float: 14, dur: 5.5, delay: 0,   fill: '#6b3f1f', variant: 'round' },
+    { top: '22%', right: '5%',   size: 18, opacity: 0.16, float: 8,  dur: 4.8, delay: 1.2, fill: '#8b5a2b', variant: 'gem'   },
+    { top: '68%', left:  '6%',   size: 24, opacity: 0.18, float: 10, dur: 6,   delay: 0.5, fill: '#5c3317', variant: 'round' },
+    { top: '75%', right: '8%',   size: 34, opacity: 0.14, float: 16, dur: 7,   delay: 2,   fill: '#7a4928', variant: 'gem'   },
+    { top: '42%', left:  '1%',   size: 14, opacity: 0.22, float: 6,  dur: 4.2, delay: 0.8, fill: '#9c6b3a', variant: 'round' },
+    { top: '55%', right: '3%',   size: 20, opacity: 0.16, float: 9,  dur: 5.2, delay: 1.6, fill: '#6b3f1f', variant: 'shard' },
+    { top: '88%', left: '18%',   size: 16, opacity: 0.14, float: 7,  dur: 5,   delay: 2.4, fill: '#8b5a2b', variant: 'round' },
+    { top: '12%', right:'22%',   size: 12, opacity: 0.20, float: 5,  dur: 4,   delay: 0.3, fill: '#5c3317', variant: 'gem'   },
+    { top: '35%', right:'1%',    size: 10, opacity: 0.15, float: 4,  dur: 3.8, delay: 1.8, fill: '#a07040', variant: 'shard' },
+    { top: '50%', left: '10%',   size: 8,  opacity: 0.18, float: 5,  dur: 4.5, delay: 2.8, fill: '#c08050', variant: 'round' },
   ],
   section: [
-    { top: '10%', right: '2%',   size: 26, opacity: 0.13, float: 10, dur: 5.5, delay: 0,   fill: '#7a4928', variant: 'truffle' },
-    { top: '60%', left:  '1%',   size: 18, opacity: 0.11, float: 8,  dur: 6,   delay: 1.4, fill: '#6b3f1f', variant: 'round'   },
-    { top: '80%', right: '6%',   size: 14, opacity: 0.15, float: 6,  dur: 4.5, delay: 0.7, fill: '#9c6b3a', variant: 'shard'   },
-    { top: '30%', left:  '3%',   size: 20, opacity: 0.10, float: 12, dur: 7,   delay: 2,   fill: '#5c3317', variant: 'round'   },
-    { top: '50%', right: '1%',   size: 10, opacity: 0.12, float: 5,  dur: 4,   delay: 1.0, fill: '#8b5a2b', variant: 'truffle' },
+    { top: '10%', right: '2%',   size: 26, opacity: 0.13, float: 10, dur: 5.5, delay: 0,   fill: '#7a4928', variant: 'gem'   },
+    { top: '60%', left:  '1%',   size: 18, opacity: 0.11, float: 8,  dur: 6,   delay: 1.4, fill: '#6b3f1f', variant: 'round' },
+    { top: '80%', right: '6%',   size: 14, opacity: 0.15, float: 6,  dur: 4.5, delay: 0.7, fill: '#9c6b3a', variant: 'shard' },
+    { top: '30%', left:  '3%',   size: 20, opacity: 0.10, float: 12, dur: 7,   delay: 2,   fill: '#5c3317', variant: 'round' },
+    { top: '50%', right: '1%',   size: 10, opacity: 0.12, float: 5,  dur: 4,   delay: 1.0, fill: '#8b5a2b', variant: 'gem'   },
   ],
 };
 
-/* Round chocolate ball */
-const RoundBall = ({ fill }: { fill: string }) => (
+/* Round Sphere */
+const Sphere = ({ fill }: { fill: string }) => (
   <svg viewBox="0 0 48 48" fill="none">
     <radialGradient id={`rg-${fill.slice(1)}`} cx="38%" cy="32%" r="68%">
       <stop offset="0%"   stopColor={fill} stopOpacity="1" />
@@ -51,17 +51,15 @@ const RoundBall = ({ fill }: { fill: string }) => (
   </svg>
 );
 
-/* Truffle — slightly irregular shape */
-const TruffleBall = ({ fill }: { fill: string }) => (
+/* Gem — slightly irregular elegant shape */
+const LuxuryGem = ({ fill }: { fill: string }) => (
   <svg viewBox="0 0 48 48" fill="none">
     <radialGradient id={`tg-${fill.slice(1)}`} cx="40%" cy="30%" r="70%">
       <stop offset="0%"   stopColor={fill} stopOpacity="1" />
       <stop offset="100%" stopColor="#0f0602" stopOpacity="1" />
     </radialGradient>
     <ellipse cx="24" cy="25" rx="21" ry="20" fill={`url(#tg-${fill.slice(1)})`} />
-    {/* Cocoa dusting */}
     <ellipse cx="24" cy="14" rx="10" ry="5" fill="rgba(255,255,255,0.06)" />
-    {/* Crack line */}
     <path d="M18 22 Q22 18 26 22 Q30 26 34 22" stroke="rgba(212,165,90,0.25)" strokeWidth="0.8" fill="none" strokeLinecap="round" />
     <ellipse cx="17" cy="15" rx="5" ry="2.5" fill="rgba(255,255,255,0.18)" />
     <ellipse cx="15" cy="14" rx="2" ry="1.2" fill="rgba(255,255,255,0.26)" />
@@ -69,7 +67,7 @@ const TruffleBall = ({ fill }: { fill: string }) => (
   </svg>
 );
 
-/* Shard — small cocoa flake */
+/* Shard — small geometric flake */
 const Shard = ({ fill }: { fill: string }) => (
   <svg viewBox="0 0 48 48" fill="none">
     <radialGradient id={`sg-${fill.slice(1)}`} cx="35%" cy="28%" r="72%">
@@ -84,7 +82,7 @@ const Shard = ({ fill }: { fill: string }) => (
   </svg>
 );
 
-const ChocShape = ({ ball }: { ball: Ball }) => {
+const DecorShape = ({ ball }: { ball: Ball }) => {
   const V = ball.variant ?? 'round';
   return (
     <motion.div
@@ -93,23 +91,23 @@ const ChocShape = ({ ball }: { ball: Ball }) => {
       animate={{ y: [0, -ball.float, 0] }}
       transition={{ duration: ball.dur, repeat: Infinity, delay: ball.delay, ease: 'easeInOut' }}
     >
-      {V === 'round'   && <RoundBall fill={ball.fill} />}
-      {V === 'truffle' && <TruffleBall fill={ball.fill} />}
-      {V === 'shard'   && <Shard fill={ball.fill} />}
+      {V === 'round' && <Sphere fill={ball.fill} />}
+      {V === 'gem'   && <LuxuryGem fill={ball.fill} />}
+      {V === 'shard' && <Shard fill={ball.fill} />}
     </motion.div>
   );
 };
 
-interface ChocolateDecorProps {
+interface LuxuryDecorProps {
   variant?: 'hero' | 'section';
   className?: string;
 }
 
-export const ChocolateDecor = ({ variant = 'section', className = '' }: ChocolateDecorProps) => {
+export const LuxuryDecor = ({ variant = 'section', className = '' }: LuxuryDecorProps) => {
   const balls = PRESETS[variant];
   return (
     <div className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`}>
-      {balls.map((b, i) => <ChocShape key={i} ball={b} />)}
+      {balls.map((b, i) => <DecorShape key={i} ball={b} />)}
     </div>
   );
 };

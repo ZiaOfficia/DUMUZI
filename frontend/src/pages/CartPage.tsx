@@ -13,14 +13,14 @@ export const CartPage = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ background: 'var(--choc-deep)' }}>
+      <div className="min-h-screen flex items-center justify-center" style={{ background: 'var(--bg-deep)' }}>
         <div className="w-8 h-8 rounded-full border-2 animate-spin" style={{ borderColor: 'rgba(212,163,115,0.2)', borderTopColor: GOLD }} />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen py-12 px-4 sm:px-6" style={{ background: 'var(--choc-deep)' }}>
+    <div className="min-h-screen py-12 px-4 sm:px-6" style={{ background: 'var(--bg-deep)' }}>
       <SEO title="My Cart — DUMUZI" description="Your DUMUZI shopping cart" />
 
       <div className="max-w-4xl mx-auto">
@@ -73,14 +73,14 @@ export const CartPage = () => {
               Your cart is empty
             </h2>
             <p className="text-sm mb-8 font-sans" style={{ color: 'var(--muted)' }}>
-              Add some DUMUZI chocolates to get started
+              Add some DUMUZI confections to get started
             </p>
             <Link
               to="/collections"
               className="flex items-center gap-2 px-7 py-3 rounded-full text-sm font-bold uppercase tracking-wider"
               style={{
                 background: `linear-gradient(135deg, ${GOLD}, ${GOLDL})`,
-                color: 'var(--choc-deep)',
+                color: 'var(--bg-deep)',
                 boxShadow: '0 8px 24px rgba(212,163,115,0.3)',
               }}
             >
@@ -221,7 +221,7 @@ export const CartPage = () => {
                   className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-bold text-sm uppercase tracking-wider transition-all duration-300"
                   style={{
                     background: `linear-gradient(135deg, ${GOLD}, ${GOLDL})`,
-                    color: 'var(--choc-deep)',
+                    color: 'var(--bg-deep)',
                     border: 'none',
                     cursor: 'pointer',
                     boxShadow: '0 8px 24px rgba(212,163,115,0.3)',

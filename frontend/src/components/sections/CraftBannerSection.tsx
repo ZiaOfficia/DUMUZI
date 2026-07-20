@@ -1,7 +1,7 @@
 import { motion, type Transition } from 'framer-motion';
 import { ArrowRight, MapPin, Leaf, Award } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { ChocolateDecor } from '../common/ChocolateDecor';
+import { LuxuryDecor } from '../common/LuxuryDecor';
 
 const ease = [0.25, 0.1, 0.25, 1] as const;
 const GOLD = '#d4a373';
@@ -17,8 +17,8 @@ export const CraftBannerSection = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="py-16 lg:py-24" style={{ position: 'relative', overflow: 'hidden', background: 'linear-gradient(160deg, var(--choc-dark) 0%, var(--choc-warm) 50%, var(--choc-dark) 100%)' }}>
-      <ChocolateDecor variant="section" />
+    <section className="py-16 lg:py-24" style={{ position: 'relative', overflow: 'hidden', background: 'linear-gradient(160deg, var(--bg-dark) 0%, var(--bg-warm) 50%, var(--bg-dark) 100%)' }}>
+      <LuxuryDecor variant="section" />
       {/* Ambient glows */}
       <div className="absolute top-0 left-0 w-[500px] h-[500px] rounded-full blur-[200px] pointer-events-none opacity-15"
         style={{ background: GOLD }} />
@@ -43,7 +43,7 @@ export const CraftBannerSection = () => {
             <h2 className="font-luxury font-semibold leading-[1.08] mb-6"
               style={{ fontSize: 'clamp(2.2rem,4.2vw,3.6rem)', color: 'var(--cream)', letterSpacing: '-0.01em' }}>
               From the World's<br />
-              <em className="text-luxury-gradient" style={{ fontStyle: 'italic', fontWeight: 400 }}>Best Cocoa Estates</em>
+              <em className="text-luxury-gradient" style={{ fontStyle: 'italic', fontWeight: 400 }}>Best Sourcing Estates</em>
             </h2>
 
             <p className="text-base leading-relaxed mb-8 max-w-[480px] font-sans" style={{ color: 'var(--muted)' }}>
@@ -72,7 +72,7 @@ export const CraftBannerSection = () => {
               <button
                 onClick={() => navigate('/about')}
                 className="flex items-center gap-2 px-8 py-3.5 rounded-full text-xs tracking-[0.15em] uppercase font-bold border-none cursor-pointer transition-all duration-300"
-                style={{ background: `linear-gradient(135deg,${GOLD},${GOLDL})`, color: 'var(--choc-deep)', boxShadow: '0 10px 30px rgba(212,163,115,0.35)' }}
+                style={{ background: `linear-gradient(135deg,${GOLD},${GOLDL})`, color: 'var(--bg-deep)', boxShadow: '0 10px 30px rgba(212,163,115,0.35)' }}
                 onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 18px 45px rgba(212,163,115,0.5)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
                 onMouseLeave={e => { e.currentTarget.style.boxShadow = '0 10px 30px rgba(212,163,115,0.35)'; e.currentTarget.style.transform = 'translateY(0)'; }}
               >
@@ -102,7 +102,7 @@ export const CraftBannerSection = () => {
 
             {/* Main image */}
             <div className="relative rounded-[36px] overflow-hidden group"
-              style={{ aspectRatio: '4/4.5', background: 'var(--choc-mid)', border: `1.5px solid rgba(212,163,115,0.25)`, boxShadow: '0 50px 120px rgba(0,0,0,0.8)' }}>
+              style={{ aspectRatio: '4/4.5', background: 'var(--bg-mid)', border: `1.5px solid rgba(212,163,115,0.25)`, boxShadow: '0 50px 120px rgba(0,0,0,0.8)' }}>
               <img
                 src="/images/products/LF-D15T.jpeg"
                 alt="DUMUZI Display Tray — 15 Trios"
@@ -141,7 +141,7 @@ export const CraftBannerSection = () => {
               </div>
               <div>
                 <p className="font-display text-lg font-bold" style={{ color: 'var(--cream)' }}>100%</p>
-                <p className="text-[9px] uppercase tracking-wider" style={{ color: 'var(--muted)' }}>Organic Cocoa</p>
+                <p className="text-[9px] uppercase tracking-wider" style={{ color: 'var(--muted)' }}>Organic Ingredients</p>
               </div>
               <div className="w-px h-10 mx-1" style={{ background: 'rgba(212,163,115,0.2)' }} />
               <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'rgba(212,163,115,0.15)' }}>

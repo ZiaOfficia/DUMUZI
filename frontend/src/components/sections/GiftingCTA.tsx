@@ -1,13 +1,13 @@
 import { motion, type Transition } from 'framer-motion';
 import { Gift } from 'lucide-react';
-import { ChocolateDecor } from '../common/ChocolateDecor';
+import { LuxuryDecor } from '../common/LuxuryDecor';
 
 const ease = [0.25, 0.1, 0.25, 1] as const;
 const occasions = ['Birthday', 'Anniversary', 'Corporate Gift', 'Holiday Season', 'Wedding favors'];
 
 export const GiftingCTA = () => (
-  <section className="py-16 lg:py-24" style={{ background: 'linear-gradient(145deg, var(--choc-dark) 0%, var(--choc-deep) 100%)', position: 'relative', overflow: 'hidden' }}>
-    <ChocolateDecor variant="section" />
+  <section className="py-16 lg:py-24" style={{ background: 'linear-gradient(145deg, var(--bg-dark) 0%, var(--bg-deep) 100%)', position: 'relative', overflow: 'hidden' }}>
+    <LuxuryDecor variant="section" />
     {/* Soft backdrop radial light */}
     <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 60% 70% at 75% 50%, rgba(212,163,115,0.08) 0%, transparent 70%)' }} />
     
@@ -64,7 +64,7 @@ export const GiftingCTA = () => (
             className="self-start px-9 py-4 rounded-full text-xs tracking-[0.15em] uppercase font-bold transition-all duration-300 gold-glow-hover border-none cursor-pointer"
             style={{ 
               background: 'linear-gradient(135deg, var(--gold), var(--gold-light))', 
-              color: 'var(--choc-deep)', 
+              color: 'var(--bg-deep)', 
               boxShadow: '0 10px 30px rgba(212,163,115,0.35)' 
             }}
           >
@@ -87,7 +87,7 @@ export const GiftingCTA = () => (
               className="relative rounded-[28px] overflow-hidden group"
               style={{ 
                 aspectRatio: '4/3.2', 
-                background: 'var(--choc-deep)', 
+                background: 'var(--bg-deep)', 
                 border: '1.5px solid rgba(212, 163, 115, 0.28)', 
                 boxShadow: '0 45px 120px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.05)' 
               }}
@@ -131,8 +131,8 @@ export const GiftingCTA = () => (
                 boxShadow: '0 8px 32px rgba(212, 163, 115, 0.45)' 
               }}
             >
-              <p className="text-[9px] tracking-[0.2em] uppercase font-bold" style={{ color: 'var(--choc-deep)' }}>Boxes From</p>
-              <p className="font-display text-xl font-bold" style={{ color: 'var(--choc-deep)' }}>₹45</p>
+              <p className="text-[9px] tracking-[0.2em] uppercase font-bold" style={{ color: 'var(--bg-deep)' }}>Boxes From</p>
+              <p className="font-display text-xl font-bold" style={{ color: 'var(--bg-deep)' }}>₹45</p>
             </motion.div>
           </div>
         </motion.div>

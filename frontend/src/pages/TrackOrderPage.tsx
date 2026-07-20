@@ -2,7 +2,7 @@ import { SEO } from '../components/common/SEO';
 
 const TrackOrderPage = () => {
   return (
-    <div className="min-h-screen pt-24 pb-12" style={{ background: 'var(--choc-deep)' }}>
+    <div className="min-h-screen pt-24 pb-12" style={{ background: 'var(--bg-deep)' }}>
       <SEO
         title="Track Order — DUMUZI"
         description="Track the status of your DUMUZI order."

@@ -61,7 +61,7 @@ const CollectionsPage = () => {
   });
 
   return (
-    <div style={{ background: 'var(--choc-deep)', minHeight: '100vh' }}>
+    <div style={{ background: 'var(--bg-deep)', minHeight: '100vh' }}>
       <ProductModal product={viewed} onClose={() => setViewed(null)} />
 
       <SEO
@@ -73,7 +73,7 @@ const CollectionsPage = () => {
       <section
         className="relative overflow-hidden flex items-center"
         style={{
-          background: 'linear-gradient(160deg, var(--choc-deep) 0%, var(--choc-dark) 60%, var(--choc-warm) 100%)',
+          background: 'linear-gradient(160deg, var(--bg-deep) 0%, var(--bg-dark) 60%, var(--bg-warm) 100%)',
           minHeight: '42vh',
         }}
       >
@@ -103,13 +103,13 @@ const CollectionsPage = () => {
             className="text-base leading-relaxed max-w-lg font-sans"
             style={{ color: 'var(--muted)' }}
           >
-            {products.length} handcrafted chocolate gift boxes. Heart-shaped, Display, Bonbon towers, and Oval trays — each filled with gold-foil wrapped truffles.
+            {products.length} handcrafted confectionery gift boxes. Heart-shaped, Display, Bonbon towers, and Oval trays — each filled with gold-foil wrapped truffles.
           </motion.p>
         </div>
       </section>
 
       {/* ── FILTERS + SEARCH ── */}
-      <div style={{ background: 'var(--choc-dark)', borderBottom: '1px solid rgba(212,163,115,0.12)', position: 'sticky', top: 0, zIndex: 30 }}>
+      <div style={{ background: 'var(--bg-dark)', borderBottom: '1px solid rgba(212,163,115,0.12)', position: 'sticky', top: 0, zIndex: 30 }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-4 flex flex-col sm:flex-row items-start sm:items-center gap-3 justify-between">
           {/* Category pills */}
           <div className="flex items-center gap-2 flex-wrap">
@@ -120,7 +120,7 @@ const CollectionsPage = () => {
                 className="px-4 py-1.5 rounded-full text-[11px] uppercase tracking-wider font-bold transition-all duration-250 border-none cursor-pointer"
                 style={{
                   background:    filter === f.value ? `linear-gradient(135deg,${GOLD},${GOLDL})` : 'rgba(212,163,115,0.07)',
-                  color:         filter === f.value ? 'var(--choc-deep)' : GOLDL,
+                  color:         filter === f.value ? 'var(--bg-deep)' : GOLDL,
                   border:        filter === f.value ? 'none' : '1px solid rgba(212,163,115,0.2)',
                   boxShadow:     filter === f.value ? `0 4px 14px rgba(212,163,115,0.3)` : 'none',
                 }}
@@ -199,7 +199,7 @@ const CollectionsPage = () => {
                       <button
                         onClick={e => handleAddToCart(p, e)}
                         className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 border-none cursor-pointer"
-                        style={{ background: `linear-gradient(135deg,${GOLD},${GOLDL})`, color: 'var(--choc-deep)' }}
+                        style={{ background: `linear-gradient(135deg,${GOLD},${GOLDL})`, color: 'var(--bg-deep)' }}
                         title="Add to Cart"
                       >
                         <ShoppingCart size={15} />
@@ -236,7 +236,7 @@ const CollectionsPage = () => {
                         onClick={() => handleAddToCart(p)}
                         className="w-7 h-7 rounded-full flex items-center justify-center border-none cursor-pointer transition-all duration-250 hover:scale-110"
                         style={{ background: 'rgba(212,163,115,0.1)', color: GOLDL, border: '1px solid rgba(212,163,115,0.25)' }}
-                        onMouseEnter={e => { e.currentTarget.style.background = `linear-gradient(135deg,${GOLD},${GOLDL})`; e.currentTarget.style.color = 'var(--choc-deep)'; }}
+                        onMouseEnter={e => { e.currentTarget.style.background = `linear-gradient(135deg,${GOLD},${GOLDL})`; e.currentTarget.style.color = 'var(--bg-deep)'; }}
                         onMouseLeave={e => { e.currentTarget.style.background = 'rgba(212,163,115,0.1)'; e.currentTarget.style.color = GOLDL; }}
                       >
                         <ShoppingCart size={11} />

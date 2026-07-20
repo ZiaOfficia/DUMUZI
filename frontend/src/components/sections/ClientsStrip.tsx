@@ -15,7 +15,7 @@ export const ClientsStrip = () => {
   return (
     <section
       className="py-10 md:py-16 px-4 md:px-0 relative overflow-hidden"
-      style={{ background: 'var(--choc-dark)', borderTop: '1px solid rgba(212,163,115,0.12)', borderBottom: '1px solid rgba(212,163,115,0.12)' }}
+      style={{ background: 'var(--bg-dark)', borderTop: '1px solid rgba(212,163,115,0.12)', borderBottom: '1px solid rgba(212,163,115,0.12)' }}
     >
       {/* Ambient diamonds */}
       <span className="absolute top-6 left-1/4 text-2xl pointer-events-none select-none" style={{ color: 'rgba(212,163,115,0.2)' }}>✦</span>

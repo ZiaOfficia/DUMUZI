@@ -36,7 +36,7 @@ export const ServiceHighlight = ({ service }: { service: ServiceData }) => {
 
   const briefDescription =
     service.intro.description[0] ||
-    "Discover this DUMUZI collection — handcrafted chocolates made in small batches from single-origin organic cocoa.";
+    "Discover this DUMUZI collection — handcrafted confections made in small batches from single-origin organic ingredients.";
 
   return (
     <section className="relative py-12 md:py-20 px-4 md:px-6 bg-mesh-rose overflow-hidden">
@@ -97,7 +97,7 @@ export const ServiceHighlight = ({ service }: { service: ServiceData }) => {
                       100%
                     </p>
                     <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-text-muted font-bold mt-1">
-                      Organic Cocoa
+                      Organic Ingredients
                     </p>
                     <p className="text-[9px] text-text-muted mt-1">Ethically sourced</p>
                   </div>

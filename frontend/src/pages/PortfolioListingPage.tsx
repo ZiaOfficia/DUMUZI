@@ -31,7 +31,7 @@ export const PortfolioListingPage = () => {
     <div className="bg-white min-h-screen pt-[60px] md:pt-[50px]">
       <SEO
         title="Collections & Guides — DUMUZI"
-        description="Explore DUMUZI's curated chocolate collections, artisan guides, and stories from our atelier — single-origin dark chocolate, truffles, pralines, and bespoke gifting."
+        description="Explore DUMUZI's curated confectionery collections, artisan guides, and stories from our atelier — single-origin dark confections, truffles, pralines, and bespoke gifting."
       />
       {/* Header */}
       <section className="bg-stone-900 text-white py-60 px-6 text-center relative overflow-hidden">
@@ -57,7 +57,7 @@ export const PortfolioListingPage = () => {
             transition={{ delay: 0.2 }}
             className="text-xl font-light text-stone-200"
           >
-            Explore our curated chocolate collections, artisan guides, and stories from the DUMUZI atelier.
+            Explore our curated confectionery collections, artisan guides, and stories from the DUMUZI atelier.
           </motion.p>
         </div>
       </section>

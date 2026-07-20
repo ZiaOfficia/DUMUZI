@@ -223,7 +223,7 @@ export const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
                       </div>
                       <div className="text-center">
                         <p className="font-display text-base mb-1" style={{ color: 'rgba(220,214,205,0.55)' }}>Your cart is empty</p>
-                        <p className="text-xs font-sans" style={{ color: 'rgba(220,214,205,0.28)' }}>Add some chocolates to get started</p>
+                        <p className="text-xs font-sans" style={{ color: 'rgba(220,214,205,0.28)' }}>Add some confections to get started</p>
                       </div>
                       <button
                         onClick={handleClose}

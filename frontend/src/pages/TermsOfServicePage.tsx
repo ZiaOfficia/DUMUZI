@@ -29,7 +29,7 @@ export const TermsOfServicePage = () => {
           </h2>
           <p className="mb-6">
             DUMUZI is an artisan confectionery brand founded in 2013 and based in
-            Paris, France. We craft handmade single-origin chocolates and deliver them to customers
+            Paris, France. We craft handmade single-origin confections and deliver them to customers
             worldwide. Our website address is: https://dumuzi.com.
           </p>
 
@@ -53,7 +53,7 @@ export const TermsOfServicePage = () => {
           <p className="mb-6">
             We aim to dispatch all orders within 2–3 business days. Estimated delivery times vary by
             destination. We use temperature-controlled packaging and express couriers to ensure your
-            chocolate arrives in perfect condition. DUMUZI is not responsible for delays caused by
+            confections arrive in perfect condition. DUMUZI is not responsible for delays caused by
             courier services or customs clearance.
           </p>
 
@@ -62,7 +62,7 @@ export const TermsOfServicePage = () => {
           </h2>
           <ul className="list-disc pl-5 mb-6 space-y-2">
             <li>
-              <strong>Perishable products:</strong> Because our chocolates are handcrafted perishable
+              <strong>Perishable products:</strong> Because our confections are handcrafted perishable
               items, we do not accept returns or exchanges.
             </li>
             <li>
@@ -128,7 +128,7 @@ export const TermsOfServicePage = () => {
               <strong>Phone:</strong> +44 20 7123 4567
             </p>
             <p>
-              <strong>Address:</strong> 12 Rue du Chocolat, 75001 Paris, France
+              <strong>Address:</strong> 12 Rue des Artisans, 75001 Paris, France
             </p>
           </div>
           <p className="mt-6 italic">

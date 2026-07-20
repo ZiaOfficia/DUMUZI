@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Instagram, Facebook, Youtube, Twitter, Send, MapPin, Phone, Mail } from 'lucide-react';
+import { Instagram, Facebook, Youtube, Twitter, MapPin, Phone, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const GOLD  = '#d4a55a';
@@ -54,7 +54,7 @@ export const Footer = () => (
       style={{ background: 'linear-gradient(90deg,transparent,rgba(212,165,90,0.4),transparent)' }} />
 
     <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-16 pb-8 relative">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-14">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-14">
 
         {/* Brand Column */}
         <motion.div variants={item} className="lg:col-span-1">
@@ -79,7 +79,7 @@ export const Footer = () => (
 
           <p className="text-[13px] leading-[1.75] mb-6 font-sans"
             style={{ color: 'rgba(200,191,179,0.65)', lineHeight: '1.8' }}>
-            Crafting moments of pure indulgence with masterfully crafted confectionery, made with the world's finest cocoa.
+            Crafting moments of pure indulgence with masterfully crafted confectionery, made with the world's finest ingredients.
           </p>
 
           {/* Contact info */}
@@ -176,42 +176,6 @@ export const Footer = () => (
           </ul>
         </motion.div>
 
-        {/* Newsletter */}
-        <motion.div variants={item}>
-          <h4 className="text-[10px] tracking-[0.3em] uppercase mb-6 font-bold" style={{ color: GOLD, fontFamily: 'Inter, sans-serif' }}>
-            Newsletter
-          </h4>
-          <p className="text-[13px] mb-5 leading-relaxed font-sans" style={{ color: 'rgba(200,191,179,0.6)' }}>
-            Join our connoisseur community for exclusive previews and artisan guides.
-          </p>
-          <div
-            className="flex rounded-xl overflow-hidden mb-3"
-            style={{ border: '1px solid rgba(212,165,90,0.22)' }}
-          >
-            <input
-              type="email"
-              placeholder="Your email address"
-              className="flex-1 bg-transparent px-4 py-3 text-xs outline-none font-sans"
-              style={{ color: 'var(--cream)', background: 'rgba(212,165,90,0.04)', minWidth: 0 }}
-            />
-            <button
-              className="px-4 flex items-center justify-center transition-all duration-300 flex-shrink-0"
-              style={{
-                background: `linear-gradient(135deg, ${GOLD}, ${GOLDL})`,
-                border: 'none',
-                cursor: 'pointer',
-              }}
-              onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 0 28px rgba(212,165,90,0.55)'; }}
-              onMouseLeave={e => { e.currentTarget.style.boxShadow = 'none'; }}
-              aria-label="Subscribe"
-            >
-              <Send size={14} style={{ color: '#0d0805' }} />
-            </button>
-          </div>
-          <p className="text-[10px] font-sans" style={{ color: 'rgba(200,191,179,0.3)' }}>
-            No spam. Unsubscribe at any time.
-          </p>
-        </motion.div>
 
       </div>
 

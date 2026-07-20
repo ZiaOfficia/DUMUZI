@@ -616,7 +616,7 @@ export const ServiceDetailPage = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-5xl font-display mb-4">
-              Chocolate made for your moments that matter.
+              Confections made for your moments that matter.
             </h2>
             <p className="text-xl text-primary font-display italic">
               Tell us what you have in mind.

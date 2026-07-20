@@ -79,14 +79,14 @@ const SaveBtn = ({ busy, label = 'Save Changes' }: { busy: boolean; label?: stri
     className="flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider transition-all duration-300"
     style={{
       background: busy ? 'rgba(212,163,115,0.35)' : `linear-gradient(135deg, ${GOLD}, ${GOLDL})`,
-      color: 'var(--choc-deep)',
+      color: 'var(--bg-deep)',
       border: 'none',
       cursor: busy ? 'not-allowed' : 'pointer',
       boxShadow: busy ? 'none' : '0 4px 16px rgba(212,163,115,0.25)',
     }}
   >
     {busy
-      ? <div className="w-3.5 h-3.5 rounded-full border-2 animate-spin" style={{ borderColor: 'rgba(0,0,0,0.2)', borderTopColor: 'var(--choc-deep)' }} />
+      ? <div className="w-3.5 h-3.5 rounded-full border-2 animate-spin" style={{ borderColor: 'rgba(0,0,0,0.2)', borderTopColor: 'var(--bg-deep)' }} />
       : <><Save size={13} />{label}</>
     }
   </button>
@@ -150,7 +150,7 @@ export const ProfilePage = () => {
   if (!user) return null;
 
   return (
-    <div className="min-h-screen py-12 px-4 sm:px-6" style={{ background: 'var(--choc-deep)' }}>
+    <div className="min-h-screen py-12 px-4 sm:px-6" style={{ background: 'var(--bg-deep)' }}>
       <SEO title="My Profile — DUMUZI" description="Manage your DUMUZI account" />
 
       <div className="max-w-2xl mx-auto">
@@ -196,7 +196,7 @@ export const ProfilePage = () => {
             className="w-14 h-14 rounded-full flex items-center justify-center font-display font-bold text-xl flex-shrink-0"
             style={{
               background: `linear-gradient(135deg, ${GOLD}, ${GOLDL})`,
-              color: 'var(--choc-deep)',
+              color: 'var(--bg-deep)',
             }}
           >
             {user.name.charAt(0).toUpperCase()}

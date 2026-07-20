@@ -27,7 +27,7 @@ export const ServicesPage = () => {
     {
       question: "How long does delivery take?",
       answer:
-        "Standard UK delivery is 2–4 business days. International express delivery is 3–6 business days. All orders are shipped in temperature-controlled packaging to protect your chocolate.",
+        "Standard UK delivery is 2–4 business days. International express delivery is 3–6 business days. All orders are shipped in temperature-controlled packaging to protect your confections.",
     },
     {
       question: "Can I customise the flavours in a gift box?",
@@ -42,7 +42,7 @@ export const ServicesPage = () => {
     {
       question: "Are DUMUZI products suitable for gifting at weddings?",
       answer:
-        "We specialise in bespoke wedding favours. From custom-molded chocolates with your initials to monogrammed packaging in your wedding colours, we create favours that double as beautiful table décor.",
+        "We specialise in bespoke wedding favours. From custom-molded confections with your initials to monogrammed packaging in your wedding colours, we create favours that double as beautiful table décor.",
     },
   ];
 
@@ -50,12 +50,12 @@ export const ServicesPage = () => {
     {
       id: "dark-collection",
       icon: <Gem className="w-8 h-8 text-primary" />,
-      title: "Dark Chocolate Collection",
+      title: "Dark Confection Collection",
       description:
-        "Single-origin dark chocolate bars and truffles from Madagascar, Ecuador, and Peru. From 72% to 92% cocoa — bold, complex, and uncompromising.",
+        "Single-origin dark confections and truffles from Madagascar, Ecuador, and Peru. From 72% to 92% intensity — bold, complex, and uncompromising.",
       features: [
-        "Single-origin organic cocoa",
-        "72% to 92% cocoa percentages",
+        "Single-origin organic ingredients",
+        "72% to 92% intensity levels",
         "Hand-tempered in our atelier",
         "No artificial additives",
       ],
@@ -66,7 +66,7 @@ export const ServicesPage = () => {
       icon: <Star className="w-8 h-8 text-primary" />,
       title: "Truffle Collection",
       description:
-        "Velvety ganache truffles handcrafted with organic cream and single-origin chocolate. Seasonal flavour infusions finished with 24k gold leaf, Dutch cocoa, or crushed nuts.",
+        "Velvety ganache truffles handcrafted with organic cream and single-origin ingredients. Seasonal flavour infusions finished with 24k gold leaf, artisan dusting, or crushed nuts.",
       features: [
         "Hand-rolled — never moulded",
         "Seasonal botanical infusions",
@@ -98,7 +98,7 @@ export const ServicesPage = () => {
       features: [
         "Hand-polished copper molds",
         "Piedmont hazelnuts & Sicilian pistachios",
-        "Mirror-gloss chocolate shells",
+        "Mirror-gloss confection shells",
         "Rotating seasonal flavours",
       ],
       image: "/images/products/LF-D12.jpeg",
@@ -122,11 +122,11 @@ export const ServicesPage = () => {
       icon: <Heart className="w-8 h-8 text-primary" />,
       title: "Bespoke Commissions",
       description:
-        "Fully custom chocolate creations — from original flavour commissions to hand-painted bars and sculpted centrepieces for luxury events and venues.",
+        "Fully custom confectionery creations — from original flavour commissions to hand-painted bars and sculpted centrepieces for luxury events and venues.",
       features: [
         "Original flavour development",
         "Hand-painted artistic bars",
-        "Sculpted chocolate centrepieces",
+        "Sculpted confectionery centrepieces",
         "Venue & restaurant programmes",
       ],
       image: "/images/products/DUMUZI.jpeg",
@@ -151,7 +151,7 @@ export const ServicesPage = () => {
             loading="lazy"
             decoding="async"
             src="/images/products/LF-D25T.jpeg"
-            alt="DUMUZI chocolate collections"
+            alt="DUMUZI confectionery collections"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/55" />
@@ -170,7 +170,7 @@ export const ServicesPage = () => {
             transition={{ delay: 0.2 }}
             className="text-4xl md:text-6xl lg:text-7xl font-display mb-6"
           >
-            Handcrafted chocolate for every occasion
+            Handcrafted confections for every occasion
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -190,7 +190,7 @@ export const ServicesPage = () => {
             One atelier. Many ways to indulge.
           </h2>
           <p className="text-gray-600 leading-relaxed mb-12">
-            Whether you are discovering single-origin chocolate for the first time, searching for the perfect luxury gift, or commissioning a bespoke chocolate experience for an event — DUMUZI has something extraordinary waiting for you.
+            Whether you are discovering single-origin confections for the first time, searching for the perfect luxury gift, or commissioning a bespoke confectionery experience for an event — DUMUZI has something extraordinary waiting for you.
           </p>
           <div className="w-24 h-px bg-secondary mx-auto" />
         </div>
@@ -213,9 +213,9 @@ export const ServicesPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             {[
               { icon: Award, value: "15+", label: "Years of Craft", sub: "Since 2009" },
-              { icon: Gem, value: "3", label: "Cocoa Origins", sub: "Madagascar · Ecuador · Peru" },
+              { icon: Gem, value: "3", label: "Sourcing Origins", sub: "Madagascar · Ecuador · Peru" },
               { icon: Gift, value: "30+", label: "Countries Shipping", sub: "Worldwide delivery" },
-              { icon: Star, value: "100%", label: "Organic Cocoa", sub: "No artificial additives" },
+              { icon: Star, value: "100%", label: "Organic Ingredients", sub: "No artificial additives" },
             ].map(({ icon: Icon, value, label, sub }, i) => (
               <motion.div
                 key={label}
@@ -328,7 +328,7 @@ export const ServicesPage = () => {
               Bespoke Corporate Gifting
             </h3>
             <p className="text-gray-700 leading-relaxed mb-6 max-w-3xl mx-auto">
-              DUMUZI's corporate gifting program has been trusted by luxury hotels, financial institutions, and global brands across 30+ countries. From custom logo-embossed packaging to fully branded seasonal collections, we create chocolate gifts that make an unforgettable impression.
+              DUMUZI's corporate gifting program has been trusted by luxury hotels, financial institutions, and global brands across 30+ countries. From custom logo-embossed packaging to fully branded seasonal collections, we create confectionery gifts that make an unforgettable impression.
             </p>
             <Link
               to="/services/corporate-gifting"

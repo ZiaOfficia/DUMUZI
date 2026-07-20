@@ -3,9 +3,9 @@ import Marquee from 'react-fast-marquee';
 
 const messages = [
   'FREE DELIVERY on orders above ₹500',
-  'Handcrafted with Finest Single-Origin Cocoa',
+  'Handcrafted with Finest Single-Origin Ingredients',
   'New Collection — DUMUZI Gold Series Available Now',
-  'Artisan Chocolatier · Est. 2009',
+  'Artisan Confectioner · Est. 2009',
   '100% Organic · Ethically Sourced',
   'Luxury Gift Wrapping Included',
 ];

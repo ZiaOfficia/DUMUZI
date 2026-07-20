@@ -175,13 +175,13 @@ export const CheckoutPage = () => {
 
   if (items.length === 0) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center gap-4 px-4" style={{ background: 'var(--choc-deep)' }}>
+      <div className="min-h-screen flex flex-col items-center justify-center gap-4 px-4" style={{ background: 'var(--bg-deep)' }}>
         <ShoppingBag size={48} style={{ color: 'rgba(212,163,115,0.3)' }} />
         <h2 className="font-display text-2xl font-bold" style={{ color: 'var(--cream)' }}>No items to checkout</h2>
         <Link
           to="/collections"
           className="px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wider"
-          style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLDL})`, color: 'var(--choc-deep)' }}
+          style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLDL})`, color: 'var(--bg-deep)' }}
         >
           Browse Collections
         </Link>
@@ -190,7 +190,7 @@ export const CheckoutPage = () => {
   }
 
   return (
-    <div className="min-h-screen py-12 px-4 sm:px-6" style={{ background: 'var(--choc-deep)' }}>
+    <div className="min-h-screen py-12 px-4 sm:px-6" style={{ background: 'var(--bg-deep)' }}>
       <SEO title="Checkout — DUMUZI" description="Complete your DUMUZI order" />
 
       <div className="max-w-5xl mx-auto">
@@ -316,14 +316,14 @@ export const CheckoutPage = () => {
                   className="flex items-center justify-center gap-2 w-full py-4 rounded-xl font-bold text-sm uppercase tracking-wider transition-all duration-300 mt-2"
                   style={{
                     background: busy ? 'rgba(212,163,115,0.4)' : `linear-gradient(135deg, ${GOLD}, ${GOLDL})`,
-                    color: 'var(--choc-deep)',
+                    color: 'var(--bg-deep)',
                     border: 'none',
                     cursor: busy ? 'not-allowed' : 'pointer',
                     boxShadow: busy ? 'none' : '0 8px 24px rgba(212,163,115,0.3)',
                   }}
                 >
                   {busy
-                    ? <div className="w-4 h-4 rounded-full border-2 animate-spin" style={{ borderColor: 'rgba(0,0,0,0.2)', borderTopColor: 'var(--choc-deep)' }} />
+                    ? <div className="w-4 h-4 rounded-full border-2 animate-spin" style={{ borderColor: 'rgba(0,0,0,0.2)', borderTopColor: 'var(--bg-deep)' }} />
                     : paymentMethod === 'cod'
                       ? <><Banknote size={15} /> Place Order — ₹{totalPrice.toLocaleString('en-IN')}</>
                       : <><CreditCard size={15} /> Pay ₹{totalPrice.toLocaleString('en-IN')} Online</>

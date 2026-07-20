@@ -10,7 +10,7 @@ const collections = [
     icon: Heart,
     label: 'Romantic Gifting',
     title: 'Heart Collection',
-    desc: 'Romantic heart-shaped gift boxes from 3 to 18 handcrafted chocolates.',
+    desc: 'Romantic heart-shaped gift boxes from 3 to 18 handcrafted confections.',
     color: '#d4a55a',
     link: '/collections',
     image: '/images/products/LF-H12T.jpeg',
@@ -20,7 +20,7 @@ const collections = [
     icon: Star,
     label: 'Wrapped Bonbons',
     title: 'Bonbon Collection',
-    desc: 'Gold-foil wrapped ball chocolates. Acrylic tower, trios assortment.',
+    desc: 'Gold-foil wrapped confections. Acrylic tower, trios assortment.',
     color: '#e8c07a',
     link: '/collections',
     image: '/images/products/LF- BN9.jpeg',
@@ -73,7 +73,7 @@ export const CollectionsPreviewSection = () => {
   return (
     <section
       className="py-18 lg:py-28 relative"
-      style={{ background: 'linear-gradient(180deg, var(--choc-deep) 0%, var(--choc-dark) 100%)', overflow: 'hidden' }}
+      style={{ background: 'linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-dark) 100%)', overflow: 'hidden' }}
     >
       {/* Ambient top glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] rounded-full blur-[120px] pointer-events-none"

@@ -24,7 +24,7 @@ export const BlogPreviewSection = () => {
   return (
     <section
       style={{
-        background: 'linear-gradient(180deg, var(--choc-deep) 0%, var(--choc-dark) 100%)',
+        background: 'linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-dark) 100%)',
         padding: '96px 0',
         position: 'relative',
       }}
@@ -91,7 +91,7 @@ export const BlogPreviewSection = () => {
                 }}
               >
                 {/* Image */}
-                <div className="relative overflow-hidden" style={{ aspectRatio: '16/9', background: 'var(--choc-mid)' }}>
+                <div className="relative overflow-hidden" style={{ aspectRatio: '16/9', background: 'var(--bg-mid)' }}>
                   <img
                     src={post.image}
                     alt={post.title}
@@ -107,7 +107,7 @@ export const BlogPreviewSection = () => {
 
                   {isFeatured && (
                     <span className="absolute top-4 right-4 text-[9px] uppercase tracking-widest font-bold px-3 py-1.5 rounded-full"
-                      style={{ background: `linear-gradient(135deg,${GOLD},#e5c199)`, color: 'var(--choc-deep)' }}>
+                      style={{ background: `linear-gradient(135deg,${GOLD},#e5c199)`, color: 'var(--bg-deep)' }}>
                       Featured
                     </span>
                   )}

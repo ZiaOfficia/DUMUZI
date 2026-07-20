@@ -16,13 +16,13 @@ const sections = [
   },
   {
     title: 'Packaging care',
-    body: 'Every order is wrapped in insulated luxury packaging with protective cushioning so your chocolates arrive in immaculate condition.',
+    body: 'Every order is wrapped in insulated luxury packaging with protective cushioning so your confections arrive in immaculate condition.',
   },
 ];
 
 const ShippingDeliveryPage = () => {
   return (
-    <div className="min-h-screen pt-24 pb-16" style={{ background: 'var(--choc-deep)' }}>
+    <div className="min-h-screen pt-24 pb-16" style={{ background: 'var(--bg-deep)' }}>
       <SEO
         title="Shipping & Delivery — DUMUZI"
         description="Shipping and delivery information for DUMUZI orders."
@@ -32,7 +32,7 @@ const ShippingDeliveryPage = () => {
           <p className="text-[11px] uppercase tracking-[0.32em] font-bold mb-4" style={{ color: 'var(--gold)' }}>Customer Care</p>
           <h1 className="text-4xl md:text-5xl font-display text-cream">Shipping & Delivery</h1>
           <p className="mt-4 max-w-2xl text-base leading-relaxed font-sans" style={{ color: 'var(--muted)' }}>
-            From our atelier to your doorstep, every parcel is handled with precision, insulation, and the same care as our chocolates themselves.
+            From our atelier to your doorstep, every parcel is handled with precision, insulation, and the same care as our confections themselves.
           </p>
         </div>
 

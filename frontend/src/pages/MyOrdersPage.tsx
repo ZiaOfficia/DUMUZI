@@ -32,7 +32,7 @@ export const MyOrdersPage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen py-12 px-4 sm:px-6" style={{ background: 'var(--choc-deep)' }}>
+    <div className="min-h-screen py-12 px-4 sm:px-6" style={{ background: 'var(--bg-deep)' }}>
       <SEO title="My Orders — DUMUZI" description="Your DUMUZI order history" />
 
       <div className="max-w-3xl mx-auto">
@@ -69,7 +69,7 @@ export const MyOrdersPage = () => {
             <Link
               to="/collections"
               className="px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wider"
-              style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLDL})`, color: 'var(--choc-deep)' }}
+              style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLDL})`, color: 'var(--bg-deep)' }}
             >
               Browse Collections
             </Link>

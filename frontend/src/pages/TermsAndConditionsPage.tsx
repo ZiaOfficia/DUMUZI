@@ -10,7 +10,7 @@ const clauses = [
 
 const TermsAndConditionsPage = () => {
   return (
-    <div className="min-h-screen pt-24 pb-16" style={{ background: 'var(--choc-deep)' }}>
+    <div className="min-h-screen pt-24 pb-16" style={{ background: 'var(--bg-deep)' }}>
       <SEO
         title="Terms & Conditions — DUMUZI"
         description="Terms and conditions for shopping with DUMUZI."

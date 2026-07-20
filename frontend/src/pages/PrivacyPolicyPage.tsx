@@ -22,7 +22,7 @@ const sections = [
 
 export const PrivacyPolicyPage = () => {
   return (
-    <div className="min-h-screen pt-24 pb-16" style={{ background: 'var(--choc-deep)' }}>
+    <div className="min-h-screen pt-24 pb-16" style={{ background: 'var(--bg-deep)' }}>
       <SEO
         title="Privacy Policy — DUMUZI"
         description="Privacy Policy for DUMUZI. How we collect, use, and protect your personal information."
@@ -32,7 +32,7 @@ export const PrivacyPolicyPage = () => {
           <p className="text-[11px] uppercase tracking-[0.32em] font-bold mb-4" style={{ color: 'var(--gold)' }}>Privacy</p>
           <h1 className="text-4xl md:text-5xl font-display text-cream">Privacy Policy</h1>
           <p className="mt-4 max-w-2xl text-base leading-relaxed font-sans" style={{ color: 'var(--muted)' }}>
-            We treat your privacy with the same care we give to our chocolates: carefully, respectfully, and without compromise.
+            We treat your privacy with the same care we give to our confections: carefully, respectfully, and without compromise.
           </p>
         </div>
 

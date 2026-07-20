@@ -73,7 +73,7 @@ const NewsletterSection = () => {
           className="text-sm leading-relaxed mb-10 font-sans"
           style={{ color: 'rgba(220,214,205,0.65)' }}
         >
-          Subscribe for early access to seasonal releases, exclusive offers, and artisan guides from our master chocolatiers. Sent quarterly — never spam.
+          Subscribe for early access to seasonal releases, exclusive offers, and artisan guides from our master confectioners. Sent quarterly — never spam.
         </motion.p>
 
         {/* Form */}
@@ -85,7 +85,7 @@ const NewsletterSection = () => {
             <div className="flex flex-col items-center gap-3 py-4">
               <div className="w-12 h-12 rounded-full flex items-center justify-center"
                 style={{ background: `linear-gradient(135deg,${GOLD},${GOLDL})` }}>
-                <Send size={20} style={{ color: 'var(--choc-deep)' }} />
+                <Send size={20} style={{ color: 'var(--bg-deep)' }} />
               </div>
               <p className="font-display text-lg" style={{ color: 'var(--cream)' }}>You're on the list.</p>
               <p className="text-[12px] font-sans" style={{ color: 'rgba(212,163,115,0.55)' }}>Expect exclusive access with our next collection launch.</p>
@@ -110,7 +110,7 @@ const NewsletterSection = () => {
               <button
                 type="submit"
                 className="flex items-center justify-center gap-2 px-8 py-4 rounded-full text-xs font-bold uppercase tracking-wider border-none cursor-pointer transition-all duration-300 flex-shrink-0"
-                style={{ background: `linear-gradient(135deg,${GOLD},${GOLDL})`, color: 'var(--choc-deep)', boxShadow: '0 8px 25px rgba(212,163,115,0.35)' }}
+                style={{ background: `linear-gradient(135deg,${GOLD},${GOLDL})`, color: 'var(--bg-deep)', boxShadow: '0 8px 25px rgba(212,163,115,0.35)' }}
                 onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 14px 40px rgba(212,163,115,0.55)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
                 onMouseLeave={e => { e.currentTarget.style.boxShadow = '0 8px 25px rgba(212,163,115,0.35)'; e.currentTarget.style.transform = 'translateY(0)'; }}
               >

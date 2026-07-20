@@ -45,9 +45,9 @@ export const AboutPage = () => {
         "DUMUZI Legacy Since 2013 was founded in 2013. It was merged with Little Fun Foods & Beverages Private Limited in 2026, growing from a small Indian brand into an online confectionery brand.",
     },
     {
-      question: "Where do you source your cocoa beans?",
+      question: "Where do you source your ingredients?",
       answer:
-        "We source single-origin organic cocoa beans directly from farming cooperatives in Madagascar, Ecuador, and Peru. We pay above fair-trade prices to ensure sustainable farming practices and to build long-term relationships with the communities we work with.",
+        "We source single-origin organic ingredients directly from farming cooperatives in Madagascar, Ecuador, and Peru. We pay above fair-trade prices to ensure sustainable farming practices and to build long-term relationships with the communities we work with.",
     },
     {
       question: "What makes DUMUZI different from other luxury confectionery brands?",
@@ -62,7 +62,7 @@ export const AboutPage = () => {
     {
       question: "Can I book a masterclass at your atelier?",
       answer:
-        "Absolutely. We offer hands-on masterclasses for individuals, couples, corporate team-building groups, and private events. Sessions are led by Antoine Laurent or one of our senior chocolatiers. Booking is available on our website, and gift vouchers are available year-round.",
+        "Absolutely. We offer hands-on masterclasses for individuals, couples, corporate team-building groups, and private events. Sessions are led by Antoine Laurent or one of our senior confectioners. Booking is available on our website, and gift vouchers are available year-round.",
     },
   ];
 
@@ -98,7 +98,7 @@ export const AboutPage = () => {
   };
 
   return (
-    <div style={{ background: 'var(--choc-deep)' }} className="min-h-screen">
+    <div style={{ background: 'var(--bg-deep)' }} className="min-h-screen">
       <SEO
         title="About DUMUZI"
         description="DUMUZI Legacy Since 2013 was founded in 2013. It was merged with Little Fun Foods & Beverages Private Limited in 2026."
@@ -154,7 +154,7 @@ export const AboutPage = () => {
           {/* Mobile Image */}
           <div className="w-full md:hidden mb-8">
             <img loading="lazy" decoding="async"
-              alt="DUMUZI chocolatiers at work"
+              alt="DUMUZI confectioners at work"
               className="w-full h-100 object-cover"
               src="/images/products/LF-D25B.jpeg"
             />
@@ -220,7 +220,7 @@ export const AboutPage = () => {
           >
             <div className="w-full h-full absolute inset-0 -z-10" style={{ background: 'rgba(212,163,115,0.08)' }} />
             <img loading="lazy" decoding="async"
-              alt="DUMUZI chocolatiers at work"
+              alt="DUMUZI confectioners at work"
               className="w-full h-full object-cover opacity-95"
               src="/images/products/LF-D25B.jpeg"
             />
@@ -229,7 +229,7 @@ export const AboutPage = () => {
       </section>
 
       {/* Section 2: Our Craft */}
-      <section className="py-32 px-6 overflow-visible" style={{ background: 'var(--choc-dark)' }}>
+      <section className="py-32 px-6 overflow-visible" style={{ background: 'var(--bg-dark)' }}>
         <div className="max-w-7xl mx-auto relative lg:h-[800px] flex flex-col lg:flex-row items-center">
           <motion.div
             initial="hidden"
@@ -240,7 +240,7 @@ export const AboutPage = () => {
           >
             <img loading="lazy" decoding="async"
               src="/images/products/LF-D15T.jpeg"
-              alt="Master chocolatier at work — DUMUZI"
+              alt="Master confectioner at work — DUMUZI"
               className="w-full h-full object-cover shadow-2xl"
             />
           </motion.div>
@@ -275,7 +275,7 @@ export const AboutPage = () => {
         </div>
       </section>
 
-      {/* Section 3: Our Chocolatiers */}
+      {/* Section 3: Our Confectioners */}
       <section className="py-32 px-6 max-w-7xl mx-auto">
         <div className="text-center mb-24">
           <span className="text-gold text-xs font-bold uppercase tracking-[0.3em] mb-3 block">
@@ -297,7 +297,7 @@ export const AboutPage = () => {
       <TestimonialsSection />
 
       {/* FAQ Section */}
-      <section className="py-32 px-6" style={{ background: 'var(--choc-dark)' }}>
+      <section className="py-32 px-6" style={{ background: 'var(--bg-dark)' }}>
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-6xl font-display mb-6 text-cream">

@@ -18,7 +18,7 @@ export const FeaturedInStrip = () => {
     <div
       className="py-10 md:py-16 px-4 md:px-0 relative overflow-hidden"
       style={{
-        background: 'var(--choc-dark)',
+        background: 'var(--bg-dark)',
         borderTop: '1px solid rgba(212,163,115,0.12)',
         borderBottom: '1px solid rgba(212,163,115,0.12)',
       }}

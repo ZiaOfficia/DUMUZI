@@ -37,7 +37,7 @@ export const ServicesGrid = () => {
   const [viewed, setViewed] = useState<Product | null>(null);
 
   return (
-    <section className="py-16 lg:py-24" style={{ background: 'linear-gradient(180deg, var(--choc-deep) 0%, var(--choc-dark) 100%)', position: 'relative' }}>
+    <section className="py-16 lg:py-24" style={{ background: 'linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-dark) 100%)', position: 'relative' }}>
       <ProductModal product={viewed} onClose={() => setViewed(null)} />
       
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -80,7 +80,7 @@ export const ServicesGrid = () => {
               className="group flex flex-col rounded-3xl overflow-hidden glass-card glass-card-hover cursor-pointer"
             >
               {/* Image area */}
-              <div className="relative overflow-hidden" style={{ aspectRatio: '1', background: 'var(--choc-deep)' }}>
+              <div className="relative overflow-hidden" style={{ aspectRatio: '1', background: 'var(--bg-deep)' }}>
                 <div className="w-full h-full overflow-hidden relative">
                   <img
                     src={p.image}
@@ -99,7 +99,7 @@ export const ServicesGrid = () => {
                     className="absolute top-3 left-3 text-[9px] tracking-widest uppercase font-bold px-2.5 py-1 rounded-lg z-10"
                     style={{ 
                       background: p.tagSolid ? 'linear-gradient(135deg, var(--gold), var(--gold-light))' : 'rgba(212,163,115,0.15)', 
-                      color: p.tagSolid ? 'var(--choc-deep)' : 'var(--gold-light)', 
+                      color: p.tagSolid ? 'var(--bg-deep)' : 'var(--gold-light)', 
                       border: p.tagSolid ? 'none' : '1px solid rgba(212,163,115,0.3)' 
                     }}
                   >
@@ -113,7 +113,7 @@ export const ServicesGrid = () => {
                   <button 
                     onClick={(e) => { e.stopPropagation(); addItem({ id: p.id, name: p.name, price: p.price, image: p.image }); }}
                     className="w-11 h-11 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 border-none cursor-pointer"
-                    style={{ background: 'linear-gradient(135deg, var(--gold), var(--gold-light))', color: 'var(--choc-deep)' }}
+                    style={{ background: 'linear-gradient(135deg, var(--gold), var(--gold-light))', color: 'var(--bg-deep)' }}
                   >
                     <ShoppingCart size={16} />
                   </button>

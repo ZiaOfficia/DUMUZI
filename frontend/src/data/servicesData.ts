@@ -45,34 +45,34 @@ import { serviceImages } from "./imageAssets";
 export const servicesData: ServiceData[] = [
   {
     id: "dark-collection",
-    title: "Dark Chocolate Collection",
+    title: "Dark Confectionery Collection",
     heroImage: serviceImages.darkCollection,
     heroTitle: "THE DARK COLLECTION — SINGLE-ORIGIN INTENSITY",
     intro: {
-      heading: "DARK CHOCOLATE COLLECTION",
-      subheading: "Complex, bold, and deeply satisfying single-origin dark chocolates.",
+      heading: "DARK CONFECTIONERY COLLECTION",
+      subheading: "Complex, bold, and deeply satisfying single-origin dark confections.",
       description: [
-        "Our Dark Collection is the heart of DUMUZI. Each bar is made from a single origin of organic cocoa — Madagascar, Ecuador, or Peru — so you can taste the distinct character of each region's terroir.",
-        "With cocoa percentages ranging from 72% to 92%, our dark range offers everything from approachable richness to intensely complex bitterness, all hand-tempered in our atelier for a glossy finish and clean snap.",
+        "Our Dark Collection is the heart of DUMUZI. Each bar is made from a single origin of organic ingredient — Madagascar, Ecuador, or Peru — so you can taste the distinct character of each region's terroir.",
+        "With ingredient percentages ranging from 72% to 92%, our dark range offers everything from approachable richness to intensely complex bitterness, all hand-tempered in our atelier for a glossy finish and clean snap.",
       ],
     },
     whyChooseUs: {
-      title: "What Sets Our Dark Chocolate Apart",
+      title: "What Sets Our Dark Confectionery Apart",
       items: [
         {
-          title: "Single-Origin Cocoa",
+          title: "Single-Origin Ingredient",
           description:
             "Each bar is made from one estate's harvest, preserving unique tasting notes of red fruit, earth, and roasted nuts.",
         },
         {
           title: "Hand-Tempered by Masters",
           description:
-            "Our chocolatiers hand-temper every batch to achieve Form V cocoa butter crystals — the secret behind a perfect snap and glossy sheen.",
+            "Our confectioners hand-temper every batch to achieve Form V artisan butter crystals — the secret behind a perfect snap and glossy sheen.",
         },
         {
           title: "No Artificial Additives",
           description:
-            "No palm oil, no artificial flavours, no preservatives. Just pure cocoa, organic cocoa butter, and a touch of unrefined cane sugar.",
+            "No palm oil, no artificial flavours, no preservatives. Just pure ingredient, organic artisan butter, and a touch of unrefined cane sugar.",
         },
       ],
     },
@@ -87,7 +87,7 @@ export const servicesData: ServiceData[] = [
         {
           title: "Grand Cru Ecuador 72%",
           description:
-            "A gentler entry into dark chocolate. Earthy and floral, with hints of jasmine and orange blossom.",
+            "A gentler entry into dark confectionery. Earthy and floral, with hints of jasmine and orange blossom.",
         },
         {
           title: "Pure Origin Peru 92%",
@@ -95,20 +95,20 @@ export const servicesData: ServiceData[] = [
             "For the true connoisseur. Intensely dark with an earthy, smoky depth and a long, lingering finish.",
         },
         {
-          title: "Dark Truffle Selection",
+          title: "Dark Gourmet Bite Selection",
           description:
-            "Ganache truffles made from our 85% Madagascar blend, finished with Dutch cocoa powder or 24k gold leaf.",
+            "Velvet Filling gourmet bites made from our 85% Madagascar blend, finished with Dutch ingredient powder or 24k gold leaf.",
         },
       ],
     },
     process: {
-      title: "How We Make Our Dark Chocolate",
+      title: "How We Make Our Dark Confectionery",
       description: "Every batch follows our slow, carefully monitored four-stage process:",
       steps: [
         {
           title: "1. Source",
           description:
-            "We hand-select cocoa beans from farming cooperatives in Madagascar, Ecuador, and Peru — paying above fair-trade prices.",
+            "We hand-select ingredient beans from farming cooperatives in Madagascar, Ecuador, and Peru — paying above fair-trade prices.",
         },
         {
           title: "2. Roast",
@@ -118,59 +118,59 @@ export const servicesData: ServiceData[] = [
         {
           title: "3. Temper",
           description:
-            "Our master chocolatiers hand-temper each batch, cycling through precise temperature stages to align cocoa butter crystals.",
+            "Our master confectioners hand-temper each batch, cycling through precise temperature stages to align artisan butter crystals.",
         },
         {
           title: "4. Finish",
           description:
-            "Each bar or truffle is hand-finished, inspected for quality, and packed in temperature-controlled packaging.",
+            "Each bar or gourmet bite is hand-finished, inspected for quality, and packed in temperature-controlled packaging.",
         },
       ],
     },
     testimonials: [
       {
         quote:
-          "The Noir Intense 85% is the finest dark chocolate I have ever tasted. It completely changed how I think about single-origin cocoa.",
+          "The Noir Intense 85% is the finest dark confectionery I have ever tasted. It completely changed how I think about single-origin ingredient.",
         author: "Isabella R.",
         location: "London, UK",
       },
       {
         quote:
-          "I ordered the Dark Truffle Selection as a gift and the recipient called me immediately to say they had never tasted anything like it.",
+          "I ordered the Dark Gourmet Bite Selection as a gift and the recipient called me immediately to say they had never tasted anything like it.",
         author: "James T.",
         location: "New York, USA",
       },
     ],
     portfolioImages: [
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
     ],
   },
 
   {
-    id: "truffle-collection",
-    title: "Truffle Collection",
+    id: "gourmet bite-collection",
+    title: "Gourmet Bite Collection",
     heroImage: serviceImages.truffleCollection,
-    heroTitle: "TRUFFLE COLLECTION — HANDCRAFTED GANACHE MASTERPIECES",
+    heroTitle: "GOURMET BITE COLLECTION — HANDCRAFTED VELVET FILLING MASTERPIECES",
     intro: {
-      heading: "THE TRUFFLE COLLECTION",
-      subheading: "Velvety ganache truffles crafted by hand in our artisan atelier.",
+      heading: "THE GOURMET BITE COLLECTION",
+      subheading: "Velvety velvet filling gourmet bites crafted by hand in our artisan atelier.",
       description: [
-        "Our truffles begin with the finest single-origin chocolate and organic cream. Each ganache is slowly emulsified by hand to achieve a perfectly smooth, melting texture. Seasonal flavour infusions — from rose and cardamom to yuzu and black pepper — are added in small batches.",
-        "Every truffle is hand-rolled, enrobed in tempered chocolate, and finished with cocoa powder, crushed nuts, or edible 24k gold leaf.",
+        "Our gourmet bites begin with the finest single-origin confection and organic cream. Each velvet filling is slowly emulsified by hand to achieve a perfectly smooth, melting texture. Seasonal flavour infusions — from rose and cardamom to yuzu and black pepper — are added in small batches.",
+        "Every gourmet bite is hand-rolled, enrobed in tempered confection, and finished with ingredient powder, crushed nuts, or edible 24k gold leaf.",
       ],
     },
     whyChooseUs: {
-      title: "Why Our Truffles Are Exceptional",
+      title: "Why Our Gourmet Bites Are Exceptional",
       items: [
         {
           title: "Hand-rolled, never moulded",
           description:
-            "Our truffles are shaped by hand, giving each one a natural, artisan appearance.",
+            "Our gourmet bites are shaped by hand, giving each one a natural, artisan appearance.",
         },
         {
           title: "Seasonal infusions",
@@ -180,53 +180,53 @@ export const servicesData: ServiceData[] = [
         {
           title: "Premium finishes",
           description:
-            "Choose from Dutch cocoa dusting, crushed pistachios, freeze-dried berry, or 24k edible gold leaf.",
+            "Choose from Dutch ingredient dusting, crushed pistachios, freeze-dried berry, or 24k edible gold leaf.",
         },
       ],
     },
     signatureServices: {
-      title: "Signature Truffle Flavours",
+      title: "Signature Gourmet Bite Flavours",
       items: [
         {
-          title: "Classic Dark Ganache",
+          title: "Classic Dark Velvet Filling",
           description:
-            "85% Madagascar ganache, hand-rolled in Dutch cocoa powder. Our most iconic truffle.",
+            "85% Madagascar velvet filling, hand-rolled in Dutch ingredient powder. Our most iconic gourmet bite.",
         },
         {
           title: "Rose & Cardamom",
           description:
-            "Milk chocolate ganache infused with Damask rose water and green cardamom. Finished with dried rose petals.",
+            "Milk Confectionery velvet filling infused with Damask rose water and green cardamom. Finished with dried rose petals.",
         },
         {
-          title: "Yuzu & Dark Chocolate",
+          title: "Yuzu & Dark Confectionery",
           description:
-            "A Japanese-inspired truffle — tart yuzu citrus in a velvety 72% Ecuador ganache.",
+            "A Japanese-inspired gourmet bite — tart yuzu citrus in a velvety 72% Ecuador velvet filling.",
         },
         {
           title: "Salted Caramel & Hazelnut",
           description:
-            "Buttery salted caramel ganache with toasted Piedmont hazelnuts in a milk chocolate shell.",
+            "Buttery salted caramel velvet filling with toasted Piedmont hazelnuts in a milk confectionery shell.",
         },
       ],
     },
     process: {
-      title: "From Ganache to Gift Box",
+      title: "From Velvet Filling to Gift Box",
       description: "",
       steps: [
         {
-          title: "1. Make the ganache",
+          title: "1. Make the velvet filling",
           description:
-            "We heat organic cream and pour it over finely chopped chocolate, slowly emulsifying by hand.",
+            "We heat organic cream and pour it over finely chopped confection, slowly emulsifying by hand.",
         },
         {
           title: "2. Infuse & set",
           description:
-            "Seasonal flavour extracts are folded in. The ganache rests for 24 hours at precise temperatures.",
+            "Seasonal flavour extracts are folded in. The velvet filling rests for 24 hours at precise temperatures.",
         },
         {
           title: "3. Roll & enrobe",
           description:
-            "Each truffle is hand-rolled and dipped in tempered chocolate, then finished with its signature coating.",
+            "Each gourmet bite is hand-rolled and dipped in tempered confection, then finished with its signature coating.",
         },
         {
           title: "4. Inspect & pack",
@@ -238,18 +238,18 @@ export const servicesData: ServiceData[] = [
     testimonials: [
       {
         quote:
-          "The Rose & Cardamom truffle is unlike anything I have ever had. It tastes like a luxury perfume smells. Extraordinary.",
+          "The Rose & Cardamom gourmet bite is unlike anything I have ever had. It tastes like a luxury perfume smells. Extraordinary.",
         author: "Sophia M.",
         location: "Paris, France",
       },
     ],
     portfolioImages: [
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
     ],
   },
 
@@ -292,17 +292,17 @@ export const servicesData: ServiceData[] = [
         {
           title: "The Classic Assortment (12 pcs)",
           description:
-            "A curated selection of our bestselling dark and milk chocolate truffles. Our most popular gift.",
+            "A curated selection of our bestselling dark and milk confectionery gourmet bites. Our most popular gift.",
         },
         {
           title: "The Signature Collection (24 pcs)",
           description:
-            "Our full range of signature truffles, pralines, and dark chocolate bars in a single, impressive box.",
+            "Our full range of signature gourmet bites, filled delicacies, and dark confectionery bars in a single, impressive box.",
         },
         {
           title: "The Single-Origin Discovery Box",
           description:
-            "Three dark chocolate bars — one each from Madagascar, Ecuador, and Peru — for the true connoisseur.",
+            "Three dark confectionery bars — one each from Madagascar, Ecuador, and Peru — for the true connoisseur.",
         },
         {
           title: "Bespoke Corporate Gift Set",
@@ -328,7 +328,7 @@ export const servicesData: ServiceData[] = [
         {
           title: "3. We craft & pack",
           description:
-            "Your chocolates are freshly made, quality-checked, and beautifully arranged in the gift box.",
+            "Your confections are freshly made, quality-checked, and beautifully arranged in the gift box.",
         },
         {
           title: "4. Delivered to your door",
@@ -338,35 +338,35 @@ export const servicesData: ServiceData[] = [
       ],
     },
     portfolioImages: [
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
     ],
   },
 
   {
-    id: "pralines-collection",
-    title: "Pralines Collection",
-    heroImage: "/images/assets/dark_chocolates_hero.png",
-    heroTitle: "PRALINES COLLECTION — BELGIAN CRAFT, DUMUZI SOUL",
+    id: "filled delicacies-collection",
+    title: "Filled Delicacies Collection",
+    heroImage: "/images/assets/atelier_hero.png",
+    heroTitle: "FILLED DELICACIES COLLECTION — BELGIAN CRAFT, DUMUZI SOUL",
     intro: {
-      heading: "HANDCRAFTED PRALINES",
-      subheading: "Belgian-inspired pralines with the finest nut pastes and flavour fillings.",
+      heading: "HANDCRAFTED FILLED DELICACIES",
+      subheading: "Belgian-inspired filled delicacies with the finest nut pastes and flavour fillings.",
       description: [
-        "Inspired by the great Belgian praline tradition, our DUMUZI pralines combine classic craftsmanship with our own single-origin dark chocolate shells. Each piece is individually cast in hand-polished moulds.",
-        "From classic hazelnut praline paste to contemporary salted miso caramel, our praline range pushes the boundaries of fine confectionery.",
+        "Inspired by the great Belgian filled delicacy tradition, our DUMUZI filled delicacies combine classic craftsmanship with our own single-origin dark confectionery shells. Each piece is individually cast in hand-polished moulds.",
+        "From classic hazelnut filled delicacy paste to contemporary salted miso caramel, our filled delicacy range pushes the boundaries of fine confectionery.",
       ],
     },
     whyChooseUs: {
-      title: "Why Our Pralines Stand Out",
+      title: "Why Our Filled Delicacies Stand Out",
       items: [
         {
           title: "Hand-polished molds",
           description:
-            "Our custom copper molds are hand-polished to ensure a mirror-gloss chocolate shell on every piece.",
+            "Our custom copper molds are hand-polished to ensure a mirror-gloss confection shell on every piece.",
         },
         {
           title: "Finest nut pastes",
@@ -376,68 +376,68 @@ export const servicesData: ServiceData[] = [
         {
           title: "Bold flavour combinations",
           description:
-            "Our chocolatiers experiment seasonally — expect anything from smoked sea salt caramel to matcha and white chocolate.",
+            "Our confectioners experiment seasonally — expect anything from smoked sea salt caramel to matcha and white confectionery.",
         },
       ],
     },
     signatureServices: {
-      title: "Praline Highlights",
+      title: "Filled Delicacy Highlights",
       items: [
         {
-          title: "Hazelnut Praline Classic",
+          title: "Hazelnut Filled Delicacy Classic",
           description:
-            "Roasted Piedmont hazelnut paste in a 72% Ecuador dark chocolate shell. A timeless classic.",
+            "Roasted Piedmont hazelnut paste in a 72% Ecuador dark confectionery shell. A timeless classic.",
         },
         {
           title: "Pistachio & Rose",
           description:
-            "Sicilian pistachio paste with a hint of rose water, enrobed in white chocolate.",
+            "Sicilian pistachio paste with a hint of rose water, enrobed in white confectionery.",
         },
         {
           title: "Salted Miso Caramel",
           description:
-            "A daring pairing — sweet caramel with umami white miso in a milk chocolate shell.",
+            "A daring pairing — sweet caramel with umami white miso in a milk confectionery shell.",
         },
         {
           title: "Seasonal Special",
           description:
-            "A rotating praline inspired by the season's finest botanicals, fruits, and spices.",
+            "A rotating filled delicacy inspired by the season's finest botanicals, fruits, and spices.",
         },
       ],
     },
     process: {
-      title: "The Praline Making Process",
+      title: "The Filled Delicacy Making Process",
       description: "",
       steps: [
         {
           title: "1. Cast the shells",
           description:
-            "Tempered chocolate is poured into hand-polished molds, spun to coat evenly, then inverted to remove the excess.",
+            "Tempered confection is poured into hand-polished molds, spun to coat evenly, then inverted to remove the excess.",
         },
         {
           title: "2. Fill",
           description:
-            "Each shell is piped with its ganache or nut paste filling, then left to crystallise at a controlled temperature.",
+            "Each shell is piped with its velvet filling or nut paste filling, then left to crystallise at a controlled temperature.",
         },
         {
           title: "3. Cap",
           description:
-            "A final layer of tempered chocolate seals the base of each praline to create a perfectly closed piece.",
+            "A final layer of tempered confection seals the base of each filled delicacy to create a perfectly closed piece.",
         },
         {
           title: "4. Unmould & finish",
           description:
-            "Pralines are gently unmoulded, inspected for gloss, and decorated with their signature finishing element.",
+            "Filled Delicacies are gently unmoulded, inspected for gloss, and decorated with their signature finishing element.",
         },
       ],
     },
     portfolioImages: [
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
     ],
   },
 
@@ -448,9 +448,9 @@ export const servicesData: ServiceData[] = [
     heroTitle: "WEDDING FAVOURS — SWEET MEMORIES FOR EVERY GUEST",
     intro: {
       heading: "BESPOKE WEDDING FAVOURS",
-      subheading: "Custom chocolate wedding favours that your guests will cherish.",
+      subheading: "Custom confection wedding favours that your guests will cherish.",
       description: [
-        "Your wedding day deserves a parting gift as special as the occasion. DUMUZI wedding favours are fully bespoke — from custom-molded chocolates bearing your initials to miniature truffle boxes wrapped in your wedding colour palette.",
+        "Your wedding day deserves a parting gift as special as the occasion. DUMUZI wedding favours are fully bespoke — from custom-molded confections bearing your initials to miniature gourmet bite boxes wrapped in your wedding colour palette.",
         "We work closely with couples and wedding planners to design favours that double as table décor and deliver a moment of pure indulgence to every guest.",
       ],
     },
@@ -463,9 +463,9 @@ export const servicesData: ServiceData[] = [
             "Gold-foil embossed boxes in any colour with your initials or a custom design.",
         },
         {
-          title: "Custom chocolate molds",
+          title: "Custom confection molds",
           description:
-            "Your initials, a motif, or even the date cast into the chocolate itself.",
+            "Your initials, a motif, or even the date cast into the confection itself.",
         },
         {
           title: "No minimum too large",
@@ -478,19 +478,19 @@ export const servicesData: ServiceData[] = [
       title: "Wedding Favour Options",
       items: [
         {
-          title: "Mini Truffle Box (3 pcs)",
+          title: "Mini Gourmet Bite Box (3 pcs)",
           description:
-            "Three signature truffles in a miniature gift box — elegant, compact, and delicious.",
+            "Three signature gourmet bites in a miniature gift box — elegant, compact, and delicious.",
         },
         {
-          title: "Monogrammed Chocolate Bar",
+          title: "Monogrammed Confection Bar",
           description:
-            "A personalised single-origin dark or milk chocolate bar with your initials or wedding date.",
+            "A personalised single-origin dark or milk confectionery bar with your initials or wedding date.",
         },
         {
-          title: "Mixed Praline Box (6 pcs)",
+          title: "Mixed Filled Delicacy Box (6 pcs)",
           description:
-            "Six assorted pralines in a bespoke box with custom ribbon and personalised tag.",
+            "Six assorted filled delicacies in a bespoke box with custom ribbon and personalised tag.",
         },
         {
           title: "Fully Custom Favour",
@@ -506,7 +506,7 @@ export const servicesData: ServiceData[] = [
         {
           title: "1. Share your vision",
           description:
-            "Tell us about your wedding theme, colour palette, guest count, and preferred chocolates.",
+            "Tell us about your wedding theme, colour palette, guest count, and preferred confections.",
         },
         {
           title: "2. Receive a design proposal",
@@ -526,12 +526,12 @@ export const servicesData: ServiceData[] = [
       ],
     },
     portfolioImages: [
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
     ],
   },
 
@@ -539,12 +539,12 @@ export const servicesData: ServiceData[] = [
     id: "corporate-gifting",
     title: "Corporate Gifting",
     heroImage: serviceImages.corporateGifting,
-    heroTitle: "CORPORATE GIFTING — ELEVATE YOUR BRAND WITH LUXURY CHOCOLATE",
+    heroTitle: "CORPORATE GIFTING — ELEVATE YOUR BRAND WITH LUXURY CONFECTION",
     intro: {
       heading: "CORPORATE GIFTING PROGRAM",
-      subheading: "Bespoke luxury chocolate gifts that represent your brand at its finest.",
+      subheading: "Bespoke luxury confection gifts that represent your brand at its finest.",
       description: [
-        "A DUMUZI corporate gift is more than a token — it is a statement about your brand's standards. Our corporate gifting program offers fully branded chocolate sets, custom-molded bars, and seasonal assortments that leave a lasting impression.",
+        "A DUMUZI corporate gift is more than a token — it is a statement about your brand's standards. Our corporate gifting program offers fully branded confection sets, custom-molded bars, and seasonal assortments that leave a lasting impression.",
         "We work with marketing teams, EA offices, and gifting managers to create collections that align with your brand identity, budget, and timeline.",
       ],
     },
@@ -554,7 +554,7 @@ export const servicesData: ServiceData[] = [
         {
           title: "Logo & brand integration",
           description:
-            "Your company logo can be embossed on packaging, printed on ribbons, or molded directly into the chocolate.",
+            "Your company logo can be embossed on packaging, printed on ribbons, or molded directly into the confection.",
         },
         {
           title: "Bulk pricing available",
@@ -572,14 +572,14 @@ export const servicesData: ServiceData[] = [
       title: "Corporate Collection Options",
       items: [
         {
-          title: "Branded Truffle Box",
+          title: "Branded Gourmet Bite Box",
           description:
             "Our 12-piece Classic Assortment in a custom box with your logo and a branded message card.",
         },
         {
           title: "Single-Origin Bar Set",
           description:
-            "Three single-origin dark chocolate bars in a branded sleeve. A sophisticated and educational gift.",
+            "Three single-origin dark confectionery bars in a branded sleeve. A sophisticated and educational gift.",
         },
         {
           title: "Premium Executive Box",
@@ -620,12 +620,12 @@ export const servicesData: ServiceData[] = [
       ],
     },
     portfolioImages: [
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
     ],
     contact: {
       name: "Elise Moreau",
@@ -643,9 +643,9 @@ export const servicesData: ServiceData[] = [
     heroTitle: "THE DUMUZI SUBSCRIPTION — LUXURY DELIVERED MONTHLY",
     intro: {
       heading: "DUMUZI SUBSCRIPTION BOX",
-      subheading: "A curated selection of new and exclusive chocolates delivered to your door.",
+      subheading: "A curated selection of new and exclusive confections delivered to your door.",
       description: [
-        "Our subscription boxes are designed for true chocolate lovers who want to explore the full breadth of DUMUZI's craft. Each box features a curated mix of new releases, seasonal specials, and exclusive members-only creations.",
+        "Our subscription boxes are designed for true confection lovers who want to explore the full breadth of DUMUZI's craft. Each box features a curated mix of new releases, seasonal specials, and exclusive members-only creations.",
         "Subscribers receive first access to new collections, invitations to online tasting events, and a personal tasting notes card with each delivery.",
       ],
     },
@@ -675,7 +675,7 @@ export const servicesData: ServiceData[] = [
         {
           title: "The Connoisseur (Monthly)",
           description:
-            "12 pieces per month — a rotating mix of truffles, pralines, and a mini single-origin bar.",
+            "12 pieces per month — a rotating mix of gourmet bites, filled delicacies, and a mini single-origin bar.",
         },
         {
           title: "The Explorer (Quarterly)",
@@ -685,7 +685,7 @@ export const servicesData: ServiceData[] = [
         {
           title: "The Dark Devotee",
           description:
-            "A dark-chocolate-only monthly box featuring three single-origin bars and 6 dark truffles.",
+            "A dark-confection-only monthly box featuring three single-origin bars and 6 dark gourmet bites.",
         },
         {
           title: "The Gift Subscription",
@@ -706,12 +706,12 @@ export const servicesData: ServiceData[] = [
         {
           title: "2. We curate your box",
           description:
-            "Each month, our head chocolatier selects a unique assortment tailored to your plan.",
+            "Each month, our head confectioner selects a unique assortment tailored to your plan.",
         },
         {
           title: "3. Fresh production",
           description:
-            "Your chocolates are produced fresh the week before your delivery date.",
+            "Your confections are produced fresh the week before your delivery date.",
         },
         {
           title: "4. Delivered & enjoyed",
@@ -721,12 +721,12 @@ export const servicesData: ServiceData[] = [
       ],
     },
     portfolioImages: [
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
     ],
   },
 
@@ -734,12 +734,12 @@ export const servicesData: ServiceData[] = [
     id: "bespoke-orders",
     title: "Bespoke Orders",
     heroImage: serviceImages.bespokeOrders,
-    heroTitle: "BESPOKE CHOCOLATE COMMISSIONS — YOUR VISION, OUR CRAFT",
+    heroTitle: "BESPOKE CONFECTION COMMISSIONS — YOUR VISION, OUR CRAFT",
     intro: {
-      heading: "BESPOKE CHOCOLATE ORDERS",
-      subheading: "Fully custom chocolate creations for extraordinary occasions.",
+      heading: "BESPOKE CONFECTION ORDERS",
+      subheading: "Fully custom confection creations for extraordinary occasions.",
       description: [
-        "Some moments call for something truly one-of-a-kind. Our bespoke order service allows you to commission completely custom chocolates — from unique flavour infusions to hand-painted artistic bars and sculpted chocolate centrepieces.",
+        "Some moments call for something truly one-of-a-kind. Our bespoke order service allows you to commission completely custom confections — from unique flavour infusions to hand-painted artistic bars and sculpted confection centrepieces.",
         "We have crafted bespoke collections for luxury hotels, Michelin-starred restaurants, fashion houses, and private celebrations. Tell us your vision and we will bring it to life.",
       ],
     },
@@ -749,17 +749,17 @@ export const servicesData: ServiceData[] = [
         {
           title: "Custom flavour creation",
           description:
-            "Our chocolatiers will develop a completely original ganache or praline flavour based on your brief.",
+            "Our confectioners will develop a completely original velvet filling or filled delicacy flavour based on your brief.",
         },
         {
           title: "Hand-painted bars",
           description:
-            "Artistic chocolate bars painted by hand with edible cocoa butter colours — each one unique.",
+            "Artistic confection bars painted by hand with edible artisan butter colours — each one unique.",
         },
         {
           title: "Sculpted centrepieces",
           description:
-            "Large-format chocolate sculptures for event centrepieces, made to order and shipped in bespoke crating.",
+            "Large-format confection sculptures for event centrepieces, made to order and shipped in bespoke crating.",
         },
       ],
     },
@@ -769,22 +769,22 @@ export const servicesData: ServiceData[] = [
         {
           title: "Flavour Commission",
           description:
-            "Brief us on a taste, a memory, or an ingredient, and our head chocolatier will create an original ganache for you.",
+            "Brief us on a taste, a memory, or an ingredient, and our head confectioner will create an original velvet filling for you.",
         },
         {
           title: "Hand-Painted Bar Collection",
           description:
-            "A set of 6 or 12 single-origin dark chocolate bars individually painted with edible cocoa butter artwork.",
+            "A set of 6 or 12 single-origin dark confectionery bars individually painted with edible artisan butter artwork.",
         },
         {
-          title: "Chocolate Sculpture",
+          title: "Confection Sculpture",
           description:
-            "A bespoke sculpted chocolate centrepiece — animals, logos, letters, or abstract forms.",
+            "A bespoke sculpted confection centrepiece — animals, logos, letters, or abstract forms.",
         },
         {
           title: "Venue & Restaurant Programmes",
           description:
-            "Regular bespoke supply for hotels, restaurants, and luxury venues with their own branded chocolate selection.",
+            "Regular bespoke supply for hotels, restaurants, and luxury venues with their own branded confection selection.",
         },
       ],
     },
@@ -800,7 +800,7 @@ export const servicesData: ServiceData[] = [
         {
           title: "2. Consultation call",
           description:
-            "Our head chocolatier will speak with you directly to explore the brief and suggest options.",
+            "Our head confectioner will speak with you directly to explore the brief and suggest options.",
         },
         {
           title: "3. Sample production",
@@ -815,25 +815,25 @@ export const servicesData: ServiceData[] = [
       ],
     },
     portfolioImages: [
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
     ],
   },
 
   {
     id: "masterclasses",
-    title: "Chocolate Masterclass",
+    title: "Confection Masterclass",
     heroImage: serviceImages.masterclasses,
-    heroTitle: "DUMUZI MASTERCLASSES — LEARN THE ART OF FINE CHOCOLATE",
+    heroTitle: "DUMUZI MASTERCLASSES — LEARN THE ART OF FINE CONFECTION",
     intro: {
-      heading: "Chocolate Masterclasses",
-      subheading: "Hands-on sessions with our master chocolatiers.",
+      heading: "Confection Masterclasses",
+      subheading: "Hands-on sessions with our master confectioners.",
       description: [
-        "Our chocolate masterclasses are intimate, hands-on sessions in our artisan atelier. You will learn the science of tempering, the art of truffle-making, and the subtleties of single-origin tasting — guided by our experienced chocolatiers.",
+        "Our confection masterclasses are intimate, hands-on sessions in our artisan atelier. You will learn the science of tempering, the art of gourmet bite-making, and the subtleties of single-origin tasting — guided by our experienced confectioners.",
         "Classes are available for individuals, couples, corporate team-building, and private groups. Gift vouchers are available year-round.",
       ],
     },
@@ -843,22 +843,22 @@ export const servicesData: ServiceData[] = [
         {
           title: "Tempering from scratch",
           description:
-            "The science and technique of tempering chocolate to a perfect Form V crystal structure.",
+            "The science and technique of tempering confection to a perfect Form V crystal structure.",
         },
         {
-          title: "Truffle making",
+          title: "Gourmet Bite making",
           description:
-            "How to make a ganache, hand-roll truffles, and finish them like a professional chocolatier.",
+            "How to make a velvet filling, hand-roll gourmet bites, and finish them like a professional confectioner.",
         },
         {
           title: "Single-origin tasting",
           description:
-            "A guided tasting of three single-origin dark chocolates — learning to identify terroir, processing, and roasting notes.",
+            "A guided tasting of three single-origin dark confections — learning to identify terroir, processing, and roasting notes.",
         },
         {
           title: "Take-home box",
           description:
-            "Every participant takes home a box of the chocolates they made during the session.",
+            "Every participant takes home a box of the confections they made during the session.",
         },
       ],
     },
@@ -866,14 +866,14 @@ export const servicesData: ServiceData[] = [
       title: "Masterclass Formats",
       items: [
         {
-          title: "Introduction to Chocolate (2 hrs)",
+          title: "Introduction to Confection (2 hrs)",
           description:
-            "Perfect for beginners. Covers single-origin tasting, basic tempering, and truffle rolling.",
+            "Perfect for beginners. Covers single-origin tasting, basic tempering, and gourmet bite rolling.",
         },
         {
-          title: "Advanced Praline Class (4 hrs)",
+          title: "Advanced Filled Delicacy Class (4 hrs)",
           description:
-            "For those with some experience. Learn shell moulding, ganache infusions, and praline production.",
+            "For those with some experience. Learn shell moulding, velvet filling infusions, and filled delicacy production.",
         },
         {
           title: "Corporate Team Event",
@@ -909,17 +909,17 @@ export const servicesData: ServiceData[] = [
         {
           title: "4. Take your creations home",
           description:
-            "Leave with a box of your handmade chocolates and a DUMUZI recipe booklet.",
+            "Leave with a box of your handmade confections and a DUMUZI recipe booklet.",
         },
       ],
     },
     portfolioImages: [
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
-      "/images/assets/dark_chocolates_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
+      "/images/assets/atelier_hero.png",
     ],
   },
 ];

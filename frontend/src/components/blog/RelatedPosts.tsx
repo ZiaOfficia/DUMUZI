@@ -40,7 +40,7 @@ export const RelatedPosts = ({
   if (loading || posts.length === 0) return null;
 
   return (
-    <section className="py-16 border-t border-[rgba(212,165,90,0.16)]" style={{ backgroundColor: 'var(--choc-dark)' }}>
+    <section className="py-16 border-t border-[rgba(212,165,90,0.16)]" style={{ backgroundColor: 'var(--bg-dark)' }}>
       <div className="max-w-7xl mx-auto px-6">
         <h3 className="text-2xl font-display text-cream mb-8 border-l-4 border-gold pl-4">
           Related Stories

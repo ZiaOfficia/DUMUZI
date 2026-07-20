@@ -15,7 +15,7 @@ const posts = instagramImages.map((image, i) => ({
 
 export const InstagramFeed = () => {
   return (
-    <section className="py-12 md:py-24 px-4 md:px-6 overflow-hidden" style={{ background: 'var(--choc-dark)' }}>
+    <section className="py-12 md:py-24 px-4 md:px-6 overflow-hidden" style={{ background: 'var(--bg-dark)' }}>
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
@@ -46,10 +46,10 @@ export const InstagramFeed = () => {
             className="font-sans text-sm mb-8"
             style={{ color: 'rgba(212,163,115,0.55)' }}
           >
-            @dumuzi_chocolates
+            @dumuzi_confections
           </motion.p>
           <motion.a
-            href="https://www.instagram.com/dumuzi_chocolates"
+            href="https://www.instagram.com/dumuzi_confections"
             target="_blank"
             rel="noopener noreferrer"
             initial={{ opacity: 0, y: 20 }}
@@ -59,7 +59,7 @@ export const InstagramFeed = () => {
             className="inline-block px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300"
             style={{
               background: 'linear-gradient(135deg,#d4a373,#e5c199)',
-              color: 'var(--choc-deep)',
+              color: 'var(--bg-deep)',
               boxShadow: '0 8px 25px rgba(212,163,115,0.35)',
             }}
           >
@@ -72,7 +72,7 @@ export const InstagramFeed = () => {
           {posts.map((post, idx) => (
             <motion.a
               key={post.id}
-              href="https://www.instagram.com/dumuzi_chocolates"
+              href="https://www.instagram.com/dumuzi_confections"
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, scale: 0.9 }}
@@ -81,7 +81,7 @@ export const InstagramFeed = () => {
               transition={{ delay: idx * 0.1, duration: 0.5 }}
               whileHover={{ scale: 0.98 }}
               className="relative aspect-square group overflow-hidden"
-              style={{ background: 'var(--choc-mid)' }}
+              style={{ background: 'var(--bg-mid)' }}
             >
               <img loading="lazy" decoding="async"
                 src={getOptimizedImage(post.image, 600)}
