@@ -17,7 +17,7 @@ export interface Product {
   image: string;
   description: string;
   mrp: number;
-  category: 'HEART' | 'DISPLAY' | 'BONBON' | 'OVAL';
+  category: 'HEART' | 'DIAMOND' | 'BONBON' | 'OVAL';
   inStock: boolean;
 }
 

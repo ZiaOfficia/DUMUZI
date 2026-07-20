@@ -22,11 +22,11 @@ const accents = ['#d4a373', '#c9a96e', '#b8976a', '#a08060', '#c9a96e', '#8a6a4a
 /* ── Curated top-6 products ── */
 const bestConfections = [
   allProducts[0],   // DUMUZI Signature
-  allProducts[13],  // Heart 18 Duo
+  allProducts[13],  // Heart 18 Cavity
   allProducts[25],  // Bonbon 9 Trios
   allProducts[11],  // Heart 12 Trios
-  allProducts[23],  // Display 25 Trios
-  allProducts[19],  // Display 15 Trios
+  allProducts[23],  // Diamond 25 Trios
+  allProducts[19],  // Diamond 15 Trios
 ].map((p, i) => ({
   ...p,
   rank: String(i + 1).padStart(2, '0'),
@@ -44,7 +44,7 @@ const bestConfections = [
 const tiers = [
   { label: 'All', value: 'all' },
   { label: 'Heart', value: 'HEART' },
-  { label: 'Display', value: 'DISPLAY' },
+  { label: 'Diamond', value: 'DIAMOND' },
   { label: 'Bonbon', value: 'BONBON' },
 ];
 
