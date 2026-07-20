@@ -12,12 +12,20 @@ const GOLDL = '#e8c07a';
 const GOLDF = 'rgba(212,165,90,0.55)';
 
 const navLinks = [
+<<<<<<< HEAD
   { name: 'Home',           path: '/' },
   { name: 'Collections',    path: '/collections' },
   { name: 'Best Confections', path: '/best-confections' },
   { name: 'About Us',       path: '/about' },
   { name: 'Blog',           path: '/blog' },
   { name: 'Contact',        path: '/contact' },
+=======
+  { name: 'Home',        path: '/' },
+  { name: 'About Us',    path: '/about' },
+  { name: 'Gallery',     path: '/collections' },
+  { name: 'Blog',        path: '/blog' },
+  { name: 'Contact',     path: '/contact' },
+>>>>>>> 49f6def (Your commit message)
 ];
 
 const IconBtn = ({
@@ -125,6 +133,42 @@ export const Navbar = () => {
       }}
       className="sticky top-0 z-50 w-full"
     >
+      {/* Marketplace bar */}
+      <div
+        className="w-full flex items-center justify-center gap-2 px-3 py-1.5 flex-wrap"
+        style={{
+          background: 'rgba(0,0,0,0.35)',
+          borderBottom: '1px solid rgba(212,165,90,0.1)',
+        }}
+      >
+        <a
+          href="https://www.meesho.com/LITTLEFUNFOODSBEVERAGESPRIVATELIMITED?ms=2"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold tracking-wide transition-transform duration-200 hover:scale-[1.03]"
+          style={{
+            background: 'linear-gradient(135deg, #9F2089 0%, #6a148a 100%)',
+            color: '#fdf2fb',
+            boxShadow: '0 2px 10px rgba(159,32,137,0.35)',
+          }}
+        >
+          Buy from Meesho
+        </a>
+        <a
+          href="https://amzn.in/d/0ihpOhSG"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold tracking-wide transition-transform duration-200 hover:scale-[1.03]"
+          style={{
+            background: 'linear-gradient(135deg, #FF9900 0%, #e07b00 100%)',
+            color: '#131921',
+            boxShadow: '0 2px 10px rgba(255,153,0,0.3)',
+          }}
+        >
+          Buy from Amazon
+        </a>
+      </div>
+
       <div className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-[62px] lg:h-[68px]">
 
         {/* Logo */}
