@@ -12,20 +12,11 @@ const GOLDL = '#e8c07a';
 const GOLDF = 'rgba(212,165,90,0.55)';
 
 const navLinks = [
-<<<<<<< HEAD
-  { name: 'Home',           path: '/' },
-  { name: 'Collections',    path: '/collections' },
-  { name: 'Best Confections', path: '/best-confections' },
-  { name: 'About Us',       path: '/about' },
-  { name: 'Blog',           path: '/blog' },
-  { name: 'Contact',        path: '/contact' },
-=======
   { name: 'Home',        path: '/' },
   { name: 'About Us',    path: '/about' },
   { name: 'Gallery',     path: '/collections' },
   { name: 'Blog',        path: '/blog' },
   { name: 'Contact',     path: '/contact' },
->>>>>>> 49f6def (Your commit message)
 ];
 
 const IconBtn = ({
