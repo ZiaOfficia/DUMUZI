@@ -10,7 +10,7 @@ const Product   = require("../models/Product");
 
 const products = [
   // ── HEART SERIES ──────────────────────────────────────────────────────────
-  { id: 1,  brandName:"DUMUZI", productName:"LF-H9",   image:"/images/products/DUMUZI.jpeg",      description:"HEART 9 SIGNATURE",               mrp:260,  category:"HEART"   },
+  { id: 1,  brandName:"DUMUZI", productName:"LF-H9",   image:"/images/products/DUMUZI.jpeg",      description:"HEART 9 CAVITY BROWN",            mrp:260,  category:"HEART"   },
   { id: 2,  brandName:"DUMUZI", productName:"LF-H3",   image:"/images/products/LF-H3.jpeg",       description:"HEART 3 CAVITY BROWN",            mrp:99,   category:"HEART"   },
   { id: 3,  brandName:"DUMUZI", productName:"LF-H3T",  image:"/images/products/LF - H3T.jpeg",    description:"HEART 3 CAVITY TRIOS",            mrp:110,  category:"HEART"   },
   { id: 4,  brandName:"DUMUZI", productName:"LF-H4P",  image:"/images/products/LF-H4P.jpeg",      description:"HEART 4 CAVITY",                  mrp:140,  category:"HEART"   },
