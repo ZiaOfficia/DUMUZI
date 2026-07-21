@@ -5,8 +5,12 @@ export interface EnquiryData {
   eventDate?: string;
   message?: string;
   serviceName?: string;
-   venue?: string;   
-  budget?: string;  
+   venue?: string;
+  budget?: string;
+  businessName?: string;
+  businessType?: string;
+  city?: string;
+  gstNumber?: string;
 }
 
 export const submitToGoogleSheets = async (

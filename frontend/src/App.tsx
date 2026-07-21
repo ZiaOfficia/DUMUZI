@@ -11,6 +11,7 @@ import { HomePage }               from './pages/HomePage';
 import { AboutPage }              from './pages/AboutPage';
 import { FAQPage }                from './pages/FAQPage';
 import { ContactPage }            from './pages/ContactPage';
+import { RetailerPage }           from './pages/RetailerPage';
 import { ServicesPage }           from './pages/ServicesPage';
 import { ServiceDetailPage }      from './pages/ServiceDetailPage';
 import BestConfectionsPage        from './pages/BestConfectionsPage';
@@ -62,6 +63,7 @@ function App() {
                 <Route path="/about"                   element={<AboutPage />} />
                 <Route path="/faq"                     element={<FAQPage />} />
                 <Route path="/contact"                 element={<ContactPage />} />
+                <Route path="/become-a-retailer"       element={<RetailerPage />} />
                 <Route path="/services"                element={<ServicesPage />} />
                 <Route path="/collections"             element={<CollectionsPage />} />
                 <Route path="/shop"                    element={<ShopPage />} />

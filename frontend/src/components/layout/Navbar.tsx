@@ -16,6 +16,7 @@ const navLinks = [
   { name: 'About Us',    path: '/about' },
   { name: 'Collection',  path: '/collections' },
   { name: 'Blog',        path: '/blog' },
+  { name: 'Retailer',    path: '/become-a-retailer' },
   { name: 'Contact',     path: '/contact' },
 ];
 
