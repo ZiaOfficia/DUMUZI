@@ -8,8 +8,8 @@ const GOLDL = '#e5c199';
 const contactCards = [
   {
     icon: MessageCircle,
-    title: 'Bespoke Orders',
-    desc: 'Design a custom confection for any occasion — wedding, corporate, or personal commission.',
+    title: 'Marriage Gifting',
+    desc: 'Curated confection favours and gift boxes for weddings and marriage celebrations.',
     cta: 'Start a Commission',
     path: '/contact',
   },
@@ -22,9 +22,9 @@ const contactCards = [
   },
   {
     icon: Phone,
-    title: 'Masterclasses',
-    desc: 'Book a hands-on tempering or truffle session in our Paris atelier — for individuals or groups.',
-    cta: 'Book a Session',
+    title: 'Customize Gifts',
+    desc: 'Personalise your own gift box — choose the flavours, packaging, and finishing touches.',
+    cta: 'Start Customizing',
     path: '/contact',
   },
 ];

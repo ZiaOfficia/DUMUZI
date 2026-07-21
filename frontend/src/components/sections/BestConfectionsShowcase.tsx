@@ -8,11 +8,11 @@ const ease = [0.25, 0.1, 0.25, 1] as const;
 const GOLD = '#d4a373';
 const GOLDL = '#e5c199';
 
-// Pick 3 showcase products: Signature heart, Diamond trios large, Bonbon trios
+// Pick 3 showcase products: Signature heart, Diamond trios large, BN trios
 const topThree = [
   { ...allProducts[0],  rank: '#1', icon: Flame,  badge: 'BEST SELLER',  desc: 'Signature heart box with 9 handcrafted gold-foil confections.',   featured: true,  rating: 5, reviews: 312, price: allProducts[0].mrp  },
   { ...allProducts[13], rank: '#2', icon: Heart,  badge: null,            desc: '18-piece heart gift box with dual-tone gold & red assortment.',  featured: false, rating: 5, reviews: 228, price: allProducts[13].mrp },
-  { ...allProducts[25], rank: '#3', icon: Award,  badge: 'CUSTOMER PICK', desc: 'Cone-shaped acrylic bonbon tower with 9 trios assorted pieces.', featured: false, rating: 5, reviews: 189, price: allProducts[25].mrp },
+  { ...allProducts[25], rank: '#3', icon: Award,  badge: 'CUSTOMER PICK', desc: 'Cone-shaped acrylic BN tower with 9 trios assorted pieces.', featured: false, rating: 5, reviews: 189, price: allProducts[25].mrp },
 ];
 
 function Stars({ rating }: { rating: number }) {

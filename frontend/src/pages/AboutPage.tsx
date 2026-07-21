@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { SEO } from "../components/common/SEO";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { ChevronRight } from "lucide-react";
-import { ClientsStrip } from "../components/sections/ClientsStrip";
 import { ContactSection } from "../components/sections/ContactSection";
 import { aboutContent } from "../data/content";
 import NewsletterSection from "../components/sections/NewsletterSection";
@@ -351,7 +350,6 @@ export const AboutPage = () => {
       {/* Newsletter Section */}
       <NewsletterSection />
 
-      <ClientsStrip />
       <ContactSection />
     </div>
   );

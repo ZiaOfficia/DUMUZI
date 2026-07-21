@@ -20,13 +20,13 @@ const videoGallery = [
   },
   {
     id: "dQw4w9WgXcQ",
-    title: "Bonbon Trios — Gold-Foil Wrapping Process",
+    title: "BN Trios — Gold-Foil Wrapping Process",
     thumbnail: "/images/products/LF-BN9T.jpeg",
     videoLength: "1:48",
   },
   {
     id: "dQw4w9WgXcQ",
-    title: "Display Trays — Behind the Arrangement",
+    title: "Diamond Trays — Behind the Arrangement",
     thumbnail: "/images/products/LF-D25T.jpeg",
     videoLength: "2:30",
   },

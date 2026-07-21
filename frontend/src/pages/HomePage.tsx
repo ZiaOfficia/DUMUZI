@@ -12,7 +12,6 @@ import { ContactCTASection }        from '../components/sections/ContactCTASecti
 import { TestimonialsSection }      from '../components/sections/TestimonialsSection';
 import NewsletterSection            from '../components/sections/NewsletterSection';
 import { InstagramFeed }            from '../components/sections/InstagramFeed';
-import { FeaturedInStrip }          from '../components/sections/FeaturedInStrip';
 
 export const HomePage = () => {
   return (
@@ -59,19 +58,15 @@ export const HomePage = () => {
       <div className="section-divider" />
       <BlogPreviewSection />
 
-      {/* 12 — Featured In Press Strip */}
-      <div className="section-divider" />
-      <FeaturedInStrip />
-
-      {/* 13 — Contact CTA (links to /contact) */}
+      {/* 12 — Contact CTA (links to /contact) */}
       <div className="section-divider" />
       <ContactCTASection />
 
-      {/* 14 — Instagram Feed */}
+      {/* 13 — Instagram Feed */}
       <div className="section-divider" />
       <InstagramFeed />
 
-      {/* 15 — Newsletter */}
+      {/* 14 — Newsletter */}
       <div className="section-divider" />
       <NewsletterSection />
     </>

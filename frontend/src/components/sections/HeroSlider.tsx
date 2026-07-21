@@ -246,7 +246,7 @@ export const HeroSlider = () => {
                   src="/images/products/LF- BN9.jpeg"
                   className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl object-contain p-0.5"
                   style={{ background: 'rgba(13,8,5,0.6)', border: '1px solid rgba(255,255,255,0.08)' }}
-                  alt="Bonbon 9"
+                  alt="BN 9"
                 />
                 {/* Live dot */}
                 <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full animate-pulse"
@@ -254,7 +254,7 @@ export const HeroSlider = () => {
               </div>
               <div>
                 <p className="text-[10.5px] uppercase font-bold tracking-wider mb-0.5" style={{ color: 'var(--cream)' }}>
-                  Bonbon · 9 Pcs
+                  BN · 9 Pcs
                 </p>
                 <p className="text-[9.5px] mb-1.5" style={{ color: 'rgba(220,214,205,0.55)' }}>
                   Gold-foil wrapped truffles

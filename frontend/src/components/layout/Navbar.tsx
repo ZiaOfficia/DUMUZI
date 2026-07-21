@@ -14,7 +14,7 @@ const GOLDF = 'rgba(212,165,90,0.55)';
 const navLinks = [
   { name: 'Home',        path: '/' },
   { name: 'About Us',    path: '/about' },
-  { name: 'Gallery',     path: '/collections' },
+  { name: 'Collection',  path: '/collections' },
   { name: 'Blog',        path: '/blog' },
   { name: 'Contact',     path: '/contact' },
 ];
@@ -124,42 +124,6 @@ export const Navbar = () => {
       }}
       className="sticky top-0 z-50 w-full"
     >
-      {/* Marketplace bar */}
-      <div
-        className="w-full flex items-center justify-center gap-2 px-3 py-1.5 flex-wrap"
-        style={{
-          background: 'rgba(0,0,0,0.35)',
-          borderBottom: '1px solid rgba(212,165,90,0.1)',
-        }}
-      >
-        <a
-          href="https://www.meesho.com/LITTLEFUNFOODSBEVERAGESPRIVATELIMITED?ms=2"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold tracking-wide transition-transform duration-200 hover:scale-[1.03]"
-          style={{
-            background: 'linear-gradient(135deg, #9F2089 0%, #6a148a 100%)',
-            color: '#fdf2fb',
-            boxShadow: '0 2px 10px rgba(159,32,137,0.35)',
-          }}
-        >
-          Buy from Meesho
-        </a>
-        <a
-          href="https://amzn.in/d/0ihpOhSG"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold tracking-wide transition-transform duration-200 hover:scale-[1.03]"
-          style={{
-            background: 'linear-gradient(135deg, #FF9900 0%, #e07b00 100%)',
-            color: '#131921',
-            boxShadow: '0 2px 10px rgba(255,153,0,0.3)',
-          }}
-        >
-          Buy from Amazon
-        </a>
-      </div>
-
       <div className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-[62px] lg:h-[68px]">
 
         {/* Logo */}
@@ -463,6 +427,27 @@ export const Navbar = () => {
                 );
               })}
             </ul>
+
+            {/* Also available on */}
+            <div className="mx-6 pt-4 flex flex-col items-center gap-3" style={{ borderTop: '1px solid rgba(212,165,90,0.1)' }}>
+              <p className="text-[9px] tracking-[0.3em] uppercase" style={{ color: 'rgba(212,165,90,0.3)' }}>
+                Also Available On
+              </p>
+              <div className="flex items-center gap-3">
+                <div
+                  className="flex items-center justify-center rounded-xl px-4 py-2.5"
+                  style={{ background: 'rgba(255,255,255,0.92)' }}
+                >
+                  <img src="/images/pnglogos/AMAZONLOGO.png" alt="Amazon" style={{ height: '20px', width: 'auto' }} />
+                </div>
+                <div
+                  className="flex items-center justify-center rounded-xl overflow-hidden"
+                  style={{ background: 'rgba(255,255,255,0.92)' }}
+                >
+                  <img src="/images/pnglogos/MEESHO.png" alt="Meesho" style={{ height: '34px', width: 'auto' }} />
+                </div>
+              </div>
+            </div>
 
             {/* Mobile footer divider */}
             <div className="mx-6 mb-5 pt-4" style={{ borderTop: '1px solid rgba(212,165,90,0.1)' }}>

@@ -26,18 +26,18 @@ const products = [
   { id: 14, brandName:"DUMUZI", productName:"LF-H18D", image:"/images/products/LF-H18D.jpeg",     description:"HEART 18 CAVITY",                 mrp:549,  category:"HEART"   },
   // ── DIAMOND SERIES ────────────────────────────────────────────────────────
   { id: 15, brandName:"DUMUZI", productName:"LF-D6",   image:"/images/products/LF-D6.jpeg",       description:"DIAMOND 6 CAVITY",                mrp:199,  category:"DIAMOND" },
-  { id: 16, brandName:"DUMUZI", productName:"LF-D9",   image:"/images/products/LF-D9.jpeg",       description:"DIAMOND 9 CAVITY",                mrp:260,  category:"DIAMOND" },
+  { id: 16, brandName:"DUMUZI", productName:"LF-D9",   image:"/images/products/LF-D9.jpeg",       description:"DIAMOND 9 CAVITY",                mrp:325,  category:"DIAMOND" },
   { id: 17, brandName:"DUMUZI", productName:"LF-D12B", image:"/images/products/LF-D12B.jpeg",     description:"DIAMOND 12 CAVITY BROWN",         mrp:325,  category:"DIAMOND" },
   { id: 18, brandName:"DUMUZI", productName:"LF-D12",  image:"/images/products/LF-D12.jpeg",      description:"DIAMOND 12 CAVITY",               mrp:375,  category:"DIAMOND" },
-  { id: 19, brandName:"DUMUZI", productName:"LF-D15",  image:"/images/products/LF-D15.jpeg",      description:"DIAMOND 15 CAVITY",               mrp:430,  category:"DIAMOND" },
-  { id: 20, brandName:"DUMUZI", productName:"LF-D15T", image:"/images/products/LF-D15T.jpeg",     description:"DIAMOND 15 CAVITY TRIOS",         mrp:460,  category:"DIAMOND" },
-  { id: 21, brandName:"DUMUZI", productName:"LF-D18T", image:"/images/products/LF-D18T.jpeg",     description:"DIAMOND 18 CAVITY TRIOS",         mrp:549,  category:"DIAMOND" },
-  { id: 22, brandName:"DUMUZI", productName:"LF-D25B", image:"/images/products/LF-D25B.jpeg",     description:"DIAMOND 25 CAVITY BROWN",         mrp:650,  category:"DIAMOND" },
+  { id: 19, brandName:"DUMUZI", productName:"LF-D15",  image:"/images/products/LF-D15.jpeg",      description:"DIAMOND 15 CAVITY",               mrp:499,  category:"DIAMOND" },
+  { id: 20, brandName:"DUMUZI", productName:"LF-D15T", image:"/images/products/LF-D15T.jpeg",     description:"DIAMOND 15 CAVITY TRIOS",         mrp:425,  category:"DIAMOND" },
+  { id: 21, brandName:"DUMUZI", productName:"LF-D18T", image:"/images/products/LF-D18T.jpeg",     description:"DIAMOND 18 CAVITY TRIOS",         mrp:575,  category:"DIAMOND" },
+  { id: 22, brandName:"DUMUZI", productName:"LF-D25B", image:"/images/products/LF-D25B.jpeg",     description:"DIAMOND 25 CAVITY BROWN",         mrp:640,  category:"DIAMOND" },
   { id: 23, brandName:"DUMUZI", productName:"LF-D25",  image:"/images/products/LF-D25.jpeg",      description:"DIAMOND 25 CAVITY",               mrp:699,  category:"DIAMOND" },
   { id: 24, brandName:"DUMUZI", productName:"LF-D25T", image:"/images/products/LF-D25T.jpeg",     description:"DIAMOND 25 CAVITY TRIOS",         mrp:749,  category:"DIAMOND" },
-  // ── BONBON SERIES ─────────────────────────────────────────────────────────
-  { id: 25, brandName:"DUMUZI", productName:"LF-BN9",  image:"/images/products/LF- BN9.jpeg",     description:"BONBON 9 CAVITY",                 mrp:270,  category:"BONBON"  },
-  { id: 26, brandName:"DUMUZI", productName:"LF-BN9T", image:"/images/products/LF-BN9T.jpeg",     description:"BONBON 9 CAVITY TRIOS",           mrp:299,  category:"BONBON"  },
+  // ── BN SERIES ──────────────────────────────────────────────────────────────
+  { id: 25, brandName:"DUMUZI", productName:"LF-BN9",  image:"/images/products/LF- BN9.jpeg",     description:"BN 9 CAVITY",                     mrp:549,  category:"BN"      },
+  { id: 26, brandName:"DUMUZI", productName:"LF-BN9T", image:"/images/products/LF-BN9T.jpeg",     description:"BN 9 CAVITY TRIOS",               mrp:299,  category:"BN"      },
   // ── OVAL SERIES ───────────────────────────────────────────────────────────
   { id: 27, brandName:"DUMUZI", productName:"LF-O9",   image:"/images/products/LF-O9.jpeg",       description:"OVAL 9 CAVITY",                   mrp:260,  category:"OVAL"    },
 ];

@@ -68,7 +68,7 @@ export const ContactSection = () => {
                 <Phone size={20} />
               </span>
               <span className="text-sm uppercase tracking-widest text-gray-800">
-                +44 20 7123 4567
+                +91-9161-115-116
               </span>
             </div>
             <div className="flex items-center space-x-4">
@@ -76,7 +76,7 @@ export const ContactSection = () => {
                 <MapPin size={20} />
               </span>
               <span className="text-sm uppercase tracking-widest text-gray-800">
-                12 Rue des Artisans, 75001 Paris, France
+                Lucknow, India
               </span>
             </div>
             <div className="flex items-center space-x-4">
@@ -84,7 +84,7 @@ export const ContactSection = () => {
                 <Mail size={20} />
               </span>
               <span className="text-sm uppercase tracking-widest text-gray-800 break-all">
-                hello@dumuzi.com
+                info@dumuzi.com
               </span>
             </div>
           </div>

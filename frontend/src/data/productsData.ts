@@ -137,7 +137,7 @@ export const products: Product[] = [
     productName: "LF-D9",
     image: "/images/products/LF-D9.jpeg",
     description: "DIAMOND 9 CAVITY",
-    mrp: 260,
+    mrp: 325,
   },
   {
     id: 17,
@@ -161,7 +161,7 @@ export const products: Product[] = [
     productName: "LF-D15",
     image: "/images/products/LF-D15.jpeg",
     description: "DIAMOND 15 CAVITY",
-    mrp: 430,
+    mrp: 499,
   },
   {
     id: 20,
@@ -169,7 +169,7 @@ export const products: Product[] = [
     productName: "LF-D15T",
     image: "/images/products/LF-D15T.jpeg",
     description: "DIAMOND 15 CAVITY TRIOS",
-    mrp: 460,
+    mrp: 425,
   },
   {
     id: 21,
@@ -177,7 +177,7 @@ export const products: Product[] = [
     productName: "LF-D18T",
     image: "/images/products/LF-D18T.jpeg",
     description: "DIAMOND 18 CAVITY TRIOS",
-    mrp: 549,
+    mrp: 575,
   },
   {
     id: 22,
@@ -185,7 +185,7 @@ export const products: Product[] = [
     productName: "LF-D25B",
     image: "/images/products/LF-D25B.jpeg",
     description: "DIAMOND 25 CAVITY BROWN",
-    mrp: 650,
+    mrp: 640,
   },
   {
     id: 23,
@@ -204,21 +204,21 @@ export const products: Product[] = [
     mrp: 749,
   },
 
-  // ── BONBON SERIES ─────────────────────────────────────────────────────────
+  // ── BN SERIES ──────────────────────────────────────────────────────────────
   {
     id: 25,
     brandName: "DUMUZI",
     productName: "LF-BN9",
     image: "/images/products/LF- BN9.jpeg",
-    description: "BONBON 9 CAVITY",
-    mrp: 270,
+    description: "BN 9 CAVITY",
+    mrp: 549,
   },
   {
     id: 26,
     brandName: "DUMUZI",
     productName: "LF-BN9T",
     image: "/images/products/LF-BN9T.jpeg",
-    description: "BONBON 9 CAVITY TRIOS",
+    description: "BN 9 CAVITY TRIOS",
     mrp: 299,
   },
 

@@ -29,7 +29,7 @@ const FILTERS = [
   { label: 'All',     value: 'ALL'     },
   { label: 'Heart',   value: 'HEART'   },
   { label: 'Diamond', value: 'DIAMOND' },
-  { label: 'Bonbon',  value: 'BONBON'  },
+  { label: 'BN',      value: 'BN'      },
   { label: 'Oval',    value: 'OVAL'    },
 ];
 
@@ -66,7 +66,7 @@ const CollectionsPage = () => {
 
       <SEO
         title="Collections — DUMUZI"
-        description="Browse all 27 DUMUZI handcrafted gift boxes. Heart, Diamond, Bonbon and Oval collections — for every occasion."
+        description="Browse all 27 DUMUZI handcrafted gift boxes. Heart, Diamond, BN and Oval collections — for every occasion."
       />
 
       {/* ── HERO ── */}
@@ -103,7 +103,7 @@ const CollectionsPage = () => {
             className="text-base leading-relaxed max-w-lg font-sans"
             style={{ color: 'var(--muted)' }}
           >
-            {products.length} handcrafted confectionery gift boxes. Heart-shaped, Diamond, Bonbon towers, and Oval trays — each filled with gold-foil wrapped truffles.
+            {products.length} handcrafted confectionery gift boxes. Heart-shaped, Diamond, BN towers, and Oval trays — each filled with gold-foil wrapped truffles.
           </motion.p>
         </div>
       </section>
