@@ -119,7 +119,7 @@ export const products: Product[] = [
     productName: "LF-H18D",
     image: "/images/products/LF-H18D.jpeg",
     description: "HEART 18 CAVITY",
-    mrp: 549,
+    mrp: 575,
   },
 
   // ── DIAMOND SERIES ────────────────────────────────────────────────────────
@@ -137,7 +137,7 @@ export const products: Product[] = [
     productName: "LF-D9",
     image: "/images/products/LF-D9.jpeg",
     description: "DIAMOND 9 CAVITY",
-    mrp: 325,
+    mrp: 260,
   },
   {
     id: 17,
@@ -211,7 +211,7 @@ export const products: Product[] = [
     productName: "LF-BN9",
     image: "/images/products/LF- BN9.jpeg",
     description: "BN 9 CAVITY",
-    mrp: 549,
+    mrp: 525,
   },
   {
     id: 26,
@@ -219,7 +219,7 @@ export const products: Product[] = [
     productName: "LF-BN9T",
     image: "/images/products/LF-BN9T.jpeg",
     description: "BN 9 CAVITY TRIOS",
-    mrp: 299,
+    mrp: 549,
   },
 
   // ── OVAL SERIES ───────────────────────────────────────────────────────────
