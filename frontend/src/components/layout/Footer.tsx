@@ -187,17 +187,17 @@ export const Footer = () => (
         <div className="flex items-center gap-4 flex-wrap justify-center">
           <div
             aria-label="Amazon"
-            className="flex items-center justify-center rounded-xl px-5 py-3"
+            className="flex items-center justify-center rounded-xl px-5 py-3 overflow-hidden"
             style={{ background: 'rgba(255,255,255,0.92)' }}
           >
-            <img src="/images/pnglogos/AMAZONLOGO.png" alt="Amazon" style={{ height: '22px', width: 'auto' }} />
+            <img src="/images/pnglogos/AMAZONLOGO.png" alt="Amazon" style={{ height: '60px', width: 'auto' }} />
           </div>
           <div
             aria-label="Meesho"
             className="flex items-center justify-center rounded-xl overflow-hidden"
             style={{ background: 'rgba(255,255,255,0.92)' }}
           >
-            <img src="/images/pnglogos/MEESHO.png" alt="Meesho" style={{ height: '38px', width: 'auto' }} />
+            <img src="/images/pnglogos/MEESHO.png" alt="Meesho" style={{ height: '80px', width: 'auto' }} />
           </div>
         </div>
       </motion.div>
