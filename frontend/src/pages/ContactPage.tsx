@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MapPin, Mail, Phone, Sparkles, ArrowRight } from "lucide-react";
+import { Mail, Phone, Sparkles } from "lucide-react";
 import type { CSSProperties } from "react";
 import { Button } from "../components/common/Button";
 import { ctaContent } from "../data/content";
@@ -111,28 +111,7 @@ export const ContactPage = () => {
                     Phone
                   </p>
                   <span className="text-lg font-display text-cream">
-                    +44 20 7123 4567
-                  </span>
-                </div>
-              </motion.div>
-
-              <motion.div
-                className="flex items-center space-x-6 group"
-                whileHover={{ x: 10 }}
-                transition={{ duration: 0.2 }}
-              >
-                <span
-                  className="p-4 rounded-full transition-colors duration-300 flex items-center justify-center"
-                  style={{ background: 'rgba(212,163,115,0.1)', border: '1px solid rgba(212,163,115,0.25)', color: 'var(--gold)' }}
-                >
-                  <MapPin size={24} />
-                </span>
-                <div>
-                  <p className="text-xs uppercase tracking-widest text-muted mb-1">
-                    Registered Office
-                  </p>
-                  <span className="text-lg font-display text-cream">
-                    12 Rue des Artisans, 75001 Paris, France
+                    +91-9161-115-116
                   </span>
                 </div>
               </motion.div>
@@ -150,10 +129,31 @@ export const ContactPage = () => {
                 </span>
                 <div>
                   <p className="text-xs uppercase tracking-widest text-muted mb-1">
-                    Email
+                    Sales Queries
                   </p>
                   <span className="text-lg font-display text-cream break-all">
-                    hello@dumuzi.com
+                    sales@littlefuns.in
+                  </span>
+                </div>
+              </motion.div>
+
+              <motion.div
+                className="flex items-center space-x-6 group"
+                whileHover={{ x: 10 }}
+                transition={{ duration: 0.2 }}
+              >
+                <span
+                  className="p-4 rounded-full transition-colors duration-300 flex items-center justify-center"
+                  style={{ background: 'rgba(212,163,115,0.1)', border: '1px solid rgba(212,163,115,0.25)', color: 'var(--gold)' }}
+                >
+                  <Mail size={24} />
+                </span>
+                <div>
+                  <p className="text-xs uppercase tracking-widest text-muted mb-1">
+                    Customer Queries
+                  </p>
+                  <span className="text-lg font-display text-cream break-all">
+                    info@littlefun.in
                   </span>
                 </div>
               </motion.div>
@@ -328,68 +328,6 @@ export const ContactPage = () => {
         </motion.div>
       </section>
 
-      {/* Map Section */}
-      <section className="h-[65vh] max-w-7xl mx-auto mb-12 rounded-2xl relative group overflow-hidden shadow-xl" style={{ background: 'var(--bg-dark)' }}>
-        <iframe
-          width="100%"
-          height="100%"
-          style={{ border: 0 }}
-          loading="lazy"
-          allowFullScreen
-          className="transition-all duration-1000 ease-in-out scale-100 group-hover:scale-105"
-          src="https://maps.google.com/maps?q=Rue+du+Faubourg+Saint-Honore+Paris&t=&z=14&ie=UTF8&iwloc=&output=embed"
-          title="DUMUZI Atelier"
-        ></iframe>
-
-        {/* Gradient Overlay */}
-        <div
-          className="absolute top-0 left-0 w-full h-32 pointer-events-none"
-          style={{ background: 'linear-gradient(to bottom, var(--bg-deep), transparent)' }}
-        />
-
-        {/* Floating Location Card */}
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-          className="glass-card absolute bottom-8 left-6 md:bottom-12 md:left-12 p-8 shadow-2xl max-w-sm"
-          style={{ borderLeft: '4px solid var(--gold)' }}
-        >
-          <h3 className="text-2xl font-display text-cream mb-2">
-            Our Atelier
-          </h3>
-          <p className="text-muted text-sm uppercase tracking-widest mb-6 border-b pb-4" style={{ borderBottomColor: 'rgba(212,163,115,0.2)' }}>
-            Monday to Friday · 10 AM to 6 PM
-          </p>
-          <div className="space-y-4 mb-6">
-            <div className="flex items-start gap-4">
-              <MapPin style={{ color: 'var(--gold)' }} className="mt-1 shrink-0" size={20} />
-              <p className="text-muted leading-relaxed">
-                12 Rue des Artisans
-                <br />
-                75001 Paris, France
-              </p>
-            </div>
-            <div className="flex items-center gap-4">
-              <Phone style={{ color: 'var(--gold)' }} size={20} />
-              <p className="text-muted">+44 20 7123 4567</p>
-            </div>
-          </div>
-          <a
-            href="https://www.google.com/maps/search/?api=1&query=Rue+du+Faubourg+Saint-Honore+Paris"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest transition-colors group/link text-gold hover:text-cream"
-          >
-            Get Directions{" "}
-            <ArrowRight
-              size={14}
-              className="group-hover/link:translate-x-1 transition-transform"
-            />
-          </a>
-        </motion.div>
-      </section>
     </div>
   );
 };
