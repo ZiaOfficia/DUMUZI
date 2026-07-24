@@ -77,6 +77,13 @@ const CollectionsPage = () => {
           minHeight: '42vh',
         }}
       >
+        <div className="absolute inset-0 opacity-25">
+          <img
+            src="/images/lifestyle/hero-luxury-hamper.jpg"
+            alt=""
+            className="w-full h-full object-cover"
+          />
+        </div>
         <div className="absolute top-1/3 right-1/4 w-80 h-80 rounded-full blur-[120px] pointer-events-none opacity-15" style={{ background: GOLD }} />
         <div className="max-w-7xl mx-auto px-6 lg:px-10 w-full py-12 sm:py-20 relative z-10">
           <motion.div

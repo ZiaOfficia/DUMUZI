@@ -89,12 +89,12 @@ export const actionImages = {
 };
 
 export const serviceImages = {
-  darkCollection:    '/images/products/LF-H18D.jpeg',
-  truffleCollection: '/images/products/LF-D25T.jpeg',
-  giftBoxes:         '/images/products/LF-D15T.jpeg',
-  weddingFavors:     '/images/products/LF-BN9T.jpeg',
-  corporateGifting:  '/images/products/LF-H12T.jpeg',
-  subscriptionBox:   '/images/products/LF-D18T.jpeg',
-  bespokeOrders:     '/images/products/LF-H18B.jpeg',
-  masterclasses:     '/images/products/DUMUZI.jpeg',
+  darkCollection:    '/images/lifestyle/hero-cocoa-forest.jpg',
+  truffleCollection: '/images/lifestyle/hero-minimalist.jpg',
+  giftBoxes:         '/images/lifestyle/hero-luxury-hamper.jpg',
+  weddingFavors:     '/images/lifestyle/hero-couple-blessing.jpg',
+  corporateGifting:  '/images/lifestyle/hero-boutique-checkout.jpg',
+  subscriptionBox:   '/images/lifestyle/hero-rakhi-box-1.jpg',
+  bespokeOrders:     '/images/lifestyle/hero-rakhi-box-2.jpg',
+  masterclasses:     '/images/lifestyle/hero-puja-thali.jpg',
 };

@@ -35,7 +35,7 @@ export const FAQPage = () => {
         <div className="absolute inset-0 opacity-40">
           {/* Using a high-quality abstract or relevant background image */}
           <img loading="lazy" decoding="async"
-            src="/images/products/LF-D25B.jpeg"
+            src="/images/lifestyle/hero-rakhi-box-4.jpg"
             alt="DUMUZI confectionery atelier"
             className="w-full h-full object-cover border-b-6 border-primary"
           />

@@ -82,6 +82,13 @@ const BestConfectionsPage = () => {
 
       {/* ── HERO ── */}
       <section className="relative overflow-hidden" style={{ background: 'linear-gradient(160deg, var(--bg-deep) 0%, var(--bg-dark) 60%, var(--bg-warm) 100%)', minHeight: '70vh', display: 'flex', alignItems: 'center' }}>
+        <div className="absolute inset-0 opacity-25">
+          <img
+            src="/images/lifestyle/hero-minimalist.jpg"
+            alt=""
+            className="w-full h-full object-cover"
+          />
+        </div>
         {/* Ambient glows */}
         <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full blur-[140px] pointer-events-none opacity-20" style={{ background: GOLD }} />
         <div className="absolute bottom-0 left-1/4 w-72 h-72 rounded-full blur-[120px] pointer-events-none opacity-10" style={{ background: GOLDL }} />

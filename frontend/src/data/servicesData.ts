@@ -350,7 +350,7 @@ export const servicesData: ServiceData[] = [
   {
     id: "filled delicacies-collection",
     title: "Filled Delicacies Collection",
-    heroImage: "/images/assets/atelier_hero.png",
+    heroImage: "/images/lifestyle/hero-diwali.jpg",
     heroTitle: "FILLED DELICACIES COLLECTION — BELGIAN CRAFT, DUMUZI SOUL",
     intro: {
       heading: "HANDCRAFTED FILLED DELICACIES",

@@ -150,7 +150,7 @@ export const ServicesPage = () => {
           <img
             loading="lazy"
             decoding="async"
-            src="/images/products/LF-D25T.jpeg"
+            src="/images/lifestyle/hero-rakhi-box-3.jpg"
             alt="DUMUZI confectionery collections"
             className="w-full h-full object-cover"
           />

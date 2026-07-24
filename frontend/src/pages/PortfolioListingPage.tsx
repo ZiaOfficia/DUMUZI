@@ -37,7 +37,7 @@ export const PortfolioListingPage = () => {
       <section className="bg-stone-900 text-white py-60 px-6 text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-30">
           <img loading="lazy" decoding="async"
-            src="/images/products/LF-H12T.jpeg"
+            src="/images/lifestyle/hero-couple-blessing.jpg"
             alt="DUMUZI Collections & Guides"
             className="w-full h-full object-cover"
           />

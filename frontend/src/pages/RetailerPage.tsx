@@ -141,6 +141,13 @@ export const RetailerPage = () => {
           minHeight: '48vh',
         }}
       >
+        <div className="absolute inset-0 opacity-25">
+          <img
+            src="/images/lifestyle/hero-boutique-shopping.jpg"
+            alt=""
+            className="w-full h-full object-cover"
+          />
+        </div>
         <div className="absolute top-1/3 right-1/4 w-80 h-80 rounded-full blur-[120px] pointer-events-none opacity-15" style={{ background: GOLD }} />
         <div className="max-w-5xl mx-auto px-6 lg:px-8 py-24 text-center relative z-10">
           <motion.div
@@ -199,6 +206,38 @@ export const RetailerPage = () => {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Retail experience visual */}
+      <section className="px-6 lg:px-8 pb-20 lg:pb-28">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative rounded-[32px] overflow-hidden"
+            style={{ aspectRatio: '16/9', border: '1.5px solid rgba(212,163,115,0.25)', boxShadow: '0 40px 100px rgba(0,0,0,0.6)' }}
+          >
+            <img
+              src="/images/lifestyle/retailer-boutique-counter.jpg"
+              alt="DUMUZI gift boxes at the retail counter"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-12 z-10">
+              <p className="font-display text-2xl md:text-3xl italic mb-1" style={{ color: 'var(--cream)', fontWeight: 500 }}>
+                "A catalogue that stands out on any shelf."
+              </p>
+              <p className="text-[10px] uppercase tracking-widest font-semibold" style={{ color: GOLDL }}>
+                The DUMUZI Retail Experience
+              </p>
+            </div>
+            {['top-4 left-4 border-t border-l','top-4 right-4 border-t border-r','bottom-4 left-4 border-b border-l','bottom-4 right-4 border-b border-r'].map((cls,i) => (
+              <div key={i} className={`absolute ${cls} w-8 h-8`} style={{ borderColor: 'rgba(212,163,115,0.3)' }} />
+            ))}
+          </motion.div>
         </div>
       </section>
 

@@ -60,6 +60,12 @@ const imageGallery = [
   "/images/products/LF- BN9.jpeg",
   "/images/products/LF-BN9T.jpeg",
   "/images/products/LF-O9.jpeg",
+  // Festive & lifestyle moments
+  "/images/lifestyle/gallery-raksha-bandhan-1.jpg",
+  "/images/lifestyle/gallery-diwali-heart-box.jpg",
+  "/images/lifestyle/gallery-rakhi-puja-thali.jpg",
+  "/images/lifestyle/gallery-boutique-shopping.jpg",
+  "/images/lifestyle/gallery-rakhi-tying.jpg",
 ];
 
 export const GalleryPage = () => {

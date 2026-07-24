@@ -28,10 +28,10 @@ const containerVariants: Variants = {
 };
 
 const heroImages = [
-  "/images/products/DUMUZI.jpeg",
-  "/images/products/LF-D25T.jpeg",
-  "/images/products/LF-H18D.jpeg",
-  "/images/products/LF-BN9T.jpeg",
+  "/images/lifestyle/hero-cocoa-forest.jpg",
+  "/images/lifestyle/hero-rakhi-thali.jpg",
+  "/images/lifestyle/hero-diwali.jpg",
+  "/images/lifestyle/hero-couple-tying.jpg",
 ];
 
 export const AboutPage = () => {
@@ -287,8 +287,36 @@ export const AboutPage = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
-          <div className="flex flex-col" />
-          <div className="flex flex-col md:mt-32" />
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="flex flex-col relative rounded-[28px] overflow-hidden"
+            style={{ aspectRatio: '3/4', border: '1.5px solid rgba(212,163,115,0.22)', boxShadow: '0 30px 80px rgba(0,0,0,0.55)' }}
+          >
+            <img
+              src="/images/lifestyle/about-people-1.jpg"
+              alt="A joyful moment sharing DUMUZI confections"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.12 }}
+            className="flex flex-col md:mt-32 relative rounded-[28px] overflow-hidden"
+            style={{ aspectRatio: '3/4', border: '1.5px solid rgba(212,163,115,0.22)', boxShadow: '0 30px 80px rgba(0,0,0,0.55)' }}
+          >
+            <img
+              src="/images/lifestyle/about-people-2.jpg"
+              alt="A cherished DUMUZI gifting tradition"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
+          </motion.div>
         </div>
       </section>
 

@@ -24,8 +24,8 @@ const NewsletterSection = () => {
         <img
           loading="lazy"
           decoding="async"
-          src="/images/products/LF-H12T.jpeg"
-          alt="DUMUZI Heart 12 Trios Gift Box"
+          src="/images/lifestyle/newsletter-festive.jpg"
+          alt="DUMUZI festive gift boxes, elegantly presented"
           className="w-full h-full object-cover"
         />
         {/* Multi-layer dark overlay */}
