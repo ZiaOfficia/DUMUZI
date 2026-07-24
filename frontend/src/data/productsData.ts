@@ -78,7 +78,7 @@ export const products: Product[] = [
     brandName: "DUMUZI",
     productName: "LF-H9P",
     image: "/images/products/LF-H9P .jpeg",
-    description: "HEART 9 CAVITY POLYCARBONATE",
+    description: "HEART 9 CAVITY PLATINUM",
     mrp: 325,
   },
   {
@@ -94,7 +94,7 @@ export const products: Product[] = [
     brandName: "DUMUZI",
     productName: "LF-H12P",
     image: "/images/products/LF-H12P.jpeg",
-    description: "HEART 12 CAVITY POLYCARBONATE",
+    description: "HEART 12 CAVITY PLATINUM",
     mrp: 375,
   },
   {
