@@ -132,7 +132,7 @@ export const ContactPage = () => {
                     Sales Queries
                   </p>
                   <span className="text-lg font-display text-cream break-all">
-                    sales@littlefuns.in
+                    sales@littlefun.in
                   </span>
                 </div>
               </motion.div>
@@ -153,7 +153,7 @@ export const ContactPage = () => {
                     Customer Queries
                   </p>
                   <span className="text-lg font-display text-cream break-all">
-                    info@littlefun.in
+                    sales@littlefun.in
                   </span>
                 </div>
               </motion.div>

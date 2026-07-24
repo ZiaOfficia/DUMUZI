@@ -147,10 +147,10 @@ export const FAQPage = () => {
           <p className="text-gray-400 mb-10 text-lg font-light">
             Cannot find what you are looking for? Email us at{" "}
             <a
-              href="mailto:hello@dumuzi.com"
+              href="mailto:sales@littlefun.in"
               className="text-secondary hover:underline"
             >
-              hello@dumuzi.com
+              sales@littlefun.in
             </a>{" "}
             — we read and answer every message.
           </p>

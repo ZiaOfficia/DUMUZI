@@ -84,7 +84,7 @@ export const ContactSection = () => {
                 <Mail size={20} />
               </span>
               <span className="text-sm uppercase tracking-widest text-gray-800 break-all">
-                info@dumuzi.com
+                sales@littlefun.in
               </span>
             </div>
           </div>

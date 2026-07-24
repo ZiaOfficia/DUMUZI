@@ -122,7 +122,7 @@ export const TermsOfServicePage = () => {
               DUMUZI
             </h3>
             <p className="mb-1">
-              <strong>Email:</strong> hello@dumuzi.com
+              <strong>Email:</strong> sales@littlefun.in
             </p>
             <p className="mb-1">
               <strong>Phone:</strong> +44 20 7123 4567

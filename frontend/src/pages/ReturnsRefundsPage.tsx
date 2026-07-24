@@ -38,7 +38,7 @@ const ReturnsRefundsPage = () => {
         <div className="mt-10 rounded-2xl border p-6" style={{ background: 'rgba(212,163,115,0.08)', borderColor: 'rgba(212,163,115,0.2)' }}>
           <p className="text-[11px] uppercase tracking-[0.34em] font-bold mb-3" style={{ color: 'var(--gold)' }}>Contact</p>
           <p className="text-sm leading-relaxed font-sans" style={{ color: 'var(--cream)' }}>
-            Please reach out to our support team at <a href="mailto:orders@dumuzi.com" style={{ color: 'var(--gold)' }}>orders@dumuzi.com</a> with your order number and a brief description of the issue.
+            Please reach out to our support team at <a href="mailto:sales@littlefun.in" style={{ color: 'var(--gold)' }}>sales@littlefun.in</a> with your order number and a brief description of the issue.
           </p>
         </div>
 

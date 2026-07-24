@@ -48,7 +48,7 @@ export const PrivacyPolicyPage = () => {
         <div className="mt-10 rounded-2xl border p-6" style={{ background: 'rgba(212,163,115,0.08)', borderColor: 'rgba(212,163,115,0.2)' }}>
           <p className="text-[11px] uppercase tracking-[0.34em] font-bold mb-3" style={{ color: 'var(--gold)' }}>Need help?</p>
           <p className="text-sm leading-relaxed font-sans" style={{ color: 'var(--cream)' }}>
-            If you have questions about your personal data or would like to make a request, email <a href="mailto:privacy@dumuzi.com" style={{ color: 'var(--gold)' }}>privacy@dumuzi.com</a>.
+            If you have questions about your personal data or would like to make a request, email <a href="mailto:sales@littlefun.in" style={{ color: 'var(--gold)' }}>sales@littlefun.in</a>.
           </p>
         </div>
 

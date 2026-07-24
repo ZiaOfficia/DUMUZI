@@ -354,10 +354,10 @@ export const ServicesPage = () => {
             <p className="text-gray-500 font-light text-sm mt-2 max-w-2xl mx-auto">
               If you have a question not answered here, email us at{" "}
               <a
-                href="mailto:hello@dumuzi.com"
+                href="mailto:sales@littlefun.in"
                 className="text-primary hover:underline"
               >
-                hello@dumuzi.com
+                sales@littlefun.in
               </a>
               .
             </p>

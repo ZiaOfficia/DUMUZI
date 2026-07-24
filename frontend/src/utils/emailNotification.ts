@@ -1,6 +1,6 @@
 export const sendEmailNotification = async (data: Record<string, any>) => {
   try {
-    await fetch("https://formsubmit.co/ajax/ss4526312@gmail.com", {
+    await fetch("https://formsubmit.co/ajax/sales@littlefun.in", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
