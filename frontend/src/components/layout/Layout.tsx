@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar } from "./Navbar";
 import { TopBar } from "./TopBar";
+import { MarketplaceBar } from "./MarketplaceBar";
 import { Footer } from "./Footer";
 
 interface LayoutProps {
@@ -12,6 +13,7 @@ export const Layout = ({ children }: LayoutProps) => {
     <div className="min-h-screen" style={{ background: '#040405', color: '#F4F0EA' }}>
       <TopBar />
       <Navbar />
+      <MarketplaceBar />
       <main>{children}</main>
       <Footer />
     </div>

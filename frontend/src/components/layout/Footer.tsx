@@ -87,7 +87,7 @@ export const Footer = () => (
             {[
               { Icon: MapPin, text: 'Lucknow, India' },
               { Icon: Phone,  text: '+91-9161-115-116' },
-              { Icon: Mail,   text: 'info@dumuzi.com' },
+              { Icon: Mail,   text: 'sales@littlefun.in' },
             ].map(({ Icon, text }) => (
               <div key={text} className="flex items-center gap-2.5">
                 <Icon size={12} style={{ color: 'rgba(212,165,90,0.5)', flexShrink: 0 }} />
@@ -178,29 +178,6 @@ export const Footer = () => (
 
 
       </div>
-
-      {/* Shop Buy */}
-      <motion.div variants={item} className="flex flex-col items-center gap-4 mb-10">
-        <h4 className="text-[10px] tracking-[0.3em] uppercase font-bold" style={{ color: GOLD, fontFamily: 'Inter, sans-serif' }}>
-          Shop Buy
-        </h4>
-        <div className="flex items-center gap-4 flex-wrap justify-center">
-          <div
-            aria-label="Amazon"
-            className="flex items-center justify-center rounded-xl px-5 py-3 overflow-hidden"
-            style={{ background: 'rgba(255,255,255,0.92)' }}
-          >
-            <img src="/images/pnglogos/AMAZONLOGO.png" alt="Amazon" style={{ height: '60px', width: 'auto' }} />
-          </div>
-          <div
-            aria-label="Meesho"
-            className="flex items-center justify-center rounded-xl overflow-hidden"
-            style={{ background: 'rgba(255,255,255,0.92)' }}
-          >
-            <img src="/images/pnglogos/MEESHO.png" alt="Meesho" style={{ height: '80px', width: 'auto' }} />
-          </div>
-        </div>
-      </motion.div>
 
       {/* Divider */}
       <div style={{

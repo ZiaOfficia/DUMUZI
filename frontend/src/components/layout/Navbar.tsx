@@ -435,18 +435,26 @@ export const Navbar = () => {
                 Also Available On
               </p>
               <div className="flex items-center gap-3">
-                <div
+                <a
+                  href="https://amzn.in/d/0ihpOhSG"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Amazon"
                   className="flex items-center justify-center rounded-xl px-4 py-2.5 overflow-hidden"
                   style={{ background: 'rgba(255,255,255,0.92)' }}
                 >
                   <img src="/images/pnglogos/AMAZONLOGO.png" alt="Amazon" style={{ height: '52px', width: 'auto' }} />
-                </div>
-                <div
+                </a>
+                <a
+                  href="https://www.meesho.com/LITTLEFUNFOODSBEVERAGESPRIVATELIMITED?ms=2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Meesho"
                   className="flex items-center justify-center rounded-xl overflow-hidden"
                   style={{ background: 'rgba(255,255,255,0.92)' }}
                 >
                   <img src="/images/pnglogos/MEESHO.png" alt="Meesho" style={{ height: '68px', width: 'auto' }} />
-                </div>
+                </a>
               </div>
             </div>
 
