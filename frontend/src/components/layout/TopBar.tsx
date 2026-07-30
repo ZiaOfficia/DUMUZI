@@ -1,14 +1,24 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import Marquee from 'react-fast-marquee';
+import { tickerOffers } from '../../data/offersData';
 
+/** Static brand lines that ride along between the offers. */
 const messages = [
   'FREE DELIVERY on orders above ₹500',
-  'Handcrafted with Finest Single-Origin Ingredients',
-  'New Collection — DUMUZI Gold Series Available Now',
-  'Artisan Confectioner · Est. 2009',
-  '100% Organic · Ethically Sourced',
   'Luxury Gift Wrapping Included',
 ];
+
+const itemStyle: React.CSSProperties = {
+  color: '#e8c07a',
+  fontSize: '10px',
+  letterSpacing: '0.22em',
+  fontWeight: 600,
+  textTransform: 'uppercase',
+  fontFamily: 'Inter, DM Sans, sans-serif',
+  whiteSpace: 'nowrap',
+  marginRight: '52px',
+};
 
 const Gem = () => (
   <svg width="8" height="8" viewBox="0 0 8 8" fill="none" style={{ flexShrink: 0 }}>
@@ -45,21 +55,23 @@ export const TopBar = () => (
         pauseOnHover
         style={{ padding: '9px 0' }}
       >
-        {messages.map((msg, i) => (
-          <span
-            key={i}
-            className="flex items-center gap-3"
-            style={{
-              color: '#e8c07a',
-              fontSize: '10px',
-              letterSpacing: '0.22em',
-              fontWeight: 600,
-              textTransform: 'uppercase',
-              fontFamily: 'Inter, DM Sans, sans-serif',
-              whiteSpace: 'nowrap',
-              marginRight: '52px',
-            }}
+        {/* Every live offer — single and combo — links straight to its own card */}
+        {tickerOffers.map(offer => (
+          <Link
+            key={offer.id}
+            to={offer.to}
+            className="flex items-center gap-3 no-underline"
+            style={{ ...itemStyle, cursor: 'pointer', transition: 'color 0.25s' }}
+            onMouseEnter={e => { e.currentTarget.style.color = '#fff6e2'; e.currentTarget.style.textDecoration = 'underline'; }}
+            onMouseLeave={e => { e.currentTarget.style.color = '#e8c07a'; e.currentTarget.style.textDecoration = 'none'; }}
           >
+            <Gem />
+            {offer.label}
+          </Link>
+        ))}
+
+        {messages.map((msg, i) => (
+          <span key={i} className="flex items-center gap-3" style={itemStyle}>
             <Gem />
             {msg}
           </span>

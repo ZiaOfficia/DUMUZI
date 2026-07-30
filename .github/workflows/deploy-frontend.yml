@@ -1,4 +1,31 @@
-name: Deploy Frontend to Hostinger
+# Builds the frontend and uploads it to GoDaddy (Plesk) over FTPS on every
+# push to main that touches frontend/ — replaces the manual "npm run build,
+# then drag dist/ into File Manager" routine.
+#
+# ── One-time setup in GitHub ──────────────────────────────────────────────────
+# Settings → Secrets and variables → Actions
+#
+#   Secrets (required):
+#     FTP_SERVER    e.g. a2nwvpweb118.shr.prod.iad2.secureserver.net
+#     FTP_USERNAME  the Plesk FTP account name
+#     FTP_PASSWORD  that account's password
+#
+#   Variables (optional — sensible defaults below):
+#     FTP_SERVER_DIR      remote folder holding index.html   (default ./)
+#                         The default assumes the FTP account's home directory
+#                         IS dumuzi.in's document root, so we deploy straight
+#                         into where we land. This Plesk box (subscription
+#                         advid.in) hosts many domains side by side — /httpdocs
+#                         belongs to advid.in, so never point this there.
+#     FTP_PORT            FTP port                           (default 21)
+#     VITE_API_BASE_URL   backend URL baked into the build
+#                         (default https://dumuzi-backend.onrender.com)
+#
+# frontend/.env.production is gitignored, so the build below gets
+# VITE_API_BASE_URL from the variable above instead. Without it the site would
+# fall back to http://localhost:5000 and every API call would fail.
+
+name: Deploy Frontend to GoDaddy
 
 on:
   push:
@@ -6,7 +33,13 @@ on:
       - main
     paths:
       - 'frontend/**'
+      - '.github/workflows/deploy-frontend.yml'
   workflow_dispatch:
+
+# Two overlapping FTP uploads would fight over the same files — queue instead.
+concurrency:
+  group: godaddy-frontend-deploy
+  cancel-in-progress: false
 
 jobs:
   deploy:
@@ -24,22 +57,37 @@ jobs:
           cache-dependency-path: frontend/package-lock.json
 
       - name: Install dependencies
-        run: cd frontend && npm ci
+        working-directory: frontend
+        run: npm ci
 
       - name: Build frontend
-        run: cd frontend && npm run build
+        working-directory: frontend
+        env:
+          # Vite picks up VITE_* process env vars and prefers them over .env files
+          VITE_API_BASE_URL: ${{ vars.VITE_API_BASE_URL || 'https://dumuzi-backend.onrender.com' }}
+        run: npm run build
 
-      - name: Deploy via FTP
+      - name: Verify build output
+        working-directory: frontend
+        run: |
+          test -f dist/index.html || { echo "::error::dist/index.html missing — build produced nothing"; exit 1; }
+          test -f dist/web.config || echo "::warning::dist/web.config missing — IIS may 404 on client-side routes"
+          echo "Built files:" && ls -la dist
+
+      - name: Deploy via FTPS
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          port: ${{ secrets.FTP_PORT }}
-          local-dir: ./frontend/dist/
-          server-dir: /public_html/
+          port: ${{ vars.FTP_PORT || 21 }}
           protocol: ftps
           security: loose
+          local-dir: ./frontend/dist/
+          server-dir: ${{ vars.FTP_SERVER_DIR || './' }}
+          # Only changed files are sent; the action tracks state in
+          # .ftp-deploy-sync-state.json on the server. Delete that file to
+          # force a full re-upload.
           timeout: 60000
           exclude: |
             **/.git*

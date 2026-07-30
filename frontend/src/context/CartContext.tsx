@@ -4,7 +4,7 @@
  *  • Guest             → local in-memory state (migrated to DB on login)
  */
 import {
-  createContext, useContext, useReducer, useEffect, useCallback, type ReactNode,
+  createContext, useContext, useReducer, useEffect, useState, useCallback, type ReactNode,
 } from 'react';
 import { cartApi } from '../services/api';
 import { useAuth } from './AuthContext';
@@ -21,6 +21,21 @@ export interface GuestCartItem {
 
 // ── Unified CartItem shape exposed to components ──────────────────────────────
 export type CartItem = GuestCartItem;
+
+// ── Free gift item ────────────────────────────────────────────────────────────
+// Gifts are ₹0 add-ons the customer chooses to claim. They're tracked separately
+// from paid items so they never sync to the billing cart or skew the combo
+// spend threshold, and are auto-removed when they stop being eligible.
+export interface GiftItem {
+  key: string;                    // unique per gift (source + product + anchor)
+  productId: number;
+  name: string;
+  image: string;
+  mrp: number;                    // original worth, shown struck-through
+  source: 'single' | 'combo';
+  buyId?: number;                 // single: qualifying product must stay in cart
+  threshold?: number;             // combo: min subtotal required to keep it
+}
 
 interface CartState {
   items: CartItem[];
@@ -85,6 +100,9 @@ interface CartContextType extends Omit<CartState, 'cartRowIds'> {
   removeItem: (productId: number) => Promise<void>;
   updateQty: (productId: number, quantity: number) => Promise<void>;
   clearCart: () => Promise<void>;
+  gifts: GiftItem[];
+  addGift: (gift: GiftItem) => void;
+  removeGift: (key: string) => void;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -112,6 +130,31 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const [state, dispatch] = useReducer(cartReducer, {
     items: [], totalItems: 0, totalPrice: 0, cartRowIds: new Map(), loading: false,
   });
+
+  // ── Free gifts (local, ₹0, customer-claimed) ─────────────────────────────────
+  const [gifts, setGifts] = useState<GiftItem[]>([]);
+
+  const addGift = useCallback((gift: GiftItem) => {
+    setGifts(prev => prev.some(g => g.key === gift.key) ? prev : [...prev, gift]);
+  }, []);
+
+  const removeGift = useCallback((key: string) => {
+    setGifts(prev => prev.filter(g => g.key !== key));
+  }, []);
+
+  // Auto-remove gifts that are no longer eligible:
+  //  • single → the qualifying box was removed from the cart
+  //  • combo  → the subtotal dropped below the unlocking threshold
+  useEffect(() => {
+    setGifts(prev => {
+      const next = prev.filter(g =>
+        g.source === 'single'
+          ? state.items.some(i => i.id === g.buyId)
+          : state.totalPrice >= (g.threshold ?? Infinity),
+      );
+      return next.length === prev.length ? prev : next;
+    });
+  }, [state.items, state.totalPrice]);
 
   // When auth state resolves: load cart from DB (if logged in)
   useEffect(() => {
@@ -181,6 +224,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   // ── clearCart ──────────────────────────────────────────────────────────────
   const clearCart = useCallback(async () => {
+    setGifts([]);
     if (!isAuthenticated) {
       dispatch({ type: 'CLEAR_CART' });
       return;
@@ -201,6 +245,9 @@ export function CartProvider({ children }: { children: ReactNode }) {
       removeItem,
       updateQty,
       clearCart,
+      gifts,
+      addGift,
+      removeGift,
     }}>
       {children}
     </CartContext.Provider>

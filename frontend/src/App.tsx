@@ -25,6 +25,7 @@ import { PrivacyPolicyPage }      from './pages/PrivacyPolicyPage';
 import { TermsOfServicePage }     from './pages/TermsOfServicePage';
 import ThankYouPage               from './pages/ThankYouPage';
 import ShopPage                   from './pages/ShopPage';
+import OffersPage                 from './pages/OffersPage';
 import BestSellersPage            from './pages/BestSellersPage';
 import TrackOrderPage             from './pages/TrackOrderPage';import ShippingDeliveryPage       from './pages/ShippingDeliveryPage';
 import ReturnsRefundsPage         from './pages/ReturnsRefundsPage';
@@ -67,6 +68,7 @@ function App() {
                 <Route path="/services"                element={<ServicesPage />} />
                 <Route path="/collections"             element={<CollectionsPage />} />
                 <Route path="/shop"                    element={<ShopPage />} />
+                <Route path="/offers"                  element={<OffersPage />} />
                 <Route path="/best-sellers"           element={<BestSellersPage />} />
                 <Route path="/track-order"            element={<TrackOrderPage />} />
                 <Route path="/shipping-delivery"     element={<ShippingDeliveryPage />} />

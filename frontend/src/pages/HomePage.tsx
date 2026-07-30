@@ -12,6 +12,7 @@ import { ContactCTASection }        from '../components/sections/ContactCTASecti
 import { TestimonialsSection }      from '../components/sections/TestimonialsSection';
 import NewsletterSection            from '../components/sections/NewsletterSection';
 import { InstagramFeed }            from '../components/sections/InstagramFeed';
+import { VideoShowcase }            from '../components/sections/VideoShowcase';
 
 export const HomePage = () => {
   return (
@@ -42,31 +43,35 @@ export const HomePage = () => {
       <div className="section-divider" />
       <CraftBannerSection />
 
-      {/* 8 — How It Works: Bean to Box */}
+      {/* 8 — Video reels: DUMUZI in Motion */}
+      <div className="section-divider" />
+      <VideoShowcase />
+
+      {/* 9 — How It Works: Bean to Box */}
       <div className="section-divider" />
       <HowItWorks />
 
-      {/* 9 — Gifting CTA (linking to /collections) */}
+      {/* 10 — Gifting CTA (linking to /collections) */}
       <div className="section-divider" />
       <GiftingCTA />
 
-      {/* 10 — Testimonials */}
+      {/* 11 — Testimonials */}
       <div className="section-divider" />
       <TestimonialsSection />
 
-      {/* 11 — Blog Preview (3 latest articles, linking to /blog) */}
+      {/* 12 — Blog Preview (3 latest articles, linking to /blog) */}
       <div className="section-divider" />
       <BlogPreviewSection />
 
-      {/* 12 — Contact CTA (links to /contact) */}
+      {/* 13 — Contact CTA (links to /contact) */}
       <div className="section-divider" />
       <ContactCTASection />
 
-      {/* 13 — Instagram Feed */}
+      {/* 14 — Instagram Feed */}
       <div className="section-divider" />
       <InstagramFeed />
 
-      {/* 14 — Newsletter */}
+      {/* 15 — Newsletter */}
       <div className="section-divider" />
       <NewsletterSection />
     </>

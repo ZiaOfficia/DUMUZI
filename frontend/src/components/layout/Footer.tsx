@@ -70,7 +70,7 @@ export const Footer = () => (
                 backgroundClip: 'text',
               }}
             >
-              DUMUZI<sup style={{ fontSize: '0.4em', marginLeft: '1px' }}>&reg;</sup>
+              DUMUZI<sup style={{ fontSize: '0.4em', marginLeft: '1px' }}>&trade;</sup>
             </span>
             <span className="text-[8px] tracking-[0.4em] uppercase" style={{ color: 'rgba(212,165,90,0.35)', fontFamily: 'Inter, sans-serif' }}>
               Luxury Confectionery

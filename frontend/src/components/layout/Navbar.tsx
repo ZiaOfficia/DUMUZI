@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, User, ShoppingBag, Menu, X, LogOut, Settings, ChevronDown, Package } from 'lucide-react';
+import { Search, User, ShoppingBag, Menu, X, LogOut, Settings, ChevronDown, Package, Gift, Tag } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
 import { useAuth } from '../../context/AuthContext';
@@ -18,6 +18,11 @@ const navLinks = [
   { name: 'Blog',        path: '/blog' },
   { name: 'Become an Authorised Retailer (DSRO)', path: '/become-a-retailer' },
   { name: 'Contact',     path: '/contact' },
+];
+
+const offerLinks = [
+  { name: 'Single Offer', path: '/offers?tab=single', icon: Tag },
+  { name: 'Combo Offer',  path: '/offers?tab=combo',  icon: Gift },
 ];
 
 const IconBtn = ({
@@ -57,9 +62,11 @@ export const Navbar = () => {
   const [menuOpen, setMenuOpen]      = useState(false);
   const [cartOpen, setCartOpen]      = useState(false);
   const [userDropOpen, setUserDropOpen] = useState(false);
+  const [offersOpen, setOffersOpen]  = useState(false);
   const [searchOpen, setSearchOpen]  = useState(false);
   const [searchTerm, setSearchTerm]  = useState('');
   const dropRef                      = useRef<HTMLDivElement>(null);
+  const offersRef                    = useRef<HTMLLIElement>(null);
   const searchRef                    = useRef<HTMLDivElement>(null);
   const searchInputRef               = useRef<HTMLInputElement>(null);
 
@@ -67,6 +74,13 @@ export const Navbar = () => {
     const fn = () => setScrolled(window.scrollY > 40);
     window.addEventListener('scroll', fn);
     return () => window.removeEventListener('scroll', fn);
+  }, []);
+
+  // Let any page slide the cart open (e.g. "Buy Now" on the Offers page)
+  useEffect(() => {
+    const open = () => setCartOpen(true);
+    window.addEventListener('dumuzi:open-cart', open);
+    return () => window.removeEventListener('dumuzi:open-cart', open);
   }, []);
 
   // Close dropdown on outside click
@@ -77,6 +91,9 @@ export const Navbar = () => {
       }
       if (searchRef.current && !searchRef.current.contains(e.target as Node)) {
         setSearchOpen(false);
+      }
+      if (offersRef.current && !offersRef.current.contains(e.target as Node)) {
+        setOffersOpen(false);
       }
     };
     document.addEventListener('mousedown', handler);
@@ -141,7 +158,7 @@ export const Navbar = () => {
               backgroundClip: 'text',
             }}
           >
-            DUMUZI<sup style={{ fontSize: '0.45em', marginLeft: '1px' }}>&reg;</sup>
+            DUMUZI<sup style={{ fontSize: '0.45em', marginLeft: '1px' }}>&trade;</sup>
           </span>
 
         </Link>
@@ -193,6 +210,64 @@ export const Navbar = () => {
               </li>
             );
           })}
+
+          {/* Offers dropdown */}
+          <li
+            className="relative"
+            ref={offersRef}
+            onMouseEnter={() => setOffersOpen(true)}
+            onMouseLeave={() => setOffersOpen(false)}
+          >
+            <button
+              onClick={() => setOffersOpen(v => !v)}
+              className="relative flex items-center gap-1 px-4 py-2 rounded-lg text-[13px] tracking-wide transition-all duration-250 cursor-pointer bg-transparent border-none"
+              style={{
+                color: pathname === '/offers' ? GOLDL : 'rgba(212,165,90,0.52)',
+                fontWeight: pathname === '/offers' ? 600 : 400,
+                background: pathname === '/offers' ? 'rgba(212,165,90,0.06)' : 'transparent',
+              }}
+              onMouseEnter={e => { if (pathname !== '/offers') e.currentTarget.style.color = 'var(--cream)'; }}
+              onMouseLeave={e => { if (pathname !== '/offers') e.currentTarget.style.color = 'rgba(212,165,90,0.52)'; }}
+            >
+              <Gift size={13} /> Offers
+              <ChevronDown size={11} style={{ opacity: 0.6, transform: offersOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }} />
+            </button>
+
+            <AnimatePresence>
+              {offersOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 8, scale: 0.96 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 8, scale: 0.96 }}
+                  transition={{ duration: 0.16 }}
+                  className="absolute left-0 top-[calc(100%+8px)] w-48 rounded-xl overflow-hidden z-50"
+                  style={{
+                    background: 'rgba(18,12,8,0.98)',
+                    border: '1px solid rgba(212,165,90,0.2)',
+                    boxShadow: '0 16px 40px rgba(0,0,0,0.6)',
+                    backdropFilter: 'blur(24px)',
+                  }}
+                >
+                  {offerLinks.map(({ name, path, icon: Icon }, idx) => (
+                    <Link
+                      key={name}
+                      to={path}
+                      onClick={() => setOffersOpen(false)}
+                      className="flex items-center gap-2.5 px-4 py-3 text-xs font-semibold transition-colors"
+                      style={{
+                        color: 'rgba(212,165,90,0.7)',
+                        borderTop: idx > 0 ? '1px solid rgba(212,165,90,0.08)' : 'none',
+                      }}
+                      onMouseEnter={e => { e.currentTarget.style.background = 'rgba(212,165,90,0.07)'; e.currentTarget.style.color = GOLDL; }}
+                      onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'rgba(212,165,90,0.7)'; }}
+                    >
+                      <Icon size={13} /> {name}
+                    </Link>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </li>
         </ul>
 
         {/* Right Icons */}
@@ -427,6 +502,27 @@ export const Navbar = () => {
                   </li>
                 );
               })}
+
+              {/* Offers (mobile) */}
+              <li className="mt-1 pt-2" style={{ borderTop: '1px solid rgba(212,165,90,0.08)' }}>
+                <div className="flex items-center gap-2 px-4 pb-1">
+                  <Gift size={13} style={{ color: GOLD }} />
+                  <span className="text-[10px] uppercase tracking-[0.2em] font-bold" style={{ color: 'rgba(212,165,90,0.5)' }}>
+                    Offers
+                  </span>
+                </div>
+                {offerLinks.map(({ name, path, icon: Icon }) => (
+                  <Link
+                    key={name}
+                    to={path}
+                    onClick={() => setMenuOpen(false)}
+                    className="flex items-center gap-3 pl-8 pr-4 py-2.5 rounded-xl text-sm tracking-wide transition-all duration-200"
+                    style={{ color: 'rgba(212,165,90,0.55)' }}
+                  >
+                    <Icon size={14} /> {name}
+                  </Link>
+                ))}
+              </li>
             </ul>
 
             {/* Also available on */}
@@ -461,7 +557,7 @@ export const Navbar = () => {
             {/* Mobile footer divider */}
             <div className="mx-6 mb-5 pt-4" style={{ borderTop: '1px solid rgba(212,165,90,0.1)' }}>
               <p className="text-[9px] tracking-[0.3em] uppercase text-center" style={{ color: 'rgba(212,165,90,0.3)' }}>
-                ✦ DUMUZI&reg; ✦
+                ✦ DUMUZI&trade; ✦
               </p>
             </div>
           </motion.div>
