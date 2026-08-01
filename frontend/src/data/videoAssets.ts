@@ -21,4 +21,5 @@ export const reels: Reel[] = [
   { src: '/videos/dumuzi-reel-2.mp4', caption: 'Poured & tempered',    length: '0:08' },
   { src: '/videos/dumuzi-reel-3.mp4', caption: 'Finished by hand',     length: '0:08' },
   { src: '/videos/dumuzi-reel-4.mp4', caption: 'Boxed & ribboned',     length: '0:04' },
+  { src: '/videos/dumuzi-reel-5.mp4', caption: 'Ready to gift',        length: '0:08' },
 ];

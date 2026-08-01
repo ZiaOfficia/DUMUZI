@@ -313,19 +313,21 @@ export const VideoShowcase = () => {
           </motion.p>
         </div>
 
-        {/* Reel strip — swipeable on mobile, four-up on desktop */}
+        {/* Reel strip — swipeable until there's room for the full row.
+            The grid holds one column per reel, so adding a clip to
+            videoAssets never leaves an orphan on a second row. */}
         <div
-          className="flex gap-4 md:gap-5 overflow-x-auto md:overflow-visible snap-x snap-mandatory pb-3 md:pb-0 md:grid md:grid-cols-4"
-          style={{ scrollbarWidth: 'none' }}
+          className="flex gap-4 lg:gap-5 overflow-x-auto lg:overflow-visible snap-x snap-mandatory pb-3 lg:pb-0 lg:grid"
+          style={{ scrollbarWidth: 'none', gridTemplateColumns: `repeat(${reels.length}, minmax(0, 1fr))` }}
         >
           {reels.map((reel, i) => (
-            <div key={reel.src} className="flex-shrink-0 w-[62vw] max-w-[260px] md:w-auto md:max-w-none">
+            <div key={reel.src} className="flex-shrink-0 w-[62vw] max-w-[260px] lg:w-auto lg:max-w-none">
               <ReelCard reel={reel} index={i} frozen={open !== null} onOpen={setOpen} />
             </div>
           ))}
         </div>
 
-        <p className="text-center text-[10px] font-sans mt-7 md:hidden" style={{ color: 'rgba(220,214,205,0.3)' }}>
+        <p className="text-center text-[10px] font-sans mt-7 lg:hidden" style={{ color: 'rgba(220,214,205,0.3)' }}>
           Swipe to see more →
         </p>
       </div>
