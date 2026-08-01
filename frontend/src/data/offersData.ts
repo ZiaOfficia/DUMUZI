@@ -22,6 +22,8 @@ export interface SingleOffer {
   buy: Product;
   /** the free gift box they receive */
   gift: Product;
+  /** optional campaign poster (public/images/offers) shown on the home page */
+  poster?: string;
 }
 
 export interface ComboTier {
@@ -33,13 +35,19 @@ export interface ComboTier {
 
 // ── SINGLE OFFERS ─────────────────────────────────────────────────────────────
 // Buy the listed box → get the gift box free.
+// Where a campaign poster exists it is the source of truth for the pairing —
+// the artwork is what the shopper reads, so the data has to say the same thing.
 export const singleOffers: SingleOffer[] = [
-  { buy: byId(24), gift: byId(3) },  // LF-D25T ₹749 → LF-H3T ₹110 free
-  { buy: byId(14), gift: byId(2) },  // LF-H18D ₹575 → LF-H3  ₹99  free
-  { buy: byId(21), gift: byId(2) },  // LF-D18T ₹575 → LF-H3  ₹99  free
-  { buy: byId(22), gift: byId(2) },  // LF-D25B ₹640 → LF-H3  ₹99  free
-  { buy: byId(13), gift: byId(2) },  // LF-H18B ₹525 → LF-H3  ₹99  free
+  { buy: byId(24), gift: byId(4), poster: '/images/offers/D25T.png' },  // LF-D25T ₹749 → LF-H4P ₹140 free
+  { buy: byId(23), gift: byId(2), poster: '/images/offers/D25.png'  },  // LF-D25  ₹699 → LF-H3  ₹99  free
+  { buy: byId(22), gift: byId(2), poster: '/images/offers/D25B.png' },  // LF-D25B ₹640 → LF-H3  ₹99  free
+  { buy: byId(14), gift: byId(2), poster: '/images/offers/H18D.png' },  // LF-H18D ₹575 → LF-H3  ₹99  free
+  { buy: byId(21), gift: byId(2), poster: '/images/offers/D18.png'  },  // LF-D18T ₹575 → LF-H3  ₹99  free
+  { buy: byId(13), gift: byId(2) },                                     // LF-H18B ₹525 → LF-H3  ₹99  free
 ];
+
+/** Offers that ship with campaign artwork — drives the home page showcase. */
+export const posterOffers: SingleOffer[] = singleOffers.filter(o => o.poster);
 
 /** Stable cart key for a single-offer gift — same value wherever it's claimed. */
 export const singleGiftKey = (buyId: number, giftId: number) => `single-${buyId}-${giftId}`;

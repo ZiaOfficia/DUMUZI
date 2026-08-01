@@ -30,3 +30,5 @@ public/images/*
 !public/images/products/**
 !public/images/pnglogos/
 !public/images/pnglogos/**
+!public/images/offers/
+!public/images/offers/**

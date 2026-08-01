@@ -13,6 +13,7 @@ import { TestimonialsSection }      from '../components/sections/TestimonialsSec
 import NewsletterSection            from '../components/sections/NewsletterSection';
 import { InstagramFeed }            from '../components/sections/InstagramFeed';
 import { VideoShowcase }            from '../components/sections/VideoShowcase';
+import { OffersShowcase }           from '../components/sections/OffersShowcase';
 
 export const HomePage = () => {
   return (
@@ -27,51 +28,55 @@ export const HomePage = () => {
       <div className="section-divider" />
       <ServicesGrid />
 
-      {/* 4 — Best Confections Showcase (top 3 + CTA to /best-confections) */}
+      {/* 4 — Offer posters: buy a box, get one free (linking to /offers) */}
+      <div className="section-divider" />
+      <OffersShowcase />
+
+      {/* 5 — Best Confections Showcase (top 3 + CTA to /best-confections) */}
       <div className="section-divider" />
       <BestConfectionsShowcase />
 
-      {/* 5 — Collections Preview (6 collection cards linking to /collections) */}
+      {/* 6 — Collections Preview (6 collection cards linking to /collections) */}
       <div className="section-divider" />
       <CollectionsPreviewSection />
 
-      {/* 6 — About / Brand Story */}
+      {/* 7 — About / Brand Story */}
       <div className="section-divider" />
       <AboutSection />
 
-      {/* 7 — Craft & Sourcing Banner (linking to /about) */}
+      {/* 8 — Craft & Sourcing Banner (linking to /about) */}
       <div className="section-divider" />
       <CraftBannerSection />
 
-      {/* 8 — Video reels: DUMUZI in Motion */}
+      {/* 9 — Video reels: DUMUZI in Motion */}
       <div className="section-divider" />
       <VideoShowcase />
 
-      {/* 9 — How It Works: Bean to Box */}
+      {/* 10 — How It Works: Bean to Box */}
       <div className="section-divider" />
       <HowItWorks />
 
-      {/* 10 — Gifting CTA (linking to /collections) */}
+      {/* 11 — Gifting CTA (linking to /collections) */}
       <div className="section-divider" />
       <GiftingCTA />
 
-      {/* 11 — Testimonials */}
+      {/* 12 — Testimonials */}
       <div className="section-divider" />
       <TestimonialsSection />
 
-      {/* 12 — Blog Preview (3 latest articles, linking to /blog) */}
+      {/* 13 — Blog Preview (3 latest articles, linking to /blog) */}
       <div className="section-divider" />
       <BlogPreviewSection />
 
-      {/* 13 — Contact CTA (links to /contact) */}
+      {/* 14 — Contact CTA (links to /contact) */}
       <div className="section-divider" />
       <ContactCTASection />
 
-      {/* 14 — Instagram Feed */}
+      {/* 15 — Instagram Feed */}
       <div className="section-divider" />
       <InstagramFeed />
 
-      {/* 15 — Newsletter */}
+      {/* 16 — Newsletter */}
       <div className="section-divider" />
       <NewsletterSection />
     </>
