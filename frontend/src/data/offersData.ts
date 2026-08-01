@@ -38,11 +38,11 @@ export interface ComboTier {
 // Where a campaign poster exists it is the source of truth for the pairing —
 // the artwork is what the shopper reads, so the data has to say the same thing.
 export const singleOffers: SingleOffer[] = [
-  { buy: byId(24), gift: byId(4), poster: '/images/offers/D25T.png' },  // LF-D25T ₹749 → LF-H4P ₹140 free
-  { buy: byId(23), gift: byId(2), poster: '/images/offers/D25.png'  },  // LF-D25  ₹699 → LF-H3  ₹99  free
-  { buy: byId(22), gift: byId(2), poster: '/images/offers/D25B.png' },  // LF-D25B ₹640 → LF-H3  ₹99  free
-  { buy: byId(14), gift: byId(2), poster: '/images/offers/H18D.png' },  // LF-H18D ₹575 → LF-H3  ₹99  free
-  { buy: byId(21), gift: byId(2), poster: '/images/offers/D18.png'  },  // LF-D18T ₹575 → LF-H3  ₹99  free
+  { buy: byId(24), gift: byId(4), poster: '/images/offers/D25T.webp' },  // LF-D25T ₹749 → LF-H4P ₹140 free
+  { buy: byId(23), gift: byId(2), poster: '/images/offers/D25.webp'  },  // LF-D25  ₹699 → LF-H3  ₹99  free
+  { buy: byId(22), gift: byId(2), poster: '/images/offers/D25B.webp' },  // LF-D25B ₹640 → LF-H3  ₹99  free
+  { buy: byId(14), gift: byId(2), poster: '/images/offers/H18D.webp' },  // LF-H18D ₹575 → LF-H3  ₹99  free
+  { buy: byId(21), gift: byId(2), poster: '/images/offers/D18.webp'  },  // LF-D18T ₹575 → LF-H3  ₹99  free
   { buy: byId(13), gift: byId(2) },                                     // LF-H18B ₹525 → LF-H3  ₹99  free
 ];
 
