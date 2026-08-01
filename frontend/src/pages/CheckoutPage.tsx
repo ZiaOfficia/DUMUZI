@@ -7,14 +7,14 @@ import { useAuth } from '../context/AuthContext';
 import { useToast } from '../components/common/Toast';
 import { SEO } from '../components/common/SEO';
 import { checkoutApi, ApiError } from '../services/api';
-import { loadRazorpayScript, type RazorpayResponse } from '../utils/razorpay';
+import { redirectToPayu } from '../utils/payu';
 
 const GOLD  = '#d4a373';
 const GOLDL = '#e5c199';
 
-// Razorpay isn't configured on the backend yet — keep online payment hidden
-// until that's set up, so customers don't hit a dead-end payment option.
-const RAZORPAY_ENABLED = false;
+// Flip to false to hide "Pay Online" if PayU ever needs to be taken down —
+// the backend also returns a 503 with a readable message if its keys are unset.
+const ONLINE_PAYMENT_ENABLED = true;
 
 interface FormData {
   name: string;
@@ -77,7 +77,7 @@ export const CheckoutPage = () => {
   });
   const [errors, setErrors] = useState<Partial<FormData>>({});
   const [busy, setBusy] = useState(false);
-  const [paymentMethod, setPaymentMethod] = useState<'cod' | 'razorpay'>('cod');
+  const [paymentMethod, setPaymentMethod] = useState<'cod' | 'payu'>('cod');
 
   const set = (key: keyof FormData) => (v: string) => setForm(f => ({ ...f, [key]: v }));
 
@@ -128,38 +128,11 @@ export const CheckoutPage = () => {
         return;
       }
 
-      // Online payment — hand off to Razorpay's checkout modal
-      const loaded = await loadRazorpayScript();
-      if (!loaded) throw new Error('Failed to load payment gateway. Please check your connection.');
-
-      const rzp = new window.Razorpay({
-        key:         order.key as string,
-        amount:      order.amount,
-        currency:    order.currency,
-        order_id:    order.orderId,
-        name:        'DUMUZI',
-        description: `Order of ${totalItems} item${totalItems > 1 ? 's' : ''}`,
-        image:       '/images/logo.png',
-        prefill:     { name: form.name, email: form.email, contact: form.phone },
-        theme:       { color: GOLD },
-        handler: async (response: RazorpayResponse) => {
-          try {
-            const verified = await checkoutApi.verifyPayment(response);
-            if (!verified.success) throw new Error('Payment verification failed. Contact support.');
-            await clearCart();
-            success('Payment successful! Your order has been placed.');
-            navigate('/thank-you?type=order');
-          } catch (err) {
-            error(err instanceof Error ? err.message : 'Payment verification failed.');
-          } finally {
-            setBusy(false);
-          }
-        },
-        modal: {
-          ondismiss: () => setBusy(false),
-        },
-      });
-      rzp.open();
+      // Online payment — leave the site for PayU's hosted checkout. The order
+      // is already saved as pending; PayU's callback marks it paid or failed
+      // and sends the shopper back to /thank-you.
+      if (!order.payu) throw new Error('Payment gateway is unavailable. Please try Cash on Delivery.');
+      redirectToPayu(order.payu);
     } catch (err) {
       // Session expired mid-checkout — payment requires a logged-in customer
       if (err instanceof ApiError && err.status === 401) {
@@ -260,7 +233,7 @@ export const CheckoutPage = () => {
                 </div>
 
                 {/* Payment method */}
-                {RAZORPAY_ENABLED ? (
+                {ONLINE_PAYMENT_ENABLED ? (
                   <div className="flex flex-col gap-2 mt-2">
                     <label className="text-xs font-semibold uppercase tracking-wider" style={{ color: 'rgba(212,163,115,0.55)' }}>
                       Payment Method
@@ -283,17 +256,17 @@ export const CheckoutPage = () => {
                       </button>
                       <button
                         type="button"
-                        onClick={() => setPaymentMethod('razorpay')}
+                        onClick={() => setPaymentMethod('payu')}
                         className="flex items-center gap-3 p-4 rounded-xl text-left transition-all duration-200 cursor-pointer"
                         style={{
-                          background: paymentMethod === 'razorpay' ? 'rgba(212,163,115,0.12)' : 'rgba(255,255,255,0.04)',
-                          border: `1px solid ${paymentMethod === 'razorpay' ? GOLD : 'rgba(212,163,115,0.15)'}`,
+                          background: paymentMethod === 'payu' ? 'rgba(212,163,115,0.12)' : 'rgba(255,255,255,0.04)',
+                          border: `1px solid ${paymentMethod === 'payu' ? GOLD : 'rgba(212,163,115,0.15)'}`,
                         }}
                       >
                         <CreditCard size={18} style={{ color: GOLD, flexShrink: 0 }} />
                         <div>
                           <p className="text-sm font-semibold" style={{ color: 'var(--cream)' }}>Pay Online</p>
-                          <p className="text-xs" style={{ color: 'var(--muted)' }}>UPI, Cards &amp; NetBanking via Razorpay</p>
+                          <p className="text-xs" style={{ color: 'var(--muted)' }}>UPI, Cards &amp; NetBanking via PayU</p>
                         </div>
                       </button>
                     </div>
@@ -326,7 +299,7 @@ export const CheckoutPage = () => {
                     ? <div className="w-4 h-4 rounded-full border-2 animate-spin" style={{ borderColor: 'rgba(0,0,0,0.2)', borderTopColor: 'var(--bg-deep)' }} />
                     : paymentMethod === 'cod'
                       ? <><Banknote size={15} /> Place Order — ₹{totalPrice.toLocaleString('en-IN')}</>
-                      : <><CreditCard size={15} /> Pay ₹{totalPrice.toLocaleString('en-IN')} Online</>
+                      : <><CreditCard size={15} /> Pay ₹{totalPrice.toLocaleString('en-IN')} via PayU</>
                   }
                 </button>
               </form>

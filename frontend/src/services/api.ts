@@ -2,6 +2,10 @@ import { API_BASE_URL } from '../config';
 import type {
   User, CartState, Product, ProductsResponse, OrderItem, MyOrder,
 } from '../types';
+import type { PayuHandoff } from '../utils/payu';
+
+/** 'razorpay' still appears on orders placed before the PayU switch. */
+export type PaymentMethod = 'payu' | 'cod' | 'razorpay';
 
 // ── Base fetch wrapper ────────────────────────────────────────────────────────
 export class ApiError extends Error {
@@ -117,19 +121,30 @@ export const checkoutApi = {
   createOrder: (payload: {
     items: OrderItem[];
     customer: { name: string; email: string; phone: string };
-    paymentMethod?: 'razorpay' | 'cod';
+    paymentMethod?: PaymentMethod;
     address?: { address: string; city: string; state: string; pincode: string; notes?: string };
   }) =>
-    apiFetch<{ orderId: string; amount: number; currency: string; key?: string; paymentMethod: 'razorpay' | 'cod' }>('/api/payments/create-order', {
+    apiFetch<{
+      orderId: string;
+      amount: number;
+      currency: string;
+      paymentMethod: PaymentMethod;
+      /** present only for paymentMethod: 'payu' — post these straight to PayU */
+      payu?: PayuHandoff;
+    }>('/api/payments/create-order', {
       method: 'POST',
       body: JSON.stringify(payload),
     }),
 
-  verifyPayment: (payload: { razorpay_order_id: string; razorpay_payment_id: string; razorpay_signature: string }) =>
-    apiFetch<{ success: boolean }>('/api/payments/verify', {
-      method: 'POST',
-      body: JSON.stringify(payload),
-    }),
+  /** What the backend recorded for a txnid after PayU called it back. */
+  getPaymentStatus: (txnid: string) =>
+    apiFetch<{
+      orderId: string;
+      status: 'pending' | 'paid' | 'failed' | 'shipped' | 'delivered' | 'cancelled';
+      amount: number;
+      paymentMethod: PaymentMethod;
+      paid: boolean;
+    }>(`/api/payments/status/${encodeURIComponent(txnid)}`),
 
   getMyOrders: () =>
     apiFetch<MyOrder[]>('/api/payments/my-orders'),

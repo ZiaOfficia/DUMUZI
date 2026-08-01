@@ -18,7 +18,7 @@ interface AdminOrder {
   amount: number; // paise
   currency: string;
   status: string;
-  paymentMethod: "razorpay" | "cod";
+  paymentMethod: "payu" | "cod" | "razorpay";   // 'razorpay' only on legacy orders
   customer: { name: string; email: string; phone: string };
   shippingAddress: { address: string | null; city: string | null; state: string | null; pincode: string | null };
   notes: string | null;
@@ -299,7 +299,9 @@ const AdminOrdersPage: React.FC = () => {
                         Order ref: <span className="text-stone-400">{order.orderId}</span>
                         {" · "}
                         <span className="text-stone-400">
-                          {order.paymentMethod === "cod" ? "Cash on Delivery" : "Razorpay"}
+                          {order.paymentMethod === "cod"
+                            ? "Cash on Delivery"
+                            : order.paymentMethod === "razorpay" ? "Razorpay" : "PayU"}
                         </span>
                         {order.paymentId && (
                           <> · Payment: <span className="text-stone-400">{order.paymentId}</span></>

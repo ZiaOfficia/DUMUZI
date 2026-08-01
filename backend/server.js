@@ -18,6 +18,10 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+// Render/Vercel terminate TLS in front of us. Without this, req.protocol reads
+// "http" and the PayU surl/furl we sign would point at an insecure URL.
+app.set("trust proxy", 1);
+
 // Middleware
 const allowedOrigins = [
   "https://dumuzi.com",

@@ -1,28 +1,35 @@
-const Razorpay = require('razorpay');
-const crypto  = require('crypto');
-const Order   = require('../models/Order');
-const Product = require('../models/Product');
+const crypto   = require('crypto');
+const Order    = require('../models/Order');
+const Product  = require('../models/Product');
+const CartItem = require('../models/CartItem');
 const { priceOrderItems } = require('../utils/orderPricing');
+const {
+  payuConfig, newTxnId, clean, formatAmount, requestHash, responseHash, hashMatches,
+} = require('../utils/payu');
 
-let razorpay;
-function getRazorpay() {
-  if (!razorpay) {
-    razorpay = new Razorpay({
-      key_id:     process.env.RAZORPAY_KEY_ID,
-      key_secret: process.env.RAZORPAY_KEY_SECRET,
-    });
-  }
-  return razorpay;
-}
+const PAYMENT_METHODS = ['payu', 'cod'];
 
-const PAYMENT_METHODS = ['razorpay', 'cod'];
+/**
+ * The gateway columns are named after the gateway we used first (Razorpay);
+ * they hold PayU's equivalents now — txnid, mihpayid and the response hash.
+ * Renaming them would ripple through the admin panel and order history for no
+ * behavioural gain, so the mapping is documented here instead.
+ */
+
+/** Where PayU should POST the result. Absolute and public — PayU calls it, not the browser. */
+const callbackBase = (req) =>
+  (process.env.PUBLIC_API_URL || `${req.protocol}://${req.get('host')}`).replace(/\/+$/, '');
+
+/** Where we send the shopper once we've recorded the result. */
+const frontendBase = () =>
+  (process.env.FRONTEND_URL || 'https://dumuzi.com').replace(/\/+$/, '');
 
 exports.createOrder = async (req, res) => {
   try {
     const { items: rawItems, customer, address } = req.body;
     const paymentMethod = PAYMENT_METHODS.includes(req.body.paymentMethod)
       ? req.body.paymentMethod
-      : 'razorpay';
+      : 'payu';
     const shipping = {
       shipping_address: address?.address || null,
       shipping_city:    address?.city || null,
@@ -48,7 +55,8 @@ exports.createOrder = async (req, res) => {
     const products = await Product.findAll({ where: { id: productIds } });
     const { items, totalRupees } = priceOrderItems(rawItems, products);
 
-    // Compute total in paise (Razorpay requires smallest currency unit)
+    // Orders are stored in paise so integer maths stays exact; PayU itself is
+    // handed rupees as a 2-decimal string further down.
     const amountPaise = Math.round(totalRupees * 100);
 
     if (paymentMethod === 'cod') {
@@ -78,19 +86,35 @@ exports.createOrder = async (req, res) => {
       });
     }
 
-    const rzpOrder = await getRazorpay().orders.create({
-      amount:   amountPaise,
-      currency: 'INR',
-      receipt:  `rcpt_${Date.now()}`,
-    });
+    // ── PayU ────────────────────────────────────────────────────────────────
+    // Throws 503 when the merchant key/salt aren't set, before we write a row.
+    const { key, salt, action } = payuConfig();
+
+    const txnid = newTxnId();
+    const base  = callbackBase(req);
+
+    // Signed fields. Everything in here is covered by the hash, so the values
+    // stored on the order must be identical to the ones sent to PayU.
+    const fields = {
+      key,
+      txnid,
+      amount:      formatAmount(totalRupees),
+      productinfo: clean(`DUMUZI order ${txnid}`),
+      firstname:   clean(name.split(' ')[0] || name, 60),
+      email:       clean(email, 80),
+      phone:       clean(phone, 20),
+      surl:        `${base}/api/payments/payu/callback`,
+      furl:        `${base}/api/payments/payu/callback`,
+    };
+    fields.hash = requestHash(fields, salt);
 
     await Order.create({
       user_id:           req.customer.id, // set by protectCustomer middleware
-      razorpay_order_id: rzpOrder.id,
+      razorpay_order_id: txnid,           // ← PayU txnid
       amount:            amountPaise,
       currency:          'INR',
       status:            'pending',
-      payment_method:    'razorpay',
+      payment_method:    'payu',
       customer_name:     name,
       customer_email:    email,
       customer_phone:    phone,
@@ -99,52 +123,108 @@ exports.createOrder = async (req, res) => {
     });
 
     res.json({
-      orderId:       rzpOrder.id,
+      orderId:       txnid,
       amount:        amountPaise,
       currency:      'INR',
-      key:           process.env.RAZORPAY_KEY_ID,
-      paymentMethod: 'razorpay',
+      paymentMethod: 'payu',
+      // The browser auto-submits these as a form — no PayU script to load.
+      payu: { action, params: fields },
     });
   } catch (err) {
-    if (err.status === 400) {
-      return res.status(400).json({ message: err.message });
+    if (err.status === 400 || err.status === 503) {
+      return res.status(err.status).json({ message: err.message });
     }
     console.error('[payment] createOrder error:', err);
     res.status(500).json({ message: 'Failed to create order. Please try again.' });
   }
 };
 
-exports.verifyPayment = async (req, res) => {
+// ═══════════════════════════════════════════════════════════════════
+//  PayU callback — PayU POSTs here from its own servers/redirect.
+//  Public by design: there is no customer session on this request, so the
+//  order is identified by txnid and trusted only after the hash checks out.
+// ═══════════════════════════════════════════════════════════════════
+
+const doneUrl = (status, txnid) =>
+  `${frontendBase()}/thank-you?type=order&status=${status}${txnid ? `&txnid=${encodeURIComponent(txnid)}` : ''}`;
+
+exports.payuCallback = async (req, res) => {
+  const body = { ...req.query, ...req.body };
+  const { txnid } = body;
+
   try {
-    const { razorpay_order_id, razorpay_payment_id, razorpay_signature } = req.body;
+    const { salt } = payuConfig();
 
-    if (!razorpay_order_id || !razorpay_payment_id || !razorpay_signature) {
-      return res.status(400).json({ message: 'Missing payment details' });
+    if (!txnid || !body.hash) {
+      console.warn('[payu] callback missing txnid/hash');
+      return res.redirect(302, doneUrl('failed', txnid));
     }
 
-    // HMAC-SHA256 verification
-    const expected = crypto
-      .createHmac('sha256', process.env.RAZORPAY_KEY_SECRET)
-      .update(`${razorpay_order_id}|${razorpay_payment_id}`)
-      .digest('hex');
-
-    // Only allow the owner of the order to verify it
-    const where = { razorpay_order_id, user_id: req.customer.id };
-
-    if (expected !== razorpay_signature) {
-      await Order.update({ status: 'failed' }, { where });
-      return res.status(400).json({ message: 'Invalid payment signature' });
+    if (!hashMatches(responseHash(body, salt), body.hash)) {
+      // Either tampering or a salt mismatch — never trust the payload.
+      console.error(`[payu] hash mismatch for txnid=${txnid}`);
+      await Order.update({ status: 'failed' }, { where: { razorpay_order_id: txnid } });
+      return res.redirect(302, doneUrl('failed', txnid));
     }
 
-    await Order.update(
-      { razorpay_payment_id, razorpay_signature, status: 'paid' },
-      { where }
-    );
+    const order = await Order.findOne({ where: { razorpay_order_id: txnid } });
+    if (!order) {
+      console.error(`[payu] no order for txnid=${txnid}`);
+      return res.redirect(302, doneUrl('failed', txnid));
+    }
 
-    res.json({ success: true });
+    // Guard against a replayed callback quoting a smaller amount than we charged.
+    const paidPaise = Math.round(Number(body.amount) * 100);
+    const success   = String(body.status).toLowerCase() === 'success' && paidPaise === order.amount;
+
+    if (!success && String(body.status).toLowerCase() === 'success') {
+      console.error(`[payu] amount mismatch for txnid=${txnid}: paid ${paidPaise}, expected ${order.amount}`);
+    }
+
+    order.status              = success ? 'paid' : 'failed';
+    order.razorpay_payment_id = body.mihpayid || null;   // ← PayU payment id
+    order.razorpay_signature  = body.hash;               // ← verified response hash
+    await order.save();
+
+    // The shopper is on PayU's domain right now, so the cart can only be
+    // emptied here, server-side. Best-effort: a stale cart must not block the
+    // redirect back to the confirmation page.
+    if (success && order.user_id) {
+      await CartItem.destroy({ where: { userId: order.user_id } })
+        .catch((err) => console.error('[payu] cart clear failed:', err.message));
+    }
+
+    res.redirect(302, doneUrl(success ? 'success' : 'failed', txnid));
   } catch (err) {
-    console.error('[payment] verifyPayment error:', err);
-    res.status(500).json({ message: 'Payment verification failed' });
+    console.error('[payu] callback error:', err);
+    res.redirect(302, doneUrl('failed', txnid));
+  }
+};
+
+/**
+ * GET /api/payments/status/:txnid — what the confirmation page asks after PayU
+ * has bounced the shopper back. The callback above is the only thing that can
+ * mark an order paid; this just reports what it decided, scoped to the owner.
+ */
+exports.getPaymentStatus = async (req, res) => {
+  try {
+    const order = await Order.findOne({
+      where: { razorpay_order_id: req.params.txnid, user_id: req.customer.id },
+      attributes: ['razorpay_order_id', 'status', 'amount', 'payment_method'],
+    });
+
+    if (!order) return res.status(404).json({ message: 'Order not found' });
+
+    res.json({
+      orderId:       order.razorpay_order_id,
+      status:        order.status,
+      amount:        order.amount,
+      paymentMethod: order.payment_method,
+      paid:          ['paid', 'shipped', 'delivered'].includes(order.status),
+    });
+  } catch (err) {
+    console.error('[payment] getPaymentStatus error:', err);
+    res.status(500).json({ message: 'Failed to fetch payment status' });
   }
 };
 

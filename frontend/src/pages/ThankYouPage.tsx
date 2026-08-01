@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { CheckCircle, Home, ArrowRight, ShoppingBag, Sparkles, Package } from "lucide-react";
+import { CheckCircle, XCircle, Home, ArrowRight, ShoppingBag, Sparkles, Package, CreditCard } from "lucide-react";
 import { motion } from "framer-motion";
 import { SEO } from "../components/common/SEO";
+import { useCart } from "../context/CartContext";
 
 // Declare gtag for TypeScript
 declare global {
@@ -17,10 +18,26 @@ const GOLDL = "#e8c07a";
 
 const ThankYouPage = () => {
   const [searchParams] = useSearchParams();
+  const { clearCart } = useCart();
   const isOrder = searchParams.get("type") === "order";
+
+  // PayU redirects back here through the backend callback, which appends
+  // ?status=success|failed. Anything else (COD, enquiry forms) has no status
+  // and is treated as a success, exactly as before.
+  const payuStatus  = searchParams.get("status");
+  const paymentFailed = payuStatus === "failed";
+
+  // The cart survived the trip to PayU in local state — clear it once we know
+  // the payment landed. The backend already emptied the server-side cart.
+  useEffect(() => {
+    if (isOrder && payuStatus === "success") {
+      void clearCart();
+    }
+  }, [isOrder, payuStatus, clearCart]);
 
   // Fire conversion event when Thank You page loads
   useEffect(() => {
+    if (paymentFailed) return;   // a declined payment isn't a conversion
     if (window.gtag) {
       window.gtag("event", "generate_lead", {
         event_category: "form_submission",
@@ -35,14 +52,17 @@ const ThankYouPage = () => {
         formType: "enquiry",
       });
     }
-  }, []);
+  }, [paymentFailed]);
 
   return (
     <div
       className="min-h-screen flex items-center justify-center px-6 py-24 relative overflow-hidden"
       style={{ background: "linear-gradient(160deg, #1a120d 0%, #100a07 60%, var(--bg-deep) 100%)" }}
     >
-      <SEO title={isOrder ? "Order Confirmed" : "Thank You"} description="Thank you from DUMUZI" />
+      <SEO
+        title={paymentFailed ? "Payment Failed" : isOrder ? "Order Confirmed" : "Thank You"}
+        description="Thank you from DUMUZI"
+      />
 
       {/* Warm decorative glows for a happy, festive feel */}
       <div
@@ -65,37 +85,49 @@ const ThankYouPage = () => {
           boxShadow: "var(--shadow-card)",
         }}
       >
-        {/* Success icon with gold glow + little sparkle accents */}
+        {/* Status icon — gold tick normally, muted red cross when PayU declined */}
         <div className="relative w-24 h-24 mx-auto mb-8">
           <motion.div
             initial={{ scale: 0, rotate: -20 }}
             animate={{ scale: 1, rotate: 0 }}
             transition={{ duration: 0.55, delay: 0.1, type: "spring", stiffness: 200 }}
             className="w-24 h-24 rounded-full flex items-center justify-center"
-            style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLDL})`, boxShadow: "var(--shadow-gold)" }}
+            style={
+              paymentFailed
+                ? { background: "rgba(239,68,68,0.12)", border: "1px solid rgba(239,68,68,0.4)" }
+                : { background: `linear-gradient(135deg, ${GOLD}, ${GOLDL})`, boxShadow: "var(--shadow-gold)" }
+            }
           >
-            <CheckCircle size={44} style={{ color: "var(--bg-deep)" }} strokeWidth={2.5} />
+            {paymentFailed
+              ? <XCircle size={44} style={{ color: "#ef4444" }} strokeWidth={2.2} />
+              : <CheckCircle size={44} style={{ color: "var(--bg-deep)" }} strokeWidth={2.5} />}
           </motion.div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.4, delay: 0.5 }}
-            className="absolute -top-1 -right-2"
-          >
-            <Sparkles size={20} style={{ color: GOLDL }} />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.4, delay: 0.65 }}
-            className="absolute -bottom-1 -left-3"
-          >
-            <Sparkles size={14} style={{ color: GOLD }} />
-          </motion.div>
+          {!paymentFailed && (
+            <>
+              <motion.div
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, delay: 0.5 }}
+                className="absolute -top-1 -right-2"
+              >
+                <Sparkles size={20} style={{ color: GOLDL }} />
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, delay: 0.65 }}
+                className="absolute -bottom-1 -left-3"
+              >
+                <Sparkles size={14} style={{ color: GOLD }} />
+              </motion.div>
+            </>
+          )}
         </div>
 
         <h1 className="font-display text-3xl sm:text-4xl font-bold mb-4" style={{ color: "var(--cream)" }}>
-          {isOrder ? (
+          {paymentFailed ? (
+            <>Payment <span style={{ color: "#ef4444" }}>Failed</span></>
+          ) : isOrder ? (
             <>Order <span style={{ color: GOLDL }}>Placed!</span></>
           ) : (
             <>Thank <span style={{ color: GOLDL }}>You.</span></>
@@ -103,15 +135,19 @@ const ThankYouPage = () => {
         </h1>
 
         <p className="text-lg mb-4 font-sans" style={{ color: "var(--cream)" }}>
-          {isOrder
-            ? "Your DUMUZI order has been placed successfully."
-            : "We have received your message."}
+          {paymentFailed
+            ? "Your payment could not be completed."
+            : isOrder
+              ? "Your DUMUZI order has been placed successfully."
+              : "We have received your message."}
         </p>
 
         <p className="text-sm mb-10 leading-relaxed font-sans" style={{ color: "var(--muted)" }}>
-          {isOrder
-            ? "Our artisans will prepare your confections with care, and we'll reach out within 1–2 business days with dispatch details. For any queries, email us at "
-            : "Our team at DUMUZI will read your message and reply within 1–2 business days. For urgent matters, you can also email us at "}
+          {paymentFailed
+            ? "Nothing has been charged and your cart is still waiting for you. Try again, or pick Cash on Delivery at checkout. If money did leave your account, email us at "
+            : isOrder
+              ? "Our artisans will prepare your confections with care, and we'll reach out within 1–2 business days with dispatch details. For any queries, email us at "
+              : "Our team at DUMUZI will read your message and reply within 1–2 business days. For urgent matters, you can also email us at "}
           <a href="mailto:sales@littlefun.in" style={{ color: GOLDL }} className="hover:underline">
             sales@littlefun.in
           </a>
@@ -119,7 +155,24 @@ const ThankYouPage = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          {isOrder ? (
+          {paymentFailed ? (
+            <>
+              <Link
+                to="/checkout"
+                className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300"
+                style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLDL})`, color: "var(--bg-deep)", boxShadow: "0 8px 24px rgba(212,165,90,0.3)" }}
+              >
+                <CreditCard size={15} /> Try Again
+              </Link>
+              <Link
+                to="/collections"
+                className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300"
+                style={{ background: "transparent", color: "var(--cream)", border: "1px solid rgba(212,165,90,0.3)" }}
+              >
+                <ShoppingBag size={15} /> Keep Shopping
+              </Link>
+            </>
+          ) : isOrder ? (
             <>
               <Link
                 to="/collections"

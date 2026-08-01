@@ -12,6 +12,9 @@ const Order = sequelize.define('Order', {
     allowNull: true, // null for legacy/guest orders created before login was required
     references: { model: 'Users', key: 'id' },
   },
+  // The three gateway columns keep their original Razorpay names so existing
+  // rows, the admin panel and order history don't need a migration. Under PayU
+  // they hold: txnid, mihpayid, and the verified response hash.
   razorpay_order_id: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -40,8 +43,8 @@ const Order = sequelize.define('Order', {
     defaultValue: 'pending',
   },
   payment_method: {
-    type: DataTypes.STRING(20), // 'razorpay' | 'cod'
-    defaultValue: 'razorpay',
+    type: DataTypes.STRING(20), // 'payu' | 'cod' ('razorpay' on legacy rows)
+    defaultValue: 'payu',
   },
   customer_name: {
     type: DataTypes.STRING,

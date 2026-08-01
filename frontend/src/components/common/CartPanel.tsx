@@ -3,16 +3,16 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, Trash2, ShoppingBag, Plus, Minus, Package, ArrowLeft, Loader2, Banknote, CreditCard, Gift } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
-import { loadRazorpayScript, type RazorpayResponse } from '../../utils/razorpay';
+import { redirectToPayu } from '../../utils/payu';
 import { checkoutApi, ApiError } from '../../services/api';
 import { getComboProgress, singleOffers, singleGiftKey, singleGiftItem } from '../../data/offersData';
 
 const GOLD  = '#d4a55a';
 const GOLDL = '#e8c07a';
 
-// Razorpay isn't configured on the backend yet — keep online payment hidden
-// until that's set up, so customers don't hit a dead-end payment option.
-const RAZORPAY_ENABLED = false;
+// Flip to false to hide "Pay Online" if PayU ever needs to be taken down —
+// the backend also returns a 503 with a readable message if its keys are unset.
+const ONLINE_PAYMENT_ENABLED = true;
 
 interface CartPanelProps {
   isOpen: boolean;
@@ -37,7 +37,7 @@ export const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
   const [loading, setLoading] = useState(false);
   const [error, setError]     = useState('');
   const [form, setForm]       = useState<CustomerForm>({ name: '', email: '', phone: '', address: '', city: '', state: '', pincode: '' });
-  const [paymentMethod, setPaymentMethod] = useState<'cod' | 'razorpay'>('cod');
+  const [paymentMethod, setPaymentMethod] = useState<'cod' | 'payu'>('cod');
 
   // Combo-offer progress — drives the "add ₹X more to get Y free" nudge.
   const combo = getComboProgress(totalPrice);
@@ -116,43 +116,11 @@ export const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
         return;
       }
 
-      // Online payment — hand off to Razorpay's checkout modal
-      const loaded = await loadRazorpayScript();
-      if (!loaded) throw new Error('Failed to load payment gateway. Please check your connection.');
-
-      const rzp = new window.Razorpay({
-        key:         order.key as string,
-        amount:      order.amount,
-        currency:    order.currency,
-        order_id:    order.orderId,
-        name:        'DUMUZI',
-        description: `Order of ${totalItems} item${totalItems > 1 ? 's' : ''}`,
-        image:       '/images/logo.png',
-        prefill: {
-          name:    form.name,
-          email:   form.email,
-          contact: form.phone,
-        },
-        theme: { color: GOLD },
-        handler: async (response: RazorpayResponse) => {
-          // Step 4 — verify payment signature
-          try {
-            const verified = await checkoutApi.verifyPayment(response);
-            if (!verified.success) throw new Error('Payment verification failed. Contact support.');
-            await clearCart();
-            handleClose();
-            navigate('/thank-you?type=order');
-          } catch (err: unknown) {
-            setError(err instanceof Error ? err.message : 'Verification failed.');
-            setLoading(false);
-          }
-        },
-        modal: {
-          ondismiss: () => setLoading(false),
-        },
-      });
-
-      rzp.open();
+      // Online payment — leave the site for PayU's hosted checkout. The order
+      // is already saved as pending; PayU's callback marks it paid or failed
+      // and sends the shopper back to /thank-you.
+      if (!order.payu) throw new Error('Payment gateway is unavailable. Please try Cash on Delivery.');
+      redirectToPayu(order.payu);
     } catch (err: unknown) {
       if (err instanceof ApiError && err.status === 401) {
         setError('Your session has expired. Please log in to complete your order.');
@@ -261,7 +229,7 @@ export const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
                         <p className="text-xs font-sans" style={{ color: 'rgba(220,214,205,0.28)' }}>Add some confections to get started</p>
                       </div>
                       <button
-                        onClick={handleClose}
+                        onClick={() => { handleClose(); navigate('/collections'); }}
                         className="mt-2 px-6 py-2.5 rounded-full text-[11px] font-bold uppercase tracking-widest border-none cursor-pointer transition-all duration-300"
                         style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLDL})`, color: '#0d0805', boxShadow: `0 6px 20px rgba(212,165,90,0.28)` }}>
                         Browse Collections
@@ -668,7 +636,7 @@ export const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
                       />
                     </div>
 
-                    {RAZORPAY_ENABLED ? (
+                    {ONLINE_PAYMENT_ENABLED ? (
                       <div className="flex flex-col gap-2 mt-1">
                         <label className="text-[10px] uppercase tracking-wider" style={{ color: 'rgba(220,214,205,0.4)' }}>Payment Method</label>
                         <div className="grid grid-cols-2 gap-2">
@@ -686,11 +654,11 @@ export const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
                           </button>
                           <button
                             type="button"
-                            onClick={() => setPaymentMethod('razorpay')}
+                            onClick={() => setPaymentMethod('payu')}
                             className="flex flex-col items-center gap-1.5 py-3 rounded-xl cursor-pointer transition-all duration-200"
                             style={{
-                              background: paymentMethod === 'razorpay' ? 'rgba(212,165,90,0.14)' : 'rgba(255,255,255,0.03)',
-                              border: `1px solid ${paymentMethod === 'razorpay' ? GOLD : 'rgba(212,165,90,0.15)'}`,
+                              background: paymentMethod === 'payu' ? 'rgba(212,165,90,0.14)' : 'rgba(255,255,255,0.03)',
+                              border: `1px solid ${paymentMethod === 'payu' ? GOLD : 'rgba(212,165,90,0.15)'}`,
                             }}
                           >
                             <CreditCard size={16} style={{ color: GOLD }} />
@@ -737,11 +705,11 @@ export const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
                       ? <><Loader2 size={14} className="animate-spin" /> Processing…</>
                       : paymentMethod === 'cod'
                         ? <><Banknote size={14} /> Place Order — ₹{totalPrice.toLocaleString('en-IN')}</>
-                        : <><CreditCard size={14} /> Pay ₹{totalPrice.toLocaleString('en-IN')} Online</>
+                        : <><CreditCard size={14} /> Pay ₹{totalPrice.toLocaleString('en-IN')} via PayU</>
                     }
                   </button>
                   <p className="text-[10px] text-center font-sans" style={{ color: 'rgba(220,214,205,0.28)' }}>
-                    {paymentMethod === 'cod' ? 'Pay in cash when your order arrives' : 'Secured by Razorpay · UPI, Cards, NetBanking & more'}
+                    {paymentMethod === 'cod' ? 'Pay in cash when your order arrives' : 'Secured by PayU · UPI, Cards, NetBanking & more'}
                   </p>
                 </div>
               </>

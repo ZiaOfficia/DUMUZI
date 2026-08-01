@@ -86,11 +86,11 @@ export interface ShippingAddress {
 
 export interface MyOrder {
   id: number;
-  orderId: string;      // razorpay_order_id
+  orderId: string;      // PayU txnid ('razorpay_order_id' column)
   amount: number;       // in paise
   currency: string;
   status: 'pending' | 'paid' | 'failed' | 'shipped' | 'delivered' | 'cancelled';
-  paymentMethod: 'razorpay' | 'cod';
+  paymentMethod: 'payu' | 'cod' | 'razorpay';   // 'razorpay' only on legacy orders
   shippingAddress: ShippingAddress;
   notes: string | null;
   items: OrderItem[];
