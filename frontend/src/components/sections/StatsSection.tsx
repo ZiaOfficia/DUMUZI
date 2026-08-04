@@ -22,8 +22,8 @@ const features = [
   },
   {
     icon: Headphones,
-    title: '24 / 7 Support',
-    desc: 'Our team is always here',
+    title: '10 AM – 6 PM Support',
+    desc: 'Our team is here to help daily',
     accent: '#e8c07a',
   },
 ];

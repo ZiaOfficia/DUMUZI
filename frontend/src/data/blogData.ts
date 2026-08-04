@@ -64,7 +64,7 @@ export const blogPosts: BlogPost[] = [
     title: "Sourcing Single-Origin Ingredient: Madagascar vs. Ecuador",
     excerpt: "Explore the unique flavor profiles of single-origin ingredient beans and how soil, climate, and geography shape the taste of our luxury collections.",
     content: `
-      <p>Just like fine wine, the taste of confection is deeply influenced by its 'terroir'—the environment where the ingredient beans are grown. Today, we contrast two of our favorite single-origin confections: Madagascar and Ecuador.</p>
+      <p>Just like fine coffee, the taste of confection is deeply influenced by its 'terroir'—the environment where the ingredient beans are grown. Today, we contrast two of our favorite single-origin confections: Madagascar and Ecuador.</p>
       
       <h3>Madagascar: Vibrant and Fruity</h3>
       <p>Ingredient beans from the Sambirano Valley in Madagascar are famous for their bright, citrusy acidity. When you taste a DUMUZI Madagascar bar, you will instantly notice notes of raspberry, cranberry, and even citrus. It is a lively, refreshing flavor that surprises many who are used to standard confection.</p>
@@ -173,23 +173,29 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: "7",
-    slug: "pairing-wine-and-luxury-confections",
-    title: "Wine & Confection Pairing: The Connoisseur’s Guide",
-    excerpt: "Learn the rules of pairing fine wines with premium dark and milk confections to elevate your next tasting party.",
+    slug: "pairing-coffee-tea-and-luxury-confections",
+    title: "Coffee & Tea Pairing: The Connoisseur’s Guide",
+    excerpt: "Learn the rules of pairing freshly brewed coffee and fine teas with premium dark and milk confections to elevate your next tasting session.",
     content: `
-      <p>Pairing wine and confection can be incredibly rewarding if done correctly. However, because both contain strong tannins, matching them requires balance. Here are our top rules for a perfect pairing.</p>
-      
-      <h3>Rule 1: The Wine Should Be Sweet or Equal</h3>
-      <p>A dry red wine paired with sweet milk confectionery can taste sour. Ensure the wine has a hint of sweetness to complement the ingredient richness. Port, Banyuls, and late-harvest Zinfandels are classic choices.</p>
-      
+      <p>A great pairing is all about balance. Coffee and tea both carry bitterness and tannins of their own, so matching them with confection requires a little care. Here are our top rules for a perfect pairing.</p>
+
+      <h3>Rule 1: The Brew Should Never Overpower</h3>
+      <p>A sharp, over-extracted espresso paired with delicate milk confectionery will flatten its creaminess. Choose a medium roast with chocolatey, nutty notes so it complements the ingredient richness instead of competing with it. Filter coffee, a smooth South Indian brew, or a mellow Arabica are reliable choices.</p>
+
       <h3>Rule 2: Match Intensities</h3>
-      <p>Match delicate milk confections with lighter wines (like a Pinot Noir), and save robust 80% dark confections for full-bodied Cabernet Sauvignon or Syrah.</p>
+      <p>Pair delicate milk confections with lighter, floral brews such as Darjeeling first flush or a soft green tea. Save robust 80% dark confections for full-bodied companions like a strong Assam, masala chai, or a dark roast espresso.</p>
+
+      <h3>Rule 3: Let Aromas Echo Each Other</h3>
+      <p>Our fruity Madagascar bars sing alongside a citrusy Earl Grey, while the earthy, floral Ecuadorian blends are beautiful with jasmine tea. Sip first, let the palate settle, then taste the confection — the shared aromatic notes will reveal themselves.</p>
+
+      <h3>Serving Tip</h3>
+      <p>Serve the confection at room temperature and the brew hot but not scalding. Cleanse the palate with plain water between pairings so each combination gets a fair tasting.</p>
     `,
     image: "/images/products/LF-D18T.jpeg",
     date: "Nov 10, 2025",
-    author: "Sommelier Desk",
+    author: "Tasting Desk",
     category: "Tasting Guide",
-    tags: "Wine Pairing, Confection Tasting, Fine Dining",
+    tags: "Coffee Pairing, Tea Pairing, Confection Tasting, Fine Dining",
     createdAt: "2025-11-10T12:00:00.000Z",
   },
   {
