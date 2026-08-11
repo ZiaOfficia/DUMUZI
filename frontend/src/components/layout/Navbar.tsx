@@ -542,6 +542,16 @@ export const Navbar = () => {
                   <img src="/images/pnglogos/AMAZONLOGO.png" alt="Amazon" style={{ height: '52px', width: 'auto' }} />
                 </a>
                 <a
+                  href="https://www.flipkart.com/dumuzi-diamond-25-premium-assorted-chocolate-gift-box-free-heart-truffles-pack/p/itmc706f7d3676b1?pid=CHCHPWWKK54KNVFT"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Flipkart"
+                  className="flex items-center justify-center rounded-xl px-1.5 py-0.5 overflow-hidden"
+                  style={{ background: 'rgba(255,255,255,0.92)' }}
+                >
+                  <img src="/images/pnglogos/flipkartlogo.png" alt="Flipkart" style={{ height: '66px', width: 'auto' }} />
+                </a>
+                <a
                   href="https://www.meesho.com/LITTLEFUNFOODSBEVERAGESPRIVATELIMITED?ms=2"
                   target="_blank"
                   rel="noopener noreferrer"
