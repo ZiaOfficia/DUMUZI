@@ -8,6 +8,7 @@ import { useToast } from '../components/common/Toast';
 import { SEO } from '../components/common/SEO';
 import { checkoutApi, ApiError } from '../services/api';
 import { redirectToPayu } from '../utils/payu';
+import { ONLINE_DISCOUNT_PERCENT, onlineDiscount, payableTotal } from '../utils/discount';
 
 const GOLD  = '#d4a373';
 const GOLDL = '#e5c199';
@@ -61,7 +62,7 @@ const Field = ({
 
 export const CheckoutPage = () => {
   const { items, totalItems, totalPrice, clearCart } = useCart();
-  const { user } = useAuth();
+  const { user, isAuthenticated } = useAuth();
   const { success, error } = useToast();
   const navigate = useNavigate();
 
@@ -77,7 +78,11 @@ export const CheckoutPage = () => {
   });
   const [errors, setErrors] = useState<Partial<FormData>>({});
   const [busy, setBusy] = useState(false);
-  const [paymentMethod, setPaymentMethod] = useState<'cod' | 'payu'>('cod');
+  // Online payment leads — it's the cheaper option for the shopper, so it starts selected
+  const [paymentMethod, setPaymentMethod] = useState<'cod' | 'payu'>('payu');
+
+  const discount = paymentMethod === 'payu' ? onlineDiscount(totalPrice) : 0;
+  const payable  = payableTotal(totalPrice, paymentMethod);
 
   const set = (key: keyof FormData) => (v: string) => setForm(f => ({ ...f, [key]: v }));
 
@@ -101,7 +106,8 @@ export const CheckoutPage = () => {
 
     setBusy(true);
     try {
-      // Create the order in the database, tied to the logged-in account
+      // Create the order in the database — tied to the account when signed in,
+      // otherwise saved as a guest order against the details entered above.
       const order = await checkoutApi.createOrder({
         items: items.map(i => ({
           productId: i.id,
@@ -134,9 +140,9 @@ export const CheckoutPage = () => {
       if (!order.payu) throw new Error('Payment gateway is unavailable. Please try Cash on Delivery.');
       redirectToPayu(order.payu);
     } catch (err) {
-      // Session expired mid-checkout — payment requires a logged-in customer
+      // Session expired mid-checkout — sign in again or come back as a guest
       if (err instanceof ApiError && err.status === 401) {
-        error('Your session has expired. Please log in to complete your order.');
+        error('Your session has expired. Please log in again, or continue as a guest.');
         navigate('/login', { state: { from: '/checkout' } });
         setBusy(false);
         return;
@@ -200,6 +206,21 @@ export const CheckoutPage = () => {
                 Shipping Details
               </h2>
 
+              {!isAuthenticated && (
+                <div
+                  className="p-3.5 rounded-xl mb-5"
+                  style={{ background: 'rgba(212,163,115,0.06)', border: '1px solid rgba(212,163,115,0.15)' }}
+                >
+                  <p className="text-xs font-sans leading-relaxed" style={{ color: 'var(--muted)' }}>
+                    You're checking out as a guest — no account needed.{' '}
+                    <Link to="/login" state={{ from: '/checkout' }} className="font-semibold" style={{ color: GOLD }}>
+                      Sign in instead
+                    </Link>{' '}
+                    to save your details and track this order under My Orders.
+                  </p>
+                </div>
+              )}
+
               <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <Field label="Full Name" icon={<User size={14} />} value={form.name} onChange={set('name')} placeholder="Your name" required error={errors.name} />
@@ -241,6 +262,27 @@ export const CheckoutPage = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       <button
                         type="button"
+                        onClick={() => setPaymentMethod('payu')}
+                        className="relative flex items-center gap-3 p-4 rounded-xl text-left transition-all duration-200 cursor-pointer"
+                        style={{
+                          background: paymentMethod === 'payu' ? 'rgba(212,163,115,0.12)' : 'rgba(255,255,255,0.04)',
+                          border: `1px solid ${paymentMethod === 'payu' ? GOLD : 'rgba(212,163,115,0.15)'}`,
+                        }}
+                      >
+                        <span
+                          className="absolute -top-2 right-3 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full"
+                          style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLDL})`, color: 'var(--bg-deep)' }}
+                        >
+                          {ONLINE_DISCOUNT_PERCENT}% Off
+                        </span>
+                        <CreditCard size={18} style={{ color: GOLD, flexShrink: 0 }} />
+                        <div>
+                          <p className="text-sm font-semibold" style={{ color: 'var(--cream)' }}>Pay Online</p>
+                          <p className="text-xs" style={{ color: 'var(--muted)' }}>UPI, Cards &amp; NetBanking via PayU</p>
+                        </div>
+                      </button>
+                      <button
+                        type="button"
                         onClick={() => setPaymentMethod('cod')}
                         className="flex items-center gap-3 p-4 rounded-xl text-left transition-all duration-200 cursor-pointer"
                         style={{
@@ -252,21 +294,6 @@ export const CheckoutPage = () => {
                         <div>
                           <p className="text-sm font-semibold" style={{ color: 'var(--cream)' }}>Cash on Delivery</p>
                           <p className="text-xs" style={{ color: 'var(--muted)' }}>Pay when your order arrives</p>
-                        </div>
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => setPaymentMethod('payu')}
-                        className="flex items-center gap-3 p-4 rounded-xl text-left transition-all duration-200 cursor-pointer"
-                        style={{
-                          background: paymentMethod === 'payu' ? 'rgba(212,163,115,0.12)' : 'rgba(255,255,255,0.04)',
-                          border: `1px solid ${paymentMethod === 'payu' ? GOLD : 'rgba(212,163,115,0.15)'}`,
-                        }}
-                      >
-                        <CreditCard size={18} style={{ color: GOLD, flexShrink: 0 }} />
-                        <div>
-                          <p className="text-sm font-semibold" style={{ color: 'var(--cream)' }}>Pay Online</p>
-                          <p className="text-xs" style={{ color: 'var(--muted)' }}>UPI, Cards &amp; NetBanking via PayU</p>
                         </div>
                       </button>
                     </div>
@@ -298,8 +325,8 @@ export const CheckoutPage = () => {
                   {busy
                     ? <div className="w-4 h-4 rounded-full border-2 animate-spin" style={{ borderColor: 'rgba(0,0,0,0.2)', borderTopColor: 'var(--bg-deep)' }} />
                     : paymentMethod === 'cod'
-                      ? <><Banknote size={15} /> Place Order — ₹{totalPrice.toLocaleString('en-IN')}</>
-                      : <><CreditCard size={15} /> Pay ₹{totalPrice.toLocaleString('en-IN')} via PayU</>
+                      ? <><Banknote size={15} /> Place Order — ₹{payable.toLocaleString('en-IN')}</>
+                      : <><CreditCard size={15} /> Pay ₹{payable.toLocaleString('en-IN')} via PayU</>
                   }
                 </button>
               </form>
@@ -358,10 +385,21 @@ export const CheckoutPage = () => {
                   <span>Shipping</span>
                   <span style={{ color: '#10b981' }}>Free</span>
                 </div>
+                {discount > 0 && (
+                  <div className="flex justify-between text-sm font-sans" style={{ color: 'var(--muted)' }}>
+                    <span>Online payment ({ONLINE_DISCOUNT_PERCENT}% off)</span>
+                    <span style={{ color: '#10b981' }}>−₹{discount.toLocaleString('en-IN')}</span>
+                  </div>
+                )}
                 <div className="flex justify-between font-bold text-base mt-2" style={{ color: 'var(--cream)' }}>
                   <span>Total</span>
-                  <span style={{ color: GOLD }}>₹{totalPrice.toLocaleString('en-IN')}</span>
+                  <span style={{ color: GOLD }}>₹{payable.toLocaleString('en-IN')}</span>
                 </div>
+                {paymentMethod === 'cod' && totalPrice > 0 && (
+                  <p className="text-xs font-sans mt-1" style={{ color: GOLDL }}>
+                    Switch to Pay Online and save ₹{onlineDiscount(totalPrice).toLocaleString('en-IN')}
+                  </p>
+                )}
               </div>
             </div>
           </motion.div>

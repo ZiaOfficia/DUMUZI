@@ -1,13 +1,18 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { ShoppingBag, Trash2, Plus, Minus, ArrowRight, ShoppingCart } from 'lucide-react';
+import { ShoppingBag, Trash2, Plus, Minus, ArrowRight, ShoppingCart, UserRound } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import { useAuth } from '../context/AuthContext';
+import { useGuestGate } from '../context/GuestGateContext';
 import { SEO } from '../components/common/SEO';
+import { ONLINE_DISCOUNT_PERCENT, onlineDiscount, payableTotal } from '../utils/discount';
 
 const GOLD  = '#d4a373';
 const GOLDL = '#e5c199';
 
 export const CartPage = () => {
+  const { isAuthenticated } = useAuth();
+  const { isGuest } = useGuestGate();
   const { items, totalItems, totalPrice, updateQty, removeItem, clearCart, loading } = useCart();
   const navigate = useNavigate();
 
@@ -31,9 +36,20 @@ export const CartPage = () => {
           className="flex items-center justify-between mb-8"
         >
           <div>
-            <h1 className="font-display text-3xl font-bold" style={{ color: 'var(--cream)' }}>
-              Your Cart
-            </h1>
+            <div className="flex items-center gap-2.5">
+              <h1 className="font-display text-3xl font-bold" style={{ color: 'var(--cream)' }}>
+                Your Cart
+              </h1>
+              {/* Same guest marker as the slide-over panel */}
+              {!isAuthenticated && isGuest && (
+                <span
+                  className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full"
+                  style={{ background: 'rgba(212,163,115,0.12)', color: GOLDL, border: '1px solid rgba(212,163,115,0.3)' }}
+                >
+                  <UserRound size={11} /> Guest
+                </span>
+              )}
+            </div>
             <p className="text-sm mt-1 font-sans" style={{ color: 'var(--muted)' }}>
               {totalItems === 0 ? 'Empty' : `${totalItems} item${totalItems > 1 ? 's' : ''}`}
             </p>
@@ -213,6 +229,23 @@ export const CartPage = () => {
                   >
                     <span>Total</span>
                     <span style={{ color: GOLD }}>₹{totalPrice.toLocaleString('en-IN')}</span>
+                  </div>
+
+                  {/* Online payment is preselected at checkout — show what it saves */}
+                  <div
+                    className="rounded-xl px-3 py-2.5 mt-1"
+                    style={{ background: 'rgba(212,163,115,0.07)', border: '1px dashed rgba(212,163,115,0.3)' }}
+                  >
+                    <p className="text-xs font-sans leading-relaxed" style={{ color: 'var(--muted)' }}>
+                      Pay online at checkout and save{' '}
+                      <span className="font-bold" style={{ color: GOLDL }}>
+                        ₹{onlineDiscount(totalPrice).toLocaleString('en-IN')}
+                      </span>{' '}
+                      ({ONLINE_DISCOUNT_PERCENT}% off) — you'd pay{' '}
+                      <span className="font-bold" style={{ color: GOLDL }}>
+                        ₹{payableTotal(totalPrice, 'payu').toLocaleString('en-IN')}
+                      </span>
+                    </p>
                   </div>
                 </div>
 

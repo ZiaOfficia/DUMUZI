@@ -1,33 +1,25 @@
 import { useCallback } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
 import { useCart, type CartItem } from '../context/CartContext';
-import { useAuth } from '../context/AuthContext';
-import { useToast } from '../components/common/Toast';
+import { useGuestGate } from '../context/GuestGateContext';
 
 /**
- * Auth-guarded add-to-cart, shared by every "Add to Cart" button on the site.
- * Guests are sent to /login (with a return path back to the current page)
- * so cart contents always belong to an account.
+ * Add-to-cart, shared by every "Add to Cart" button on the site.
  *
- * Returns true if the item was added, false if the user was redirected to login.
+ * The very first add asks the shopper whether to sign in or buy as a guest
+ * (see GuestGateContext); the item is added as soon as they pick guest, and
+ * they're never asked again. After that — and for anyone already signed in —
+ * the item goes straight into the cart.
+ *
+ * Returns true if the item went in immediately, false if the prompt was shown
+ * instead, so existing call sites that branch on it keep working.
  */
 export function useAddToCart() {
-  const { addItem }         = useCart();
-  const { isAuthenticated } = useAuth();
-  const { info }            = useToast();
-  const navigate            = useNavigate();
-  const location            = useLocation();
+  const { addItem }        = useCart();
+  const { ensureIdentity } = useGuestGate();
 
   return useCallback(
-    (item: Omit<CartItem, 'quantity'>): boolean => {
-      if (!isAuthenticated) {
-        info('Please log in to add items to your cart');
-        navigate('/login', { state: { from: location.pathname } });
-        return false;
-      }
-      addItem(item);
-      return true;
-    },
-    [isAuthenticated, addItem, navigate, info, location.pathname]
+    (item: Omit<CartItem, 'quantity'>): boolean =>
+      ensureIdentity(() => { addItem(item); }),
+    [addItem, ensureIdentity]
   );
 }

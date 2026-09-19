@@ -4,6 +4,7 @@ import { CheckCircle, XCircle, Home, ArrowRight, ShoppingBag, Sparkles, Package,
 import { motion } from "framer-motion";
 import { SEO } from "../components/common/SEO";
 import { useCart } from "../context/CartContext";
+import { useAuth } from "../context/AuthContext";
 
 // Declare gtag for TypeScript
 declare global {
@@ -19,6 +20,7 @@ const GOLDL = "#e8c07a";
 const ThankYouPage = () => {
   const [searchParams] = useSearchParams();
   const { clearCart } = useCart();
+  const { isAuthenticated } = useAuth();
   const isOrder = searchParams.get("type") === "order";
 
   // PayU redirects back here through the backend callback, which appends
@@ -181,12 +183,14 @@ const ThankYouPage = () => {
               >
                 <ShoppingBag size={15} /> Continue Shopping
               </Link>
+              {/* A guest has no order history to open — point them at the
+                  public tracker, which only needs the order id we just emailed. */}
               <Link
-                to="/my-orders"
+                to={isAuthenticated ? "/my-orders" : "/track-order"}
                 className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300"
                 style={{ background: "transparent", color: "var(--cream)", border: "1px solid rgba(212,165,90,0.3)" }}
               >
-                <Package size={15} /> View My Orders
+                <Package size={15} /> {isAuthenticated ? "View My Orders" : "Track Your Order"}
               </Link>
             </>
           ) : (

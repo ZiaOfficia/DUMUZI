@@ -1,10 +1,12 @@
 /**
  * CartContext — dual-mode cart:
  *  • Authenticated user → syncs with MySQL via /api/cart
- *  • Guest             → local in-memory state (migrated to DB on login)
+ *  • Guest             → kept in localStorage so it survives a refresh and the
+ *                        round trip to PayU, and is merged into the account
+ *                        cart if the shopper logs in later
  */
 import {
-  createContext, useContext, useReducer, useEffect, useState, useCallback, type ReactNode,
+  createContext, useContext, useReducer, useEffect, useState, useRef, useCallback, type ReactNode,
 } from 'react';
 import { cartApi } from '../services/api';
 import { useAuth } from './AuthContext';
@@ -57,6 +59,33 @@ const calcTotals = (items: CartItem[]) => ({
   totalItems: items.reduce((s, i) => s + i.quantity, 0),
   totalPrice: items.reduce((s, i) => s + i.price * i.quantity, 0),
 });
+
+// ── Guest cart storage ───────────────────────────────────────────────────────
+// Guests have no server-side cart, so the browser is the only place to keep it.
+// Every access is guarded: storage can be unavailable (private windows) or hold
+// something stale from an older build.
+const GUEST_CART_KEY = 'dumuzi_guest_cart';
+
+const readGuestCart = (): CartItem[] => {
+  try {
+    const parsed = JSON.parse(localStorage.getItem(GUEST_CART_KEY) ?? 'null');
+    if (!Array.isArray(parsed)) return [];
+    return parsed.filter(
+      (i): i is CartItem =>
+        !!i && typeof i.id === 'number' && typeof i.price === 'number' && typeof i.quantity === 'number',
+    );
+  } catch {
+    return [];
+  }
+};
+
+const writeGuestCart = (items: CartItem[]) => {
+  try { localStorage.setItem(GUEST_CART_KEY, JSON.stringify(items)); } catch { /* storage unavailable */ }
+};
+
+const clearGuestCart = () => {
+  try { localStorage.removeItem(GUEST_CART_KEY); } catch { /* storage unavailable */ }
+};
 
 function cartReducer(state: CartState, action: CartAction): CartState {
   switch (action.type) {
@@ -127,8 +156,12 @@ function dbCartToItems(apiItems: CartItemWithProduct[]): { items: CartItem[]; ro
 export function CartProvider({ children }: { children: ReactNode }) {
   const { isAuthenticated, loading: authLoading } = useAuth();
 
-  const [state, dispatch] = useReducer(cartReducer, {
-    items: [], totalItems: 0, totalPrice: 0, cartRowIds: new Map(), loading: false,
+  // Start from whatever the browser remembered — a guest who refreshes or comes
+  // back from PayU should still find their cart. Replaced by the DB cart if the
+  // auth check below says they're signed in.
+  const [state, dispatch] = useReducer(cartReducer, undefined, (): CartState => {
+    const items = readGuestCart();
+    return { items, ...calcTotals(items), cartRowIds: new Map(), loading: false };
   });
 
   // ── Free gifts (local, ₹0, customer-claimed) ─────────────────────────────────
@@ -156,21 +189,55 @@ export function CartProvider({ children }: { children: ReactNode }) {
     });
   }, [state.items, state.totalPrice]);
 
-  // When auth state resolves: load cart from DB (if logged in)
+  // Tracks whether the last resolved auth state was "signed in", so we can tell
+  // a logout (clear the cart) from a guest simply browsing (keep it).
+  const wasAuthenticated = useRef(false);
+
+  // When auth state resolves: load the cart from the DB, merging anything the
+  // shopper added before signing in.
   useEffect(() => {
     if (authLoading) return;
+
     if (!isAuthenticated) {
-      dispatch({ type: 'CLEAR_CART' });
+      if (wasAuthenticated.current) {
+        wasAuthenticated.current = false;
+        clearGuestCart();
+        dispatch({ type: 'CLEAR_CART' });
+      }
       return;
     }
+
+    wasAuthenticated.current = true;
     dispatch({ type: 'SET_LOADING', value: true });
-    cartApi.get()
-      .then(({ items: apiItems }) => {
+
+    // Hand the guest cart over to the account, then read back the merged result.
+    // Cleared up front so a failed merge can't replay these items on next load.
+    const pending = readGuestCart();
+    clearGuestCart();
+
+    (async () => {
+      try {
+        for (const item of pending) {
+          await cartApi.add(item.id, item.quantity);
+        }
+      } catch { /* out of stock or removed — the DB cart below is the truth */ }
+
+      try {
+        const { items: apiItems } = await cartApi.get();
         const { items, rowIds } = dbCartToItems(apiItems as unknown as CartItemWithProduct[]);
         dispatch({ type: 'SET_CART', items, rowIds });
-      })
-      .catch(() => dispatch({ type: 'SET_LOADING', value: false }));
+      } catch {
+        dispatch({ type: 'SET_LOADING', value: false });
+      }
+    })();
   }, [isAuthenticated, authLoading]);
+
+  // Mirror the guest cart to storage on every change (no-op once signed in —
+  // the server holds the cart then).
+  useEffect(() => {
+    if (authLoading || isAuthenticated) return;
+    writeGuestCart(state.items);
+  }, [state.items, isAuthenticated, authLoading]);
 
   // ── addItem ────────────────────────────────────────────────────────────────
   const addItem = useCallback(async (item: Omit<CartItem, 'quantity'>) => {

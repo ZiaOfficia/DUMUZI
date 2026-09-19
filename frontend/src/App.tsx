@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 
 import { AuthProvider }           from './context/AuthContext';
 import { CartProvider }           from './context/CartContext';
+import { GuestGateProvider }      from './context/GuestGateContext';
 import { ToastProvider }          from './components/common/Toast';
 import { Layout }                 from './components/layout/Layout';
 import ProtectedCustomerRoute     from './components/common/ProtectedCustomerRoute';
@@ -57,6 +58,7 @@ function App() {
         <ToastProvider>
           <BrowserRouter>
             <ScrollToTop />
+            <GuestGateProvider>
             <Routes>
               {/* ── Public routes wrapped in site Layout ──────────────────── */}
               <Route element={<Layout><Outlet /></Layout>}>
@@ -91,10 +93,14 @@ function App() {
               <Route path="/login"    element={<LoginPage />} />
               <Route path="/register" element={<RegisterPage />} />
 
+              {/* ── Cart & checkout — open to guests and members alike ────── */}
+              <Route element={<Layout><Outlet /></Layout>}>
+                <Route path="/cart"     element={<CartPage />} />
+                <Route path="/checkout" element={<CheckoutPage />} />
+              </Route>
+
               {/* ── Customer protected pages (with Layout) ────────────────── */}
               <Route element={<Layout><Outlet /></Layout>}>
-                <Route path="/cart"     element={<ProtectedCustomerRoute><CartPage /></ProtectedCustomerRoute>} />
-                <Route path="/checkout" element={<ProtectedCustomerRoute><CheckoutPage /></ProtectedCustomerRoute>} />
                 <Route path="/profile"  element={<ProtectedCustomerRoute><ProfilePage /></ProtectedCustomerRoute>} />
                 <Route path="/my-orders" element={<ProtectedCustomerRoute><MyOrdersPage /></ProtectedCustomerRoute>} />
               </Route>
@@ -108,6 +114,7 @@ function App() {
 
               <Route path="*" element={<NotFound />} />
             </Routes>
+            </GuestGateProvider>
           </BrowserRouter>
         </ToastProvider>
       </CartProvider>

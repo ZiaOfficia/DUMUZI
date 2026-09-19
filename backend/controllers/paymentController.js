@@ -10,6 +10,14 @@ const {
 const PAYMENT_METHODS = ['payu', 'cod'];
 
 /**
+ * Paying online earns 10% off. Mirrored by ONLINE_DISCOUNT_RATE in
+ * frontend/src/utils/discount.ts — keep the two in step, and keep the rounding
+ * identical, or the total quoted in the cart won't match what PayU charges.
+ */
+const ONLINE_DISCOUNT_RATE  = 0.10;
+const ONLINE_DISCOUNT_LABEL = 'Online payment discount (10%)';
+
+/**
  * The gateway columns are named after the gateway we used first (Razorpay);
  * they hold PayU's equivalents now — txnid, mihpayid and the response hash.
  * Renaming them would ripple through the admin panel and order history for no
@@ -42,10 +50,12 @@ exports.createOrder = async (req, res) => {
       return res.status(400).json({ message: 'Cart is empty' });
     }
 
-    // Fall back to the logged-in account's details if not provided
-    const name  = customer?.name  || req.customer.name;
-    const email = customer?.email || req.customer.email;
-    const phone = customer?.phone || req.customer.phone;
+    // Signed-in shopper, or null for a guest checkout (optionalCustomer).
+    // Guests have no account to fall back on, so the body must carry their details.
+    const userId = req.customer?.id ?? null;
+    const name  = customer?.name  || req.customer?.name;
+    const email = customer?.email || req.customer?.email;
+    const phone = customer?.phone || req.customer?.phone;
     if (!name || !email || !phone) {
       return res.status(400).json({ message: 'Customer name, email and phone are required' });
     }
@@ -55,9 +65,22 @@ exports.createOrder = async (req, res) => {
     const products = await Product.findAll({ where: { id: productIds } });
     const { items, totalRupees } = priceOrderItems(rawItems, products);
 
+    // The online-payment discount is worked out here rather than taken from the
+    // client, so the amount charged is always the one actually earned. It's
+    // recorded as a negative line item too, so an order's lines still add up to
+    // its total in the customer's history and the admin panel.
+    const discountRupees = paymentMethod === 'payu'
+      ? Math.round(totalRupees * ONLINE_DISCOUNT_RATE * 100) / 100
+      : 0;
+    const payableRupees = Math.round((totalRupees - discountRupees) * 100) / 100;
+
+    const orderItems = discountRupees > 0
+      ? [...items, { productId: 0, name: ONLINE_DISCOUNT_LABEL, price: -discountRupees, quantity: 1 }]
+      : items;
+
     // Orders are stored in paise so integer maths stays exact; PayU itself is
     // handed rupees as a 2-decimal string further down.
-    const amountPaise = Math.round(totalRupees * 100);
+    const amountPaise = Math.round(payableRupees * 100);
 
     if (paymentMethod === 'cod') {
       // No payment gateway involved — generate a synthetic order id so the
@@ -65,7 +88,7 @@ exports.createOrder = async (req, res) => {
       const codOrderId = `cod_${Date.now()}_${crypto.randomBytes(4).toString('hex')}`;
 
       await Order.create({
-        user_id:           req.customer.id,
+        user_id:           userId, // null on a guest order
         razorpay_order_id: codOrderId,
         amount:            amountPaise,
         currency:          'INR',
@@ -74,7 +97,7 @@ exports.createOrder = async (req, res) => {
         customer_name:     name,
         customer_email:    email,
         customer_phone:    phone,
-        items:             JSON.stringify(items),
+        items:             JSON.stringify(orderItems),
         ...shipping,
       });
 
@@ -98,7 +121,7 @@ exports.createOrder = async (req, res) => {
     const fields = {
       key,
       txnid,
-      amount:      formatAmount(totalRupees),
+      amount:      formatAmount(payableRupees),
       productinfo: clean(`DUMUZI order ${txnid}`),
       firstname:   clean(name.split(' ')[0] || name, 60),
       email:       clean(email, 80),
@@ -109,8 +132,8 @@ exports.createOrder = async (req, res) => {
     fields.hash = requestHash(fields, salt);
 
     await Order.create({
-      user_id:           req.customer.id, // set by protectCustomer middleware
-      razorpay_order_id: txnid,           // ← PayU txnid
+      user_id:           userId, // null on a guest order
+      razorpay_order_id: txnid,  // ← PayU txnid
       amount:            amountPaise,
       currency:          'INR',
       status:            'pending',
@@ -118,7 +141,7 @@ exports.createOrder = async (req, res) => {
       customer_name:     name,
       customer_email:    email,
       customer_phone:    phone,
-      items:             JSON.stringify(items),
+      items:             JSON.stringify(orderItems),
       ...shipping,
     });
 
@@ -205,11 +228,14 @@ exports.payuCallback = async (req, res) => {
  * GET /api/payments/status/:txnid — what the confirmation page asks after PayU
  * has bounced the shopper back. The callback above is the only thing that can
  * mark an order paid; this just reports what it decided, scoped to the owner.
+ *
+ * A signed-in shopper only ever sees their own orders; a guest is limited to
+ * guest orders (user_id null), which are keyed by an unguessable txnid.
  */
 exports.getPaymentStatus = async (req, res) => {
   try {
     const order = await Order.findOne({
-      where: { razorpay_order_id: req.params.txnid, user_id: req.customer.id },
+      where: { razorpay_order_id: req.params.txnid, user_id: req.customer?.id ?? null },
       attributes: ['razorpay_order_id', 'status', 'amount', 'payment_method'],
     });
 

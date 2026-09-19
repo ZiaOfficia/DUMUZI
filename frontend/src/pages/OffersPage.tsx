@@ -165,7 +165,7 @@ export const OffersPage = () => {
       price: offer.buy.mrp,
       image: offer.buy.image,
     });
-    if (!added) return;                 // guest — sent to login instead
+    if (!added) return;   // first-time shopper — the sign-in/guest prompt is up
     addGift(singleGiftItem(offer));
     success(`${offer.buy.description} added — your free ${offer.gift.description} is in the cart!`);
     window.dispatchEvent(new CustomEvent('dumuzi:open-cart'));

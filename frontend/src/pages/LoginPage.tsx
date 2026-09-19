@@ -1,8 +1,9 @@
 import { useState, type FormEvent } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Mail, Lock, Eye, EyeOff, LogIn } from 'lucide-react';
+import { Mail, Lock, Eye, EyeOff, LogIn, ShoppingBag } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
+import { useGuestGate } from '../context/GuestGateContext';
 import { useToast } from '../components/common/Toast';
 import { SEO } from '../components/common/SEO';
 
@@ -58,6 +59,7 @@ export const LoginPage = () => {
   const [busy, setBusy]       = useState(false);
 
   const { login } = useAuth();
+  const { continueAsGuest } = useGuestGate();
   const { success, error } = useToast();
   const navigate  = useNavigate();
   const location  = useLocation();
@@ -112,7 +114,7 @@ export const LoginPage = () => {
             Welcome back
           </h1>
           <p className="text-sm font-sans" style={{ color: 'var(--muted)' }}>
-            Sign in to view your cart and orders
+            Sign in to view your cart and orders — or buy as a guest
           </p>
         </div>
 
@@ -163,6 +165,34 @@ export const LoginPage = () => {
               )}
             </button>
           </form>
+
+          {/* Second option — no account needed */}
+          <div className="flex items-center gap-3 my-6">
+            <span className="flex-1 h-px" style={{ background: 'rgba(212,163,115,0.15)' }} />
+            <span className="text-[10px] font-semibold uppercase tracking-[0.2em]" style={{ color: 'rgba(212,163,115,0.45)' }}>
+              or
+            </span>
+            <span className="flex-1 h-px" style={{ background: 'rgba(212,163,115,0.15)' }} />
+          </div>
+
+          <button
+            type="button"
+            onClick={() => { continueAsGuest(); navigate(from, { replace: true }); }}
+            className="flex items-center justify-center gap-2.5 w-full py-3.5 rounded-xl font-bold text-sm uppercase tracking-wider transition-all duration-300"
+            style={{
+              background: 'rgba(255,255,255,0.04)',
+              color: GOLDL,
+              border: `1px solid rgba(212,163,115,0.4)`,
+              cursor: 'pointer',
+            }}
+            onMouseEnter={e => { e.currentTarget.style.background = 'rgba(212,163,115,0.1)'; e.currentTarget.style.borderColor = GOLD; }}
+            onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.04)'; e.currentTarget.style.borderColor = 'rgba(212,163,115,0.4)'; }}
+          >
+            <ShoppingBag size={15} /> Continue as Guest
+          </button>
+          <p className="text-xs text-center mt-2.5 font-sans" style={{ color: 'var(--muted)' }}>
+            Shop and check out without an account
+          </p>
 
           <div className="mt-6 pt-6 text-center" style={{ borderTop: '1px solid rgba(212,163,115,0.1)' }}>
             <p className="text-sm font-sans" style={{ color: 'var(--muted)' }}>

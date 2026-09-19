@@ -35,4 +35,30 @@ const protectCustomer = async (req, res, next) => {
   }
 };
 
-module.exports = { protectCustomer };
+/**
+ * Same identification as protectCustomer, but never rejects the request.
+ * Sets req.customer to the signed-in shopper, or null for a guest, so a route
+ * can serve both (guest checkout) instead of forcing an account.
+ */
+const optionalCustomer = async (req, res, next) => {
+  req.customer = null;
+
+  const token = req.cookies?.customerToken;
+  if (!token) return next();
+
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    if (decoded.type !== "customer") return next();
+
+    const user = await User.findByPk(decoded.id, {
+      attributes: { exclude: ["password"] },
+    });
+    if (user) req.customer = user;
+  } catch (error) {
+    // An expired or bad cookie just means "treat this as a guest"
+  }
+
+  next();
+};
+
+module.exports = { protectCustomer, optionalCustomer };

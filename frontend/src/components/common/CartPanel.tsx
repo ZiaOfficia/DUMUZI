@@ -1,11 +1,14 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Trash2, ShoppingBag, Plus, Minus, Package, ArrowLeft, Loader2, Banknote, CreditCard, Gift } from 'lucide-react';
+import { X, Trash2, ShoppingBag, Plus, Minus, Package, ArrowLeft, Loader2, Banknote, CreditCard, Gift, UserRound } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
+import { useAuth } from '../../context/AuthContext';
+import { useGuestGate } from '../../context/GuestGateContext';
 import { redirectToPayu } from '../../utils/payu';
 import { checkoutApi, ApiError } from '../../services/api';
 import { getComboProgress, singleOffers, singleGiftKey, singleGiftItem } from '../../data/offersData';
+import { ONLINE_DISCOUNT_PERCENT, onlineDiscount, payableTotal } from '../../utils/discount';
 
 const GOLD  = '#d4a55a';
 const GOLDL = '#e8c07a';
@@ -32,12 +35,18 @@ interface CustomerForm {
 export const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
   const navigate = useNavigate();
   const { items, totalItems, totalPrice, updateQty, removeItem, clearCart, gifts, addGift, removeGift } = useCart();
+  const { isAuthenticated, user } = useAuth();
+  const { isGuest } = useGuestGate();
 
   const [step, setStep]       = useState<'cart' | 'checkout'>('cart');
   const [loading, setLoading] = useState(false);
   const [error, setError]     = useState('');
   const [form, setForm]       = useState<CustomerForm>({ name: '', email: '', phone: '', address: '', city: '', state: '', pincode: '' });
-  const [paymentMethod, setPaymentMethod] = useState<'cod' | 'payu'>('cod');
+  // Online payment leads — it's the cheaper option for the shopper, so it starts selected
+  const [paymentMethod, setPaymentMethod] = useState<'cod' | 'payu'>('payu');
+
+  const discount = paymentMethod === 'payu' ? onlineDiscount(totalPrice) : 0;
+  const payable  = payableTotal(totalPrice, paymentMethod);
 
   // Combo-offer progress — drives the "add ₹X more to get Y free" nudge.
   const combo = getComboProgress(totalPrice);
@@ -123,7 +132,7 @@ export const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
       redirectToPayu(order.payu);
     } catch (err: unknown) {
       if (err instanceof ApiError && err.status === 401) {
-        setError('Your session has expired. Please log in to complete your order.');
+        setError('Your session has expired. Please refresh the page and try again.');
         setLoading(false);
         return;
       }
@@ -200,6 +209,20 @@ export const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
                   <span className="text-[10px] font-bold px-2 py-0.5 rounded-full"
                     style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLDL})`, color: '#0d0805' }}>
                     {totalItems}
+                  </span>
+                )}
+                {/* Standing reminder of who's shopping — a guest sees it from the
+                    moment their first item lands, not only at the details step. */}
+                {!isAuthenticated && isGuest && (
+                  <span
+                    className="flex items-center gap-1 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full"
+                    style={{
+                      background: 'rgba(212,165,90,0.12)',
+                      color: GOLDL,
+                      border: '1px solid rgba(212,165,90,0.3)',
+                    }}
+                  >
+                    <UserRound size={10} /> Guest
                   </span>
                 )}
               </div>
@@ -462,6 +485,9 @@ export const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
                         ₹{totalPrice.toLocaleString('en-IN')}
                       </span>
                     </div>
+                    <p className="text-[10px] font-sans text-center" style={{ color: 'rgba(212,165,90,0.65)' }}>
+                      Pay online at checkout and save {ONLINE_DISCOUNT_PERCENT}% — ₹{onlineDiscount(totalPrice).toLocaleString('en-IN')} off
+                    </p>
                     <p className="text-[10px] font-sans text-center" style={{ color: 'rgba(220,214,205,0.3)' }}>
                       Taxes &amp; shipping calculated at checkout
                     </p>
@@ -528,19 +554,66 @@ export const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
                         </span>
                       </div>
                     ))}
+                    {discount > 0 && (
+                      <div className="flex items-center justify-between">
+                        <span className="text-[11px] font-sans" style={{ color: 'var(--muted)' }}>
+                          Online payment ({ONLINE_DISCOUNT_PERCENT}% off)
+                        </span>
+                        <span className="text-[11px] font-bold" style={{ color: '#10b981' }}>
+                          −₹{discount.toLocaleString('en-IN')}
+                        </span>
+                      </div>
+                    )}
                     <div className="flex items-center justify-between pt-2" style={{ borderTop: '1px solid rgba(212,165,90,0.12)' }}>
                       <span className="text-[11px] font-bold uppercase tracking-wider" style={{ color: 'rgba(212,165,90,0.6)' }}>Total</span>
                       <span className="font-display font-bold text-base" style={{ color: 'var(--cream)' }}>
-                        ₹{totalPrice.toLocaleString('en-IN')}
+                        ₹{payable.toLocaleString('en-IN')}
                       </span>
                     </div>
+                    {/* COD forfeits the discount — say so where the total is, not
+                        just on the payment buttons further down. */}
+                    {paymentMethod === 'cod' && totalPrice > 0 && (
+                      <p className="text-[10px] font-sans" style={{ color: GOLDL }}>
+                        Switch to Pay Online and save ₹{onlineDiscount(totalPrice).toLocaleString('en-IN')}
+                      </p>
+                    )}
                   </div>
 
                   {/* Customer form */}
                   <div className="flex flex-col gap-4">
-                    <p className="text-[10px] uppercase tracking-widest font-bold" style={{ color: 'rgba(212,165,90,0.5)' }}>
-                      Your Details
-                    </p>
+                    <div className="flex items-center justify-between gap-2">
+                      <p className="text-[10px] uppercase tracking-widest font-bold" style={{ color: 'rgba(212,165,90,0.5)' }}>
+                        Your Details
+                      </p>
+                      {/* Who the order will be placed as — a guest should never
+                          have to wonder whether they're signed in. */}
+                      <span
+                        className="flex items-center gap-1 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full"
+                        style={{
+                          background: isAuthenticated ? 'rgba(16,185,129,0.12)' : 'rgba(212,165,90,0.12)',
+                          color: isAuthenticated ? '#10b981' : GOLDL,
+                          border: `1px solid ${isAuthenticated ? 'rgba(16,185,129,0.3)' : 'rgba(212,165,90,0.3)'}`,
+                        }}
+                      >
+                        <UserRound size={10} />
+                        {isAuthenticated ? (user?.name?.split(' ')[0] || 'Signed in') : 'Guest'}
+                      </span>
+                    </div>
+
+                    {!isAuthenticated && (
+                      <p className="text-[10px] font-sans leading-relaxed -mt-1" style={{ color: 'rgba(220,214,205,0.45)' }}>
+                        Checking out as a guest — no account needed.{' '}
+                        <button
+                          type="button"
+                          onClick={() => { onClose(); navigate('/login', { state: { from: '/checkout' } }); }}
+                          className="font-semibold underline underline-offset-2"
+                          style={{ color: GOLD, cursor: 'pointer', background: 'none', border: 'none', padding: 0 }}
+                        >
+                          Sign in
+                        </button>{' '}
+                        to track this order under My Orders.
+                      </p>
+                    )}
 
                     <div className="flex flex-col gap-1">
                       <label className="text-[10px] uppercase tracking-wider" style={{ color: 'rgba(220,214,205,0.4)' }}>Full Name</label>
@@ -642,6 +715,24 @@ export const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
                         <div className="grid grid-cols-2 gap-2">
                           <button
                             type="button"
+                            onClick={() => setPaymentMethod('payu')}
+                            className="relative flex flex-col items-center gap-1.5 py-3 rounded-xl cursor-pointer transition-all duration-200"
+                            style={{
+                              background: paymentMethod === 'payu' ? 'rgba(212,165,90,0.14)' : 'rgba(255,255,255,0.03)',
+                              border: `1px solid ${paymentMethod === 'payu' ? GOLD : 'rgba(212,165,90,0.15)'}`,
+                            }}
+                          >
+                            <span
+                              className="absolute -top-1.5 right-2 text-[8px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-full"
+                              style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLDL})`, color: '#0d0805' }}
+                            >
+                              {ONLINE_DISCOUNT_PERCENT}% Off
+                            </span>
+                            <CreditCard size={16} style={{ color: GOLD }} />
+                            <span className="text-[11px] font-bold" style={{ color: 'var(--cream)' }}>Pay Online</span>
+                          </button>
+                          <button
+                            type="button"
                             onClick={() => setPaymentMethod('cod')}
                             className="flex flex-col items-center gap-1.5 py-3 rounded-xl cursor-pointer transition-all duration-200"
                             style={{
@@ -651,18 +742,6 @@ export const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
                           >
                             <Banknote size={16} style={{ color: GOLD }} />
                             <span className="text-[11px] font-bold" style={{ color: 'var(--cream)' }}>Cash on Delivery</span>
-                          </button>
-                          <button
-                            type="button"
-                            onClick={() => setPaymentMethod('payu')}
-                            className="flex flex-col items-center gap-1.5 py-3 rounded-xl cursor-pointer transition-all duration-200"
-                            style={{
-                              background: paymentMethod === 'payu' ? 'rgba(212,165,90,0.14)' : 'rgba(255,255,255,0.03)',
-                              border: `1px solid ${paymentMethod === 'payu' ? GOLD : 'rgba(212,165,90,0.15)'}`,
-                            }}
-                          >
-                            <CreditCard size={16} style={{ color: GOLD }} />
-                            <span className="text-[11px] font-bold" style={{ color: 'var(--cream)' }}>Pay Online</span>
                           </button>
                         </div>
                       </div>
@@ -704,8 +783,8 @@ export const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
                     {loading
                       ? <><Loader2 size={14} className="animate-spin" /> Processing…</>
                       : paymentMethod === 'cod'
-                        ? <><Banknote size={14} /> Place Order — ₹{totalPrice.toLocaleString('en-IN')}</>
-                        : <><CreditCard size={14} /> Pay ₹{totalPrice.toLocaleString('en-IN')} via PayU</>
+                        ? <><Banknote size={14} /> Place Order — ₹{payable.toLocaleString('en-IN')}</>
+                        : <><CreditCard size={14} /> Pay ₹{payable.toLocaleString('en-IN')} via PayU</>
                     }
                   </button>
                   <p className="text-[10px] text-center font-sans" style={{ color: 'rgba(220,214,205,0.28)' }}>
