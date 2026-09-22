@@ -110,7 +110,7 @@ export const ContactCTASection = () => {
             Get In Touch <ArrowRight size={16} />
           </button>
           <p className="text-[11px] mt-4 font-sans" style={{ color: 'rgba(212,163,115,0.4)' }}>
-            We reply within 1–2 business days · sales@littlefun.in
+            We reply within 1–2 business days · info@littlefun.in
           </p>
         </motion.div>
       </div>

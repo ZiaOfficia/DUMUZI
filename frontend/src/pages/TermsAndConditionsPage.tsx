@@ -1,54 +1,68 @@
-import { Link } from 'react-router-dom';
-import { SEO } from '../components/common/SEO';
+import { PolicyLayout, type PolicySection } from '../components/common/PolicyLayout';
 
-const clauses = [
-  'By placing an order with DUMUZI, you confirm that you are authorised to make the purchase and that the provided delivery details are accurate.',
-  'All product descriptions, images, and pricing are intended to reflect our current offerings and may be updated from time to time.',
-  'We reserve the right to refuse or cancel orders if payment verification, fraud checks, or stock availability require us to do so.',
-  'DUMUZI products are crafted with care and are intended for personal consumption; any resale or commercial redistribution without permission is prohibited.',
+const sections: PolicySection[] = [
+  {
+    title: 'Acceptance of these terms',
+    body: 'Little Fun Foods & Beverages Private Limited offers this website, including all information, tools, and services available from it, conditioned upon your acceptance of all terms, conditions, policies, and notices stated here. By visiting our site or purchasing from us, you engage in our “Service” and agree to be bound by these Terms of Service, including any additional terms and policies referenced herein or available by hyperlink.',
+  },
+  {
+    title: 'Who these terms apply to',
+    body: 'These Terms of Service apply to all users of the site, including without limitation browsers, vendors, customers, merchants, and contributors of content. Please read them carefully before accessing or using our website. If you do not agree to all of these terms, you may not access the website or use any of its services.',
+  },
+  {
+    title: 'Changes to these terms',
+    body: 'Any new features or tools added to the current store are also subject to these Terms of Service. We reserve the right to update, change, or replace any part of these terms by posting updates to our website. It is your responsibility to check this page periodically. Your continued use of the website following the posting of any change constitutes acceptance of that change.',
+  },
+  {
+    title: 'Online store',
+    body: 'By agreeing to these Terms of Service, you represent that you are at least the age of majority in your state or province of residence, or that you have given us consent to allow any minor dependent to use this site.',
+    points: [
+      'You may not use our products for any illegal or unauthorised purpose.',
+      'You may not violate any law in your jurisdiction, including copyright law, in the use of the Service.',
+      'You must not transmit any worms or viruses, or any code of a destructive nature.',
+      'A breach or violation of any of these terms will result in immediate termination of your Services.',
+    ],
+  },
+  {
+    title: 'General conditions',
+    body: 'We reserve the right to refuse service to anyone, for any reason, at any time. You understand that your content, not including credit card information, may be transferred unencrypted and may involve transmission over various networks, and changes to conform to the technical requirements of connecting networks or devices. Credit card information is always encrypted during transfer over networks.',
+  },
+  {
+    title: 'Use of the service',
+    body: 'You agree not to reproduce, duplicate, copy, sell, resell, or exploit any portion of the Service, use of the Service, or access to the Service, or any contact on the website through which the service is provided, without our express written permission. The headings used in this agreement are included for convenience only and do not limit or otherwise affect these terms.',
+  },
+  {
+    title: 'Information we collect',
+    body: 'When you purchase something from our store, as part of the buying and selling process we collect the personal information you give us, such as your name, address, and email address. When you browse our store, we also automatically receive your computer’s internet protocol (IP) address, which helps us learn about your browser and operating system. With your permission, we may send you emails about our store, new products, and other updates.',
+  },
+  {
+    title: 'Consent',
+    body: 'When you provide personal information to complete a transaction, verify your card, place an order, arrange a delivery, or return a purchase, you consent to our collecting it and using it for that specific reason only. If we ask for your personal information for a secondary reason such as marketing, we will either ask you directly for your express consent or give you an opportunity to decline. If you change your mind after opting in, you may withdraw your consent at any time by contacting us.',
+  },
+  {
+    title: 'Disclosure',
+    body: 'We may disclose your personal information if we are required by law to do so, or if you violate our Terms of Service.',
+  },
 ];
 
 const TermsAndConditionsPage = () => {
   return (
-    <div className="min-h-screen pt-24 pb-16" style={{ background: 'var(--bg-deep)' }}>
-      <SEO
-        title="Terms & Conditions — DUMUZI"
-        description="Terms and conditions for shopping with DUMUZI."
-      />
-      <section className="max-w-6xl mx-auto px-6 py-16 md:py-24">
-        <div className="mb-10">
-          <p className="text-[11px] uppercase tracking-[0.32em] font-bold mb-4" style={{ color: 'var(--gold)' }}>Policy</p>
-          <h1 className="text-4xl md:text-5xl font-display text-cream">Terms & Conditions</h1>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed font-sans" style={{ color: 'var(--muted)' }}>
-            Please read these terms carefully before purchasing from DUMUZI. They govern your shopping experience, order acceptance, and the use of our services.
-          </p>
-        </div>
-
-        <div className="rounded-2xl border p-6 md:p-8" style={{ background: 'rgba(26,18,13,0.7)', borderColor: 'rgba(212,163,115,0.16)' }}>
-          <ul className="space-y-4">
-            {clauses.map((clause) => (
-              <li key={clause} className="flex gap-3 text-sm leading-relaxed font-sans" style={{ color: 'var(--muted)' }}>
-                <span className="mt-1 h-2.5 w-2.5 rounded-full flex-shrink-0" style={{ background: 'var(--gold)' }} />
-                <span>{clause}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="mt-10 rounded-2xl border p-6" style={{ background: 'rgba(212,163,115,0.08)', borderColor: 'rgba(212,163,115,0.2)' }}>
-          <p className="text-[11px] uppercase tracking-[0.34em] font-bold mb-3" style={{ color: 'var(--gold)' }}>Questions?</p>
-          <p className="text-sm leading-relaxed font-sans" style={{ color: 'var(--cream)' }}>
-            If anything in these terms is unclear, please contact our team at <a href="mailto:sales@littlefun.in" style={{ color: 'var(--gold)' }}>sales@littlefun.in</a>.
-          </p>
-        </div>
-
-        <div className="mt-10">
-          <Link to="/" className="inline-flex items-center text-sm font-semibold tracking-[0.2em] uppercase" style={{ color: 'var(--gold)' }}>
-            Back to Home
-          </Link>
-        </div>
-      </section>
-    </div>
+    <PolicyLayout
+      eyebrow="Legal"
+      title="Terms & Conditions"
+      intro="These terms govern your use of our website and the purchases you make through it. Please read them carefully before placing an order."
+      seoTitle="Terms & Conditions — DUMUZI"
+      seoDescription="Terms and conditions governing the use of the DUMUZI website and store."
+      sections={sections}
+      contactLabel="Questions"
+      contact={
+        <>
+          If anything in these terms is unclear, or you wish to withdraw consent for the use of your
+          information, please contact our team at{' '}
+          <a href="mailto:info@littlefun.in" style={{ color: 'var(--gold)' }}>info@littlefun.in</a>.
+        </>
+      }
+    />
   );
 };
 

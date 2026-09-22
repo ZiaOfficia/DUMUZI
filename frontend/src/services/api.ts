@@ -120,6 +120,11 @@ export const cartApi = {
 export const checkoutApi = {
   createOrder: (payload: {
     items: OrderItem[];
+    /**
+     * Free gifts the shopper claimed. Sent without a price: the server re-earns
+     * each one from this order's own items and subtotal, and prices it at ₹0.
+     */
+    gifts?: { productId: number; source: 'single' | 'combo' }[];
     customer: { name: string; email: string; phone: string };
     paymentMethod?: PaymentMethod;
     address?: { address: string; city: string; state: string; pincode: string; notes?: string };

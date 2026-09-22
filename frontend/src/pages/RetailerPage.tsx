@@ -251,6 +251,12 @@ export const RetailerPage = () => {
             <p className="text-base font-sans" style={{ color: 'var(--muted)' }}>
               Tell us about your business and we'll get back to you within 2–3 business days.
             </p>
+            <p className="mt-3 text-sm font-sans" style={{ color: 'var(--muted)' }}>
+              Prefer email? Write to our partnerships team at{' '}
+              <a href="mailto:sales@littlefun.in" style={{ color: GOLD }} className="hover:underline">
+                sales@littlefun.in
+              </a>
+            </p>
           </div>
 
           <motion.div

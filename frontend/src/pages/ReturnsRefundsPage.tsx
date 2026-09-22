@@ -1,54 +1,92 @@
-import { Link } from 'react-router-dom';
-import { SEO } from '../components/common/SEO';
+import { PolicyLayout, type PolicySection } from '../components/common/PolicyLayout';
 
-const points = [
-  'We inspect every return request case-by-case to ensure quality, freshness, and customer satisfaction remain our top priorities.',
-  'If the item arrives damaged, incorrect, or compromised, please notify us within 48 hours of delivery so we can assist promptly.',
-  'Because our confections are perishable and handcrafted, refunds or exchanges are only available when a product arrives in unacceptable condition.',
-  'For a successful claim, we may request photos of the item and packaging so we can resolve the issue quickly.',
+const RETURN_ADDRESS =
+  'Little Fun Foods & Beverages Private Limited, 1st and 2nd Floor, Plot No. 14, Khasra No. 1769, Sadrauna Road, Manak Nagar, Lucknow – 226011.';
+
+const sections: PolicySection[] = [
+  {
+    title: 'Return window',
+    body: 'We offer a 2-day return window from the time your order is delivered. Requests raised after this window cannot be processed.',
+  },
+  {
+    title: 'When a return is accepted',
+    body: 'Returns are accepted only in the following cases:',
+    points: [
+      'You received a wrong product.',
+      'The product is damaged or defective.',
+      'You received a different item than what you ordered.',
+    ],
+  },
+  {
+    title: 'Eligibility conditions',
+    body: 'To be eligible for a return, all of the following must be met:',
+    points: [
+      'The item must be unused, unworn, and in the same condition in which you received it.',
+      'Original packaging and tags must be intact.',
+      'A valid receipt or proof of purchase is required.',
+      'A complete unboxing video — from opening the sealed package to clearly showing the issue — must be shared within 48 hours of delivery for all return and refund claims.',
+    ],
+  },
+  {
+    title: 'When a return is not accepted',
+    points: [
+      'The wrong item was ordered, or you changed your mind.',
+      'Claims such as did not like the product, seeded/not seeded, ordered by mistake, or no longer required.',
+      'The product is not damaged or defective.',
+      'The unboxing video is missing, incomplete, or submitted after 48 hours.',
+    ],
+  },
+  {
+    title: 'How to request a return',
+    body: 'Email us at info@littlefun.in to initiate a return. Once your request is approved, you will receive an email with return instructions and a shipping label. Items sent back without prior return approval will not be accepted.',
+  },
+  {
+    title: 'Return address',
+    body: RETURN_ADDRESS,
+  },
+  {
+    title: 'Damaged or defective items',
+    body: 'Please inspect your order upon delivery and contact us immediately at info@littlefun.in if the product arrives damaged, has a manufacturing defect, or is different from what you ordered. All such claims must be supported with a clear and complete unboxing video.',
+  },
+  {
+    title: 'Replacements',
+    body: 'We do not offer direct replacements. If you wish to replace an item, initiate a return for the existing product, then place a new order separately once your return has been accepted.',
+  },
+  {
+    title: 'Cancellations',
+    body: 'Orders can be cancelled within 24 hours of placement, or before processing begins. Once an order has been processed or shipped, it cannot be cancelled.',
+  },
+  {
+    title: 'Refund process',
+    body: 'Once your return is received and inspected, we will notify you whether the refund has been approved or rejected.',
+    points: [
+      'Approved refunds are processed within 3 working days.',
+      'The amount reflects in your account within 5–15 business days, depending on your bank or card provider.',
+      'If more than 15 business days have passed since your refund was approved and you have not received it, please contact us.',
+    ],
+  },
 ];
 
 const ReturnsRefundsPage = () => {
   return (
-    <div className="min-h-screen pt-24 pb-16" style={{ background: 'var(--bg-deep)' }}>
-      <SEO
-        title="Returns & Refunds — DUMUZI"
-        description="Return and refund policy for DUMUZI orders."
-      />
-      <section className="max-w-6xl mx-auto px-6 py-16 md:py-24">
-        <div className="mb-10">
-          <p className="text-[11px] uppercase tracking-[0.32em] font-bold mb-4" style={{ color: 'var(--gold)' }}>Service Promise</p>
-          <h1 className="text-4xl md:text-5xl font-display text-cream">Returns & Refunds</h1>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed font-sans" style={{ color: 'var(--muted)' }}>
-            We believe every order should arrive beautifully, but if something goes wrong, we are here to make it right with care and clarity.
-          </p>
-        </div>
-
-        <div className="rounded-2xl border p-6 md:p-8" style={{ background: 'rgba(26,18,13,0.7)', borderColor: 'rgba(212,163,115,0.16)' }}>
-          <ul className="space-y-4">
-            {points.map((point) => (
-              <li key={point} className="flex gap-3 text-sm leading-relaxed font-sans" style={{ color: 'var(--muted)' }}>
-                <span className="mt-1 h-2.5 w-2.5 rounded-full flex-shrink-0" style={{ background: 'var(--gold)' }} />
-                <span>{point}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="mt-10 rounded-2xl border p-6" style={{ background: 'rgba(212,163,115,0.08)', borderColor: 'rgba(212,163,115,0.2)' }}>
-          <p className="text-[11px] uppercase tracking-[0.34em] font-bold mb-3" style={{ color: 'var(--gold)' }}>Contact</p>
-          <p className="text-sm leading-relaxed font-sans" style={{ color: 'var(--cream)' }}>
-            Please reach out to our support team at <a href="mailto:sales@littlefun.in" style={{ color: 'var(--gold)' }}>sales@littlefun.in</a> with your order number and a brief description of the issue.
-          </p>
-        </div>
-
-        <div className="mt-10">
-          <Link to="/" className="inline-flex items-center text-sm font-semibold tracking-[0.2em] uppercase" style={{ color: 'var(--gold)' }}>
-            Back to Home
-          </Link>
-        </div>
-      </section>
-    </div>
+    <PolicyLayout
+      eyebrow="Service Promise"
+      title="Returns & Refunds"
+      intro="Your satisfaction matters to us. We are committed to a smooth, transparent, and responsible shopping experience — so if something goes wrong, here is exactly how we put it right."
+      seoTitle="Returns & Refunds — DUMUZI"
+      seoDescription="Return, refund and cancellation policy for DUMUZI orders."
+      sections={sections}
+      contactLabel="Contact"
+      contact={
+        <>
+          Please reach out to our support team at{' '}
+          <a href="mailto:info@littlefun.in" style={{ color: 'var(--gold)' }}>info@littlefun.in</a>{' '}
+          or call{' '}
+          <a href="tel:+919161115116" style={{ color: 'var(--gold)' }}>+91-9161-115-116</a>{' '}
+          with your order number and a brief description of the issue.
+        </>
+      }
+    />
   );
 };
 

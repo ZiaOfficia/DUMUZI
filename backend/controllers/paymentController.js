@@ -3,6 +3,7 @@ const Order    = require('../models/Order');
 const Product  = require('../models/Product');
 const CartItem = require('../models/CartItem');
 const { priceOrderItems } = require('../utils/orderPricing');
+const { resolveGifts } = require('../utils/offers');
 const {
   payuConfig, newTxnId, clean, formatAmount, requestHash, responseHash, hashMatches,
 } = require('../utils/payu');
@@ -34,7 +35,7 @@ const frontendBase = () =>
 
 exports.createOrder = async (req, res) => {
   try {
-    const { items: rawItems, customer, address } = req.body;
+    const { items: rawItems, gifts: rawGifts, customer, address } = req.body;
     const paymentMethod = PAYMENT_METHODS.includes(req.body.paymentMethod)
       ? req.body.paymentMethod
       : 'payu';
@@ -60,23 +61,39 @@ exports.createOrder = async (req, res) => {
       return res.status(400).json({ message: 'Customer name, email and phone are required' });
     }
 
-    // Price the cart from the Products table — client-sent prices are ignored
-    const productIds = [...new Set(rawItems.map((i) => Number(i?.productId)))];
+    // Price the cart from the Products table — client-sent prices are ignored.
+    // Gift products are looked up too, so a claimed gift can be checked and
+    // named from the catalogue rather than from the request.
+    const productIds = [...new Set([
+      ...rawItems.map((i) => Number(i?.productId)),
+      ...(Array.isArray(rawGifts) ? rawGifts.map((g) => Number(g?.productId)) : []),
+    ])].filter((id) => Number.isInteger(id) && id > 0);
     const products = await Product.findAll({ where: { id: productIds } });
     const { items, totalRupees } = priceOrderItems(rawItems, products);
 
+    // Free gifts are re-earned from this order alone (see utils/offers.js) and
+    // added at ₹0. They deliberately sit outside totalRupees: a gift is not
+    // something the shopper paid for, so it must neither be charged for nor
+    // inflate the discount below.
+    const giftItems = resolveGifts(rawGifts, items, totalRupees, products);
+
     // The online-payment discount is worked out here rather than taken from the
-    // client, so the amount charged is always the one actually earned. It's
-    // recorded as a negative line item too, so an order's lines still add up to
-    // its total in the customer's history and the admin panel.
+    // client, so the amount charged is always the one actually earned — a
+    // straight percentage of what this order's own paid items cost, nothing
+    // else. It's recorded as a negative line item too, so an order's lines
+    // still add up to its total in the customer's history and the admin panel.
     const discountRupees = paymentMethod === 'payu'
       ? Math.round(totalRupees * ONLINE_DISCOUNT_RATE * 100) / 100
       : 0;
     const payableRupees = Math.round((totalRupees - discountRupees) * 100) / 100;
 
-    const orderItems = discountRupees > 0
-      ? [...items, { productId: 0, name: ONLINE_DISCOUNT_LABEL, price: -discountRupees, quantity: 1 }]
-      : items;
+    const orderItems = [
+      ...items,
+      ...giftItems,
+      ...(discountRupees > 0
+        ? [{ productId: 0, name: ONLINE_DISCOUNT_LABEL, price: -discountRupees, quantity: 1 }]
+        : []),
+    ];
 
     // Orders are stored in paise so integer maths stays exact; PayU itself is
     // handed rupees as a 2-decimal string further down.

@@ -2,12 +2,12 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Trash2, ShoppingBag, Plus, Minus, Package, ArrowLeft, Loader2, Banknote, CreditCard, Gift, UserRound } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { useCart } from '../../context/CartContext';
+import { useCart, type GiftItem } from '../../context/CartContext';
 import { useAuth } from '../../context/AuthContext';
 import { useGuestGate } from '../../context/GuestGateContext';
-import { redirectToPayu } from '../../utils/payu';
+import { redirectToPayu, rememberPendingPayment } from '../../utils/payu';
 import { checkoutApi, ApiError } from '../../services/api';
-import { getComboProgress, singleOffers, singleGiftKey, singleGiftItem } from '../../data/offersData';
+import { getComboProgress, singleOffers, singleGiftItem } from '../../data/offersData';
 import { ONLINE_DISCOUNT_PERCENT, onlineDiscount, payableTotal } from '../../utils/discount';
 
 const GOLD  = '#d4a55a';
@@ -51,32 +51,32 @@ export const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
   // Combo-offer progress — drives the "add ₹X more to get Y free" nudge.
   const combo = getComboProgress(totalPrice);
 
-  const isClaimed = (key: string) => gifts.some(g => g.key === key);
+  // ── Every free gift this cart currently qualifies for ──
+  // A cart can earn more than one — a qualifying box brings its own gift and
+  // may also clear a combo tier — but only one can be taken, so they're
+  // offered as a choice and claiming one replaces the last.
+  const giftChoices: { gift: GiftItem; note: string }[] = [
+    ...singleOffers
+      .filter(o => items.some(i => i.id === o.buy.id))
+      .map(o => ({ gift: singleGiftItem(o), note: `with ${o.buy.description}` })),
+    ...(combo.unlocked
+      ? [{
+          gift: {
+            key: `combo-${combo.unlocked.gift.id}-${combo.unlocked.threshold}`,
+            productId: combo.unlocked.gift.id,
+            name: combo.unlocked.gift.description,
+            image: combo.unlocked.gift.image,
+            mrp: combo.unlocked.gift.mrp,
+            source: 'combo' as const,
+            threshold: combo.unlocked.threshold,
+          },
+          note: `for spending ₹${combo.unlocked.threshold.toLocaleString('en-IN')}`,
+        }]
+      : []),
+  ];
 
-  // ── Single-offer gifts available from qualifying boxes in the cart ──
-  const singleKey = singleGiftKey;
-  const availableSingleOffers = singleOffers.filter(o => items.some(i => i.id === o.buy.id));
-
-  const claimSingle = (offer: typeof singleOffers[number]) => addGift(singleGiftItem(offer));
-
-  // ── Combo gift (highest unlocked tier) ──
-  const comboKey = combo.unlocked ? `combo-${combo.unlocked.gift.id}-${combo.unlocked.threshold}` : '';
-  const claimCombo = () => {
-    if (!combo.unlocked) return;
-    // Only one combo gift at a time — swap out any lower tier already claimed.
-    gifts.filter(g => g.source === 'combo' && g.key !== comboKey).forEach(g => removeGift(g.key));
-    addGift({
-      key: comboKey,
-      productId: combo.unlocked.gift.id,
-      name: combo.unlocked.gift.description,
-      image: combo.unlocked.gift.image,
-      mrp: combo.unlocked.gift.mrp,
-      source: 'combo',
-      threshold: combo.unlocked.threshold,
-    });
-  };
-
-  const comboClaimable = combo.unlocked && !isClaimed(comboKey);
+  const claimedKey = gifts[0]?.key ?? '';
+  const mustChoose = giftChoices.length > 1;
 
   const handleClose = () => {
     onClose();
@@ -107,11 +107,11 @@ export const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
     setLoading(true);
     try {
       const order = await checkoutApi.createOrder({
-        items: [
-          ...items.map(({ id, name, price, quantity }) => ({ productId: id, name, price, quantity })),
-          // Free gifts recorded as ₹0 line items so the order captures them
-          ...gifts.map(g => ({ productId: g.productId, name: `${g.name} (FREE GIFT)`, price: 0, quantity: 1 })),
-        ],
+        items: items.map(({ id, name, price, quantity }) => ({ productId: id, name, price, quantity })),
+        // Claimed gifts go over separately. Sending them as ₹0 *items* used to
+        // get them re-priced at MRP by the server, which both charged for the
+        // gift and inflated the online discount.
+        gifts: gifts.map(g => ({ productId: g.productId, source: g.source })),
         customer: { name: form.name, email: form.email, phone: form.phone },
         paymentMethod,
         address: { address: form.address, city: form.city, state: form.state, pincode: form.pincode },
@@ -129,6 +129,7 @@ export const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
       // is already saved as pending; PayU's callback marks it paid or failed
       // and sends the shopper back to /thank-you.
       if (!order.payu) throw new Error('Payment gateway is unavailable. Please try Cash on Delivery.');
+      rememberPendingPayment(order.orderId);   // so an unfinished round trip can be settled later
       redirectToPayu(order.payu);
     } catch (err: unknown) {
       if (err instanceof ApiError && err.status === 401) {
@@ -385,95 +386,89 @@ export const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
                   <div className="flex-shrink-0 px-5 py-5 flex flex-col gap-4"
                     style={{ borderTop: '1px solid rgba(212,165,90,0.12)' }}>
 
-                    {/* ── Single-offer gift claims ── */}
-                    {availableSingleOffers
-                      .filter(o => !isClaimed(singleKey(o.buy.id, o.gift.id)))
-                      .map(o => (
-                        <div key={singleKey(o.buy.id, o.gift.id)}
-                          className="rounded-2xl px-4 py-3 flex items-center gap-3"
-                          style={{ background: 'rgba(212,165,90,0.07)', border: '1px dashed rgba(212,165,90,0.35)' }}>
-                          <img src={o.gift.image} alt={o.gift.description}
-                            className="w-10 h-10 rounded-lg object-contain flex-shrink-0"
-                            style={{ background: 'rgba(255,255,255,0.04)' }} />
-                          <div className="flex-1 min-w-0">
-                            <p className="text-[11px] font-sans leading-tight" style={{ color: 'var(--cream)' }}>
-                              Your <span className="font-bold" style={{ color: GOLDL }}>free {o.gift.description}</span>
-                            </p>
-                            <p className="text-[9px] font-sans" style={{ color: 'rgba(220,214,205,0.4)' }}>
-                              with {o.buy.description} · worth ₹{o.gift.mrp}
-                            </p>
-                          </div>
-                          <button
-                            onClick={() => claimSingle(o)}
-                            className="flex-shrink-0 flex items-center gap-1 px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider cursor-pointer border-none transition-all duration-200"
-                            style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLDL})`, color: '#0d0805' }}
-                          >
-                            <Plus size={11} /> Add
-                          </button>
-                        </div>
-                      ))}
+                    {/* ── Free gift — pick one of the offers this cart earns ── */}
+                    {giftChoices.length > 0 && (
+                      <div className="flex flex-col gap-2">
+                        {mustChoose && (
+                          <p className="text-[10px] font-sans uppercase tracking-[0.18em] font-bold px-1"
+                            style={{ color: 'rgba(212,165,90,0.7)' }}>
+                            Choose your free gift · one per order
+                          </p>
+                        )}
+                        {giftChoices.map(({ gift, note }) => {
+                          const selected = gift.key === claimedKey;
+                          const replacing = !selected && !!claimedKey;
+                          return (
+                            <div key={gift.key}
+                              className="rounded-2xl px-4 py-3 flex items-center gap-3"
+                              style={{
+                                background: selected ? 'rgba(212,165,90,0.14)' : 'rgba(212,165,90,0.07)',
+                                border: selected
+                                  ? `1px solid ${GOLD}`
+                                  : '1px dashed rgba(212,165,90,0.35)',
+                              }}>
+                              <img src={gift.image} alt={gift.name}
+                                className="w-10 h-10 rounded-lg object-contain flex-shrink-0"
+                                style={{ background: 'rgba(255,255,255,0.04)' }} />
+                              <div className="flex-1 min-w-0">
+                                <p className="text-[11px] font-sans leading-tight" style={{ color: 'var(--cream)' }}>
+                                  Free <span className="font-bold" style={{ color: GOLDL }}>{gift.name}</span>
+                                </p>
+                                <p className="text-[9px] font-sans" style={{ color: 'rgba(220,214,205,0.4)' }}>
+                                  {note} · worth ₹{gift.mrp.toLocaleString('en-IN')}
+                                </p>
+                              </div>
+                              {selected ? (
+                                <span className="flex-shrink-0 px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider"
+                                  style={{ color: GOLDL }}>
+                                  Added
+                                </span>
+                              ) : (
+                                <button
+                                  onClick={() => addGift(gift)}
+                                  className="flex-shrink-0 flex items-center gap-1 px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider cursor-pointer border-none transition-all duration-200"
+                                  style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLDL})`, color: '#0d0805' }}
+                                >
+                                  <Plus size={11} /> {replacing ? 'Swap' : 'Add'}
+                                </button>
+                              )}
+                            </div>
+                          );
+                        })}
+                        {mustChoose && claimedKey && (
+                          <p className="text-[9px] font-sans px-1" style={{ color: 'rgba(220,214,205,0.4)' }}>
+                            Swapping replaces the gift already in your cart.
+                          </p>
+                        )}
+                      </div>
+                    )}
 
                     {/* ── Combo-offer nudge ── */}
-                    {(combo.unlocked || combo.next) && (
+                    {combo.next && (
                       <div className="rounded-2xl px-4 py-3 flex flex-col gap-2.5"
                         style={{ background: 'rgba(212,165,90,0.07)', border: '1px solid rgba(212,165,90,0.2)' }}>
 
-                        {/* Unlocked combo gift → let the customer add it */}
-                        {comboClaimable && combo.unlocked && (
-                          <div className="flex items-center gap-2.5">
-                            <img src={combo.unlocked.gift.image} alt={combo.unlocked.gift.description}
-                              className="w-10 h-10 rounded-lg object-contain flex-shrink-0"
-                              style={{ background: 'rgba(255,255,255,0.04)' }} />
-                            <div className="flex-1 min-w-0">
-                              <p className="text-[11px] font-sans leading-tight" style={{ color: 'var(--cream)' }}>
-                                <span className="font-bold" style={{ color: GOLDL }}>Unlocked!</span>{' '}
-                                Free {combo.unlocked.gift.description}
-                              </p>
-                              <p className="text-[9px] font-sans" style={{ color: 'rgba(220,214,205,0.4)' }}>
-                                worth ₹{combo.unlocked.gift.mrp} · claim your gift
-                              </p>
-                            </div>
-                            <button
-                              onClick={claimCombo}
-                              className="flex-shrink-0 flex items-center gap-1 px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider cursor-pointer border-none transition-all duration-200"
-                              style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLDL})`, color: '#0d0805' }}
-                            >
-                              <Plus size={11} /> Add
-                            </button>
-                          </div>
-                        )}
-
-                        {combo.next && (
-                          <>
-                            <p className="text-[11px] font-sans leading-snug" style={{ color: 'var(--muted)' }}>
-                              Add{' '}
-                              <span className="font-bold" style={{ color: GOLD }}>
-                                ₹{combo.remaining.toLocaleString('en-IN')}
-                              </span>{' '}
-                              more to get{' '}
-                              <span className="font-bold" style={{ color: 'var(--cream)' }}>
-                                {combo.next.gift.description}
-                              </span>{' '}
-                              free
-                            </p>
-                            {/* progress bar toward the next tier */}
-                            <div className="h-1.5 rounded-full overflow-hidden" style={{ background: 'rgba(212,165,90,0.12)' }}>
-                              <motion.div
-                                className="h-full rounded-full"
-                                initial={{ width: 0 }}
-                                animate={{ width: `${Math.min(100, (totalPrice / combo.next.threshold) * 100)}%` }}
-                                transition={{ duration: 0.5, ease: 'easeOut' }}
-                                style={{ background: `linear-gradient(90deg, ${GOLD}, ${GOLDL})` }}
-                              />
-                            </div>
-                          </>
-                        )}
-
-                        {!combo.next && combo.unlocked && !comboClaimable && (
-                          <p className="text-[10px] font-sans text-center" style={{ color: 'rgba(212,165,90,0.55)' }}>
-                            🎉 Top reward claimed — you're getting our biggest free gift!
-                          </p>
-                        )}
+                        <p className="text-[11px] font-sans leading-snug" style={{ color: 'var(--muted)' }}>
+                          Add{' '}
+                          <span className="font-bold" style={{ color: GOLD }}>
+                            ₹{combo.remaining.toLocaleString('en-IN')}
+                          </span>{' '}
+                          more to get{' '}
+                          <span className="font-bold" style={{ color: 'var(--cream)' }}>
+                            {combo.next.gift.description}
+                          </span>{' '}
+                          free
+                        </p>
+                        {/* progress bar toward the next tier */}
+                        <div className="h-1.5 rounded-full overflow-hidden" style={{ background: 'rgba(212,165,90,0.12)' }}>
+                          <motion.div
+                            className="h-full rounded-full"
+                            initial={{ width: 0 }}
+                            animate={{ width: `${Math.min(100, (totalPrice / combo.next.threshold) * 100)}%` }}
+                            transition={{ duration: 0.5, ease: 'easeOut' }}
+                            style={{ background: `linear-gradient(90deg, ${GOLD}, ${GOLDL})` }}
+                          />
+                        </div>
                       </div>
                     )}
 

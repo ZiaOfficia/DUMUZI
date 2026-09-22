@@ -7,7 +7,7 @@ import { useAuth } from '../context/AuthContext';
 import { useToast } from '../components/common/Toast';
 import { SEO } from '../components/common/SEO';
 import { checkoutApi, ApiError } from '../services/api';
-import { redirectToPayu } from '../utils/payu';
+import { redirectToPayu, rememberPendingPayment } from '../utils/payu';
 import { ONLINE_DISCOUNT_PERCENT, onlineDiscount, payableTotal } from '../utils/discount';
 
 const GOLD  = '#d4a373';
@@ -61,7 +61,7 @@ const Field = ({
 );
 
 export const CheckoutPage = () => {
-  const { items, totalItems, totalPrice, clearCart } = useCart();
+  const { items, totalItems, totalPrice, gifts, clearCart } = useCart();
   const { user, isAuthenticated } = useAuth();
   const { success, error } = useToast();
   const navigate = useNavigate();
@@ -115,6 +115,9 @@ export const CheckoutPage = () => {
           price:     i.price,
           quantity:  i.quantity,
         })),
+        // Claimed gifts are named, not priced — the server re-earns each one
+        // from this order's items and subtotal and records it at ₹0.
+        gifts: gifts.map(g => ({ productId: g.productId, source: g.source })),
         customer: { name: form.name, email: form.email, phone: form.phone },
         paymentMethod,
         address: {
@@ -138,6 +141,7 @@ export const CheckoutPage = () => {
       // is already saved as pending; PayU's callback marks it paid or failed
       // and sends the shopper back to /thank-you.
       if (!order.payu) throw new Error('Payment gateway is unavailable. Please try Cash on Delivery.');
+      rememberPendingPayment(order.orderId);   // so an unfinished round trip can be settled later
       redirectToPayu(order.payu);
     } catch (err) {
       // Session expired mid-checkout — sign in again or come back as a guest
@@ -369,6 +373,25 @@ export const CheckoutPage = () => {
                     <span className="text-sm font-bold flex-shrink-0" style={{ color: GOLD }}>
                       ₹{(item.price * item.quantity).toLocaleString('en-IN')}
                     </span>
+                  </div>
+                ))}
+
+                {/* Claimed free gifts — ₹0, so they sit outside the subtotal */}
+                {gifts.map(g => (
+                  <div key={g.key} className="flex items-center gap-3">
+                    <div
+                      className="w-12 h-12 rounded-lg flex-shrink-0 overflow-hidden"
+                      style={{ background: 'rgba(212,163,115,0.08)', border: '1px solid rgba(212,163,115,0.2)' }}
+                    >
+                      <img src={g.image} alt={g.name} className="w-full h-full object-contain p-1" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-xs font-semibold line-clamp-1 font-sans" style={{ color: 'var(--cream)' }}>{g.name}</p>
+                      <p className="text-xs mt-0.5 font-sans" style={{ color: 'var(--muted)' }}>
+                        Free gift · worth ₹{g.mrp.toLocaleString('en-IN')}
+                      </p>
+                    </div>
+                    <span className="text-sm font-bold flex-shrink-0 uppercase" style={{ color: GOLDL }}>Free</span>
                   </div>
                 ))}
               </div>

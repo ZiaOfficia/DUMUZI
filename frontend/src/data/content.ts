@@ -213,7 +213,7 @@ export const faqs = [
   {
     question: "How do I place a bespoke order?",
     answer:
-      "Email us at sales@littlefun.in or use the contact form. Share your occasion, preferred flavours, quantities, and any branding requirements. Our team will respond within 24 hours with a quote and timeline.",
+      "Email us at info@littlefun.in or use the contact form. Share your occasion, preferred flavours, quantities, and any branding requirements. Our team will respond within 24 hours with a quote and timeline.",
   },
   {
     question: "Do you ship internationally?",

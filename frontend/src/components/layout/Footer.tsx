@@ -87,7 +87,7 @@ export const Footer = () => (
             {[
               { Icon: MapPin, text: 'Lucknow, India' },
               { Icon: Phone,  text: '+91-9161-115-116' },
-              { Icon: Mail,   text: 'sales@littlefun.in' },
+              { Icon: Mail,   text: 'info@littlefun.in' },
             ].map(({ Icon, text }) => (
               <div key={text} className="flex items-center gap-2.5">
                 <Icon size={12} style={{ color: 'rgba(212,165,90,0.5)', flexShrink: 0 }} />

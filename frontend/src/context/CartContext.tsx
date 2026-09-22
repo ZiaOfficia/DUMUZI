@@ -8,7 +8,8 @@
 import {
   createContext, useContext, useReducer, useEffect, useState, useRef, useCallback, type ReactNode,
 } from 'react';
-import { cartApi } from '../services/api';
+import { cartApi, checkoutApi } from '../services/api';
+import { readPendingPayment, clearPendingPayment } from '../utils/payu';
 import { useAuth } from './AuthContext';
 import type { CartItemWithProduct } from '../types';
 
@@ -167,8 +168,13 @@ export function CartProvider({ children }: { children: ReactNode }) {
   // ── Free gifts (local, ₹0, customer-claimed) ─────────────────────────────────
   const [gifts, setGifts] = useState<GiftItem[]>([]);
 
+  // One gift per order. A cart can qualify for two offers at once — a ₹640
+  // LF-D25B carries its own single-offer gift and also clears the ₹499 combo
+  // tier — but the shopper chooses between them rather than collecting both,
+  // so claiming a gift replaces whichever one was held before. The server
+  // enforces the same rule in utils/offers.js.
   const addGift = useCallback((gift: GiftItem) => {
-    setGifts(prev => prev.some(g => g.key === gift.key) ? prev : [...prev, gift]);
+    setGifts(prev => (prev.length === 1 && prev[0].key === gift.key ? prev : [gift]));
   }, []);
 
   const removeGift = useCallback((key: string) => {
@@ -292,6 +298,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   // ── clearCart ──────────────────────────────────────────────────────────────
   const clearCart = useCallback(async () => {
     setGifts([]);
+    clearPendingPayment();
     if (!isAuthenticated) {
       dispatch({ type: 'CLEAR_CART' });
       return;
@@ -301,6 +308,44 @@ export function CartProvider({ children }: { children: ReactNode }) {
     } catch { /* best-effort */ }
     dispatch({ type: 'CLEAR_CART' });
   }, [isAuthenticated]);
+
+  // ── Settle a payment the shopper never came back from ──────────────────────
+  // Following PayU's redirect to /thank-you is what normally clears the cart
+  // (and, for a signed-in shopper, the callback clears the server copy). Close
+  // that tab on PayU's page instead and a guest is left holding the items they
+  // just paid for — which would then count towards the offer and discount on
+  // their next order. Ask the server what became of the last handoff and tidy up.
+  const settledPayment = useRef(false);
+
+  useEffect(() => {
+    if (authLoading || settledPayment.current) return;
+    settledPayment.current = true;
+
+    const txnid = readPendingPayment();
+    if (!txnid) return;
+
+    let cancelled = false;
+    (async () => {
+      try {
+        const { paid, status } = await checkoutApi.getPaymentStatus(txnid);
+        if (cancelled) return;
+        if (paid) {
+          clearPendingPayment();
+          // A signed-in shopper's cart was already emptied server-side; a
+          // guest's only exists here.
+          if (!isAuthenticated) await clearCart();
+        } else if (status !== 'pending') {
+          // Declined or cancelled — drop the marker but keep the cart so the
+          // shopper can try again.
+          clearPendingPayment();
+        }
+      } catch {
+        clearPendingPayment();   // unknown txnid, or offline — nothing to settle
+      }
+    })();
+
+    return () => { cancelled = true; };
+  }, [authLoading, isAuthenticated, clearCart]);
 
   return (
     <CartContext.Provider value={{

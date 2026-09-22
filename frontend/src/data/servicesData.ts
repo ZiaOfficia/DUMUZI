@@ -600,7 +600,7 @@ export const servicesData: ServiceData[] = [
         {
           title: "1. Enquire",
           description:
-            "Email our corporate team at sales@littlefun.in or fill out the corporate enquiry form.",
+            "Email our corporate team at info@littlefun.in or fill out the corporate enquiry form.",
         },
         {
           title: "2. Proposal & samples",
@@ -630,7 +630,7 @@ export const servicesData: ServiceData[] = [
     contact: {
       name: "Elise Moreau",
       role: "Corporate Gifting Director",
-      email: "sales@littlefun.in",
+      email: "info@littlefun.in",
       phone: "+44 20 7123 4567",
       note: "For bulk orders or bespoke corporate gifting enquiries, contact Elise directly. She will design a proposal tailored to your brand and budget.",
     },

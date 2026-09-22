@@ -150,8 +150,8 @@ const ThankYouPage = () => {
             : isOrder
               ? "Our artisans will prepare your confections with care, and we'll reach out within 1–2 business days with dispatch details. For any queries, email us at "
               : "Our team at DUMUZI will read your message and reply within 1–2 business days. For urgent matters, you can also email us at "}
-          <a href="mailto:sales@littlefun.in" style={{ color: GOLDL }} className="hover:underline">
-            sales@littlefun.in
+          <a href="mailto:info@littlefun.in" style={{ color: GOLDL }} className="hover:underline">
+            info@littlefun.in
           </a>
           .
         </p>
