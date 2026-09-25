@@ -1,7 +1,9 @@
+import { useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ShoppingCart, Tag, Package } from 'lucide-react';
 import { useAddToCart } from '../../hooks/useAddToCart';
 import type { Product } from '../../data/productsData';
+import { trackViewContent } from '../../utils/metaPixel';
 
 const GOLD = '#d4a373';
 const GOLDL = '#e5c199';
@@ -26,6 +28,17 @@ interface ProductModalProps {
 
 export const ProductModal = ({ product, onClose }: ProductModalProps) => {
   const addItem = useAddToCart();
+
+  // ViewContent once per product opened. The ref survives StrictMode's effect
+  // re-run and ordinary re-renders; closing the modal resets it so reopening
+  // the same product counts as a fresh view.
+  const viewedId = useRef<number | null>(null);
+  useEffect(() => {
+    if (!product) { viewedId.current = null; return; }
+    if (viewedId.current === product.id) return;
+    viewedId.current = product.id;
+    trackViewContent(product);
+  }, [product]);
 
   const handleAddToCart = () => {
     if (!product) return;

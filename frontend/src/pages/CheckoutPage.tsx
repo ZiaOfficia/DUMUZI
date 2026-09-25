@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from 'react';
+import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { motion } from 'framer-motion';
 import { User, Mail, Phone, MapPin, Home, CreditCard, Banknote, ChevronRight, ShoppingBag } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
@@ -9,6 +9,7 @@ import { SEO } from '../components/common/SEO';
 import { checkoutApi, ApiError } from '../services/api';
 import { redirectToPayu, rememberPendingPayment } from '../utils/payu';
 import { ONLINE_DISCOUNT_PERCENT, onlineDiscount, payableTotal } from '../utils/discount';
+import { trackInitiateCheckout, trackPurchase, purchaseContextFor, savePendingPurchase } from '../utils/metaPixel';
 
 const GOLD  = '#d4a373';
 const GOLDL = '#e5c199';
@@ -61,7 +62,7 @@ const Field = ({
 );
 
 export const CheckoutPage = () => {
-  const { items, totalItems, totalPrice, gifts, clearCart } = useCart();
+  const { items, totalItems, totalPrice, gifts, clearCart, loading: cartLoading } = useCart();
   const { user, isAuthenticated } = useAuth();
   const { success, error } = useToast();
   const navigate = useNavigate();
@@ -85,6 +86,17 @@ export const CheckoutPage = () => {
   const payable  = payableTotal(totalPrice, paymentMethod);
 
   const set = (key: keyof FormData) => (v: string) => setForm(f => ({ ...f, [key]: v }));
+
+  // InitiateCheckout once per visit to this page, as soon as the cart has
+  // loaded — however the shopper got here (the cart page, "Try Again" after a
+  // failed payment, or back from signing in). The ref outlives StrictMode's
+  // effect re-run; trackInitiateCheckout also skips a cart it already sent.
+  const checkoutTracked = useRef(false);
+  useEffect(() => {
+    if (checkoutTracked.current || cartLoading || items.length === 0) return;
+    checkoutTracked.current = true;
+    trackInitiateCheckout(items, payable);
+  }, [cartLoading, items, payable]);
 
   const validate = () => {
     const errs: Partial<FormData> = {};
@@ -130,6 +142,9 @@ export const CheckoutPage = () => {
       });
 
       if (paymentMethod === 'cod') {
+        // The order now exists server-side — for COD that's the purchase.
+        // Sent before clearCart, while the lines it was created from are here.
+        trackPurchase(purchaseContextFor(order, items, 'COD'));
         await clearCart();
         success('Order placed successfully! Pay in cash when it arrives.');
         navigate('/thank-you?type=order');
@@ -142,6 +157,8 @@ export const CheckoutPage = () => {
       // and sends the shopper back to /thank-you.
       if (!order.payu) throw new Error('Payment gateway is unavailable. Please try Cash on Delivery.');
       rememberPendingPayment(order.orderId);   // so an unfinished round trip can be settled later
+      // Reported as a Purchase on /thank-you, only once the server confirms payment
+      savePendingPurchase(purchaseContextFor(order, items, 'ONLINE'));
       redirectToPayu(order.payu);
     } catch (err) {
       // Session expired mid-checkout — sign in again or come back as a guest

@@ -49,6 +49,7 @@ import AdminOrdersPage            from './pages/admin/AdminOrdersPage';
 import BlogEditorPage             from './pages/admin/BlogEditorPage';
 import ProtectedRoute             from './components/admin/ProtectedRoute';
 import ScrollToTop                from './components/common/ScrollToTop';
+import MetaPageViewTracker        from './components/common/MetaPageViewTracker';
 
 function App() {
   return (
@@ -58,6 +59,7 @@ function App() {
         <ToastProvider>
           <BrowserRouter>
             <ScrollToTop />
+            <MetaPageViewTracker />
             <GuestGateProvider>
             <Routes>
               {/* ── Public routes wrapped in site Layout ──────────────────── */}

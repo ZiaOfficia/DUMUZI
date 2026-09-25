@@ -9,6 +9,7 @@ import { redirectToPayu, rememberPendingPayment } from '../../utils/payu';
 import { checkoutApi, ApiError } from '../../services/api';
 import { getComboProgress, singleOffers, singleGiftItem } from '../../data/offersData';
 import { ONLINE_DISCOUNT_PERCENT, onlineDiscount, payableTotal } from '../../utils/discount';
+import { trackInitiateCheckout, trackPurchase, purchaseContextFor, savePendingPurchase } from '../../utils/metaPixel';
 
 const GOLD  = '#d4a55a';
 const GOLDL = '#e8c07a';
@@ -118,6 +119,9 @@ export const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
       });
 
       if (paymentMethod === 'cod') {
+        // The order now exists server-side — for COD that's the purchase.
+        // Sent before clearCart, while the lines it was created from are here.
+        trackPurchase(purchaseContextFor(order, items, 'COD'));
         await clearCart();
         handleClose();
         navigate('/thank-you?type=order');
@@ -130,6 +134,8 @@ export const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
       // and sends the shopper back to /thank-you.
       if (!order.payu) throw new Error('Payment gateway is unavailable. Please try Cash on Delivery.');
       rememberPendingPayment(order.orderId);   // so an unfinished round trip can be settled later
+      // Reported as a Purchase on /thank-you, only once the server confirms payment
+      savePendingPurchase(purchaseContextFor(order, items, 'ONLINE'));
       redirectToPayu(order.payu);
     } catch (err: unknown) {
       if (err instanceof ApiError && err.status === 401) {
@@ -487,7 +493,7 @@ export const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
                       Taxes &amp; shipping calculated at checkout
                     </p>
                     <button
-                      onClick={() => setStep('checkout')}
+                      onClick={() => { trackInitiateCheckout(items, payable); setStep('checkout'); }}
                       className="w-full py-3.5 rounded-full text-[12px] font-bold uppercase tracking-widest border-none cursor-pointer transition-all duration-300"
                       style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLDL})`, color: '#0d0805', boxShadow: `0 8px 28px rgba(212,165,90,0.35)` }}
                       onMouseEnter={e => { e.currentTarget.style.boxShadow = `0 12px 36px rgba(212,165,90,0.55)`; e.currentTarget.style.transform = 'translateY(-1px)'; }}

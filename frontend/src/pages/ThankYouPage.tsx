@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import { SEO } from "../components/common/SEO";
 import { useCart } from "../context/CartContext";
 import { useAuth } from "../context/AuthContext";
+import { checkoutApi } from "../services/api";
+import { isPurchaseTracked, readPendingPurchase, trackPurchase } from "../utils/metaPixel";
 
 // Declare gtag for TypeScript
 declare global {
@@ -20,7 +22,7 @@ const GOLDL = "#e8c07a";
 const ThankYouPage = () => {
   const [searchParams] = useSearchParams();
   const { clearCart } = useCart();
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, loading: authLoading } = useAuth();
   const isOrder = searchParams.get("type") === "order";
 
   // PayU redirects back here through the backend callback, which appends
@@ -36,6 +38,33 @@ const ThankYouPage = () => {
       void clearCart();
     }
   }, [isOrder, payuStatus, clearCart]);
+
+  // Meta Purchase for an online order. The URL alone proves nothing — anyone
+  // can type ?status=success — so the server is asked whether this txnid was
+  // actually paid, and the amount it reports is the value sent. The contents
+  // come from what was saved just before the PayU redirect, matched on txnid.
+  // COD orders are tracked at checkout instead and never reach this (no txnid).
+  // Waits for the auth check: the status lookup is scoped to the signed-in
+  // shopper, and asking as a guest would miss their order.
+  const txnid = searchParams.get("txnid");
+  useEffect(() => {
+    if (!isOrder || payuStatus !== "success" || !txnid || authLoading) return;
+    if (isPurchaseTracked(txnid)) return;
+    const pending = readPendingPurchase(txnid);
+    if (!pending) return;
+
+    let cancelled = false;
+    checkoutApi.getPaymentStatus(txnid)
+      .then(({ orderId, paid, amount }) => {
+        if (cancelled || !paid || orderId !== txnid) return;
+        // trackPurchase re-checks the per-order marker, so StrictMode's
+        // second run (or a racing request) can't send it twice.
+        trackPurchase({ ...pending, value: Math.round(amount) / 100 });
+      })
+      .catch(() => { /* offline or unknown order — leave it untracked */ });
+
+    return () => { cancelled = true; };
+  }, [isOrder, payuStatus, txnid, authLoading]);
 
   // Fire conversion event when Thank You page loads
   useEffect(() => {

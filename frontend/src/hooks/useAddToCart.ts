@@ -1,6 +1,7 @@
 import { useCallback } from 'react';
 import { useCart, type CartItem } from '../context/CartContext';
 import { useGuestGate } from '../context/GuestGateContext';
+import { trackAddToCart } from '../utils/metaPixel';
 
 /**
  * Add-to-cart, shared by every "Add to Cart" button on the site.
@@ -19,7 +20,10 @@ export function useAddToCart() {
 
   return useCallback(
     (item: Omit<CartItem, 'quantity'>): boolean =>
-      ensureIdentity(() => { addItem(item); }),
+      // Tracked here, inside `proceed`, so an add that's abandoned at the
+      // sign-in prompt never counts. addItem always settles with the item in
+      // the cart (it falls back to a local add if the API call fails).
+      ensureIdentity(() => { void addItem(item).then(() => trackAddToCart(item, 1)); }),
     [addItem, ensureIdentity]
   );
 }
