@@ -82,6 +82,33 @@ const Order = sequelize.define('Order', {
     type: DataTypes.TEXT, // JSON stringified cart items
     allowNull: false,
   },
+
+  // ── Meta Conversions API (services/metaConversionsApi.js) ──
+  // Browser context captured at checkout — _fbp/_fbc, IP, user agent — since
+  // PayU's callback arrives later, without the shopper's own request.
+  meta_client_context: {
+    type: DataTypes.TEXT, // JSON
+    allowNull: true,
+  },
+  // null (not sent yet) | 'sending' | 'sent' | 'failed' (retryable) | 'expired'
+  meta_capi_status: {
+    type: DataTypes.STRING(16),
+    allowNull: true,
+  },
+  meta_capi_attempts: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    defaultValue: 0,
+  },
+  // Unix seconds of the conversion, fixed on the first attempt so retries report the same moment
+  meta_capi_event_time: {
+    type: DataTypes.BIGINT,
+    allowNull: true,
+  },
+  meta_capi_sent_at: {
+    type: DataTypes.DATE,
+    allowNull: true,
+  },
 }, { timestamps: true });
 
 module.exports = Order;

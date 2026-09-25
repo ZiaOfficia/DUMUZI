@@ -291,6 +291,36 @@ sequelize
         }
       });
 
+    // One-time migration: Meta Conversions API tracking columns on Orders.
+    // One statement per column so MySQL (no IF NOT EXISTS) can skip the ones
+    // an earlier boot already added and still create the rest.
+    const metaColumns = dialect === "mysql"
+      ? [
+          "meta_client_context TEXT NULL",
+          "meta_capi_status VARCHAR(16) NULL",
+          "meta_capi_attempts INTEGER NOT NULL DEFAULT 0",
+          "meta_capi_event_time BIGINT NULL",
+          "meta_capi_sent_at DATETIME NULL",
+        ]
+      : [
+          "meta_client_context TEXT",
+          "meta_capi_status VARCHAR(16)",
+          "meta_capi_attempts INTEGER NOT NULL DEFAULT 0",
+          "meta_capi_event_time BIGINT",
+          "meta_capi_sent_at TIMESTAMP WITH TIME ZONE",
+        ];
+    for (const column of metaColumns) {
+      const sql = dialect === "mysql"
+        ? `ALTER TABLE Orders ADD COLUMN ${column}`
+        : `ALTER TABLE "Orders" ADD COLUMN IF NOT EXISTS ${column}`;
+      await sequelize.query(sql).catch((err) => {
+        if (!/duplicate column/i.test(err.message)) {
+          console.error(`Orders Meta CAPI migration failed (${column}):`, err.message);
+        }
+      });
+    }
+    console.log("Orders Meta CAPI columns ensured");
+
     await Product.sync({ alter: false });
     await CartItem.sync({ alter: false });
     console.log("Customer tables synced (Users, Products, CartItems)");

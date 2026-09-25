@@ -4,6 +4,7 @@ const Product  = require('../models/Product');
 const CartItem = require('../models/CartItem');
 const { priceOrderItems } = require('../utils/orderPricing');
 const { resolveGifts } = require('../utils/offers');
+const { sendPurchaseToMeta, captureClientContext } = require('../services/metaConversionsApi');
 const {
   payuConfig, newTxnId, clean, formatAmount, requestHash, responseHash, hashMatches,
 } = require('../utils/payu');
@@ -46,6 +47,9 @@ exports.createOrder = async (req, res) => {
       shipping_pincode: address?.pincode || null,
       notes:            address?.notes || null,
     };
+    // Kept on the order for the server-side Meta Purchase, which for PayU is
+    // only sent later from the callback — a request that isn't the shopper's.
+    const metaClientContext = JSON.stringify(captureClientContext(req));
 
     if (!rawItems || !rawItems.length) {
       return res.status(400).json({ message: 'Cart is empty' });
@@ -104,7 +108,7 @@ exports.createOrder = async (req, res) => {
       // (required, unique) razorpay_order_id column still has something to key on.
       const codOrderId = `cod_${Date.now()}_${crypto.randomBytes(4).toString('hex')}`;
 
-      await Order.create({
+      const codOrder = await Order.create({
         user_id:           userId, // null on a guest order
         razorpay_order_id: codOrderId,
         amount:            amountPaise,
@@ -115,15 +119,21 @@ exports.createOrder = async (req, res) => {
         customer_email:    email,
         customer_phone:    phone,
         items:             JSON.stringify(orderItems),
+        meta_client_context: metaClientContext,
         ...shipping,
       });
 
-      return res.json({
+      res.json({
         orderId:       codOrderId,
         amount:        amountPaise,
         currency:      'INR',
         paymentMethod: 'cod',
       });
+
+      // A COD order placed is the conversion. Sent after the response, and
+      // never awaited: Meta being slow or down must not touch checkout.
+      sendPurchaseToMeta(codOrder).catch(() => {});
+      return;
     }
 
     // ── PayU ────────────────────────────────────────────────────────────────
@@ -159,6 +169,7 @@ exports.createOrder = async (req, res) => {
       customer_email:    email,
       customer_phone:    phone,
       items:             JSON.stringify(orderItems),
+      meta_client_context: metaClientContext,
       ...shipping,
     });
 
@@ -233,6 +244,12 @@ exports.payuCallback = async (req, res) => {
       await CartItem.destroy({ where: { userId: order.user_id } })
         .catch((err) => console.error('[payu] cart clear failed:', err.message));
     }
+
+    // Server-side Meta Purchase, now that the payment is verified — this is
+    // what still counts the sale if the shopper never returns to the site.
+    // Not awaited, and idempotent per order, so a replayed callback can't
+    // double it and Meta can't delay the redirect.
+    if (success) sendPurchaseToMeta(order).catch(() => {});
 
     res.redirect(302, doneUrl(success ? 'success' : 'failed', txnid));
   } catch (err) {

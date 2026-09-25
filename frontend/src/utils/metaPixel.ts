@@ -199,6 +199,31 @@ export function trackPurchase(ctx: PurchaseContext): boolean {
   return sent;
 }
 
+// ── Browser ids for the server-side Purchase ─────────────────────────────────
+
+/**
+ * The Pixel's first-party _fbp (browser id) and _fbc (ad-click id) cookies.
+ * They live on the shop's domain, so the API on its own domain never sees
+ * them; they're forwarded with the order so the backend's Conversions API
+ * Purchase can be matched to this browser. Either may be absent.
+ */
+export function readMetaBrowserIds(): { fbp?: string; fbc?: string } {
+  try {
+    const jar = Object.fromEntries(
+      document.cookie.split('; ').map(c => {
+        const i = c.indexOf('=');
+        return [c.slice(0, i), decodeURIComponent(c.slice(i + 1))];
+      }),
+    );
+    return {
+      ...(jar._fbp ? { fbp: jar._fbp } : {}),
+      ...(jar._fbc ? { fbc: jar._fbc } : {}),
+    };
+  } catch {
+    return {};
+  }
+}
+
 // ── Pending online purchase (survives the round trip to PayU) ────────────────
 
 /**

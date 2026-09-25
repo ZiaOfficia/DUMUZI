@@ -3,6 +3,7 @@ import type {
   User, CartState, Product, ProductsResponse, OrderItem, MyOrder,
 } from '../types';
 import type { PayuHandoff } from '../utils/payu';
+import { readMetaBrowserIds } from '../utils/metaPixel';
 
 /** 'razorpay' still appears on orders placed before the PayU switch. */
 export type PaymentMethod = 'payu' | 'cod' | 'razorpay';
@@ -138,7 +139,8 @@ export const checkoutApi = {
       payu?: PayuHandoff;
     }>('/api/payments/create-order', {
       method: 'POST',
-      body: JSON.stringify(payload),
+      // Pixel browser ids ride along for the server-side Meta Purchase
+      body: JSON.stringify({ ...payload, meta: readMetaBrowserIds() }),
     }),
 
   /** What the backend recorded for a txnid after PayU called it back. */
