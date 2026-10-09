@@ -31,6 +31,7 @@ const FILTERS = [
   { label: 'Diamond', value: 'DIAMOND' },
   { label: 'BN',      value: 'BN'      },
   { label: 'Oval',    value: 'OVAL'    },
+  { label: 'Combo',   value: 'COMBO'   },
 ];
 
 const CollectionsPage = () => {

@@ -89,10 +89,12 @@ function resolveGifts(rawGifts, pricedItems, subtotalRupees, products) {
     if (!product || product.inStock === false) continue;
 
     // One gift per order — the first earned, in-stock claim is the only line.
+    // The gift is a single box even where the product is listed as a pack
+    // ("LF-H3 x10"), so the box count is dropped from the line name.
     return [
       {
         productId,
-        name: `${product.productName} (FREE GIFT)`,
+        name: `${product.productName.replace(/\s+x\d+$/, "")} (FREE GIFT)`,
         price: 0,
         quantity: 1,
       },

@@ -4,9 +4,11 @@
  *  • Single offers → buy one specific box, get a specific gift box free.
  *  • Combo offers  → spend a threshold on the whole cart, unlock a free gift box.
  *
- * Gift/product references are resolved from productsData by id so prices and
- * images stay in sync with the catalog. The cart uses `comboTiers` to nudge the
- * shopper toward the next free-gift threshold.
+ * The box to buy is resolved from productsData by id so its price and image
+ * stay in sync with the catalog. The gift is always ONE box, even where that
+ * product is now sold only as a multi-box pack (LF-H3 is listed as a pack of
+ * 10), so gifts come from `giftBoxes` below instead. The cart uses `comboTiers`
+ * to nudge the shopper toward the next free-gift threshold.
  */
 import { products, type Product } from './productsData';
 import type { GiftItem } from '../context/CartContext';
@@ -15,6 +17,25 @@ const byId = (id: number): Product => {
   const p = products.find(x => x.id === id);
   if (!p) throw new Error(`offersData: product id ${id} not found`);
   return p;
+};
+
+// Single gift boxes, keyed by the catalog id the server records the gift under.
+const giftBoxes: Record<number, Product> = Object.fromEntries(
+  ([
+    [2, 'LF-H3',  '/images/products/LF-H3.jpeg',     'HEART 3 CAVITY BROWN',    99],
+    [3, 'LF-H3T', '/images/products/LF - H3T.jpeg',  'HEART 3 CAVITY TRIOS',    110],
+    [4, 'LF-H4P', '/images/products/LF-H4P.jpeg',    'HEART 4 CAVITY PLATINUM', 140],
+    [5, 'LF-H5B', '/images/products/LF - H5.jpeg',   'HEART 5 CAVITY BROWN',    160],
+    [8, 'LF-H8B', '/images/products/LF-H8B.jpeg',    'HEART 8 CAVITY BROWN',    230],
+    [9, 'LF-H9P', '/images/products/LF-H9P .jpeg',   'HEART 9 CAVITY PLATINUM', 325],
+  ] as const).map(([id, productName, image, description, mrp]) =>
+    [id, { id, brandName: 'DUMUZI', productName, image, description, mrp }]),
+);
+
+const giftById = (id: number): Product => {
+  const g = giftBoxes[id];
+  if (!g) throw new Error(`offersData: gift box ${id} not found`);
+  return g;
 };
 
 export interface SingleOffer {
@@ -38,12 +59,12 @@ export interface ComboTier {
 // Where a campaign poster exists it is the source of truth for the pairing —
 // the artwork is what the shopper reads, so the data has to say the same thing.
 export const singleOffers: SingleOffer[] = [
-  { buy: byId(24), gift: byId(4), poster: '/images/offers/D25T.webp' },  // LF-D25T ₹749 → LF-H4P ₹140 free
-  { buy: byId(23), gift: byId(2), poster: '/images/offers/D25.webp'  },  // LF-D25  ₹699 → LF-H3  ₹99  free
-  { buy: byId(22), gift: byId(2), poster: '/images/offers/D25B.webp' },  // LF-D25B ₹640 → LF-H3  ₹99  free
-  { buy: byId(14), gift: byId(2), poster: '/images/offers/H18D.webp' },  // LF-H18D ₹575 → LF-H3  ₹99  free
-  { buy: byId(21), gift: byId(2), poster: '/images/offers/D18.webp'  },  // LF-D18T ₹575 → LF-H3  ₹99  free
-  { buy: byId(13), gift: byId(2) },                                     // LF-H18B ₹525 → LF-H3  ₹99  free
+  { buy: byId(24), gift: giftById(4), poster: '/images/offers/D25T.webp' },  // LF-D25T ₹749 → LF-H4P ₹140 free
+  { buy: byId(23), gift: giftById(2), poster: '/images/offers/D25.webp'  },  // LF-D25  ₹699 → LF-H3  ₹99  free
+  { buy: byId(22), gift: giftById(2), poster: '/images/offers/D25B.webp' },  // LF-D25B ₹640 → LF-H3  ₹99  free
+  { buy: byId(14), gift: giftById(2), poster: '/images/offers/H18D.webp' },  // LF-H18D ₹575 → LF-H3  ₹99  free
+  { buy: byId(21), gift: giftById(2), poster: '/images/offers/D18.webp'  },  // LF-D18  ₹575 → LF-H3  ₹99  free
+  { buy: byId(13), gift: giftById(2) },                                     // LF-H18B ₹525 → LF-H3  ₹99  free
 ];
 
 /** Offers that ship with campaign artwork — drives the home page showcase. */
@@ -72,11 +93,11 @@ export function singleGiftItem({ buy, gift }: SingleOffer): GiftItem {
 // Spend the threshold on the whole cart → unlock the free gift box.
 // Kept sorted ascending by threshold — the cart logic relies on this order.
 export const comboTiers: ComboTier[] = [
-  { threshold: 499,  gift: byId(2) },  // → LF-H3  ₹99  free
-  { threshold: 799,  gift: byId(3) },  // → LF-H3T ₹110 free
-  { threshold: 999,  gift: byId(5) },  // → LF-H5  ₹160 free
-  { threshold: 1499, gift: byId(8) },  // → LF-H8B ₹230 free
-  { threshold: 1999, gift: byId(9) },  // → LF-H9P ₹325 free
+  { threshold: 499,  gift: giftById(2) },  // → LF-H3  ₹99  free
+  { threshold: 799,  gift: giftById(3) },  // → LF-H3T ₹110 free
+  { threshold: 999,  gift: giftById(5) },  // → LF-H5B ₹160 free
+  { threshold: 1499, gift: giftById(8) },  // → LF-H8B ₹230 free
+  { threshold: 1999, gift: giftById(9) },  // → LF-H9P ₹325 free
 ];
 
 // ── DEEP LINKS ────────────────────────────────────────────────────────────────

@@ -105,3 +105,15 @@ test('combo tier resolves to the highest threshold reached', () => {
   assert.strictEqual(unlockedComboGiftId(799), 3);
   assert.strictEqual(unlockedComboGiftId(5000), 9);
 });
+
+test('a gift is one box even when its product is listed as a pack', () => {
+  // LF-H3 is sold as "LF-H3 x10", but the free gift is a single LF-H3 box.
+  const lines = resolveGifts(
+    [{ productId: 2, source: 'combo' }],
+    paid(24),
+    749,
+    [{ id: 2, productName: 'LF-H3 x10', inStock: true }],
+  );
+
+  assert.strictEqual(lines[0].name, 'LF-H3 (FREE GIFT)');
+});

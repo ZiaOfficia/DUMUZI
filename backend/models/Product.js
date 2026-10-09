@@ -32,7 +32,7 @@ const Product = sequelize.define(
       allowNull: false,
     },
     category: {
-      type: DataTypes.ENUM("HEART", "DIAMOND", "BN", "OVAL"),
+      type: DataTypes.ENUM("HEART", "DIAMOND", "BN", "OVAL", "COMBO"),
       allowNull: false,
     },
     inStock: {
