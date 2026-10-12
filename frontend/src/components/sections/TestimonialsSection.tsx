@@ -9,48 +9,43 @@ const GOLDL = '#e5c199';
 interface Story {
   image: string;
   quote: string;
-  author: string;
-  role: string;
-  location: string;
-  year: string;
+  title: string;
+  label: string;
+  detail: string;
 }
 
 const stories: Story[] = [
   {
     image: testimonialImages.connoisseur,
     quote:
-      "The Noir Intense 85% is the finest confection I have ever tasted. It completely redefined what I thought confectionery could be. I now order a box every month.",
-    author: "Isabella R.",
-    role: "DUMUZI Connoisseur Subscriber",
-    location: "London, UK",
-    year: "Customer since 2022",
+      "Three flavours in one box meant everyone at home found a favourite. We opened it after dinner and it was empty before the evening ended.",
+    title: "Three Flavours, One Box",
+    label: "DUMUZI Trios",
+    detail: "Trios Assortment · 25 Pieces",
   },
   {
     image: testimonialImages.weddingCouple,
     quote:
-      "We commissioned a bespoke confectionery collection for our wedding favours. Every guest commented on them. DUMUZI exceeded every expectation we had.",
-    author: "James & Sophie T.",
-    role: "Bespoke Wedding Commission",
-    location: "Paris, France",
-    year: "2024",
+      "I wanted something that looked special the moment it was handed over. The gold-wrapped pieces did exactly that, and there was enough for the whole family to share.",
+    title: "A Gift Worth Sharing",
+    label: "Celebrations & Milestones",
+    detail: "Diamond Tray · 25 Pieces",
   },
   {
     image: testimonialImages.giftRecipient,
     quote:
-      "The Rose & Cardamom truffle box was the most thoughtful gift I have ever received. The flavours were extraordinary — like nothing I had ever tasted before.",
-    author: "Sophia M.",
-    role: "Gift Box Customer",
-    location: "New York, USA",
-    year: "Customer since 2023",
+      "We sent these out for the festive season and the calls started the same week. It felt like a premium gift without us having to arrange anything extra.",
+    title: "Made for Memorable Gifting",
+    label: "Festive Gifting",
+    detail: "Festivals · Celebrations · Special Moments",
   },
   {
     image: testimonialImages.masterclassGuest,
     quote:
-      "Antoine's Confectionery Masterclass was an incredible experience. I walked in as an enthusiastic amateur and left with the skills to produce professional-quality confections.",
-    author: "Marcus W.",
-    role: "Advanced Masterclass Participant",
-    location: "Amsterdam, Netherlands",
-    year: "Masterclass 2024",
+      "Every piece is individually wrapped, so the box stays neat and fresh even after it has been opened. You can tell care went into how it is presented.",
+    title: "Crafted with Care",
+    label: "Quality & Presentation",
+    detail: "Individually Wrapped · Rich Nuts",
   },
 ];
 
@@ -100,14 +95,14 @@ export const TestimonialsSection = () => {
       <div className="max-w-7xl mx-auto relative">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="section-label justify-center mb-4">Real Voices</div>
+          <div className="section-label justify-center mb-4">Loved &amp; Shared</div>
           <h2 className="font-luxury font-semibold mb-4 leading-tight"
             style={{ fontSize: 'clamp(2.2rem,4.5vw,3.8rem)', color: 'var(--cream)', letterSpacing: '-0.01em' }}>
             What Our Customers Say
           </h2>
           <p className="max-w-xl mx-auto text-base font-sans"
             style={{ color: 'rgba(220,214,205,0.65)' }}>
-            From connoisseurs and gift-givers to corporate clients — hear from the DUMUZI community.
+            From festive gifting to everyday sharing — why families keep coming back to DUMUZI.
           </p>
         </div>
 
@@ -130,7 +125,7 @@ export const TestimonialsSection = () => {
                   exit="exit"
                   transition={{ duration: 0.6, ease: "easeOut" }}
                   src={story.image}
-                  alt={story.author}
+                  alt={story.title}
                   className="absolute inset-0 w-full h-full object-cover"
                 />
               </AnimatePresence>
@@ -150,13 +145,13 @@ export const TestimonialsSection = () => {
                   >
                     <p className="text-[10px] uppercase tracking-[0.3em] font-bold mb-1"
                       style={{ color: GOLDL }}>
-                      {story.role}
+                      {story.label}
                     </p>
                     <p className="font-display text-2xl font-bold" style={{ color: 'var(--cream)' }}>
-                      {story.author}
+                      {story.title}
                     </p>
                     <p className="text-xs mt-1" style={{ color: 'rgba(220,214,205,0.6)' }}>
-                      {story.location} · {story.year}
+                      {story.detail}
                     </p>
                   </motion.div>
                 </AnimatePresence>
