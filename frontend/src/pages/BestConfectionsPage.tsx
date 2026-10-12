@@ -23,7 +23,7 @@ const accents = ['#d4a373', '#c9a96e', '#b8976a', '#a08060', '#c9a96e', '#8a6a4a
 const bestConfections = [
   allProducts[0],   // DUMUZI Signature
   allProducts[13],  // Heart 18 Cavity
-  allProducts[25],  // BN 9 Trios
+  allProducts[21],  // Diamond 25 Brown
   allProducts[11],  // Heart 12 Trios
   allProducts[23],  // Diamond 25 Trios
   allProducts[19],  // Diamond 15 Trios
@@ -45,7 +45,6 @@ const tiers = [
   { label: 'All', value: 'all' },
   { label: 'Heart', value: 'HEART' },
   { label: 'Diamond', value: 'DIAMOND' },
-  { label: 'BN', value: 'BN' },
 ];
 
 function Stars({ rating }: { rating: number }) {
@@ -84,7 +83,7 @@ const BestConfectionsPage = () => {
       <section className="relative overflow-hidden" style={{ background: 'linear-gradient(160deg, var(--bg-deep) 0%, var(--bg-dark) 60%, var(--bg-warm) 100%)', minHeight: '70vh', display: 'flex', alignItems: 'center' }}>
         <div className="absolute inset-0 opacity-25">
           <img
-            src="/images/lifestyle/hero-minimalist.jpg"
+            src="/images/bg/trios-box.webp"
             alt=""
             className="w-full h-full object-cover"
           />

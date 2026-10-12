@@ -73,7 +73,7 @@ export const ServicesPage = () => {
         "24k edible gold leaf finish",
         "Fresh small-batch production",
       ],
-      image: "/images/products/LF-BN9T.jpeg",
+      image: "/images/products/LF-H12T.jpeg",
     },
     {
       id: "gift-boxes",
@@ -150,7 +150,7 @@ export const ServicesPage = () => {
           <img
             loading="lazy"
             decoding="async"
-            src="/images/lifestyle/hero-rakhi-box-3.jpg"
+            src="/images/bg/premium-experience.webp"
             alt="DUMUZI confectionery collections"
             className="w-full h-full object-cover"
           />

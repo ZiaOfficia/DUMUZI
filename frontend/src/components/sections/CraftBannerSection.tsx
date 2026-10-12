@@ -105,8 +105,8 @@ export const CraftBannerSection = () => {
             <div className="relative rounded-[36px] overflow-hidden group"
               style={{ aspectRatio: '4/4.5', background: 'var(--bg-mid)', border: `1.5px solid rgba(212,163,115,0.25)`, boxShadow: '0 50px 120px rgba(0,0,0,0.8)' }}>
               <img
-                src="/images/products/LF-D15T.jpeg"
-                alt="DUMUZI Diamond Tray — 15 Trios"
+                src="/images/bg/crafted-with-care.webp"
+                alt="DUMUZI confections, crafted with care"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent pointer-events-none" />

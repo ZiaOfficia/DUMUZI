@@ -99,8 +99,8 @@ export const GiftingCTA = () => {
               >
                 <div className="w-full h-full overflow-hidden relative">
                   <img
-                    src="/images/lifestyle/gifting-cta-hamper.jpg"
-                    alt="DUMUZI luxury gift hamper, beautifully presented"
+                    src="/images/bg/memorable-gifting.webp"
+                    alt="DUMUZI — made for memorable gifting"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     style={{ objectPosition: 'center' }}
                   />

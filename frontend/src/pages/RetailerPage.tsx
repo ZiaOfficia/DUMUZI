@@ -13,7 +13,7 @@ const benefits = [
   {
     icon: Award,
     title: 'Premium Handcrafted Range',
-    desc: '27 signature gift-box designs across Heart, Diamond, BN, and Oval collections — a catalogue that stands out on any shelf.',
+    desc: '25 signature gift-box designs across Heart, Diamond, and Oval collections — a catalogue that stands out on any shelf.',
   },
   {
     icon: TrendingUp,
@@ -143,7 +143,7 @@ export const RetailerPage = () => {
       >
         <div className="absolute inset-0 opacity-25">
           <img
-            src="/images/lifestyle/hero-boutique-shopping.jpg"
+            src="/images/bg/twenty-five-pieces-green.webp"
             alt=""
             className="w-full h-full object-cover"
           />
@@ -221,8 +221,8 @@ export const RetailerPage = () => {
             style={{ aspectRatio: '16/9', border: '1.5px solid rgba(212,163,115,0.25)', boxShadow: '0 40px 100px rgba(0,0,0,0.6)' }}
           >
             <img
-              src="/images/lifestyle/retailer-boutique-counter.jpg"
-              alt="DUMUZI gift boxes at the retail counter"
+              src="/images/bg/product-at-a-glance.webp"
+              alt="DUMUZI 25-piece box at a glance"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />

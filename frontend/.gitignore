@@ -32,3 +32,5 @@ public/images/*
 !public/images/pnglogos/**
 !public/images/offers/
 !public/images/offers/**
+!public/images/bg/
+!public/images/bg/**

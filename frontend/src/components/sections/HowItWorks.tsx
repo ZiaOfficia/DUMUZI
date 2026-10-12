@@ -4,8 +4,8 @@ import { LuxuryDecor } from '../common/LuxuryDecor';
 
 const steps = [
   { icon: Search,   step:'01', title:'Source',  desc:'We hand-select the finest single-origin ingredients from premium estates around the equator.', img: '/images/products/LF-D6.jpeg' },
-  { icon: Sparkles, step:'02', title:'Craft',   desc:'Our master confectioners slowly prepare, hand-finish, and sculpt each piece with precision.',      img: '/images/products/LF- BN9.jpeg' },
-  { icon: Award,    step:'03', title:'Taste',   desc:'Each confection goes through sensory trials and quality checks to guarantee perfection.',          img: '/images/products/LF-BN9T.jpeg' },
+  { icon: Sparkles, step:'02', title:'Craft',   desc:'Our master confectioners slowly prepare, hand-finish, and sculpt each piece with precision.',      img: '/images/products/LF-D9.jpeg' },
+  { icon: Award,    step:'03', title:'Taste',   desc:'Each confection goes through sensory trials and quality checks to guarantee perfection.',          img: '/images/products/LF-H12T.jpeg' },
   { icon: Gift,     step:'04', title:'Delight', desc:'Elegantly custom wrapped in our signature boxes and delivered in temperature-controlled care.',    img: '/images/products/LF-H18D.jpeg' },
 ];
 

@@ -51,7 +51,7 @@ export const blogPosts: BlogPost[] = [
       <h3>The Final Enrobing</h3>
       <p>Once the velvet filling has set, each gourmet bite is hand-rolled and dipped in tempered dark confectionery. Some are finished with a dusting of premium Dutch ingredient powder, while others are decorated with delicate flakes of 24k gold leaf. The result is a masterpiece of confectionary art.</p>
     `,
-    image: "/images/products/LF-BN9T.jpeg",
+    image: "/images/products/LF-H12T.jpeg",
     date: "Feb 10, 2026",
     author: "Chef Antoine Laurent",
     category: "Craftsmanship",
@@ -245,7 +245,7 @@ export const blogPosts: BlogPost[] = [
       <h3>Redefining Confectionery Luxury</h3>
       <p>We combine centuries-old European conching techniques with modern ethical sourcing to produce dark confectionery bars and gourmet bites that are rich, pure, and sustainably crafted.</p>
     `,
-    image: "/images/products/LF- BN9.jpeg",
+    image: "/images/products/LF-D9.jpeg",
     date: "Sep 18, 2025",
     author: "Founders",
     category: "Heritage",

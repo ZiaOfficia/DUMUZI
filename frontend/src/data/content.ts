@@ -151,21 +151,21 @@ export const blogPosts = [
     category: "Craftsmanship",
     excerpt:
       "Discover the secret behind our signature dark confections — from choosing ingredients to achieving a silky, smooth texture...",
-    image: "/images/assets/atelier_hero.png",
+    image: "/images/bg/crafted-with-care.webp",
   },
   {
     title: "Sourcing Single-Origin Ingredients: Madagascar vs. Ecuador",
     category: "Sustainability",
     excerpt:
       "Explore the unique flavor profiles of single-origin ingredients and how soil, climate, and geography shape the taste of our luxury collections...",
-    image: "/images/assets/atelier_hero.png",
+    image: "/images/bg/three-flavours.webp",
   },
   {
     title: "The Ultimate Corporate Gifting Guide",
     category: "Gifting",
     excerpt:
       "Discover how custom-designed confectionery assortments can elevate your corporate relations and leave a lasting impression...",
-    image: "/images/assets/atelier_hero.png",
+    image: "/images/bg/trios-box.webp",
   },
 ];
 

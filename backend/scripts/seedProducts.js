@@ -35,9 +35,6 @@ const products = [
   { id: 22, brandName:"DUMUZI", productName:"LF-D25B", image:"/images/products/LF-D25B.jpeg",     description:"DIAMOND 25 CAVITY BROWN",         mrp:640,  category:"DIAMOND" },
   { id: 23, brandName:"DUMUZI", productName:"LF-D25",  image:"/images/products/LF-D25.jpeg",      description:"DIAMOND 25 CAVITY",               mrp:699,  category:"DIAMOND" },
   { id: 24, brandName:"DUMUZI", productName:"LF-D25T", image:"/images/products/LF-D25T.jpeg",     description:"DIAMOND 25 CAVITY TRIOS",         mrp:749,  category:"DIAMOND" },
-  // ── BN SERIES ──────────────────────────────────────────────────────────────
-  { id: 25, brandName:"DUMUZI", productName:"LF-BN9",  image:"/images/products/LF- BN9.jpeg",     description:"BN 9 CAVITY",                     mrp:525,  category:"BN"      },
-  { id: 26, brandName:"DUMUZI", productName:"LF-BN9T", image:"/images/products/LF-BN9T.jpeg",     description:"BN 9 CAVITY TRIOS",               mrp:549,  category:"BN"      },
   // ── OVAL SERIES ───────────────────────────────────────────────────────────
   { id: 27, brandName:"DUMUZI", productName:"LF-O9",   image:"/images/products/LF-O9.jpeg",       description:"OVAL 9 CAVITY",                   mrp:260,  category:"OVAL"    },
 ];

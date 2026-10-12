@@ -30,7 +30,7 @@ export const AboutSection = () => {
               }}
             >
               <img
-                src="/images/products/LF-D25T.jpeg"
+                src="/images/bg/premium-experience.webp"
                 alt="DUMUZI Diamond Tray — 25 Handcrafted Confections"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 style={{ objectPosition: 'center' }}

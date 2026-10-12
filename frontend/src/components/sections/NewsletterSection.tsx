@@ -24,7 +24,7 @@ const NewsletterSection = () => {
         <img
           loading="lazy"
           decoding="async"
-          src="/images/lifestyle/newsletter-festive.jpg"
+          src="/images/bg/memorable-gifting-velvet.webp"
           alt="DUMUZI festive gift boxes, elegantly presented"
           className="w-full h-full object-cover"
         />

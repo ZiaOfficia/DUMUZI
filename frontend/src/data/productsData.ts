@@ -208,26 +208,6 @@ export const products: Product[] = [
     mrp: 749,
   },
 
-
-  // ── BN SERIES ─────────────────────────────────────────────────────────────
-  {
-    id: 25,
-    brandName: "DUMUZI",
-    productName: "LF-BN9",
-    image: "/images/products/packs/LF-BN9.webp",
-    description: "BN 9 CAVITY · ALMOND & RAISIN",
-    mrp: 499,
-  },
-  {
-    id: 26,
-    brandName: "DUMUZI",
-    productName: "LF-BN9T",
-    image: "/images/products/packs/LF-BN9T.webp",
-    description: "BN 9 CAVITY TRIOS · ALMOND & RAISIN",
-    mrp: 525,
-  },
-
-
   // ── OVAL SERIES ───────────────────────────────────────────────────────────
   {
     id: 27,

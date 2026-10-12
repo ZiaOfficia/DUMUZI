@@ -20,8 +20,8 @@ const videoGallery = [
   },
   {
     id: "dQw4w9WgXcQ",
-    title: "BN Trios — Gold-Foil Wrapping Process",
-    thumbnail: "/images/products/LF-BN9T.jpeg",
+    title: "Heart Trios — Gold-Foil Wrapping Process",
+    thumbnail: "/images/products/LF-H12T.jpeg",
     videoLength: "1:48",
   },
   {
@@ -57,15 +57,13 @@ const imageGallery = [
   "/images/products/LF-D18T.jpeg",
   "/images/products/LF-D25.jpeg",
   "/images/products/LF-D25T.jpeg",
-  "/images/products/LF- BN9.jpeg",
-  "/images/products/LF-BN9T.jpeg",
   "/images/products/LF-O9.jpeg",
-  // Festive & lifestyle moments
-  "/images/lifestyle/gallery-raksha-bandhan-1.jpg",
-  "/images/lifestyle/gallery-diwali-heart-box.jpg",
-  "/images/lifestyle/gallery-rakhi-puja-thali.jpg",
-  "/images/lifestyle/gallery-boutique-shopping.jpg",
-  "/images/lifestyle/gallery-rakhi-tying.jpg",
+  // Brand posters
+  "/images/bg/bonus-heart-pack.webp",
+  "/images/bg/free-heart-pack.webp",
+  "/images/bg/almond-raisin.webp",
+  "/images/bg/twenty-five-pieces-green.webp",
+  "/images/bg/trios-box.webp",
 ];
 
 export const GalleryPage = () => {
@@ -85,7 +83,7 @@ export const GalleryPage = () => {
       <section className="relative h-[90vh] flex items-center justify-center overflow-hidden bg-stone-900 group">
         <div className="absolute inset-0 opacity-60 group-hover:opacity-50 transition-opacity duration-700">
           <img loading="lazy" decoding="async"
-            src="/images/products/LF-D25B.jpeg"
+            src="/images/bg/twenty-five-pieces-green.webp"
             alt="DUMUZI Confectionery Gallery"
             className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000"
           />
@@ -152,7 +150,7 @@ export const GalleryPage = () => {
           <img
             loading="lazy"
             decoding="async"
-            src="/images/products/LF-D25T.jpeg"
+            src="/images/bg/memorable-gifting.webp"
             alt="Video gallery header — inside the DUMUZI atelier"
             className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000"
           />

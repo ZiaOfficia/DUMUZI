@@ -23,8 +23,6 @@ export const productImages = {
   display25:   '/images/products/LF-D25.jpeg',
   display25b:  '/images/products/LF-D25B.jpeg',
   display25t:  '/images/products/LF-D25T.jpeg',
-  bonbon9:     '/images/products/LF- BN9.jpeg',
-  bonbon9t:    '/images/products/LF-BN9T.jpeg',
   oval9:       '/images/products/LF-O9.jpeg',
 };
 
@@ -36,7 +34,7 @@ export const heroImages = {
   classicDisplay:  '/images/products/LF-D18T.jpeg',
   heartDuo:        '/images/products/LF-H18D.jpeg',
   selectionBox:    '/images/products/LF-D15T.jpeg',
-  bonbons:         '/images/products/LF-BN9T.jpeg',
+  bonbons:         '/images/products/LF-H12T.jpeg',
   ovalBox:         '/images/products/LF-O9.jpeg',
 };
 
@@ -44,7 +42,7 @@ export const testimonialImages = {
   connoisseur:      '/images/products/LF-H3.jpeg',
   weddingCouple:    '/images/products/LF-H18D.jpeg',
   giftRecipient:    '/images/products/LF-D25T.jpeg',
-  masterclassGuest: '/images/products/LF- BN9.jpeg',
+  masterclassGuest: '/images/products/LF-D9.jpeg',
 };
 
 // Blog & gallery use a rotating set of product images
@@ -52,7 +50,6 @@ const blogPool = [
   '/images/products/DUMUZI.jpeg',
   '/images/products/LF-H12T.jpeg',
   '/images/products/LF-D25T.jpeg',
-  '/images/products/LF-BN9T.jpeg',
   '/images/products/LF-H18D.jpeg',
   '/images/products/LF-D15T.jpeg',
   '/images/products/LF-D18T.jpeg',
@@ -65,11 +62,9 @@ export const galleryImages = [
   '/images/products/DUMUZI.jpeg',
   '/images/products/LF-D25T.jpeg',
   '/images/products/LF-H12T.jpeg',
-  '/images/products/LF-BN9T.jpeg',
   '/images/products/LF-H18D.jpeg',
   '/images/products/LF-D15T.jpeg',
   '/images/products/LF-D18T.jpeg',
-  '/images/products/LF- BN9.jpeg',
 ];
 
 export const instagramImages = blogPool.slice(0, 6);
@@ -89,12 +84,12 @@ export const actionImages = {
 };
 
 export const serviceImages = {
-  darkCollection:    '/images/lifestyle/hero-cocoa-forest.jpg',
-  truffleCollection: '/images/lifestyle/hero-minimalist.jpg',
-  giftBoxes:         '/images/lifestyle/hero-luxury-hamper.jpg',
-  weddingFavors:     '/images/lifestyle/hero-couple-blessing.jpg',
-  corporateGifting:  '/images/lifestyle/hero-boutique-checkout.jpg',
-  subscriptionBox:   '/images/lifestyle/hero-rakhi-box-1.jpg',
-  bespokeOrders:     '/images/lifestyle/hero-rakhi-box-2.jpg',
-  masterclasses:     '/images/lifestyle/hero-puja-thali.jpg',
+  darkCollection:    '/images/bg/twenty-five-pieces-gold.webp',
+  truffleCollection: '/images/bg/trios-box.webp',
+  giftBoxes:         '/images/bg/three-flavours.webp',
+  weddingFavors:     '/images/bg/gift-worth-sharing.webp',
+  corporateGifting:  '/images/bg/premium-experience.webp',
+  subscriptionBox:   '/images/bg/unwrap-share-enjoy.webp',
+  bespokeOrders:     '/images/bg/crafted-with-care.webp',
+  masterclasses:     '/images/bg/almond-raisin.webp',
 };

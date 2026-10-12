@@ -43,7 +43,7 @@ export const ContactPage = () => {
           <img
             loading="lazy"
             decoding="async"
-            src="/images/lifestyle/hero-rakhi-box-2.jpg"
+            src="/images/bg/crafted-with-care.webp"
             alt="DUMUZI atelier"
             className="w-full h-full object-cover"
           />

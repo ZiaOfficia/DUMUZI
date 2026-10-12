@@ -28,10 +28,10 @@ const containerVariants: Variants = {
 };
 
 const heroImages = [
-  "/images/lifestyle/hero-cocoa-forest.jpg",
-  "/images/lifestyle/hero-rakhi-thali.jpg",
-  "/images/lifestyle/hero-diwali.jpg",
-  "/images/lifestyle/hero-couple-tying.jpg",
+  "/images/bg/twenty-five-pieces-gold.webp",
+  "/images/bg/crafted-with-care.webp",
+  "/images/bg/memorable-gifting-velvet.webp",
+  "/images/bg/unwrap-share-enjoy.webp",
 ];
 
 export const AboutPage = () => {
@@ -153,9 +153,9 @@ export const AboutPage = () => {
           {/* Mobile Image */}
           <div className="w-full md:hidden mb-8">
             <img loading="lazy" decoding="async"
-              alt="DUMUZI confectioners at work"
+              alt="DUMUZI — 25 individually wrapped pieces"
               className="w-full h-100 object-cover"
-              src="/images/products/LF-D25B.jpeg"
+              src="/images/bg/twenty-five-pieces-gold.webp"
             />
           </div>
 
@@ -219,9 +219,9 @@ export const AboutPage = () => {
           >
             <div className="w-full h-full absolute inset-0 -z-10" style={{ background: 'rgba(212,163,115,0.08)' }} />
             <img loading="lazy" decoding="async"
-              alt="DUMUZI confectioners at work"
+              alt="DUMUZI — 25 individually wrapped pieces"
               className="w-full h-full object-cover opacity-95"
-              src="/images/products/LF-D25B.jpeg"
+              src="/images/bg/twenty-five-pieces-gold.webp"
             />
           </motion.div>
         </div>
@@ -238,8 +238,8 @@ export const AboutPage = () => {
             className="w-full lg:w-2/3 h-[500px] lg:h-full relative z-0"
           >
             <img loading="lazy" decoding="async"
-              src="/images/products/LF-D15T.jpeg"
-              alt="Master confectioner at work — DUMUZI"
+              src="/images/bg/almond-raisin.webp"
+              alt="DUMUZI Almond & Raisin confections"
               className="w-full h-full object-cover shadow-2xl"
             />
           </motion.div>
@@ -296,8 +296,8 @@ export const AboutPage = () => {
             style={{ aspectRatio: '3/4', border: '1.5px solid rgba(212,163,115,0.22)', boxShadow: '0 30px 80px rgba(0,0,0,0.55)' }}
           >
             <img
-              src="/images/lifestyle/about-people-1.jpg"
-              alt="A joyful moment sharing DUMUZI confections"
+              src="/images/bg/unwrap-share-enjoy.webp"
+              alt="DUMUZI confections, made to unwrap, share and enjoy"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
@@ -311,8 +311,8 @@ export const AboutPage = () => {
             style={{ aspectRatio: '3/4', border: '1.5px solid rgba(212,163,115,0.22)', boxShadow: '0 30px 80px rgba(0,0,0,0.55)' }}
           >
             <img
-              src="/images/lifestyle/about-people-2.jpg"
-              alt="A cherished DUMUZI gifting tradition"
+              src="/images/bg/gift-worth-sharing.webp"
+              alt="DUMUZI — a gift worth sharing"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
