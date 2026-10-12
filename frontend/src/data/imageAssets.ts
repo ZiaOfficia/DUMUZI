@@ -39,10 +39,10 @@ export const heroImages = {
 };
 
 export const testimonialImages = {
-  connoisseur:      '/images/products/LF-H3.jpeg',
-  weddingCouple:    '/images/products/LF-H18D.jpeg',
-  giftRecipient:    '/images/products/LF-D25T.jpeg',
-  masterclassGuest: '/images/products/LF-D9.jpeg',
+  connoisseur:      '/images/bg/trios-box.webp',
+  weddingCouple:    '/images/bg/gift-worth-sharing.webp',
+  giftRecipient:    '/images/bg/memorable-gifting.webp',
+  masterclassGuest: '/images/bg/crafted-with-care.webp',
 };
 
 // Blog & gallery use a rotating set of product images
