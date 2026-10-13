@@ -20,6 +20,17 @@ const ONLINE_DISCOUNT_RATE  = 0.10;
 const ONLINE_DISCOUNT_LABEL = 'Online payment discount (10%)';
 
 /**
+ * Cash on Delivery carries a handling charge: ₹60, or ₹90 once the order's
+ * items come to more than ₹1,000. Mirrored by codFee in
+ * frontend/src/utils/discount.ts — keep the two in step.
+ */
+const COD_FEE_THRESHOLD = 1000;
+const COD_FEE_LOW       = 60;
+const COD_FEE_HIGH      = 90;
+const COD_FEE_LABEL     = 'Cash on Delivery charge';
+const codFee = (subtotalRupees) => (subtotalRupees > COD_FEE_THRESHOLD ? COD_FEE_HIGH : COD_FEE_LOW);
+
+/**
  * The gateway columns are named after the gateway we used first (Razorpay);
  * they hold PayU's equivalents now — txnid, mihpayid and the response hash.
  * Renaming them would ripple through the admin panel and order history for no
@@ -89,13 +100,19 @@ exports.createOrder = async (req, res) => {
     const discountRupees = paymentMethod === 'payu'
       ? Math.round(totalRupees * ONLINE_DISCOUNT_RATE * 100) / 100
       : 0;
-    const payableRupees = Math.round((totalRupees - discountRupees) * 100) / 100;
+    // The COD charge is likewise set here, from the same server-priced
+    // subtotal, and recorded as its own productId-0 line.
+    const codFeeRupees = paymentMethod === 'cod' ? codFee(totalRupees) : 0;
+    const payableRupees = Math.round((totalRupees - discountRupees + codFeeRupees) * 100) / 100;
 
     const orderItems = [
       ...items,
       ...giftItems,
       ...(discountRupees > 0
         ? [{ productId: 0, name: ONLINE_DISCOUNT_LABEL, price: -discountRupees, quantity: 1 }]
+        : []),
+      ...(codFeeRupees > 0
+        ? [{ productId: 0, name: COD_FEE_LABEL, price: codFeeRupees, quantity: 1 }]
         : []),
     ];
 

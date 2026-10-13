@@ -56,8 +56,9 @@ export interface MetaContent {
 }
 
 /**
- * Real, paid-for products only. Free gifts (₹0) and the online-discount line
- * (productId 0) are not products the shopper bought, so they never count.
+ * Real, paid-for products only. Free gifts (₹0) and the online-discount and
+ * COD-charge lines (productId 0) are not products the shopper bought, so they
+ * never count.
  */
 const toContents = (lines: TrackedLine[]): MetaContent[] =>
   lines

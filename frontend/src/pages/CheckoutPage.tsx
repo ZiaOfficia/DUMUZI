@@ -8,7 +8,7 @@ import { useToast } from '../components/common/Toast';
 import { SEO } from '../components/common/SEO';
 import { checkoutApi, ApiError } from '../services/api';
 import { redirectToPayu, rememberPendingPayment } from '../utils/payu';
-import { ONLINE_DISCOUNT_PERCENT, onlineDiscount, payableTotal } from '../utils/discount';
+import { ONLINE_DISCOUNT_PERCENT, onlineDiscount, onlineSaving, codFee, payableTotal } from '../utils/discount';
 import { trackInitiateCheckout, trackPurchase, purchaseContextFor, savePendingPurchase } from '../utils/metaPixel';
 
 const GOLD  = '#d4a373';
@@ -83,6 +83,7 @@ export const CheckoutPage = () => {
   const [paymentMethod, setPaymentMethod] = useState<'cod' | 'payu'>('payu');
 
   const discount = paymentMethod === 'payu' ? onlineDiscount(totalPrice) : 0;
+  const codCharge = paymentMethod === 'cod' ? codFee(totalPrice) : 0;
   const payable  = payableTotal(totalPrice, paymentMethod);
 
   const set = (key: keyof FormData) => (v: string) => setForm(f => ({ ...f, [key]: v }));
@@ -314,7 +315,9 @@ export const CheckoutPage = () => {
                         <Banknote size={18} style={{ color: GOLD, flexShrink: 0 }} />
                         <div>
                           <p className="text-sm font-semibold" style={{ color: 'var(--cream)' }}>Cash on Delivery</p>
-                          <p className="text-xs" style={{ color: 'var(--muted)' }}>Pay when your order arrives</p>
+                          <p className="text-xs" style={{ color: 'var(--muted)' }}>
+                            Pay when your order arrives · ₹{codFee(totalPrice)} COD charge
+                          </p>
                         </div>
                       </button>
                     </div>
@@ -431,13 +434,19 @@ export const CheckoutPage = () => {
                     <span style={{ color: '#10b981' }}>−₹{discount.toLocaleString('en-IN')}</span>
                   </div>
                 )}
+                {codCharge > 0 && (
+                  <div className="flex justify-between text-sm font-sans" style={{ color: 'var(--muted)' }}>
+                    <span>Cash on Delivery charge</span>
+                    <span style={{ color: 'var(--cream)' }}>₹{codCharge.toLocaleString('en-IN')}</span>
+                  </div>
+                )}
                 <div className="flex justify-between font-bold text-base mt-2" style={{ color: 'var(--cream)' }}>
                   <span>Total</span>
                   <span style={{ color: GOLD }}>₹{payable.toLocaleString('en-IN')}</span>
                 </div>
                 {paymentMethod === 'cod' && totalPrice > 0 && (
                   <p className="text-xs font-sans mt-1" style={{ color: GOLDL }}>
-                    Switch to Pay Online and save ₹{onlineDiscount(totalPrice).toLocaleString('en-IN')}
+                    Switch to Pay Online and save ₹{onlineSaving(totalPrice).toLocaleString('en-IN')}
                   </p>
                 )}
               </div>

@@ -8,7 +8,7 @@ import { useGuestGate } from '../../context/GuestGateContext';
 import { redirectToPayu, rememberPendingPayment } from '../../utils/payu';
 import { checkoutApi, ApiError } from '../../services/api';
 import { getComboProgress, singleOffers, singleGiftItem } from '../../data/offersData';
-import { ONLINE_DISCOUNT_PERCENT, onlineDiscount, payableTotal } from '../../utils/discount';
+import { ONLINE_DISCOUNT_PERCENT, onlineDiscount, onlineSaving, codFee, payableTotal } from '../../utils/discount';
 import { trackInitiateCheckout, trackPurchase, purchaseContextFor, savePendingPurchase } from '../../utils/metaPixel';
 
 const GOLD  = '#d4a55a';
@@ -47,6 +47,7 @@ export const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
   const [paymentMethod, setPaymentMethod] = useState<'cod' | 'payu'>('payu');
 
   const discount = paymentMethod === 'payu' ? onlineDiscount(totalPrice) : 0;
+  const codCharge = paymentMethod === 'cod' ? codFee(totalPrice) : 0;
   const payable  = payableTotal(totalPrice, paymentMethod);
 
   // Combo-offer progress — drives the "add ₹X more to get Y free" nudge.
@@ -565,17 +566,27 @@ export const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
                         </span>
                       </div>
                     )}
+                    {codCharge > 0 && (
+                      <div className="flex items-center justify-between">
+                        <span className="text-[11px] font-sans" style={{ color: 'var(--muted)' }}>
+                          Cash on Delivery charge
+                        </span>
+                        <span className="text-[11px] font-bold" style={{ color: GOLD }}>
+                          ₹{codCharge.toLocaleString('en-IN')}
+                        </span>
+                      </div>
+                    )}
                     <div className="flex items-center justify-between pt-2" style={{ borderTop: '1px solid rgba(212,165,90,0.12)' }}>
                       <span className="text-[11px] font-bold uppercase tracking-wider" style={{ color: 'rgba(212,165,90,0.6)' }}>Total</span>
                       <span className="font-display font-bold text-base" style={{ color: 'var(--cream)' }}>
                         ₹{payable.toLocaleString('en-IN')}
                       </span>
                     </div>
-                    {/* COD forfeits the discount — say so where the total is, not
-                        just on the payment buttons further down. */}
+                    {/* COD forfeits the discount and adds a charge — say so where
+                        the total is, not just on the payment buttons further down. */}
                     {paymentMethod === 'cod' && totalPrice > 0 && (
                       <p className="text-[10px] font-sans" style={{ color: GOLDL }}>
-                        Switch to Pay Online and save ₹{onlineDiscount(totalPrice).toLocaleString('en-IN')}
+                        Switch to Pay Online and save ₹{onlineSaving(totalPrice).toLocaleString('en-IN')}
                       </p>
                     )}
                   </div>
@@ -789,7 +800,7 @@ export const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
                     }
                   </button>
                   <p className="text-[10px] text-center font-sans" style={{ color: 'rgba(220,214,205,0.28)' }}>
-                    {paymentMethod === 'cod' ? 'Pay in cash when your order arrives' : 'Secured by PayU · UPI, Cards, NetBanking & more'}
+                    {paymentMethod === 'cod' ? `Pay in cash when your order arrives · includes ₹${codCharge} COD charge` : 'Secured by PayU · UPI, Cards, NetBanking & more'}
                   </p>
                 </div>
               </>

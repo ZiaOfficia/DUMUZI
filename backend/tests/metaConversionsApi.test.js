@@ -150,7 +150,7 @@ test('COD: one Purchase after the order is created, with the server amount and e
   assert.strictEqual(ev.event_id, `purchase_${orderId}`);      // == the browser Pixel's eventID
   assert.strictEqual(ev.action_source, 'website');
   assert.strictEqual(ev.custom_data.currency, 'INR');
-  assert.strictEqual(ev.custom_data.value, 380);                // COD: no discount, server-priced 2×110 + 160
+  assert.strictEqual(ev.custom_data.value, 440);                // COD: no discount, server-priced 2×110 + 160, + ₹60 COD charge
   assert.deepStrictEqual(ev.custom_data.content_ids, ['3', '5']);
   assert.strictEqual(ev.user_data.fbp, 'fb.1.1727000000000.123456789');
   assert.strictEqual(rows.get(1).meta_capi_status, 'sent');

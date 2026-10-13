@@ -7,7 +7,7 @@ const sections: PolicySection[] = [
   },
   {
     title: 'Shipping rates',
-    body: 'Shipping is free for all our valuable customers.',
+    body: 'Shipping is free for all our valuable customers. Cash on Delivery orders carry a handling charge of ₹60, or ₹90 on orders above ₹1,000; paying online has no extra charge.',
   },
   {
     title: 'Shipping destinations',

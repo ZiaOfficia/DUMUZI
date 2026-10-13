@@ -111,8 +111,8 @@ const orderIdOf = (order) => order.razorpay_order_id;   // PayU txnid, or cod_�
 const eventIdFor = (orderId) => `purchase_${orderId}`;   // must match the browser Pixel's eventID
 
 /**
- * Only real, paid-for products: free gifts are ₹0 and the online discount is
- * a negative productId-0 line, and neither is something the shopper bought.
+ * Only real, paid-for products: free gifts are ₹0, and the online discount and
+ * COD charge are productId-0 lines — none of them is something the shopper bought.
  */
 function purchaseContents(items) {
   return (Array.isArray(items) ? items : [])
