@@ -51,7 +51,7 @@ export const blogPosts: BlogPost[] = [
       <h3>The Final Enrobing</h3>
       <p>Once the velvet filling has set, each gourmet bite is hand-rolled and dipped in tempered dark confectionery. Some are finished with a dusting of premium Dutch ingredient powder, while others are decorated with delicate flakes of 24k gold leaf. The result is a masterpiece of confectionary art.</p>
     `,
-    image: "/images/products/LF-H12T.jpeg",
+    image: "/blogimages/blog3.webp",
     date: "Feb 10, 2026",
     author: "Chef Antoine Laurent",
     category: "Craftsmanship",
@@ -75,7 +75,7 @@ export const blogPosts: BlogPost[] = [
       <h3>Our Commitment to Fair Sourcing</h3>
       <p>We work directly with local farming cooperatives in both regions. By bypassing middle-men, we ensure that farmers are paid above fair-trade prices, supporting sustainable agriculture and protecting biodiversity in these unique ecosystems.</p>
     `,
-    image: "/images/products/LF-D25T.jpeg",
+    image: "/blogimages/blog5.webp",
     date: "Jan 28, 2026",
     author: "Sourcing Team",
     category: "Sustainability",
@@ -96,7 +96,7 @@ export const blogPosts: BlogPost[] = [
       <h3>Custom Branding Options</h3>
       <p>We offer fully customizable corporate gift boxes. From custom-molded confectionery bars featuring your company logo to personalized ribbon colors and branded greeting cards, we help you align our confectionery with your corporate identity.</p>
     `,
-    image: "/images/products/LF-H18D.jpeg",
+    image: "/blogimages/blog9.webp",
     date: "Jan 15, 2026",
     author: "Gifting Expert",
     category: "Gifting",
@@ -117,7 +117,7 @@ export const blogPosts: BlogPost[] = [
       <h3>The Natural Mood Elevator</h3>
       <p>Have you ever wondered why confection makes you feel happy? It triggers the release of endorphins and contains serotonin and phenylethylamine (the 'love chemical'), which promote feelings of relaxation and joy. A piece of DUMUZI dark confectionery is the perfect natural stress reliever.</p>
     `,
-    image: "/images/products/LF-D15T.jpeg",
+    image: "/blogimages/blog4.webp",
     date: "Dec 30, 2025",
     author: "Wellness Desk",
     category: "Science",
@@ -143,7 +143,7 @@ export const blogPosts: BlogPost[] = [
       <h3>The Snap Test</h3>
       <p>Dip a clean spoon into the tempered confection. If it is correctly tempered, it will set at room temperature within 3 to 5 minutes with a shiny surface and a crisp snap when bent.</p>
     `,
-    image: "/images/products/LF-H12T.jpeg",
+    image: "/blogimages/blog10.webp",
     date: "Dec 12, 2025",
     author: "Confectioner Antoine",
     category: "Craftsmanship",
@@ -164,7 +164,7 @@ export const blogPosts: BlogPost[] = [
       <h3>The European Evolution</h3>
       <p>When ingredient arrived in Europe in the 16th century, Spanish royalty added sugar and cinnamon. Over the centuries, inventions like the ingredient press and conching machine transformed confection from a gritty beverage into the smooth, solid confections we cherish today.</p>
     `,
-    image: "/images/products/DUMUZI.jpeg",
+    image: "/blogimages/blog8.webp",
     date: "Nov 25, 2025",
     author: "Heritage Team",
     category: "History",
@@ -191,7 +191,7 @@ export const blogPosts: BlogPost[] = [
       <h3>Serving Tip</h3>
       <p>Serve the confection at room temperature and the brew hot but not scalding. Cleanse the palate with plain water between pairings so each combination gets a fair tasting.</p>
     `,
-    image: "/images/products/LF-D18T.jpeg",
+    image: "/blogimages/blog2.webp",
     date: "Nov 10, 2025",
     author: "Tasting Desk",
     category: "Tasting Guide",
@@ -209,7 +209,7 @@ export const blogPosts: BlogPost[] = [
       <h3>Personalized Packaging</h3>
       <p>We design custom-molded confection favors and miniature gourmet bite boxes that match your wedding theme, colors, and monogram. Each piece is beautifully presented in delicate packaging that serves as both table decor and a delicious treat.</p>
     `,
-    image: "/images/products/LF-H18B.jpeg",
+    image: "/blogimages/blog7.webp",
     date: "Oct 22, 2025",
     author: "Event Team",
     category: "Gifting",
@@ -227,7 +227,7 @@ export const blogPosts: BlogPost[] = [
       <h3>Controlling the Crystals</h3>
       <p>By controlling heating and cooling rates, our confectioners ensure that only Form V crystals dominate the mixture. This scientific precision is what gives DUMUZI confections their premium feel and long shelf stability.</p>
     `,
-    image: "/images/products/LF-D25B.jpeg",
+    image: "/blogimages/blog6.webp",
     date: "Oct 05, 2025",
     author: "Science Team",
     category: "Science",
@@ -245,7 +245,7 @@ export const blogPosts: BlogPost[] = [
       <h3>Redefining Confectionery Luxury</h3>
       <p>We combine centuries-old European conching techniques with modern ethical sourcing to produce dark confectionery bars and gourmet bites that are rich, pure, and sustainably crafted.</p>
     `,
-    image: "/images/products/LF-D9.jpeg",
+    image: "/blogimages/blog1.webp",
     date: "Sep 18, 2025",
     author: "Founders",
     category: "Heritage",
